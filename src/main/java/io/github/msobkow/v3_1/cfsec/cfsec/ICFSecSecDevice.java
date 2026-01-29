@@ -80,8 +80,6 @@ public interface ICFSecSecDevice
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getOptionalPubKey();
-	public void setOptionalPubKey( String value );
 	@Override
 	public boolean equals( Object obj );
 	

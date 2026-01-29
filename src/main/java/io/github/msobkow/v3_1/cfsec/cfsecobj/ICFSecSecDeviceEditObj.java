@@ -146,20 +146,6 @@ public interface ICFSecSecDeviceEditObj
 	 */
 	void setRequiredDevName(String value);
 
-	/**
-	 *	Get the optional String attribute PubKey.
-	 *
-	 *	@return	The optional String attribute PubKey.
-	 */
-	String getOptionalPubKey();
-
-	/**
-	 *	Set the optional String attribute PubKey.
-	 *
-	 *	@param value The optional String attribute PubKey value to be applied.
-	 */
-	void setOptionalPubKey(String value);
-
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

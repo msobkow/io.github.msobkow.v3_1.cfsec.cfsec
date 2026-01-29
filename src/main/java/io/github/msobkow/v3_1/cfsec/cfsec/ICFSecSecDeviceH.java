@@ -80,8 +80,6 @@ public interface ICFSecSecDeviceH
 	public String getRequiredDevName();
 	public void setRequiredDevName( String requiredDevName );
 
-	public String getOptionalPubKey();
-	public void setOptionalPubKey( String value );
 	@Override
 	public boolean equals( Object obj );
 

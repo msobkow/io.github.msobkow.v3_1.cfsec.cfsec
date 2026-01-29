@@ -393,11 +393,6 @@ public class CFSecSecDeviceObj
 	}
 
 	@Override
-	public String getOptionalPubKey() {
-		return( getSecDeviceRec().getOptionalPubKey() );
-	}
-
-	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredContainerSecUser(getPKey().getRequiredContainerSecUser());
