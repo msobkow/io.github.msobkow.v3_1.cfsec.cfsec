@@ -146,28 +146,6 @@ public interface ICFSecSecUserTable
 	 */
 	void deleteSecUserByPwdResetIdx( ICFSecAuthorization Authorization,
 		ICFSecSecUserByPwdResetIdxKey argKey );
-	/**
-	 *	Delete the SecUser instances identified by the key DefDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 */
-	void deleteSecUserByDefDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDfltDevUserId,
-		String argDfltDevName );
-
-	/**
-	 *	Delete the SecUser instances identified by the key DefDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	void deleteSecUserByDefDevIdx( ICFSecAuthorization Authorization,
-		ICFSecSecUserByDefDevIdxKey argKey );
 
 
 	/**
@@ -254,21 +232,6 @@ public interface ICFSecSecUserTable
 	 */
 	ICFSecSecUser[] readDerivedByPwdResetIdx( ICFSecAuthorization Authorization,
 		CFLibUuid6 PasswordResetUuid6 );
-
-	/**
-	 *	Read an array of the derived SecUser record instances identified by the duplicate key DefDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
-	 */
-	ICFSecSecUser[] readDerivedByDefDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the primary key.
@@ -378,23 +341,6 @@ public interface ICFSecSecUserTable
 		CFLibUuid6 PasswordResetUuid6 );
 
 	/**
-	 *	Read an array of the specific SecUser record instances identified by the duplicate key DefDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecUser[] readRecByDefDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
-
-	/**
 	 *	Read a page array of the specific SecUser record instances identified by the duplicate key EMConfIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -422,23 +368,5 @@ public interface ICFSecSecUserTable
 	 */
 	ICFSecSecUser[] pageRecByPwdResetIdx( ICFSecAuthorization Authorization,
 		CFLibUuid6 PasswordResetUuid6,
-		CFLibDbKeyHash256 priorSecUserId );
-
-	/**
-	 *	Read a page array of the specific SecUser record instances identified by the duplicate key DefDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecUser[] pageRecByDefDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName,
 		CFLibDbKeyHash256 priorSecUserId );
 }

@@ -105,20 +105,6 @@ public interface ICFSecSecSessionEditObj
 	void setRequiredSecUserId(CFLibDbKeyHash256 value);
 
 	/**
-	 *	Get the optional String attribute SecDevName.
-	 *
-	 *	@return	The optional String attribute SecDevName.
-	 */
-	String getOptionalSecDevName();
-
-	/**
-	 *	Set the optional String attribute SecDevName.
-	 *
-	 *	@param value The optional String attribute SecDevName value to be applied.
-	 */
-	void setOptionalSecDevName(String value);
-
-	/**
 	 *	Get the required LocalDateTime attribute Start.
 	 *
 	 *	@return	The required LocalDateTime attribute Start.

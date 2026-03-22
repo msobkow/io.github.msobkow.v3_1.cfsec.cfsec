@@ -213,60 +213,18 @@ public interface ICFSecSecUserObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the array of optional ICFSecSecDeviceObj array of instances referenced by the SecDev key.
+	 *	Get the array of optional ICFSecSecSysGrpMembObj array of instances referenced by the SysSecGrpMemb key.
 	 *
-	 *	@return	The optional ICFSecSecDeviceObj[] array of instances referenced by the SecDev key.
+	 *	@return	The optional ICFSecSecSysGrpMembObj[] array of instances referenced by the SysSecGrpMemb key.
 	 */
-	List<ICFSecSecDeviceObj> getOptionalComponentsSecDev();
+	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb();
 
 	/**
-	 *	Get the array of optional ICFSecSecDeviceObj array of instances referenced by the SecDev key.
+	 *	Get the array of optional ICFSecSecSysGrpMembObj array of instances referenced by the SysSecGrpMemb key.
 	 *
-	 *	@return	The optional ICFSecSecDeviceObj[] array of instances referenced by the SecDev key.
+	 *	@return	The optional ICFSecSecSysGrpMembObj[] array of instances referenced by the SysSecGrpMemb key.
 	 */
-	List<ICFSecSecDeviceObj> getOptionalComponentsSecDev( boolean forceRead );
-
-	/**
-	 *	Get the optional ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@return	The optional ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 */
-	ICFSecSecDeviceObj getOptionalLookupDefDev();
-
-	/**
-	 *	Get the optional ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@return	The optional ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 */
-	ICFSecSecDeviceObj getOptionalLookupDefDev( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecSecGrpMembObj array of instances referenced by the SecGrpMemb key.
-	 *
-	 *	@return	The optional ICFSecSecGrpMembObj[] array of instances referenced by the SecGrpMemb key.
-	 */
-	List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb();
-
-	/**
-	 *	Get the array of optional ICFSecSecGrpMembObj array of instances referenced by the SecGrpMemb key.
-	 *
-	 *	@return	The optional ICFSecSecGrpMembObj[] array of instances referenced by the SecGrpMemb key.
-	 */
-	List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecTSecGrpMembObj array of instances referenced by the TSecGrpMemb key.
-	 *
-	 *	@return	The optional ICFSecTSecGrpMembObj[] array of instances referenced by the TSecGrpMemb key.
-	 */
-	List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb();
-
-	/**
-	 *	Get the array of optional ICFSecTSecGrpMembObj array of instances referenced by the TSecGrpMemb key.
-	 *
-	 *	@return	The optional ICFSecTSecGrpMembObj[] array of instances referenced by the TSecGrpMemb key.
-	 */
-	List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb( boolean forceRead );
+	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead );
 
 	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
@@ -283,6 +241,27 @@ public interface ICFSecSecUserObj
 	String getRequiredLoginId();
 
 	/**
+	 *	Get the required String attribute DfltSysGrpName.
+	 *
+	 *	@return	The required String attribute DfltSysGrpName.
+	 */
+	String getRequiredDfltSysGrpName();
+
+	/**
+	 *	Get the required String attribute DfltClusGrpName.
+	 *
+	 *	@return	The required String attribute DfltClusGrpName.
+	 */
+	String getRequiredDfltClusGrpName();
+
+	/**
+	 *	Get the required String attribute DfltTentGrpName.
+	 *
+	 *	@return	The required String attribute DfltTentGrpName.
+	 */
+	String getRequiredDfltTentGrpName();
+
+	/**
 	 *	Get the required String attribute EMailAddress.
 	 *
 	 *	@return	The required String attribute EMailAddress.
@@ -295,20 +274,6 @@ public interface ICFSecSecUserObj
 	 *	@return	The optional CFLibUuid6 attribute EMailConfirmUuid6.
 	 */
 	CFLibUuid6 getOptionalEMailConfirmUuid6();
-
-	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DfltDevUserId.
-	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DfltDevUserId.
-	 */
-	CFLibDbKeyHash256 getOptionalDfltDevUserId();
-
-	/**
-	 *	Get the optional String attribute DfltDevName.
-	 *
-	 *	@return	The optional String attribute DfltDevName.
-	 */
-	String getOptionalDfltDevName();
 
 	/**
 	 *	Get the required String attribute PasswordHash.

@@ -53,13 +53,6 @@ public interface ICFSecSecSessionFactory
 	public ICFSecSecSessionBySecUserIdxKey newBySecUserIdxKey();
 
 	/**
-	 *	Allocate a SecDevIdx key over SecSession instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecSecSessionBySecDevIdxKey newBySecDevIdxKey();
-
-	/**
 	 *	Allocate a StartIdx key over SecSession instances.
 	 *
 	 *	@return	The new instance.

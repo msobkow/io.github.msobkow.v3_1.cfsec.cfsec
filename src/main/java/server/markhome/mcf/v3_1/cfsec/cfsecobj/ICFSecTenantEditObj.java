@@ -119,11 +119,11 @@ public interface ICFSecTenantEditObj
 	void setRequiredContainerCluster( ICFSecClusterObj value );
 
 	/**
-	 *	Get a list ICFSecTSecGroupObj instances referenced by the TSecGroup key.
+	 *	Get a list ICFSecSecTentGrpObj instances referenced by the SecGroup key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecTSecGroupObj instances referenced by the TSecGroup key.
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpObj instances referenced by the SecGroup key.
 	 */
-	List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup();
+	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup();
 
 	/**
 	 *	Get the required CFLibDbKeyHash256 attribute Id.

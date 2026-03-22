@@ -105,13 +105,6 @@ public interface ICFSecClusterEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecHostNodeObj instances referenced by the HostNode key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecHostNodeObj instances referenced by the HostNode key.
-	 */
-	List<ICFSecHostNodeObj> getOptionalComponentsHostNode();
-
-	/**
 	 *	Get a list ICFSecTenantObj instances referenced by the Tenant key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecTenantObj instances referenced by the Tenant key.
@@ -119,11 +112,11 @@ public interface ICFSecClusterEditObj
 	List<ICFSecTenantObj> getOptionalComponentsTenant();
 
 	/**
-	 *	Get a list ICFSecSecGroupObj instances referenced by the SecGroup key.
+	 *	Get a list ICFSecSecClusGrpObj instances referenced by the SecGroup key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecGroupObj instances referenced by the SecGroup key.
+	 *	@return	The (potentially empty) list of ICFSecSecClusGrpObj instances referenced by the SecGroup key.
 	 */
-	List<ICFSecSecGroupObj> getOptionalComponentsSecGroup();
+	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
 
 	/**
 	 *	Get a list ICFSecSysClusterObj instances referenced by the SysCluster key.

@@ -251,6 +251,4 @@ public interface ICFSecClusterTableObj
 	 *	@param	Description	The Cluster key attribute of the instance generating the id.
 	 */
 	void deleteClusterByUDescrIdx(String Description );
-
-	ICFSecClusterObj getSystemCluster();
 }

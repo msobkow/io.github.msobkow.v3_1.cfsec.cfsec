@@ -48,21 +48,16 @@ public class CFSecSecUserObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecUser rec;
-	protected List<ICFSecSecDeviceObj> optionalComponentsSecDev;
-	protected ICFSecSecDeviceObj optionalLookupDefDev;
-	protected List<ICFSecSecGrpMembObj> optionalChildrenSecGrpMemb;
-	protected List<ICFSecTSecGrpMembObj> optionalChildrenTSecGrpMemb;
+	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
 
 	public CFSecSecUserObj() {
 		isNew = true;
-		optionalLookupDefDev = null;
 	}
 
 	public CFSecSecUserObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
-		optionalLookupDefDev = null;
 	}
 
 	@Override
@@ -142,10 +137,6 @@ public class CFSecSecUserObj
 		else {
 			nextName = objName;
 			remainingName = null;
-		}
-		if( subObj == null ) {
-			subObj = ((ICFSecSchemaObj)getSchema()).getSecDeviceTableObj().readSecDeviceByNameIdx( getRequiredSecUserId(),
-				nextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -269,7 +260,6 @@ public class CFSecSecUserObj
 		}
 		rec = value;
 		copyRecToPKey();
-		optionalLookupDefDev = null;
 	}
 
 	@Override
@@ -365,72 +355,17 @@ public class CFSecSecUserObj
 	}
 
 	@Override
-	public List<ICFSecSecDeviceObj> getOptionalComponentsSecDev() {
-		List<ICFSecSecDeviceObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecDeviceTableObj().readSecDeviceByUserIdx( getPKey(),
+	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb() {
+		List<ICFSecSecSysGrpMembObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecDeviceObj> getOptionalComponentsSecDev( boolean forceRead ) {
-		List<ICFSecSecDeviceObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecDeviceTableObj().readSecDeviceByUserIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public ICFSecSecDeviceObj getOptionalLookupDefDev() {
-		return( getOptionalLookupDefDev( false ) );
-	}
-
-	@Override
-	public ICFSecSecDeviceObj getOptionalLookupDefDev( boolean forceRead ) {
-		if( ( optionalLookupDefDev == null ) || forceRead ) {
-			boolean anyMissing = false;
-			if( getSecUserRec().getOptionalDfltDevUserId() == null ) {
-				anyMissing = true;
-			}
-			if( getSecUserRec().getOptionalDfltDevName() == null ) {
-				anyMissing = true;
-			}
-			if( ! anyMissing ) {
-				optionalLookupDefDev = ((ICFSecSchemaObj)getSchema()).getSecDeviceTableObj().readSecDeviceByIdIdx( getSecUserRec().getOptionalDfltDevUserId(),
-					getSecUserRec().getOptionalDfltDevName(), forceRead );
-			}
-		}
-		return( optionalLookupDefDev );
-	}
-
-	@Override
-	public List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb() {
-		List<ICFSecSecGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecGrpMembTableObj().readSecGrpMembByUserIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb( boolean forceRead ) {
-		List<ICFSecSecGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecGrpMembTableObj().readSecGrpMembByUserIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb() {
-		List<ICFSecTSecGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getTSecGrpMembTableObj().readTSecGrpMembByUserIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb( boolean forceRead ) {
-		List<ICFSecTSecGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getTSecGrpMembTableObj().readTSecGrpMembByUserIdx( getPKey(),
+	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead ) {
+		List<ICFSecSecSysGrpMembObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}
@@ -441,6 +376,21 @@ public class CFSecSecUserObj
 	}
 
 	@Override
+	public String getRequiredDfltSysGrpName() {
+		return( getSecUserRec().getRequiredDfltSysGrpName() );
+	}
+
+	@Override
+	public String getRequiredDfltClusGrpName() {
+		return( getSecUserRec().getRequiredDfltClusGrpName() );
+	}
+
+	@Override
+	public String getRequiredDfltTentGrpName() {
+		return( getSecUserRec().getRequiredDfltTentGrpName() );
+	}
+
+	@Override
 	public String getRequiredEMailAddress() {
 		return( getSecUserRec().getRequiredEMailAddress() );
 	}
@@ -448,16 +398,6 @@ public class CFSecSecUserObj
 	@Override
 	public CFLibUuid6 getOptionalEMailConfirmUuid6() {
 		return( getSecUserRec().getOptionalEMailConfirmUuid6() );
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getOptionalDfltDevUserId() {
-		return( getSecUserRec().getOptionalDfltDevUserId() );
-	}
-
-	@Override
-	public String getOptionalDfltDevName() {
-		return( getSecUserRec().getOptionalDfltDevName() );
 	}
 
 	@Override

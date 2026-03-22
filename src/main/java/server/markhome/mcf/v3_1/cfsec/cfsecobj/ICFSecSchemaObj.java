@@ -77,13 +77,6 @@ public interface ICFSecSchemaObj
 	ICFSecClusterTableObj getClusterTableObj();
 
 	/**
-	 *	Get the HostNode interface for the schema.
-	 *
-	 *	@return	The ICFSecHostNodeTableObj interface implementation for the schema.
-	 */
-	ICFSecHostNodeTableObj getHostNodeTableObj();
-
-	/**
 	 *	Get the ISOCcy interface for the schema.
 	 *
 	 *	@return	The ICFSecISOCcyTableObj interface implementation for the schema.
@@ -126,32 +119,25 @@ public interface ICFSecSchemaObj
 	ICFSecISOTZoneTableObj getISOTZoneTableObj();
 
 	/**
-	 *	Get the SecDevice interface for the schema.
+	 *	Get the SecClusGrp interface for the schema.
 	 *
-	 *	@return	The ICFSecSecDeviceTableObj interface implementation for the schema.
+	 *	@return	The ICFSecSecClusGrpTableObj interface implementation for the schema.
 	 */
-	ICFSecSecDeviceTableObj getSecDeviceTableObj();
+	ICFSecSecClusGrpTableObj getSecClusGrpTableObj();
 
 	/**
-	 *	Get the SecGroup interface for the schema.
+	 *	Get the SecClusGrpInc interface for the schema.
 	 *
-	 *	@return	The ICFSecSecGroupTableObj interface implementation for the schema.
+	 *	@return	The ICFSecSecClusGrpIncTableObj interface implementation for the schema.
 	 */
-	ICFSecSecGroupTableObj getSecGroupTableObj();
+	ICFSecSecClusGrpIncTableObj getSecClusGrpIncTableObj();
 
 	/**
-	 *	Get the SecGrpInc interface for the schema.
+	 *	Get the SecClusGrpMemb interface for the schema.
 	 *
-	 *	@return	The ICFSecSecGrpIncTableObj interface implementation for the schema.
+	 *	@return	The ICFSecSecClusGrpMembTableObj interface implementation for the schema.
 	 */
-	ICFSecSecGrpIncTableObj getSecGrpIncTableObj();
-
-	/**
-	 *	Get the SecGrpMemb interface for the schema.
-	 *
-	 *	@return	The ICFSecSecGrpMembTableObj interface implementation for the schema.
-	 */
-	ICFSecSecGrpMembTableObj getSecGrpMembTableObj();
+	ICFSecSecClusGrpMembTableObj getSecClusGrpMembTableObj();
 
 	/**
 	 *	Get the SecSession interface for the schema.
@@ -161,6 +147,48 @@ public interface ICFSecSchemaObj
 	ICFSecSecSessionTableObj getSecSessionTableObj();
 
 	/**
+	 *	Get the SecSysGrp interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysGrpTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysGrpTableObj getSecSysGrpTableObj();
+
+	/**
+	 *	Get the SecSysGrpInc interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysGrpIncTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysGrpIncTableObj getSecSysGrpIncTableObj();
+
+	/**
+	 *	Get the SecSysGrpMemb interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysGrpMembTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysGrpMembTableObj getSecSysGrpMembTableObj();
+
+	/**
+	 *	Get the SecTentGrp interface for the schema.
+	 *
+	 *	@return	The ICFSecSecTentGrpTableObj interface implementation for the schema.
+	 */
+	ICFSecSecTentGrpTableObj getSecTentGrpTableObj();
+
+	/**
+	 *	Get the SecTentGrpInc interface for the schema.
+	 *
+	 *	@return	The ICFSecSecTentGrpIncTableObj interface implementation for the schema.
+	 */
+	ICFSecSecTentGrpIncTableObj getSecTentGrpIncTableObj();
+
+	/**
+	 *	Get the SecTentGrpMemb interface for the schema.
+	 *
+	 *	@return	The ICFSecSecTentGrpMembTableObj interface implementation for the schema.
+	 */
+	ICFSecSecTentGrpMembTableObj getSecTentGrpMembTableObj();
+
+	/**
 	 *	Get the SecUser interface for the schema.
 	 *
 	 *	@return	The ICFSecSecUserTableObj interface implementation for the schema.
@@ -168,18 +196,18 @@ public interface ICFSecSchemaObj
 	ICFSecSecUserTableObj getSecUserTableObj();
 
 	/**
-	 *	Get the Service interface for the schema.
+	 *	Get the SecUserPWHistory interface for the schema.
 	 *
-	 *	@return	The ICFSecServiceTableObj interface implementation for the schema.
+	 *	@return	The ICFSecSecUserPWHistoryTableObj interface implementation for the schema.
 	 */
-	ICFSecServiceTableObj getServiceTableObj();
+	ICFSecSecUserPWHistoryTableObj getSecUserPWHistoryTableObj();
 
 	/**
-	 *	Get the ServiceType interface for the schema.
+	 *	Get the SecUserPassword interface for the schema.
 	 *
-	 *	@return	The ICFSecServiceTypeTableObj interface implementation for the schema.
+	 *	@return	The ICFSecSecUserPasswordTableObj interface implementation for the schema.
 	 */
-	ICFSecServiceTypeTableObj getServiceTypeTableObj();
+	ICFSecSecUserPasswordTableObj getSecUserPasswordTableObj();
 
 	/**
 	 *	Get the SysCluster interface for the schema.
@@ -187,27 +215,6 @@ public interface ICFSecSchemaObj
 	 *	@return	The ICFSecSysClusterTableObj interface implementation for the schema.
 	 */
 	ICFSecSysClusterTableObj getSysClusterTableObj();
-
-	/**
-	 *	Get the TSecGroup interface for the schema.
-	 *
-	 *	@return	The ICFSecTSecGroupTableObj interface implementation for the schema.
-	 */
-	ICFSecTSecGroupTableObj getTSecGroupTableObj();
-
-	/**
-	 *	Get the TSecGrpInc interface for the schema.
-	 *
-	 *	@return	The ICFSecTSecGrpIncTableObj interface implementation for the schema.
-	 */
-	ICFSecTSecGrpIncTableObj getTSecGrpIncTableObj();
-
-	/**
-	 *	Get the TSecGrpMemb interface for the schema.
-	 *
-	 *	@return	The ICFSecTSecGrpMembTableObj interface implementation for the schema.
-	 */
-	ICFSecTSecGrpMembTableObj getTSecGrpMembTableObj();
 
 	/**
 	 *	Get the Tenant interface for the schema.

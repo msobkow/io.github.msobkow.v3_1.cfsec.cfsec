@@ -230,33 +230,6 @@ public interface ICFSecSecUserTableObj
 	List<ICFSecSecUserObj> readSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6,
 		boolean forceRead );
 
-	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate DefDevIdx key.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate DefDevIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> readSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
-
-	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate DefDevIdx key.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate DefDevIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> readSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName,
-		boolean forceRead );
-
 	ICFSecSecUserObj readCachedSecUserByIdIdx( CFLibDbKeyHash256 SecUserId );
 
 	ICFSecSecUserObj readCachedSecUserByULoginIdx( String LoginId );
@@ -265,9 +238,6 @@ public interface ICFSecSecUserTableObj
 
 	List<ICFSecSecUserObj> readCachedSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
 
-	List<ICFSecSecUserObj> readCachedSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
-
 	void deepDisposeSecUserByIdIdx( CFLibDbKeyHash256 SecUserId );
 
 	void deepDisposeSecUserByULoginIdx( String LoginId );
@@ -275,9 +245,6 @@ public interface ICFSecSecUserTableObj
 	void deepDisposeSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6 );
 
 	void deepDisposeSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
-
-	void deepDisposeSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
 
 	/**
 	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
@@ -301,21 +268,6 @@ public interface ICFSecSecUserTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	List<ICFSecSecUserObj> pageSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6,
-		CFLibDbKeyHash256 priorSecUserId );
-
-	/**
-	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate DefDevIdx key attributes.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	A List of SecUser-derived instances sorted by their primary keys,
-	 *		as identified by the key attributes, which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> pageSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName,
 		CFLibDbKeyHash256 priorSecUserId );
 
 	/**
@@ -355,16 +307,4 @@ public interface ICFSecSecUserTableObj
 	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
 	 */
 	void deleteSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
-
-	/**
-	 *	Internal use only.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 */
-	void deleteSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName );
-
-	ICFSecSecUserObj getSystemUser();
 }

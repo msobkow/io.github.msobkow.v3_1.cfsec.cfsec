@@ -105,39 +105,11 @@ public interface ICFSecSecUserEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecSecDeviceObj instances referenced by the SecDev key.
+	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecDeviceObj instances referenced by the SecDev key.
+	 *	@return	The (potentially empty) list of ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 */
-	List<ICFSecSecDeviceObj> getOptionalComponentsSecDev();
-
-	/**
-	 *	Get the ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@return	The ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 */
-	ICFSecSecDeviceObj getOptionalLookupDefDev();
-
-	/**
-	 *	Set the ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@param	value	the ICFSecSecDeviceObj instance to be referenced by the DefDev key.
-	 */
-	void setOptionalLookupDefDev( ICFSecSecDeviceObj value );
-
-	/**
-	 *	Get a list ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.
-	 */
-	List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb();
-
-	/**
-	 *	Get a list ICFSecTSecGrpMembObj instances referenced by the TSecGrpMemb key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecTSecGrpMembObj instances referenced by the TSecGrpMemb key.
-	 */
-	List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb();
+	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb();
 
 	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
@@ -168,6 +140,48 @@ public interface ICFSecSecUserEditObj
 	void setRequiredLoginId(String value);
 
 	/**
+	 *	Get the required String attribute DfltSysGrpName.
+	 *
+	 *	@return	The required String attribute DfltSysGrpName.
+	 */
+	String getRequiredDfltSysGrpName();
+
+	/**
+	 *	Set the required String attribute DfltSysGrpName.
+	 *
+	 *	@param value The required String attribute DfltSysGrpName value to be applied.
+	 */
+	void setRequiredDfltSysGrpName(String value);
+
+	/**
+	 *	Get the required String attribute DfltClusGrpName.
+	 *
+	 *	@return	The required String attribute DfltClusGrpName.
+	 */
+	String getRequiredDfltClusGrpName();
+
+	/**
+	 *	Set the required String attribute DfltClusGrpName.
+	 *
+	 *	@param value The required String attribute DfltClusGrpName value to be applied.
+	 */
+	void setRequiredDfltClusGrpName(String value);
+
+	/**
+	 *	Get the required String attribute DfltTentGrpName.
+	 *
+	 *	@return	The required String attribute DfltTentGrpName.
+	 */
+	String getRequiredDfltTentGrpName();
+
+	/**
+	 *	Set the required String attribute DfltTentGrpName.
+	 *
+	 *	@param value The required String attribute DfltTentGrpName value to be applied.
+	 */
+	void setRequiredDfltTentGrpName(String value);
+
+	/**
 	 *	Get the required String attribute EMailAddress.
 	 *
 	 *	@return	The required String attribute EMailAddress.
@@ -194,20 +208,6 @@ public interface ICFSecSecUserEditObj
 	 *	@param value The optional CFLibUuid6 attribute EMailConfirmUuid6 value to be applied.
 	 */
 	void setOptionalEMailConfirmUuid6(CFLibUuid6 value);
-
-	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DfltDevUserId.
-	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DfltDevUserId.
-	 */
-	CFLibDbKeyHash256 getOptionalDfltDevUserId();
-
-	/**
-	 *	Get the optional String attribute DfltDevName.
-	 *
-	 *	@return	The optional String attribute DfltDevName.
-	 */
-	String getOptionalDfltDevName();
 
 	/**
 	 *	Get the required String attribute PasswordHash.

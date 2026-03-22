@@ -48,9 +48,8 @@ public class CFSecClusterObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecCluster rec;
-	protected List<ICFSecHostNodeObj> optionalComponentsHostNode;
 	protected List<ICFSecTenantObj> optionalComponentsTenant;
-	protected List<ICFSecSecGroupObj> optionalComponentsSecGroup;
+	protected List<ICFSecSecClusGrpObj> optionalComponentsSecGroup;
 	protected List<ICFSecSysClusterObj> optionalComponentsSysCluster;
 
 	public CFSecClusterObj() {
@@ -142,15 +141,11 @@ public class CFSecClusterObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			subObj = ((ICFSecSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByHostNameIdx( getRequiredId(),
-				nextName, false );
-		}
-		if( subObj == null ) {
 			subObj = ((ICFSecSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( subObj == null ) {
-			subObj = ((ICFSecSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByUNameIdx( getRequiredId(),
+			subObj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( remainingName == null ) {
@@ -370,22 +365,6 @@ public class CFSecClusterObj
 	}
 
 	@Override
-	public List<ICFSecHostNodeObj> getOptionalComponentsHostNode() {
-		List<ICFSecHostNodeObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecHostNodeObj> getOptionalComponentsHostNode( boolean forceRead ) {
-		List<ICFSecHostNodeObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
 	public List<ICFSecTenantObj> getOptionalComponentsTenant() {
 		List<ICFSecTenantObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getTenantTableObj().readTenantByClusterIdx( getPKey(),
@@ -402,17 +381,17 @@ public class CFSecClusterObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> getOptionalComponentsSecGroup() {
-		List<ICFSecSecGroupObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByClusterIdx( getPKey(),
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup() {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> getOptionalComponentsSecGroup( boolean forceRead ) {
-		List<ICFSecSecGroupObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByClusterIdx( getPKey(),
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

@@ -48,8 +48,8 @@ public interface ICFSecISOCtryCcy
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final short ISOCTRYID_INIT_VALUE = (short)0;
 	public static final short ISOCCYID_INIT_VALUE = (short)0;
-	public final static int CLASS_CODE = 0xa005;
-	public final static String S_CLASS_CODE = "a005";
+	public final static int CLASS_CODE = 0xa004;
+	public final static String S_CLASS_CODE = "a004";
 
 	public int getClassCode();
 

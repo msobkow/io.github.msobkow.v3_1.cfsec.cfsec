@@ -47,12 +47,12 @@ public interface ICFSecSecUser
 	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final String LOGINID_INIT_VALUE = new String( "" );
+	public static final String DFLTSYSGRPNAME_INIT_VALUE = new String( "" );
+	public static final String DFLTCLUSGRPNAME_INIT_VALUE = new String( "" );
+	public static final String DFLTTENTGRPNAME_INIT_VALUE = new String( "" );
 	public static final String EMAILADDRESS_INIT_VALUE = new String( "" );
-	public static final String S_DFLTDEVUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
-	public static final CFLibDbKeyHash256 DFLTDEVUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DFLTDEVUSERID_INIT_VALUE );
-	public static final String DFLTDEVNAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa011;
-	public final static String S_CLASS_CODE = "a011";
+	public final static int CLASS_CODE = 0xa012;
+	public final static String S_CLASS_CODE = "a012";
 
 	public int getClassCode();
 
@@ -68,26 +68,24 @@ public interface ICFSecSecUser
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	
-	public List<ICFSecSecDevice> getOptionalComponentsSecDev();
-	public List<ICFSecSecGrpMemb> getOptionalChildrenSecGrpMemb();
-	public List<ICFSecTSecGrpMemb> getOptionalChildrenTSecGrpMemb();
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecDevice getOptionalLookupDefDev();
-	public void setOptionalLookupDefDev(ICFSecSecDevice argObj);
-	public void setOptionalLookupDefDev(CFLibDbKeyHash256 argDfltDevUserId,
-		String argDfltDevName);
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
+	public String getRequiredDfltSysGrpName();
+	public void setRequiredDfltSysGrpName( String value );
+	public String getRequiredDfltClusGrpName();
+	public void setRequiredDfltClusGrpName( String value );
+	public String getRequiredDfltTentGrpName();
+	public void setRequiredDfltTentGrpName( String value );
 	public String getRequiredEMailAddress();
 	public void setRequiredEMailAddress( String value );
 	public CFLibUuid6 getOptionalEMailConfirmUuid6();
 	public void setOptionalEMailConfirmUuid6( CFLibUuid6 value );
-	public CFLibDbKeyHash256 getOptionalDfltDevUserId();
-	public String getOptionalDfltDevName();
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
 	public CFLibUuid6 getOptionalPasswordResetUuid6();

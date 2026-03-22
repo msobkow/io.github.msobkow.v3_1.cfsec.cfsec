@@ -274,6 +274,4 @@ public interface ICFSecTenantTableObj
 	 */
 	void deleteTenantByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String TenantName );
-
-	ICFSecTenantObj getSystemTenant();
 }

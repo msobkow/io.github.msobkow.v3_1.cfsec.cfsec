@@ -335,11 +335,6 @@ public class CFSecSecSessionObj
 	}
 
 	@Override
-	public String getOptionalSecDevName() {
-		return( getSecSessionRec().getOptionalSecDevName() );
-	}
-
-	@Override
 	public LocalDateTime getRequiredStart() {
 		return( getSecSessionRec().getRequiredStart() );
 	}

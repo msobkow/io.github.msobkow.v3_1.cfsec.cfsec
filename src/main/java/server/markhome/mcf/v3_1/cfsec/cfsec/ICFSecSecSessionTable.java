@@ -109,28 +109,6 @@ public interface ICFSecSecSessionTable
 	void deleteSecSessionBySecUserIdx( ICFSecAuthorization Authorization,
 		ICFSecSecSessionBySecUserIdxKey argKey );
 	/**
-	 *	Delete the SecSession instances identified by the key SecDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 */
-	void deleteSecSessionBySecDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSecUserId,
-		String argSecDevName );
-
-	/**
-	 *	Delete the SecSession instances identified by the key SecDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	void deleteSecSessionBySecDevIdx( ICFSecAuthorization Authorization,
-		ICFSecSecSessionBySecDevIdxKey argKey );
-	/**
 	 *	Delete the SecSession instances identified by the key StartIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -256,21 +234,6 @@ public interface ICFSecSecSessionTable
 		CFLibDbKeyHash256 SecUserId );
 
 	/**
-	 *	Read an array of the derived SecSession record instances identified by the duplicate key SecDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
-	 */
-	ICFSecSecSession[] readDerivedBySecDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
-
-	/**
 	 *	Read the derived SecSession record instance identified by the unique key StartIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -392,23 +355,6 @@ public interface ICFSecSecSessionTable
 		CFLibDbKeyHash256 SecUserId );
 
 	/**
-	 *	Read an array of the specific SecSession record instances identified by the duplicate key SecDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecSession[] readRecBySecDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
-
-	/**
 	 *	Read the specific SecSession record instance identified by the unique key StartIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -470,24 +416,6 @@ public interface ICFSecSecSessionTable
 	 */
 	ICFSecSecSession[] pageRecBySecUserIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 SecUserId,
-		CFLibDbKeyHash256 priorSecSessionId );
-
-	/**
-	 *	Read a page array of the specific SecSession record instances identified by the duplicate key SecDevIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecSession[] pageRecBySecDevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId,
-		String SecDevName,
 		CFLibDbKeyHash256 priorSecSessionId );
 
 	/**

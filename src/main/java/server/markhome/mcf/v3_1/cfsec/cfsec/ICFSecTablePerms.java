@@ -69,34 +69,6 @@ public interface ICFSecTablePerms
 	boolean allowDeleteCluster( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create HostNode instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateHostNode( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read HostNode instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadHostNode( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update HostNode instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateHostNode( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete HostNode instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteHostNode( CFSecAuthorization Authorization );
-
-	/**
 	 *	Is the session allowed to create ISOCcy instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -265,116 +237,88 @@ public interface ICFSecTablePerms
 	boolean allowDeleteISOTZone( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create SecDevice instances?
+	 *	Is the session allowed to create SecClusGrp instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowCreateSecDevice( CFSecAuthorization Authorization );
+	boolean allowCreateSecClusGrp( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to read SecDevice instances?
+	 *	Is the session allowed to read SecClusGrp instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowReadSecDevice( CFSecAuthorization Authorization );
+	boolean allowReadSecClusGrp( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to update SecDevice instances?
+	 *	Is the session allowed to update SecClusGrp instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowUpdateSecDevice( CFSecAuthorization Authorization );
+	boolean allowUpdateSecClusGrp( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to delete SecDevice instances?
+	 *	Is the session allowed to delete SecClusGrp instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowDeleteSecDevice( CFSecAuthorization Authorization );
+	boolean allowDeleteSecClusGrp( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create SecGroup instances?
+	 *	Is the session allowed to create SecClusGrpInc instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowCreateSecGroup( CFSecAuthorization Authorization );
+	boolean allowCreateSecClusGrpInc( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to read SecGroup instances?
+	 *	Is the session allowed to read SecClusGrpInc instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowReadSecGroup( CFSecAuthorization Authorization );
+	boolean allowReadSecClusGrpInc( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to update SecGroup instances?
+	 *	Is the session allowed to update SecClusGrpInc instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowUpdateSecGroup( CFSecAuthorization Authorization );
+	boolean allowUpdateSecClusGrpInc( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to delete SecGroup instances?
+	 *	Is the session allowed to delete SecClusGrpInc instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowDeleteSecGroup( CFSecAuthorization Authorization );
+	boolean allowDeleteSecClusGrpInc( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create SecGrpInc instances?
+	 *	Is the session allowed to create SecClusGrpMemb instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowCreateSecGrpInc( CFSecAuthorization Authorization );
+	boolean allowCreateSecClusGrpMemb( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to read SecGrpInc instances?
+	 *	Is the session allowed to read SecClusGrpMemb instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowReadSecGrpInc( CFSecAuthorization Authorization );
+	boolean allowReadSecClusGrpMemb( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to update SecGrpInc instances?
+	 *	Is the session allowed to update SecClusGrpMemb instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowUpdateSecGrpInc( CFSecAuthorization Authorization );
+	boolean allowUpdateSecClusGrpMemb( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to delete SecGrpInc instances?
+	 *	Is the session allowed to delete SecClusGrpMemb instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowDeleteSecGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create SecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecGrpMemb( CFSecAuthorization Authorization );
+	boolean allowDeleteSecClusGrpMemb( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SecSession instances?
@@ -405,6 +349,174 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSecSession( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create SecSysGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecSysGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecSysGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecTentGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecTentGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecTentGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecTentGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecTentGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecTentGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecTentGrp instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecTentGrp( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecTentGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecTentGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecTentGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecTentGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecTentGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecTentGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecTentGrpInc instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecTentGrpInc( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecTentGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecTentGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecTentGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecTentGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecTentGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecTentGrpMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecTentGrpMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecTentGrpMemb( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create SecUser instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -433,60 +545,60 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSecUser( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create Service instances?
+	 *	Is the session allowed to create SecUserPWHistory instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowCreateService( CFSecAuthorization Authorization );
+	boolean allowCreateSecUserPWHistory( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to read Service instances?
+	 *	Is the session allowed to read SecUserPWHistory instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowReadService( CFSecAuthorization Authorization );
+	boolean allowReadSecUserPWHistory( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to update Service instances?
+	 *	Is the session allowed to update SecUserPWHistory instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowUpdateService( CFSecAuthorization Authorization );
+	boolean allowUpdateSecUserPWHistory( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to delete Service instances?
+	 *	Is the session allowed to delete SecUserPWHistory instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowDeleteService( CFSecAuthorization Authorization );
+	boolean allowDeleteSecUserPWHistory( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create ServiceType instances?
+	 *	Is the session allowed to create SecUserPassword instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowCreateServiceType( CFSecAuthorization Authorization );
+	boolean allowCreateSecUserPassword( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to read ServiceType instances?
+	 *	Is the session allowed to read SecUserPassword instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowReadServiceType( CFSecAuthorization Authorization );
+	boolean allowReadSecUserPassword( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to update ServiceType instances?
+	 *	Is the session allowed to update SecUserPassword instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowUpdateServiceType( CFSecAuthorization Authorization );
+	boolean allowUpdateSecUserPassword( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to delete ServiceType instances?
+	 *	Is the session allowed to delete SecUserPassword instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 */
-	boolean allowDeleteServiceType( CFSecAuthorization Authorization );
+	boolean allowDeleteSecUserPassword( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SysCluster instances?
@@ -515,90 +627,6 @@ public interface ICFSecTablePerms
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteSysCluster( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create TSecGroup instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateTSecGroup( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read TSecGroup instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadTSecGroup( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update TSecGroup instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateTSecGroup( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete TSecGroup instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteTSecGroup( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create TSecGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateTSecGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read TSecGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadTSecGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update TSecGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateTSecGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete TSecGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteTSecGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create TSecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateTSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read TSecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadTSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update TSecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateTSecGrpMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete TSecGrpMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteTSecGrpMemb( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create Tenant instances?

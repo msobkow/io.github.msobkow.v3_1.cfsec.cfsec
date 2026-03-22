@@ -46,7 +46,7 @@ public class CFSecTenantEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredContainerCluster;
-	protected List<ICFSecTSecGroupObj> optionalComponentsTSecGroup;
+	protected List<ICFSecSecTentGrpObj> optionalComponentsSecGroup;
 
 	public CFSecTenantEditObj( ICFSecTenantObj argOrig ) {
 		orig = argOrig;
@@ -190,7 +190,7 @@ public class CFSecTenantEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			subObj = ((ICFSecSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByUNameIdx( getRequiredId(),
+			subObj = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( remainingName == null ) {
@@ -402,7 +402,7 @@ public class CFSecTenantEditObj
 		if (getPKey() != id) {
 			setPKey(id);
 			requiredContainerCluster = null;
-			optionalComponentsTSecGroup = null;
+			optionalComponentsSecGroup = null;
 		}
 	}
 
@@ -456,17 +456,17 @@ public class CFSecTenantEditObj
 	}
 
 	@Override
-	public List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup() {
-		List<ICFSecTSecGroupObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByTenantIdx( getPKey(),
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup() {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByTenantIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup( boolean forceRead ) {
-		List<ICFSecTSecGroupObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByTenantIdx( getPKey(),
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByTenantIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

@@ -74,13 +74,6 @@ public interface ICFSecSecUserFactory
 	public ICFSecSecUserByPwdResetIdxKey newByPwdResetIdxKey();
 
 	/**
-	 *	Allocate a DefDevIdx key over SecUser instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecSecUserByDefDevIdxKey newByDefDevIdxKey();
-
-	/**
 	 *	Allocate a SecUser interface implementation.
 	 *
 	 *	@return	The new instance.

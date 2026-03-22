@@ -45,8 +45,8 @@ public interface ICFSecSysCluster
 	public static final int SINGLETONID_INIT_VALUE = 1;
 	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa014;
-	public final static String S_CLASS_CODE = "a014";
+	public final static int CLASS_CODE = 0xa015;
+	public final static String S_CLASS_CODE = "a015";
 
 	public int getClassCode();
 

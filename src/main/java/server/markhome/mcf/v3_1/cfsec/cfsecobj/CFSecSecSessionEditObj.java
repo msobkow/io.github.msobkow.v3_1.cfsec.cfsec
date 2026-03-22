@@ -358,18 +358,6 @@ public class CFSecSecSessionEditObj
 	}
 
 	@Override
-	public String getOptionalSecDevName() {
-		return( getSecSessionRec().getOptionalSecDevName() );
-	}
-
-	@Override
-	public void setOptionalSecDevName( String value ) {
-		if( getSecSessionRec().getOptionalSecDevName() != value ) {
-			getSecSessionRec().setOptionalSecDevName( value );
-		}
-	}
-
-	@Override
 	public LocalDateTime getRequiredStart() {
 		return( getSecSessionRec().getRequiredStart() );
 	}

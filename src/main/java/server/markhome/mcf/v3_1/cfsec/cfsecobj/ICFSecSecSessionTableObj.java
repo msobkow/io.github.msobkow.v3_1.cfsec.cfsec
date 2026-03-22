@@ -189,33 +189,6 @@ public interface ICFSecSecSessionTableObj
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFSecSecSessionObj instances sorted by their primary keys for the duplicate SecDevIdx key.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecDevIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
-
-	/**
-	 *	Get the map of CFSecSecSessionObj instances sorted by their primary keys for the duplicate SecDevIdx key.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecDevIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName,
-		boolean forceRead );
-
-	/**
 	 *	Get the CFSecSecSessionObj instance for the unique StartIdx key.
 	 *
 	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
@@ -294,9 +267,6 @@ public interface ICFSecSecSessionTableObj
 
 	List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( CFLibDbKeyHash256 SecUserId );
 
-	List<ICFSecSecSessionObj> readCachedSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
-
 	ICFSecSecSessionObj readCachedSecSessionByStartIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Start );
 
@@ -308,9 +278,6 @@ public interface ICFSecSecSessionTableObj
 	void deepDisposeSecSessionByIdIdx( CFLibDbKeyHash256 SecSessionId );
 
 	void deepDisposeSecSessionBySecUserIdx( CFLibDbKeyHash256 SecUserId );
-
-	void deepDisposeSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
 
 	void deepDisposeSecSessionByStartIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Start );
@@ -330,21 +297,6 @@ public interface ICFSecSecSessionTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	List<ICFSecSecSessionObj> pageSecSessionBySecUserIdx( CFLibDbKeyHash256 SecUserId,
-		CFLibDbKeyHash256 priorSecSessionId );
-
-	/**
-	 *	Read a page of data as a List of SecSession-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate SecDevIdx key attributes.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return	A List of SecSession-derived instances sorted by their primary keys,
-	 *		as identified by the key attributes, which may be an empty set.
-	 */
-	List<ICFSecSecSessionObj> pageSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName,
 		CFLibDbKeyHash256 priorSecSessionId );
 
 	/**
@@ -403,16 +355,6 @@ public interface ICFSecSecSessionTableObj
 	 *
 	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
 	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 */
-	void deleteSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName );
-
-	/**
-	 *	Internal use only.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
 	 *	@param	Start	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionByStartIdx(CFLibDbKeyHash256 SecUserId,
@@ -434,6 +376,4 @@ public interface ICFSecSecSessionTableObj
 	 *	@param	SecProxyId	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionBySecProxyIdx( CFLibDbKeyHash256 SecProxyId );
-
-	ICFSecSecSessionObj getSystemSession();
 }

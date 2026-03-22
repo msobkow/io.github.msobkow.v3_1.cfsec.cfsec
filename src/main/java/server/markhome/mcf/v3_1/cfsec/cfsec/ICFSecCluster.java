@@ -65,9 +65,8 @@ public interface ICFSecCluster
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
 	
-	public List<ICFSecHostNode> getOptionalComponentsHostNode();
 	public List<ICFSecTenant> getOptionalComponentsTenant();
-	public List<ICFSecSecGroup> getOptionalComponentsSecGroup();
+	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );

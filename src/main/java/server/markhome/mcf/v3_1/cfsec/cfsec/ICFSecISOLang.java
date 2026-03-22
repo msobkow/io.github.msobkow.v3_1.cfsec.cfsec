@@ -49,8 +49,8 @@ public interface ICFSecISOLang
 	public static final String ISO6392CODE_INIT_VALUE = new String( "" );
 	public static final String ISO6391CODE_INIT_VALUE = new String( "" );
 	public static final String ENGLISHNAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa007;
-	public final static String S_CLASS_CODE = "a007";
+	public final static int CLASS_CODE = 0xa006;
+	public final static String S_CLASS_CODE = "a006";
 
 	public int getClassCode();
 

@@ -61,50 +61,52 @@ public class CFSecSchemaObj
 
 	protected ICFSecSchema cfsecBackingStore;
 	protected ICFSecClusterTableObj clusterTableObj;
-	protected ICFSecHostNodeTableObj hostNodeTableObj;
 	protected ICFSecISOCcyTableObj iSOCcyTableObj;
 	protected ICFSecISOCtryTableObj iSOCtryTableObj;
 	protected ICFSecISOCtryCcyTableObj iSOCtryCcyTableObj;
 	protected ICFSecISOCtryLangTableObj iSOCtryLangTableObj;
 	protected ICFSecISOLangTableObj iSOLangTableObj;
 	protected ICFSecISOTZoneTableObj iSOTZoneTableObj;
-	protected ICFSecSecDeviceTableObj secDeviceTableObj;
-	protected ICFSecSecGroupTableObj secGroupTableObj;
-	protected ICFSecSecGrpIncTableObj secGrpIncTableObj;
-	protected ICFSecSecGrpMembTableObj secGrpMembTableObj;
+	protected ICFSecSecClusGrpTableObj secClusGrpTableObj;
+	protected ICFSecSecClusGrpIncTableObj secClusGrpIncTableObj;
+	protected ICFSecSecClusGrpMembTableObj secClusGrpMembTableObj;
 	protected ICFSecSecSessionTableObj secSessionTableObj;
+	protected ICFSecSecSysGrpTableObj secSysGrpTableObj;
+	protected ICFSecSecSysGrpIncTableObj secSysGrpIncTableObj;
+	protected ICFSecSecSysGrpMembTableObj secSysGrpMembTableObj;
+	protected ICFSecSecTentGrpTableObj secTentGrpTableObj;
+	protected ICFSecSecTentGrpIncTableObj secTentGrpIncTableObj;
+	protected ICFSecSecTentGrpMembTableObj secTentGrpMembTableObj;
 	protected ICFSecSecUserTableObj secUserTableObj;
-	protected ICFSecServiceTableObj serviceTableObj;
-	protected ICFSecServiceTypeTableObj serviceTypeTableObj;
+	protected ICFSecSecUserPWHistoryTableObj secUserPWHistoryTableObj;
+	protected ICFSecSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFSecSysClusterTableObj sysClusterTableObj;
-	protected ICFSecTSecGroupTableObj tSecGroupTableObj;
-	protected ICFSecTSecGrpIncTableObj tSecGrpIncTableObj;
-	protected ICFSecTSecGrpMembTableObj tSecGrpMembTableObj;
 	protected ICFSecTenantTableObj tenantTableObj;
 
 	public CFSecSchemaObj() {
 
 		cfsecBackingStore = null;
 		clusterTableObj = new CFSecClusterTableObj( this );
-		hostNodeTableObj = new CFSecHostNodeTableObj( this );
 		iSOCcyTableObj = new CFSecISOCcyTableObj( this );
 		iSOCtryTableObj = new CFSecISOCtryTableObj( this );
 		iSOCtryCcyTableObj = new CFSecISOCtryCcyTableObj( this );
 		iSOCtryLangTableObj = new CFSecISOCtryLangTableObj( this );
 		iSOLangTableObj = new CFSecISOLangTableObj( this );
 		iSOTZoneTableObj = new CFSecISOTZoneTableObj( this );
-		secDeviceTableObj = new CFSecSecDeviceTableObj( this );
-		secGroupTableObj = new CFSecSecGroupTableObj( this );
-		secGrpIncTableObj = new CFSecSecGrpIncTableObj( this );
-		secGrpMembTableObj = new CFSecSecGrpMembTableObj( this );
+		secClusGrpTableObj = new CFSecSecClusGrpTableObj( this );
+		secClusGrpIncTableObj = new CFSecSecClusGrpIncTableObj( this );
+		secClusGrpMembTableObj = new CFSecSecClusGrpMembTableObj( this );
 		secSessionTableObj = new CFSecSecSessionTableObj( this );
+		secSysGrpTableObj = new CFSecSecSysGrpTableObj( this );
+		secSysGrpIncTableObj = new CFSecSecSysGrpIncTableObj( this );
+		secSysGrpMembTableObj = new CFSecSecSysGrpMembTableObj( this );
+		secTentGrpTableObj = new CFSecSecTentGrpTableObj( this );
+		secTentGrpIncTableObj = new CFSecSecTentGrpIncTableObj( this );
+		secTentGrpMembTableObj = new CFSecSecTentGrpMembTableObj( this );
 		secUserTableObj = new CFSecSecUserTableObj( this );
-		serviceTableObj = new CFSecServiceTableObj( this );
-		serviceTypeTableObj = new CFSecServiceTypeTableObj( this );
+		secUserPWHistoryTableObj = new CFSecSecUserPWHistoryTableObj( this );
+		secUserPasswordTableObj = new CFSecSecUserPasswordTableObj( this );
 		sysClusterTableObj = new CFSecSysClusterTableObj( this );
-		tSecGroupTableObj = new CFSecTSecGroupTableObj( this );
-		tSecGrpIncTableObj = new CFSecTSecGrpIncTableObj( this );
-		tSecGrpMembTableObj = new CFSecTSecGrpMembTableObj( this );
 		tenantTableObj = new CFSecTenantTableObj( this );
 		}
 
@@ -324,9 +326,6 @@ public class CFSecSchemaObj
 		if( clusterTableObj != null ) {
 			clusterTableObj.minimizeMemory();
 		}
-		if( hostNodeTableObj != null ) {
-			hostNodeTableObj.minimizeMemory();
-		}
 		if( iSOCcyTableObj != null ) {
 			iSOCcyTableObj.minimizeMemory();
 		}
@@ -345,41 +344,47 @@ public class CFSecSchemaObj
 		if( iSOTZoneTableObj != null ) {
 			iSOTZoneTableObj.minimizeMemory();
 		}
-		if( secDeviceTableObj != null ) {
-			secDeviceTableObj.minimizeMemory();
+		if( secClusGrpTableObj != null ) {
+			secClusGrpTableObj.minimizeMemory();
 		}
-		if( secGroupTableObj != null ) {
-			secGroupTableObj.minimizeMemory();
+		if( secClusGrpIncTableObj != null ) {
+			secClusGrpIncTableObj.minimizeMemory();
 		}
-		if( secGrpIncTableObj != null ) {
-			secGrpIncTableObj.minimizeMemory();
-		}
-		if( secGrpMembTableObj != null ) {
-			secGrpMembTableObj.minimizeMemory();
+		if( secClusGrpMembTableObj != null ) {
+			secClusGrpMembTableObj.minimizeMemory();
 		}
 		if( secSessionTableObj != null ) {
 			secSessionTableObj.minimizeMemory();
 		}
+		if( secSysGrpTableObj != null ) {
+			secSysGrpTableObj.minimizeMemory();
+		}
+		if( secSysGrpIncTableObj != null ) {
+			secSysGrpIncTableObj.minimizeMemory();
+		}
+		if( secSysGrpMembTableObj != null ) {
+			secSysGrpMembTableObj.minimizeMemory();
+		}
+		if( secTentGrpTableObj != null ) {
+			secTentGrpTableObj.minimizeMemory();
+		}
+		if( secTentGrpIncTableObj != null ) {
+			secTentGrpIncTableObj.minimizeMemory();
+		}
+		if( secTentGrpMembTableObj != null ) {
+			secTentGrpMembTableObj.minimizeMemory();
+		}
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
 		}
-		if( serviceTableObj != null ) {
-			serviceTableObj.minimizeMemory();
+		if( secUserPWHistoryTableObj != null ) {
+			secUserPWHistoryTableObj.minimizeMemory();
 		}
-		if( serviceTypeTableObj != null ) {
-			serviceTypeTableObj.minimizeMemory();
+		if( secUserPasswordTableObj != null ) {
+			secUserPasswordTableObj.minimizeMemory();
 		}
 		if( sysClusterTableObj != null ) {
 			sysClusterTableObj.minimizeMemory();
-		}
-		if( tSecGroupTableObj != null ) {
-			tSecGroupTableObj.minimizeMemory();
-		}
-		if( tSecGrpIncTableObj != null ) {
-			tSecGrpIncTableObj.minimizeMemory();
-		}
-		if( tSecGrpMembTableObj != null ) {
-			tSecGrpMembTableObj.minimizeMemory();
 		}
 		if( tenantTableObj != null ) {
 			tenantTableObj.minimizeMemory();
@@ -409,10 +414,6 @@ public class CFSecSchemaObj
 		return( clusterTableObj );
 	}
 
-	public ICFSecHostNodeTableObj getHostNodeTableObj() {
-		return( hostNodeTableObj );
-	}
-
 	public ICFSecISOCcyTableObj getISOCcyTableObj() {
 		return( iSOCcyTableObj );
 	}
@@ -437,52 +438,60 @@ public class CFSecSchemaObj
 		return( iSOTZoneTableObj );
 	}
 
-	public ICFSecSecDeviceTableObj getSecDeviceTableObj() {
-		return( secDeviceTableObj );
+	public ICFSecSecClusGrpTableObj getSecClusGrpTableObj() {
+		return( secClusGrpTableObj );
 	}
 
-	public ICFSecSecGroupTableObj getSecGroupTableObj() {
-		return( secGroupTableObj );
+	public ICFSecSecClusGrpIncTableObj getSecClusGrpIncTableObj() {
+		return( secClusGrpIncTableObj );
 	}
 
-	public ICFSecSecGrpIncTableObj getSecGrpIncTableObj() {
-		return( secGrpIncTableObj );
-	}
-
-	public ICFSecSecGrpMembTableObj getSecGrpMembTableObj() {
-		return( secGrpMembTableObj );
+	public ICFSecSecClusGrpMembTableObj getSecClusGrpMembTableObj() {
+		return( secClusGrpMembTableObj );
 	}
 
 	public ICFSecSecSessionTableObj getSecSessionTableObj() {
 		return( secSessionTableObj );
 	}
 
+	public ICFSecSecSysGrpTableObj getSecSysGrpTableObj() {
+		return( secSysGrpTableObj );
+	}
+
+	public ICFSecSecSysGrpIncTableObj getSecSysGrpIncTableObj() {
+		return( secSysGrpIncTableObj );
+	}
+
+	public ICFSecSecSysGrpMembTableObj getSecSysGrpMembTableObj() {
+		return( secSysGrpMembTableObj );
+	}
+
+	public ICFSecSecTentGrpTableObj getSecTentGrpTableObj() {
+		return( secTentGrpTableObj );
+	}
+
+	public ICFSecSecTentGrpIncTableObj getSecTentGrpIncTableObj() {
+		return( secTentGrpIncTableObj );
+	}
+
+	public ICFSecSecTentGrpMembTableObj getSecTentGrpMembTableObj() {
+		return( secTentGrpMembTableObj );
+	}
+
 	public ICFSecSecUserTableObj getSecUserTableObj() {
 		return( secUserTableObj );
 	}
 
-	public ICFSecServiceTableObj getServiceTableObj() {
-		return( serviceTableObj );
+	public ICFSecSecUserPWHistoryTableObj getSecUserPWHistoryTableObj() {
+		return( secUserPWHistoryTableObj );
 	}
 
-	public ICFSecServiceTypeTableObj getServiceTypeTableObj() {
-		return( serviceTypeTableObj );
+	public ICFSecSecUserPasswordTableObj getSecUserPasswordTableObj() {
+		return( secUserPasswordTableObj );
 	}
 
 	public ICFSecSysClusterTableObj getSysClusterTableObj() {
 		return( sysClusterTableObj );
-	}
-
-	public ICFSecTSecGroupTableObj getTSecGroupTableObj() {
-		return( tSecGroupTableObj );
-	}
-
-	public ICFSecTSecGrpIncTableObj getTSecGrpIncTableObj() {
-		return( tSecGrpIncTableObj );
-	}
-
-	public ICFSecTSecGrpMembTableObj getTSecGrpMembTableObj() {
-		return( tSecGrpMembTableObj );
 	}
 
 	public ICFSecTenantTableObj getTenantTableObj() {

@@ -51,8 +51,8 @@ public interface ICFSecISOCcy
 	public static final String ISOCODE_INIT_VALUE = new String( "" );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final short PRECIS_INIT_VALUE = (short)0;
-	public final static int CLASS_CODE = 0xa003;
-	public final static String S_CLASS_CODE = "a003";
+	public final static int CLASS_CODE = 0xa002;
+	public final static String S_CLASS_CODE = "a002";
 
 	public int getClassCode();
 

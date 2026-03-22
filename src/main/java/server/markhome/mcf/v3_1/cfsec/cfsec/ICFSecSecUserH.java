@@ -72,14 +72,16 @@ public interface ICFSecSecUserH
 
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
+	public String getRequiredDfltSysGrpName();
+	public void setRequiredDfltSysGrpName( String value );
+	public String getRequiredDfltClusGrpName();
+	public void setRequiredDfltClusGrpName( String value );
+	public String getRequiredDfltTentGrpName();
+	public void setRequiredDfltTentGrpName( String value );
 	public String getRequiredEMailAddress();
 	public void setRequiredEMailAddress( String value );
 	public CFLibUuid6 getOptionalEMailConfirmUuid6();
 	public void setOptionalEMailConfirmUuid6( CFLibUuid6 value );
-	public CFLibDbKeyHash256 getOptionalDfltDevUserId();
-	public void setOptionalDfltDevUserId( CFLibDbKeyHash256 value );
-	public String getOptionalDfltDevName();
-	public void setOptionalDfltDevName( String value );
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
 	public CFLibUuid6 getOptionalPasswordResetUuid6();
