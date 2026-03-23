@@ -36,6 +36,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 public class CFSecSecClusGrpIncEditObj
@@ -389,10 +390,10 @@ public class CFSecSecClusGrpIncEditObj
 	}
 
 	@Override
-	public void setRequiredSecClusGrpId(CFLibDbKeyHash256 secClusGrpId) {
-		if ((getPKey().getRequiredSecClusGrpId() != secClusGrpId ) || ( getSecClusGrpIncRec().getRequiredSecClusGrpId() != secClusGrpId )) {
-			getPKey().setRequiredSecClusGrpId(secClusGrpId);
-			getSecClusGrpIncRec().setRequiredSecClusGrpId( secClusGrpId );
+	public void setRequiredSecClusGrpId(CFLibDbKeyHash256 value) {
+		if ((getPKey().getRequiredSecClusGrpId() != value ) || ( getSecClusGrpIncRec().getRequiredSecClusGrpId() != value )) {
+			getPKey().setRequiredSecClusGrpId(value);
+			getSecClusGrpIncRec().setRequiredSecClusGrpId( value );
 		}
 	}
 
@@ -402,8 +403,8 @@ public class CFSecSecClusGrpIncEditObj
 	}
 
 	@Override
-	public void setRequiredIncName(String incName) {
-		getPKey().setRequiredIncName(incName);
+	public void setRequiredIncName(String value) {
+		getPKey().setRequiredIncName(value);
 		if( getSecClusGrpIncRec().getRequiredIncName() != value ) {
 			getSecClusGrpIncRec().setRequiredIncName( value );
 		}

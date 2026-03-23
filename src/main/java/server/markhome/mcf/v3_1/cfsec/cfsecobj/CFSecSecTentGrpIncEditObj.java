@@ -36,6 +36,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 public class CFSecSecTentGrpIncEditObj
@@ -389,10 +390,10 @@ public class CFSecSecTentGrpIncEditObj
 	}
 
 	@Override
-	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 secTentGrpId) {
-		if ((getPKey().getRequiredSecTentGrpId() != secTentGrpId ) || ( getSecTentGrpIncRec().getRequiredSecTentGrpId() != secTentGrpId )) {
-			getPKey().setRequiredSecTentGrpId(secTentGrpId);
-			getSecTentGrpIncRec().setRequiredSecTentGrpId( secTentGrpId );
+	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
+		if ((getPKey().getRequiredSecTentGrpId() != value ) || ( getSecTentGrpIncRec().getRequiredSecTentGrpId() != value )) {
+			getPKey().setRequiredSecTentGrpId(value);
+			getSecTentGrpIncRec().setRequiredSecTentGrpId( value );
 		}
 	}
 
@@ -402,8 +403,8 @@ public class CFSecSecTentGrpIncEditObj
 	}
 
 	@Override
-	public void setRequiredIncName(String incName) {
-		getPKey().setRequiredIncName(incName);
+	public void setRequiredIncName(String value) {
+		getPKey().setRequiredIncName(value);
 		if( getSecTentGrpIncRec().getRequiredIncName() != value ) {
 			getSecTentGrpIncRec().setRequiredIncName( value );
 		}

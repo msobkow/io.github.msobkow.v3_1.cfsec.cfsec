@@ -193,6 +193,7 @@ public interface ICFSecSchema
 	}
 
 	public enum SecLevelEnum {
+		Global,
 		System,
 		Cluster,
 		Tenant
@@ -208,6 +209,7 @@ public interface ICFSecSchema
 	public static SecLevelEnum parseSecLevelEnum( String fieldOrClassName, String value ) {
 		final String S_ProcName = "parseSecLevelEnum";
 		if( lookupSecLevelEnum.isEmpty() ) {
+			lookupSecLevelEnum.put( "Global", SecLevelEnum.Global );
 			lookupSecLevelEnum.put( "System", SecLevelEnum.System );
 			lookupSecLevelEnum.put( "Cluster", SecLevelEnum.Cluster );
 			lookupSecLevelEnum.put( "Tenant", SecLevelEnum.Tenant );
@@ -269,6 +271,7 @@ public interface ICFSecSchema
 	public static SecLevelEnum ordinalToSecLevelEnum( String fieldOrClassName, Integer value ) {
 		final String S_ProcName = "ordinalToSecLevelEnum";
 		if( lookupOrdinalSecLevelEnum.isEmpty() ) {
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Global.ordinal() ), SecLevelEnum.Global );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.System.ordinal() ), SecLevelEnum.System );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Cluster.ordinal() ), SecLevelEnum.Cluster );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Tenant.ordinal() ), SecLevelEnum.Tenant );

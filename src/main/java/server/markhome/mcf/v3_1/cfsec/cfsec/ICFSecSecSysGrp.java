@@ -40,7 +40,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecSysGrp
 {
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.System;
+	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.Global;
 	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecSchema.SecLevelEnum.Tenant;
         public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
