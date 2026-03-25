@@ -56,8 +56,8 @@ public interface ICFSecISOTZone
 	public static final short TZMINOFFSET_INIT_VALUE = (short)0;
 	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
 	public final static boolean VISIBLE_INIT_VALUE = true;
-	public final static int CLASS_CODE = 0xa007;
-	public final static String S_CLASS_CODE = "a007";
+	public final static int CLASS_CODE = 0xa008;
+	public final static String S_CLASS_CODE = "a008";
 
 	public int getClassCode();
 

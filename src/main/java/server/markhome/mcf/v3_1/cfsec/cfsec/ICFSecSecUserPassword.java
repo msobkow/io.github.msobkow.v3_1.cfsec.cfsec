@@ -43,8 +43,8 @@ public interface ICFSecSecUserPassword
 	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final LocalDateTime PWSETSTAMP_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
-	public final static int CLASS_CODE = 0xa013;
-	public final static String S_CLASS_CODE = "a013";
+	public final static int CLASS_CODE = 0xa00a;
+	public final static String S_CLASS_CODE = "a00a";
 
 	public int getClassCode();
 

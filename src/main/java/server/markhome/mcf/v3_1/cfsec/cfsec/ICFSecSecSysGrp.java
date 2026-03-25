@@ -40,7 +40,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecSysGrp
 {
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.Global;
+	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.System;
 	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecSchema.SecLevelEnum.Tenant;
         public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
@@ -50,8 +50,8 @@ public interface ICFSecSecSysGrp
 	public static final CFLibDbKeyHash256 SECSYSGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSYSGRPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final ICFSecSchema.SecLevelEnum SECLEVEL_INIT_VALUE = ICFSecSchema.ordinalToSecLevelEnum( 0 );
-	public final static int CLASS_CODE = 0xa008;
-	public final static String S_CLASS_CODE = "a008";
+	public final static int CLASS_CODE = 0xa00c;
+	public final static String S_CLASS_CODE = "a00c";
 
 	public int getClassCode();
 

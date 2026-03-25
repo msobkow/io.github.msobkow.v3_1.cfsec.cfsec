@@ -51,8 +51,8 @@ public interface ICFSecSecUser
 	public static final String DFLTCLUSGRPNAME_INIT_VALUE = new String( "" );
 	public static final String DFLTTENTGRPNAME_INIT_VALUE = new String( "" );
 	public static final String EMAILADDRESS_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa012;
-	public final static String S_CLASS_CODE = "a012";
+	public final static int CLASS_CODE = 0xa009;
+	public final static String S_CLASS_CODE = "a009";
 
 	public int getClassCode();
 

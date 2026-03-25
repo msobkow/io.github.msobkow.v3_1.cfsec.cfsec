@@ -44,8 +44,8 @@ public interface ICFSecSecUserPWHistory
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final LocalDateTime PWSETSTAMP_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	public static final LocalDateTime PWREPLACEDSTAMP_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
-	public final static int CLASS_CODE = 0xa014;
-	public final static String S_CLASS_CODE = "a014";
+	public final static int CLASS_CODE = 0xa00b;
+	public final static String S_CLASS_CODE = "a00b";
 
 	public int getClassCode();
 

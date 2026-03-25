@@ -47,8 +47,8 @@ public interface ICFSecSecTentGrpInc
 	public static final String S_SECTENTGRPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECTENTGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECTENTGRPID_INIT_VALUE );
 	public static final String INCLNAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa00f;
-	public final static String S_CLASS_CODE = "a00f";
+	public final static int CLASS_CODE = 0xa013;
+	public final static String S_CLASS_CODE = "a013";
 
 	public int getClassCode();
 

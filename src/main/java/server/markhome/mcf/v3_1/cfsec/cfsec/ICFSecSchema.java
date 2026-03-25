@@ -93,9 +93,10 @@ public interface ICFSecSchema
 		final static HashMap<Integer,ICFSecSchema.ClassMapEntry> mapRuntimeClassCodeToEntry = new HashMap<>();
 		final static AtomicReference<ICFSecSchema> backingCFSec = new AtomicReference<>();
 	public enum AuditActionEnum {
-		Create,
-		Update,
-		Delete
+		Created,
+		Updated,
+		Deleted,
+		Mutated
 	};
 
 	static HashMap<String,AuditActionEnum> lookupAuditActionEnum = new HashMap<String,AuditActionEnum>();
@@ -108,9 +109,10 @@ public interface ICFSecSchema
 	public static AuditActionEnum parseAuditActionEnum( String fieldOrClassName, String value ) {
 		final String S_ProcName = "parseAuditActionEnum";
 		if( lookupAuditActionEnum.isEmpty() ) {
-			lookupAuditActionEnum.put( "Create", AuditActionEnum.Create );
-			lookupAuditActionEnum.put( "Update", AuditActionEnum.Update );
-			lookupAuditActionEnum.put( "Delete", AuditActionEnum.Delete );
+			lookupAuditActionEnum.put( "Created", AuditActionEnum.Created );
+			lookupAuditActionEnum.put( "Updated", AuditActionEnum.Updated );
+			lookupAuditActionEnum.put( "Deleted", AuditActionEnum.Deleted );
+			lookupAuditActionEnum.put( "Mutated", AuditActionEnum.Mutated );
 		}
 		AuditActionEnum retval;
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
@@ -169,9 +171,10 @@ public interface ICFSecSchema
 	public static AuditActionEnum ordinalToAuditActionEnum( String fieldOrClassName, Integer value ) {
 		final String S_ProcName = "ordinalToAuditActionEnum";
 		if( lookupOrdinalAuditActionEnum.isEmpty() ) {
-			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Create.ordinal() ), AuditActionEnum.Create );
-			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Update.ordinal() ), AuditActionEnum.Update );
-			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Delete.ordinal() ), AuditActionEnum.Delete );
+			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Created.ordinal() ), AuditActionEnum.Created );
+			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Updated.ordinal() ), AuditActionEnum.Updated );
+			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Deleted.ordinal() ), AuditActionEnum.Deleted );
+			lookupOrdinalAuditActionEnum.put( Integer.valueOf( AuditActionEnum.Mutated.ordinal() ), AuditActionEnum.Mutated );
 		}
 		AuditActionEnum retval;
 		if( value == null ) {
@@ -193,8 +196,8 @@ public interface ICFSecSchema
 	}
 
 	public enum SecLevelEnum {
-		Global,
 		System,
+		Global,
 		Cluster,
 		Tenant
 	};
@@ -209,8 +212,8 @@ public interface ICFSecSchema
 	public static SecLevelEnum parseSecLevelEnum( String fieldOrClassName, String value ) {
 		final String S_ProcName = "parseSecLevelEnum";
 		if( lookupSecLevelEnum.isEmpty() ) {
-			lookupSecLevelEnum.put( "Global", SecLevelEnum.Global );
 			lookupSecLevelEnum.put( "System", SecLevelEnum.System );
+			lookupSecLevelEnum.put( "Global", SecLevelEnum.Global );
 			lookupSecLevelEnum.put( "Cluster", SecLevelEnum.Cluster );
 			lookupSecLevelEnum.put( "Tenant", SecLevelEnum.Tenant );
 		}
@@ -271,8 +274,8 @@ public interface ICFSecSchema
 	public static SecLevelEnum ordinalToSecLevelEnum( String fieldOrClassName, Integer value ) {
 		final String S_ProcName = "ordinalToSecLevelEnum";
 		if( lookupOrdinalSecLevelEnum.isEmpty() ) {
-			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Global.ordinal() ), SecLevelEnum.Global );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.System.ordinal() ), SecLevelEnum.System );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Global.ordinal() ), SecLevelEnum.Global );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Cluster.ordinal() ), SecLevelEnum.Cluster );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Tenant.ordinal() ), SecLevelEnum.Tenant );
 		}
@@ -392,6 +395,8 @@ public interface ICFSecSchema
 				ICFSecSchema.ClassMapEntry entry;
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "Cluster", ICFSecCluster.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "Tenant", ICFSecTenant.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "ISOCcy", ICFSecISOCcy.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "ISOCtry", ICFSecISOCtry.CLASS_CODE);
@@ -431,8 +436,6 @@ public interface ICFSecSchema
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSession", ICFSecSecSession.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SysCluster", ICFSecSysCluster.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "Tenant", ICFSecTenant.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				for( ICFSecSchema.ClassMapEntry cur: ICFSecSchema.entries) {
 					cur.setRuntimeClassCode(value++);
