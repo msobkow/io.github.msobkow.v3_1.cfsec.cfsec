@@ -70,8 +70,8 @@ public interface ICFSecSecClusGrpMembH
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 requiredSecClusGrpId );
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId );
+	public String getRequiredLoginId();
+	public void setRequiredLoginId( String requiredLoginId );
 
 	@Override
 	public boolean equals( Object obj );

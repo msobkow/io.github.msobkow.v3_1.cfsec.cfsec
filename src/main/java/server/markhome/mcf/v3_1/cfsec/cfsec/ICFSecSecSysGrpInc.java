@@ -46,7 +46,7 @@ public interface ICFSecSecSysGrpInc
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SECSYSGRPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECSYSGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSYSGRPID_INIT_VALUE );
-	public static final String INCNAME_INIT_VALUE = new String( "" );
+	public static final String INCLNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa009;
 	public final static String S_CLASS_CODE = "a009";
 
@@ -69,9 +69,9 @@ public interface ICFSecSecSysGrpInc
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
 	public ICFSecSecSysGrp getRequiredParentSubGroup();
 	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredParentSubGroup(String argIncName);
+	public void setRequiredParentSubGroup(String argInclName);
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
-	public String getRequiredIncName();
+	public String getRequiredInclName();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

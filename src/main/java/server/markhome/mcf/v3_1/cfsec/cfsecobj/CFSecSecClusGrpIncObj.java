@@ -78,7 +78,7 @@ public class CFSecSecClusGrpIncObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -207,14 +207,14 @@ public class CFSecSecClusGrpIncObj
 	@Override
 	public ICFSecSecClusGrpIncObj read() {
 		ICFSecSecClusGrpIncObj retobj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByIdIdx( getPKey().getRequiredSecClusGrpId(),
-			getPKey().getRequiredIncName(), false );
+			getPKey().getRequiredInclName(), false );
 		return( (ICFSecSecClusGrpIncObj)retobj );
 	}
 
 	@Override
 	public ICFSecSecClusGrpIncObj read( boolean forceRead ) {
 		ICFSecSecClusGrpIncObj retobj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByIdIdx( getPKey().getRequiredSecClusGrpId(),
-			getPKey().getRequiredIncName(), forceRead );
+			getPKey().getRequiredInclName(), forceRead );
 		return( (ICFSecSecClusGrpIncObj)retobj );
 	}
 
@@ -243,7 +243,7 @@ public class CFSecSecClusGrpIncObj
 				// Read the data rec via the backing store
 				rec = getSchema().getCFSecBackingStore().getTableSecClusGrpInc().readDerivedByIdIdx( ((ICFSecSchemaObj)getSchema()).getAuthorization(),
 						getPKey().getRequiredSecClusGrpId(),
-						getPKey().getRequiredIncName() );
+						getPKey().getRequiredInclName() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -361,15 +361,15 @@ public class CFSecSecClusGrpIncObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecClusGrpId(getPKey().getRequiredSecClusGrpId());
-			rec.getPKey().setRequiredIncName(getPKey().getRequiredIncName());
+			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -380,7 +380,7 @@ public class CFSecSecClusGrpIncObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecClusGrpId(rec.getPKey().getRequiredSecClusGrpId());
-			getPKey().setRequiredIncName(rec.getPKey().getRequiredIncName());
+			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
 		}
 	}
 }

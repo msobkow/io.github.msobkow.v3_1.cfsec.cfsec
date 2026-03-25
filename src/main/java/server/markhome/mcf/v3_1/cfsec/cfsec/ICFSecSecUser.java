@@ -68,12 +68,12 @@ public interface ICFSecSecUser
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	
-	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
 	public String getRequiredDfltSysGrpName();

@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecClusGrpMemb by UserIdx index key object
+// Description: Java 25 interface for a SecClusGrpMemb by LoginIdx index key object
 
 /*
  *	server.markhome.mcf.CFSec
@@ -38,10 +38,10 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFSecSecClusGrpMembByUserIdxKey
+public interface ICFSecSecClusGrpMembByLoginIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public String getRequiredLoginId();
+	public void setRequiredLoginId( String value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -40,15 +40,15 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 /**
  *	ICFSecSecClusGrpIncPKey primary key interface for SecClusGrpInc
  *		requiredSecClusGrpId	Required object attribute SecClusGrpId.
- *		requiredIncName	Required object attribute IncName.
+ *		requiredInclName	Required object attribute InclName.
  */
 public interface ICFSecSecClusGrpIncPKey
 {
 
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value );
-	public String getRequiredIncName();
-	public void setRequiredIncName( String value );
+	public String getRequiredInclName();
+	public void setRequiredInclName( String value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -67,11 +67,11 @@ public interface ICFSecSecSysGrpMembFactory
 	public ICFSecSecSysGrpMembBySysGrpIdxKey newBySysGrpIdxKey();
 
 	/**
-	 *	Allocate a UserIdx key over SecSysGrpMemb instances.
+	 *	Allocate a LoginIdx key over SecSysGrpMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFSecSecSysGrpMembByUserIdxKey newByUserIdxKey();
+	public ICFSecSecSysGrpMembByLoginIdxKey newByLoginIdxKey();
 
 	/**
 	 *	Allocate a SecSysGrpMemb interface implementation.

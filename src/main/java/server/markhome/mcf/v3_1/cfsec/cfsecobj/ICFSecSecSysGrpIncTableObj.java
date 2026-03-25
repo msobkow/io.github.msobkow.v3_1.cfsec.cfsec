@@ -116,7 +116,7 @@ public interface ICFSecSecSysGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecSysGrpIncObj readSecSysGrpInc( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Read a SecSysGrpInc-derived instance by it's primary key.
@@ -125,7 +125,7 @@ public interface ICFSecSecSysGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecSysGrpIncObj readSecSysGrpInc( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	ICFSecSecSysGrpIncObj readCachedSecSysGrpInc( ICFSecSecSysGrpIncPKey pkey );
@@ -164,33 +164,33 @@ public interface ICFSecSecSysGrpIncTableObj
 	 *		may include an empty set.
 	 */
 	List<ICFSecSecSysGrpIncObj> pageAllSecSysGrpInc(CFLibDbKeyHash256 priorSecSysGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Get the CFSecSecSysGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecSysGrpId	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecSysGrpIncObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Get the CFSecSecSysGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecSysGrpId	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecSysGrpIncObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	/**
@@ -217,37 +217,37 @@ public interface ICFSecSecSysGrpIncTableObj
 	/**
 	 *	Get the map of CFSecSecSysGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecSysGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpIncObj> readSecSysGrpIncByNameIdx( String IncName );
+	List<ICFSecSecSysGrpIncObj> readSecSysGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Get the map of CFSecSecSysGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecSysGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpIncObj> readSecSysGrpIncByNameIdx( String IncName,
+	List<ICFSecSecSysGrpIncObj> readSecSysGrpIncByNameIdx( String InclName,
 		boolean forceRead );
 
 	ICFSecSecSysGrpIncObj readCachedSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName );
+		String InclName );
 
 	List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId );
 
-	List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncByNameIdx( String IncName );
+	List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncByNameIdx( String InclName );
 
 	void deepDisposeSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName );
+		String InclName );
 
 	void deepDisposeSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId );
 
-	void deepDisposeSecSysGrpIncByNameIdx( String IncName );
+	void deepDisposeSecSysGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Read a page of data as a List of SecSysGrpInc-derived instances sorted by their primary keys,
@@ -260,20 +260,20 @@ public interface ICFSecSecSysGrpIncTableObj
 	 */
 	List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId,
 		CFLibDbKeyHash256 priorSecSysGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Read a page of data as a List of SecSysGrpInc-derived instances sorted by their primary keys,
 	 *	as identified by the duplicate NameIdx key attributes.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecSysGrpInc-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncByNameIdx( String IncName,
+	List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncByNameIdx( String InclName,
 		CFLibDbKeyHash256 priorSecSysGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Internal use only.
@@ -290,10 +290,10 @@ public interface ICFSecSecSysGrpIncTableObj
 	 *
 	 *	@param	SecSysGrpId	The SecSysGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Internal use only.
@@ -305,7 +305,7 @@ public interface ICFSecSecSysGrpIncTableObj
 	/**
 	 *	Internal use only.
 	 *
-	 *	@param	IncName	The SecSysGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpIncByNameIdx( String IncName );
+	void deleteSecSysGrpIncByNameIdx( String InclName );
 }

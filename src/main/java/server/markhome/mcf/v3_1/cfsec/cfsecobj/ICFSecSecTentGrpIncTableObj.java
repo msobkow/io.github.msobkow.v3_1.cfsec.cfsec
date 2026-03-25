@@ -116,7 +116,7 @@ public interface ICFSecSecTentGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecTentGrpIncObj readSecTentGrpInc( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Read a SecTentGrpInc-derived instance by it's primary key.
@@ -125,7 +125,7 @@ public interface ICFSecSecTentGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecTentGrpIncObj readSecTentGrpInc( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	ICFSecSecTentGrpIncObj readCachedSecTentGrpInc( ICFSecSecTentGrpIncPKey pkey );
@@ -164,33 +164,33 @@ public interface ICFSecSecTentGrpIncTableObj
 	 *		may include an empty set.
 	 */
 	List<ICFSecSecTentGrpIncObj> pageAllSecTentGrpInc(CFLibDbKeyHash256 priorSecTentGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Get the CFSecSecTentGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecTentGrpId	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecTentGrpIncObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecTentGrpIncObj readSecTentGrpIncByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Get the CFSecSecTentGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecTentGrpId	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecTentGrpIncObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecTentGrpIncObj readSecTentGrpIncByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	/**
@@ -217,37 +217,37 @@ public interface ICFSecSecTentGrpIncTableObj
 	/**
 	 *	Get the map of CFSecSecTentGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecTentGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecTentGrpIncObj> readSecTentGrpIncByNameIdx( String IncName );
+	List<ICFSecSecTentGrpIncObj> readSecTentGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Get the map of CFSecSecTentGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecTentGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecTentGrpIncObj> readSecTentGrpIncByNameIdx( String IncName,
+	List<ICFSecSecTentGrpIncObj> readSecTentGrpIncByNameIdx( String InclName,
 		boolean forceRead );
 
 	ICFSecSecTentGrpIncObj readCachedSecTentGrpIncByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName );
+		String InclName );
 
 	List<ICFSecSecTentGrpIncObj> readCachedSecTentGrpIncByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId );
 
-	List<ICFSecSecTentGrpIncObj> readCachedSecTentGrpIncByNameIdx( String IncName );
+	List<ICFSecSecTentGrpIncObj> readCachedSecTentGrpIncByNameIdx( String InclName );
 
 	void deepDisposeSecTentGrpIncByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName );
+		String InclName );
 
 	void deepDisposeSecTentGrpIncByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId );
 
-	void deepDisposeSecTentGrpIncByNameIdx( String IncName );
+	void deepDisposeSecTentGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Read a page of data as a List of SecTentGrpInc-derived instances sorted by their primary keys,
@@ -260,20 +260,20 @@ public interface ICFSecSecTentGrpIncTableObj
 	 */
 	List<ICFSecSecTentGrpIncObj> pageSecTentGrpIncByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId,
 		CFLibDbKeyHash256 priorSecTentGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Read a page of data as a List of SecTentGrpInc-derived instances sorted by their primary keys,
 	 *	as identified by the duplicate NameIdx key attributes.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecTentGrpInc-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecTentGrpIncObj> pageSecTentGrpIncByNameIdx( String IncName,
+	List<ICFSecSecTentGrpIncObj> pageSecTentGrpIncByNameIdx( String InclName,
 		CFLibDbKeyHash256 priorSecTentGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Internal use only.
@@ -290,10 +290,10 @@ public interface ICFSecSecTentGrpIncTableObj
 	 *
 	 *	@param	SecTentGrpId	The SecTentGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpIncByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Internal use only.
@@ -305,7 +305,7 @@ public interface ICFSecSecTentGrpIncTableObj
 	/**
 	 *	Internal use only.
 	 *
-	 *	@param	IncName	The SecTentGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecTentGrpInc key attribute of the instance generating the id.
 	 */
-	void deleteSecTentGrpIncByNameIdx( String IncName );
+	void deleteSecTentGrpIncByNameIdx( String InclName );
 }

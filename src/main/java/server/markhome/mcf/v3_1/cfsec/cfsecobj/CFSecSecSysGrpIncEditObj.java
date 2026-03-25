@@ -131,7 +131,7 @@ public class CFSecSecSysGrpIncEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -397,8 +397,8 @@ public class CFSecSecSysGrpIncEditObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
@@ -443,7 +443,7 @@ public class CFSecSecSysGrpIncEditObj
 		if( forceRead || ( requiredParentSubGroup == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				ICFSecSecSysGrpObj obj = ((ICFSecSchemaObj)getOrigAsSecSysGrpInc().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredIncName() );
+				ICFSecSecSysGrpObj obj = ((ICFSecSchemaObj)getOrigAsSecSysGrpInc().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredInclName() );
 				requiredParentSubGroup = obj;
 			}
 		}

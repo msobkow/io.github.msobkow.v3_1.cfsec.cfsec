@@ -126,7 +126,7 @@ public class CFSecSecClusGrpIncEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -398,15 +398,15 @@ public class CFSecSecClusGrpIncEditObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
-	public void setRequiredIncName(String value) {
-		getPKey().setRequiredIncName(value);
-		if( getSecClusGrpIncRec().getRequiredIncName() != value ) {
-			getSecClusGrpIncRec().setRequiredIncName( value );
+	public void setRequiredInclName(String value) {
+		if ((getPKey().getRequiredInclName() != value ) || ( getSecClusGrpIncRec().getRequiredInclName() != value )) {
+			getPKey().setRequiredInclName(value);
+			getSecClusGrpIncRec().setRequiredInclName( value );
 		}
 	}
 
@@ -414,7 +414,7 @@ public class CFSecSecClusGrpIncEditObj
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecClusGrpId(getPKey().getRequiredSecClusGrpId());
-			rec.getPKey().setRequiredIncName(getPKey().getRequiredIncName());
+			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
 		}
 	}
 
@@ -422,7 +422,7 @@ public class CFSecSecClusGrpIncEditObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecClusGrpId(rec.getPKey().getRequiredSecClusGrpId());
-			getPKey().setRequiredIncName(rec.getPKey().getRequiredIncName());
+			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
 		}
 	}
 

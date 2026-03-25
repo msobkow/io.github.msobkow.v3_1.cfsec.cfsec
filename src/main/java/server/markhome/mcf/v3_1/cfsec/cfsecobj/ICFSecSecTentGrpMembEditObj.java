@@ -119,18 +119,18 @@ public interface ICFSecSecTentGrpMembEditObj
 	void setRequiredSecTentGrpId(CFLibDbKeyHash256 value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required String attribute LoginId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required String attribute LoginId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	String getRequiredLoginId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Set the required String attribute LoginId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecUserId value to be applied.
+	 *	@param value The required String attribute LoginId value to be applied.
 	 */
-	void setRequiredSecUserId(CFLibDbKeyHash256 value);
+	void setRequiredLoginId(String value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

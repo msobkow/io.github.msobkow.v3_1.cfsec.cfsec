@@ -131,13 +131,7 @@ public class CFSecSecSysGrpMembEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
-		if (val != null) {
-			objName = val.toString();
-		}
-		else {
-			objName = "";
-		}
+		objName = getRequiredLoginId();
 		return( objName );
 	}
 
@@ -403,8 +397,8 @@ public class CFSecSecSysGrpMembEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey().getRequiredSecUserId() );
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
@@ -449,7 +443,7 @@ public class CFSecSecSysGrpMembEditObj
 		if( forceRead || ( requiredParentUser == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				ICFSecSecUserObj obj = ((ICFSecSchemaObj)getOrigAsSecSysGrpMemb().getSchema()).getSecUserTableObj().readSecUserByIdIdx( getPKey().getRequiredSecUserId() );
+				ICFSecSecUserObj obj = ((ICFSecSchemaObj)getOrigAsSecSysGrpMemb().getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId() );
 				requiredParentUser = obj;
 			}
 		}

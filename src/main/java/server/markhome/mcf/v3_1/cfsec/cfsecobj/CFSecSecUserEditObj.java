@@ -394,7 +394,6 @@ public class CFSecSecUserEditObj
 	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
-			optionalChildrenSysSecGrpMemb = null;
 		}
 	}
 
@@ -407,6 +406,7 @@ public class CFSecSecUserEditObj
 	public void setRequiredLoginId( String value ) {
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
+			optionalChildrenSysSecGrpMemb = null;
 		}
 	}
 
@@ -497,7 +497,7 @@ public class CFSecSecUserEditObj
 	@Override
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb() {
 		List<ICFSecSecSysGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
 			false );
 		return( retval );
 	}
@@ -505,7 +505,7 @@ public class CFSecSecUserEditObj
 	@Override
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
 			forceRead );
 		return( retval );
 	}

@@ -41,7 +41,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 /**
  *	ICFSecSecSysGrpMembHPKey History Primary Key interface for SecSysGrpMemb
  *		requiredSecSysGrpId	Required object attribute SecSysGrpId.
- *		requiredSecUserId	Required object attribute SecUserId. */
+ *		requiredLoginId	Required object attribute LoginId. */
 public interface ICFSecSecSysGrpMembHPKey
 {
 
@@ -62,8 +62,8 @@ public interface ICFSecSecSysGrpMembHPKey
 
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public String getRequiredLoginId();
+	public void setRequiredLoginId( String value );
 	@Override
 	public boolean equals( Object obj );
 

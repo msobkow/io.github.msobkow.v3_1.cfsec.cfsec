@@ -404,6 +404,12 @@ public interface ICFSecSchema
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "ISOTZone", ICFSecISOTZone.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUser", ICFSecSecUser.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPassword", ICFSecSecUserPassword.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPWHistory", ICFSecSecUserPWHistory.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysGrp", ICFSecSecSysGrp.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysGrpInc", ICFSecSecSysGrpInc.CLASS_CODE);
@@ -423,12 +429,6 @@ public interface ICFSecSchema
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecTentGrpMemb", ICFSecSecTentGrpMemb.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSession", ICFSecSecSession.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUser", ICFSecSecUser.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPassword", ICFSecSecUserPassword.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPWHistory", ICFSecSecUserPWHistory.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SysCluster", ICFSecSysCluster.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);

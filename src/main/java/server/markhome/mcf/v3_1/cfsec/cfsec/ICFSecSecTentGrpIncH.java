@@ -70,8 +70,8 @@ public interface ICFSecSecTentGrpIncH
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 requiredSecTentGrpId );
 
-	public String getRequiredIncName();
-	public void setRequiredIncName( String requiredIncName );
+	public String getRequiredInclName();
+	public void setRequiredInclName( String requiredInclName );
 
 	@Override
 	public boolean equals( Object obj );

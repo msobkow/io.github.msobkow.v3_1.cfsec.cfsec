@@ -40,8 +40,8 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecTentGrpMembByUserIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public String getRequiredLoginId();
+	public void setRequiredLoginId( String value );
 	@Override
 	public boolean equals( Object obj );
 

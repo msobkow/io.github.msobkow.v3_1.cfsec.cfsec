@@ -46,8 +46,7 @@ public interface ICFSecSecSysGrpMemb
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SECSYSGRPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECSYSGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSYSGRPID_INIT_VALUE );
-	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
-	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
+	public static final String LOGINID_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa00a;
 	public final static String S_CLASS_CODE = "a00a";
 
@@ -70,9 +69,9 @@ public interface ICFSecSecSysGrpMemb
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
 	public ICFSecSecUser getRequiredParentUser();
 	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(CFLibDbKeyHash256 argSecUserId);
+	public void setRequiredParentUser(String argLoginId);
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
-	public CFLibDbKeyHash256 getRequiredSecUserId();
+	public String getRequiredLoginId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

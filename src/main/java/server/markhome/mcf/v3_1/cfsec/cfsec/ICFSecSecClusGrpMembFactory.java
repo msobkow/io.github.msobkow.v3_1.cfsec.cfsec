@@ -67,11 +67,11 @@ public interface ICFSecSecClusGrpMembFactory
 	public ICFSecSecClusGrpMembByClusGrpIdxKey newByClusGrpIdxKey();
 
 	/**
-	 *	Allocate a UserIdx key over SecClusGrpMemb instances.
+	 *	Allocate a LoginIdx key over SecClusGrpMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFSecSecClusGrpMembByUserIdxKey newByUserIdxKey();
+	public ICFSecSecClusGrpMembByLoginIdxKey newByLoginIdxKey();
 
 	/**
 	 *	Allocate a SecClusGrpMemb interface implementation.

@@ -40,8 +40,8 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecSysGrpIncByNameIdxKey
 {
-	public String getRequiredIncName();
-	public void setRequiredIncName( String value );
+	public String getRequiredInclName();
+	public void setRequiredInclName( String value );
 	@Override
 	public boolean equals( Object obj );
 

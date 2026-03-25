@@ -46,8 +46,7 @@ public interface ICFSecSecTentGrpMemb
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SECTENTGRPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECTENTGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECTENTGRPID_INIT_VALUE );
-	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
-	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
+	public static final String LOGINID_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa010;
 	public final static String S_CLASS_CODE = "a010";
 
@@ -67,8 +66,8 @@ public interface ICFSecSecTentGrpMemb
 	
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public String getRequiredLoginId();
+	public void setRequiredLoginId( String value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

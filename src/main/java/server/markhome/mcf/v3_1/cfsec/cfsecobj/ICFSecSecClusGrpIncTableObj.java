@@ -116,7 +116,7 @@ public interface ICFSecSecClusGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecClusGrpIncObj readSecClusGrpInc( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Read a SecClusGrpInc-derived instance by it's primary key.
@@ -125,7 +125,7 @@ public interface ICFSecSecClusGrpIncTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecClusGrpIncObj readSecClusGrpInc( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	ICFSecSecClusGrpIncObj readCachedSecClusGrpInc( ICFSecSecClusGrpIncPKey pkey );
@@ -164,33 +164,33 @@ public interface ICFSecSecClusGrpIncTableObj
 	 *		may include an empty set.
 	 */
 	List<ICFSecSecClusGrpIncObj> pageAllSecClusGrpInc(CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Get the CFSecSecClusGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecClusGrpIncObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecClusGrpIncObj readSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Get the CFSecSecClusGrpIncObj instance for the primary key attributes.
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecClusGrpIncObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecClusGrpIncObj readSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName,
+		String InclName,
 		boolean forceRead );
 
 	/**
@@ -217,37 +217,37 @@ public interface ICFSecSecClusGrpIncTableObj
 	/**
 	 *	Get the map of CFSecSecClusGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecClusGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String IncName );
+	List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Get the map of CFSecSecClusGrpIncObj instances sorted by their primary keys for the duplicate NameIdx key.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	List of CFSecSecClusGrpIncObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String IncName,
+	List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String InclName,
 		boolean forceRead );
 
 	ICFSecSecClusGrpIncObj readCachedSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName );
+		String InclName );
 
 	List<ICFSecSecClusGrpIncObj> readCachedSecClusGrpIncByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId );
 
-	List<ICFSecSecClusGrpIncObj> readCachedSecClusGrpIncByNameIdx( String IncName );
+	List<ICFSecSecClusGrpIncObj> readCachedSecClusGrpIncByNameIdx( String InclName );
 
 	void deepDisposeSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName );
+		String InclName );
 
 	void deepDisposeSecClusGrpIncByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId );
 
-	void deepDisposeSecClusGrpIncByNameIdx( String IncName );
+	void deepDisposeSecClusGrpIncByNameIdx( String InclName );
 
 	/**
 	 *	Read a page of data as a List of SecClusGrpInc-derived instances sorted by their primary keys,
@@ -260,20 +260,20 @@ public interface ICFSecSecClusGrpIncTableObj
 	 */
 	List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Read a page of data as a List of SecClusGrpInc-derived instances sorted by their primary keys,
 	 *	as identified by the duplicate NameIdx key attributes.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecClusGrpInc-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByNameIdx( String IncName,
+	List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByNameIdx( String InclName,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName );
+		String priorInclName );
 
 	/**
 	 *	Internal use only.
@@ -290,10 +290,10 @@ public interface ICFSecSecClusGrpIncTableObj
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName );
+		String InclName );
 
 	/**
 	 *	Internal use only.
@@ -305,7 +305,7 @@ public interface ICFSecSecClusGrpIncTableObj
 	/**
 	 *	Internal use only.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpIncByNameIdx( String IncName );
+	void deleteSecClusGrpIncByNameIdx( String InclName );
 }

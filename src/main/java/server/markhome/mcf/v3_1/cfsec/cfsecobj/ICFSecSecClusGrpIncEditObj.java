@@ -119,18 +119,18 @@ public interface ICFSecSecClusGrpIncEditObj
 	void setRequiredSecClusGrpId(CFLibDbKeyHash256 value);
 
 	/**
-	 *	Get the required String attribute IncName.
+	 *	Get the required String attribute InclName.
 	 *
-	 *	@return	The required String attribute IncName.
+	 *	@return	The required String attribute InclName.
 	 */
-	String getRequiredIncName();
+	String getRequiredInclName();
 
 	/**
-	 *	Set the required String attribute IncName.
+	 *	Set the required String attribute InclName.
 	 *
-	 *	@param value The required String attribute IncName value to be applied.
+	 *	@param value The required String attribute InclName value to be applied.
 	 */
-	void setRequiredIncName(String value);
+	void setRequiredInclName(String value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

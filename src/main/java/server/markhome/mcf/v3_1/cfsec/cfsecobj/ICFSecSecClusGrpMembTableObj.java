@@ -116,7 +116,7 @@ public interface ICFSecSecClusGrpMembTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecClusGrpMembObj readSecClusGrpMemb( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId );
+		String LoginId );
 
 	/**
 	 *	Read a SecClusGrpMemb-derived instance by it's primary key.
@@ -125,7 +125,7 @@ public interface ICFSecSecClusGrpMembTableObj
 	 *		or null if no such key value exists.
 	 */
 	ICFSecSecClusGrpMembObj readSecClusGrpMemb( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId,
+		String LoginId,
 		boolean forceRead );
 
 	ICFSecSecClusGrpMembObj readCachedSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey );
@@ -164,33 +164,33 @@ public interface ICFSecSecClusGrpMembTableObj
 	 *		may include an empty set.
 	 */
 	List<ICFSecSecClusGrpMembObj> pageAllSecClusGrpMemb(CFLibDbKeyHash256 priorSecClusGrpId,
-		CFLibDbKeyHash256 priorSecUserId );
+		String priorLoginId );
 
 	/**
 	 *	Get the CFSecSecClusGrpMembObj instance for the primary key attributes.
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecClusGrpMembObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId );
+		String LoginId );
 
 	/**
 	 *	Get the CFSecSecClusGrpMembObj instance for the primary key attributes.
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
 	 *	@return	CFSecSecClusGrpMembObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
 	ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId,
+		String LoginId,
 		boolean forceRead );
 
 	/**
@@ -215,39 +215,39 @@ public interface ICFSecSecClusGrpMembTableObj
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFSecSecClusGrpMembObj instances sorted by their primary keys for the duplicate UserIdx key.
+	 *	Get the map of CFSecSecClusGrpMembObj instances sorted by their primary keys for the duplicate LoginIdx key.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFSecSecClusGrpMembObj cached instances sorted by their primary keys for the duplicate UserIdx key,
+	 *	@return	List of CFSecSecClusGrpMembObj cached instances sorted by their primary keys for the duplicate LoginIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId );
+	List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( String LoginId );
 
 	/**
-	 *	Get the map of CFSecSecClusGrpMembObj instances sorted by their primary keys for the duplicate UserIdx key.
+	 *	Get the map of CFSecSecClusGrpMembObj instances sorted by their primary keys for the duplicate LoginIdx key.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFSecSecClusGrpMembObj cached instances sorted by their primary keys for the duplicate UserIdx key,
+	 *	@return	List of CFSecSecClusGrpMembObj cached instances sorted by their primary keys for the duplicate LoginIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId,
+	List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( String LoginId,
 		boolean forceRead );
 
 	ICFSecSecClusGrpMembObj readCachedSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId );
+		String LoginId );
 
 	List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId );
 
-	List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId );
+	List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByLoginIdx( String LoginId );
 
 	void deepDisposeSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId );
+		String LoginId );
 
 	void deepDisposeSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId );
 
-	void deepDisposeSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId );
+	void deepDisposeSecClusGrpMembByLoginIdx( String LoginId );
 
 	/**
 	 *	Read a page of data as a List of SecClusGrpMemb-derived instances sorted by their primary keys,
@@ -260,20 +260,20 @@ public interface ICFSecSecClusGrpMembTableObj
 	 */
 	List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		CFLibDbKeyHash256 priorSecUserId );
+		String priorLoginId );
 
 	/**
 	 *	Read a page of data as a List of SecClusGrpMemb-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate UserIdx key attributes.
+	 *	as identified by the duplicate LoginIdx key attributes.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecClusGrpMemb-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId,
+	List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByLoginIdx( String LoginId,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		CFLibDbKeyHash256 priorSecUserId );
+		String priorLoginId );
 
 	/**
 	 *	Internal use only.
@@ -290,10 +290,10 @@ public interface ICFSecSecClusGrpMembTableObj
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		CFLibDbKeyHash256 SecUserId );
+		String LoginId );
 
 	/**
 	 *	Internal use only.
@@ -305,7 +305,7 @@ public interface ICFSecSecClusGrpMembTableObj
 	/**
 	 *	Internal use only.
 	 *
-	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId );
+	void deleteSecClusGrpMembByLoginIdx( String LoginId );
 }
