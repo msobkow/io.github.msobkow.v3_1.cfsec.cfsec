@@ -602,8 +602,8 @@ public class CFSecSecClusGrpIncTableObj
 		String InclName, boolean forceRead )
 	{
 		ICFSecSecClusGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newPKey();
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredInclName( InclName );
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
 		ICFSecSecClusGrpIncObj obj = readSecClusGrpInc( pkey, forceRead );
 		return( obj );
 	}
@@ -800,10 +800,10 @@ public class CFSecSecClusGrpIncTableObj
 	{
 		ICFSecSecClusGrpIncObj obj = null;
 		ICFSecSecClusGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newPKey();
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredInclName( InclName );
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredInclName( InclName );
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
 		obj = readCachedSecClusGrpInc( pkey );
 		return( obj );
 	}

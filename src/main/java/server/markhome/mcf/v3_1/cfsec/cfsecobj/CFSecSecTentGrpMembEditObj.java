@@ -46,12 +46,16 @@ public class CFSecSecTentGrpMembEditObj
 	protected ICFSecSecTentGrpMemb rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
+	protected ICFSecSecTentGrpObj requiredContainerGroup;
+	protected ICFSecSecUserObj requiredParentUser;
 
 	public CFSecSecTentGrpMembEditObj( ICFSecSecTentGrpMembObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecSecTentGrpMemb origRec = orig.getRec();
 		rec.set( origRec );
+		requiredContainerGroup = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -120,7 +124,8 @@ public class CFSecSecTentGrpMembEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecTentGrpObj scope = getRequiredContainerGroup();
+		return( scope );
 	}
 
 	@Override
@@ -355,6 +360,8 @@ public class CFSecSecTentGrpMembEditObj
 	public void setRec( ICFSecSecTentGrpMemb value ) {
 		if( rec != value ) {
 			rec = value;
+			requiredContainerGroup = null;
+			requiredParentUser = null;
 		}
 	}
 
@@ -390,39 +397,88 @@ public class CFSecSecTentGrpMembEditObj
 	}
 
 	@Override
-	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
-		if ((getPKey().getRequiredSecTentGrpId() != value ) || ( getSecTentGrpMembRec().getRequiredSecTentGrpId() != value )) {
-			getPKey().setRequiredSecTentGrpId(value);
-			getSecTentGrpMembRec().setRequiredSecTentGrpId( value );
-		}
-	}
-
-	@Override
 	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
-	public void setRequiredLoginId(String value) {
-		if ((getPKey().getRequiredLoginId() != value ) || ( getSecTentGrpMembRec().getRequiredLoginId() != value )) {
-			getPKey().setRequiredLoginId(value);
-			getSecTentGrpMembRec().setRequiredLoginId( value );
+	public ICFSecSecTentGrpObj getRequiredContainerGroup() {
+		return( getRequiredContainerGroup( false ) );
+	}
+
+	@Override
+	public ICFSecSecTentGrpObj getRequiredContainerGroup( boolean forceRead ) {
+		if( forceRead || ( requiredContainerGroup == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecTentGrpObj obj = ((ICFSecSchemaObj)getOrigAsSecTentGrpMemb().getSchema()).getSecTentGrpTableObj().readSecTentGrpByIdIdx( getPKey().getRequiredSecTentGrpId() );
+				requiredContainerGroup = obj;
+				if( obj != null ) {
+					requiredContainerGroup = obj;
+				}
+			}
 		}
+		return( requiredContainerGroup );
+	}
+
+	@Override
+	public void setRequiredContainerGroup( ICFSecSecTentGrpObj value ) {
+		if( rec == null ) {
+			getSecTentGrpMembRec();
+		}
+		if( value != null ) {
+			requiredContainerGroup = value;
+			getSecTentGrpMembRec().setRequiredContainerGroup(value.getSecTentGrpRec());
+		}
+		requiredContainerGroup = value;
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser() {
+		return( getRequiredParentUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser( boolean forceRead ) {
+		if( forceRead || ( requiredParentUser == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserObj obj = ((ICFSecSchemaObj)getOrigAsSecTentGrpMemb().getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId() );
+				requiredParentUser = obj;
+			}
+		}
+		return( requiredParentUser );
+	}
+
+	@Override
+	public void setRequiredParentUser( ICFSecSecUserObj value ) {
+		if( rec == null ) {
+			getSecTentGrpMembRec();
+		}
+		if( value != null ) {
+			requiredParentUser = value;
+			getSecTentGrpMembRec().setRequiredParentUser(value.getSecUserRec());
+		}
+		else {
+			requiredParentUser = null;
+			getSecTentGrpMembRec().setRequiredParentUser((ICFSecSecUser)null);
+		}
+		requiredParentUser = value;
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredSecTentGrpId(getPKey().getRequiredSecTentGrpId());
-			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
+			rec.getPKey().setRequiredContainerGroup(getPKey().getRequiredContainerGroup());
+			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
 		}
 	}
 
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredSecTentGrpId(rec.getPKey().getRequiredSecTentGrpId());
-			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
+			getPKey().setRequiredContainerGroup(rec.getPKey().getRequiredContainerGroup());
+			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
 		}
 	}
 

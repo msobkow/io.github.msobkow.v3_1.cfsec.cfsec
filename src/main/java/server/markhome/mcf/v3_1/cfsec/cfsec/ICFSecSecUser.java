@@ -74,6 +74,8 @@ public interface ICFSecSecUser
 	public void setRequiredRevision( int value );
 
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
+	public List<ICFSecSecClusGrpMemb> getOptionalChildrenClusSecGrpMemb();
+	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb();
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
 	public String getRequiredDfltSysGrpName();

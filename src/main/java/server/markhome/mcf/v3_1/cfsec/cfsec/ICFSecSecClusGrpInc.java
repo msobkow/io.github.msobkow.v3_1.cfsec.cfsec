@@ -64,10 +64,14 @@ public interface ICFSecSecClusGrpInc
 	public ICFSecSecClusGrpIncPKey getPKey();
 	public void setPKey(ICFSecSecClusGrpIncPKey pkey );
 	
+	public ICFSecSecClusGrp getRequiredContainerGroup();
+	public void setRequiredContainerGroup(ICFSecSecClusGrp argObj);
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecClusGrpId);
+	public ICFSecSecSysGrp getRequiredParentSubGroup();
+	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj);
+	public void setRequiredParentSubGroup(String argInclName);
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value );
 	public String getRequiredInclName();
-	public void setRequiredInclName( String value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

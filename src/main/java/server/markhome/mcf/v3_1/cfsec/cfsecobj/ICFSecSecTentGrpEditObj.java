@@ -105,6 +105,34 @@ public interface ICFSecSecTentGrpEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant();
+
+	/**
+	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
+	 */
+	void setRequiredOwnerTenant( ICFSecTenantObj value );
+
+	/**
+	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp();
+
+	/**
+	 *	Get a list ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecTentGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecTentGrpId.
@@ -124,13 +152,6 @@ public interface ICFSecSecTentGrpEditObj
 	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
 	 */
 	CFLibDbKeyHash256 getRequiredTenantId();
-
-	/**
-	 *	Set the required CFLibDbKeyHash256 attribute TenantId.
-	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute TenantId value to be applied.
-	 */
-	void setRequiredTenantId(CFLibDbKeyHash256 value);
 
 	/**
 	 *	Get the required String attribute Name.

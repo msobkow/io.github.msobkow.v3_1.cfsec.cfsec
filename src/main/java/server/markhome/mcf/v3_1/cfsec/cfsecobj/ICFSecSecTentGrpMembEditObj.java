@@ -105,6 +105,34 @@ public interface ICFSecSecTentGrpMembEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The ICFSecSecTentGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecTentGrpObj getRequiredContainerGroup();
+
+	/**
+	 *	Set the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *
+	 *	@param	value	the ICFSecSecTentGrpObj instance to be referenced by the Group key.
+	 */
+	void setRequiredContainerGroup( ICFSecSecTentGrpObj value );
+
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredParentUser( ICFSecSecUserObj value );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecTentGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecTentGrpId.
@@ -112,25 +140,11 @@ public interface ICFSecSecTentGrpMembEditObj
 	CFLibDbKeyHash256 getRequiredSecTentGrpId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecTentGrpId.
-	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecTentGrpId value to be applied.
-	 */
-	void setRequiredSecTentGrpId(CFLibDbKeyHash256 value);
-
-	/**
 	 *	Get the required String attribute LoginId.
 	 *
 	 *	@return	The required String attribute LoginId.
 	 */
 	String getRequiredLoginId();
-
-	/**
-	 *	Set the required String attribute LoginId.
-	 *
-	 *	@param value The required String attribute LoginId value to be applied.
-	 */
-	void setRequiredLoginId(String value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

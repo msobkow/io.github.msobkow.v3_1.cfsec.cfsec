@@ -66,13 +66,17 @@ public interface ICFSecSecTentGrp
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentGrpId);
 	
+	public List<ICFSecSecTentGrpInc> getOptionalChildrenIncByGrp();
+	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecTenant getRequiredOwnerTenant();
+	public void setRequiredOwnerTenant(ICFSecTenant argObj);
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override
