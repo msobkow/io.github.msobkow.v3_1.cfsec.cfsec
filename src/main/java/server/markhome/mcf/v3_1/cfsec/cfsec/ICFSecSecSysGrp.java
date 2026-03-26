@@ -74,6 +74,7 @@ public interface ICFSecSecSysGrp
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public ICFSecSchema.SecLevelEnum getRequiredSecLevel();

@@ -241,6 +241,20 @@ public interface ICFSecSecSysGrpObj
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecSysGrpIncObj array of instances referenced by the SysGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecSysGrpIncObj[] array of instances referenced by the SysGrpByName key.
+	 */
+	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName();
+
+	/**
+	 *	Get the array of optional ICFSecSecSysGrpIncObj array of instances referenced by the SysGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecSysGrpIncObj[] array of instances referenced by the SysGrpByName key.
+	 */
+	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecSysGrpId.

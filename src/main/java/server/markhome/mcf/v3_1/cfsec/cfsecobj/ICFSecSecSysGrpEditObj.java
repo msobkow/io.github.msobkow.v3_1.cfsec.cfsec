@@ -119,6 +119,13 @@ public interface ICFSecSecSysGrpEditObj
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp();
 
 	/**
+	 *	Get a list ICFSecSecSysGrpIncObj instances referenced by the SysGrpByName key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSysGrpIncObj instances referenced by the SysGrpByName key.
+	 */
+	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecSysGrpId.
