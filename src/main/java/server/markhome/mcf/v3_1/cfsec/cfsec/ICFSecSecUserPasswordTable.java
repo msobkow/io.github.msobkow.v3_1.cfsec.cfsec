@@ -159,16 +159,15 @@ public interface ICFSecSecUserPasswordTable
 		CFLibDbKeyHash256 SecUserId );
 
 	/**
-	 *	Read the derived SecUserPassword record instance identified by the unique key SetStampIdx.
+	 *	Read an array of the derived SecUserPassword record instances identified by the duplicate key SetStampIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFSecSecUserPassword readDerivedBySetStampIdx( ICFSecAuthorization Authorization,
+	ICFSecSecUserPassword[] readDerivedBySetStampIdx( ICFSecAuthorization Authorization,
 		LocalDateTime PWSetStamp );
 
 	/**
@@ -226,17 +225,16 @@ public interface ICFSecSecUserPasswordTable
 		CFLibDbKeyHash256 SecUserId );
 
 	/**
-	 *	Read the specific SecUserPassword record instance identified by the unique key SetStampIdx.
+	 *	Read an array of the specific SecUserPassword record instances identified by the duplicate key SetStampIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFSecSecUserPassword readRecBySetStampIdx( ICFSecAuthorization Authorization,
+	ICFSecSecUserPassword[] readRecBySetStampIdx( ICFSecAuthorization Authorization,
 		LocalDateTime PWSetStamp );
 }

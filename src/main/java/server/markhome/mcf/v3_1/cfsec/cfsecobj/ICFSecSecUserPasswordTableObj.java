@@ -160,29 +160,29 @@ public interface ICFSecSecUserPasswordTableObj
 		boolean forceRead );
 
 	/**
-	 *	Get the CFSecSecUserPasswordObj instance for the unique SetStampIdx key.
+	 *	Get the map of CFSecSecUserPasswordObj instances sorted by their primary keys for the duplicate SetStampIdx key.
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 *
-	 *	@return	CFSecSecUserPasswordObj cached instance for the unique SetStampIdx key, or
-	 *		null if no such instance exists.
+	 *	@return	List of CFSecSecUserPasswordObj cached instances sorted by their primary keys for the duplicate SetStampIdx key,
+	 *		which may be an empty set.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordBySetStampIdx(LocalDateTime PWSetStamp );
+	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
 
 	/**
-	 *	Get the CFSecSecUserPasswordObj instance for the unique SetStampIdx key.
+	 *	Get the map of CFSecSecUserPasswordObj instances sorted by their primary keys for the duplicate SetStampIdx key.
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 *
-	 *	@return	CFSecSecUserPasswordObj refreshed instance for the unique SetStampIdx key, or
-	 *		null if no such instance exists.
+	 *	@return	List of CFSecSecUserPasswordObj cached instances sorted by their primary keys for the duplicate SetStampIdx key,
+	 *		which may be an empty set.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordBySetStampIdx(LocalDateTime PWSetStamp,
+	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp,
 		boolean forceRead );
 
 	ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
 
-	ICFSecSecUserPasswordObj readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
+	List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
 
 	void deepDisposeSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
 
@@ -210,5 +210,5 @@ public interface ICFSecSecUserPasswordTableObj
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPasswordBySetStampIdx(LocalDateTime PWSetStamp );
+	void deleteSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
 }
