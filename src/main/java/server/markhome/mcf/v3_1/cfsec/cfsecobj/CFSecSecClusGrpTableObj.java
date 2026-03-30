@@ -388,8 +388,8 @@ public class CFSecSecClusGrpTableObj
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
-		schema.getSecClusGrpIncTableObj().deepDisposeSecClusGrpIncByClusGrpIdx( existing.getRequiredSecClusGrpId() );
-		schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByClusGrpIdx( existing.getRequiredSecClusGrpId() );
+					schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByClusGrpIdx( existing.getRequiredSecClusGrpId() );
+					schema.getSecClusGrpIncTableObj().deepDisposeSecClusGrpIncByClusGrpIdx( existing.getRequiredSecClusGrpId() );
 
 		if( indexByClusterIdx != null ) {
 			if( indexByClusterIdx.containsKey( keyClusterIdx ) ) {
