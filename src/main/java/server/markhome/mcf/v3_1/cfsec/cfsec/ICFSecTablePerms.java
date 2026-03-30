@@ -545,6 +545,34 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSecUser( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create SecUserEMConf instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecUserEMConf( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecUserEMConf instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecUserEMConf( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecUserEMConf instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecUserEMConf( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecUserEMConf instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecUserEMConf( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create SecUserPWHistory instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -571,6 +599,34 @@ public interface ICFSecTablePerms
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteSecUserPWHistory( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecUserPWReset instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecUserPWReset( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecUserPWReset instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecUserPWReset( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecUserPWReset instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecUserPWReset( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecUserPWReset instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecUserPWReset( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SecUserPassword instances?

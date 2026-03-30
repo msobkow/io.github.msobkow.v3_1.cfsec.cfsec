@@ -51,8 +51,10 @@ public interface ICFSecSecUserPassword
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	
+	public ICFSecSecUser getRequiredContainerUser();
+	public void setRequiredContainerUser(ICFSecSecUser argObj);
+	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
 	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

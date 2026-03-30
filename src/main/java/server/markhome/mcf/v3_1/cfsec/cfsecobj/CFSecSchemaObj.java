@@ -78,7 +78,9 @@ public class CFSecSchemaObj
 	protected ICFSecSecTentGrpIncTableObj secTentGrpIncTableObj;
 	protected ICFSecSecTentGrpMembTableObj secTentGrpMembTableObj;
 	protected ICFSecSecUserTableObj secUserTableObj;
+	protected ICFSecSecUserEMConfTableObj secUserEMConfTableObj;
 	protected ICFSecSecUserPWHistoryTableObj secUserPWHistoryTableObj;
+	protected ICFSecSecUserPWResetTableObj secUserPWResetTableObj;
 	protected ICFSecSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFSecSysClusterTableObj sysClusterTableObj;
 	protected ICFSecTenantTableObj tenantTableObj;
@@ -104,7 +106,9 @@ public class CFSecSchemaObj
 		secTentGrpIncTableObj = new CFSecSecTentGrpIncTableObj( this );
 		secTentGrpMembTableObj = new CFSecSecTentGrpMembTableObj( this );
 		secUserTableObj = new CFSecSecUserTableObj( this );
+		secUserEMConfTableObj = new CFSecSecUserEMConfTableObj( this );
 		secUserPWHistoryTableObj = new CFSecSecUserPWHistoryTableObj( this );
+		secUserPWResetTableObj = new CFSecSecUserPWResetTableObj( this );
 		secUserPasswordTableObj = new CFSecSecUserPasswordTableObj( this );
 		sysClusterTableObj = new CFSecSysClusterTableObj( this );
 		tenantTableObj = new CFSecTenantTableObj( this );
@@ -377,8 +381,14 @@ public class CFSecSchemaObj
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
 		}
+		if( secUserEMConfTableObj != null ) {
+			secUserEMConfTableObj.minimizeMemory();
+		}
 		if( secUserPWHistoryTableObj != null ) {
 			secUserPWHistoryTableObj.minimizeMemory();
+		}
+		if( secUserPWResetTableObj != null ) {
+			secUserPWResetTableObj.minimizeMemory();
 		}
 		if( secUserPasswordTableObj != null ) {
 			secUserPasswordTableObj.minimizeMemory();
@@ -482,8 +492,16 @@ public class CFSecSchemaObj
 		return( secUserTableObj );
 	}
 
+	public ICFSecSecUserEMConfTableObj getSecUserEMConfTableObj() {
+		return( secUserEMConfTableObj );
+	}
+
 	public ICFSecSecUserPWHistoryTableObj getSecUserPWHistoryTableObj() {
 		return( secUserPWHistoryTableObj );
+	}
+
+	public ICFSecSecUserPWResetTableObj getSecUserPWResetTableObj() {
+		return( secUserPWResetTableObj );
 	}
 
 	public ICFSecSecUserPasswordTableObj getSecUserPasswordTableObj() {

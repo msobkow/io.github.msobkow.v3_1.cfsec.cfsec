@@ -196,11 +196,25 @@ public interface ICFSecSchemaObj
 	ICFSecSecUserTableObj getSecUserTableObj();
 
 	/**
+	 *	Get the SecUserEMConf interface for the schema.
+	 *
+	 *	@return	The ICFSecSecUserEMConfTableObj interface implementation for the schema.
+	 */
+	ICFSecSecUserEMConfTableObj getSecUserEMConfTableObj();
+
+	/**
 	 *	Get the SecUserPWHistory interface for the schema.
 	 *
 	 *	@return	The ICFSecSecUserPWHistoryTableObj interface implementation for the schema.
 	 */
 	ICFSecSecUserPWHistoryTableObj getSecUserPWHistoryTableObj();
+
+	/**
+	 *	Get the SecUserPWReset interface for the schema.
+	 *
+	 *	@return	The ICFSecSecUserPWResetTableObj interface implementation for the schema.
+	 */
+	ICFSecSecUserPWResetTableObj getSecUserPWResetTableObj();
 
 	/**
 	 *	Get the SecUserPassword interface for the schema.

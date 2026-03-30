@@ -413,6 +413,10 @@ public interface ICFSecSchema
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPassword", ICFSecSecUserPassword.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserEMConf", ICFSecSecUserEMConf.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPWReset", ICFSecSecUserPWReset.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecUserPWHistory", ICFSecSecUserPWHistory.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysGrp", ICFSecSecSysGrp.CLASS_CODE);
@@ -903,6 +907,24 @@ public interface ICFSecSchema
 	public ICFSecSecUserFactory getFactorySecUser();
 
 	/**
+	 *	Get the SecUserEMConf Table interface for the schema.
+	 *
+	 *	@return	The SecUserEMConf Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserEMConfTable getTableSecUserEMConf();
+
+	/**
+	 *	Get the SecUserEMConf Factory interface for the schema.
+	 *
+	 *	@return	The SecUserEMConf Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserEMConfFactory getFactorySecUserEMConf();
+
+	/**
 	 *	Get the SecUserPWHistory Table interface for the schema.
 	 *
 	 *	@return	The SecUserPWHistory Table interface for the schema.
@@ -919,6 +941,24 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecUserPWHistoryFactory getFactorySecUserPWHistory();
+
+	/**
+	 *	Get the SecUserPWReset Table interface for the schema.
+	 *
+	 *	@return	The SecUserPWReset Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserPWResetTable getTableSecUserPWReset();
+
+	/**
+	 *	Get the SecUserPWReset Factory interface for the schema.
+	 *
+	 *	@return	The SecUserPWReset Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserPWResetFactory getFactorySecUserPWReset();
 
 	/**
 	 *	Get the SecUserPassword Table interface for the schema.

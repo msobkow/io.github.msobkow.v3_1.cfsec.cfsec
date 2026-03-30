@@ -158,6 +158,15 @@ public interface ICFSecSecUserPWHistoryTableObj
 	List<ICFSecSecUserPWHistoryObj> readCachedAllSecUserPWHistory();
 
 	/**
+	 *	Return a sorted map of a page of the SecUserPWHistory-derived instances in the database.
+	 *
+	 *	@return	List of ICFSecSecUserPWHistoryObj instance, sorted by their primary keys, which
+	 *		may include an empty set.
+	 */
+	List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory(CFLibDbKeyHash256 priorSecUserId,
+		LocalDateTime priorPWSetStamp );
+
+	/**
 	 *	Get the CFSecSecUserPWHistoryObj instance for the primary key attributes.
 	 *
 	 *	@param	SecUserId	The SecUserPWHistory key attribute of the instance generating the id.

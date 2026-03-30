@@ -68,6 +68,9 @@ public interface ICFSecSecUser
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	
+	public ICFSecSecUserPassword getOptionalComponentsPassword();
+	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
+	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -78,20 +81,14 @@ public interface ICFSecSecUser
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb();
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
-	public String getRequiredDfltSysGrpName();
-	public void setRequiredDfltSysGrpName( String value );
-	public String getRequiredDfltClusGrpName();
-	public void setRequiredDfltClusGrpName( String value );
-	public String getRequiredDfltTentGrpName();
-	public void setRequiredDfltTentGrpName( String value );
+	public String getOptionalDfltSysGrpName();
+	public void setOptionalDfltSysGrpName( String value );
+	public String getOptionalDfltClusGrpName();
+	public void setOptionalDfltClusGrpName( String value );
+	public String getOptionalDfltTentGrpName();
+	public void setOptionalDfltTentGrpName( String value );
 	public String getRequiredEMailAddress();
 	public void setRequiredEMailAddress( String value );
-	public CFLibUuid6 getOptionalEMailConfirmUuid6();
-	public void setOptionalEMailConfirmUuid6( CFLibUuid6 value );
-	public String getRequiredPasswordHash();
-	public void setRequiredPasswordHash( String value );
-	public CFLibUuid6 getOptionalPasswordResetUuid6();
-	public void setOptionalPasswordResetUuid6( CFLibUuid6 value );
 	@Override
 	public boolean equals( Object obj );
 	

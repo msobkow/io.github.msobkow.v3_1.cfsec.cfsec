@@ -189,85 +189,48 @@ public interface ICFSecSecUserTableObj
 		boolean forceRead );
 
 	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate EMConfIdx key.
+	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate EMAddrIdx key.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMConfIdx key,
+	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> readSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6 );
+	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress );
 
 	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate EMConfIdx key.
+	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate EMAddrIdx key.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMConfIdx key,
+	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> readSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6,
-		boolean forceRead );
-
-	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate PwdResetIdx key.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate PwdResetIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> readSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
-
-	/**
-	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate PwdResetIdx key.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate PwdResetIdx key,
-	 *		which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> readSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6,
+	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress,
 		boolean forceRead );
 
 	ICFSecSecUserObj readCachedSecUserByIdIdx( CFLibDbKeyHash256 SecUserId );
 
 	ICFSecSecUserObj readCachedSecUserByULoginIdx( String LoginId );
 
-	List<ICFSecSecUserObj> readCachedSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6 );
-
-	List<ICFSecSecUserObj> readCachedSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
+	List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( String EMailAddress );
 
 	void deepDisposeSecUserByIdIdx( CFLibDbKeyHash256 SecUserId );
 
 	void deepDisposeSecUserByULoginIdx( String LoginId );
 
-	void deepDisposeSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6 );
-
-	void deepDisposeSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
+	void deepDisposeSecUserByEMAddrIdx( String EMailAddress );
 
 	/**
 	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate EMConfIdx key attributes.
+	 *	as identified by the duplicate EMAddrIdx key attributes.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecUser-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> pageSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6,
-		CFLibDbKeyHash256 priorSecUserId );
-
-	/**
-	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate PwdResetIdx key attributes.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	A List of SecUser-derived instances sorted by their primary keys,
-	 *		as identified by the key attributes, which may be an empty set.
-	 */
-	List<ICFSecSecUserObj> pageSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6,
+	List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( String EMailAddress,
 		CFLibDbKeyHash256 priorSecUserId );
 
 	/**
@@ -297,14 +260,7 @@ public interface ICFSecSecUserTableObj
 	/**
 	 *	Internal use only.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 */
-	void deleteSecUserByEMConfIdx( CFLibUuid6 EMailConfirmUuid6 );
-
-	/**
-	 *	Internal use only.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 */
-	void deleteSecUserByPwdResetIdx( CFLibUuid6 PasswordResetUuid6 );
+	void deleteSecUserByEMAddrIdx( String EMailAddress );
 }

@@ -318,6 +318,17 @@ public interface ICFSecSecUserPWHistoryTable
 	ICFSecSecUserPWHistory[] readAllRec( ICFSecAuthorization Authorization );
 
 	/**
+	 *	Read a page of all the specific SecUserPWHistory record instances.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@return All the specific SecUserPWHistory instances in the database accessible for the Authorization.
+	 */
+	ICFSecSecUserPWHistory[] pageAllRec( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 priorSecUserId,
+		LocalDateTime priorPWSetStamp );
+
+	/**
 	 *	Read the specific SecUserPWHistory record instance identified by the unique key IdIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.

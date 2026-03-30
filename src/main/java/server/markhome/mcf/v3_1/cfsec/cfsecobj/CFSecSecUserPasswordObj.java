@@ -47,15 +47,18 @@ public class CFSecSecUserPasswordObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecUserPassword rec;
+	protected ICFSecSecUserObj requiredContainerUser;
 
 	public CFSecSecUserPasswordObj() {
 		isNew = true;
+		requiredContainerUser = null;
 	}
 
 	public CFSecSecUserPasswordObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredContainerUser = null;
 	}
 
 	@Override
@@ -70,7 +73,8 @@ public class CFSecSecUserPasswordObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecUserObj scope = getRequiredContainerUser();
+		return( scope );
 	}
 
 	@Override
@@ -264,6 +268,7 @@ public class CFSecSecUserPasswordObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredContainerUser = null;
 	}
 
 	@Override
@@ -328,6 +333,22 @@ public class CFSecSecUserPasswordObj
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerUser() {
+		return( getRequiredContainerUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerUser( boolean forceRead ) {
+		if( ( requiredContainerUser == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerUser = ((ICFSecSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( getPKey(), forceRead );
+			}
+		}
+		return( requiredContainerUser );
 	}
 
 	@Override

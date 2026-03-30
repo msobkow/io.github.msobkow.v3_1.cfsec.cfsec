@@ -44,12 +44,14 @@ public class CFSecSecUserPasswordEditObj
 {
 	protected ICFSecSecUserPasswordObj orig;
 	protected ICFSecSecUserPassword rec;
+	protected ICFSecSecUserObj requiredContainerUser;
 
 	public CFSecSecUserPasswordEditObj( ICFSecSecUserPasswordObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecSecUserPassword origRec = orig.getRec();
 		rec.set( origRec );
+		requiredContainerUser = null;
 	}
 
 	@Override
@@ -64,7 +66,8 @@ public class CFSecSecUserPasswordEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecUserObj scope = getRequiredContainerUser();
+		return( scope );
 	}
 
 	@Override
@@ -305,6 +308,7 @@ public class CFSecSecUserPasswordEditObj
 	public void setRec( ICFSecSecUserPassword value ) {
 		if( rec != value ) {
 			rec = value;
+			requiredContainerUser = null;
 		}
 	}
 
@@ -340,13 +344,6 @@ public class CFSecSecUserPasswordEditObj
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
-		if (getPKey() != value) {
-			setPKey(value);
-		}
-	}
-
-	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
 		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
 	}
@@ -368,6 +365,38 @@ public class CFSecSecUserPasswordEditObj
 		if( getSecUserPasswordRec().getRequiredPasswordHash() != value ) {
 			getSecUserPasswordRec().setRequiredPasswordHash( value );
 		}
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerUser() {
+		return( getRequiredContainerUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerUser( boolean forceRead ) {
+		if( forceRead || ( requiredContainerUser == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserObj obj = ((ICFSecSchemaObj)getOrigAsSecUserPassword().getSchema()).getSecUserTableObj().readSecUserByIdIdx( getPKey() );
+				requiredContainerUser = obj;
+				if( obj != null ) {
+					requiredContainerUser = obj;
+				}
+			}
+		}
+		return( requiredContainerUser );
+	}
+
+	@Override
+	public void setRequiredContainerUser( ICFSecSecUserObj value ) {
+		if( rec == null ) {
+			getSecUserPasswordRec();
+		}
+		if( value != null ) {
+			requiredContainerUser = value;
+			getSecUserPasswordRec().setRequiredContainerUser(value.getSecUserRec());
+		}
+		requiredContainerUser = value;
 	}
 
 	@Override

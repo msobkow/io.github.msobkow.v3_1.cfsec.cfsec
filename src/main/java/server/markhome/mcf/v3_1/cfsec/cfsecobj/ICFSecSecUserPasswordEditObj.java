@@ -77,18 +77,32 @@ public interface ICFSecSecUserPasswordEditObj
 	CFSecSecUserPasswordEditObj deleteInstance();
 
 	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredContainerUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredContainerUser( ICFSecSecUserObj value );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
 	 */
 	CFLibDbKeyHash256 getRequiredSecUserId();
-
-	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecUserId.
-	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecUserId value to be applied.
-	 */
-	void setRequiredSecUserId(CFLibDbKeyHash256 value);
 
 	/**
 	 *	Get the required LocalDateTime attribute PWSetStamp.

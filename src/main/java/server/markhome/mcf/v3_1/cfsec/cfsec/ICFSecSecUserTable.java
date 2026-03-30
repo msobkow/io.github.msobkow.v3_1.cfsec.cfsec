@@ -109,43 +109,24 @@ public interface ICFSecSecUserTable
 	void deleteSecUserByULoginIdx( ICFSecAuthorization Authorization,
 		ICFSecSecUserByULoginIdxKey argKey );
 	/**
-	 *	Delete the SecUser instances identified by the key EMConfIdx.
+	 *	Delete the SecUser instances identified by the key EMAddrIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 */
-	void deleteSecUserByEMConfIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 argEMailConfirmUuid6 );
+	void deleteSecUserByEMAddrIdx( ICFSecAuthorization Authorization,
+		String argEMailAddress );
 
 	/**
-	 *	Delete the SecUser instances identified by the key EMConfIdx.
+	 *	Delete the SecUser instances identified by the key EMAddrIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
 	 *	@param	argKey	The key identifying the instances to be deleted.
 	 */
-	void deleteSecUserByEMConfIdx( ICFSecAuthorization Authorization,
-		ICFSecSecUserByEMConfIdxKey argKey );
-	/**
-	 *	Delete the SecUser instances identified by the key PwdResetIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 */
-	void deleteSecUserByPwdResetIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 argPasswordResetUuid6 );
-
-	/**
-	 *	Delete the SecUser instances identified by the key PwdResetIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	void deleteSecUserByPwdResetIdx( ICFSecAuthorization Authorization,
-		ICFSecSecUserByPwdResetIdxKey argKey );
+	void deleteSecUserByEMAddrIdx( ICFSecAuthorization Authorization,
+		ICFSecSecUserByEMAddrIdxKey argKey );
 
 
 	/**
@@ -210,28 +191,16 @@ public interface ICFSecSecUserTable
 		String LoginId );
 
 	/**
-	 *	Read an array of the derived SecUser record instances identified by the duplicate key EMConfIdx.
+	 *	Read an array of the derived SecUser record instances identified by the duplicate key EMAddrIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFSecSecUser[] readDerivedByEMConfIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 EMailConfirmUuid6 );
-
-	/**
-	 *	Read an array of the derived SecUser record instances identified by the duplicate key PwdResetIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
-	 */
-	ICFSecSecUser[] readDerivedByPwdResetIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 PasswordResetUuid6 );
+	ICFSecSecUser[] readDerivedByEMAddrIdx( ICFSecAuthorization Authorization,
+		String EMailAddress );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the primary key.
@@ -313,60 +282,31 @@ public interface ICFSecSecUserTable
 		String LoginId );
 
 	/**
-	 *	Read an array of the specific SecUser record instances identified by the duplicate key EMConfIdx.
+	 *	Read an array of the specific SecUser record instances identified by the duplicate key EMAddrIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFSecSecUser[] readRecByEMConfIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 EMailConfirmUuid6 );
+	ICFSecSecUser[] readRecByEMAddrIdx( ICFSecAuthorization Authorization,
+		String EMailAddress );
 
 	/**
-	 *	Read an array of the specific SecUser record instances identified by the duplicate key PwdResetIdx.
+	 *	Read a page array of the specific SecUser record instances identified by the duplicate key EMAddrIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
+	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFSecSecUser[] readRecByPwdResetIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 PasswordResetUuid6 );
-
-	/**
-	 *	Read a page array of the specific SecUser record instances identified by the duplicate key EMConfIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	EMailConfirmUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecUser[] pageRecByEMConfIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 EMailConfirmUuid6,
-		CFLibDbKeyHash256 priorSecUserId );
-
-	/**
-	 *	Read a page array of the specific SecUser record instances identified by the duplicate key PwdResetIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	PasswordResetUuid6	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecUser[] pageRecByPwdResetIdx( ICFSecAuthorization Authorization,
-		CFLibUuid6 PasswordResetUuid6,
+	ICFSecSecUser[] pageRecByEMAddrIdx( ICFSecAuthorization Authorization,
+		String EMailAddress,
 		CFLibDbKeyHash256 priorSecUserId );
 }

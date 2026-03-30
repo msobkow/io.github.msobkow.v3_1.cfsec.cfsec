@@ -60,18 +60,11 @@ public interface ICFSecSecUserFactory
 	public ICFSecSecUserByULoginIdxKey newByULoginIdxKey();
 
 	/**
-	 *	Allocate a EMConfIdx key over SecUser instances.
+	 *	Allocate a EMAddrIdx key over SecUser instances.
 	 *
 	 *	@return	The new instance.
 	 */
-	public ICFSecSecUserByEMConfIdxKey newByEMConfIdxKey();
-
-	/**
-	 *	Allocate a PwdResetIdx key over SecUser instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecSecUserByPwdResetIdxKey newByPwdResetIdxKey();
+	public ICFSecSecUserByEMAddrIdxKey newByEMAddrIdxKey();
 
 	/**
 	 *	Allocate a SecUser interface implementation.

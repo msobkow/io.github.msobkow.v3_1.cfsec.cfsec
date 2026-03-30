@@ -50,8 +50,8 @@ public interface ICFSecSecSysGrp
 	public static final CFLibDbKeyHash256 SECSYSGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSYSGRPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final ICFSecSchema.SecLevelEnum SECLEVEL_INIT_VALUE = ICFSecSchema.ordinalToSecLevelEnum( 0 );
-	public final static int CLASS_CODE = 0xa00c;
-	public final static String S_CLASS_CODE = "a00c";
+	public final static int CLASS_CODE = 0xa00e;
+	public final static String S_CLASS_CODE = "a00e";
 
 	public int getClassCode();
 

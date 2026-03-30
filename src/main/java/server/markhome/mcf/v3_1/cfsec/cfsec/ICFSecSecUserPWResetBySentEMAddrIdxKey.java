@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUser by PwdResetIdx index key object
+// Description: Java 25 interface for a SecUserPWReset by SentEMAddrIdx index key object
 
 /*
  *	server.markhome.mcf.CFSec
@@ -38,10 +38,10 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFSecSecUserByPwdResetIdxKey
+public interface ICFSecSecUserPWResetBySentEMAddrIdxKey
 {
-	public CFLibUuid6 getOptionalPasswordResetUuid6();
-	public void setOptionalPasswordResetUuid6( CFLibUuid6 value );
+	public String getRequiredSentToEMailAddr();
+	public void setRequiredSentToEMailAddr( String value );
 	@Override
 	public boolean equals( Object obj );
 

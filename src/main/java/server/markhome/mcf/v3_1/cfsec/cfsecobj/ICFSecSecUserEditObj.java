@@ -105,6 +105,48 @@ public interface ICFSecSecUserEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword();
+
+	/**
+	 *	Get the optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword( boolean forceRead );
+
+	/**
+	 *	Get the ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf();
+
+	/**
+	 *	Get the optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf( boolean forceRead );
+
+	/**
+	 *	Get the ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset();
+
+	/**
+	 *	Get the optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead );
+
+	/**
 	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
@@ -154,46 +196,46 @@ public interface ICFSecSecUserEditObj
 	void setRequiredLoginId(String value);
 
 	/**
-	 *	Get the required String attribute DfltSysGrpName.
+	 *	Get the optional String attribute DfltSysGrpName.
 	 *
-	 *	@return	The required String attribute DfltSysGrpName.
+	 *	@return	The optional String attribute DfltSysGrpName.
 	 */
-	String getRequiredDfltSysGrpName();
+	String getOptionalDfltSysGrpName();
 
 	/**
-	 *	Set the required String attribute DfltSysGrpName.
+	 *	Set the optional String attribute DfltSysGrpName.
 	 *
-	 *	@param value The required String attribute DfltSysGrpName value to be applied.
+	 *	@param value The optional String attribute DfltSysGrpName value to be applied.
 	 */
-	void setRequiredDfltSysGrpName(String value);
+	void setOptionalDfltSysGrpName(String value);
 
 	/**
-	 *	Get the required String attribute DfltClusGrpName.
+	 *	Get the optional String attribute DfltClusGrpName.
 	 *
-	 *	@return	The required String attribute DfltClusGrpName.
+	 *	@return	The optional String attribute DfltClusGrpName.
 	 */
-	String getRequiredDfltClusGrpName();
+	String getOptionalDfltClusGrpName();
 
 	/**
-	 *	Set the required String attribute DfltClusGrpName.
+	 *	Set the optional String attribute DfltClusGrpName.
 	 *
-	 *	@param value The required String attribute DfltClusGrpName value to be applied.
+	 *	@param value The optional String attribute DfltClusGrpName value to be applied.
 	 */
-	void setRequiredDfltClusGrpName(String value);
+	void setOptionalDfltClusGrpName(String value);
 
 	/**
-	 *	Get the required String attribute DfltTentGrpName.
+	 *	Get the optional String attribute DfltTentGrpName.
 	 *
-	 *	@return	The required String attribute DfltTentGrpName.
+	 *	@return	The optional String attribute DfltTentGrpName.
 	 */
-	String getRequiredDfltTentGrpName();
+	String getOptionalDfltTentGrpName();
 
 	/**
-	 *	Set the required String attribute DfltTentGrpName.
+	 *	Set the optional String attribute DfltTentGrpName.
 	 *
-	 *	@param value The required String attribute DfltTentGrpName value to be applied.
+	 *	@param value The optional String attribute DfltTentGrpName value to be applied.
 	 */
-	void setRequiredDfltTentGrpName(String value);
+	void setOptionalDfltTentGrpName(String value);
 
 	/**
 	 *	Get the required String attribute EMailAddress.
@@ -208,48 +250,6 @@ public interface ICFSecSecUserEditObj
 	 *	@param value The required String attribute EMailAddress value to be applied.
 	 */
 	void setRequiredEMailAddress(String value);
-
-	/**
-	 *	Get the optional CFLibUuid6 attribute EMailConfirmUuid6.
-	 *
-	 *	@return	The optional CFLibUuid6 attribute EMailConfirmUuid6.
-	 */
-	CFLibUuid6 getOptionalEMailConfirmUuid6();
-
-	/**
-	 *	Set the optional CFLibUuid6 attribute EMailConfirmUuid6.
-	 *
-	 *	@param value The optional CFLibUuid6 attribute EMailConfirmUuid6 value to be applied.
-	 */
-	void setOptionalEMailConfirmUuid6(CFLibUuid6 value);
-
-	/**
-	 *	Get the required String attribute PasswordHash.
-	 *
-	 *	@return	The required String attribute PasswordHash.
-	 */
-	String getRequiredPasswordHash();
-
-	/**
-	 *	Set the required String attribute PasswordHash.
-	 *
-	 *	@param value The required String attribute PasswordHash value to be applied.
-	 */
-	void setRequiredPasswordHash(String value);
-
-	/**
-	 *	Get the optional CFLibUuid6 attribute PasswordResetUuid6.
-	 *
-	 *	@return	The optional CFLibUuid6 attribute PasswordResetUuid6.
-	 */
-	CFLibUuid6 getOptionalPasswordResetUuid6();
-
-	/**
-	 *	Set the optional CFLibUuid6 attribute PasswordResetUuid6.
-	 *
-	 *	@param value The optional CFLibUuid6 attribute PasswordResetUuid6 value to be applied.
-	 */
-	void setOptionalPasswordResetUuid6(CFLibUuid6 value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

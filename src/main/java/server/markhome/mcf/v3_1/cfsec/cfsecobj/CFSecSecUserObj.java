@@ -49,6 +49,9 @@ public class CFSecSecUserObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecUser rec;
+	protected ICFSecSecUserPasswordObj optionalComponentsPassword;
+	protected ICFSecSecUserEMConfObj optionalComponentsEMConf;
+	protected ICFSecSecUserPWResetObj optionalComponentsPWReset;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenClusSecGrpMemb;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenTentSecGrpMemb;
@@ -358,6 +361,54 @@ public class CFSecSecUserObj
 	}
 
 	@Override
+	public ICFSecSecUserPasswordObj getOptionalComponentsPassword() {
+		return( getOptionalComponentsPassword( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserPasswordObj getOptionalComponentsPassword( boolean forceRead ) {
+		if( ( optionalComponentsPassword == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				optionalComponentsPassword = ((ICFSecSchemaObj)getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey(), forceRead );
+			}
+		}
+		return( optionalComponentsPassword );
+	}
+
+	@Override
+	public ICFSecSecUserEMConfObj getOptionalComponentsEMConf() {
+		return( getOptionalComponentsEMConf( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserEMConfObj getOptionalComponentsEMConf( boolean forceRead ) {
+		if( ( optionalComponentsEMConf == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				optionalComponentsEMConf = ((ICFSecSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByIdIdx( getPKey(), forceRead );
+			}
+		}
+		return( optionalComponentsEMConf );
+	}
+
+	@Override
+	public ICFSecSecUserPWResetObj getOptionalComponentsPWReset() {
+		return( getOptionalComponentsPWReset( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead ) {
+		if( ( optionalComponentsPWReset == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				optionalComponentsPWReset = ((ICFSecSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByIdIdx( getPKey(), forceRead );
+			}
+		}
+		return( optionalComponentsPWReset );
+	}
+
+	@Override
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb() {
 		List<ICFSecSecSysGrpMembObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
@@ -411,38 +462,23 @@ public class CFSecSecUserObj
 	}
 
 	@Override
-	public String getRequiredDfltSysGrpName() {
-		return( getSecUserRec().getRequiredDfltSysGrpName() );
+	public String getOptionalDfltSysGrpName() {
+		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}
 
 	@Override
-	public String getRequiredDfltClusGrpName() {
-		return( getSecUserRec().getRequiredDfltClusGrpName() );
+	public String getOptionalDfltClusGrpName() {
+		return( getSecUserRec().getOptionalDfltClusGrpName() );
 	}
 
 	@Override
-	public String getRequiredDfltTentGrpName() {
-		return( getSecUserRec().getRequiredDfltTentGrpName() );
+	public String getOptionalDfltTentGrpName() {
+		return( getSecUserRec().getOptionalDfltTentGrpName() );
 	}
 
 	@Override
 	public String getRequiredEMailAddress() {
 		return( getSecUserRec().getRequiredEMailAddress() );
-	}
-
-	@Override
-	public CFLibUuid6 getOptionalEMailConfirmUuid6() {
-		return( getSecUserRec().getOptionalEMailConfirmUuid6() );
-	}
-
-	@Override
-	public String getRequiredPasswordHash() {
-		return( getSecUserRec().getRequiredPasswordHash() );
-	}
-
-	@Override
-	public CFLibUuid6 getOptionalPasswordResetUuid6() {
-		return( getSecUserRec().getOptionalPasswordResetUuid6() );
 	}
 
 	@Override

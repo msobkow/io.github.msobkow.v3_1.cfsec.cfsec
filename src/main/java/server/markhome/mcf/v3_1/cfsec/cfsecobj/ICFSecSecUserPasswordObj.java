@@ -186,6 +186,20 @@ public interface ICFSecSecUserPasswordObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredContainerUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.

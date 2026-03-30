@@ -112,6 +112,13 @@ public interface ICFSecSecClusGrpEditObj
 	ICFSecClusterObj getRequiredOwnerCluster();
 
 	/**
+	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecClusterObj instance referenced by the Cluster key.
 	 *
 	 *	@param	value	the ICFSecClusterObj instance to be referenced by the Cluster key.

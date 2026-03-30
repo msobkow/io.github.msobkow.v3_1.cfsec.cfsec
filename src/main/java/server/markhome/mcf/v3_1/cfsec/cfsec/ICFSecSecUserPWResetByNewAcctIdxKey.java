@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUser by EMConfIdx index key object
+// Description: Java 25 interface for a SecUserPWReset by NewAcctIdx index key object
 
 /*
  *	server.markhome.mcf.CFSec
@@ -38,10 +38,10 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFSecSecUserByEMConfIdxKey
+public interface ICFSecSecUserPWResetByNewAcctIdxKey
 {
-	public CFLibUuid6 getOptionalEMailConfirmUuid6();
-	public void setOptionalEMailConfirmUuid6( CFLibUuid6 value );
+	public boolean getRequiredNewAccount();
+	public void setRequiredNewAccount( boolean value );
 	@Override
 	public boolean equals( Object obj );
 
