@@ -49,6 +49,54 @@ public interface ICFSecSchema
 	public static final String SCHEMA_NAME = "CFSec";
 	public static final String DBSCHEMA_NAME = "CFSec31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("Cluster", true, false, "Global"),
+		new CFSecTableInfo("ISOCcy", true, false, "Global"),
+		new CFSecTableInfo("ISOCtry", true, false, "Global"),
+		new CFSecTableInfo("ISOCtryCcy", true, false, "Global"),
+		new CFSecTableInfo("ISOCtryLang", true, false, "Global"),
+		new CFSecTableInfo("ISOLang", true, false, "Global"),
+		new CFSecTableInfo("ISOTZone", true, false, "Global"),
+		new CFSecTableInfo("SecClusGrp", true, false, "Cluster"),
+		new CFSecTableInfo("SecClusGrpInc", true, false, "Cluster"),
+		new CFSecTableInfo("SecClusGrpMemb", true, false, "Cluster"),
+		new CFSecTableInfo("SecSession", false, false, "System"),
+		new CFSecTableInfo("SecSysGrp", true, false, "System"),
+		new CFSecTableInfo("SecSysGrpInc", true, false, "System"),
+		new CFSecTableInfo("SecSysGrpMemb", true, false, "Cluster"),
+		new CFSecTableInfo("SecTentGrp", true, false, "Tenant"),
+		new CFSecTableInfo("SecTentGrpInc", true, false, "Tenant"),
+		new CFSecTableInfo("SecTentGrpMemb", true, false, "Tenant"),
+		new CFSecTableInfo("SecUser", true, false, "System"),
+		new CFSecTableInfo("SecUserEMConf", true, false, "System"),
+		new CFSecTableInfo("SecUserPWHistory", false, false, "System"),
+		new CFSecTableInfo("SecUserPWReset", true, false, "System"),
+		new CFSecTableInfo("SecUserPassword", false, false, "System"),
+		new CFSecTableInfo("SysCluster", false, false, "System"),
+		new CFSecTableInfo("Tenant", true, false, "System")};
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	
+	public static CFSecTableInfo[] getTableInfo() {
+		return TABLE_INFO;
+	}
+	
+	public static CFSecTableInfo[] getConsolidatedTableInfo() {
+		if (consolidatedTableInfo.get() == null) {
+			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
+			for( CFSecTableInfo info: TABLE_INFO) {
+				lst.add(info);
+			}
+			lst.sort((o1, o2) -> {
+				return o1.getTableName().compareTo(o2.getTableName());
+			});
+			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
+			int idx = 0;
+			for(CFSecTableInfo info: lst) {
+				arr[idx++] = info;
+			}
+			consolidatedTableInfo.compareAndSet(arr, null);
+		}
+		return(consolidatedTableInfo.get());
+	}
 
 	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
 		arApplicationContext.compareAndSet(arApplicationContext.get(), applicationContext);
@@ -1041,5 +1089,6 @@ public interface ICFSecSchema
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema();
+	public void bootstrapSchema(CFSecTableInfo tableInfo[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableInfo tableInfo[]);
 }
