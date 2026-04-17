@@ -62,7 +62,7 @@ public interface ICFSecSchema
 		new CFSecTableInfo("SecSession", false, false, "System"),
 		new CFSecTableInfo("SecSysGrp", true, false, "System"),
 		new CFSecTableInfo("SecSysGrpInc", true, false, "System"),
-		new CFSecTableInfo("SecSysGrpMemb", true, false, "Cluster"),
+		new CFSecTableInfo("SecSysGrpMemb", true, false, "System"),
 		new CFSecTableInfo("SecTentGrp", true, false, "Tenant"),
 		new CFSecTableInfo("SecTentGrpInc", true, false, "Tenant"),
 		new CFSecTableInfo("SecTentGrpMemb", true, false, "Tenant"),
