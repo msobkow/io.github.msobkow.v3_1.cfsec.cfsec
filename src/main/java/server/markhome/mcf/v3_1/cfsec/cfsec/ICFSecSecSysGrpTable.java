@@ -127,28 +127,6 @@ public interface ICFSecSecSysGrpTable
 	 */
 	void deleteSecSysGrpBySecLevelIdx( ICFSecAuthorization Authorization,
 		ICFSecSecSysGrpBySecLevelIdxKey argKey );
-	/**
-	 *	Delete the SecSysGrp instances identified by the key SecLevelNmIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
-	 *
-	 *	@param	Name	The SecSysGrp key attribute of the instance generating the id.
-	 */
-	void deleteSecSysGrpBySecLevelNmIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum argSecLevel,
-		String argName );
-
-	/**
-	 *	Delete the SecSysGrp instances identified by the key SecLevelNmIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	argKey	The key identifying the instances to be deleted.
-	 */
-	void deleteSecSysGrpBySecLevelNmIdx( ICFSecAuthorization Authorization,
-		ICFSecSecSysGrpBySecLevelNmIdxKey argKey );
 
 
 	/**
@@ -213,33 +191,16 @@ public interface ICFSecSecSysGrpTable
 		String Name );
 
 	/**
-	 *	Read the derived SecSysGrp record instance identified by the unique key SecLevelIdx.
+	 *	Read an array of the derived SecSysGrp record instances identified by the duplicate key SecLevelIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
-	ICFSecSecSysGrp readDerivedBySecLevelIdx( ICFSecAuthorization Authorization,
+	ICFSecSecSysGrp[] readDerivedBySecLevelIdx( ICFSecAuthorization Authorization,
 		ICFSecSchema.SecLevelEnum SecLevel );
-
-	/**
-	 *	Read the derived SecSysGrp record instance identified by the unique key SecLevelNmIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
-	 *
-	 *	@param	Name	The SecSysGrp key attribute of the instance generating the id.
-	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
-	 */
-	ICFSecSecSysGrp readDerivedBySecLevelNmIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum SecLevel,
-		String Name );
 
 	/**
 	 *	Read the specific SecSysGrp record instance identified by the primary key.
@@ -311,35 +272,16 @@ public interface ICFSecSecSysGrpTable
 		String Name );
 
 	/**
-	 *	Read the specific SecSysGrp record instance identified by the unique key SecLevelIdx.
+	 *	Read an array of the specific SecSysGrp record instances identified by the duplicate key SecLevelIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
 	 *
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	ICFSecSecSysGrp readRecBySecLevelIdx( ICFSecAuthorization Authorization,
+	ICFSecSecSysGrp[] readRecBySecLevelIdx( ICFSecAuthorization Authorization,
 		ICFSecSchema.SecLevelEnum SecLevel );
-
-	/**
-	 *	Read the specific SecSysGrp record instance identified by the unique key SecLevelNmIdx.
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 *
-	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
-	 *
-	 *	@param	Name	The SecSysGrp key attribute of the instance generating the id.
-	 *
-	 *	@return The record instance for the specified key, or null if there is
-	 *		no such existing key value.
-	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	ICFSecSecSysGrp readRecBySecLevelNmIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum SecLevel,
-		String Name );
 }

@@ -40,13 +40,16 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecUser
 {
+	public static final ICFSecSchema.SecAccountStatusEnum ACCOUNTSTATUS_MIN_VALUE = ICFSecSchema.SecAccountStatusEnum.System;
+	public static final ICFSecSchema.SecAccountStatusEnum ACCOUNTSTATUS_MAX_VALUE = ICFSecSchema.SecAccountStatusEnum.Locked;
         public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SECUSERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final String LOGINID_INIT_VALUE = new String( "" );
+	public static final ICFSecSchema.SecAccountStatusEnum ACCOUNTSTATUS_INIT_VALUE = ICFSecSchema.ordinalToSecAccountStatusEnum( 5 );
 	public static final String DFLTSYSGRPNAME_INIT_VALUE = new String( "" );
 	public static final String DFLTCLUSGRPNAME_INIT_VALUE = new String( "" );
 	public static final String DFLTTENTGRPNAME_INIT_VALUE = new String( "" );
@@ -81,6 +84,8 @@ public interface ICFSecSecUser
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb();
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
+	public ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	public void setRequiredAccountStatus( ICFSecSchema.SecAccountStatusEnum value );
 	public String getOptionalDfltSysGrpName();
 	public void setOptionalDfltSysGrpName( String value );
 	public String getOptionalDfltClusGrpName();

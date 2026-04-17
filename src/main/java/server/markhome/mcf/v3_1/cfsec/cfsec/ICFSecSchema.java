@@ -48,7 +48,7 @@ public interface ICFSecSchema
 {
 	public static final String SCHEMA_NAME = "CFSec";
 	public static final String DBSCHEMA_NAME = "CFSec31";
-	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
 	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("Cluster", true, false, "Global"),
 		new CFSecTableInfo("ISOCcy", true, false, "Global"),
 		new CFSecTableInfo("ISOCtry", true, false, "Global"),
@@ -73,7 +73,7 @@ public interface ICFSecSchema
 		new CFSecTableInfo("SecUserPassword", false, false, "System"),
 		new CFSecTableInfo("SysCluster", false, false, "System"),
 		new CFSecTableInfo("Tenant", true, false, "System")};
-	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
 	
 	public static CFSecTableInfo[] getTableInfo() {
 		return TABLE_INFO;
@@ -93,7 +93,7 @@ public interface ICFSecSchema
 			for(CFSecTableInfo info: lst) {
 				arr[idx++] = info;
 			}
-			consolidatedTableInfo.compareAndSet(arr, null);
+			consolidatedTableInfo.compareAndSet(null, arr);
 		}
 		return(consolidatedTableInfo.get());
 	}
@@ -333,6 +333,115 @@ public interface ICFSecSchema
 		}
 		else {
 			retval = lookupOrdinalSecLevelEnum.get( value );
+			if( retval == null ) {
+				throw new CFLibInvalidArgumentException( fieldOrClassName,
+					fieldOrClassName,
+					S_ProcName,
+					2,
+					"value",
+					"Invalid enum limb argument " + value,
+					"Invalid enum limb argument " + value);
+			}
+		}
+		return( retval );
+	}
+
+	public enum SecAccountStatusEnum {
+		System,
+		VerifyingEmail,
+		CreatingDevKey,
+		NormalUser,
+		ResettingPassword,
+		Locked
+	};
+
+	static HashMap<String,SecAccountStatusEnum> lookupSecAccountStatusEnum = new HashMap<String,SecAccountStatusEnum>();
+
+	public static SecAccountStatusEnum parseSecAccountStatusEnum( String value ) {
+		SecAccountStatusEnum retval = parseSecAccountStatusEnum( ICFSecSchema.class.getName(), value );
+		return( retval );
+	}
+
+	public static SecAccountStatusEnum parseSecAccountStatusEnum( String fieldOrClassName, String value ) {
+		final String S_ProcName = "parseSecAccountStatusEnum";
+		if( lookupSecAccountStatusEnum.isEmpty() ) {
+			lookupSecAccountStatusEnum.put( "System", SecAccountStatusEnum.System );
+			lookupSecAccountStatusEnum.put( "VerifyingEmail", SecAccountStatusEnum.VerifyingEmail );
+			lookupSecAccountStatusEnum.put( "CreatingDevKey", SecAccountStatusEnum.CreatingDevKey );
+			lookupSecAccountStatusEnum.put( "NormalUser", SecAccountStatusEnum.NormalUser );
+			lookupSecAccountStatusEnum.put( "ResettingPassword", SecAccountStatusEnum.ResettingPassword );
+			lookupSecAccountStatusEnum.put( "Locked", SecAccountStatusEnum.Locked );
+		}
+		SecAccountStatusEnum retval;
+		if( ( value == null ) || ( value.length() <= 0 ) ) {
+			retval = null;
+		}
+		else {
+			retval = lookupSecAccountStatusEnum.get( value );
+			if( retval == null ) {
+				throw new CFLibInvalidArgumentException( fieldOrClassName,
+					fieldOrClassName,
+					S_ProcName,
+					2,
+					"value",
+					"Invalid enum limb argument " + value,
+					"Invalid enum limb argument " + value);
+			}
+		}
+		return( retval );
+	}
+
+	static HashMap<Integer,SecAccountStatusEnum> lookupOrdinalSecAccountStatusEnum = new HashMap<Integer,SecAccountStatusEnum>();
+
+	public static SecAccountStatusEnum ordinalToSecAccountStatusEnum( String fieldOrClassName, Short value ) {
+		SecAccountStatusEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToSecAccountStatusEnum( fieldOrClassName, Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static SecAccountStatusEnum ordinalToSecAccountStatusEnum( Short value ) {
+		SecAccountStatusEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToSecAccountStatusEnum( Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static SecAccountStatusEnum ordinalToSecAccountStatusEnum( Integer value ) {
+		SecAccountStatusEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToSecAccountStatusEnum( ICFSecSchema.class.getName(), Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static SecAccountStatusEnum ordinalToSecAccountStatusEnum( String fieldOrClassName, Integer value ) {
+		final String S_ProcName = "ordinalToSecAccountStatusEnum";
+		if( lookupOrdinalSecAccountStatusEnum.isEmpty() ) {
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.System.ordinal() ), SecAccountStatusEnum.System );
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.VerifyingEmail.ordinal() ), SecAccountStatusEnum.VerifyingEmail );
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.CreatingDevKey.ordinal() ), SecAccountStatusEnum.CreatingDevKey );
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.NormalUser.ordinal() ), SecAccountStatusEnum.NormalUser );
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.ResettingPassword.ordinal() ), SecAccountStatusEnum.ResettingPassword );
+			lookupOrdinalSecAccountStatusEnum.put( Integer.valueOf( SecAccountStatusEnum.Locked.ordinal() ), SecAccountStatusEnum.Locked );
+		}
+		SecAccountStatusEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = lookupOrdinalSecAccountStatusEnum.get( value );
 			if( retval == null ) {
 				throw new CFLibInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,

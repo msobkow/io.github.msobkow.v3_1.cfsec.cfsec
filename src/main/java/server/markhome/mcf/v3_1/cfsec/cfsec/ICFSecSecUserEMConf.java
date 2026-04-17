@@ -44,7 +44,7 @@ public interface ICFSecSecUserEMConf
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SECUSERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final String CONFIRMEMAILADDR_INIT_VALUE = new String( "" );
 	public static final LocalDateTime EMAILSENTSTAMP_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");

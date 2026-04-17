@@ -67,13 +67,6 @@ public interface ICFSecSecSysGrpFactory
 	public ICFSecSecSysGrpBySecLevelIdxKey newBySecLevelIdxKey();
 
 	/**
-	 *	Allocate a SecLevelNmIdx key over SecSysGrp instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecSecSysGrpBySecLevelNmIdxKey newBySecLevelNmIdxKey();
-
-	/**
 	 *	Allocate a SecSysGrp interface implementation.
 	 *
 	 *	@return	The new instance.

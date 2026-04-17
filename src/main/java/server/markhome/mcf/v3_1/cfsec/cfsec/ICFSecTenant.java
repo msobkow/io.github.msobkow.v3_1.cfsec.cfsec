@@ -44,9 +44,9 @@ public interface ICFSecTenant
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final String S_ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
-	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_CLUSTERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String TENANTNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa002;

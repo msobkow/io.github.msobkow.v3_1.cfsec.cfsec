@@ -196,6 +196,20 @@ public interface ICFSecSecUserEditObj
 	void setRequiredLoginId(String value);
 
 	/**
+	 *	Get the required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *
+	 *	@return	The required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 */
+	ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
+
+	/**
+	 *	Set the required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *
+	 *	@param value The required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus value to be applied.
+	 */
+	void setRequiredAccountStatus(ICFSecSchema.SecAccountStatusEnum value);
+
+	/**
 	 *	Get the optional String attribute DfltSysGrpName.
 	 *
 	 *	@return	The optional String attribute DfltSysGrpName.

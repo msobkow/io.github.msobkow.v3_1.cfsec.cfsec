@@ -40,12 +40,12 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecSession
 {
-	public static final String S_SECSESSIONID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SECSESSIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECSESSIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSESSIONID_INIT_VALUE );
-	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SECUSERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECUSERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECUSERID_INIT_VALUE );
 	public static final LocalDateTime START_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
-	public static final String S_SECPROXYID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SECPROXYID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECPROXYID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECPROXYID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa017;
 	public final static String S_CLASS_CODE = "a017";
