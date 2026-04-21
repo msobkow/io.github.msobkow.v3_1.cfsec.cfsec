@@ -46,6 +46,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  */
 public interface ICFSecISOCcyTable
 {
+	public static final String TABLE_NAME = "ISOCcy";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

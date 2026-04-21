@@ -46,6 +46,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  */
 public interface ICFSecSecUserPWResetTable
 {
+	public static final String TABLE_NAME = "SecUserPWReset";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

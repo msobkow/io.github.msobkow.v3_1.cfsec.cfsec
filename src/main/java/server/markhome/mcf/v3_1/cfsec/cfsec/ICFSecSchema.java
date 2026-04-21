@@ -536,6 +536,10 @@ public interface ICFSecSchema
 		}
 	}
 
+	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 tenantId, String permissionName);
+	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName);
+	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName);
+
 		public static ICFSecSchema getBackingCFSec() {
 			return( ICFSecSchema.backingCFSec.get() );
 		}

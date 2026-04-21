@@ -46,6 +46,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  */
 public interface ICFSecSecClusGrpIncTable
 {
+	public static final String TABLE_NAME = "SecClusGrpInc";
 
 	/**
 	 *	Create the instance in the database, and update the specified record
