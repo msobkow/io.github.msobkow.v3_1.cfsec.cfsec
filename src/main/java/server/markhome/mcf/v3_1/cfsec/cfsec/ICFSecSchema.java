@@ -457,7 +457,7 @@ public interface ICFSecSchema
 
 	static final AtomicReference<CFLibDbKeyHash256> sysClusterId = new AtomicReference<>();
 	static final AtomicReference<CFLibDbKeyHash256> sysTenantId = new AtomicReference<>();
-	static final AtomicReference<CFLibDbKeyHash256> sysAdminId = new AtomicReference<>();
+	static final AtomicReference<CFLibDbKeyHash256> systemId = new AtomicReference<>();
 
 	public static String getPasswordHash(String pw) {
 		if (pw == null || pw.isEmpty()) {
@@ -516,23 +516,23 @@ public interface ICFSecSchema
 		}
 	}
 
-	public static CFLibDbKeyHash256 getSysAdminId() {
-		return (sysAdminId.get());
+	public static CFLibDbKeyHash256 getSystemId() {
+		return (systemId.get());
 	}
 
-	public static void setSysAdminId(CFLibDbKeyHash256 argAdminId) {
-		if (argAdminId == null || argAdminId.isNull()) {
-			throw new CFLibNullArgumentException(ICFSecSchema.class, "setSysAdminId", 1, "argAdminId");
+	public static void setSystemId(CFLibDbKeyHash256 argSystemId) {
+		if (argSystemId == null || argSystemId.isNull()) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "setSystemId", 1, "argSystemId");
 		}
-		CFLibDbKeyHash256 oldid = sysAdminId.get();
+		CFLibDbKeyHash256 oldid = systemId.get();
 		if (oldid == null) {
-			sysAdminId.compareAndSet(null, argAdminId);
+			systemId.compareAndSet(null, argSystemId);
 		}
 		else if (oldid.isNull()) {
-			sysAdminId.compareAndSet(oldid, argAdminId);
+			systemId.compareAndSet(oldid, argSystemId);
 		}
 		else {
-			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSysAdminId", "sysAdminId has already been set", "sysAdminId has already been set");
+			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSystemId", "systemId has already been set", "systemId has already been set");
 		}
 	}
 
