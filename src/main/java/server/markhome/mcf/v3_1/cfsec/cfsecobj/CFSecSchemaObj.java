@@ -42,8 +42,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 public class CFSecSchemaObj
 	implements ICFSecSchemaObj
 {
-	public static String SCHEMA_NAME = "CFSec";
-	public static String SCHEMA_DBNAME = "CFSec31";
+	public static final String SCHEMA_NAME = ICFSecSchema.SCHEMA_NAME;
+	public static final String SCHEMA_DBNAME = ICFSecSchema.DBSCHEMA_NAME;
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";

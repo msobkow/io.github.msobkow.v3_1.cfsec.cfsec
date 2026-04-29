@@ -79,37 +79,4 @@ public interface ICFSecSecurityControl {
 	 */
 	public void forgetAll();
 
-	/**
-	 *	Register a SecurityControl implementation as an interested listener to receive propagation of the forget commands filtered by their
-	 *	intersection with information in this cache.
-	 *
-	 *	@param securityControl If you can't control it, you can't register it.
-	 *
-	 *	@return true if a new interest registration was established, false if the interest had been previously established.
-	 */
-	public boolean registerInterest(ICFSecSecurityControl securityControl);
-
-	/**
-	 *	Remove a SecurityControl implementation from the registered list of listeners.
-	 *
-	 *	@param securityControl If you can't control it, you can't register it.
-	 *
-	 *	@return true if the security control was removed, false if it was not found.
-	 */
-	public boolean forgetInterest(ICFSecSecurityControl securityControl);
-
-	/**
-	 *	Did the specified SecurityControl register interest in filtered forget commands?
-	 *
-	 *	@param securityControl If you can't control it, you can't register it.
-	 *
-	 *	@return true if the SecurityControl is in the interest registration list, otherwise false.
-	 */
-	public boolean isInterested(ICFSecSecurityControl securityControl);
-
-	/**
-	 *	Forget all interest registrations; use with EXTREME CAUTION.
-	 */
-	public void forgetAllInterests();
-
 }
