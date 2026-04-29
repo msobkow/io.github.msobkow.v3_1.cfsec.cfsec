@@ -45,6 +45,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 public interface ICFSecSchema
+extends ICFSecSecurityControl
 {
 	public static final String SCHEMA_NAME = "CFSec";
 	public static final String DBSCHEMA_NAME = "CFSec31";
@@ -535,13 +536,6 @@ public interface ICFSecSchema
 			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSystemId", "systemId has already been set", "systemId has already been set");
 		}
 	}
-
-	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
-	public boolean isMemberOfTenantGroup(String userLogin, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
-	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName);
-	public boolean isMemberOfClusterGroup(String userLogin, CFLibDbKeyHash256 clusterId, String permissionName);
-	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName);
-	public boolean isMemberOfSystemGroup(String userLogin, String permissionName);
 
 		public static ICFSecSchema getBackingCFSec() {
 			return( ICFSecSchema.backingCFSec.get() );

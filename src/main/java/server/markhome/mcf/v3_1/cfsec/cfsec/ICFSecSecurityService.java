@@ -41,15 +41,6 @@ import server.markhome.mcf.v3_1.cflib.dbutil.CFLibDbKeyHash256;
 public interface ICFSecSecurityService {
 
 	/**
-	 *	Get the SecurityControl interface for this controlled cache, if any.  The final JPA layer has no control interface.
-	 *	Note that this is not a general purpose public interface; it should only be used by the infrastructure code to control
-	 *	and synchronize the caches in the system. Application logic should never use the control interface.
-	 *
-	 *	@return The cache SecurityControl interface.
-	 */
-	public ICFSecSecurityControl getSecurityControl();
-
-	/**
 	 *	Probe the SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
 	 *	in order until a probe authorizes the users access to the permission group. There is no need to invoke
 	 *	isMemberOfClusterGroup() or isMemberOfSystemGroup() if you invoke this method.

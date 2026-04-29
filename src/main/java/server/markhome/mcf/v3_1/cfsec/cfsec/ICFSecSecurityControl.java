@@ -38,14 +38,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.CFLibDbKeyHash256;
  *	infrastructure to issue commands to security cache implementations that have registered for change
  *	and control propagation.
  */
-public interface ICFSecSecurityControl {
-
-	/**
-	 *	Get the SecurityService interface for this controlled cache.
-	 *
-	 *	@return The cache SecurityService interface.
-	 */
-	public ICFSecSecurityService getSecurityService();
+public interface ICFSecSecurityControl extends ICFSecSecurityService {
 
 	/**
 	 *	Forget about the specified lists of objects.  Any null arguments are presumed to imply empty sets.
