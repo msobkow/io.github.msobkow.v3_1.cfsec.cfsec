@@ -67,6 +67,7 @@ public interface ICFSecCluster
 	
 	public List<ICFSecTenant> getOptionalComponentsTenant();
 	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );

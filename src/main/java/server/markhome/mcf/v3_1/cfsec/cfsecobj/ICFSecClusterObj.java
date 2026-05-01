@@ -241,6 +241,20 @@ public interface ICFSecClusterObj
 	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole( boolean forceRead );
+
+	/**
 	 *	Get the array of optional ICFSecSysClusterObj array of instances referenced by the SysCluster key.
 	 *
 	 *	@return	The optional ICFSecSysClusterObj[] array of instances referenced by the SysCluster key.

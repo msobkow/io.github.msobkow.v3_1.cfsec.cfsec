@@ -119,6 +119,13 @@ public interface ICFSecClusterEditObj
 	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
 
 	/**
+	 *	Get a list ICFSecSecClusRoleObj instances referenced by the SecRole key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecClusRoleObj instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
+
+	/**
 	 *	Get a list ICFSecSysClusterObj instances referenced by the SysCluster key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSysClusterObj instances referenced by the SysCluster key.

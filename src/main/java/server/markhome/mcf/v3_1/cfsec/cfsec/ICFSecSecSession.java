@@ -47,8 +47,8 @@ public interface ICFSecSecSession
 	public static final LocalDateTime START_INIT_VALUE = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	public static final String S_SECPROXYID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECPROXYID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECPROXYID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa017;
-	public final static String S_CLASS_CODE = "a017";
+	public final static int CLASS_CODE = 0xa01e;
+	public final static String S_CLASS_CODE = "a01e";
 
 	public int getClassCode();
 

@@ -45,8 +45,8 @@ public interface ICFSecSysCluster
 	public static final int SINGLETONID_INIT_VALUE = 1;
 	public static final String S_CLUSTERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa018;
-	public final static String S_CLASS_CODE = "a018";
+	public final static int CLASS_CODE = 0xa01f;
+	public final static String S_CLASS_CODE = "a01f";
 
 	public int getClassCode();
 

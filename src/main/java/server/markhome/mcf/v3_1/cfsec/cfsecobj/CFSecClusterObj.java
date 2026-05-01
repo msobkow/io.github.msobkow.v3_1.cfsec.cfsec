@@ -51,6 +51,7 @@ public class CFSecClusterObj
 	protected ICFSecCluster rec;
 	protected List<ICFSecTenantObj> optionalComponentsTenant;
 	protected List<ICFSecSecClusGrpObj> optionalComponentsSecGroup;
+	protected List<ICFSecSecClusRoleObj> optionalComponentsSecRole;
 	protected List<ICFSecSysClusterObj> optionalComponentsSysCluster;
 
 	public CFSecClusterObj() {
@@ -161,6 +162,19 @@ public class CFSecClusterObj
 				}
 				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
 			catch (Throwable th) {
@@ -411,6 +425,22 @@ public class CFSecClusterObj
 	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
 		List<ICFSecSecClusGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole() {
+		List<ICFSecSecClusRoleObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByClusterIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole( boolean forceRead ) {
+		List<ICFSecSecClusRoleObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByClusterIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}
