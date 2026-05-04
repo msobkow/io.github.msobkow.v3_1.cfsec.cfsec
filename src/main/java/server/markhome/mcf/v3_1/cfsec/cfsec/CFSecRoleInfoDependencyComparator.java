@@ -27,50 +27,44 @@
 
 package server.markhome.mcf.v3_1.cfsec.cfsec;
 
-import java.io.Serializable;
+import java.util.Comparator;
 
 /*
- *	The CFSecRoleInfo objects are passed in to the CFSec schema implementation to be bound
+ *	The CFSecRoleInfoDependencyComparator objects are passed in to the CFSec schema implementation to be bound
  *	to the security system.  Their natural order is to compare by dependency first, and by name second.
  */
-public class CFSecRoleInfo implements Serializable, Comparable<CFSecRoleInfo>
+public class CFSecRoleInfoDependencyComparator implements Comparator<CFSecRoleInfo>
 {
-	protected final String roleName;
-	protected final String membership;
-
-	public CFSecRoleInfo(String roleName, String membership) {
-		this.roleName = roleName;
-		this.membership = membership;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public String getMembership() {
-		return membership;
-	}
-
 	@Override
-	public int compareTo( CFSecRoleInfo rhs ) {
-		if( rhs == null ) {
+	public int compare( CFSecRoleInfo lhs, CFSecRoleInfo rhs ) {
+		if( lhs == null ) {
+			if ( rhs == null ) {
+				return( 0 );
+			}
+			else {
+				return( -1 );
+			}
+		}
+		else if( rhs == null ) {
 			return( 1 );
 		}
 		else {
+			String lhsName = lhs.getRoleName();
 			String rhsName = rhs.getRoleName();
+			String lhsMembership = lhs.getMembership();
 			String rhsMembership = rhs.getMembership();
-			String members[] = membership.split(" ");
+			String lhsMembers[] = lhsMembership.split(" ");
 			String rhsMembers[] = rhsMembership.split(" ");
 			boolean rhsEnablesLhs = false;
 			boolean lhsEnablesRhs = false;
-			for (String v: members) {
+			for (String v: lhsMembers) {
 				if (rhsName.equals(v)) {
 					lhsEnablesRhs = true;
 					break;
 				}
 			}
 			for (String v: rhsMembers) {
-				if (roleName.equals(v)) {
+				if (lhsName.equals(v)) {
 					rhsEnablesLhs = true;
 					break;
 				}
@@ -78,7 +72,7 @@ public class CFSecRoleInfo implements Serializable, Comparable<CFSecRoleInfo>
 			int ret;
 			if (lhsEnablesRhs) {
 				if (rhsEnablesLhs) {
-					ret = roleName.compareTo(rhsName);
+					ret = lhsName.compareTo(rhsName);
 				}
 				else {
 					ret = 1;
@@ -89,7 +83,7 @@ public class CFSecRoleInfo implements Serializable, Comparable<CFSecRoleInfo>
 					ret = -1;
 				}
 				else {
-					ret = roleName.compareTo(rhsName);
+					ret = lhsName.compareTo(rhsName);
 				}
 			}
 			return( ret );

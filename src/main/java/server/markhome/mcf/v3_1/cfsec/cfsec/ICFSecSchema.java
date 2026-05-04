@@ -113,11 +113,12 @@ public interface ICFSecSchema
 
 	public static CFSecRoleInfo[] getConsolidatedRoleInfo() {
 		if (consolidatedRoleInfo.get() == null) {
-			// The ROLE_INFO entries are in dependency order, so do not sort them any other way
 			ArrayList<CFSecRoleInfo> lst = new ArrayList<>();
 			for( CFSecRoleInfo info: ROLE_INFO) {
 				lst.add(info);
 			}
+			// Dependency order is the natural order of role info comparison
+			lst.sort(new CFSecRoleInfoDependencyComparator());
 			CFSecRoleInfo arr[] = new CFSecRoleInfo[lst.size()];
 			int idx = 0;
 			for(CFSecRoleInfo info: lst) {
