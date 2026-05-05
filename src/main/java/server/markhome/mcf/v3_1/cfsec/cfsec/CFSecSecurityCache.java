@@ -1,4 +1,4 @@
-// Description: Java 25 Security Service Interface.
+// Description: Java 25 CFSec Security Cache Base Implementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -27,18 +27,40 @@
 
 package server.markhome.mcf.v3_1.cfsec.cfsec;
 
-import server.markhome.mcf.v3_1.cflib.dbutil.CFLibDbKeyHash256;
+import java.io.*;
+import java.net.*;
+import java.sql.*;
+import java.text.*;
+import java.util.*;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
 
 /*
- *	An ICFSecSecurityService is the public service interface used by
- *	normal applications to query the security server or a security server cache.
- *	The ICFSecSecurityControl interface is a private interface used by the
- *	security server to control security server caches that have registered interest
- *	in the security server. The control interface should never be accessed by
- *	standard application logic, which does not perform the logins for the application,
- *	delegating that responsibility to the security server and its forms and interfaces.
+ *	The CFSecSecurityCache is the base implementation of a security cache which is to be specialized
+ *	by the JPA implementation to access the security tables directly through the JPA layer rather than going
+ *	through the security layer (it wouldn't make sense for the cache to end up querying itself as to whether
+ *	it is allowed to update itself.)
+ *
+ *	All other security cache implementations end up communicating with the JPA implementation in the end; the
+ *	security web server and services with their security database. In practice, most will be running a
+ *	SecurityCacheXxxClient where Xxx is the protocol name being used to communicate with a remote server (usually
+ *	a web socket json messaging layer once coded.)
+ *
+ *	Only the security layer implements security caches; all other projects use them as-is from the layer jars
+ *	of that project.
  */
-public interface ICFSecSecurityService {
+public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurityService
+{
+	/**
+	 *	Construct a security cache instance.
+	 *	There should only be one security cache instance in a service process, registered with the
+	 *	ICFSecSchema static methods accordingly so that all the code in process can find it.
+	 */
+	public CFSecSecurityCache() {
+	}
+
+	/***** ICFSecSecurityService implementation */
 
 	/**
 	 *	Probe the SecRole*, SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
@@ -52,7 +74,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
 	 */
-	public boolean isMemberOfTenantGroup(String userLogin, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
+	@Override
+	public boolean isMemberOfTenantGroup(String userLogin, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfTenantGroup");
+	}
 
 	/**
 	 *	Probe the SecRole*, SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
@@ -66,7 +91,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
 	 */
-	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
+	@Override
+	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfTenantGroup");
+	}
 
 	/**
 	 *	Probe the SecRole*, SecClus* security tables, and then the SecSys* tables until a probe authorizes the users access
@@ -79,7 +107,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the cluster role or group or the equivalent system admin role or group, otherwise false.
 	 */
-	public boolean isMemberOfClusterGroup(String userLogin, CFLibDbKeyHash256 clusterId, String permissionName);
+	@Override
+	public boolean isMemberOfClusterGroup(String userLogin, CFLibDbKeyHash256 clusterId, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfClusterGroup");
+	}
 
 	/**
 	 *	Probe the SecRole*, SecClus* security tables, and then the SecSys* tables until a probe authorizes the users access
@@ -92,7 +123,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the cluster role or group or the equivalent system admin role or group, otherwise false.
 	 */
-	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName);
+	@Override
+	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfClusterGroup");
+	}
 
 	/**
 	 *	Probe the SecRole*, SecSys* tables for authorization of the users access to the permission role or group as a system admin.
@@ -102,7 +136,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the specified system role or group, otherwise false.
 	 */
-	public boolean isMemberOfSystemGroup(String userLogin, String permissionName);
+	@Override
+	public boolean isMemberOfSystemGroup(String userLogin, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfSystemGroup");
+	}
 
 	/**
 	 *	Probe the SecRole*, SecSys* tables for authorization of the users access to the permission role or group as a system admin.
@@ -112,7 +149,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the user is a member of the specified system role or group, otherwise false.
 	 */
-	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName);
+	@Override
+	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName) {
+		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfSystemGroup");
+	}
 
 	/**
 	 *	Register a SecurityControl implementation as an interested listener to receive propagation of the forget commands filtered by their
@@ -122,7 +162,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if a new interest registration was established, false if the interest had been previously established.
 	 */
-	public boolean registerInterest(ICFSecSecurityControl securityControl);
+	@Override
+	public boolean registerInterest(ICFSecSecurityControl securityControl) {
+		throw new CFLibNotImplementedYetException(getClass(), "registerInterest");
+	}
 
 	/**
 	 *	Remove a SecurityControl implementation from the registered list of listeners.
@@ -131,7 +174,10 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the security control was removed, false if it was not found.
 	 */
-	public boolean forgetInterest(ICFSecSecurityControl securityControl);
+	@Override
+	public boolean forgetInterest(ICFSecSecurityControl securityControl) {
+		throw new CFLibNotImplementedYetException(getClass(), "forgetInterest");
+	}
 
 	/**
 	 *	Did the specified SecurityControl register interest in filtered forget commands?
@@ -140,10 +186,56 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the SecurityControl is in the interest registration list, otherwise false.
 	 */
-	public boolean isInterested(ICFSecSecurityControl securityControl);
+	@Override
+	public boolean isInterested(ICFSecSecurityControl securityControl) {
+		throw new CFLibNotImplementedYetException(getClass(), "isInterested");
+	}
 
 	/**
 	 *	Forget all interest registrations; use with EXTREME CAUTION.
 	 */
-	public void forgetAllInterests();
+	@Override
+	public void forgetAllInterests() {
+		throw new CFLibNotImplementedYetException(getClass(), "forgetAllInterests");
+	}
+
+	/***** ICFSecSecurityControl implementation */
+
+	/**
+	 *	Forget about the specified lists of objects.  Any null arguments are presumed to imply empty sets.
+	 *	Caches keep concurrent hash maps of user login strings and user ids mapped to a common internal
+	 *	userinfo object that maintains the caches for the user, one each for the system, the cluster, and
+	 *	the tenant security probes. Each such cache is a map by permission name string.  For the system
+	 *	cache, this map has Boolean data for the true/false state of the cached permission.  For the cluster
+	 *	cache, this map has a sub-map of cluster ids which reference the Booleans.  Similarly, the tenant id
+	 *	sub-maps reference Booleans.
+	 *
+	 *	The userinfo objects also track the last time the user's security information was queried, allowing for
+	 *	a pruning scan to automatically expire stale, unused data should the user wander away from their sessions.
+	 *
+	 *	There is no "global" cache of default permissions applying to all users or anything like that, just per-user permission
+	 *	caching.
+	 *
+	 *	@param userLogins List of user login id strings to forget about.
+	 *	@param userIds List of user ids to forget about.
+	 *	@param clusterIds List of cluster ids to forget about.
+	 *	@param tenantIds List of tenant ids to forget about.
+	 *	@param permissionNames List of permission name strings
+	 */
+	public void forgetAbout(List<String> userLogins,
+		List<CFLibDbKeyHash256> userIds,
+		List<CFLibDbKeyHash256> clusterIds,
+		List<CFLibDbKeyHash256> tenantIds,
+		List<String> permissionNames)
+	{
+		throw new CFLibNotImplementedYetException(getClass(), "forgetAbout");
+	}
+
+
+	/**
+	 *	Forget about everything; reset the controlled cache.  Does not forget interest registrations.
+	 */
+	public void forgetAll() {
+		throw new CFLibNotImplementedYetException(getClass(), "forgetAll");
+	}
 }
