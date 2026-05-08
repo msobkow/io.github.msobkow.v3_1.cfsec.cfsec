@@ -27,12 +27,8 @@
 
 package server.markhome.mcf.v3_1.cfsec.cfsec;
 
-import java.io.*;
-import java.net.*;
-import java.sql.*;
-import java.text.*;
 import java.util.*;
-import org.apache.commons.text.StringEscapeUtils;
+import java.util.concurrent.ConcurrentHashMap;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 
@@ -50,8 +46,11 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
  *	Only the security layer implements security caches; all other projects use them as-is from the layer jars
  *	of that project.
  */
-public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurityService
+abstract public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurityService
 {
+	private ConcurrentHashMap<CFLibDbKeyHash256,UserEntry> userById = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<String,UserEntry> userByLogin = new ConcurrentHashMap<>();
+
 	/**
 	 *	Construct a security cache instance.
 	 *	There should only be one security cache instance in a service process, registered with the
@@ -59,6 +58,62 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	public CFSecSecurityCache() {
 	}
+
+	/***** Backend methods to be implemented by concrete subclass */
+
+	/**
+	 *	Map the userLogin string to a userId DbKey.
+	 *
+	 *	@param userLogin 
+	 *	@return null if the userLogin does not exist, is null, is empty, or is blank. Otherwise the DbKey for the user.
+	 */
+	public abstract CFLibDbKeyHash256 mapUserLoginToUserId(String userLogin);
+
+	/**
+	 *	Map the userId DbKey to the userLogin string.
+	 *
+	 *	@param userId
+	 *	@return null if the userId does not exist or is null. Otherwise the userLogin for the user.
+	 */
+	public abstract String mapUserIdToUserLogin(CFLibDbKeyHash256 userId);
+
+	/**
+	 *	Probe the back-end SecRole*, SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
+	 *	in order until a probe authorizes the users access to the permission role or group.  The probed value is then "acquired" by
+	 *	the cache and kept until it expires or is forgotten by the cache.
+	 *
+	 *	@param userId The user id for the SecUser object this query is for.
+	 *	@param clusterId The cluster id of the cluster that contains the tenant being queried.
+	 *	@param tenantId The tenant id being queried.
+	 *	@param permissionName The name of the permission role or group being queried.
+	 *
+	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
+	 */
+	public abstract boolean probeMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
+
+	/**
+	 *	Probe the back-end SecRole*, SecClus* security tables, and finally the SecSys* tables in order until a probe authorizes
+	 *	the users access to the permission role or group.  The probed value is then "acquired" by the cache and kept until it
+	 *	expires or is forgotten by the cache.
+	 *
+	 *	@param userId The user id for the SecUser object this query is for.
+	 *	@param clusterId The cluster id of the cluster that contains the tenant being queried.
+	 *	@param permissionName The name of the permission role or group being queried.
+	 *
+	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
+	 */
+	public abstract boolean probeMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName);
+
+	/**
+	 *	Probe the back-end SecRole*, and SecSys* tables until a probe authorizes the users access to the permission role or group.
+	 *	The probed value is then "acquired" by the cache and kept until it expires or is forgotten by the cache.
+	 *
+	 *	@param userId The user id for the SecUser object this query is for.
+	 *	@param permissionName The name of the permission role or group being queried.
+	 *
+	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
+	 */
+	public abstract boolean probeMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName);
 
 	/***** ICFSecSecurityService implementation */
 
@@ -76,7 +131,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfTenantGroup(String userLogin, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfTenantGroup");
+		UserEntry entry = resolveUserEntry(userLogin);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfTenantGroup(clusterId, tenantId, permissionName) );
 	}
 
 	/**
@@ -93,7 +152,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfTenantGroup");
+		UserEntry entry = resolveUserEntry(userId);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfTenantGroup(clusterId, tenantId, permissionName) );
 	}
 
 	/**
@@ -109,7 +172,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfClusterGroup(String userLogin, CFLibDbKeyHash256 clusterId, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfClusterGroup");
+		UserEntry entry = resolveUserEntry(userLogin);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfClusterGroup(clusterId, permissionName) );
 	}
 
 	/**
@@ -125,7 +192,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfClusterGroup");
+		UserEntry entry = resolveUserEntry(userId);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfClusterGroup(clusterId, permissionName) );
 	}
 
 	/**
@@ -138,7 +209,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfSystemGroup(String userLogin, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfSystemGroup");
+		UserEntry entry = resolveUserEntry(userLogin);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfSystemGroup(permissionName) );
 	}
 
 	/**
@@ -151,7 +226,11 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 	 */
 	@Override
 	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName) {
-		throw new CFLibNotImplementedYetException(getClass(), "isMemberOfSystemGroup");
+		UserEntry entry = resolveUserEntry(userId);
+		if( entry == null ) {
+			return( false );
+		}
+		return( entry.isMemberOfSystemGroup(permissionName) );
 	}
 
 	/**
@@ -231,11 +310,159 @@ public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSecSecurity
 		throw new CFLibNotImplementedYetException(getClass(), "forgetAbout");
 	}
 
-
 	/**
 	 *	Forget about everything; reset the controlled cache.  Does not forget interest registrations.
 	 */
 	public void forgetAll() {
 		throw new CFLibNotImplementedYetException(getClass(), "forgetAll");
+	}
+
+	/***** Internal Implementation Classes And Methods *****/
+
+	private UserEntry resolveUserEntry(String userLogin) {
+		if (userLogin == null || userLogin.isEmpty() || userLogin.isBlank()) {
+			return( null );
+		}
+		UserEntry entry = userByLogin.get(userLogin);
+		if (entry == null) {
+			CFLibDbKeyHash256 userId = mapUserLoginToUserId(userLogin);
+			if (userId != null && !userId.isNull()) {
+				entry = new UserEntry();
+				entry.userId = userId;
+				entry.userLogin = userLogin;
+				entry.acquiredMillis = System.currentTimeMillis();
+				entry.lastUsedMillis = entry.acquiredMillis;
+				userByLogin.putIfAbsent(entry.userLogin, entry);
+				entry = userByLogin.get(userLogin);
+				userById.putIfAbsent(entry.userId, entry);
+			}
+		}
+		return( entry );
+	}
+
+	private UserEntry resolveUserEntry(CFLibDbKeyHash256 userId) {
+		if (userId == null || userId.isNull()) {
+			return( null );
+		}
+		UserEntry entry = userById.get(userId);
+		if (entry == null) {
+			String userLogin = mapUserIdToUserLogin(userId);
+			if (userLogin != null && !userLogin.isEmpty()) {
+				entry = new UserEntry();
+				entry.userId = userId;
+				entry.userLogin = userLogin;
+				entry.acquiredMillis = System.currentTimeMillis();
+				entry.lastUsedMillis = entry.acquiredMillis;
+				userByLogin.putIfAbsent(entry.userLogin, entry);
+				entry = userByLogin.get(userLogin);
+				userById.putIfAbsent(entry.userId, entry);
+			}
+		}
+		return( entry );
+	}
+
+	class UserEntry {
+		CFLibDbKeyHash256 userId;
+		String userLogin;
+		long acquiredMillis;
+		long lastUsedMillis;
+		ConcurrentHashMap<String,SysPermission> sysPerms = new ConcurrentHashMap<>();
+		ConcurrentHashMap<String,KeyedPermission> clusPerms = new ConcurrentHashMap<>();
+		ConcurrentHashMap<String,KeyedPermission> tentPerms = new ConcurrentHashMap<>();
+
+		boolean isMemberOfTenantGroup(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName) {
+			KeyedPermission keyperm = tentPerms.get(permissionName);
+			if (keyperm == null) {
+				boolean result = probeMemberOfTenantGroup(userId, clusterId, tenantId, permissionName);
+				keyperm = new KeyedPermission();
+				keyperm.permissionName = permissionName;
+				keyperm.acquiredMillis = System.currentTimeMillis();
+				keyperm.lastUsedMillis = System.currentTimeMillis();
+				tentPerms.putIfAbsent(keyperm.permissionName, keyperm);
+				keyperm = tentPerms.get(permissionName);
+				Boolean val = keyperm.keyMap.get(tenantId);
+				if (val == null) {
+					keyperm.keyMap.putIfAbsent(tenantId, result);
+					val = keyperm.keyMap.get(tenantId);
+				}
+				lastUsedMillis = System.currentTimeMillis();
+				return (val);
+			}
+			else {
+				Boolean val = keyperm.keyMap.get(tenantId);
+				if (val == null) {
+					boolean result = probeMemberOfTenantGroup(userId, clusterId, tenantId, permissionName);
+					keyperm.keyMap.putIfAbsent(tenantId, result);
+					val = keyperm.keyMap.get(tenantId);
+				}
+				keyperm.lastUsedMillis = System.currentTimeMillis();
+				lastUsedMillis = System.currentTimeMillis();
+				return (val);
+			}
+		}
+
+		boolean isMemberOfClusterGroup(CFLibDbKeyHash256 clusterId, String permissionName) {
+			KeyedPermission keyperm = clusPerms.get(permissionName);
+			if (keyperm == null) {
+				boolean result = probeMemberOfClusterGroup(userId, clusterId, permissionName);
+				keyperm = new KeyedPermission();
+				keyperm.permissionName = permissionName;
+				keyperm.acquiredMillis = System.currentTimeMillis();
+				keyperm.lastUsedMillis = System.currentTimeMillis();
+				clusPerms.putIfAbsent(keyperm.permissionName, keyperm);
+				keyperm = clusPerms.get(permissionName);
+				Boolean val = keyperm.keyMap.get(clusterId);
+				if (val == null) {
+					keyperm.keyMap.putIfAbsent(clusterId, result);
+					val = keyperm.keyMap.get(clusterId);
+				}
+				lastUsedMillis = System.currentTimeMillis();
+				return (val);
+			}
+			else {
+				Boolean val = keyperm.keyMap.get(clusterId);
+				if (val == null) {
+					boolean result = probeMemberOfClusterGroup(userId, clusterId, permissionName);
+					keyperm.keyMap.putIfAbsent(clusterId, result);
+					val = keyperm.keyMap.get(clusterId);
+				}
+				keyperm.lastUsedMillis = System.currentTimeMillis();
+				lastUsedMillis = System.currentTimeMillis();
+				return (val);
+			}
+		}
+
+		boolean isMemberOfSystemGroup(String permissionName) {
+			SysPermission sysperm = sysPerms.get(permissionName);
+			if (sysperm == null) {
+				boolean result = probeMemberOfSystemGroup(userId, permissionName);
+				sysperm = new SysPermission();
+				sysperm.permissionName = permissionName;
+				sysperm.acquiredMillis = System.currentTimeMillis();
+				sysperm.lastUsedMillis = sysperm.acquiredMillis;
+				sysperm.granted = result;
+				sysPerms.putIfAbsent(sysperm.permissionName, sysperm);
+				sysperm = sysPerms.get(permissionName);
+			}
+			else {
+				sysperm.lastUsedMillis = System.currentTimeMillis();
+			}
+			lastUsedMillis = System.currentTimeMillis();
+			return( sysperm.granted );
+		}
+	}
+
+	class PermissionBase {
+		String permissionName; // key
+		long acquiredMillis;
+		long lastUsedMillis;
+	}
+
+	class SysPermission extends PermissionBase {
+		boolean granted;
+	}
+
+	class KeyedPermission extends PermissionBase {
+		ConcurrentHashMap<CFLibDbKeyHash256,Boolean> keyMap = new ConcurrentHashMap<>();
 	}
 }
