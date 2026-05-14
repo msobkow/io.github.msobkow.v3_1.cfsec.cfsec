@@ -49,15 +49,21 @@ public class CFSecSecClusRoleMembObj
 	protected ICFSecSchemaObj schema;
 	protected ICFSecSecClusRoleMembPKey pKey;
 	protected ICFSecSecClusRoleMemb rec;
+	protected ICFSecSecClusRoleObj requiredContainerRole;
+	protected ICFSecSecUserObj requiredParentUser;
 
 	public CFSecSecClusRoleMembObj() {
 		isNew = true;
+		requiredContainerRole = null;
+		requiredParentUser = null;
 	}
 
 	public CFSecSecClusRoleMembObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredContainerRole = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -72,7 +78,8 @@ public class CFSecSecClusRoleMembObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecClusRoleObj scope = getRequiredContainerRole();
+		return( scope );
 	}
 
 	@Override
@@ -263,6 +270,8 @@ public class CFSecSecClusRoleMembObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredContainerRole = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -366,10 +375,42 @@ public class CFSecSecClusRoleMembObj
 	}
 
 	@Override
+	public ICFSecSecClusRoleObj getRequiredContainerRole() {
+		return( getRequiredContainerRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecClusRoleObj getRequiredContainerRole( boolean forceRead ) {
+		if( ( requiredContainerRole == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerRole = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByIdIdx( getPKey().getRequiredSecClusRoleId(), forceRead );
+			}
+		}
+		return( requiredContainerRole );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser() {
+		return( getRequiredParentUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser( boolean forceRead ) {
+		if( ( requiredParentUser == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredParentUser = ((ICFSecSchemaObj)getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId(), forceRead );
+			}
+		}
+		return( requiredParentUser );
+	}
+
+	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredSecClusRoleId(getPKey().getRequiredSecClusRoleId());
-			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
+			rec.getPKey().setRequiredContainerRole(getPKey().getRequiredContainerRole());
+			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -379,8 +420,8 @@ public class CFSecSecClusRoleMembObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredSecClusRoleId(rec.getPKey().getRequiredSecClusRoleId());
-			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
+			getPKey().setRequiredContainerRole(rec.getPKey().getRequiredContainerRole());
+			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
 		}
 	}
 }

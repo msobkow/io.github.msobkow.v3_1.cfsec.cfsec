@@ -171,6 +171,23 @@ public interface ICFSecSchema
 		final static HashMap<Integer,ICFSecSchema.ClassMapEntry> mapBackingClassCodeToEntry = new HashMap<>();
 		final static HashMap<Integer,ICFSecSchema.ClassMapEntry> mapRuntimeClassCodeToEntry = new HashMap<>();
 		final static AtomicReference<ICFSecSchema> backingCFSec = new AtomicReference<>();
+	final static AtomicReference<ICFSecAuthorizationCallback> authorizationCallback = new AtomicReference<>();
+	
+	public static ICFSecAuthorizationCallback getAuthorizationCallback() {
+		ICFSecAuthorizationCallback retval = authorizationCallback.get();
+		if (retval == null) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "getAuthorizationCallback", 0, "authorizationCallback.get()");
+		}
+		return( retval );
+	}
+	
+	public static void setAuthorizationCallback(ICFSecAuthorizationCallback callback) {
+		if (callback == null) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "setAuthorizationCallback", 0, "callback");
+		}
+		authorizationCallback.set(callback);
+	}
+
 	final static AtomicReference<ICFSecSecurityControl> securityControl = new AtomicReference<>();
 	
 	public static ICFSecSecurityService getSecurityService() {

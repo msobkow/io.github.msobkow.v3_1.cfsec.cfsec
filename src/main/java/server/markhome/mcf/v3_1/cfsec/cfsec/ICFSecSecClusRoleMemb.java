@@ -64,10 +64,14 @@ public interface ICFSecSecClusRoleMemb
 	public ICFSecSecClusRoleMembPKey getPKey();
 	public void setPKey(ICFSecSecClusRoleMembPKey pkey );
 	
+	public ICFSecSecClusRole getRequiredContainerRole();
+	public void setRequiredContainerRole(ICFSecSecClusRole argObj);
+	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecClusRoleId);
+	public ICFSecSecUser getRequiredParentUser();
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void setRequiredParentUser(String argLoginId);
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
-	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value );
 	public String getRequiredLoginId();
-	public void setRequiredLoginId( String value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

@@ -105,6 +105,48 @@ public interface ICFSecSecClusRoleMembEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecSecClusRoleObj instance referenced by the Role key.
+	 *
+	 *	@return	The ICFSecSecClusRoleObj instance referenced by the Role key.
+	 */
+	ICFSecSecClusRoleObj getRequiredContainerRole();
+
+	/**
+	 *	Get the required ICFSecSecClusRoleObj instance referenced by the Role key.
+	 *
+	 *	@return	The required ICFSecSecClusRoleObj instance referenced by the Role key.
+	 */
+	ICFSecSecClusRoleObj getRequiredContainerRole( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecClusRoleObj instance referenced by the Role key.
+	 *
+	 *	@param	value	the ICFSecSecClusRoleObj instance to be referenced by the Role key.
+	 */
+	void setRequiredContainerRole( ICFSecSecClusRoleObj value );
+
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredParentUser( ICFSecSecUserObj value );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
@@ -112,25 +154,11 @@ public interface ICFSecSecClusRoleMembEditObj
 	CFLibDbKeyHash256 getRequiredSecClusRoleId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecClusRoleId.
-	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecClusRoleId value to be applied.
-	 */
-	void setRequiredSecClusRoleId(CFLibDbKeyHash256 value);
-
-	/**
 	 *	Get the required String attribute LoginId.
 	 *
 	 *	@return	The required String attribute LoginId.
 	 */
 	String getRequiredLoginId();
-
-	/**
-	 *	Set the required String attribute LoginId.
-	 *
-	 *	@param value The required String attribute LoginId value to be applied.
-	 */
-	void setRequiredLoginId(String value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

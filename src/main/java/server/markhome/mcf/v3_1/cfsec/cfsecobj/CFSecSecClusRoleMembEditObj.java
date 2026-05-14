@@ -46,12 +46,16 @@ public class CFSecSecClusRoleMembEditObj
 	protected ICFSecSecClusRoleMemb rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
+	protected ICFSecSecClusRoleObj requiredContainerRole;
+	protected ICFSecSecUserObj requiredParentUser;
 
 	public CFSecSecClusRoleMembEditObj( ICFSecSecClusRoleMembObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecSecClusRoleMemb origRec = orig.getRec();
 		rec.set( origRec );
+		requiredContainerRole = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -120,7 +124,8 @@ public class CFSecSecClusRoleMembEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecClusRoleObj scope = getRequiredContainerRole();
+		return( scope );
 	}
 
 	@Override
@@ -355,6 +360,8 @@ public class CFSecSecClusRoleMembEditObj
 	public void setRec( ICFSecSecClusRoleMemb value ) {
 		if( rec != value ) {
 			rec = value;
+			requiredContainerRole = null;
+			requiredParentUser = null;
 		}
 	}
 
@@ -390,39 +397,88 @@ public class CFSecSecClusRoleMembEditObj
 	}
 
 	@Override
-	public void setRequiredSecClusRoleId(CFLibDbKeyHash256 value) {
-		if ((getPKey().getRequiredSecClusRoleId() != value ) || ( getSecClusRoleMembRec().getRequiredSecClusRoleId() != value )) {
-			getPKey().setRequiredSecClusRoleId(value);
-			getSecClusRoleMembRec().setRequiredSecClusRoleId( value );
-		}
-	}
-
-	@Override
 	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
-	public void setRequiredLoginId(String value) {
-		if ((getPKey().getRequiredLoginId() != value ) || ( getSecClusRoleMembRec().getRequiredLoginId() != value )) {
-			getPKey().setRequiredLoginId(value);
-			getSecClusRoleMembRec().setRequiredLoginId( value );
+	public ICFSecSecClusRoleObj getRequiredContainerRole() {
+		return( getRequiredContainerRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecClusRoleObj getRequiredContainerRole( boolean forceRead ) {
+		if( forceRead || ( requiredContainerRole == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecClusRoleObj obj = ((ICFSecSchemaObj)getOrigAsSecClusRoleMemb().getSchema()).getSecClusRoleTableObj().readSecClusRoleByIdIdx( getPKey().getRequiredSecClusRoleId() );
+				requiredContainerRole = obj;
+				if( obj != null ) {
+					requiredContainerRole = obj;
+				}
+			}
 		}
+		return( requiredContainerRole );
+	}
+
+	@Override
+	public void setRequiredContainerRole( ICFSecSecClusRoleObj value ) {
+		if( rec == null ) {
+			getSecClusRoleMembRec();
+		}
+		if( value != null ) {
+			requiredContainerRole = value;
+			getSecClusRoleMembRec().setRequiredContainerRole(value.getSecClusRoleRec());
+		}
+		requiredContainerRole = value;
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser() {
+		return( getRequiredParentUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser( boolean forceRead ) {
+		if( forceRead || ( requiredParentUser == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserObj obj = ((ICFSecSchemaObj)getOrigAsSecClusRoleMemb().getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId() );
+				requiredParentUser = obj;
+			}
+		}
+		return( requiredParentUser );
+	}
+
+	@Override
+	public void setRequiredParentUser( ICFSecSecUserObj value ) {
+		if( rec == null ) {
+			getSecClusRoleMembRec();
+		}
+		if( value != null ) {
+			requiredParentUser = value;
+			getSecClusRoleMembRec().setRequiredParentUser(value.getSecUserRec());
+		}
+		else {
+			requiredParentUser = null;
+			getSecClusRoleMembRec().setRequiredParentUser((ICFSecSecUser)null);
+		}
+		requiredParentUser = value;
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredSecClusRoleId(getPKey().getRequiredSecClusRoleId());
-			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
+			rec.getPKey().setRequiredContainerRole(getPKey().getRequiredContainerRole());
+			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
 		}
 	}
 
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredSecClusRoleId(rec.getPKey().getRequiredSecClusRoleId());
-			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
+			getPKey().setRequiredContainerRole(rec.getPKey().getRequiredContainerRole());
+			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
 		}
 	}
 

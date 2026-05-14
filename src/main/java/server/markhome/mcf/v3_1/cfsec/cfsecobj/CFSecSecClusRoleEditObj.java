@@ -46,12 +46,15 @@ public class CFSecSecClusRoleEditObj
 	protected ICFSecSecClusRole rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
+	protected ICFSecClusterObj requiredOwnerCluster;
+	protected List<ICFSecSecClusRoleMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecClusRoleEditObj( ICFSecSecClusRoleObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecSecClusRole origRec = orig.getRec();
 		rec.set( origRec );
+		requiredOwnerCluster = null;
 	}
 
 	@Override
@@ -355,6 +358,7 @@ public class CFSecSecClusRoleEditObj
 	public void setRec( ICFSecSecClusRole value ) {
 		if( rec != value ) {
 			rec = value;
+			requiredOwnerCluster = null;
 		}
 	}
 
@@ -393,19 +397,14 @@ public class CFSecSecClusRoleEditObj
 	public void setRequiredSecClusRoleId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
+			requiredOwnerCluster = null;
+			optionalChildrenMembByGrp = null;
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSecClusRoleRec().getRequiredClusterId() );
-	}
-
-	@Override
-	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
-		if( getSecClusRoleRec().getRequiredClusterId() != value ) {
-			getSecClusRoleRec().setRequiredClusterId( value );
-		}
 	}
 
 	@Override
@@ -418,6 +417,51 @@ public class CFSecSecClusRoleEditObj
 		if( getSecClusRoleRec().getRequiredName() != value ) {
 			getSecClusRoleRec().setRequiredName( value );
 		}
+	}
+
+	@Override
+	public ICFSecClusterObj getRequiredOwnerCluster() {
+		return( getRequiredOwnerCluster( false ) );
+	}
+
+	@Override
+	public ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead ) {
+		if( forceRead || ( requiredOwnerCluster == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecClusterObj obj = ((ICFSecSchemaObj)getOrigAsSecClusRole().getSchema()).getClusterTableObj().readClusterByIdIdx( getSecClusRoleRec().getRequiredClusterId() );
+				requiredOwnerCluster = obj;
+			}
+		}
+		return( requiredOwnerCluster );
+	}
+
+	@Override
+	public void setRequiredOwnerCluster( ICFSecClusterObj value ) {
+		if( rec == null ) {
+			getSecClusRoleRec();
+		}
+		if( value != null ) {
+			requiredOwnerCluster = value;
+			getSecClusRoleRec().setRequiredOwnerCluster(value.getClusterRec());
+		}
+		requiredOwnerCluster = value;
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp() {
+		List<ICFSecSecClusRoleMembObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByClusRoleIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp( boolean forceRead ) {
+		List<ICFSecSecClusRoleMembObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByClusRoleIdx( getPKey(),
+			forceRead );
+		return( retval );
 	}
 
 	@Override

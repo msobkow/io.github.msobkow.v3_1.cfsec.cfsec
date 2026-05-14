@@ -105,6 +105,34 @@ public interface ICFSecSecClusRoleEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster();
+
+	/**
+	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@param	value	the ICFSecClusterObj instance to be referenced by the Cluster key.
+	 */
+	void setRequiredOwnerCluster( ICFSecClusterObj value );
+
+	/**
+	 *	Get a list ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
@@ -124,13 +152,6 @@ public interface ICFSecSecClusRoleEditObj
 	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
 	 */
 	CFLibDbKeyHash256 getRequiredClusterId();
-
-	/**
-	 *	Set the required CFLibDbKeyHash256 attribute ClusterId.
-	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute ClusterId value to be applied.
-	 */
-	void setRequiredClusterId(CFLibDbKeyHash256 value);
 
 	/**
 	 *	Get the required String attribute Name.

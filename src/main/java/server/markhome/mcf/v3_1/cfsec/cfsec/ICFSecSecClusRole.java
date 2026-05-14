@@ -66,13 +66,16 @@ public interface ICFSecSecClusRole
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusRoleId);
 	
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecCluster getRequiredOwnerCluster();
+	public void setRequiredOwnerCluster(ICFSecCluster argObj);
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override
