@@ -74,11 +74,13 @@ public interface ICFSecSecTentGrp
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+	public ICFSecSecSysGrp getRequiredParentSysGrp();
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredParentSysGrp(ICFSecSecSysGrp argObj);
+	public void setRequiredParentSysGrp(String argName);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
-	public void setRequiredName( String value );
 	@Override
 	public boolean equals( Object obj );
 	

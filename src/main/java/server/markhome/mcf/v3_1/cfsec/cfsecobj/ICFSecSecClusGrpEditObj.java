@@ -126,6 +126,27 @@ public interface ICFSecSecClusGrpEditObj
 	void setRequiredOwnerCluster( ICFSecClusterObj value );
 
 	/**
+	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysGrp key.
+	 */
+	void setRequiredParentSysGrp( ICFSecSecSysGrpObj value );
+
+	/**
 	 *	Get a list ICFSecSecClusGrpIncObj instances referenced by the IncByGrp key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecClusGrpIncObj instances referenced by the IncByGrp key.
@@ -166,13 +187,6 @@ public interface ICFSecSecClusGrpEditObj
 	 *	@return	The required String attribute Name.
 	 */
 	String getRequiredName();
-
-	/**
-	 *	Set the required String attribute Name.
-	 *
-	 *	@param value The required String attribute Name value to be applied.
-	 */
-	void setRequiredName(String value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();
