@@ -57,19 +57,17 @@ public interface ICFSecSchema
 		new CFSecTableInfo("ISOLang", true, false, "Global"),
 		new CFSecTableInfo("ISOTZone", true, false, "Global"),
 		new CFSecTableInfo("SecClusGrp", true, false, "Cluster"),
-		new CFSecTableInfo("SecClusGrpInc", true, false, "Cluster"),
 		new CFSecTableInfo("SecClusGrpMemb", true, false, "Cluster"),
 		new CFSecTableInfo("SecClusRole", true, false, "Cluster"),
 		new CFSecTableInfo("SecClusRoleMemb", true, false, "Cluster"),
-		new CFSecTableInfo("SecRole", true, false, "System"),
-		new CFSecTableInfo("SecRoleEnables", true, false, "System"),
-		new CFSecTableInfo("SecRoleMemb", true, false, "System"),
 		new CFSecTableInfo("SecSession", false, false, "System"),
 		new CFSecTableInfo("SecSysGrp", true, false, "System"),
 		new CFSecTableInfo("SecSysGrpInc", true, false, "System"),
 		new CFSecTableInfo("SecSysGrpMemb", true, false, "System"),
+		new CFSecTableInfo("SecSysRole", true, false, "System"),
+		new CFSecTableInfo("SecSysRoleEnables", true, false, "System"),
+		new CFSecTableInfo("SecSysRoleMemb", true, false, "System"),
 		new CFSecTableInfo("SecTentGrp", true, false, "Tenant"),
-		new CFSecTableInfo("SecTentGrpInc", true, false, "Tenant"),
 		new CFSecTableInfo("SecTentGrpMemb", true, false, "Tenant"),
 		new CFSecTableInfo("SecTentRole", true, false, "Tenant"),
 		new CFSecTableInfo("SecTentRoleMemb", true, false, "Tenant"),
@@ -321,7 +319,9 @@ public interface ICFSecSchema
 		Global,
 		Cluster,
 		Tenant,
-		Role
+		SystemRole,
+		ClusterRole,
+		TenantRole
 	};
 
 	static HashMap<String,SecLevelEnum> lookupSecLevelEnum = new HashMap<String,SecLevelEnum>();
@@ -338,7 +338,9 @@ public interface ICFSecSchema
 			lookupSecLevelEnum.put( "Global", SecLevelEnum.Global );
 			lookupSecLevelEnum.put( "Cluster", SecLevelEnum.Cluster );
 			lookupSecLevelEnum.put( "Tenant", SecLevelEnum.Tenant );
-			lookupSecLevelEnum.put( "Role", SecLevelEnum.Role );
+			lookupSecLevelEnum.put( "SystemRole", SecLevelEnum.SystemRole );
+			lookupSecLevelEnum.put( "ClusterRole", SecLevelEnum.ClusterRole );
+			lookupSecLevelEnum.put( "TenantRole", SecLevelEnum.TenantRole );
 		}
 		SecLevelEnum retval;
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
@@ -401,7 +403,9 @@ public interface ICFSecSchema
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Global.ordinal() ), SecLevelEnum.Global );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Cluster.ordinal() ), SecLevelEnum.Cluster );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Tenant.ordinal() ), SecLevelEnum.Tenant );
-			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Role.ordinal() ), SecLevelEnum.Role );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.SystemRole.ordinal() ), SecLevelEnum.SystemRole );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.ClusterRole.ordinal() ), SecLevelEnum.ClusterRole );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.TenantRole.ordinal() ), SecLevelEnum.TenantRole );
 		}
 		SecLevelEnum retval;
 		if( value == null ) {
@@ -660,21 +664,17 @@ public interface ICFSecSchema
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecClusGrp", ICFSecSecClusGrp.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecClusGrpInc", ICFSecSecClusGrpInc.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecClusGrpMemb", ICFSecSecClusGrpMemb.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecTentGrp", ICFSecSecTentGrp.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecTentGrpInc", ICFSecSecTentGrpInc.CLASS_CODE);
-				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecTentGrpMemb", ICFSecSecTentGrpMemb.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecRole", ICFSecSecRole.CLASS_CODE);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysRole", ICFSecSecSysRole.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecRoleEnables", ICFSecSecRoleEnables.CLASS_CODE);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysRoleEnables", ICFSecSecSysRoleEnables.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
-				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecRoleMemb", ICFSecSecRoleMemb.CLASS_CODE);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecSysRoleMemb", ICFSecSecSysRoleMemb.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "SecClusRole", ICFSecSecClusRole.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
@@ -992,24 +992,6 @@ public interface ICFSecSchema
 	public ICFSecSecClusGrpFactory getFactorySecClusGrp();
 
 	/**
-	 *	Get the SecClusGrpInc Table interface for the schema.
-	 *
-	 *	@return	The SecClusGrpInc Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpIncTable getTableSecClusGrpInc();
-
-	/**
-	 *	Get the SecClusGrpInc Factory interface for the schema.
-	 *
-	 *	@return	The SecClusGrpInc Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpIncFactory getFactorySecClusGrpInc();
-
-	/**
 	 *	Get the SecClusGrpMemb Table interface for the schema.
 	 *
 	 *	@return	The SecClusGrpMemb Table interface for the schema.
@@ -1062,60 +1044,6 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecClusRoleMembFactory getFactorySecClusRoleMemb();
-
-	/**
-	 *	Get the SecRole Table interface for the schema.
-	 *
-	 *	@return	The SecRole Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleTable getTableSecRole();
-
-	/**
-	 *	Get the SecRole Factory interface for the schema.
-	 *
-	 *	@return	The SecRole Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleFactory getFactorySecRole();
-
-	/**
-	 *	Get the SecRoleEnables Table interface for the schema.
-	 *
-	 *	@return	The SecRoleEnables Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleEnablesTable getTableSecRoleEnables();
-
-	/**
-	 *	Get the SecRoleEnables Factory interface for the schema.
-	 *
-	 *	@return	The SecRoleEnables Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleEnablesFactory getFactorySecRoleEnables();
-
-	/**
-	 *	Get the SecRoleMemb Table interface for the schema.
-	 *
-	 *	@return	The SecRoleMemb Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleMembTable getTableSecRoleMemb();
-
-	/**
-	 *	Get the SecRoleMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecRoleMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleMembFactory getFactorySecRoleMemb();
 
 	/**
 	 *	Get the SecSession Table interface for the schema.
@@ -1190,6 +1118,60 @@ public interface ICFSecSchema
 	public ICFSecSecSysGrpMembFactory getFactorySecSysGrpMemb();
 
 	/**
+	 *	Get the SecSysRole Table interface for the schema.
+	 *
+	 *	@return	The SecSysRole Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleTable getTableSecSysRole();
+
+	/**
+	 *	Get the SecSysRole Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRole Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleFactory getFactorySecSysRole();
+
+	/**
+	 *	Get the SecSysRoleEnables Table interface for the schema.
+	 *
+	 *	@return	The SecSysRoleEnables Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleEnablesTable getTableSecSysRoleEnables();
+
+	/**
+	 *	Get the SecSysRoleEnables Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRoleEnables Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleEnablesFactory getFactorySecSysRoleEnables();
+
+	/**
+	 *	Get the SecSysRoleMemb Table interface for the schema.
+	 *
+	 *	@return	The SecSysRoleMemb Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleMembTable getTableSecSysRoleMemb();
+
+	/**
+	 *	Get the SecSysRoleMemb Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRoleMemb Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleMembFactory getFactorySecSysRoleMemb();
+
+	/**
 	 *	Get the SecTentGrp Table interface for the schema.
 	 *
 	 *	@return	The SecTentGrp Table interface for the schema.
@@ -1206,24 +1188,6 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecTentGrpFactory getFactorySecTentGrp();
-
-	/**
-	 *	Get the SecTentGrpInc Table interface for the schema.
-	 *
-	 *	@return	The SecTentGrpInc Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpIncTable getTableSecTentGrpInc();
-
-	/**
-	 *	Get the SecTentGrpInc Factory interface for the schema.
-	 *
-	 *	@return	The SecTentGrpInc Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpIncFactory getFactorySecTentGrpInc();
 
 	/**
 	 *	Get the SecTentGrpMemb Table interface for the schema.

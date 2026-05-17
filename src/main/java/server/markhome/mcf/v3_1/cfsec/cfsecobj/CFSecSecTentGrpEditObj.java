@@ -48,7 +48,6 @@ public class CFSecSecTentGrpEditObj
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFSecSecSysGrpObj requiredParentSysGrp;
-	protected List<ICFSecSecTentGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecTentGrpEditObj( ICFSecSecTentGrpObj argOrig ) {
@@ -403,7 +402,6 @@ public class CFSecSecTentGrpEditObj
 			setPKey(value);
 			requiredOwnerTenant = null;
 			requiredParentSysGrp = null;
-			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
 	}
@@ -478,22 +476,6 @@ public class CFSecSecTentGrpEditObj
 			getSecTentGrpRec().setRequiredParentSysGrp((ICFSecSecSysGrp)null);
 		}
 		requiredParentSysGrp = value;
-	}
-
-	@Override
-	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp() {
-		List<ICFSecSecTentGrpIncObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByTentGrpIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead ) {
-		List<ICFSecSecTentGrpIncObj> retval;
-		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByTentGrpIdx( getPKey(),
-			forceRead );
-		return( retval );
 	}
 
 	@Override

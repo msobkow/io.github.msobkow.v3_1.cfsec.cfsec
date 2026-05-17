@@ -73,11 +73,13 @@ public interface ICFSecSecClusRole
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
+	public ICFSecSecSysGrp getRequiredContainerSysRole();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(String argName);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
-	public void setRequiredName( String value );
 	@Override
 	public boolean equals( Object obj );
 	

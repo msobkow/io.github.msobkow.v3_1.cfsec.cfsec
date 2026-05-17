@@ -105,27 +105,6 @@ public interface ICFSecSecTentRoleEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the ICFSecSecSysGrpObj instance referenced by the Role key.
-	 *
-	 *	@return	The ICFSecSecSysGrpObj instance referenced by the Role key.
-	 */
-	ICFSecSecSysGrpObj getRequiredContainerRole();
-
-	/**
-	 *	Get the required ICFSecSecSysGrpObj instance referenced by the Role key.
-	 *
-	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the Role key.
-	 */
-	ICFSecSecSysGrpObj getRequiredContainerRole( boolean forceRead );
-
-	/**
-	 *	Set the ICFSecSecSysGrpObj instance referenced by the Role key.
-	 *
-	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the Role key.
-	 */
-	void setRequiredContainerRole( ICFSecSecSysGrpObj value );
-
-	/**
 	 *	Get the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
@@ -145,6 +124,27 @@ public interface ICFSecSecTentRoleEditObj
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
 	 */
 	void setRequiredOwnerTenant( ICFSecTenantObj value );
+
+	/**
+	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysRole key.
+	 */
+	void setRequiredContainerSysRole( ICFSecSecSysGrpObj value );
 
 	/**
 	 *	Get a list ICFSecSecTentRoleMembObj instances referenced by the MembByRole key.

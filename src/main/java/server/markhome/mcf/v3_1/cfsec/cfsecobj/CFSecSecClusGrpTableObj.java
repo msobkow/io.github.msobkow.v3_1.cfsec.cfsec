@@ -389,7 +389,6 @@ public class CFSecSecClusGrpTableObj
 
 
 					schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByClusGrpIdx( existing.getRequiredSecClusGrpId() );
-					schema.getSecClusGrpIncTableObj().deepDisposeSecClusGrpIncByClusGrpIdx( existing.getRequiredSecClusGrpId() );
 
 		if( indexByClusterIdx != null ) {
 			if( indexByClusterIdx.containsKey( keyClusterIdx ) ) {

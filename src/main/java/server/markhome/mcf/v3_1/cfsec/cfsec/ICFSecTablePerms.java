@@ -265,34 +265,6 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSecClusGrp( CFSecAuthorization Authorization );
 
 	/**
-	 *	Is the session allowed to create SecClusGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecClusGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecClusGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecClusGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecClusGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecClusGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecClusGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecClusGrpInc( CFSecAuthorization Authorization );
-
-	/**
 	 *	Is the session allowed to create SecClusGrpMemb instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -375,90 +347,6 @@ public interface ICFSecTablePerms
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteSecClusRoleMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create SecRole instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecRole( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecRole instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecRole( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecRole instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecRole( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecRole instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecRole( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create SecRoleEnables instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecRoleEnables( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecRoleEnables instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecRoleEnables( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecRoleEnables instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecRoleEnables( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecRoleEnables instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecRoleEnables( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create SecRoleMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecRoleMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecRoleMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecRoleMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecRoleMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecRoleMemb( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecRoleMemb instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecRoleMemb( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SecSession instances?
@@ -573,6 +461,90 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSecSysGrpMemb( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create SecSysRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecSysRoleEnables instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysRoleEnables( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysRoleEnables instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysRoleEnables( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysRoleEnables instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysRoleEnables( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysRoleEnables instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysRoleEnables( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SecSysRoleMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSecSysRoleMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SecSysRoleMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSecSysRoleMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SecSysRoleMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSecSysRoleMemb( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SecSysRoleMemb instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSecSysRoleMemb( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create SecTentGrp instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -599,34 +571,6 @@ public interface ICFSecTablePerms
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteSecTentGrp( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to create SecTentGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowCreateSecTentGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to read SecTentGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowReadSecTentGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to update SecTentGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowUpdateSecTentGrpInc( CFSecAuthorization Authorization );
-
-	/**
-	 *	Is the session allowed to delete SecTentGrpInc instances?
-	 *
-	 *	@param	Authorization	The session authorization information.
-	 */
-	boolean allowDeleteSecTentGrpInc( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SecTentGrpMemb instances?

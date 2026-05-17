@@ -66,7 +66,6 @@ public interface ICFSecSecTentGrp
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentGrpId);
 	
-	public List<ICFSecSecTentGrpInc> getOptionalChildrenIncByGrp();
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );

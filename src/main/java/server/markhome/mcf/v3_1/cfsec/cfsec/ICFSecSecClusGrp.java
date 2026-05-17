@@ -66,7 +66,6 @@ public interface ICFSecSecClusGrp
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusGrpId);
 	
-	public List<ICFSecSecClusGrpInc> getOptionalChildrenIncByGrp();
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value );

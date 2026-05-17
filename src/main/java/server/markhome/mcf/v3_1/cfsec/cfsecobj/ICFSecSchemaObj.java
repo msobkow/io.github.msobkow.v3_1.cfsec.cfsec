@@ -126,13 +126,6 @@ public interface ICFSecSchemaObj
 	ICFSecSecClusGrpTableObj getSecClusGrpTableObj();
 
 	/**
-	 *	Get the SecClusGrpInc interface for the schema.
-	 *
-	 *	@return	The ICFSecSecClusGrpIncTableObj interface implementation for the schema.
-	 */
-	ICFSecSecClusGrpIncTableObj getSecClusGrpIncTableObj();
-
-	/**
 	 *	Get the SecClusGrpMemb interface for the schema.
 	 *
 	 *	@return	The ICFSecSecClusGrpMembTableObj interface implementation for the schema.
@@ -152,27 +145,6 @@ public interface ICFSecSchemaObj
 	 *	@return	The ICFSecSecClusRoleMembTableObj interface implementation for the schema.
 	 */
 	ICFSecSecClusRoleMembTableObj getSecClusRoleMembTableObj();
-
-	/**
-	 *	Get the SecRole interface for the schema.
-	 *
-	 *	@return	The ICFSecSecRoleTableObj interface implementation for the schema.
-	 */
-	ICFSecSecRoleTableObj getSecRoleTableObj();
-
-	/**
-	 *	Get the SecRoleEnables interface for the schema.
-	 *
-	 *	@return	The ICFSecSecRoleEnablesTableObj interface implementation for the schema.
-	 */
-	ICFSecSecRoleEnablesTableObj getSecRoleEnablesTableObj();
-
-	/**
-	 *	Get the SecRoleMemb interface for the schema.
-	 *
-	 *	@return	The ICFSecSecRoleMembTableObj interface implementation for the schema.
-	 */
-	ICFSecSecRoleMembTableObj getSecRoleMembTableObj();
 
 	/**
 	 *	Get the SecSession interface for the schema.
@@ -203,18 +175,32 @@ public interface ICFSecSchemaObj
 	ICFSecSecSysGrpMembTableObj getSecSysGrpMembTableObj();
 
 	/**
+	 *	Get the SecSysRole interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysRoleTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysRoleTableObj getSecSysRoleTableObj();
+
+	/**
+	 *	Get the SecSysRoleEnables interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysRoleEnablesTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysRoleEnablesTableObj getSecSysRoleEnablesTableObj();
+
+	/**
+	 *	Get the SecSysRoleMemb interface for the schema.
+	 *
+	 *	@return	The ICFSecSecSysRoleMembTableObj interface implementation for the schema.
+	 */
+	ICFSecSecSysRoleMembTableObj getSecSysRoleMembTableObj();
+
+	/**
 	 *	Get the SecTentGrp interface for the schema.
 	 *
 	 *	@return	The ICFSecSecTentGrpTableObj interface implementation for the schema.
 	 */
 	ICFSecSecTentGrpTableObj getSecTentGrpTableObj();
-
-	/**
-	 *	Get the SecTentGrpInc interface for the schema.
-	 *
-	 *	@return	The ICFSecSecTentGrpIncTableObj interface implementation for the schema.
-	 */
-	ICFSecSecTentGrpIncTableObj getSecTentGrpIncTableObj();
 
 	/**
 	 *	Get the SecTentGrpMemb interface for the schema.

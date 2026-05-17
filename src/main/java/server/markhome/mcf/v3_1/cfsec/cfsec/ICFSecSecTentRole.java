@@ -72,12 +72,12 @@ public interface ICFSecSecTentRole
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecSysGrp getRequiredContainerRole();
 	public ICFSecTenant getRequiredOwnerTenant();
-	public void setRequiredContainerRole(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerRole(String argName);
+	public ICFSecSecSysGrp getRequiredContainerSysRole();
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(String argName);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	@Override

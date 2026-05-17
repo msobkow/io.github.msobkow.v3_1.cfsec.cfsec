@@ -41,7 +41,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecSecSysGrp
 {
 	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.System;
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecSchema.SecLevelEnum.Role;
+	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecSchema.SecLevelEnum.TenantRole;
         public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -69,7 +69,7 @@ public interface ICFSecSecSysGrp
 	
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenIncByGrp();
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
-	public ICFSecSecRole getOptionalChildrenImplRole();
+	public ICFSecSecSysRole getOptionalChildrenImplSysRole();
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -80,9 +80,7 @@ public interface ICFSecSecSysGrp
 	public List<ICFSecSecClusRole> getOptionalChildrenImplClusRole();
 	public List<ICFSecSecTentRole> getOptionalChildrenImplTentRole();
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();
-	public List<ICFSecSecClusGrpInc> getOptionalChildrenClusGrpByName();
-	public List<ICFSecSecTentGrpInc> getOptionalChildrenTentGrpByName();
-	public List<ICFSecSecRoleEnables> getOptionalChildrenRoleByEnableName();
+	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public ICFSecSchema.SecLevelEnum getRequiredSecLevel();

@@ -241,20 +241,6 @@ public interface ICFSecSecTentGrpObj
 	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
 
 	/**
-	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the IncByGrp key.
-	 *
-	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the IncByGrp key.
-	 */
-	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp();
-
-	/**
-	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the IncByGrp key.
-	 *
-	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the IncByGrp key.
-	 */
-	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead );
-
-	/**
 	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the MembByGrp key.
 	 *
 	 *	@return	The optional ICFSecSecTentGrpMembObj[] array of instances referenced by the MembByGrp key.
