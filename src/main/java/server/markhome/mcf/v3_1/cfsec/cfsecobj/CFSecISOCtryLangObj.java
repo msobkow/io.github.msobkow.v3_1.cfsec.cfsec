@@ -410,8 +410,8 @@ public class CFSecISOCtryLangObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerCtry(getPKey().getRequiredContainerCtry());
-			rec.getPKey().setRequiredParentLang(getPKey().getRequiredParentLang());
+			rec.getPKey().setRequiredISOCtryId(getPKey().getRequiredISOCtryId());
+			rec.getPKey().setRequiredISOLangId(getPKey().getRequiredISOLangId());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -421,8 +421,8 @@ public class CFSecISOCtryLangObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerCtry(rec.getPKey().getRequiredContainerCtry());
-			getPKey().setRequiredParentLang(rec.getPKey().getRequiredParentLang());
+			getPKey().setRequiredISOCtryId(rec.getPKey().getRequiredISOCtryId());
+			getPKey().setRequiredISOLangId(rec.getPKey().getRequiredISOLangId());
 		}
 	}
 }

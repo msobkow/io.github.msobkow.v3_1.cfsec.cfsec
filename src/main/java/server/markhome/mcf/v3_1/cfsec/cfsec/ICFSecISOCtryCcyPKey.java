@@ -45,14 +45,10 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecISOCtryCcyPKey
 {
 
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public ICFSecISOCcy getRequiredParentCcy();
-	public void setRequiredParentCcy(ICFSecISOCcy argObj);
-	public void setRequiredParentCcy(short argISOCcyId);
 	public short getRequiredISOCtryId();
+	public void setRequiredISOCtryId( short value );
 	public short getRequiredISOCcyId();
+	public void setRequiredISOCcyId( short value );
 	@Override
 	public boolean equals( Object obj );
 

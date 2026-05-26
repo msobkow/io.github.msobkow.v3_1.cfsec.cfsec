@@ -410,8 +410,8 @@ public class CFSecISOCtryCcyObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerCtry(getPKey().getRequiredContainerCtry());
-			rec.getPKey().setRequiredParentCcy(getPKey().getRequiredParentCcy());
+			rec.getPKey().setRequiredISOCtryId(getPKey().getRequiredISOCtryId());
+			rec.getPKey().setRequiredISOCcyId(getPKey().getRequiredISOCcyId());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -421,8 +421,8 @@ public class CFSecISOCtryCcyObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerCtry(rec.getPKey().getRequiredContainerCtry());
-			getPKey().setRequiredParentCcy(rec.getPKey().getRequiredParentCcy());
+			getPKey().setRequiredISOCtryId(rec.getPKey().getRequiredISOCtryId());
+			getPKey().setRequiredISOCcyId(rec.getPKey().getRequiredISOCcyId());
 		}
 	}
 }

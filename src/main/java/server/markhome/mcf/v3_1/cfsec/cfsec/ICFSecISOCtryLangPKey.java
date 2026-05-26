@@ -45,14 +45,10 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecISOCtryLangPKey
 {
 
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public ICFSecISOLang getRequiredParentLang();
-	public void setRequiredParentLang(ICFSecISOLang argObj);
-	public void setRequiredParentLang(short argISOLangId);
 	public short getRequiredISOCtryId();
+	public void setRequiredISOCtryId( short value );
 	public short getRequiredISOLangId();
+	public void setRequiredISOLangId( short value );
 	@Override
 	public boolean equals( Object obj );
 

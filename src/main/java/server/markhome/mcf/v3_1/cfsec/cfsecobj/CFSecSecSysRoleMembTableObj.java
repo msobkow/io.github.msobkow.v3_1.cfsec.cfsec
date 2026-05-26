@@ -602,8 +602,8 @@ public class CFSecSecSysRoleMembTableObj
 		String LoginId, boolean forceRead )
 	{
 		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newPKey();
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentUser(LoginId);
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredLoginId( LoginId );
 		ICFSecSecSysRoleMembObj obj = readSecSysRoleMemb( pkey, forceRead );
 		return( obj );
 	}
@@ -800,10 +800,10 @@ public class CFSecSecSysRoleMembTableObj
 	{
 		ICFSecSecSysRoleMembObj obj = null;
 		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newPKey();
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentUser(LoginId);
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentUser(LoginId);
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredLoginId( LoginId );
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredLoginId( LoginId );
 		obj = readCachedSecSysRoleMemb( pkey );
 		return( obj );
 	}

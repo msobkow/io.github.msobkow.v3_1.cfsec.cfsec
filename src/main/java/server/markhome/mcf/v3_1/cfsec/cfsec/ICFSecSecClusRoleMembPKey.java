@@ -45,14 +45,10 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecSecClusRoleMembPKey
 {
 
-	public ICFSecSecClusRole getRequiredContainerRole();
-	public void setRequiredContainerRole(ICFSecSecClusRole argObj);
-	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecClusRoleId);
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(String argLoginId);
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
+	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value );
 	public String getRequiredLoginId();
+	public void setRequiredLoginId( String value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -572,8 +572,8 @@ public class CFSecISOCtryLangTableObj
 		short ISOLangId, boolean forceRead )
 	{
 		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryLang().newPKey();
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentLang(ISOLangId);
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOLangId( ISOLangId );
 		ICFSecISOCtryLangObj obj = readISOCtryLang( pkey, forceRead );
 		return( obj );
 	}
@@ -770,10 +770,10 @@ public class CFSecISOCtryLangTableObj
 	{
 		ICFSecISOCtryLangObj obj = null;
 		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryLang().newPKey();
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentLang(ISOLangId);
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentLang(ISOLangId);
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOLangId( ISOLangId );
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOLangId( ISOLangId );
 		obj = readCachedISOCtryLang( pkey );
 		return( obj );
 	}

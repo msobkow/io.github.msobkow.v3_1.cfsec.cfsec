@@ -409,8 +409,8 @@ public class CFSecSecSysGrpIncObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerGroup(getPKey().getRequiredContainerGroup());
-			rec.getPKey().setRequiredParentSubGroup(getPKey().getRequiredParentSubGroup());
+			rec.getPKey().setRequiredSecSysGrpId(getPKey().getRequiredSecSysGrpId());
+			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -420,8 +420,8 @@ public class CFSecSecSysGrpIncObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerGroup(rec.getPKey().getRequiredContainerGroup());
-			getPKey().setRequiredParentSubGroup(rec.getPKey().getRequiredParentSubGroup());
+			getPKey().setRequiredSecSysGrpId(rec.getPKey().getRequiredSecSysGrpId());
+			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
 		}
 	}
 }
