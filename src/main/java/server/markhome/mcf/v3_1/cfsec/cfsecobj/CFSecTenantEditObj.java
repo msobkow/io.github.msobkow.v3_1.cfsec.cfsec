@@ -48,6 +48,7 @@ public class CFSecTenantEditObj
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredContainerCluster;
 	protected List<ICFSecSecTentGrpObj> optionalComponentsSecGroup;
+	protected List<ICFSecSecTentRoleObj> optionalComponentsSecRole;
 
 	public CFSecTenantEditObj( ICFSecTenantObj argOrig ) {
 		orig = argOrig;
@@ -197,6 +198,19 @@ public class CFSecTenantEditObj
 				}
 				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
 			catch (Throwable th) {
@@ -413,6 +427,7 @@ public class CFSecTenantEditObj
 			setPKey(value);
 			requiredContainerCluster = null;
 			optionalComponentsSecGroup = null;
+			optionalComponentsSecRole = null;
 		}
 	}
 
@@ -477,6 +492,22 @@ public class CFSecTenantEditObj
 	public List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
 		List<ICFSecSecTentGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByTenantIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole() {
+		List<ICFSecSecTentRoleObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByTenantIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole( boolean forceRead ) {
+		List<ICFSecSecTentRoleObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByTenantIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

@@ -217,14 +217,14 @@ public interface ICFSecSecTentGrpObj
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant();
+	ICFSecTenantObj getRequiredContainerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.

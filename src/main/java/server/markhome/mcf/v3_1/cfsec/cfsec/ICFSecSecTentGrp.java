@@ -72,10 +72,10 @@ public interface ICFSecSecTentGrp
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecTenant getRequiredOwnerTenant();
+	public ICFSecTenant getRequiredContainerTenant();
 	public ICFSecSecSysGrp getRequiredParentSysGrp();
-	public void setRequiredOwnerTenant(ICFSecTenant argObj);
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredContainerTenant(ICFSecTenant argObj);
+	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredParentSysGrp(ICFSecSecSysGrp argObj);
 	public void setRequiredParentSysGrp(String argName);
 	public CFLibDbKeyHash256 getRequiredTenantId();

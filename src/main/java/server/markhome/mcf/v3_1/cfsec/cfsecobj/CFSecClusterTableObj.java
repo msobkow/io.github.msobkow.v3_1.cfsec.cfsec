@@ -331,6 +331,7 @@ public class CFSecClusterTableObj
 		keyUDescrIdx.setRequiredDescription( existing.getRequiredDescription() );
 
 
+					schema.getSecClusRoleTableObj().deepDisposeSecClusRoleByClusterIdx( existing.getRequiredId() );
 					schema.getSecClusGrpTableObj().deepDisposeSecClusGrpByClusterIdx( existing.getRequiredId() );
 					schema.getTenantTableObj().deepDisposeTenantByClusterIdx( existing.getRequiredId() );
 

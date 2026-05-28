@@ -67,6 +67,7 @@ public interface ICFSecTenant
 	public void setPKey(CFLibDbKeyHash256 requiredId);
 	
 	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();

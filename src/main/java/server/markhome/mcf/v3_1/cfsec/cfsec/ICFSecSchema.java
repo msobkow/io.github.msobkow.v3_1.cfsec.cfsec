@@ -319,9 +319,9 @@ public interface ICFSecSchema
 		Global,
 		Cluster,
 		Tenant,
-		SystemRole,
-		ClusterRole,
-		TenantRole
+		SysRole,
+		ClusRole,
+		TentRole
 	};
 
 	static HashMap<String,SecLevelEnum> lookupSecLevelEnum = new HashMap<String,SecLevelEnum>();
@@ -338,9 +338,9 @@ public interface ICFSecSchema
 			lookupSecLevelEnum.put( "Global", SecLevelEnum.Global );
 			lookupSecLevelEnum.put( "Cluster", SecLevelEnum.Cluster );
 			lookupSecLevelEnum.put( "Tenant", SecLevelEnum.Tenant );
-			lookupSecLevelEnum.put( "SystemRole", SecLevelEnum.SystemRole );
-			lookupSecLevelEnum.put( "ClusterRole", SecLevelEnum.ClusterRole );
-			lookupSecLevelEnum.put( "TenantRole", SecLevelEnum.TenantRole );
+			lookupSecLevelEnum.put( "SysRole", SecLevelEnum.SysRole );
+			lookupSecLevelEnum.put( "ClusRole", SecLevelEnum.ClusRole );
+			lookupSecLevelEnum.put( "TentRole", SecLevelEnum.TentRole );
 		}
 		SecLevelEnum retval;
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
@@ -403,9 +403,9 @@ public interface ICFSecSchema
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Global.ordinal() ), SecLevelEnum.Global );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Cluster.ordinal() ), SecLevelEnum.Cluster );
 			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.Tenant.ordinal() ), SecLevelEnum.Tenant );
-			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.SystemRole.ordinal() ), SecLevelEnum.SystemRole );
-			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.ClusterRole.ordinal() ), SecLevelEnum.ClusterRole );
-			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.TenantRole.ordinal() ), SecLevelEnum.TenantRole );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.SysRole.ordinal() ), SecLevelEnum.SysRole );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.ClusRole.ordinal() ), SecLevelEnum.ClusRole );
+			lookupOrdinalSecLevelEnum.put( Integer.valueOf( SecLevelEnum.TentRole.ordinal() ), SecLevelEnum.TentRole );
 		}
 		SecLevelEnum retval;
 		if( value == null ) {

@@ -133,6 +133,13 @@ public interface ICFSecTenantEditObj
 	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup();
 
 	/**
+	 *	Get a list ICFSecSecTentRoleObj instances referenced by the SecRole key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentRoleObj instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute Id.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute Id.

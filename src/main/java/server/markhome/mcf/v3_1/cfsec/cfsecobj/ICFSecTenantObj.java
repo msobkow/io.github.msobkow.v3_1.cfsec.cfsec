@@ -241,6 +241,20 @@ public interface ICFSecTenantObj
 	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute Id.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute Id.
