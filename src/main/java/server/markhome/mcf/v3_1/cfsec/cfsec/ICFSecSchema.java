@@ -79,7 +79,13 @@ public interface ICFSecSchema
 		new CFSecTableInfo("SysCluster", false, false, "System"),
 		new CFSecTableInfo("Tenant", true, false, "System")};
 	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
-	public static final CFSecRoleInfo ROLE_INFO[] = {new CFSecRoleInfo("secuser", "readcluster readtenant")};
+	public static final CFSecRoleInfo ROLE_INFO[] = {new CFSecRoleInfo("secclusmanager", "sectentmanager createsecclusmemb updatesecclusmemb deletesecclusmemb createsecclusrolememb updatesecclusrolememb deletesecclusrolememb"),
+		new CFSecRoleInfo("secclusadmin", "secclusmanager createsecclusgrp updatesecclusgrp deletesecclusgrp readsecclusrole updatesecclusrole createsecclusrole deletesecclusrole"),
+		new CFSecRoleInfo("secsysmanager", "secuser secclusmanager createsecsysmemb updatesecsysmemb deletesecsysmemb create secsysrolememb updatesecsysrolememb deletesecsysrolememb"),
+		new CFSecRoleInfo("sectentmanager", "secuser createsectentmemb updatesectentmemb deletesectentmemb createsectentrolememb updatesectentrolememb deletesectentrolememb"),
+		new CFSecRoleInfo("sectentadmin", "sectentmanager createsectentgrp updatesectentgrp deletesectentgrp createsectentrole updatesectentrole deletesectentrole"),
+		new CFSecRoleInfo("secsysadmin", "sectentadmin secclusadmin secsysmanager updatecluster deletecluster updatetenant deletetenant createsecsysgrp updatesecsysgrp deletesecsysgrp createsecsysrole updatesecsysrole deletesecsysrole createsecsysinc updatesecsysinc deletesecsysinc "),
+		new CFSecRoleInfo("secuser", "readcluster readtenant readsecsysgrp readsecsysinc readsecsysmemb readsecsysrole readsecsysinc readsecsysroleenable readsecsysrolememb readsecclusgrp readsecclusmemb readsecclusrole readsecclusrolememb readsectentgrp readsectentmemb readsectentrole readsectentrolememb")};
 	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
 
 	public static CFSecTableInfo[] getTableInfo() {
