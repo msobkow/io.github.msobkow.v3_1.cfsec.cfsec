@@ -51,28 +51,65 @@ public class CFSecRoleInfoDependencyComparator implements Comparator<CFSecRoleIn
 		else {
 			String lhsName = lhs.getRoleName();
 			String rhsName = rhs.getRoleName();
-			String lhsMembership = lhs.getMembership();
-			String rhsMembership = rhs.getMembership();
-			String lhsMembers[] = lhsMembership.split(" ");
-			String rhsMembers[] = rhsMembership.split(" ");
+
+			String lhsEnables = lhs.getEnables();
+			String rhsEnables = rhs.getEnables();
+			String lhsEnablesArr[] = lhsEnables.split(" ");
+			String rhsEnablesArr[] = rhsEnables.split(" ");
 			boolean rhsEnablesLhs = false;
 			boolean lhsEnablesRhs = false;
-			for (String v: lhsMembers) {
+			for (String v: lhsEnablesArr) {
 				if (rhsName.equals(v)) {
 					lhsEnablesRhs = true;
 					break;
 				}
 			}
-			for (String v: rhsMembers) {
+			for (String v: rhsEnablesArr) {
 				if (lhsName.equals(v)) {
 					rhsEnablesLhs = true;
 					break;
 				}
 			}
+
+			String lhsIncludes = lhs.getIncludes();
+			String rhsIncludes = rhs.getIncludes();
+			String lhsIncludesArr[] = lhsIncludes.split(" ");
+			String rhsIncludesArr[] = rhsIncludes.split(" ");
+			boolean rhsIncludesLhs = false;
+			boolean lhsIncludesRhs = false;
+			for (String v: lhsIncludesArr) {
+				if (rhsName.equals(v)) {
+					lhsIncludesRhs = true;
+					break;
+				}
+			}
+			for (String v: rhsIncludesArr) {
+				if (lhsName.equals(v)) {
+					rhsIncludesLhs = true;
+					break;
+				}
+			}
+
 			int ret;
+
 			if (lhsEnablesRhs) {
 				if (rhsEnablesLhs) {
-					ret = lhsName.compareTo(rhsName);
+					if (lhsIncludesRhs) {
+						if (rhsIncludesLhs) {
+							ret = lhsName.compareTo(rhsName);
+						}
+						else {
+							ret = 1;
+						}
+					}
+					else {
+						if (rhsIncludesLhs) {
+							ret = -1;
+						}
+						else {
+							ret = lhsName.compareTo(rhsName);
+						}
+					}
 				}
 				else {
 					ret = 1;
@@ -83,7 +120,22 @@ public class CFSecRoleInfoDependencyComparator implements Comparator<CFSecRoleIn
 					ret = -1;
 				}
 				else {
-					ret = lhsName.compareTo(rhsName);
+					if (lhsIncludesRhs) {
+						if (rhsIncludesLhs) {
+							ret = lhsName.compareTo(rhsName);
+						}
+						else {
+							ret = 1;
+						}
+					}
+					else {
+						if (rhsIncludesLhs) {
+							ret = -1;
+						}
+						else {
+							ret = lhsName.compareTo(rhsName);
+						}
+					}
 				}
 			}
 			return( ret );

@@ -36,49 +36,100 @@ import java.io.Serializable;
 public class CFSecRoleInfo implements Serializable, Comparable<CFSecRoleInfo>
 {
 	protected final String roleName;
-	protected final String membership;
+	protected final String roleScope;
+	protected final String enables;
+	protected final String includes;
 
-	public CFSecRoleInfo(String roleName, String membership) {
+	public CFSecRoleInfo(String roleName, String roleScope, String enables, String includes) {
 		this.roleName = roleName;
-		this.membership = membership;
+		this.roleScope = roleScope;
+		this.enables = enables;
+		this.includes = includes;
 	}
 
 	public String getRoleName() {
 		return roleName;
 	}
 
-	public String getMembership() {
-		return membership;
+	public String getRoleScope() {
+		return roleScope;
 	}
 
+	public String getEnables() {
+		return enables;
+	}
+
+	public String getIncludes() {
+		return includes;
+	}
+	
 	@Override
 	public int compareTo( CFSecRoleInfo rhs ) {
 		if( rhs == null ) {
 			return( 1 );
 		}
 		else {
+			String lhsName = getRoleName();
 			String rhsName = rhs.getRoleName();
-			String rhsMembership = rhs.getMembership();
-			String members[] = membership.split(" ");
-			String rhsMembers[] = rhsMembership.split(" ");
+
+			String lhsEnables = getEnables();
+			String rhsEnables = rhs.getEnables();
+			String lhsEnablesArr[] = lhsEnables.split(" ");
+			String rhsEnablesArr[] = rhsEnables.split(" ");
 			boolean rhsEnablesLhs = false;
 			boolean lhsEnablesRhs = false;
-			for (String v: members) {
+			for (String v: lhsEnablesArr) {
 				if (rhsName.equals(v)) {
 					lhsEnablesRhs = true;
 					break;
 				}
 			}
-			for (String v: rhsMembers) {
-				if (roleName.equals(v)) {
+			for (String v: rhsEnablesArr) {
+				if (lhsName.equals(v)) {
 					rhsEnablesLhs = true;
 					break;
 				}
 			}
+
+			String lhsIncludes = getIncludes();
+			String rhsIncludes = rhs.getIncludes();
+			String lhsIncludesArr[] = lhsIncludes.split(" ");
+			String rhsIncludesArr[] = rhsIncludes.split(" ");
+			boolean rhsIncludesLhs = false;
+			boolean lhsIncludesRhs = false;
+			for (String v: lhsIncludesArr) {
+				if (rhsName.equals(v)) {
+					lhsIncludesRhs = true;
+					break;
+				}
+			}
+			for (String v: rhsIncludesArr) {
+				if (lhsName.equals(v)) {
+					rhsIncludesLhs = true;
+					break;
+				}
+			}
+
 			int ret;
+
 			if (lhsEnablesRhs) {
 				if (rhsEnablesLhs) {
-					ret = roleName.compareTo(rhsName);
+					if (lhsIncludesRhs) {
+						if (rhsIncludesLhs) {
+							ret = lhsName.compareTo(rhsName);
+						}
+						else {
+							ret = 1;
+						}
+					}
+					else {
+						if (rhsIncludesLhs) {
+							ret = -1;
+						}
+						else {
+							ret = lhsName.compareTo(rhsName);
+						}
+					}
 				}
 				else {
 					ret = 1;
@@ -89,7 +140,22 @@ public class CFSecRoleInfo implements Serializable, Comparable<CFSecRoleInfo>
 					ret = -1;
 				}
 				else {
-					ret = roleName.compareTo(rhsName);
+					if (lhsIncludesRhs) {
+						if (rhsIncludesLhs) {
+							ret = lhsName.compareTo(rhsName);
+						}
+						else {
+							ret = 1;
+						}
+					}
+					else {
+						if (rhsIncludesLhs) {
+							ret = -1;
+						}
+						else {
+							ret = lhsName.compareTo(rhsName);
+						}
+					}
 				}
 			}
 			return( ret );

@@ -45,10 +45,10 @@ public interface ICFSecISOTZone
 	public static final short TZMINOFFSET_MIN_VALUE = (short)-59;
 	public static final short TZHOUROFFSET_MAX_VALUE = (short)12;
 	public static final short TZMINOFFSET_MAX_VALUE = (short)59;
-        public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-        public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final short ISOTZONEID_INIT_VALUE = (short)0;
 	public static final String ISO8601_INIT_VALUE = new String( "" );
 	public static final String TZNAME_INIT_VALUE = new String( "" );

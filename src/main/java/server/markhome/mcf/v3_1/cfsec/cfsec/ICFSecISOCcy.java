@@ -43,10 +43,10 @@ public interface ICFSecISOCcy
 	public static final short ISOCCYID_MIN_VALUE = (short)0;
 	public static final short PRECIS_MIN_VALUE = (short)0;
 	public static final short PRECIS_MAX_VALUE = (short)5;
-        public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-        public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final short ISOCCYID_INIT_VALUE = (short)0;
 	public static final String ISOCODE_INIT_VALUE = new String( "" );
 	public static final String NAME_INIT_VALUE = new String( "" );

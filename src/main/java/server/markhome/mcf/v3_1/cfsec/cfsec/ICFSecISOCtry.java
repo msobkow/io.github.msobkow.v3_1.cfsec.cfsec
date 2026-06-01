@@ -41,10 +41,10 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecISOCtry
 {
 	public static final short ISOCTRYID_MIN_VALUE = (short)0;
-        public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-        public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final short ISOCTRYID_INIT_VALUE = (short)0;
 	public static final String ISOCODE_INIT_VALUE = new String( "" );
 	public static final String NAME_INIT_VALUE = new String( "" );

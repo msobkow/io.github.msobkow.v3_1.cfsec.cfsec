@@ -41,10 +41,10 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecISOLang
 {
 	public static final short ISOLANGID_MIN_VALUE = (short)0;
-        public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-        public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final short ISOLANGID_INIT_VALUE = (short)0;
 	public static final String ISO6392CODE_INIT_VALUE = new String( "" );
 	public static final String ISO6391CODE_INIT_VALUE = new String( "" );
