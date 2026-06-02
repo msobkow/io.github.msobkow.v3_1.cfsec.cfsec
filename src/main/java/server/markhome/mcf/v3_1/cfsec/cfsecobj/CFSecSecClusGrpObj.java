@@ -50,13 +50,13 @@ public class CFSecSecClusGrpObj
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecClusGrp rec;
 	protected ICFSecClusterObj requiredOwnerCluster;
-	protected ICFSecSecSysGrpObj requiredParentSysGrp;
+	protected ICFSecSecSysGrpObj requiredContainerSysGrp;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecClusGrpObj() {
 		isNew = true;
 		requiredOwnerCluster = null;
-		requiredParentSysGrp = null;
+		requiredContainerSysGrp = null;
 	}
 
 	public CFSecSecClusGrpObj( ICFSecSchemaObj argSchema ) {
@@ -64,7 +64,7 @@ public class CFSecSecClusGrpObj
 		isNew = true;
 		edit = null;
 		requiredOwnerCluster = null;
-		requiredParentSysGrp = null;
+		requiredContainerSysGrp = null;
 	}
 
 	@Override
@@ -79,7 +79,8 @@ public class CFSecSecClusGrpObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysGrp();
+		return( scope );
 	}
 
 	@Override
@@ -268,7 +269,7 @@ public class CFSecSecClusGrpObj
 		rec = value;
 		copyRecToPKey();
 		requiredOwnerCluster = null;
-		requiredParentSysGrp = null;
+		requiredContainerSysGrp = null;
 	}
 
 	@Override
@@ -380,19 +381,19 @@ public class CFSecSecClusGrpObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp() {
-		return( getRequiredParentSysGrp( false ) );
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp() {
+		return( getRequiredContainerSysGrp( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead ) {
-		if( ( requiredParentSysGrp == null ) || forceRead ) {
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead ) {
+		if( ( requiredContainerSysGrp == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredParentSysGrp = ((ICFSecSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusGrpRec().getRequiredName(), forceRead );
+				requiredContainerSysGrp = ((ICFSecSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusGrpRec().getRequiredName(), forceRead );
 			}
 		}
-		return( requiredParentSysGrp );
+		return( requiredContainerSysGrp );
 	}
 
 	@Override

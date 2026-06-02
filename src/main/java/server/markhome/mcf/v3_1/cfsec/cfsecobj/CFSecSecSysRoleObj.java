@@ -49,7 +49,7 @@ public class CFSecSecSysRoleObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecSysRole rec;
-	protected List<ICFSecSecSysRoleEnablesObj> optionalChildrenEnabledByRole;
+	protected List<ICFSecSecSysRoleEnablesObj> optionalComponentsEnabledByRole;
 	protected List<ICFSecSecSysRoleMembObj> optionalChildrenMembByRole;
 
 	public CFSecSecSysRoleObj() {
@@ -139,6 +139,19 @@ public class CFSecSecSysRoleObj
 		else {
 			nextName = objName;
 			remainingName = null;
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getRequiredSecSysRoleId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -357,7 +370,7 @@ public class CFSecSecSysRoleObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole() {
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole() {
 		List<ICFSecSecSysRoleEnablesObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			false );
@@ -365,7 +378,7 @@ public class CFSecSecSysRoleObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead ) {
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole( boolean forceRead ) {
 		List<ICFSecSecSysRoleEnablesObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			forceRead );

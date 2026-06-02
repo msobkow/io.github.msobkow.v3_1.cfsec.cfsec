@@ -73,11 +73,11 @@ public interface ICFSecSecClusGrp
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
-	public ICFSecSecSysGrp getRequiredParentSysGrp();
+	public ICFSecSecSysGrp getRequiredContainerSysGrp();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
-	public void setRequiredParentSysGrp(ICFSecSecSysGrp argObj);
-	public void setRequiredParentSysGrp(String argName);
+	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysGrp(String argName);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	@Override

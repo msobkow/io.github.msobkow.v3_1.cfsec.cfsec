@@ -67,18 +67,18 @@ public interface ICFSecSecSysGrp
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysGrpId);
 	
-	public List<ICFSecSecSysGrpInc> getOptionalChildrenIncByGrp();
+	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
-	public ICFSecSecSysRole getOptionalChildrenImplSysRole();
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public List<ICFSecSecClusGrp> getOptionalChildrenImplClusGrp();
-	public List<ICFSecSecTentGrp> getOptionalChildrenImplTentGrp();
-	public List<ICFSecSecClusRole> getOptionalChildrenImplClusRole();
-	public List<ICFSecSecTentRole> getOptionalChildrenImplTentRole();
+	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp();
+	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp();
+	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole();
+	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole();
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
 	public String getRequiredName();

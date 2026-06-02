@@ -64,7 +64,7 @@ public interface ICFSecSecSysRole
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysRoleId);
 	
-	public List<ICFSecSecSysRoleEnables> getOptionalChildrenEnabledByRole();
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );

@@ -49,13 +49,13 @@ public class CFSecSecSysGrpObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecSysGrp rec;
-	protected List<ICFSecSecSysGrpIncObj> optionalChildrenIncByGrp;
+	protected List<ICFSecSecSysGrpIncObj> optionalComponentsIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
-	protected List<ICFSecSecClusGrpObj> optionalChildrenImplClusGrp;
-	protected List<ICFSecSecTentGrpObj> optionalChildrenImplTentGrp;
-	protected ICFSecSecSysRoleObj optionalChildrenImplSysRole;
-	protected List<ICFSecSecClusRoleObj> optionalChildrenImplClusRole;
-	protected List<ICFSecSecTentRoleObj> optionalChildrenImplTentRole;
+	protected List<ICFSecSecClusGrpObj> optionalComponentsImplClusGrp;
+	protected List<ICFSecSecTentGrpObj> optionalComponentsImplTentGrp;
+	protected ICFSecSecSysRoleObj optionalComponentsImplSysRole;
+	protected List<ICFSecSecClusRoleObj> optionalComponentsImplClusRole;
+	protected List<ICFSecSecTentRoleObj> optionalComponentsImplTentRole;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenSysGrpByName;
 	protected List<ICFSecSecSysRoleEnablesObj> optionalChildrenRoleByEnableName;
 
@@ -146,6 +146,83 @@ public class CFSecSecSysGrpObj
 		else {
 			nextName = objName;
 			remainingName = null;
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredInclName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByIdIdx( getRequiredSecSysGrpId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredSecSysGrpId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredSecSysGrpId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByUNameIdx( natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredSecSysGrpId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredSecSysGrpId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -364,7 +441,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenIncByGrp() {
+	public List<ICFSecSecSysGrpIncObj> getOptionalComponentsIncByGrp() {
 		List<ICFSecSecSysGrpIncObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncBySysGrpIdx( getPKey(),
 			false );
@@ -372,7 +449,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead ) {
+	public List<ICFSecSecSysGrpIncObj> getOptionalComponentsIncByGrp( boolean forceRead ) {
 		List<ICFSecSecSysGrpIncObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncBySysGrpIdx( getPKey(),
 			forceRead );
@@ -396,7 +473,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp() {
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsImplClusGrp() {
 		List<ICFSecSecClusGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
 			false );
@@ -404,7 +481,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp( boolean forceRead ) {
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsImplClusGrp( boolean forceRead ) {
 		List<ICFSecSecClusGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
@@ -412,7 +489,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp() {
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsImplTentGrp() {
 		List<ICFSecSecTentGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
 			false );
@@ -420,7 +497,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp( boolean forceRead ) {
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsImplTentGrp( boolean forceRead ) {
 		List<ICFSecSecTentGrpObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
@@ -428,23 +505,23 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj getOptionalChildrenImplSysRole() {
-		return( getOptionalChildrenImplSysRole( false ) );
+	public ICFSecSecSysRoleObj getOptionalComponentsImplSysRole() {
+		return( getOptionalComponentsImplSysRole( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj getOptionalChildrenImplSysRole( boolean forceRead ) {
-		if( ( optionalChildrenImplSysRole == null ) || forceRead ) {
+	public ICFSecSecSysRoleObj getOptionalComponentsImplSysRole( boolean forceRead ) {
+		if( ( optionalComponentsImplSysRole == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				optionalChildrenImplSysRole = ((ICFSecSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByIdIdx( getPKey(), forceRead );
+				optionalComponentsImplSysRole = ((ICFSecSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByIdIdx( getPKey(), forceRead );
 			}
 		}
-		return( optionalChildrenImplSysRole );
+		return( optionalComponentsImplSysRole );
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole() {
+	public List<ICFSecSecClusRoleObj> getOptionalComponentsImplClusRole() {
 		List<ICFSecSecClusRoleObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
 			false );
@@ -452,7 +529,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole( boolean forceRead ) {
+	public List<ICFSecSecClusRoleObj> getOptionalComponentsImplClusRole( boolean forceRead ) {
 		List<ICFSecSecClusRoleObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
@@ -460,7 +537,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole() {
+	public List<ICFSecSecTentRoleObj> getOptionalComponentsImplTentRole() {
 		List<ICFSecSecTentRoleObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
 			false );
@@ -468,7 +545,7 @@ public class CFSecSecSysGrpObj
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole( boolean forceRead ) {
+	public List<ICFSecSecTentRoleObj> getOptionalComponentsImplTentRole( boolean forceRead ) {
 		List<ICFSecSecTentRoleObj> retval;
 		retval = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );

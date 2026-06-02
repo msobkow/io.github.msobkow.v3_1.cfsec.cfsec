@@ -49,22 +49,22 @@ public class CFSecSecClusRoleObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecClusRole rec;
-	protected ICFSecClusterObj requiredContainerCluster;
-	protected ICFSecSecSysGrpObj requiredParentSysRole;
+	protected ICFSecClusterObj requiredOwnerCluster;
+	protected ICFSecSecSysGrpObj requiredContainerSysRole;
 	protected List<ICFSecSecClusRoleMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecClusRoleObj() {
 		isNew = true;
-		requiredContainerCluster = null;
-		requiredParentSysRole = null;
+		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	public CFSecSecClusRoleObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
-		requiredContainerCluster = null;
-		requiredParentSysRole = null;
+		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public class CFSecSecClusRoleObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFSecClusterObj scope = getRequiredContainerCluster();
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysRole();
 		return( scope );
 	}
 
@@ -268,8 +268,8 @@ public class CFSecSecClusRoleObj
 		}
 		rec = value;
 		copyRecToPKey();
-		requiredContainerCluster = null;
-		requiredParentSysRole = null;
+		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -365,35 +365,35 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public ICFSecClusterObj getRequiredContainerCluster() {
-		return( getRequiredContainerCluster( false ) );
+	public ICFSecClusterObj getRequiredOwnerCluster() {
+		return( getRequiredOwnerCluster( false ) );
 	}
 
 	@Override
-	public ICFSecClusterObj getRequiredContainerCluster( boolean forceRead ) {
-		if( ( requiredContainerCluster == null ) || forceRead ) {
+	public ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead ) {
+		if( ( requiredOwnerCluster == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredContainerCluster = ((ICFSecSchemaObj)getSchema()).getClusterTableObj().readClusterByIdIdx( getSecClusRoleRec().getRequiredClusterId(), forceRead );
+				requiredOwnerCluster = ((ICFSecSchemaObj)getSchema()).getClusterTableObj().readClusterByIdIdx( getSecClusRoleRec().getRequiredClusterId(), forceRead );
 			}
 		}
-		return( requiredContainerCluster );
+		return( requiredOwnerCluster );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysRole() {
-		return( getRequiredParentSysRole( false ) );
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole() {
+		return( getRequiredContainerSysRole( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysRole( boolean forceRead ) {
-		if( ( requiredParentSysRole == null ) || forceRead ) {
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead ) {
+		if( ( requiredContainerSysRole == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredParentSysRole = ((ICFSecSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusRoleRec().getRequiredName(), forceRead );
+				requiredContainerSysRole = ((ICFSecSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusRoleRec().getRequiredName(), forceRead );
 			}
 		}
-		return( requiredParentSysRole );
+		return( requiredContainerSysRole );
 	}
 
 	@Override

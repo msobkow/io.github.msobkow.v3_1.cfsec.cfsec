@@ -72,12 +72,12 @@ public interface ICFSecSecClusRole
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecCluster getRequiredContainerCluster();
-	public ICFSecSecSysGrp getRequiredParentSysRole();
-	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
-	public void setRequiredParentSysRole(ICFSecSecSysGrp argObj);
-	public void setRequiredParentSysRole(String argName);
+	public ICFSecCluster getRequiredOwnerCluster();
+	public ICFSecSecSysGrp getRequiredContainerSysRole();
+	public void setRequiredOwnerCluster(ICFSecCluster argObj);
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(String argName);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	@Override

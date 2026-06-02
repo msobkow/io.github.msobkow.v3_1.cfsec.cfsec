@@ -46,8 +46,8 @@ public class CFSecSecTentGrpEditObj
 	protected ICFSecSecTentGrp rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
-	protected ICFSecTenantObj requiredContainerTenant;
-	protected ICFSecSecSysGrpObj requiredParentSysGrp;
+	protected ICFSecTenantObj requiredOwnerTenant;
+	protected ICFSecSecSysGrpObj requiredContainerSysGrp;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecTentGrpEditObj( ICFSecSecTentGrpObj argOrig ) {
@@ -55,8 +55,8 @@ public class CFSecSecTentGrpEditObj
 		getRec();
 		ICFSecSecTentGrp origRec = orig.getRec();
 		rec.set( origRec );
-		requiredContainerTenant = null;
-		requiredParentSysGrp = null;
+		requiredOwnerTenant = null;
+		requiredContainerSysGrp = null;
 	}
 
 	@Override
@@ -125,7 +125,7 @@ public class CFSecSecTentGrpEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFSecTenantObj scope = getRequiredContainerTenant();
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysGrp();
 		return( scope );
 	}
 
@@ -361,8 +361,8 @@ public class CFSecSecTentGrpEditObj
 	public void setRec( ICFSecSecTentGrp value ) {
 		if( rec != value ) {
 			rec = value;
-			requiredContainerTenant = null;
-			requiredParentSysGrp = null;
+			requiredOwnerTenant = null;
+			requiredContainerSysGrp = null;
 		}
 	}
 
@@ -401,8 +401,8 @@ public class CFSecSecTentGrpEditObj
 	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
-			requiredContainerTenant = null;
-			requiredParentSysGrp = null;
+			requiredOwnerTenant = null;
+			requiredContainerSysGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
 	}
@@ -418,68 +418,64 @@ public class CFSecSecTentGrpEditObj
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredContainerTenant() {
-		return( getRequiredContainerTenant( false ) );
+	public ICFSecTenantObj getRequiredOwnerTenant() {
+		return( getRequiredOwnerTenant( false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredContainerTenant( boolean forceRead ) {
-		if( forceRead || ( requiredContainerTenant == null ) ) {
+	public ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead ) {
+		if( forceRead || ( requiredOwnerTenant == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
 				ICFSecTenantObj obj = ((ICFSecSchemaObj)getOrigAsSecTentGrp().getSchema()).getTenantTableObj().readTenantByIdIdx( getSecTentGrpRec().getRequiredTenantId() );
-				requiredContainerTenant = obj;
-				if( obj != null ) {
-					requiredContainerTenant = obj;
-				}
+				requiredOwnerTenant = obj;
 			}
 		}
-		return( requiredContainerTenant );
+		return( requiredOwnerTenant );
 	}
 
 	@Override
-	public void setRequiredContainerTenant( ICFSecTenantObj value ) {
+	public void setRequiredOwnerTenant( ICFSecTenantObj value ) {
 		if( rec == null ) {
 			getSecTentGrpRec();
 		}
 		if( value != null ) {
-			requiredContainerTenant = value;
-			getSecTentGrpRec().setRequiredContainerTenant(value.getTenantRec());
+			requiredOwnerTenant = value;
+			getSecTentGrpRec().setRequiredOwnerTenant(value.getTenantRec());
 		}
-		requiredContainerTenant = value;
+		requiredOwnerTenant = value;
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp() {
-		return( getRequiredParentSysGrp( false ) );
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp() {
+		return( getRequiredContainerSysGrp( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead ) {
-		if( forceRead || ( requiredParentSysGrp == null ) ) {
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead ) {
+		if( forceRead || ( requiredContainerSysGrp == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
 				ICFSecSecSysGrpObj obj = ((ICFSecSchemaObj)getOrigAsSecTentGrp().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecTentGrpRec().getRequiredName() );
-				requiredParentSysGrp = obj;
+				requiredContainerSysGrp = obj;
+				if( obj != null ) {
+					requiredContainerSysGrp = obj;
+				}
 			}
 		}
-		return( requiredParentSysGrp );
+		return( requiredContainerSysGrp );
 	}
 
 	@Override
-	public void setRequiredParentSysGrp( ICFSecSecSysGrpObj value ) {
+	public void setRequiredContainerSysGrp( ICFSecSecSysGrpObj value ) {
 		if( rec == null ) {
 			getSecTentGrpRec();
 		}
 		if( value != null ) {
-			requiredParentSysGrp = value;
-			getSecTentGrpRec().setRequiredParentSysGrp(value.getSecSysGrpRec());
+			requiredContainerSysGrp = value;
+			getSecTentGrpRec().setRequiredContainerSysGrp(value.getSecSysGrpRec());
 		}
-		else {
-			requiredParentSysGrp = null;
-			getSecTentGrpRec().setRequiredParentSysGrp((ICFSecSecSysGrp)null);
-		}
-		requiredParentSysGrp = value;
+		requiredContainerSysGrp = value;
 	}
 
 	@Override

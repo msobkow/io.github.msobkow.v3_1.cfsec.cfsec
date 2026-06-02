@@ -47,7 +47,7 @@ public class CFSecSecClusGrpEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredOwnerCluster;
-	protected ICFSecSecSysGrpObj requiredParentSysGrp;
+	protected ICFSecSecSysGrpObj requiredContainerSysGrp;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFSecSecClusGrpEditObj( ICFSecSecClusGrpObj argOrig ) {
@@ -56,7 +56,7 @@ public class CFSecSecClusGrpEditObj
 		ICFSecSecClusGrp origRec = orig.getRec();
 		rec.set( origRec );
 		requiredOwnerCluster = null;
-		requiredParentSysGrp = null;
+		requiredContainerSysGrp = null;
 	}
 
 	@Override
@@ -125,7 +125,8 @@ public class CFSecSecClusGrpEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysGrp();
+		return( scope );
 	}
 
 	@Override
@@ -361,7 +362,7 @@ public class CFSecSecClusGrpEditObj
 		if( rec != value ) {
 			rec = value;
 			requiredOwnerCluster = null;
-			requiredParentSysGrp = null;
+			requiredContainerSysGrp = null;
 		}
 	}
 
@@ -401,7 +402,7 @@ public class CFSecSecClusGrpEditObj
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerCluster = null;
-			requiredParentSysGrp = null;
+			requiredContainerSysGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
 	}
@@ -446,36 +447,35 @@ public class CFSecSecClusGrpEditObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp() {
-		return( getRequiredParentSysGrp( false ) );
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp() {
+		return( getRequiredContainerSysGrp( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead ) {
-		if( forceRead || ( requiredParentSysGrp == null ) ) {
+	public ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead ) {
+		if( forceRead || ( requiredContainerSysGrp == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
 				ICFSecSecSysGrpObj obj = ((ICFSecSchemaObj)getOrigAsSecClusGrp().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusGrpRec().getRequiredName() );
-				requiredParentSysGrp = obj;
+				requiredContainerSysGrp = obj;
+				if( obj != null ) {
+					requiredContainerSysGrp = obj;
+				}
 			}
 		}
-		return( requiredParentSysGrp );
+		return( requiredContainerSysGrp );
 	}
 
 	@Override
-	public void setRequiredParentSysGrp( ICFSecSecSysGrpObj value ) {
+	public void setRequiredContainerSysGrp( ICFSecSecSysGrpObj value ) {
 		if( rec == null ) {
 			getSecClusGrpRec();
 		}
 		if( value != null ) {
-			requiredParentSysGrp = value;
-			getSecClusGrpRec().setRequiredParentSysGrp(value.getSecSysGrpRec());
+			requiredContainerSysGrp = value;
+			getSecClusGrpRec().setRequiredContainerSysGrp(value.getSecSysGrpRec());
 		}
-		else {
-			requiredParentSysGrp = null;
-			getSecClusGrpRec().setRequiredParentSysGrp((ICFSecSecSysGrp)null);
-		}
-		requiredParentSysGrp = value;
+		requiredContainerSysGrp = value;
 	}
 
 	@Override

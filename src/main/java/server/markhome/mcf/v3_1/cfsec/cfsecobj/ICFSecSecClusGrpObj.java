@@ -231,14 +231,14 @@ public interface ICFSecSecClusGrpObj
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecClusGrpMembObj array of instances referenced by the MembByGrp key.
