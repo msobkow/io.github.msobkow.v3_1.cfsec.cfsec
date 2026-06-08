@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 /**
- *	ICFSecISOCtryCcyPKey primary key interface for ISOCtryCcy
+ *	ICFSecISOCtryCcyPKey primary key interface for ISOCtryCcy has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredISOCtryId	Required object attribute ISOCtryId.
  *		requiredISOCcyId	Required object attribute ISOCcyId.
  */

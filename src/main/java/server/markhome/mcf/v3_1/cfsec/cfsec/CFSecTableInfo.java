@@ -47,20 +47,28 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecSessionObj;
  */
 public class CFSecTableInfo implements Serializable
 {
+	protected final String schemaName;
 	protected final String tableName;
 	protected final boolean history;
 	protected final boolean mutable;
 	protected final String scope;
+	protected final String codeVis;
 
-	public CFSecTableInfo(String tableName, boolean history, boolean mutable, String scope) {
+	public CFSecTableInfo(String schemaName, String tableName, boolean history, boolean mutable, String scope, String codeVis) {
+		this.schemaName = schemaName;
 		this.tableName = tableName;
 		this.history = history;
 		this.mutable = mutable;
 		this.scope = scope;
+		this.codeVis = codeVis;
 	}
 
 	public String getTableName() {
 		return tableName;
+	}
+
+	public String getSchemaName() {
+		return schemaName;
 	}
 
 	public boolean hasHistory() {
@@ -73,5 +81,9 @@ public class CFSecTableInfo implements Serializable
 
 	public String getScope() {
 		return scope;
+	}
+
+	public String getCodeVis() {
+		return codeVis;
 	}
 }

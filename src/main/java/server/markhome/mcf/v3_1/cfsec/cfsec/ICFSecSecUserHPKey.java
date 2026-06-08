@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecSecUserHPKey History Primary Key interface for SecUser
+ *	ICFSecSecUserHPKey History Primary Key interface for SecUser has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredSecUserId	Required object attribute SecUserId. */
 public interface ICFSecSecUserHPKey
 {

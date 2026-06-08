@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 
 /*
- *	CFSecISOCtryCcyTable database interface for ISOCtryCcy
+ *	CFSecISOCtryCcyTable database interface for ISOCtryCcy has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFSecISOCtryCcyTable
 {

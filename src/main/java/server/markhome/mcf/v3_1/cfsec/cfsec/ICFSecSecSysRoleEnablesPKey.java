@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 /**
- *	ICFSecSecSysRoleEnablesPKey primary key interface for SecSysRoleEnables
+ *	ICFSecSecSysRoleEnablesPKey primary key interface for SecSysRoleEnables has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
  *		requiredSecSysRoleId	Required object attribute SecSysRoleId.
  *		requiredEnableName	Required object attribute EnableName.
  */

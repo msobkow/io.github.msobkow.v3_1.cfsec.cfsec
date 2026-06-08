@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 
 /*
- *	CFSecISOTZoneTable database interface for ISOTZone
+ *	CFSecISOTZoneTable database interface for ISOTZone has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFSecISOTZoneTable
 {

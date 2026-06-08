@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 
 /*
- *	CFSecSecSysGrpIncTable database interface for SecSysGrpInc
+ *	CFSecSecSysGrpIncTable database interface for SecSysGrpInc has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
  */
 public interface ICFSecSecSysGrpIncTable
 {

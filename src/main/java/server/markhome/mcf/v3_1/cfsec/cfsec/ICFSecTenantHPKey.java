@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecTenantHPKey History Primary Key interface for Tenant
+ *	ICFSecTenantHPKey History Primary Key interface for Tenant has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFSecTenantHPKey
 {

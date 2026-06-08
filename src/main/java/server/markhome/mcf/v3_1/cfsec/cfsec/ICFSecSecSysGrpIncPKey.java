@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 /**
- *	ICFSecSecSysGrpIncPKey primary key interface for SecSysGrpInc
+ *	ICFSecSecSysGrpIncPKey primary key interface for SecSysGrpInc has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
  *		requiredSecSysGrpId	Required object attribute SecSysGrpId.
  *		requiredInclName	Required object attribute InclName.
  */

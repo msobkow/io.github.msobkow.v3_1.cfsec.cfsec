@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecISOCtryHPKey History Primary Key interface for ISOCtry
+ *	ICFSecISOCtryHPKey History Primary Key interface for ISOCtry has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredISOCtryId	Required object attribute ISOCtryId. */
 public interface ICFSecISOCtryHPKey
 {

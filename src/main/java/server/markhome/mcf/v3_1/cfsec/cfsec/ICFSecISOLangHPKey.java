@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecISOLangHPKey History Primary Key interface for ISOLang
+ *	ICFSecISOLangHPKey History Primary Key interface for ISOLang has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredISOLangId	Required object attribute ISOLangId. */
 public interface ICFSecISOLangHPKey
 {

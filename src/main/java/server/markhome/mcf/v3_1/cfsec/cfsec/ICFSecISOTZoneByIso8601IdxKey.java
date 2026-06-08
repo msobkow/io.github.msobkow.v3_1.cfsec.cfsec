@@ -38,6 +38,9 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
+/**
+ *	ICFSecISOTZoneByIso8601IdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFSecISOTZoneByIso8601IdxKey
 {
 	public String getRequiredIso8601();

@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecISOTZoneHPKey History Primary Key interface for ISOTZone
+ *	ICFSecISOTZoneHPKey History Primary Key interface for ISOTZone has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredISOTZoneId	Required object attribute ISOTZoneId. */
 public interface ICFSecISOTZoneHPKey
 {

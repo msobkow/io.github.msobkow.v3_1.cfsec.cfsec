@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecSecTentRoleMembHPKey History Primary Key interface for SecTentRoleMemb
+ *	ICFSecSecTentRoleMembHPKey History Primary Key interface for SecTentRoleMemb has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
  *		requiredSecTentRoleId	Required object attribute SecTentRoleId.
  *		requiredLoginId	Required object attribute LoginId. */
 public interface ICFSecSecTentRoleMembHPKey

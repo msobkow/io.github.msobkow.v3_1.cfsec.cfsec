@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecSecClusGrpHPKey History Primary Key interface for SecClusGrp
+ *	ICFSecSecClusGrpHPKey History Primary Key interface for SecClusGrp has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
  *		requiredSecClusGrpId	Required object attribute SecClusGrpId. */
 public interface ICFSecSecClusGrpHPKey
 {
