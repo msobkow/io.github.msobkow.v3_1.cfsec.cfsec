@@ -266,6 +266,13 @@ public interface ICFSecSchemaObj
 	ICFSecSysClusterTableObj getSysClusterTableObj();
 
 	/**
+	 *	Get the TableInfo interface for the schema.
+	 *
+	 *	@return	The ICFSecTableInfoTableObj interface implementation for the schema.
+	 */
+	ICFSecTableInfoTableObj getTableInfoTableObj();
+
+	/**
 	 *	Get the Tenant interface for the schema.
 	 *
 	 *	@return	The ICFSecTenantTableObj interface implementation for the schema.

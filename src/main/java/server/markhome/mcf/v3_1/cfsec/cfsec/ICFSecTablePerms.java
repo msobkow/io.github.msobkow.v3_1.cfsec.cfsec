@@ -825,6 +825,34 @@ public interface ICFSecTablePerms
 	boolean allowDeleteSysCluster( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create TableInfo instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateTableInfo( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read TableInfo instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadTableInfo( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update TableInfo instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateTableInfo( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete TableInfo instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteTableInfo( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create Tenant instances?
 	 *
 	 *	@param	Authorization	The session authorization information.

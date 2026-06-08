@@ -88,6 +88,7 @@ public class CFSecSchemaObj
 	protected ICFSecSecUserPWResetTableObj secUserPWResetTableObj;
 	protected ICFSecSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFSecSysClusterTableObj sysClusterTableObj;
+	protected ICFSecTableInfoTableObj tableInfoTableObj;
 	protected ICFSecTenantTableObj tenantTableObj;
 
 	public CFSecSchemaObj() {
@@ -121,6 +122,7 @@ public class CFSecSchemaObj
 		secUserPWResetTableObj = new CFSecSecUserPWResetTableObj( this );
 		secUserPasswordTableObj = new CFSecSecUserPasswordTableObj( this );
 		sysClusterTableObj = new CFSecSysClusterTableObj( this );
+		tableInfoTableObj = new CFSecTableInfoTableObj( this );
 		tenantTableObj = new CFSecTenantTableObj( this );
 		}
 
@@ -421,6 +423,9 @@ public class CFSecSchemaObj
 		if( sysClusterTableObj != null ) {
 			sysClusterTableObj.minimizeMemory();
 		}
+		if( tableInfoTableObj != null ) {
+			tableInfoTableObj.minimizeMemory();
+		}
 		if( tenantTableObj != null ) {
 			tenantTableObj.minimizeMemory();
 		}
@@ -555,6 +560,10 @@ public class CFSecSchemaObj
 
 	public ICFSecSysClusterTableObj getSysClusterTableObj() {
 		return( sysClusterTableObj );
+	}
+
+	public ICFSecTableInfoTableObj getTableInfoTableObj() {
+		return( tableInfoTableObj );
 	}
 
 	public ICFSecTenantTableObj getTenantTableObj() {

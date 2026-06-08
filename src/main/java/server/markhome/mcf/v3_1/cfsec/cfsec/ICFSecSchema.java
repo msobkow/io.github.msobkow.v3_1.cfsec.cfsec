@@ -77,6 +77,7 @@ public interface ICFSecSchema
 		new CFSecTableInfo("CFSec", "SecUserPWReset", true, false, "System", "Protected"),
 		new CFSecTableInfo("CFSec", "SecUserPassword", false, false, "System", "Protected"),
 		new CFSecTableInfo("CFSec", "SysCluster", false, false, "System", "Public"),
+		new CFSecTableInfo("CFSec", "TableInfo", true, false, "Global", "Public"),
 		new CFSecTableInfo("CFSec", "Tenant", true, false, "System", "Public")};
 	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
 	public static final CFSecRoleInfo ROLE_INFO[] = {new CFSecRoleInfo("secclusmanager", "ClusRole", "sectentmanager createsecclusmemb updatesecclusmemb deletesecclusmemb createsecclusrolememb updatesecclusrolememb deletesecclusrolememb", "systemadmin"),
@@ -646,6 +647,8 @@ public interface ICFSecSchema
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "Tenant", ICFSecTenant.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "TableInfo", ICFSecTableInfo.CLASS_CODE);
+				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "ISOCcy", ICFSecISOCcy.CLASS_CODE);
 				ICFSecSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFSecSchema.SCHEMA_NAME, "ISOCtry", ICFSecISOCtry.CLASS_CODE);
@@ -777,6 +780,15 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOTZoneIdGen();
+
+	/**
+	 *	Get the next TableInfoIdGen identifier.
+	 *
+	 *	@return	The next TableInfoIdGen identifier.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public int nextTableInfoIdGen();
 
 	/**
 	 *	Get the next ClusterIdGen identifier.
@@ -1362,6 +1374,24 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSysClusterFactory getFactorySysCluster();
+
+	/**
+	 *	Get the TableInfo Table interface for the schema.
+	 *
+	 *	@return	The TableInfo Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecTableInfoTable getTableTableInfo();
+
+	/**
+	 *	Get the TableInfo Factory interface for the schema.
+	 *
+	 *	@return	The TableInfo Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecTableInfoFactory getFactoryTableInfo();
 
 	/**
 	 *	Get the Tenant Table interface for the schema.
