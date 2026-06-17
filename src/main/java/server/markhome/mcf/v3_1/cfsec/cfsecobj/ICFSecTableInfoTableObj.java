@@ -181,6 +181,27 @@ public interface ICFSecTableInfoTableObj
 		boolean forceRead );
 
 	/**
+	 *	Get the map of CFSecTableInfoObj instances sorted by their primary keys for the duplicate SuperNameIdx key.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SuperNameIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName );
+
+	/**
+	 *	Get the map of CFSecTableInfoObj instances sorted by their primary keys for the duplicate SuperNameIdx key.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SuperNameIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName,
+		boolean forceRead );
+
+	/**
 	 *	Get the map of CFSecTableInfoObj instances sorted by their primary keys for the duplicate SchemaNameIdx key.
 	 *
 	 *	@param	SchemaName	The TableInfo key attribute of the instance generating the id.
@@ -253,6 +274,8 @@ public interface ICFSecTableInfoTableObj
 
 	ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( String TableName );
 
+	List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( String SuperName );
+
 	List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( String SchemaName );
 
 	ICFSecTableInfoObj readCachedTableInfoBySchemaBkCodeIdx( String SchemaName,
@@ -263,6 +286,8 @@ public interface ICFSecTableInfoTableObj
 	void deepDisposeTableInfoByIdIdx( int TableInfoId );
 
 	void deepDisposeTableInfoByTableNameIdx( String TableName );
+
+	void deepDisposeTableInfoBySuperNameIdx( String SuperName );
 
 	void deepDisposeTableInfoBySchemaNameIdx( String SchemaName );
 
@@ -294,6 +319,13 @@ public interface ICFSecTableInfoTableObj
 	 *	@param	TableName	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoByTableNameIdx(String TableName );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 */
+	void deleteTableInfoBySuperNameIdx( String SuperName );
 
 	/**
 	 *	Internal use only.

@@ -49,6 +49,7 @@ public interface ICFSecTableInfo
 	public static final int TABLEINFOID_INIT_VALUE = 0;
 	public static final String SCHEMANAME_INIT_VALUE = new String( "" );
 	public static final String TABLENAME_INIT_VALUE = new String( "" );
+	public static final String SUPERNAME_INIT_VALUE = new String( "" );
 	public static final int BACKINGCLASSCODE_INIT_VALUE = 0;
 	public static final int RUNTIMECLASSCODE_INIT_VALUE = 0;
 	public final static boolean HASHISTORY_INIT_VALUE = false;
@@ -68,10 +69,15 @@ public interface ICFSecTableInfo
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecTableInfo getOptionalParentSuperRef();
+	public List<ICFSecTableInfo> getOptionalChildrenSubRefs();
+	public void setOptionalParentSuperRef(ICFSecTableInfo argObj);
+	public void setOptionalParentSuperRef(String argSuperName);
 	public String getRequiredSchemaName();
 	public void setRequiredSchemaName( String value );
 	public String getRequiredTableName();
 	public void setRequiredTableName( String value );
+	public String getOptionalSuperName();
 	public int getRequiredBackingClassCode();
 	public void setRequiredBackingClassCode( int value );
 	public int getRequiredRuntimeClassCode();

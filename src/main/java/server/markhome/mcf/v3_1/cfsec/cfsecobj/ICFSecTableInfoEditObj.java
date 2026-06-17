@@ -77,6 +77,34 @@ public interface ICFSecTableInfoEditObj
 	CFSecTableInfoEditObj deleteInstance();
 
 	/**
+	 *	Get the ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef();
+
+	/**
+	 *	Get the optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@param	value	the ICFSecTableInfoObj instance to be referenced by the SuperRef key.
+	 */
+	void setOptionalParentSuperRef( ICFSecTableInfoObj value );
+
+	/**
+	 *	Get a list ICFSecTableInfoObj instances referenced by the SubRefs key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecTableInfoObj instances referenced by the SubRefs key.
+	 */
+	List<ICFSecTableInfoObj> getOptionalChildrenSubRefs();
+
+	/**
 	 *	Get the required int attribute TableInfoId.
 	 *
 	 *	@return	The required int attribute TableInfoId.
@@ -117,6 +145,13 @@ public interface ICFSecTableInfoEditObj
 	 *	@param value The required String attribute TableName value to be applied.
 	 */
 	void setRequiredTableName(String value);
+
+	/**
+	 *	Get the optional String attribute SuperName.
+	 *
+	 *	@return	The optional String attribute SuperName.
+	 */
+	String getOptionalSuperName();
 
 	/**
 	 *	Get the required int attribute BackingClassCode.

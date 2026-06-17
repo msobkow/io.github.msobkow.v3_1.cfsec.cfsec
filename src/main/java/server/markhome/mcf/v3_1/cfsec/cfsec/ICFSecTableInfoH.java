@@ -65,6 +65,8 @@ public interface ICFSecTableInfoH
 	public void setRequiredSchemaName( String value );
 	public String getRequiredTableName();
 	public void setRequiredTableName( String value );
+	public String getOptionalSuperName();
+	public void setOptionalSuperName( String value );
 	public int getRequiredBackingClassCode();
 	public void setRequiredBackingClassCode( int value );
 	public int getRequiredRuntimeClassCode();

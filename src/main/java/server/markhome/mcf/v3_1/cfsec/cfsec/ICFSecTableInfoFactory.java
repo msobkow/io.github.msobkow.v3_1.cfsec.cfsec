@@ -60,6 +60,13 @@ public interface ICFSecTableInfoFactory
 	public ICFSecTableInfoByTableNameIdxKey newByTableNameIdxKey();
 
 	/**
+	 *	Allocate a SuperNameIdx key over TableInfo instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecTableInfoBySuperNameIdxKey newBySuperNameIdxKey();
+
+	/**
 	 *	Allocate a SchemaNameIdx key over TableInfo instances.
 	 *
 	 *	@return	The new instance.

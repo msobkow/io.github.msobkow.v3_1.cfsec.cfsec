@@ -1,4 +1,4 @@
-// Description: Java 25 CFSec TableInfo Implementation
+// Description: Java 25 CFSec TableData Implementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -42,21 +42,23 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecTenantObj;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecSessionObj;
 
 /*
- *	The CFSecTableInfo objects are passed in to the CFSec schema implementation to be bound
+ *	The CFSecTableData objects are passed in to the CFSec schema implementation to be bound
  *	to the 
  */
-public class CFSecTableInfo implements Serializable
+public class CFSecTableData implements Serializable
 {
 	protected final String schemaName;
 	protected final String tableName;
+	protected final String superName;
 	protected final boolean history;
 	protected final boolean mutable;
 	protected final String scope;
 	protected final String codeVis;
 
-	public CFSecTableInfo(String schemaName, String tableName, boolean history, boolean mutable, String scope, String codeVis) {
+	public CFSecTableData(String schemaName, String tableName, String superName, boolean history, boolean mutable, String scope, String codeVis) {
 		this.schemaName = schemaName;
 		this.tableName = tableName;
+		this.superName = superName;
 		this.history = history;
 		this.mutable = mutable;
 		this.scope = scope;
@@ -65,6 +67,10 @@ public class CFSecTableInfo implements Serializable
 
 	public String getTableName() {
 		return tableName;
+	}
+
+	public String getSuperName() {
+		return superName;
 	}
 
 	public String getSchemaName() {

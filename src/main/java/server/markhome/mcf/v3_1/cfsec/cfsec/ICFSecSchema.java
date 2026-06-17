@@ -49,37 +49,37 @@ public interface ICFSecSchema
 	public static final String SCHEMA_NAME = "CFSec";
 	public static final String DBSCHEMA_NAME = "CFSec31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("CFSec", "Cluster", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOCcy", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOCtry", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOCtryCcy", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOCtryLang", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOLang", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "ISOTZone", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "SecClusGrp", true, false, "Cluster", "Protected"),
-		new CFSecTableInfo("CFSec", "SecClusGrpMemb", true, false, "Cluster", "Protected"),
-		new CFSecTableInfo("CFSec", "SecClusRole", true, false, "Cluster", "Protected"),
-		new CFSecTableInfo("CFSec", "SecClusRoleMemb", true, false, "Cluster", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSession", false, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysGrp", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysGrpInc", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysGrpMemb", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysRole", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysRoleEnables", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecSysRoleMemb", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecTentGrp", true, false, "Tenant", "Protected"),
-		new CFSecTableInfo("CFSec", "SecTentGrpMemb", true, false, "Tenant", "Protected"),
-		new CFSecTableInfo("CFSec", "SecTentRole", true, false, "Tenant", "Protected"),
-		new CFSecTableInfo("CFSec", "SecTentRoleMemb", true, false, "Tenant", "Protected"),
-		new CFSecTableInfo("CFSec", "SecUser", true, false, "System", "Public"),
-		new CFSecTableInfo("CFSec", "SecUserEMConf", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecUserPWHistory", false, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecUserPWReset", true, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SecUserPassword", false, false, "System", "Protected"),
-		new CFSecTableInfo("CFSec", "SysCluster", false, false, "System", "Public"),
-		new CFSecTableInfo("CFSec", "TableInfo", true, false, "Global", "Public"),
-		new CFSecTableInfo("CFSec", "Tenant", true, false, "System", "Public")};
-	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
+	public static final CFSecTableData TABLE_DATA[] = {new CFSecTableData("CFSec", "Cluster", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOCcy", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOCtry", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOCtryCcy", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOCtryLang", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOLang", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "ISOTZone", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "SecClusGrp", null, true, false, "Cluster", "Protected"),
+		new CFSecTableData("CFSec", "SecClusGrpMemb", null, true, false, "Cluster", "Protected"),
+		new CFSecTableData("CFSec", "SecClusRole", null, true, false, "Cluster", "Protected"),
+		new CFSecTableData("CFSec", "SecClusRoleMemb", null, true, false, "Cluster", "Protected"),
+		new CFSecTableData("CFSec", "SecSession", null, false, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysGrp", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysGrpInc", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysGrpMemb", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysRole", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysRoleEnables", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysRoleMemb", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecTentGrp", null, true, false, "Tenant", "Protected"),
+		new CFSecTableData("CFSec", "SecTentGrpMemb", null, true, false, "Tenant", "Protected"),
+		new CFSecTableData("CFSec", "SecTentRole", null, true, false, "Tenant", "Protected"),
+		new CFSecTableData("CFSec", "SecTentRoleMemb", null, true, false, "Tenant", "Protected"),
+		new CFSecTableData("CFSec", "SecUser", null, true, false, "System", "Public"),
+		new CFSecTableData("CFSec", "SecUserEMConf", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecUserPWHistory", null, false, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecUserPWReset", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecUserPassword", null, false, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SysCluster", null, false, false, "System", "Public"),
+		new CFSecTableData("CFSec", "TableInfo", null, true, false, "Global", "Public"),
+		new CFSecTableData("CFSec", "Tenant", null, true, false, "System", "Public")};
+	public static final AtomicReference<CFSecTableData[]> consolidatedTableData = new AtomicReference<>(null);
 	public static final CFSecRoleInfo ROLE_INFO[] = {new CFSecRoleInfo("secclusmanager", "ClusRole", "sectentmanager createsecclusmemb updatesecclusmemb deletesecclusmemb createsecclusrolememb updatesecclusrolememb deletesecclusrolememb", "systemadmin"),
 		new CFSecRoleInfo("secclusadmin", "ClusRole", "secclusmanager createsecclusgrp updatesecclusgrp deletesecclusgrp readsecclusrole updatesecclusrole createsecclusrole deletesecclusrole", "systemadmin"),
 		new CFSecRoleInfo("secsysmanager", "SysRole", "secuser secclusmanager createsecsysmemb updatesecsysmemb deletesecsysmemb create secsysrolememb updatesecsysrolememb deletesecsysrolememb", "systemadmin"),
@@ -89,15 +89,15 @@ public interface ICFSecSchema
 		new CFSecRoleInfo("secuser", "SysRole", "readcluster readtenant readsecsysgrp readsecsysinc readsecsysmemb readsecsysrole readsecsysinc readsecsysroleenable readsecsysrolememb readsecclusgrp readsecclusmemb readsecclusrole readsecclusrolememb readsectentgrp readsectentmemb readsectentrole readsectentrolememb", "systemadmin")};
 	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
 
-	public static CFSecTableInfo[] getTableInfo() {
-		return TABLE_INFO;
+	public static CFSecTableData[] getTableData() {
+		return TABLE_DATA;
 	}
 
-	public static CFSecTableInfo[] getConsolidatedTableInfo() {
-		if (consolidatedTableInfo.get() == null) {
-			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
-			for( CFSecTableInfo info: TABLE_INFO) {
-				lst.add(info);
+	public static CFSecTableData[] getConsolidatedTableData() {
+		if (consolidatedTableData.get() == null) {
+			ArrayList<CFSecTableData> lst = new ArrayList<>();
+			for( CFSecTableData data: TABLE_DATA) {
+				lst.add(data);
 			}
 			lst.sort((o1, o2) -> {
 				int retval = o1.getSchemaName().compareTo(o2.getSchemaName());
@@ -108,14 +108,14 @@ public interface ICFSecSchema
 					return o1.getTableName().compareTo(o2.getTableName());
 				}
 			});
-			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
+			CFSecTableData arr[] = new CFSecTableData[lst.size()];
 			int idx = 0;
-			for(CFSecTableInfo info: lst) {
-				arr[idx++] = info;
+			for(CFSecTableData data: lst) {
+				arr[idx++] = data;
 			}
-			consolidatedTableInfo.compareAndSet(null, arr);
+			consolidatedTableData.compareAndSet(null, arr);
 		}
-		return(consolidatedTableInfo.get());
+		return(consolidatedTableData.get());
 	}
 
 	public static CFSecRoleInfo[] getRoleInfo() {
@@ -1438,6 +1438,6 @@ public interface ICFSecSchema
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema(CFSecTableInfo tableInfo[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableInfo tableInfo[]);
+	public void bootstrapSchema(CFSecTableData tableData[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableData tableData[]);
 }

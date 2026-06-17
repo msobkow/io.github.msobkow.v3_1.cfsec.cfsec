@@ -110,6 +110,25 @@ public interface ICFSecTableInfoTable
 	void deleteTableInfoByTableNameIdx( ICFSecAuthorization Authorization,
 		ICFSecTableInfoByTableNameIdxKey argKey );
 	/**
+	 *	Delete the TableInfo instances identified by the key SuperNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 */
+	void deleteTableInfoBySuperNameIdx( ICFSecAuthorization Authorization,
+		String argSuperName );
+
+	/**
+	 *	Delete the TableInfo instances identified by the key SuperNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteTableInfoBySuperNameIdx( ICFSecAuthorization Authorization,
+		ICFSecTableInfoBySuperNameIdxKey argKey );
+	/**
 	 *	Delete the TableInfo instances identified by the key SchemaNameIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -233,6 +252,18 @@ public interface ICFSecTableInfoTable
 		String TableName );
 
 	/**
+	 *	Read an array of the derived TableInfo record instances identified by the duplicate key SuperNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFSecTableInfo[] readDerivedBySuperNameIdx( ICFSecAuthorization Authorization,
+		String SuperName );
+
+	/**
 	 *	Read an array of the derived TableInfo record instances identified by the duplicate key SchemaNameIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -341,6 +372,20 @@ public interface ICFSecTableInfoTable
 	 */
 	ICFSecTableInfo readRecByTableNameIdx( ICFSecAuthorization Authorization,
 		String TableName );
+
+	/**
+	 *	Read an array of the specific TableInfo record instances identified by the duplicate key SuperNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFSecTableInfo[] readRecBySuperNameIdx( ICFSecAuthorization Authorization,
+		String SuperName );
 
 	/**
 	 *	Read an array of the specific TableInfo record instances identified by the duplicate key SchemaNameIdx.

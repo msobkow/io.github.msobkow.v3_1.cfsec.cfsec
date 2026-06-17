@@ -47,15 +47,19 @@ public class CFSecTableInfoObj
 	protected ICFSecSchemaObj schema;
 	protected Integer pKey;
 	protected ICFSecTableInfo rec;
+	protected ICFSecTableInfoObj optionalParentSuperRef;
+	protected List<ICFSecTableInfoObj> optionalChildrenSubRefs;
 
 	public CFSecTableInfoObj() {
 		isNew = true;
+		optionalParentSuperRef = null;
 	}
 
 	public CFSecTableInfoObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		optionalParentSuperRef = null;
 	}
 
 	@Override
@@ -258,6 +262,7 @@ public class CFSecTableInfoObj
 		}
 		rec = value;
 		copyRecToPKey();
+		optionalParentSuperRef = null;
 	}
 
 	@Override
@@ -325,6 +330,41 @@ public class CFSecTableInfoObj
 	}
 
 	@Override
+	public ICFSecTableInfoObj getOptionalParentSuperRef() {
+		return( getOptionalParentSuperRef( false ) );
+	}
+
+	@Override
+	public ICFSecTableInfoObj getOptionalParentSuperRef( boolean forceRead ) {
+		if( ( optionalParentSuperRef == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( getTableInfoRec().getOptionalSuperName() == null ) {
+				anyMissing = true;
+			}
+			if( ! anyMissing ) {
+				optionalParentSuperRef = ((ICFSecSchemaObj)getSchema()).getTableInfoTableObj().readTableInfoByTableNameIdx( getTableInfoRec().getOptionalSuperName(), forceRead );
+			}
+		}
+		return( optionalParentSuperRef );
+	}
+
+	@Override
+	public List<ICFSecTableInfoObj> getOptionalChildrenSubRefs() {
+		List<ICFSecTableInfoObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getTableInfoTableObj().readTableInfoBySuperNameIdx( getTableInfoRec().getRequiredTableName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecTableInfoObj> getOptionalChildrenSubRefs( boolean forceRead ) {
+		List<ICFSecTableInfoObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getTableInfoTableObj().readTableInfoBySuperNameIdx( getTableInfoRec().getRequiredTableName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
 	public String getRequiredSchemaName() {
 		return( getTableInfoRec().getRequiredSchemaName() );
 	}
@@ -332,6 +372,11 @@ public class CFSecTableInfoObj
 	@Override
 	public String getRequiredTableName() {
 		return( getTableInfoRec().getRequiredTableName() );
+	}
+
+	@Override
+	public String getOptionalSuperName() {
+		return( getTableInfoRec().getOptionalSuperName() );
 	}
 
 	@Override
