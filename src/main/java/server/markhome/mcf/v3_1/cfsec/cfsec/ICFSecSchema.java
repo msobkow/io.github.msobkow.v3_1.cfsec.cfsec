@@ -99,15 +99,6 @@ public interface ICFSecSchema
 			for( CFSecTableData data: TABLE_DATA) {
 				lst.add(data);
 			}
-			lst.sort((o1, o2) -> {
-				int retval = o1.getSchemaName().compareTo(o2.getSchemaName());
-				if (retval != 0) {
-					return retval;
-				}
-				else {
-					return o1.getTableName().compareTo(o2.getTableName());
-				}
-			});
 			CFSecTableData arr[] = new CFSecTableData[lst.size()];
 			int idx = 0;
 			for(CFSecTableData data: lst) {
