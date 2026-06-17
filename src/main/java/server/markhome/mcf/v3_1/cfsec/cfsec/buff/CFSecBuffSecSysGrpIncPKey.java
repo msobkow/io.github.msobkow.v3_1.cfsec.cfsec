@@ -1,0 +1,206 @@
+// Description: Java 25 implementation of a SecSysGrpInc primary key buffer object
+
+/*
+ *	server.markhome.mcf.CFSec
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal 3.1 CFSec - Security Services
+ *	
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow mark.sobkow@gmail.com
+ *	
+ *	These files are part of Mark's Code Fractal CFSec.
+ *	
+ *	Licensed under the Apache License, Version 2.0 (the "License");
+ *	you may not use this file except in compliance with the License.
+ *	You may obtain a copy of the License at
+ *	
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *	
+ *	Unless required by applicable law or agreed to in writing, software
+ *	distributed under the License is distributed on an "AS IS" BASIS,
+ *	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *	See the License for the specific language governing permissions and
+ *	limitations under the License.
+ *	
+ */
+
+package server.markhome.mcf.v3_1.cfsec.cfsec.buff;
+
+import java.lang.reflect.*;
+import java.io.*;
+import java.math.*;
+import java.net.*;
+import java.rmi.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+
+/*
+ *	CFSecBuffSecSysGrpIncPKey Primary Key for SecSysGrpInc buffers
+ *		requiredSecSysGrpId	Required object attribute SecSysGrpId.
+ *		requiredInclName	Required object attribute InclName.
+ */
+public class CFSecBuffSecSysGrpIncPKey
+	implements ICFSecSecSysGrpIncPKey, Comparable<ICFSecSecSysGrpIncPKey>, Serializable
+{
+	protected CFLibDbKeyHash256 requiredSecSysGrpId;
+	protected String requiredInclName;
+
+	public CFSecBuffSecSysGrpIncPKey() {
+		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecSysGrpInc.SECSYSGRPID_INIT_VALUE.toString() );
+		requiredInclName = ICFSecSecSysGrpInc.INCLNAME_INIT_VALUE;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return( requiredSecSysGrpId );
+	}
+
+	@Override
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		requiredSecSysGrpId = value;
+	}
+
+	@Override
+	public String getRequiredInclName() {
+		return( requiredInclName );
+	}
+
+	@Override
+	public void setRequiredInclName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredInclName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredInclName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredInclName = value;
+	}
+
+	@Override
+	public boolean equals( Object obj ) {
+		if (obj == null) {
+			return( false );
+		}
+		else if (obj instanceof ICFSecSecSysGrpIncPKey) {
+			ICFSecSecSysGrpIncPKey rhs = (ICFSecSecSysGrpIncPKey)obj;
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredInclName() != null ) {
+				if( rhs.getRequiredInclName() != null ) {
+					if( ! getRequiredInclName().equals( rhs.getRequiredInclName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredInclName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else {
+			return( false );
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		int hashCode = 0;
+		hashCode = hashCode + getRequiredSecSysGrpId().hashCode();
+		if( getRequiredInclName() != null ) {
+			hashCode = hashCode + getRequiredInclName().hashCode();
+		}
+		return( hashCode & 0x7fffffff );
+	}
+
+	@Override
+	public int compareTo( ICFSecSecSysGrpIncPKey rhs ) {
+		int cmp;
+		if (rhs == null) {
+			return( 1 );
+		}
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			if (getRequiredInclName() != null) {
+				if (rhs.getRequiredInclName() != null) {
+					cmp = getRequiredInclName().compareTo( rhs.getRequiredInclName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredInclName() != null) {
+				return( -1 );
+			}
+		return( 0 );
+	}
+
+	@Override
+	public String getXmlAttrFragment() {
+		String ret = "" 
+			+ " RequiredSecSysGrpId=" + "\"" + getRequiredSecSysGrpId().toString() + "\""
+			+ " RequiredInclName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredInclName() ) + "\"";
+		return( ret );
+	}
+
+	@Override
+	public String toString() {
+		String ret = "<CFSecSecSysGrpIncPKey" + getXmlAttrFragment() + "/>";
+		return( ret );
+	}
+}
