@@ -42,275 +42,395 @@ public class CFSecBuffFactoryService
 
 	@Autowired
 	@Qualifier("cfsec31BuffClusterFactoryService")
-	protected ICFSecClusterFactory factoryCluster;
+	protected CFSecBuffClusterFactoryService clusterFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOCcyFactoryService")
-	protected ICFSecISOCcyFactory factoryISOCcy;
+	protected CFSecBuffISOCcyFactoryService isoccyFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOCtryFactoryService")
-	protected ICFSecISOCtryFactory factoryISOCtry;
+	protected CFSecBuffISOCtryFactoryService isoctryFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOCtryCcyFactoryService")
-	protected ICFSecISOCtryCcyFactory factoryISOCtryCcy;
+	protected CFSecBuffISOCtryCcyFactoryService isoctryccyFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOCtryLangFactoryService")
-	protected ICFSecISOCtryLangFactory factoryISOCtryLang;
+	protected CFSecBuffISOCtryLangFactoryService isoctrylangFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOLangFactoryService")
-	protected ICFSecISOLangFactory factoryISOLang;
+	protected CFSecBuffISOLangFactoryService isolangFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffISOTZoneFactoryService")
-	protected ICFSecISOTZoneFactory factoryISOTZone;
+	protected CFSecBuffISOTZoneFactoryService isotzoneFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecClusGrpFactoryService")
-	protected ICFSecSecClusGrpFactory factorySecClusGrp;
+	protected CFSecBuffSecClusGrpFactoryService secclusgrpFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecClusGrpMembFactoryService")
-	protected ICFSecSecClusGrpMembFactory factorySecClusGrpMemb;
+	protected CFSecBuffSecClusGrpMembFactoryService secclusgrpmembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecClusRoleFactoryService")
-	protected ICFSecSecClusRoleFactory factorySecClusRole;
+	protected CFSecBuffSecClusRoleFactoryService secclusroleFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecClusRoleMembFactoryService")
-	protected ICFSecSecClusRoleMembFactory factorySecClusRoleMemb;
+	protected CFSecBuffSecClusRoleMembFactoryService secclusrolemembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSessionFactoryService")
-	protected ICFSecSecSessionFactory factorySecSession;
+	protected CFSecBuffSecSessionFactoryService secsessionFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysGrpFactoryService")
-	protected ICFSecSecSysGrpFactory factorySecSysGrp;
+	protected CFSecBuffSecSysGrpFactoryService secsysgrpFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysGrpIncFactoryService")
-	protected ICFSecSecSysGrpIncFactory factorySecSysGrpInc;
+	protected CFSecBuffSecSysGrpIncFactoryService secsysgrpincFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysGrpMembFactoryService")
-	protected ICFSecSecSysGrpMembFactory factorySecSysGrpMemb;
+	protected CFSecBuffSecSysGrpMembFactoryService secsysgrpmembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysRoleFactoryService")
-	protected ICFSecSecSysRoleFactory factorySecSysRole;
+	protected CFSecBuffSecSysRoleFactoryService secsysroleFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysRoleEnablesFactoryService")
-	protected ICFSecSecSysRoleEnablesFactory factorySecSysRoleEnables;
+	protected CFSecBuffSecSysRoleEnablesFactoryService secsysroleenablesFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecSysRoleMembFactoryService")
-	protected ICFSecSecSysRoleMembFactory factorySecSysRoleMemb;
+	protected CFSecBuffSecSysRoleMembFactoryService secsysrolemembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecTentGrpFactoryService")
-	protected ICFSecSecTentGrpFactory factorySecTentGrp;
+	protected CFSecBuffSecTentGrpFactoryService sectentgrpFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecTentGrpMembFactoryService")
-	protected ICFSecSecTentGrpMembFactory factorySecTentGrpMemb;
+	protected CFSecBuffSecTentGrpMembFactoryService sectentgrpmembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecTentRoleFactoryService")
-	protected ICFSecSecTentRoleFactory factorySecTentRole;
+	protected CFSecBuffSecTentRoleFactoryService sectentroleFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecTentRoleMembFactoryService")
-	protected ICFSecSecTentRoleMembFactory factorySecTentRoleMemb;
+	protected CFSecBuffSecTentRoleMembFactoryService sectentrolemembFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecUserFactoryService")
-	protected ICFSecSecUserFactory factorySecUser;
+	protected CFSecBuffSecUserFactoryService secuserFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecUserEMConfFactoryService")
-	protected ICFSecSecUserEMConfFactory factorySecUserEMConf;
+	protected CFSecBuffSecUserEMConfFactoryService secuseremconfFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecUserPWHistoryFactoryService")
-	protected ICFSecSecUserPWHistoryFactory factorySecUserPWHistory;
+	protected CFSecBuffSecUserPWHistoryFactoryService secuserpwhistoryFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecUserPWResetFactoryService")
-	protected ICFSecSecUserPWResetFactory factorySecUserPWReset;
+	protected CFSecBuffSecUserPWResetFactoryService secuserpwresetFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSecUserPasswordFactoryService")
-	protected ICFSecSecUserPasswordFactory factorySecUserPassword;
+	protected CFSecBuffSecUserPasswordFactoryService secuserpasswordFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffSysClusterFactoryService")
-	protected ICFSecSysClusterFactory factorySysCluster;
+	protected CFSecBuffSysClusterFactoryService sysclusterFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffTableInfoFactoryService")
-	protected ICFSecTableInfoFactory factoryTableInfo;
+	protected CFSecBuffTableInfoFactoryService tableinfoFactoryService;
 
 	@Autowired
 	@Qualifier("cfsec31BuffTenantFactoryService")
-	protected ICFSecTenantFactory factoryTenant;
+	protected CFSecBuffTenantFactoryService tenantFactoryService;
 
 
 	public CFSecBuffFactoryService() { }
 
 	@Override
 	public ICFSecClusterFactory getFactoryCluster() {
-		return( factoryCluster );
+		return(clusterFactoryService);
+	}
+
+	public CFSecBuffClusterFactoryService getClusterFactoryService() {
+		return(clusterFactoryService);
 	}
 
 	@Override
 	public ICFSecISOCcyFactory getFactoryISOCcy() {
-		return( factoryISOCcy );
+		return(isoccyFactoryService);
+	}
+
+	public CFSecBuffISOCcyFactoryService getISOCcyFactoryService() {
+		return(isoccyFactoryService);
 	}
 
 	@Override
 	public ICFSecISOCtryFactory getFactoryISOCtry() {
-		return( factoryISOCtry );
+		return(isoctryFactoryService);
+	}
+
+	public CFSecBuffISOCtryFactoryService getISOCtryFactoryService() {
+		return(isoctryFactoryService);
 	}
 
 	@Override
 	public ICFSecISOCtryCcyFactory getFactoryISOCtryCcy() {
-		return( factoryISOCtryCcy );
+		return(isoctryccyFactoryService);
+	}
+
+	public CFSecBuffISOCtryCcyFactoryService getISOCtryCcyFactoryService() {
+		return(isoctryccyFactoryService);
 	}
 
 	@Override
 	public ICFSecISOCtryLangFactory getFactoryISOCtryLang() {
-		return( factoryISOCtryLang );
+		return(isoctrylangFactoryService);
+	}
+
+	public CFSecBuffISOCtryLangFactoryService getISOCtryLangFactoryService() {
+		return(isoctrylangFactoryService);
 	}
 
 	@Override
 	public ICFSecISOLangFactory getFactoryISOLang() {
-		return( factoryISOLang );
+		return(isolangFactoryService);
+	}
+
+	public CFSecBuffISOLangFactoryService getISOLangFactoryService() {
+		return(isolangFactoryService);
 	}
 
 	@Override
 	public ICFSecISOTZoneFactory getFactoryISOTZone() {
-		return( factoryISOTZone );
+		return(isotzoneFactoryService);
+	}
+
+	public CFSecBuffISOTZoneFactoryService getISOTZoneFactoryService() {
+		return(isotzoneFactoryService);
 	}
 
 	@Override
 	public ICFSecSecClusGrpFactory getFactorySecClusGrp() {
-		return( factorySecClusGrp );
+		return(secclusgrpFactoryService);
+	}
+
+	public CFSecBuffSecClusGrpFactoryService getSecClusGrpFactoryService() {
+		return(secclusgrpFactoryService);
 	}
 
 	@Override
 	public ICFSecSecClusGrpMembFactory getFactorySecClusGrpMemb() {
-		return( factorySecClusGrpMemb );
+		return(secclusgrpmembFactoryService);
+	}
+
+	public CFSecBuffSecClusGrpMembFactoryService getSecClusGrpMembFactoryService() {
+		return(secclusgrpmembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecClusRoleFactory getFactorySecClusRole() {
-		return( factorySecClusRole );
+		return(secclusroleFactoryService);
+	}
+
+	public CFSecBuffSecClusRoleFactoryService getSecClusRoleFactoryService() {
+		return(secclusroleFactoryService);
 	}
 
 	@Override
 	public ICFSecSecClusRoleMembFactory getFactorySecClusRoleMemb() {
-		return( factorySecClusRoleMemb );
+		return(secclusrolemembFactoryService);
+	}
+
+	public CFSecBuffSecClusRoleMembFactoryService getSecClusRoleMembFactoryService() {
+		return(secclusrolemembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSessionFactory getFactorySecSession() {
-		return( factorySecSession );
+		return(secsessionFactoryService);
+	}
+
+	public CFSecBuffSecSessionFactoryService getSecSessionFactoryService() {
+		return(secsessionFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysGrpFactory getFactorySecSysGrp() {
-		return( factorySecSysGrp );
+		return(secsysgrpFactoryService);
+	}
+
+	public CFSecBuffSecSysGrpFactoryService getSecSysGrpFactoryService() {
+		return(secsysgrpFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysGrpIncFactory getFactorySecSysGrpInc() {
-		return( factorySecSysGrpInc );
+		return(secsysgrpincFactoryService);
+	}
+
+	public CFSecBuffSecSysGrpIncFactoryService getSecSysGrpIncFactoryService() {
+		return(secsysgrpincFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysGrpMembFactory getFactorySecSysGrpMemb() {
-		return( factorySecSysGrpMemb );
+		return(secsysgrpmembFactoryService);
+	}
+
+	public CFSecBuffSecSysGrpMembFactoryService getSecSysGrpMembFactoryService() {
+		return(secsysgrpmembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysRoleFactory getFactorySecSysRole() {
-		return( factorySecSysRole );
+		return(secsysroleFactoryService);
+	}
+
+	public CFSecBuffSecSysRoleFactoryService getSecSysRoleFactoryService() {
+		return(secsysroleFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysRoleEnablesFactory getFactorySecSysRoleEnables() {
-		return( factorySecSysRoleEnables );
+		return(secsysroleenablesFactoryService);
+	}
+
+	public CFSecBuffSecSysRoleEnablesFactoryService getSecSysRoleEnablesFactoryService() {
+		return(secsysroleenablesFactoryService);
 	}
 
 	@Override
 	public ICFSecSecSysRoleMembFactory getFactorySecSysRoleMemb() {
-		return( factorySecSysRoleMemb );
+		return(secsysrolemembFactoryService);
+	}
+
+	public CFSecBuffSecSysRoleMembFactoryService getSecSysRoleMembFactoryService() {
+		return(secsysrolemembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecTentGrpFactory getFactorySecTentGrp() {
-		return( factorySecTentGrp );
+		return(sectentgrpFactoryService);
+	}
+
+	public CFSecBuffSecTentGrpFactoryService getSecTentGrpFactoryService() {
+		return(sectentgrpFactoryService);
 	}
 
 	@Override
 	public ICFSecSecTentGrpMembFactory getFactorySecTentGrpMemb() {
-		return( factorySecTentGrpMemb );
+		return(sectentgrpmembFactoryService);
+	}
+
+	public CFSecBuffSecTentGrpMembFactoryService getSecTentGrpMembFactoryService() {
+		return(sectentgrpmembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecTentRoleFactory getFactorySecTentRole() {
-		return( factorySecTentRole );
+		return(sectentroleFactoryService);
+	}
+
+	public CFSecBuffSecTentRoleFactoryService getSecTentRoleFactoryService() {
+		return(sectentroleFactoryService);
 	}
 
 	@Override
 	public ICFSecSecTentRoleMembFactory getFactorySecTentRoleMemb() {
-		return( factorySecTentRoleMemb );
+		return(sectentrolemembFactoryService);
+	}
+
+	public CFSecBuffSecTentRoleMembFactoryService getSecTentRoleMembFactoryService() {
+		return(sectentrolemembFactoryService);
 	}
 
 	@Override
 	public ICFSecSecUserFactory getFactorySecUser() {
-		return( factorySecUser );
+		return(secuserFactoryService);
+	}
+
+	public CFSecBuffSecUserFactoryService getSecUserFactoryService() {
+		return(secuserFactoryService);
 	}
 
 	@Override
 	public ICFSecSecUserEMConfFactory getFactorySecUserEMConf() {
-		return( factorySecUserEMConf );
+		return(secuseremconfFactoryService);
+	}
+
+	public CFSecBuffSecUserEMConfFactoryService getSecUserEMConfFactoryService() {
+		return(secuseremconfFactoryService);
 	}
 
 	@Override
 	public ICFSecSecUserPWHistoryFactory getFactorySecUserPWHistory() {
-		return( factorySecUserPWHistory );
+		return(secuserpwhistoryFactoryService);
+	}
+
+	public CFSecBuffSecUserPWHistoryFactoryService getSecUserPWHistoryFactoryService() {
+		return(secuserpwhistoryFactoryService);
 	}
 
 	@Override
 	public ICFSecSecUserPWResetFactory getFactorySecUserPWReset() {
-		return( factorySecUserPWReset );
+		return(secuserpwresetFactoryService);
+	}
+
+	public CFSecBuffSecUserPWResetFactoryService getSecUserPWResetFactoryService() {
+		return(secuserpwresetFactoryService);
 	}
 
 	@Override
 	public ICFSecSecUserPasswordFactory getFactorySecUserPassword() {
-		return( factorySecUserPassword );
+		return(secuserpasswordFactoryService);
+	}
+
+	public CFSecBuffSecUserPasswordFactoryService getSecUserPasswordFactoryService() {
+		return(secuserpasswordFactoryService);
 	}
 
 	@Override
 	public ICFSecSysClusterFactory getFactorySysCluster() {
-		return( factorySysCluster );
+		return(sysclusterFactoryService);
+	}
+
+	public CFSecBuffSysClusterFactoryService getSysClusterFactoryService() {
+		return(sysclusterFactoryService);
 	}
 
 	@Override
 	public ICFSecTableInfoFactory getFactoryTableInfo() {
-		return( factoryTableInfo );
+		return(tableinfoFactoryService);
+	}
+
+	public CFSecBuffTableInfoFactoryService getTableInfoFactoryService() {
+		return(tableinfoFactoryService);
 	}
 
 	@Override
 	public ICFSecTenantFactory getFactoryTenant() {
-		return( factoryTenant );
+		return(tenantFactoryService);
+	}
+
+	public CFSecBuffTenantFactoryService getTenantFactoryService() {
+		return(tenantFactoryService);
 	}
 
 }
