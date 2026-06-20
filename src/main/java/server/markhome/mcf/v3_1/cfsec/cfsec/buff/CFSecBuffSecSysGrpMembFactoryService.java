@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for SecSysGrpMemb buffers
+// Description: Java 25 Factory service implementation for SecSysGrpMemb buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffSecSysGrpMembFactory implementation of ICFSecSecSysGrpMembFactory for SecSysGrpMemb
+ *	Java 25 Factory service implementation for SecSysGrpMemb buffers.
  */
-public class CFSecBuffSecSysGrpMembDefaultFactory
+@Service("cfsec31BuffSecSysGrpMembFactoryService")
+public class CFSecBuffSecSysGrpMembFactoryService
 	implements ICFSecSecSysGrpMembFactory
 {
-	public CFSecBuffSecSysGrpMembDefaultFactory() {
+	public CFSecBuffSecSysGrpMembFactoryService() {
 	}
 
     @Override

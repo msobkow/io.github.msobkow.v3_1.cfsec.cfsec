@@ -350,7 +350,7 @@ public class CFSecSecSysRoleEnablesEditObj
 	@Override
 	public ICFSecSecSysRoleEnables getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecSysRoleEnables().getSchema().getCFSecBackingStore().getFactorySecSysRoleEnables().newRec();
+			rec = getOrigAsSecSysRoleEnables().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

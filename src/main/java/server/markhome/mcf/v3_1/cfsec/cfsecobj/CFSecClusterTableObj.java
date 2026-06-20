@@ -203,14 +203,14 @@ public class CFSecClusterTableObj
 
 			if( indexByUDomNameIdx != null ) {
 				ICFSecClusterByUDomNameIdxKey keyUDomNameIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 				keyUDomNameIdx.setRequiredFullDomName( keepObj.getRequiredFullDomName() );
 				indexByUDomNameIdx.remove( keyUDomNameIdx );
 			}
 
 			if( indexByUDescrIdx != null ) {
 				ICFSecClusterByUDescrIdxKey keyUDescrIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 				keyUDescrIdx.setRequiredDescription( keepObj.getRequiredDescription() );
 				indexByUDescrIdx.remove( keyUDescrIdx );
 			}
@@ -220,14 +220,14 @@ public class CFSecClusterTableObj
 
 			if( indexByUDomNameIdx != null ) {
 				ICFSecClusterByUDomNameIdxKey keyUDomNameIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 				keyUDomNameIdx.setRequiredFullDomName( keepObj.getRequiredFullDomName() );
 				indexByUDomNameIdx.put( keyUDomNameIdx, keepObj );
 			}
 
 			if( indexByUDescrIdx != null ) {
 				ICFSecClusterByUDescrIdxKey keyUDescrIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 				keyUDescrIdx.setRequiredDescription( keepObj.getRequiredDescription() );
 				indexByUDescrIdx.put( keyUDescrIdx, keepObj );
 			}
@@ -248,14 +248,14 @@ public class CFSecClusterTableObj
 
 			if( indexByUDomNameIdx != null ) {
 				ICFSecClusterByUDomNameIdxKey keyUDomNameIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 				keyUDomNameIdx.setRequiredFullDomName( keepObj.getRequiredFullDomName() );
 				indexByUDomNameIdx.put( keyUDomNameIdx, keepObj );
 			}
 
 			if( indexByUDescrIdx != null ) {
 				ICFSecClusterByUDescrIdxKey keyUDescrIdx =
-					schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 				keyUDescrIdx.setRequiredDescription( keepObj.getRequiredDescription() );
 				indexByUDescrIdx.put( keyUDescrIdx, keepObj );
 			}
@@ -324,10 +324,10 @@ public class CFSecClusterTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecClusterByUDomNameIdxKey keyUDomNameIdx = schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+		ICFSecClusterByUDomNameIdxKey keyUDomNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 		keyUDomNameIdx.setRequiredFullDomName( existing.getRequiredFullDomName() );
 
-		ICFSecClusterByUDescrIdxKey keyUDescrIdx = schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+		ICFSecClusterByUDescrIdxKey keyUDescrIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 		keyUDescrIdx.setRequiredDescription( existing.getRequiredDescription() );
 
 
@@ -559,7 +559,7 @@ public class CFSecClusterTableObj
 			indexByUDomNameIdx = new HashMap< ICFSecClusterByUDomNameIdxKey,
 				ICFSecClusterObj >();
 		}
-		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 		key.setRequiredFullDomName( FullDomName );
 		ICFSecClusterObj obj = null;
 		if( ( ! forceRead ) && indexByUDomNameIdx.containsKey( key ) ) {
@@ -592,7 +592,7 @@ public class CFSecClusterTableObj
 			indexByUDescrIdx = new HashMap< ICFSecClusterByUDescrIdxKey,
 				ICFSecClusterObj >();
 		}
-		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 		key.setRequiredDescription( Description );
 		ICFSecClusterObj obj = null;
 		if( ( ! forceRead ) && indexByUDescrIdx.containsKey( key ) ) {
@@ -623,7 +623,7 @@ public class CFSecClusterTableObj
 	public ICFSecClusterObj readCachedClusterByUDomNameIdx( String FullDomName )
 	{
 		ICFSecClusterObj obj = null;
-		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 		key.setRequiredFullDomName( FullDomName );
 		if( indexByUDomNameIdx != null ) {
 			if( indexByUDomNameIdx.containsKey( key ) ) {
@@ -659,7 +659,7 @@ public class CFSecClusterTableObj
 	public ICFSecClusterObj readCachedClusterByUDescrIdx( String Description )
 	{
 		ICFSecClusterObj obj = null;
-		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 		key.setRequiredDescription( Description );
 		if( indexByUDescrIdx != null ) {
 			if( indexByUDescrIdx.containsKey( key ) ) {
@@ -773,7 +773,7 @@ public class CFSecClusterTableObj
 			indexByUDomNameIdx = new HashMap< ICFSecClusterByUDomNameIdxKey,
 				ICFSecClusterObj >();
 		}
-		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDomNameIdxKey();
+		ICFSecClusterByUDomNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDomNameIdxKey();
 		key.setRequiredFullDomName( FullDomName );
 		ICFSecClusterObj obj = null;
 		if( indexByUDomNameIdx.containsKey( key ) ) {
@@ -796,7 +796,7 @@ public class CFSecClusterTableObj
 			indexByUDescrIdx = new HashMap< ICFSecClusterByUDescrIdxKey,
 				ICFSecClusterObj >();
 		}
-		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getFactoryCluster().newByUDescrIdxKey();
+		ICFSecClusterByUDescrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newByUDescrIdxKey();
 		key.setRequiredDescription( Description );
 		ICFSecClusterObj obj = null;
 		if( indexByUDescrIdx.containsKey( key ) ) {

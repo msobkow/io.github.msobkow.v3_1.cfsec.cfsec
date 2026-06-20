@@ -351,7 +351,7 @@ public class CFSecISOCtryLangEditObj
 	@Override
 	public ICFSecISOCtryLang getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOCtryLang().getSchema().getCFSecBackingStore().getFactoryISOCtryLang().newRec();
+			rec = getOrigAsISOCtryLang().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

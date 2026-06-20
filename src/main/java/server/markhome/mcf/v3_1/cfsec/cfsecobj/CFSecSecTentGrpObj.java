@@ -243,7 +243,7 @@ public class CFSecSecTentGrpObj
 	public ICFSecSecTentGrp getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecTentGrp().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

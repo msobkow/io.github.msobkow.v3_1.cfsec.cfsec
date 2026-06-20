@@ -244,7 +244,7 @@ public class CFSecSecTentGrpMembObj
 	public ICFSecSecTentGrpMemb getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecTentGrpMemb().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrpMemb().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
@@ -282,7 +282,7 @@ public class CFSecSecTentGrpMembObj
 	@Override
 	public ICFSecSecTentGrpMembPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactorySecTentGrpMemb().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrpMemb().newPKey();
 		}
 		return( pKey );
 	}

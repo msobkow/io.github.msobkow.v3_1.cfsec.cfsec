@@ -321,7 +321,7 @@ public class CFSecSecSysGrpObj
 	public ICFSecSecSysGrp getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecSysGrp().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

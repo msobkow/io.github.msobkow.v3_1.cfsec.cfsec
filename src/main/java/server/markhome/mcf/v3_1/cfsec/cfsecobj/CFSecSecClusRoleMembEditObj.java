@@ -350,7 +350,7 @@ public class CFSecSecClusRoleMembEditObj
 	@Override
 	public ICFSecSecClusRoleMemb getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecClusRoleMemb().getSchema().getCFSecBackingStore().getFactorySecClusRoleMemb().newRec();
+			rec = getOrigAsSecClusRoleMemb().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

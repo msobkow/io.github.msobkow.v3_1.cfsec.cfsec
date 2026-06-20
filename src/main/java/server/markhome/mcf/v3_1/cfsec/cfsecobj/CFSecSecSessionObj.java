@@ -239,7 +239,7 @@ public class CFSecSecSessionObj
 	public ICFSecSecSession getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecSession().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

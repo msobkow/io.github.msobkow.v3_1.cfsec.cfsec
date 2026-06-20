@@ -245,7 +245,7 @@ public class CFSecISOCtryLangObj
 	public ICFSecISOCtryLang getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryISOCtryLang().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
@@ -283,7 +283,7 @@ public class CFSecISOCtryLangObj
 	@Override
 	public ICFSecISOCtryLangPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactoryISOCtryLang().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newPKey();
 		}
 		return( pKey );
 	}

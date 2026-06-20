@@ -203,7 +203,7 @@ public class CFSecTenantTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -216,7 +216,7 @@ public class CFSecTenantTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecTenantByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredTenantName( keepObj.getRequiredTenantName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -227,7 +227,7 @@ public class CFSecTenantTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -237,7 +237,7 @@ public class CFSecTenantTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecTenantByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredTenantName( keepObj.getRequiredTenantName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -259,7 +259,7 @@ public class CFSecTenantTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -269,7 +269,7 @@ public class CFSecTenantTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecTenantByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredTenantName( keepObj.getRequiredTenantName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -339,10 +339,10 @@ public class CFSecTenantTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecTenantByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+		ICFSecTenantByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		keyClusterIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 
-		ICFSecTenantByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+		ICFSecTenantByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 		keyUNameIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 		keyUNameIdx.setRequiredTenantName( existing.getRequiredTenantName() );
 
@@ -586,7 +586,7 @@ public class CFSecTenantTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTenantByClusterIdx";
-		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		Map<CFLibDbKeyHash256, ICFSecTenantObj> dict;
 		if( indexByClusterIdx == null ) {
@@ -684,7 +684,7 @@ public class CFSecTenantTableObj
 			indexByUNameIdx = new HashMap< ICFSecTenantByUNameIdxKey,
 				ICFSecTenantObj >();
 		}
-		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredTenantName( TenantName );
 		ICFSecTenantObj obj = null;
@@ -717,7 +717,7 @@ public class CFSecTenantTableObj
 	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedTenantByClusterIdx";
-		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecTenantObj> arrayList = new ArrayList<ICFSecTenantObj>();
 		if( indexByClusterIdx != null ) {
@@ -795,7 +795,7 @@ public class CFSecTenantTableObj
 		String TenantName )
 	{
 		ICFSecTenantObj obj = null;
-		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredTenantName( TenantName );
 		if( indexByUNameIdx != null ) {
@@ -879,7 +879,7 @@ public class CFSecTenantTableObj
 		CFLibDbKeyHash256 priorId )
 	{
 		final String S_ProcName = "pageTenantByClusterIdx";
-		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		List<ICFSecTenantObj> retList = new LinkedList<ICFSecTenantObj>();
 		ICFSecTenantObj obj;
@@ -949,7 +949,7 @@ public class CFSecTenantTableObj
 	@Override
 	public void deleteTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
-		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
+		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecTenantByClusterIdxKey,
@@ -988,7 +988,7 @@ public class CFSecTenantTableObj
 			indexByUNameIdx = new HashMap< ICFSecTenantByUNameIdxKey,
 				ICFSecTenantObj >();
 		}
-		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByUNameIdxKey();
+		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredTenantName( TenantName );
 		ICFSecTenantObj obj = null;

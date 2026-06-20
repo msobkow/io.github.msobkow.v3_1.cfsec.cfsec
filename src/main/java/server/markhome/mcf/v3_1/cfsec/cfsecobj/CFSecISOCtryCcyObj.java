@@ -245,7 +245,7 @@ public class CFSecISOCtryCcyObj
 	public ICFSecISOCtryCcy getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryISOCtryCcy().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
@@ -283,7 +283,7 @@ public class CFSecISOCtryCcyObj
 	@Override
 	public ICFSecISOCtryCcyPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactoryISOCtryCcy().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newPKey();
 		}
 		return( pKey );
 	}

@@ -345,7 +345,7 @@ public class CFSecISOTZoneEditObj
 	@Override
 	public ICFSecISOTZone getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOTZone().getSchema().getCFSecBackingStore().getFactoryISOTZone().newRec();
+			rec = getOrigAsISOTZone().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

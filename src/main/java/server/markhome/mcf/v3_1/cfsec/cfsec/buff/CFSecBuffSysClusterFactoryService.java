@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for SysCluster buffers
+// Description: Java 25 Factory service implementation for SysCluster buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffSysClusterFactory implementation of ICFSecSysClusterFactory for SysCluster
+ *	Java 25 Factory service implementation for SysCluster buffers.
  */
-public class CFSecBuffSysClusterDefaultFactory
+@Service("cfsec31BuffSysClusterFactoryService")
+public class CFSecBuffSysClusterFactoryService
 	implements ICFSecSysClusterFactory
 {
-	public CFSecBuffSysClusterDefaultFactory() {
+	public CFSecBuffSysClusterFactoryService() {
 	}
 
 	@Override

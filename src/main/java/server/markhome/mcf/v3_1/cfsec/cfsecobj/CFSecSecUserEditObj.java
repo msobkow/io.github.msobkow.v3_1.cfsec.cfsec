@@ -375,7 +375,7 @@ public class CFSecSecUserEditObj
 	@Override
 	public ICFSecSecUser getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecUser().getSchema().getCFSecBackingStore().getFactorySecUser().newRec();
+			rec = getOrigAsSecUser().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

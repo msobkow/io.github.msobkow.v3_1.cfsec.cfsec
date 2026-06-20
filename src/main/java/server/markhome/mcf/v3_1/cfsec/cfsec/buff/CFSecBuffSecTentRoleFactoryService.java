@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for SecTentRole buffers
+// Description: Java 25 Factory service implementation for SecTentRole buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffSecTentRoleFactory implementation of ICFSecSecTentRoleFactory for SecTentRole
+ *	Java 25 Factory service implementation for SecTentRole buffers.
  */
-public class CFSecBuffSecTentRoleDefaultFactory
+@Service("cfsec31BuffSecTentRoleFactoryService")
+public class CFSecBuffSecTentRoleFactoryService
 	implements ICFSecSecTentRoleFactory
 {
-	public CFSecBuffSecTentRoleDefaultFactory() {
+	public CFSecBuffSecTentRoleFactoryService() {
 	}
 
 	@Override

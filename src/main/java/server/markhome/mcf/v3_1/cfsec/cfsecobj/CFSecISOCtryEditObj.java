@@ -347,7 +347,7 @@ public class CFSecISOCtryEditObj
 	@Override
 	public ICFSecISOCtry getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOCtry().getSchema().getCFSecBackingStore().getFactoryISOCtry().newRec();
+			rec = getOrigAsISOCtry().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtry().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

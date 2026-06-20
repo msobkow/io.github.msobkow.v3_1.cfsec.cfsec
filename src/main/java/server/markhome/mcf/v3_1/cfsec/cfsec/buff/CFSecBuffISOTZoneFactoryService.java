@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for ISOTZone buffers
+// Description: Java 25 Factory service implementation for ISOTZone buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffISOTZoneFactory implementation of ICFSecISOTZoneFactory for ISOTZone
+ *	Java 25 Factory service implementation for ISOTZone buffers.
  */
-public class CFSecBuffISOTZoneDefaultFactory
+@Service("cfsec31BuffISOTZoneFactoryService")
+public class CFSecBuffISOTZoneFactoryService
 	implements ICFSecISOTZoneFactory
 {
-	public CFSecBuffISOTZoneDefaultFactory() {
+	public CFSecBuffISOTZoneFactoryService() {
 	}
 
 	@Override

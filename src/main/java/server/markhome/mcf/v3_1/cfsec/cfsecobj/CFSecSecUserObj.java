@@ -265,7 +265,7 @@ public class CFSecSecUserObj
 	public ICFSecSecUser getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUser().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

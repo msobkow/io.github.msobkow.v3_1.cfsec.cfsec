@@ -237,7 +237,7 @@ public class CFSecISOCtryObj
 	public ICFSecISOCtry getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryISOCtry().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtry().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -346,7 +346,7 @@ public class CFSecISOLangEditObj
 	@Override
 	public ICFSecISOLang getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOLang().getSchema().getCFSecBackingStore().getFactoryISOLang().newRec();
+			rec = getOrigAsISOLang().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

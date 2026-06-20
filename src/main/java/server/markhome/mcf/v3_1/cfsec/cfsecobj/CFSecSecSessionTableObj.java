@@ -213,7 +213,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecUserIdx != null ) {
 				ICFSecSecSessionBySecUserIdxKey keySecUserIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 				keySecUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecUserIdx = indexBySecUserIdx.get( keySecUserIdx );
 				if( mapSecUserIdx != null ) {
@@ -226,7 +226,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByStartIdx != null ) {
 				ICFSecSecSessionByStartIdxKey keyStartIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 				keyStartIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyStartIdx.setRequiredStart( keepObj.getRequiredStart() );
 				indexByStartIdx.remove( keyStartIdx );
@@ -234,7 +234,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByFinishIdx != null ) {
 				ICFSecSecSessionByFinishIdxKey keyFinishIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 				keyFinishIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyFinishIdx.setOptionalFinish( keepObj.getOptionalFinish() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapFinishIdx = indexByFinishIdx.get( keyFinishIdx );
@@ -248,7 +248,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecProxyIdx != null ) {
 				ICFSecSecSessionBySecProxyIdxKey keySecProxyIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 				keySecProxyIdx.setOptionalSecProxyId( keepObj.getOptionalSecProxyId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecProxyIdx = indexBySecProxyIdx.get( keySecProxyIdx );
 				if( mapSecProxyIdx != null ) {
@@ -264,7 +264,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecUserIdx != null ) {
 				ICFSecSecSessionBySecUserIdxKey keySecUserIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 				keySecUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecUserIdx = indexBySecUserIdx.get( keySecUserIdx );
 				if( mapSecUserIdx != null ) {
@@ -274,7 +274,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByStartIdx != null ) {
 				ICFSecSecSessionByStartIdxKey keyStartIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 				keyStartIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyStartIdx.setRequiredStart( keepObj.getRequiredStart() );
 				indexByStartIdx.put( keyStartIdx, keepObj );
@@ -282,7 +282,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByFinishIdx != null ) {
 				ICFSecSecSessionByFinishIdxKey keyFinishIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 				keyFinishIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyFinishIdx.setOptionalFinish( keepObj.getOptionalFinish() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapFinishIdx = indexByFinishIdx.get( keyFinishIdx );
@@ -293,7 +293,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecProxyIdx != null ) {
 				ICFSecSecSessionBySecProxyIdxKey keySecProxyIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 				keySecProxyIdx.setOptionalSecProxyId( keepObj.getOptionalSecProxyId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecProxyIdx = indexBySecProxyIdx.get( keySecProxyIdx );
 				if( mapSecProxyIdx != null ) {
@@ -317,7 +317,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecUserIdx != null ) {
 				ICFSecSecSessionBySecUserIdxKey keySecUserIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 				keySecUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecUserIdx = indexBySecUserIdx.get( keySecUserIdx );
 				if( mapSecUserIdx != null ) {
@@ -327,7 +327,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByStartIdx != null ) {
 				ICFSecSecSessionByStartIdxKey keyStartIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 				keyStartIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyStartIdx.setRequiredStart( keepObj.getRequiredStart() );
 				indexByStartIdx.put( keyStartIdx, keepObj );
@@ -335,7 +335,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexByFinishIdx != null ) {
 				ICFSecSecSessionByFinishIdxKey keyFinishIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 				keyFinishIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				keyFinishIdx.setOptionalFinish( keepObj.getOptionalFinish() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapFinishIdx = indexByFinishIdx.get( keyFinishIdx );
@@ -346,7 +346,7 @@ public class CFSecSecSessionTableObj
 
 			if( indexBySecProxyIdx != null ) {
 				ICFSecSecSessionBySecProxyIdxKey keySecProxyIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 				keySecProxyIdx.setOptionalSecProxyId( keepObj.getOptionalSecProxyId() );
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecProxyIdx = indexBySecProxyIdx.get( keySecProxyIdx );
 				if( mapSecProxyIdx != null ) {
@@ -418,18 +418,18 @@ public class CFSecSecSessionTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSessionBySecUserIdxKey keySecUserIdx = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+		ICFSecSecSessionBySecUserIdxKey keySecUserIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		keySecUserIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 
-		ICFSecSecSessionByStartIdxKey keyStartIdx = schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+		ICFSecSecSessionByStartIdxKey keyStartIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 		keyStartIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 		keyStartIdx.setRequiredStart( existing.getRequiredStart() );
 
-		ICFSecSecSessionByFinishIdxKey keyFinishIdx = schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+		ICFSecSecSessionByFinishIdxKey keyFinishIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 		keyFinishIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 		keyFinishIdx.setOptionalFinish( existing.getOptionalFinish() );
 
-		ICFSecSecSessionBySecProxyIdxKey keySecProxyIdx = schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+		ICFSecSecSessionBySecProxyIdxKey keySecProxyIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		keySecProxyIdx.setOptionalSecProxyId( existing.getOptionalSecProxyId() );
 
 
@@ -679,7 +679,7 @@ public class CFSecSecSessionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSessionBySecUserIdx";
-		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict;
 		if( indexBySecUserIdx == null ) {
@@ -777,7 +777,7 @@ public class CFSecSecSessionTableObj
 			indexByStartIdx = new HashMap< ICFSecSecSessionByStartIdxKey,
 				ICFSecSecSessionObj >();
 		}
-		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setRequiredStart( Start );
 		ICFSecSecSessionObj obj = null;
@@ -813,7 +813,7 @@ public class CFSecSecSessionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSessionByFinishIdx";
-		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setOptionalFinish( Finish );
 		Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict;
@@ -908,7 +908,7 @@ public class CFSecSecSessionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSessionBySecProxyIdx";
-		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		key.setOptionalSecProxyId( SecProxyId );
 		Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict;
 		if( indexBySecProxyIdx == null ) {
@@ -1001,7 +1001,7 @@ public class CFSecSecSessionTableObj
 	public List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( CFLibDbKeyHash256 SecUserId )
 	{
 		final String S_ProcName = "readCachedSecSessionBySecUserIdx";
-		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		ArrayList<ICFSecSecSessionObj> arrayList = new ArrayList<ICFSecSecSessionObj>();
 		if( indexBySecUserIdx != null ) {
@@ -1079,7 +1079,7 @@ public class CFSecSecSessionTableObj
 		LocalDateTime Start )
 	{
 		ICFSecSecSessionObj obj = null;
-		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setRequiredStart( Start );
 		if( indexByStartIdx != null ) {
@@ -1117,7 +1117,7 @@ public class CFSecSecSessionTableObj
 		LocalDateTime Finish )
 	{
 		final String S_ProcName = "readCachedSecSessionByFinishIdx";
-		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setOptionalFinish( Finish );
 		ArrayList<ICFSecSecSessionObj> arrayList = new ArrayList<ICFSecSecSessionObj>();
@@ -1195,7 +1195,7 @@ public class CFSecSecSessionTableObj
 	public List<ICFSecSecSessionObj> readCachedSecSessionBySecProxyIdx( CFLibDbKeyHash256 SecProxyId )
 	{
 		final String S_ProcName = "readCachedSecSessionBySecProxyIdx";
-		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		key.setOptionalSecProxyId( SecProxyId );
 		ArrayList<ICFSecSecSessionObj> arrayList = new ArrayList<ICFSecSecSessionObj>();
 		if( indexBySecProxyIdx != null ) {
@@ -1355,7 +1355,7 @@ public class CFSecSecSessionTableObj
 		CFLibDbKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionBySecUserIdx";
-		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		List<ICFSecSecSessionObj> retList = new LinkedList<ICFSecSecSessionObj>();
 		ICFSecSecSessionObj obj;
@@ -1391,7 +1391,7 @@ public class CFSecSecSessionTableObj
 		CFLibDbKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionByFinishIdx";
-		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setOptionalFinish( Finish );
 		List<ICFSecSecSessionObj> retList = new LinkedList<ICFSecSecSessionObj>();
@@ -1426,7 +1426,7 @@ public class CFSecSecSessionTableObj
 		CFLibDbKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionBySecProxyIdx";
-		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		key.setOptionalSecProxyId( SecProxyId );
 		List<ICFSecSecSessionObj> retList = new LinkedList<ICFSecSecSessionObj>();
 		ICFSecSecSessionObj obj;
@@ -1496,7 +1496,7 @@ public class CFSecSecSessionTableObj
 	@Override
 	public void deleteSecSessionBySecUserIdx( CFLibDbKeyHash256 SecUserId )
 	{
-		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
+		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		if( indexBySecUserIdx == null ) {
 			indexBySecUserIdx = new HashMap< ICFSecSecSessionBySecUserIdxKey,
@@ -1535,7 +1535,7 @@ public class CFSecSecSessionTableObj
 			indexByStartIdx = new HashMap< ICFSecSecSessionByStartIdxKey,
 				ICFSecSecSessionObj >();
 		}
-		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
+		ICFSecSecSessionByStartIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByStartIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setRequiredStart( Start );
 		ICFSecSecSessionObj obj = null;
@@ -1559,7 +1559,7 @@ public class CFSecSecSessionTableObj
 	public void deleteSecSessionByFinishIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Finish )
 	{
-		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newByFinishIdxKey();
+		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		key.setOptionalFinish( Finish );
 		if( indexByFinishIdx == null ) {
@@ -1597,7 +1597,7 @@ public class CFSecSecSessionTableObj
 	@Override
 	public void deleteSecSessionBySecProxyIdx( CFLibDbKeyHash256 SecProxyId )
 	{
-		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecProxyIdxKey();
+		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		key.setOptionalSecProxyId( SecProxyId );
 		if( indexBySecProxyIdx == null ) {
 			indexBySecProxyIdx = new HashMap< ICFSecSecSessionBySecProxyIdxKey,

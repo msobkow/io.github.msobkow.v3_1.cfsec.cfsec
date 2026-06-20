@@ -295,7 +295,7 @@ public class CFSecSecUserPWHistoryEditObj
 	@Override
 	public ICFSecSecUserPWHistory getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecUserPWHistory().getSchema().getCFSecBackingStore().getFactorySecUserPWHistory().newRec();
+			rec = getOrigAsSecUserPWHistory().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

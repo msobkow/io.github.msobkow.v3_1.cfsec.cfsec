@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for SecUserPWHistory buffers
+// Description: Java 25 Factory service implementation for SecUserPWHistory buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffSecUserPWHistoryFactory implementation of ICFSecSecUserPWHistoryFactory for SecUserPWHistory
+ *	Java 25 Factory service implementation for SecUserPWHistory buffers.
  */
-public class CFSecBuffSecUserPWHistoryDefaultFactory
+@Service("cfsec31BuffSecUserPWHistoryFactoryService")
+public class CFSecBuffSecUserPWHistoryFactoryService
 	implements ICFSecSecUserPWHistoryFactory
 {
-	public CFSecBuffSecUserPWHistoryDefaultFactory() {
+	public CFSecBuffSecUserPWHistoryFactoryService() {
 	}
 
     @Override

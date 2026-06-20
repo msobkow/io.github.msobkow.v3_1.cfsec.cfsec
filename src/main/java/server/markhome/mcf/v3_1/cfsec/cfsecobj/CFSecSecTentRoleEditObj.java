@@ -351,7 +351,7 @@ public class CFSecSecTentRoleEditObj
 	@Override
 	public ICFSecSecTentRole getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecTentRole().getSchema().getCFSecBackingStore().getFactorySecTentRole().newRec();
+			rec = getOrigAsSecTentRole().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

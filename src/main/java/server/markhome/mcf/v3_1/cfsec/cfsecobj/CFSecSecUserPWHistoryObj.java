@@ -241,7 +241,7 @@ public class CFSecSecUserPWHistoryObj
 	public ICFSecSecUserPWHistory getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserPWHistory().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
@@ -277,7 +277,7 @@ public class CFSecSecUserPWHistoryObj
 	@Override
 	public ICFSecSecUserPWHistoryPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactorySecUserPWHistory().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newPKey();
 		}
 		return( pKey );
 	}

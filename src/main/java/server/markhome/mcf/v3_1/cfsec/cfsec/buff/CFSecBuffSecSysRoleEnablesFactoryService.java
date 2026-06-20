@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for SecSysRoleEnables buffers
+// Description: Java 25 Factory service implementation for SecSysRoleEnables buffers
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,18 +37,22 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /*
- *	CFSecBuffSecSysRoleEnablesFactory implementation of ICFSecSecSysRoleEnablesFactory for SecSysRoleEnables
+ *	Java 25 Factory service implementation for SecSysRoleEnables buffers.
  */
-public class CFSecBuffSecSysRoleEnablesDefaultFactory
+@Service("cfsec31BuffSecSysRoleEnablesFactoryService")
+public class CFSecBuffSecSysRoleEnablesFactoryService
 	implements ICFSecSecSysRoleEnablesFactory
 {
-	public CFSecBuffSecSysRoleEnablesDefaultFactory() {
+	public CFSecBuffSecSysRoleEnablesFactoryService() {
 	}
 
     @Override

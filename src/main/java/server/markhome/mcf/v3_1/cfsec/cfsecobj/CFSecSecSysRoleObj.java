@@ -250,7 +250,7 @@ public class CFSecSecSysRoleObj
 	public ICFSecSecSysRole getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecSysRole().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

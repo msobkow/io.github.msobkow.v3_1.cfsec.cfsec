@@ -293,7 +293,7 @@ public class CFSecSysClusterEditObj
 	@Override
 	public ICFSecSysCluster getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSysCluster().getSchema().getCFSecBackingStore().getFactorySysCluster().newRec();
+			rec = getOrigAsSysCluster().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

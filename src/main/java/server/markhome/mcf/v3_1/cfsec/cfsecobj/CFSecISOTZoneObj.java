@@ -235,7 +235,7 @@ public class CFSecISOTZoneObj
 	public ICFSecISOTZone getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryISOTZone().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

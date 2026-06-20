@@ -198,7 +198,7 @@ public class CFSecSecSysRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
 			}
@@ -208,7 +208,7 @@ public class CFSecSecSysRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
@@ -229,7 +229,7 @@ public class CFSecSecSysRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
@@ -298,7 +298,7 @@ public class CFSecSecSysRoleTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSysRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
@@ -497,7 +497,7 @@ public class CFSecSecSysRoleTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecSysRoleByUNameIdxKey,
 				ICFSecSecSysRoleObj >();
 		}
-		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFSecSecSysRoleObj obj = null;
 		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
@@ -528,7 +528,7 @@ public class CFSecSecSysRoleTableObj
 	public ICFSecSecSysRoleObj readCachedSecSysRoleByUNameIdx( String Name )
 	{
 		ICFSecSecSysRoleObj obj = null;
-		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
 			if( indexByUNameIdx.containsKey( key ) ) {
@@ -633,7 +633,7 @@ public class CFSecSecSysRoleTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecSysRoleByUNameIdxKey,
 				ICFSecSecSysRoleObj >();
 		}
-		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFSecSecSysRoleObj obj = null;
 		if( indexByUNameIdx.containsKey( key ) ) {
