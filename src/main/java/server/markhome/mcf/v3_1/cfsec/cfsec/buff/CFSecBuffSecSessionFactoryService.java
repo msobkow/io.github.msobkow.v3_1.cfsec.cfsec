@@ -153,12 +153,19 @@ public class CFSecBuffSecSessionFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffSecSession) {
-			return( (CFSecBuffSecSession)rec );
+			return ((CFSecBuffSecSession)rec);
 		}
-		else {
-			CFSecBuffSecSession mapped = new CFSecBuffSecSession();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecSecSession.CLASS_CODE: {
+					CFSecBuffSecSession mapped = new CFSecBuffSecSession();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSession",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSession");
+			}
 		}
 	}
 }

@@ -113,12 +113,19 @@ public class CFSecBuffSecSysRoleFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffSecSysRole) {
-			return( (CFSecBuffSecSysRole)rec );
+			return ((CFSecBuffSecSysRole)rec);
 		}
-		else {
-			CFSecBuffSecSysRole mapped = new CFSecBuffSecSysRole();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecSecSysRole.CLASS_CODE: {
+					CFSecBuffSecSysRole mapped = new CFSecBuffSecSysRole();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSysRole",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSysRole");
+			}
 		}
 	}
 
@@ -130,16 +137,23 @@ public class CFSecBuffSecSysRoleFactoryService
 	}
 
 	public CFSecBuffSecSysRoleH ensureHRec(ICFSecSecSysRoleH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffSecSysRoleH) {
-			return( (CFSecBuffSecSysRoleH)hrec );
+		else if (hrec instanceof CFSecBuffSecSysRoleH) {
+			return ((CFSecBuffSecSysRoleH)hrec);
 		}
-		else {
-			CFSecBuffSecSysRoleH mapped = new CFSecBuffSecSysRoleH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecSecSysRole.CLASS_CODE: {
+					CFSecBuffSecSysRoleH mapped = new CFSecBuffSecSysRoleH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecSysRole",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecSysRole");
+			}
 		}
 	}
 }

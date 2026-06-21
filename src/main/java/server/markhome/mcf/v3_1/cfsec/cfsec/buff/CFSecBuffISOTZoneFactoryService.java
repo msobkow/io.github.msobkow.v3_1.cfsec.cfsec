@@ -156,12 +156,19 @@ public class CFSecBuffISOTZoneFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffISOTZone) {
-			return( (CFSecBuffISOTZone)rec );
+			return ((CFSecBuffISOTZone)rec);
 		}
-		else {
-			CFSecBuffISOTZone mapped = new CFSecBuffISOTZone();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecISOTZone.CLASS_CODE: {
+					CFSecBuffISOTZone mapped = new CFSecBuffISOTZone();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOTZone",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOTZone");
+			}
 		}
 	}
 
@@ -173,16 +180,23 @@ public class CFSecBuffISOTZoneFactoryService
 	}
 
 	public CFSecBuffISOTZoneH ensureHRec(ICFSecISOTZoneH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffISOTZoneH) {
-			return( (CFSecBuffISOTZoneH)hrec );
+		else if (hrec instanceof CFSecBuffISOTZoneH) {
+			return ((CFSecBuffISOTZoneH)hrec);
 		}
-		else {
-			CFSecBuffISOTZoneH mapped = new CFSecBuffISOTZoneH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecISOTZone.CLASS_CODE: {
+					CFSecBuffISOTZoneH mapped = new CFSecBuffISOTZoneH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOTZone",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOTZone");
+			}
 		}
 	}
 }

@@ -134,12 +134,19 @@ public class CFSecBuffISOCtryFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffISOCtry) {
-			return( (CFSecBuffISOCtry)rec );
+			return ((CFSecBuffISOCtry)rec);
 		}
-		else {
-			CFSecBuffISOCtry mapped = new CFSecBuffISOCtry();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecISOCtry.CLASS_CODE: {
+					CFSecBuffISOCtry mapped = new CFSecBuffISOCtry();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOCtry",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOCtry");
+			}
 		}
 	}
 
@@ -151,16 +158,23 @@ public class CFSecBuffISOCtryFactoryService
 	}
 
 	public CFSecBuffISOCtryH ensureHRec(ICFSecISOCtryH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffISOCtryH) {
-			return( (CFSecBuffISOCtryH)hrec );
+		else if (hrec instanceof CFSecBuffISOCtryH) {
+			return ((CFSecBuffISOCtryH)hrec);
 		}
-		else {
-			CFSecBuffISOCtryH mapped = new CFSecBuffISOCtryH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecISOCtry.CLASS_CODE: {
+					CFSecBuffISOCtryH mapped = new CFSecBuffISOCtryH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOCtry",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOCtry");
+			}
 		}
 	}
 }

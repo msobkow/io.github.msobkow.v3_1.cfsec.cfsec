@@ -152,12 +152,19 @@ public class CFSecBuffSecUserPWHistoryFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffSecUserPWHistory) {
-			return( (CFSecBuffSecUserPWHistory)rec );
+			return ((CFSecBuffSecUserPWHistory)rec);
 		}
-		else {
-			CFSecBuffSecUserPWHistory mapped = new CFSecBuffSecUserPWHistory();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecSecUserPWHistory.CLASS_CODE: {
+					CFSecBuffSecUserPWHistory mapped = new CFSecBuffSecUserPWHistory();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory");
+			}
 		}
 	}
 }

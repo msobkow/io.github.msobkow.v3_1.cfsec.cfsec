@@ -135,12 +135,19 @@ public class CFSecBuffTenantFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffTenant) {
-			return( (CFSecBuffTenant)rec );
+			return ((CFSecBuffTenant)rec);
 		}
-		else {
-			CFSecBuffTenant mapped = new CFSecBuffTenant();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecTenant.CLASS_CODE: {
+					CFSecBuffTenant mapped = new CFSecBuffTenant();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecTenant",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecTenant");
+			}
 		}
 	}
 
@@ -152,16 +159,23 @@ public class CFSecBuffTenantFactoryService
 	}
 
 	public CFSecBuffTenantH ensureHRec(ICFSecTenantH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffTenantH) {
-			return( (CFSecBuffTenantH)hrec );
+		else if (hrec instanceof CFSecBuffTenantH) {
+			return ((CFSecBuffTenantH)hrec);
 		}
-		else {
-			CFSecBuffTenantH mapped = new CFSecBuffTenantH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecTenant.CLASS_CODE: {
+					CFSecBuffTenantH mapped = new CFSecBuffTenantH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecTenant",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecTenant");
+			}
 		}
 	}
 }

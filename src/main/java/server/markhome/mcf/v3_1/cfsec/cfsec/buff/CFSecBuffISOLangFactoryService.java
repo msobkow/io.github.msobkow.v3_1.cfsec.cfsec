@@ -134,12 +134,19 @@ public class CFSecBuffISOLangFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffISOLang) {
-			return( (CFSecBuffISOLang)rec );
+			return ((CFSecBuffISOLang)rec);
 		}
-		else {
-			CFSecBuffISOLang mapped = new CFSecBuffISOLang();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecISOLang.CLASS_CODE: {
+					CFSecBuffISOLang mapped = new CFSecBuffISOLang();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOLang",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecISOLang");
+			}
 		}
 	}
 
@@ -151,16 +158,23 @@ public class CFSecBuffISOLangFactoryService
 	}
 
 	public CFSecBuffISOLangH ensureHRec(ICFSecISOLangH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffISOLangH) {
-			return( (CFSecBuffISOLangH)hrec );
+		else if (hrec instanceof CFSecBuffISOLangH) {
+			return ((CFSecBuffISOLangH)hrec);
 		}
-		else {
-			CFSecBuffISOLangH mapped = new CFSecBuffISOLangH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecISOLang.CLASS_CODE: {
+					CFSecBuffISOLangH mapped = new CFSecBuffISOLangH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOLang",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecISOLang");
+			}
 		}
 	}
 }

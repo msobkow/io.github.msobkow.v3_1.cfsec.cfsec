@@ -134,12 +134,19 @@ public class CFSecBuffClusterFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffCluster) {
-			return( (CFSecBuffCluster)rec );
+			return ((CFSecBuffCluster)rec);
 		}
-		else {
-			CFSecBuffCluster mapped = new CFSecBuffCluster();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecCluster.CLASS_CODE: {
+					CFSecBuffCluster mapped = new CFSecBuffCluster();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecCluster",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecCluster");
+			}
 		}
 	}
 
@@ -151,16 +158,23 @@ public class CFSecBuffClusterFactoryService
 	}
 
 	public CFSecBuffClusterH ensureHRec(ICFSecClusterH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffClusterH) {
-			return( (CFSecBuffClusterH)hrec );
+		else if (hrec instanceof CFSecBuffClusterH) {
+			return ((CFSecBuffClusterH)hrec);
 		}
-		else {
-			CFSecBuffClusterH mapped = new CFSecBuffClusterH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecCluster.CLASS_CODE: {
+					CFSecBuffClusterH mapped = new CFSecBuffClusterH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecCluster",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecCluster");
+			}
 		}
 	}
 }

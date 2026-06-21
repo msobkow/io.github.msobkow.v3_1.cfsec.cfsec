@@ -176,12 +176,19 @@ public class CFSecBuffSecUserEMConfFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffSecUserEMConf) {
-			return( (CFSecBuffSecUserEMConf)rec );
+			return ((CFSecBuffSecUserEMConf)rec);
 		}
-		else {
-			CFSecBuffSecUserEMConf mapped = new CFSecBuffSecUserEMConf();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecSecUserEMConf.CLASS_CODE: {
+					CFSecBuffSecUserEMConf mapped = new CFSecBuffSecUserEMConf();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserEMConf",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserEMConf");
+			}
 		}
 	}
 
@@ -193,16 +200,23 @@ public class CFSecBuffSecUserEMConfFactoryService
 	}
 
 	public CFSecBuffSecUserEMConfH ensureHRec(ICFSecSecUserEMConfH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFSecBuffSecUserEMConfH) {
-			return( (CFSecBuffSecUserEMConfH)hrec );
+		else if (hrec instanceof CFSecBuffSecUserEMConfH) {
+			return ((CFSecBuffSecUserEMConfH)hrec);
 		}
-		else {
-			CFSecBuffSecUserEMConfH mapped = new CFSecBuffSecUserEMConfH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecSecUserEMConf.CLASS_CODE: {
+					CFSecBuffSecUserEMConfH mapped = new CFSecBuffSecUserEMConfH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecUserEMConf",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecUserEMConf");
+			}
 		}
 	}
 }

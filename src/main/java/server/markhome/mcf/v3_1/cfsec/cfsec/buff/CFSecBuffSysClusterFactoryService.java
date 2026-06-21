@@ -88,12 +88,19 @@ public class CFSecBuffSysClusterFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFSecBuffSysCluster) {
-			return( (CFSecBuffSysCluster)rec );
+			return ((CFSecBuffSysCluster)rec);
 		}
-		else {
-			CFSecBuffSysCluster mapped = new CFSecBuffSysCluster();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFSecSysCluster.CLASS_CODE: {
+					CFSecBuffSysCluster mapped = new CFSecBuffSysCluster();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSysCluster",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSysCluster");
+			}
 		}
 	}
 }
