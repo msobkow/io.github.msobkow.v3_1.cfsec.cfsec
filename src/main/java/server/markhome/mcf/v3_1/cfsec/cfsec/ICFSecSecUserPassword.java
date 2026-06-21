@@ -76,6 +76,9 @@ public interface ICFSecSecUserPassword
 
 	public void set( ICFSecSecUserPassword src );
 	public void setSecUserPassword( ICFSecSecUserPassword src );
+	public void set( ICFSecSecUserPasswordH src );
+	public void setSecUserPassword( ICFSecSecUserPasswordH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

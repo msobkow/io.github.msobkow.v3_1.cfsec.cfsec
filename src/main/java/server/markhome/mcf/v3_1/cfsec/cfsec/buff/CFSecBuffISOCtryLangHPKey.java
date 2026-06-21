@@ -467,7 +467,7 @@ public class CFSecBuffISOCtryLangHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecISOCtryLangPKey, ICFSecISOCtryLang, ICFSecISOCtryLangHPKey, ICFSecISOCtryLangH" );
+				"ICFSecISOCtryLangPKey, ICFSecISOCtryLang$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

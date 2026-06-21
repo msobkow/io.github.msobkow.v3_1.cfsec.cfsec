@@ -537,6 +537,11 @@ public class CFSecBuffSchema
 		return(CFSecBuffSchema.getBuffHooksSchema().getFactoryService());
 	}
 
+	@Override
+	public CFSecBuffFactoryService getCFSecBuffFactory() {
+		return((CFSecBuffFactoryService)(CFSecBuffSchema.getBuffHooksSchema().getFactoryService()));
+	}
+
 	public CFSecBuffSchema() {
 
 	tableCluster = null; // new CFSecBuffClusterTable();

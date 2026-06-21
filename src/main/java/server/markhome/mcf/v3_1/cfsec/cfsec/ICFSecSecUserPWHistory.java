@@ -77,6 +77,9 @@ public interface ICFSecSecUserPWHistory
 
 	public void set( ICFSecSecUserPWHistory src );
 	public void setSecUserPWHistory( ICFSecSecUserPWHistory src );
+	public void set( ICFSecSecUserPWHistoryH src );
+	public void setSecUserPWHistory( ICFSecSecUserPWHistoryH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

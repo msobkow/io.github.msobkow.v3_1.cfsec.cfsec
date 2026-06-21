@@ -593,7 +593,7 @@ public class CFSecBuffSecSysRoleMembHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMemb, ICFSecSecSysRoleMembHPKey, ICFSecSecSysRoleMembH" );
+				"ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMemb$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

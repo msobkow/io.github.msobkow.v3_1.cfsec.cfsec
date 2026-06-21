@@ -53,6 +53,13 @@ public interface ICFSecSecUserPWHistoryFactory
 	public ICFSecSecUserPWHistoryPKey newPKey();
 
 	/**
+	 *	Allocate a primary history key for SecUserPWHistory instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecSecUserPWHistoryHPKey newHPKey();
+
+	/**
 	 *	Allocate a UserIdx key over SecUserPWHistory instances.
 	 *
 	 *	@return	The new instance.
@@ -79,5 +86,12 @@ public interface ICFSecSecUserPWHistoryFactory
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPWHistory newRec();
+
+	/**
+	 *	Allocate a SecUserPWHistory history interface implementation.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecSecUserPWHistoryH newHRec();
 
 }

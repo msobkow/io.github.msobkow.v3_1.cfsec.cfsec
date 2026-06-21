@@ -46,6 +46,13 @@ public interface ICFSecSecUserPasswordFactory
 {
 
 	/**
+	 *	Allocate a primary history key for SecUserPassword instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecSecUserPasswordHPKey newHPKey();
+
+	/**
 	 *	Allocate a SetStampIdx key over SecUserPassword instances.
 	 *
 	 *	@return	The new instance.
@@ -58,5 +65,12 @@ public interface ICFSecSecUserPasswordFactory
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPassword newRec();
+
+	/**
+	 *	Allocate a SecUserPassword history interface implementation.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecSecUserPasswordH newHRec();
 
 }

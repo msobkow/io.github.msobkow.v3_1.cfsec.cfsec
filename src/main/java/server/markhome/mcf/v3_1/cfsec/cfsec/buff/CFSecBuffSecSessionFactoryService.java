@@ -56,6 +56,31 @@ public class CFSecBuffSecSessionFactoryService
 	}
 
 	@Override
+	public ICFSecSecSessionHPKey newHPKey() {
+		ICFSecSecSessionHPKey hpkey =
+			new CFSecBuffSecSessionHPKey();
+		return( hpkey );
+	}
+
+	public CFSecBuffSecSessionHPKey ensureHPKey(ICFSecSecSessionHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFSecBuffSecSessionHPKey) {
+			return( (CFSecBuffSecSessionHPKey)key );
+		}
+		else {
+			CFSecBuffSecSessionHPKey mapped = new CFSecBuffSecSessionHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredSecSessionId( key.getRequiredSecSessionId() );
+			return( mapped );
+		}
+	}
+
+	@Override
 	public ICFSecSecSessionBySecUserIdxKey newBySecUserIdxKey() {
 		ICFSecSecSessionBySecUserIdxKey key =
 			new CFSecBuffSecSessionBySecUserIdxKey();
@@ -165,6 +190,34 @@ public class CFSecBuffSecSessionFactoryService
 					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSession",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecSession");
+			}
+		}
+	}
+
+	@Override
+	public ICFSecSecSessionH newHRec() {
+		ICFSecSecSessionH hrec =
+			new CFSecBuffSecSessionH();
+		return( hrec );
+	}
+
+	public CFSecBuffSecSessionH ensureHRec(ICFSecSecSessionH hrec) {
+		if( hrec == null ) {
+			return( null );
+		}
+		else if (hrec instanceof CFSecBuffSecSessionH) {
+			return ((CFSecBuffSecSessionH)hrec);
+		}
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecSecSession.CLASS_CODE: {
+					CFSecBuffSecSessionH mapped = new CFSecBuffSecSessionH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecSession",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecSession");
 			}
 		}
 	}

@@ -476,7 +476,7 @@ public class CFSecBuffSecTentRoleHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecTentRolePKey, ICFSecSecTentRole, ICFSecSecTentRoleHPKey, ICFSecSecTentRoleH" );
+				"ICFSecSecTentRolePKey, ICFSecSecTentRole$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

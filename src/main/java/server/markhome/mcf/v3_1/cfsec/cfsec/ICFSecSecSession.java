@@ -82,6 +82,9 @@ public interface ICFSecSecSession
 
 	public void set( ICFSecSecSession src );
 	public void setSecSession( ICFSecSecSession src );
+	public void set( ICFSecSecSessionH src );
+	public void setSecSession( ICFSecSecSessionH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

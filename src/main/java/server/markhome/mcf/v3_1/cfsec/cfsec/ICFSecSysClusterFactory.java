@@ -46,6 +46,13 @@ public interface ICFSecSysClusterFactory
 {
 
 	/**
+	 *	Allocate a primary history key for SysCluster instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecSysClusterHPKey newHPKey();
+
+	/**
 	 *	Allocate a ClusterIdx key over SysCluster instances.
 	 *
 	 *	@return	The new instance.
@@ -58,5 +65,12 @@ public interface ICFSecSysClusterFactory
 	 *	@return	The new instance.
 	 */
 	public ICFSecSysCluster newRec();
+
+	/**
+	 *	Allocate a SysCluster history interface implementation.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecSysClusterH newHRec();
 
 }

@@ -593,7 +593,7 @@ public class CFSecBuffSecSysRoleEnablesHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnables, ICFSecSecSysRoleEnablesHPKey, ICFSecSecSysRoleEnablesH" );
+				"ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnables$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

@@ -1,4 +1,4 @@
-// Description: Java 25 implementation of a ISOCtry history buffer primary key
+// Description: Java 25 implementation of a SecUserPWHistory history buffer primary key
 
 /*
  *	server.markhome.mcf.CFSec
@@ -39,11 +39,12 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	CFSecBuffISOCtryHPKey History Primary Key for ISOCtry
- *		requiredISOCtryId	Required object attribute ISOCtryId.
+ *	CFSecBuffSecUserPWHistoryHPKey History Primary Key for SecUserPWHistory
+ *		requiredSecUserId	Required object attribute SecUserId.
+ *		requiredPWSetStamp	Required object attribute PWSetStamp.
  */
-public class CFSecBuffISOCtryHPKey
-	implements ICFSecISOCtryHPKey, Comparable<Object>, Serializable
+public class CFSecBuffSecUserPWHistoryHPKey
+	implements ICFSecSecUserPWHistoryHPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 auditClusterId;
 	protected LocalDateTime auditStamp;
@@ -51,15 +52,17 @@ public class CFSecBuffISOCtryHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected short requiredISOCtryId;
+	protected CFLibDbKeyHash256 requiredSecUserId;
+	protected LocalDateTime requiredPWSetStamp;
 
-	public CFSecBuffISOCtryHPKey() {
+	public CFSecBuffSecUserPWHistoryHPKey() {
 		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWHistory.SECUSERID_INIT_VALUE.toString() );
+		requiredPWSetStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}
 
 	@Override
@@ -113,21 +116,35 @@ public class CFSecBuffISOCtryHPKey
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
-		return( requiredISOCtryId );
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( requiredSecUserId );
 	}
 
 	@Override
-	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecISOCtry.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
 				1,
-				"value",
-				value,
-				ICFSecISOCtry.ISOCTRYID_MIN_VALUE );
+				"value" );
 		}
-		requiredISOCtryId = value;
+		requiredSecUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getRequiredPWSetStamp() {
+		return( requiredPWSetStamp );
+	}
+
+	@Override
+	public void setRequiredPWSetStamp( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPWSetStamp",
+				1,
+				"value" );
+		}
+		requiredPWSetStamp = value;
 	}
 
 	@Override
@@ -135,15 +152,42 @@ public class CFSecBuffISOCtryHPKey
 		if (obj == null) {
 			return( false );
 		}
-		else if (obj instanceof ICFSecISOCtry) {
-			ICFSecISOCtry rhs = (ICFSecISOCtry)obj;
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
+		else if (obj instanceof ICFSecSecUserPWHistory) {
+			ICFSecSecUserPWHistory rhs = (ICFSecSecUserPWHistory)obj;
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredPWSetStamp() != null ) {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					if( ! getRequiredPWSetStamp().equals( rhs.getRequiredPWSetStamp() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					return( false );
+				}
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCtryHPKey) {
-			ICFSecISOCtryHPKey rhs = (ICFSecISOCtryHPKey)obj;
+		else if (obj instanceof ICFSecSecUserPWHistoryHPKey) {
+			ICFSecSecUserPWHistoryHPKey rhs = (ICFSecSecUserPWHistoryHPKey)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -189,13 +233,40 @@ public class CFSecBuffISOCtryHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredPWSetStamp() != null ) {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					if( ! getRequiredPWSetStamp().equals( rhs.getRequiredPWSetStamp() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					return( false );
+				}
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCtryH) {
-			ICFSecISOCtryH rhs = (ICFSecISOCtryH)obj;
+		else if (obj instanceof ICFSecSecUserPWHistoryH) {
+			ICFSecSecUserPWHistoryH rhs = (ICFSecSecUserPWHistoryH)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -241,8 +312,35 @@ public class CFSecBuffISOCtryHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredPWSetStamp() != null ) {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					if( ! getRequiredPWSetStamp().equals( rhs.getRequiredPWSetStamp() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPWSetStamp() != null ) {
+					return( false );
+				}
 			}
 			return( true );
 		}
@@ -265,7 +363,10 @@ public class CFSecBuffISOCtryHPKey
 		if( auditSessionId != null ) {
 			hashCode = hashCode + auditSessionId.hashCode();
 		}
-		hashCode = ( hashCode * 0x10000 ) + getRequiredISOCtryId();
+		hashCode = hashCode + getRequiredSecUserId().hashCode();
+		if( getRequiredPWSetStamp() != null ) {
+			hashCode = hashCode + getRequiredPWSetStamp().hashCode();
+		}
 		return( hashCode & 0x7fffffff );
 	}
 
@@ -275,18 +376,40 @@ public class CFSecBuffISOCtryHPKey
 		if (obj == null) {
 			return( 1 );
 		}
-		else if (obj instanceof ICFSecISOCtry) {
-			ICFSecISOCtry rhs = (ICFSecISOCtry)obj;
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+		else if (obj instanceof ICFSecSecUserPWHistory) {
+			ICFSecSecUserPWHistory rhs = (ICFSecSecUserPWHistory)obj;
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
-				return( 1 );
+			if (getRequiredPWSetStamp() != null) {
+				if (rhs.getRequiredPWSetStamp() != null) {
+					cmp = getRequiredPWSetStamp().compareTo( rhs.getRequiredPWSetStamp() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPWSetStamp() != null) {
+				return( -1 );
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecISOCtryHPKey) {
-			ICFSecISOCtryHPKey rhs = (ICFSecISOCtryHPKey)obj;
+		else if (obj instanceof ICFSecSecUserPWHistoryHPKey) {
+			ICFSecSecUserPWHistoryHPKey rhs = (ICFSecSecUserPWHistoryHPKey)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -341,16 +464,38 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
-				return( 1 );
+			if (getRequiredPWSetStamp() != null) {
+				if (rhs.getRequiredPWSetStamp() != null) {
+					cmp = getRequiredPWSetStamp().compareTo( rhs.getRequiredPWSetStamp() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPWSetStamp() != null) {
+				return( -1 );
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecISOCtryH) {
-			ICFSecISOCtryH rhs = (ICFSecISOCtryH)obj;
+		else if (obj instanceof ICFSecSecUserPWHistoryH) {
+			ICFSecSecUserPWHistoryH rhs = (ICFSecSecUserPWHistoryH)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -405,11 +550,33 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
-				return( 1 );
+			if (getRequiredPWSetStamp() != null) {
+				if (rhs.getRequiredPWSetStamp() != null) {
+					cmp = getRequiredPWSetStamp().compareTo( rhs.getRequiredPWSetStamp() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPWSetStamp() != null) {
+				return( -1 );
 			}
 			return( 0 );
 		}
@@ -418,7 +585,7 @@ public class CFSecBuffISOCtryHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecISOCtryPKey, ICFSecISOCtry$emitHPKeyHistoryClassNames$" );
+				"ICFSecSecUserPWHistoryPKey, ICFSecSecUserPWHistory$emitHPKeyHistoryClassNames$" );
 		}
 	}
 
@@ -429,13 +596,14 @@ public class CFSecBuffISOCtryHPKey
 			+ " auditAction=\"" + auditActionId + "\""
 			+ " revision=\"" + requiredRevision + "\""
 			+ " auditSessionId=\"" + (getAuditSessionId() != null ? getAuditSessionId().toString() : "null") + "\""
-			+ " RequiredISOCtryId=" + "\"" + Short.toString( getRequiredISOCtryId() ) + "\"";
+			+ " RequiredSecUserId=" + "\"" + getRequiredSecUserId().toString() + "\""
+			+ " RequiredPWSetStamp=" + "\"" + getRequiredPWSetStamp().toString() + "\"";
 		return( ret );
 	}
 
 	@Override
 	public String toString() {
-		String ret = "<CFSecBuffISOCtryHPKey" + getXmlAttrFragment() + "/>";
+		String ret = "<CFSecBuffSecUserPWHistoryHPKey" + getXmlAttrFragment() + "/>";
 		return( ret );
 	}
 }

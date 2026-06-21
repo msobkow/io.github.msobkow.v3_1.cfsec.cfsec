@@ -418,7 +418,7 @@ public class CFSecBuffISOCcyHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecISOCcyPKey, ICFSecISOCcy, ICFSecISOCcyHPKey, ICFSecISOCcyH" );
+				"ICFSecISOCcyPKey, ICFSecISOCcy$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

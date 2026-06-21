@@ -44,6 +44,9 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffSchema;
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffFactoryService;
+
 public interface ICFSecSchema
 {
 	public static final String SCHEMA_NAME = "CFSec";
@@ -866,6 +869,11 @@ public interface ICFSecSchema
 	 *	Get the factory for CFSec data objects.
 	 */
 	public ICFSecFactory getCFSecFactory();
+
+	/**
+	 *	Get the buffer factory for CFSec data buffers.
+	 */
+	public CFSecBuffFactoryService getCFSecBuffFactory();
 
 	/**
 	 *	Get the Cluster Table interface for the schema.

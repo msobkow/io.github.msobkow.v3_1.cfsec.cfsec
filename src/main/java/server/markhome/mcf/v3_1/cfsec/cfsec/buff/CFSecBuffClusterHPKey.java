@@ -476,7 +476,7 @@ public class CFSecBuffClusterHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecClusterPKey, ICFSecCluster, ICFSecClusterHPKey, ICFSecClusterH" );
+				"ICFSecClusterPKey, ICFSecCluster$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

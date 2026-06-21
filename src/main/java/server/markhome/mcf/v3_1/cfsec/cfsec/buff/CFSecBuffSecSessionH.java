@@ -1,4 +1,4 @@
-// Description: Java 25 implementation of a SecSession buffer
+// Description: Java 25 implementation of a SecSession history buffer object
 
 /*
  *	server.markhome.mcf.CFSec
@@ -43,64 +43,105 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFSecBuffSecSession
-	implements ICFSecSecSession, Comparable<Object>, Serializable
+public class CFSecBuffSecSessionH
+    implements ICFSecSecSessionH, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecSessionId;
-	protected int requiredRevision;
+    protected CFSecBuffSecSessionHPKey pkey;
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	protected LocalDateTime requiredStart;
 	protected LocalDateTime optionalFinish;
 	protected CFLibDbKeyHash256 optionalSecProxyId;
 
-	public CFSecBuffSecSession() {
-		requiredSecSessionId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECSESSIONID_INIT_VALUE.toString() );
+    public CFSecBuffSecSessionH() {
+            // The primary key member attributes are initialized on construction
+            pkey = new CFSecBuffSecSessionHPKey();
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECUSERID_INIT_VALUE.toString() );
 		requiredStart = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 		optionalFinish = null;
 		optionalSecProxyId = CFLibDbKeyHash256.nullGet();
-	}
+    }
 
-	@Override
-	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecSessionId();
-	}
+    @Override
+    public int getClassCode() {
+            return( ICFSecSecSession.CLASS_CODE );
+    }
 
-	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecSessionId) {
-		this.requiredSecSessionId = requiredSecSessionId;
-	}
+    @Override
+    public ICFSecSecSessionHPKey getPKey() {
+        return( pkey );
+    }
 
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return( requiredSecSessionId );
-	}
+    @Override
+    public void setPKey( ICFSecSecSessionHPKey pkey ) {
+        if (pkey != null) {
+            if (pkey instanceof CFSecBuffSecSessionHPKey) {
+                this.pkey = (CFSecBuffSecSessionHPKey)pkey;
+            }
+            else {
+                throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFSecBuffSecSessionHPKey");
+            }
+        }
+    }
 
-	@Override
-	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSessionId",
-				1,
-				"value" );
-		}
-		requiredSecSessionId = value;
-	}
+    @Override
+    public CFLibDbKeyHash256 getAuditClusterId() {
+        return pkey.getAuditClusterId();
+    }
 
-	@Override
-	public int getRequiredRevision() {
-		return( requiredRevision );
-	}
+    @Override
+    public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId) {
+        pkey.setAuditClusterId(auditClusterId);
+    }
 
-	@Override
-	public void setRequiredRevision( int value ) {
-		requiredRevision = value;
-	}
+    @Override
+    public LocalDateTime getAuditStamp() {
+        return pkey.getAuditStamp();
+    }
 
-	@Override
-	public int getClassCode() {
-		return( ICFSecSecSession.CLASS_CODE );
-	}
+    @Override
+    public void setAuditStamp(LocalDateTime auditStamp) {
+        pkey.setAuditStamp(auditStamp);
+    }
+
+    @Override
+    public short getAuditActionId() {
+        return pkey.getAuditActionId();
+    }
+
+    @Override
+    public void setAuditActionId(short auditActionId) {
+        pkey.setAuditActionId(auditActionId);
+    }
+
+    @Override
+    public int getRequiredRevision() {
+        return pkey.getRequiredRevision();
+    }
+
+    @Override
+    public void setRequiredRevision(int revision) {
+        pkey.setRequiredRevision(revision);
+    }
+
+    @Override
+    public CFLibDbKeyHash256 getAuditSessionId() {
+        return pkey.getAuditSessionId();
+    }
+
+    @Override
+    public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId) {
+        pkey.setAuditSessionId(auditSessionId);
+    }
+
+    @Override
+    public CFLibDbKeyHash256 getRequiredSecSessionId() {
+        return( pkey.getRequiredSecSessionId() );
+    }
+
+    @Override
+    public void setRequiredSecSessionId( CFLibDbKeyHash256 requiredSecSessionId ) {
+        pkey.setRequiredSecSessionId( requiredSecSessionId );
+    }
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
@@ -154,304 +195,300 @@ public class CFSecBuffSecSession
 		optionalSecProxyId = value;
 	}
 
-	@Override
-	public boolean equals( Object obj ) {
-		if( obj == null ) {
+    @Override
+    public boolean equals( Object obj ) {
+        if (obj == null) {
+            return( false );
+        }
+        else if (obj instanceof ICFSecSecSession) {
+            ICFSecSecSession rhs = (ICFSecSecSession)obj;
+		if (getPKey() != null) {
+			if (rhs.getPKey() != null) {
+				if (!getPKey().equals(rhs.getPKey())) {
+					return( false );
+				}
+			}
+			else {
+				return( false );
+			}
+		}
+		else if (rhs.getPKey() != null) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecSession ) {
-			ICFSecSecSession rhs = (ICFSecSecSession)obj;
-			if( getRequiredSecSessionId() != null ) {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					if( ! getRequiredSecSessionId().equals( rhs.getRequiredSecSessionId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					return( false );
-				}
-			}
-			if( getRequiredSecUserId() != null ) {
-				if( rhs.getRequiredSecUserId() != null ) {
-					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecUserId() != null ) {
-					return( false );
-				}
-			}
-			if( getRequiredStart() != null ) {
-				if( rhs.getRequiredStart() != null ) {
-					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredStart() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionH ) {
-			ICFSecSecSessionH rhs = (ICFSecSecSessionH)obj;
-			if( getRequiredSecSessionId() != null ) {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					if( ! getRequiredSecSessionId().equals( rhs.getRequiredSecSessionId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					return( false );
-				}
-			}
-			if( getRequiredSecUserId() != null ) {
-				if( rhs.getRequiredSecUserId() != null ) {
-					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecUserId() != null ) {
-					return( false );
-				}
-			}
-			if( getRequiredStart() != null ) {
-				if( rhs.getRequiredStart() != null ) {
-					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredStart() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionHPKey ) {
-			ICFSecSecSessionHPKey rhs = (ICFSecSecSessionHPKey)obj;
-			if( getRequiredSecSessionId() != null ) {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					if( ! getRequiredSecSessionId().equals( rhs.getRequiredSecSessionId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecSessionId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
-			ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
-			if( getRequiredSecUserId() != null ) {
-				if( rhs.getRequiredSecUserId() != null ) {
-					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecUserId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionByStartIdxKey ) {
-			ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
-			if( getRequiredSecUserId() != null ) {
-				if( rhs.getRequiredSecUserId() != null ) {
-					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecUserId() != null ) {
-					return( false );
-				}
-			}
-			if( getRequiredStart() != null ) {
-				if( rhs.getRequiredStart() != null ) {
-					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredStart() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionByFinishIdxKey ) {
-			ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
-			if( getRequiredSecUserId() != null ) {
-				if( rhs.getRequiredSecUserId() != null ) {
-					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecUserId() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey ) {
-			ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else {
-			boolean retval = super.equals( obj );
-			return( retval );
-		}
-	}
 
-	@Override
-	public int hashCode() {
-		int hashCode = 0;
-		hashCode = hashCode + getRequiredSecSessionId().hashCode();
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredStart() != null ) {
+				if( rhs.getRequiredStart() != null ) {
+					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredStart() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionH) {
+            ICFSecSecSessionH rhs = (ICFSecSecSessionH)obj;
+		if (getPKey() != null) {
+			if (rhs.getPKey() != null) {
+				if (!getPKey().equals(rhs.getPKey())) {
+					return( false );
+				}
+			}
+			else {
+				return( false );
+			}
+		}
+		else if (rhs.getPKey() != null) {
+			return( false );
+		}
+
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredStart() != null ) {
+				if( rhs.getRequiredStart() != null ) {
+					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredStart() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionHPKey) {
+		ICFSecSecSessionHPKey rhs = (ICFSecSecSessionHPKey)obj;
+			if( getRequiredSecSessionId() != null ) {
+				if( rhs.getRequiredSecSessionId() != null ) {
+					if( ! getRequiredSecSessionId().equals( rhs.getRequiredSecSessionId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSessionId() != null ) {
+					return( false );
+				}
+			}
+		return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionBySecUserIdxKey) {
+            ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionByStartIdxKey) {
+            ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredStart() != null ) {
+				if( rhs.getRequiredStart() != null ) {
+					if( ! getRequiredStart().equals( rhs.getRequiredStart() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredStart() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionByFinishIdxKey) {
+            ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					if( ! getOptionalFinish().equals( rhs.getOptionalFinish() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else if (obj instanceof ICFSecSecSessionBySecProxyIdxKey) {
+            ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( false );
+				}
+			}
+            return( true );
+        }
+        else {
+			return( false );
+        }
+    }
+    
+    @Override
+    public int hashCode() {
+        int hashCode = pkey.hashCode();
 		hashCode = hashCode + getRequiredSecUserId().hashCode();
 		if( getRequiredStart() != null ) {
 			hashCode = hashCode + getRequiredStart().hashCode();
@@ -462,355 +499,337 @@ public class CFSecBuffSecSession
 		if( getOptionalSecProxyId() != null ) {
 			hashCode = hashCode + getOptionalSecProxyId().hashCode();
 		}
-		return( hashCode & 0x7fffffff );
-	}
+        return( hashCode & 0x7fffffff );
+    }
 
-	@Override
-	public int compareTo( Object obj ) {
-		int cmp;
-		if( obj == null ) {
-			return( -1 );
-		}
-		else if( obj instanceof ICFSecSecSession ) {
-			ICFSecSecSession rhs = (ICFSecSecSession)obj;
-			cmp = 0;
-			if (getRequiredSecSessionId() != null) {
-				if (rhs.getRequiredSecSessionId() != null) {
-					cmp = getRequiredSecSessionId().compareTo( rhs.getRequiredSecSessionId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecSessionId() != null) {
-				return( -1 );
-			}
-			if (getRequiredSecUserId() != null) {
-				if (rhs.getRequiredSecUserId() != null) {
-					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecUserId() != null) {
-				return( -1 );
-			}
-			if (getRequiredStart() != null) {
-				if (rhs.getRequiredStart() != null) {
-					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredStart() != null) {
-				return( -1 );
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( -1 );
-				}
-			}
-			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionHPKey ) {
-			ICFSecSecSessionHPKey rhs = (ICFSecSecSessionHPKey)obj;
-			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
-				return( -1 );
-			}
-			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+    @Override
+    public int compareTo( Object obj ) {
+        int cmp;
+        if (obj == null) {
+            return( 1 );
+        }
+        else if (obj instanceof ICFSecSecSession) {
+		ICFSecSecSession rhs = (ICFSecSecSession)obj;
+		if (getPKey() != null) {
+			if (rhs.getPKey() == null) {
 				return( 1 );
 			}
-			if (getRequiredSecSessionId() != null) {
-				if (rhs.getRequiredSecSessionId() != null) {
-					cmp = getRequiredSecSessionId().compareTo( rhs.getRequiredSecSessionId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecSessionId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionH ) {
-			ICFSecSecSessionH rhs = (ICFSecSecSessionH)obj;
-			cmp = 0;
-			if (getRequiredSecSessionId() != null) {
-				if (rhs.getRequiredSecSessionId() != null) {
-					cmp = getRequiredSecSessionId().compareTo( rhs.getRequiredSecSessionId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecSessionId() != null) {
-				return( -1 );
-			}
-			if (getRequiredSecUserId() != null) {
-				if (rhs.getRequiredSecUserId() != null) {
-					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecUserId() != null) {
-				return( -1 );
-			}
-			if (getRequiredStart() != null) {
-				if (rhs.getRequiredStart() != null) {
-					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredStart() != null) {
-				return( -1 );
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
 			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( -1 );
+				cmp = getPKey().compareTo(rhs.getPKey());
+				if (cmp != 0) {
+					return( cmp );
 				}
 			}
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( -1 );
-				}
-			}
-			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
-			ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
-
-			if (getRequiredSecUserId() != null) {
-				if (rhs.getRequiredSecUserId() != null) {
-					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecUserId() != null) {
-				return( -1 );
-			}			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionByStartIdxKey ) {
-			ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
-
-			if (getRequiredSecUserId() != null) {
-				if (rhs.getRequiredSecUserId() != null) {
-					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecUserId() != null) {
-				return( -1 );
-			}
-			if (getRequiredStart() != null) {
-				if (rhs.getRequiredStart() != null) {
-					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredStart() != null) {
-				return( -1 );
-			}			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionByFinishIdxKey ) {
-			ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
-
-			if (getRequiredSecUserId() != null) {
-				if (rhs.getRequiredSecUserId() != null) {
-					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecUserId() != null) {
-				return( -1 );
-			}
-			if( getOptionalFinish() != null ) {
-				if( rhs.getOptionalFinish() != null ) {
-					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFinish() != null ) {
-					return( -1 );
-				}
-			}			return( 0 );
-		}
-		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey ) {
-			ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
-
-			if( getOptionalSecProxyId() != null ) {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalSecProxyId() != null ) {
-					return( -1 );
-				}
-			}			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
-				"compareTo",
-				"obj",
-				obj,
-				null );
+			if (rhs.getPKey() != null) {
+				return( -1 );
+			}
 		}
-	}
-
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if (getRequiredStart() != null) {
+				if (rhs.getRequiredStart() != null) {
+					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredStart() != null) {
+				return( -1 );
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( -1 );
+				}
+			}
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( -1 );
+				}
+			}
+            return( 0 );
+        }
+        else if (obj instanceof ICFSecSecSessionHPKey) {
+        if (getPKey() != null) {
+            return( getPKey().compareTo( obj ));
+        }
+        else {
+            return( -1 );
+        }
+        }
+        else if (obj instanceof ICFSecSecSessionH) {
+		ICFSecSecSessionH rhs = (ICFSecSecSessionH)obj;
+		if (getPKey() != null) {
+			if (rhs.getPKey() == null) {
+				return( 1 );
+			}
+			else {
+				cmp = getPKey().compareTo(rhs.getPKey());
+				if (cmp != 0) {
+					return( cmp );
+				}
+			}
+		}
+		else {
+			if (rhs.getPKey() != null) {
+				return( -1 );
+			}
+		}
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if (getRequiredStart() != null) {
+				if (rhs.getRequiredStart() != null) {
+					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredStart() != null) {
+				return( -1 );
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( -1 );
+				}
+			}
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( -1 );
+				}
+			}
+            return( 0 );
+        }
+        else if (obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
+            ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+            return( 0 );
+        }
+        else if (obj instanceof ICFSecSecSessionByStartIdxKey ) {
+            ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if (getRequiredStart() != null) {
+				if (rhs.getRequiredStart() != null) {
+					cmp = getRequiredStart().compareTo( rhs.getRequiredStart() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredStart() != null) {
+				return( -1 );
+			}
+            return( 0 );
+        }
+        else if (obj instanceof ICFSecSecSessionByFinishIdxKey ) {
+            ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if( getOptionalFinish() != null ) {
+				if( rhs.getOptionalFinish() != null ) {
+					cmp = getOptionalFinish().compareTo( rhs.getOptionalFinish() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFinish() != null ) {
+					return( -1 );
+				}
+			}
+            return( 0 );
+        }
+        else if (obj instanceof ICFSecSecSessionBySecProxyIdxKey ) {
+            ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
+			if( getOptionalSecProxyId() != null ) {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					cmp = getOptionalSecProxyId().compareTo( rhs.getOptionalSecProxyId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalSecProxyId() != null ) {
+					return( -1 );
+				}
+			}
+            return( 0 );
+        }
+        else {
+            throw new CFLibUnsupportedClassException( getClass(),
+                "compareTo",
+                "obj",
+                obj,
+                null );
+        }
+    }
 	@Override
-	public void set( ICFSecSecSession src ) {
+    public void set( ICFSecSecSession src ) {
 		setSecSession( src );
-	}
+    }
 
 	@Override
-	public void setSecSession( ICFSecSecSession src ) {
-		setRequiredSecSessionId(src.getRequiredSecSessionId());
+    public void setSecSession( ICFSecSecSession src ) {
+		setRequiredSecSessionId( src.getRequiredSecSessionId() );
+		setRequiredSecUserId( src.getRequiredSecUserId() );
+		setRequiredStart( src.getRequiredStart() );
+		setOptionalFinish( src.getOptionalFinish() );
+		setOptionalSecProxyId( src.getOptionalSecProxyId() );
 		setRequiredRevision( src.getRequiredRevision() );
-		setRequiredSecUserId(src.getRequiredSecUserId());
-		setRequiredStart(src.getRequiredStart());
-		setOptionalFinish(src.getOptionalFinish());
-		setOptionalSecProxyId(src.getOptionalSecProxyId());
-	}
+    }
 
 	@Override
-	public void set( ICFSecSecSessionH src ) {
+    public void set( ICFSecSecSessionH src ) {
 		setSecSession( src );
-	}
+    }
 
 	@Override
-	public void setSecSession( ICFSecSecSessionH src ) {
-		setRequiredSecSessionId(src.getRequiredSecSessionId());
-		setRequiredSecUserId(src.getRequiredSecUserId());
-		setRequiredStart(src.getRequiredStart());
-		setOptionalFinish(src.getOptionalFinish());
-		setOptionalSecProxyId(src.getOptionalSecProxyId());
-	}
+    public void setSecSession( ICFSecSecSessionH src ) {
+		setRequiredSecSessionId( src.getRequiredSecSessionId() );
+		setRequiredSecUserId( src.getRequiredSecUserId() );
+		setRequiredStart( src.getRequiredStart() );
+		setOptionalFinish( src.getOptionalFinish() );
+		setOptionalSecProxyId( src.getOptionalSecProxyId() );
+		setRequiredRevision( src.getRequiredRevision() );
+    }
 
-	@Override
-	public String getXmlAttrFragment() {
-		String ret = ""
-			+ " RequiredSecSessionId=" + "\"" + getRequiredSecSessionId().toString() + "\""
+    public String getXmlAttrFragment() {
+        String ret = pkey.getXmlAttrFragment() 
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
-			+ " RequiredSecSessionId=" + "\"" + getRequiredSecSessionId().toString() + "\""
 			+ " RequiredSecUserId=" + "\"" + getRequiredSecUserId().toString() + "\""
 			+ " RequiredStart=" + "\"" + getRequiredStart().toString() + "\""
 			+ " OptionalFinish=" + ( ( getOptionalFinish() == null ) ? "null" : "\"" + getOptionalFinish().toString() + "\"" )
 			+ " OptionalSecProxyId=" + ( ( getOptionalSecProxyId() == null ) ? "null" : "\"" + getOptionalSecProxyId().toString() + "\"" );
-		return( ret );
-	}
+        return( ret );
+    }
 
-	@Override
-	public String toString() {
-		String ret = "<CFSecBuffSecSession" + getXmlAttrFragment() + "/>";
-		return( ret );
-	}
+    public String toString() {
+        String ret = "<CFSecBuffSecSessionH" + getXmlAttrFragment() + "/>";
+        return( ret );
+    }
 }

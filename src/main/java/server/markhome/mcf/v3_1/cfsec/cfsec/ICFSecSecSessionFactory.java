@@ -46,6 +46,13 @@ public interface ICFSecSecSessionFactory
 {
 
 	/**
+	 *	Allocate a primary history key for SecSession instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecSecSessionHPKey newHPKey();
+
+	/**
 	 *	Allocate a SecUserIdx key over SecSession instances.
 	 *
 	 *	@return	The new instance.
@@ -79,5 +86,12 @@ public interface ICFSecSecSessionFactory
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSession newRec();
+
+	/**
+	 *	Allocate a SecSession history interface implementation.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecSecSessionH newHRec();
 
 }

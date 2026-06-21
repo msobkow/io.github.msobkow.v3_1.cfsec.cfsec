@@ -1,4 +1,4 @@
-// Description: Java 25 implementation of a ISOCtry history buffer primary key
+// Description: Java 25 implementation of a SysCluster history buffer primary key
 
 /*
  *	server.markhome.mcf.CFSec
@@ -39,11 +39,11 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	CFSecBuffISOCtryHPKey History Primary Key for ISOCtry
- *		requiredISOCtryId	Required object attribute ISOCtryId.
+ *	CFSecBuffSysClusterHPKey History Primary Key for SysCluster
+ *		requiredSingletonId	Required object attribute SingletonId.
  */
-public class CFSecBuffISOCtryHPKey
-	implements ICFSecISOCtryHPKey, Comparable<Object>, Serializable
+public class CFSecBuffSysClusterHPKey
+	implements ICFSecSysClusterHPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 auditClusterId;
 	protected LocalDateTime auditStamp;
@@ -51,15 +51,15 @@ public class CFSecBuffISOCtryHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected short requiredISOCtryId;
+	protected int requiredSingletonId;
 
-	public CFSecBuffISOCtryHPKey() {
+	public CFSecBuffSysClusterHPKey() {
 		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
+		requiredSingletonId = ICFSecSysCluster.SINGLETONID_INIT_VALUE;
 	}
 
 	@Override
@@ -113,21 +113,29 @@ public class CFSecBuffISOCtryHPKey
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
-		return( requiredISOCtryId );
+	public int getRequiredSingletonId() {
+		return( requiredSingletonId );
 	}
 
 	@Override
-	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecISOCtry.ISOCTRYID_MIN_VALUE ) {
+	public void setRequiredSingletonId( int value ) {
+		if( value < ICFSecSysCluster.SINGLETONID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
+				"setRequiredSingletonId",
 				1,
 				"value",
 				value,
-				ICFSecISOCtry.ISOCTRYID_MIN_VALUE );
+				ICFSecSysCluster.SINGLETONID_MIN_VALUE );
 		}
-		requiredISOCtryId = value;
+		if( value > ICFSecSysCluster.SINGLETONID_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredSingletonId",
+				1,
+				"value",
+				value,
+				ICFSecSysCluster.SINGLETONID_MAX_VALUE );
+		}
+		requiredSingletonId = value;
 	}
 
 	@Override
@@ -135,15 +143,15 @@ public class CFSecBuffISOCtryHPKey
 		if (obj == null) {
 			return( false );
 		}
-		else if (obj instanceof ICFSecISOCtry) {
-			ICFSecISOCtry rhs = (ICFSecISOCtry)obj;
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+		else if (obj instanceof ICFSecSysCluster) {
+			ICFSecSysCluster rhs = (ICFSecSysCluster)obj;
+			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCtryHPKey) {
-			ICFSecISOCtryHPKey rhs = (ICFSecISOCtryHPKey)obj;
+		else if (obj instanceof ICFSecSysClusterHPKey) {
+			ICFSecSysClusterHPKey rhs = (ICFSecSysClusterHPKey)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -189,13 +197,13 @@ public class CFSecBuffISOCtryHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCtryH) {
-			ICFSecISOCtryH rhs = (ICFSecISOCtryH)obj;
+		else if (obj instanceof ICFSecSysClusterH) {
+			ICFSecSysClusterH rhs = (ICFSecSysClusterH)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -241,7 +249,7 @@ public class CFSecBuffISOCtryHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
 				return( false );
 			}
 			return( true );
@@ -265,7 +273,7 @@ public class CFSecBuffISOCtryHPKey
 		if( auditSessionId != null ) {
 			hashCode = hashCode + auditSessionId.hashCode();
 		}
-		hashCode = ( hashCode * 0x10000 ) + getRequiredISOCtryId();
+		hashCode = hashCode + getRequiredSingletonId();
 		return( hashCode & 0x7fffffff );
 	}
 
@@ -275,18 +283,18 @@ public class CFSecBuffISOCtryHPKey
 		if (obj == null) {
 			return( 1 );
 		}
-		else if (obj instanceof ICFSecISOCtry) {
-			ICFSecISOCtry rhs = (ICFSecISOCtry)obj;
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+		else if (obj instanceof ICFSecSysCluster) {
+			ICFSecSysCluster rhs = (ICFSecSysCluster)obj;
+			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+			else if( getRequiredSingletonId() > rhs.getRequiredSingletonId() ) {
 				return( 1 );
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecISOCtryHPKey) {
-			ICFSecISOCtryHPKey rhs = (ICFSecISOCtryHPKey)obj;
+		else if (obj instanceof ICFSecSysClusterHPKey) {
+			ICFSecSysClusterHPKey rhs = (ICFSecSysClusterHPKey)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -341,16 +349,16 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+			else if( getRequiredSingletonId() > rhs.getRequiredSingletonId() ) {
 				return( 1 );
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecISOCtryH) {
-			ICFSecISOCtryH rhs = (ICFSecISOCtryH)obj;
+		else if (obj instanceof ICFSecSysClusterH) {
+			ICFSecSysClusterH rhs = (ICFSecSysClusterH)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -405,10 +413,10 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+			else if( getRequiredSingletonId() > rhs.getRequiredSingletonId() ) {
 				return( 1 );
 			}
 			return( 0 );
@@ -418,7 +426,7 @@ public class CFSecBuffISOCtryHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecISOCtryPKey, ICFSecISOCtry$emitHPKeyHistoryClassNames$" );
+				"ICFSecSysClusterPKey, ICFSecSysCluster$emitHPKeyHistoryClassNames$" );
 		}
 	}
 
@@ -429,13 +437,13 @@ public class CFSecBuffISOCtryHPKey
 			+ " auditAction=\"" + auditActionId + "\""
 			+ " revision=\"" + requiredRevision + "\""
 			+ " auditSessionId=\"" + (getAuditSessionId() != null ? getAuditSessionId().toString() : "null") + "\""
-			+ " RequiredISOCtryId=" + "\"" + Short.toString( getRequiredISOCtryId() ) + "\"";
+			+ " RequiredSingletonId=" + "\"" + Integer.toString( getRequiredSingletonId() ) + "\"";
 		return( ret );
 	}
 
 	@Override
 	public String toString() {
-		String ret = "<CFSecBuffISOCtryHPKey" + getXmlAttrFragment() + "/>";
+		String ret = "<CFSecBuffSysClusterHPKey" + getXmlAttrFragment() + "/>";
 		return( ret );
 	}
 }

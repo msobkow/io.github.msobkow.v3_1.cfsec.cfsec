@@ -476,7 +476,7 @@ public class CFSecBuffSecClusGrpHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecClusGrpPKey, ICFSecSecClusGrp, ICFSecSecClusGrpHPKey, ICFSecSecClusGrpH" );
+				"ICFSecSecClusGrpPKey, ICFSecSecClusGrp$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

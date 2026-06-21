@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SysCluster record implementation
+// Description: Java 25 interface for a SecSession history object
 
 /*
  *	server.markhome.mcf.CFSec
@@ -39,46 +39,49 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecSysCluster persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ *	ICFSecSecSessionH provides access to history records matching the CFSecSecSession object change history.
  */
-public interface ICFSecSysCluster
+public interface ICFSecSecSessionH
 {
-	public static final int SINGLETONID_MIN_VALUE = 1;
-	public static final int SINGLETONID_MAX_VALUE = 1;
-	public static final int SINGLETONID_INIT_VALUE = 1;
-	public static final String S_CLUSTERID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa01f;
-	public final static String S_CLASS_CODE = "a01f";
-
 	public int getClassCode();
 
-	public Integer getPKey();
-	public void setPKey(Integer requiredSingletonId);
-	
-	public int getRequiredSingletonId();
-	public void setRequiredSingletonId( int value );
+	public ICFSecSecSessionHPKey getPKey();
+	public void setPKey( ICFSecSecSessionHPKey pkey );
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
+	public LocalDateTime getAuditStamp();
+	public void setAuditStamp(LocalDateTime auditStamp);
+	public short getAuditActionId();
+	public void setAuditActionId(short auditActionId);
 	public int getRequiredRevision();
-	public void setRequiredRevision( int value );
+	public void setRequiredRevision(int revision);
+	public CFLibDbKeyHash256 getAuditSessionId();
+	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFSecCluster getRequiredContainerCluster();
-	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
-	public CFLibDbKeyHash256 getRequiredClusterId();
+	public CFLibDbKeyHash256 getRequiredSecSessionId();
+	public void setRequiredSecSessionId( CFLibDbKeyHash256 requiredSecSessionId );
+
+	public CFLibDbKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public LocalDateTime getRequiredStart();
+	public void setRequiredStart( LocalDateTime value );
+	public LocalDateTime getOptionalFinish();
+	public void setOptionalFinish( LocalDateTime value );
+	public CFLibDbKeyHash256 getOptionalSecProxyId();
+	public void setOptionalSecProxyId( CFLibDbKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
-	
+
 	@Override
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
+	//@Override
 	public int compareTo( Object obj );
 
-	public void set( ICFSecSysCluster src );
-	public void setSysCluster( ICFSecSysCluster src );
-	public void set( ICFSecSysClusterH src );
-	public void setSysCluster( ICFSecSysClusterH src );
-
+	public void set( ICFSecSecSession src );
+	public void set( ICFSecSecSessionH src );
+	public void setSecSession( ICFSecSecSession src );
+	public void setSecSession( ICFSecSecSessionH src );
 	public String getXmlAttrFragment();
 
 	@Override

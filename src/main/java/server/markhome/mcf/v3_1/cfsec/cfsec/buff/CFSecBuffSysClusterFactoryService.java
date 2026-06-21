@@ -56,6 +56,31 @@ public class CFSecBuffSysClusterFactoryService
 	}
 
 	@Override
+	public ICFSecSysClusterHPKey newHPKey() {
+		ICFSecSysClusterHPKey hpkey =
+			new CFSecBuffSysClusterHPKey();
+		return( hpkey );
+	}
+
+	public CFSecBuffSysClusterHPKey ensureHPKey(ICFSecSysClusterHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFSecBuffSysClusterHPKey) {
+			return( (CFSecBuffSysClusterHPKey)key );
+		}
+		else {
+			CFSecBuffSysClusterHPKey mapped = new CFSecBuffSysClusterHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredSingletonId( key.getRequiredSingletonId() );
+			return( mapped );
+		}
+	}
+
+	@Override
 	public ICFSecSysClusterByClusterIdxKey newByClusterIdxKey() {
 		ICFSecSysClusterByClusterIdxKey key =
 			new CFSecBuffSysClusterByClusterIdxKey();
@@ -100,6 +125,34 @@ public class CFSecBuffSysClusterFactoryService
 					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSysCluster",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSysCluster");
+			}
+		}
+	}
+
+	@Override
+	public ICFSecSysClusterH newHRec() {
+		ICFSecSysClusterH hrec =
+			new CFSecBuffSysClusterH();
+		return( hrec );
+	}
+
+	public CFSecBuffSysClusterH ensureHRec(ICFSecSysClusterH hrec) {
+		if( hrec == null ) {
+			return( null );
+		}
+		else if (hrec instanceof CFSecBuffSysClusterH) {
+			return ((CFSecBuffSysClusterH)hrec);
+		}
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecSysCluster.CLASS_CODE: {
+					CFSecBuffSysClusterH mapped = new CFSecBuffSysClusterH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSysCluster",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSysCluster");
 			}
 		}
 	}

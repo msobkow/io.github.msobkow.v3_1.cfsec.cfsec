@@ -78,6 +78,32 @@ public class CFSecBuffSecUserPWHistoryFactoryService
 	}
 
 	@Override
+	public ICFSecSecUserPWHistoryHPKey newHPKey() {
+		ICFSecSecUserPWHistoryHPKey hpkey =
+			new CFSecBuffSecUserPWHistoryHPKey();
+		return( hpkey );
+	}
+
+	public CFSecBuffSecUserPWHistoryHPKey ensureHPKey(ICFSecSecUserPWHistoryHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFSecBuffSecUserPWHistoryHPKey) {
+			return( (CFSecBuffSecUserPWHistoryHPKey)key );
+		}
+		else {
+			CFSecBuffSecUserPWHistoryHPKey mapped = new CFSecBuffSecUserPWHistoryHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredSecUserId( key.getRequiredSecUserId() );
+			mapped.setRequiredPWSetStamp( key.getRequiredPWSetStamp() );
+			return( mapped );
+		}
+	}
+
+	@Override
 	public ICFSecSecUserPWHistoryByUserIdxKey newByUserIdxKey() {
 		ICFSecSecUserPWHistoryByUserIdxKey key =
 			new CFSecBuffSecUserPWHistoryByUserIdxKey();
@@ -164,6 +190,34 @@ public class CFSecBuffSecUserPWHistoryFactoryService
 					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory");
+			}
+		}
+	}
+
+	@Override
+	public ICFSecSecUserPWHistoryH newHRec() {
+		ICFSecSecUserPWHistoryH hrec =
+			new CFSecBuffSecUserPWHistoryH();
+		return( hrec );
+	}
+
+	public CFSecBuffSecUserPWHistoryH ensureHRec(ICFSecSecUserPWHistoryH hrec) {
+		if( hrec == null ) {
+			return( null );
+		}
+		else if (hrec instanceof CFSecBuffSecUserPWHistoryH) {
+			return ((CFSecBuffSecUserPWHistoryH)hrec);
+		}
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFSecSecUserPWHistory.CLASS_CODE: {
+					CFSecBuffSecUserPWHistoryH mapped = new CFSecBuffSecUserPWHistoryH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFSecSecUserPWHistory");
 			}
 		}
 	}
