@@ -1,4 +1,4 @@
-// Description: Java 25 Authorization Interface.
+// Description: Java 25 Private Authorization Interface.
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,29 +37,28 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtAuthorization;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecClusterObj;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecTenantObj;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecSessionObj;
+import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecUserObj;
+
 
 /*
  *	An ICFSecAuthorization is an authorization ticket
  *	for the system providing services.
  */
-public interface ICFSecAuthorization
+public interface ICFSecAuthorization extends ICFSecProtAuthorization
 {
-	public CFLibUuid6 getAuthUuid6();
 	public void setAuthUuid6( CFLibUuid6 value );
-	public String getAuthUuid6Str();
 
-	public CFLibDbKeyHash256 getSecClusterId();
 	public void setSecClusterId( CFLibDbKeyHash256 clusterId );
-	public void setSecCluster( ICFSecClusterObj value );
-	public CFLibDbKeyHash256 getSecTenantId();
+	public void setSecCluster(ICFSecClusterObj cluster);
 	public void setSecTenantId( CFLibDbKeyHash256 tenantId );
-	public void setSecTenant( ICFSecTenantObj value );
-	public CFLibDbKeyHash256 getSecSessionId();
+	public void setSecTenant(ICFSecTenantObj tenant);
 	public void setSecSessionId( CFLibDbKeyHash256 sessionId );
-	public void setSecSession( ICFSecSecSessionObj value );
-	public CFLibDbKeyHash256 getSecUserId();
+	public void setSecSession(ICFSecSecSessionObj session);
 	public void setSecUserId( CFLibDbKeyHash256 userId );
+	public void setSecUser(ICFSecSecUserObj user);
 }

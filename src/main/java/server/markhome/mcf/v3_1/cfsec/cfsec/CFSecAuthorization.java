@@ -1,4 +1,4 @@
-// Description: Java 25 CFSec Authorization Implementation
+// Description: Java 25 CFSec Private Authorization Implementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,95 +37,101 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.CFSecPubAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.CFSecProtAuthorization;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecClusterObj;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecTenantObj;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecSessionObj;
+import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecUserObj;
 
 /*
- *	A CFSecAuthorization is an authorization ticket
+ *	A CFSecAuthorization is a private authorization ticket
  *	for the system providing services.  Most modern authorizations
- *      are based on OAuth2 tickets, but I haven't gotten there yet...
+ *	are based on OAuth2 tickets, but I haven't gotten there yet.
  */
-public class CFSecAuthorization implements ICFSecAuthorization, Serializable
+public class CFSecAuthorization extends CFSecProtAuthorization implements ICFSecAuthorization, Serializable
 {
-	protected CFLibUuid6 authUuid6;
-	protected String authUuid6Str;
-
-	protected CFLibDbKeyHash256 secClusterId = CFLibDbKeyHash256.nullGet();
-	protected CFLibDbKeyHash256 secTenantId = CFLibDbKeyHash256.nullGet();
-	protected CFLibDbKeyHash256 secSessionId = CFLibDbKeyHash256.nullGet();
-	protected CFLibDbKeyHash256 secUserId = CFLibDbKeyHash256.nullGet();
-
 	public CFSecAuthorization() {
-		authUuid6 = CFLibUuid6.generateUuid6();
-		authUuid6Str = authUuid6.toString();
+		super();
 	}
 
-	public CFLibUuid6 getAuthUuid6() {
-		return( authUuid6 );
+	public CFSecAuthorization(ICFSecAuthorization src) {
+		super(src);
 	}
 
+	public CFSecAuthorization(ICFSecProtAuthorization src) {
+		super(src);
+	}
+
+	public CFSecAuthorization(ICFSecPubAuthorization src) {
+		super(src);
+	}
+
+	@Override
 	public void setAuthUuid6( CFLibUuid6 value ) {
-		authUuid6 = value;
-		authUuid6Str = authUuid6.toString();
+		this.authUuid6 = new CFLibUuid6(value.getBytes());
+		this.authUuid6Str = this.authUuid6.toString();
 	}
 
-	public String getAuthUuid6Str() {
-		return( authUuid6Str );
-	}
-
-	public CFLibDbKeyHash256 getSecClusterId() {
-		return( secClusterId );
-	}
-
+	@Override
 	public void setSecClusterId( CFLibDbKeyHash256 clusterId ) {
-		secClusterId = clusterId;
+		this.secClusterId = new CFLibDbKeyHash256(clusterId);
 	}
 
-	public void setSecCluster( ICFSecClusterObj value ) {
-		// The cluster id is never cleared to 0 after it's been set
-		if( value != null ) {
-			secClusterId = value.getRequiredId();
+	@Override
+	public void setSecCluster(ICFSecClusterObj cluster) {
+		if (cluster == null) {
+			this.secClusterId = CFLibDbKeyHash256.nullGet();
+		}
+		else {
+			this.secClusterId = cluster.getRequiredId();
 		}
 	}
 
-	public CFLibDbKeyHash256 getSecTenantId() {
-		return( secTenantId );
-	}
-
+	@Override
 	public void setSecTenantId( CFLibDbKeyHash256 tenantId ) {
-		secTenantId = tenantId;
+		this.secTenantId = new CFLibDbKeyHash256(tenantId);
 	}
 
-	public void setSecTenant( ICFSecTenantObj value ) {
-		// The tenant id is never cleared to 0 after it's been set
-		if( value != null ) {
-			secTenantId = value.getRequiredId();
+	@Override
+	public void setSecTenant(ICFSecTenantObj tenant) {
+		if (tenant == null) {
+			this.secTenantId = CFLibDbKeyHash256.nullGet();
+		}
+		else {
+			this.secTenantId = new CFLibDbKeyHash256(tenant.getRequiredId());
 		}
 	}
 
-	public CFLibDbKeyHash256 getSecSessionId() {
-		return( secSessionId );
-	}
-
+	@Override
 	public void setSecSessionId( CFLibDbKeyHash256 sessionId ) {
-		secSessionId = sessionId;
+		this.secSessionId = new CFLibDbKeyHash256(sessionId);
 	}
 
-	public void setSecSession( ICFSecSecSessionObj value )
-	{
-		// The session and user id are never cleared after they've been set
-		if( value != null ) {
-			secSessionId = value.getRequiredSecSessionId();
-			secUserId = value.getRequiredSecUserId();
+	@Override
+	public void setSecSession(ICFSecSecSessionObj session) {
+		if (session == null) {
+			this.secSessionId = CFLibDbKeyHash256.nullGet();
+		}
+		else {
+			this.secSessionId = new CFLibDbKeyHash256(session.getRequiredSecSessionId());
 		}
 	}
 
-	public CFLibDbKeyHash256 getSecUserId() {
-		return( secUserId );
+	@Override
+	public void setSecUserId( CFLibDbKeyHash256 userId ) {
+		this.secUserId = new CFLibDbKeyHash256(userId);
 	}
 
-	public void setSecUserId( CFLibDbKeyHash256 userId ) {
-		secUserId = userId;
+	@Override
+	public void setSecUser(ICFSecSecUserObj user) {
+		if (user == null) {
+			this.secUserId = CFLibDbKeyHash256.nullGet();
+		}
+		else {
+			this.secUserId = new CFLibDbKeyHash256(user.getRequiredSecUserId());
+		}
 	}
 }

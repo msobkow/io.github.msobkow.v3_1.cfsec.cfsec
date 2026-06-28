@@ -1,4 +1,4 @@
-// Description: Java 25 Authorization Callback Interface.
+// Description: Java 25 Private Authorization Callback Interface.
 
 /*
  *	server.markhome.mcf.CFSec
@@ -37,19 +37,40 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecClusterObj;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecTenantObj;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.ICFSecSecSessionObj;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubAuthorizationCallback;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtAuthorization;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtAuthorizationCallback;
 
 /*
  *	An ICFSecAuthorizationCallback is callback method hook for locating the currently applicable authorization object at runtime.
  */
-public interface ICFSecAuthorizationCallback
+public interface ICFSecAuthorizationCallback extends ICFSecProtAuthorizationCallback
 {
 	/**
-	 *	Get the currently effective authorization to be used for processing database I/Os on behalf of the user behind the scenes.
+	 *	Get the currently effective private authorization to be used for processing on behalf of the user behind the scenes.
 	 *
-	 *	@return	The currently effective authorization. May be null if there is no currently active user session, in which case some code uses a default system session.
+	 *	@return	The currently effective private authorization. May be null if there is no currently active user session, in which case some code uses a default system session or rejects the request.
 	 */
 	public ICFSecAuthorization getEffectiveAuthorization();
+
+	/**
+	 *	Get the currently effective protected authorization to be used for processing on behalf of the user behind the scenes.
+	 *
+	 *	@return	The currently effective protected authorization. May be null if there is no currently active user session, in which case some code uses a default system session or rejects the request.
+	 */
+	@Override
+	public default ICFSecProtAuthorization getEffectiveProtAuthorization() {
+		return(getEffectiveAuthorization());
+	}
+
+	/**
+	 *	Get the currently effective public authorization to be used for processing on behalf of the user behind the scenes.
+	 *
+	 *	@return	The currently effective public authorization. May be null if there is no currently active user session, in which case some code uses a default system session or rejects the request.
+	 */
+	@Override
+	public default ICFSecPubAuthorization getEffectivePubAuthorization() {
+		return(getEffectiveAuthorization());
+	}
 }

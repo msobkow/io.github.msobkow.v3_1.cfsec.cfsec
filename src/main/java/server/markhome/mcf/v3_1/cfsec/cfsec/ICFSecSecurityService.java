@@ -1,4 +1,4 @@
-// Description: Java 25 Security Service Interface.
+// Description: Java 25 Private Security Service Interface.
 
 /*
  *	server.markhome.mcf.CFSec
@@ -28,91 +28,20 @@
 package server.markhome.mcf.v3_1.cfsec.cfsec;
 
 import server.markhome.mcf.v3_1.cflib.dbutil.CFLibDbKeyHash256;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubSecurityService;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtSecurityService;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtSecurityControl;
 
 /*
- *	An ICFSecSecurityService is the public service interface used by
- *	normal applications to query the security server or a security server cache.
+ *	An ICFSecSecurityService is the private service interface used in
+ *	application server code to implement a SecurityService cache that can accept new
+ *	server registrations.
  *	The ICFSecSecurityControl interface is a private interface used by the
  *	security server to control security server caches that have registered interest
- *	in the security server. The control interface should never be accessed by
- *	standard application logic, which does not perform the logins for the application,
- *	delegating that responsibility to the security server and its forms and interfaces.
+ *	in the security server. The control interface is used to communicate between the
+ *	root security server and the security server caches.
  */
-public interface ICFSecSecurityService {
-
-	/**
-	 *	Probe the SecRole*, SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
-	 *	in order until a probe authorizes the users access to the permission role or group. There is no need to invoke
-	 *	isMemberOfClusterGroup() or isMemberOfSystemGroup() if you invoke this method.
-	 *
-	 *	@param userLogin The login id from the SecUser object for the user this query is for.
-	 *	@param clusterId The cluster id of the cluster that contains the tenant being queried.
-	 *	@param tenantId The tenant id being queried.
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
-	 */
-	public boolean isMemberOfTenantGroup(String userLogin, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
-
-	/**
-	 *	Probe the SecRole*, SecTent* security tables, then the SecClus* security tables, and finally the SecSys* tables
-	 *	in order until a probe authorizes the users access to the permission role or group. There is no need to invoke
-	 *	isMemberOfClusterGroup() or isMemberOfSystemGroup() if you invoke this method.
-	 *
-	 *	@param userId The user id for the SecUser object this query is for.
-	 *	@param clusterId The cluster id of the cluster that contains the tenant being queried.
-	 *	@param tenantId The tenant id being queried.
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the tenant role or group, the equivalent cluster admin role or group, or the equivalent system admin role or group, otherwise false.
-	 */
-	public boolean isMemberOfTenantGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, String permissionName);
-
-	/**
-	 *	Probe the SecRole*, SecClus* security tables, and then the SecSys* tables until a probe authorizes the users access
-	 *	to the permission role or group as a cluster or system admin. There is no need to invoke isMemberOfSystemGroup()
-	 *	if you invoke this method.
-	 *
-	 *	@param userLogin The login id from the SecUser object for the user this query is for.
-	 *	@param clusterId The cluster id being queried.
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the cluster role or group or the equivalent system admin role or group, otherwise false.
-	 */
-	public boolean isMemberOfClusterGroup(String userLogin, CFLibDbKeyHash256 clusterId, String permissionName);
-
-	/**
-	 *	Probe the SecRole*, SecClus* security tables, and then the SecSys* tables until a probe authorizes the users access
-	 *	to the permission role or group as a cluster or system admin. There is no need to invoke isMemberOfSystemGroup()
-	 *	if you invoke this method.
-	 *
-	 *	@param userId The user id for the SecUser object this query is for.
-	 *	@param clusterId The cluster id being queried.
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the cluster role or group or the equivalent system admin role or group, otherwise false.
-	 */
-	public boolean isMemberOfClusterGroup(CFLibDbKeyHash256 userId, CFLibDbKeyHash256 clusterId, String permissionName);
-
-	/**
-	 *	Probe the SecRole*, SecSys* tables for authorization of the users access to the permission role or group as a system admin.
-	 *
-	 *	@param userLogin The login id from the SecUser object for the user this query is for
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the specified system role or group, otherwise false.
-	 */
-	public boolean isMemberOfSystemGroup(String userLogin, String permissionName);
-
-	/**
-	 *	Probe the SecRole*, SecSys* tables for authorization of the users access to the permission role or group as a system admin.
-	 *
-	 *	@param userId The user id for the SecUser object this query is for.
-	 *	@param permissionName The name of the permission role or group being queried.
-	 *
-	 *	@return true if the user is a member of the specified system role or group, otherwise false.
-	 */
-	public boolean isMemberOfSystemGroup(CFLibDbKeyHash256 userId, String permissionName);
+public interface ICFSecSecurityService extends ICFSecProtSecurityService {
 
 	/**
 	 *	Register a SecurityControl implementation as an interested listener to receive propagation of the forget commands filtered by their
@@ -122,7 +51,9 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if a new interest registration was established, false if the interest had been previously established.
 	 */
-	public boolean registerInterest(ICFSecSecurityControl securityControl);
+	public default boolean registerInterest(ICFSecSecurityControl securityControl) {
+		return registerInterest((ICFSecProtSecurityControl)securityControl);
+	};
 
 	/**
 	 *	Remove a SecurityControl implementation from the registered list of listeners.
@@ -131,7 +62,9 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the security control was removed, false if it was not found.
 	 */
-	public boolean forgetInterest(ICFSecSecurityControl securityControl);
+	public default boolean forgetInterest(ICFSecSecurityControl securityControl) {
+		return forgetInterest((ICFSecProtSecurityControl)securityControl);
+	};
 
 	/**
 	 *	Did the specified SecurityControl register interest in filtered forget commands?
@@ -140,10 +73,7 @@ public interface ICFSecSecurityService {
 	 *
 	 *	@return true if the SecurityControl is in the interest registration list, otherwise false.
 	 */
-	public boolean isInterested(ICFSecSecurityControl securityControl);
-
-	/**
-	 *	Forget all interest registrations; use with EXTREME CAUTION.
-	 */
-	public void forgetAllInterests();
+	public default boolean isInterested(ICFSecSecurityControl securityControl) {
+		return isInterested((ICFSecProtSecurityControl)securityControl);
+	};
 }

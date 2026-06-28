@@ -31,6 +31,9 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.ICFSecPubSecurityService;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtSecurityService;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.ICFSecProtSecurityControl;
 
 /*
  *	The CFSecSecurityCache is the base implementation of a security cache which is to be specialized
@@ -242,7 +245,7 @@ abstract public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSe
 	 *	@return true if a new interest registration was established, false if the interest had been previously established.
 	 */
 	@Override
-	public boolean registerInterest(ICFSecSecurityControl securityControl) {
+	public boolean registerInterest(ICFSecProtSecurityControl securityControl) {
 		throw new CFLibNotImplementedYetException(getClass(), "registerInterest");
 	}
 
@@ -254,7 +257,7 @@ abstract public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSe
 	 *	@return true if the security control was removed, false if it was not found.
 	 */
 	@Override
-	public boolean forgetInterest(ICFSecSecurityControl securityControl) {
+	public boolean forgetInterest(ICFSecProtSecurityControl securityControl) {
 		throw new CFLibNotImplementedYetException(getClass(), "forgetInterest");
 	}
 
@@ -266,7 +269,7 @@ abstract public class CFSecSecurityCache implements ICFSecSecurityControl, ICFSe
 	 *	@return true if the SecurityControl is in the interest registration list, otherwise false.
 	 */
 	@Override
-	public boolean isInterested(ICFSecSecurityControl securityControl) {
+	public boolean isInterested(ICFSecProtSecurityControl securityControl) {
 		throw new CFLibNotImplementedYetException(getClass(), "isInterested");
 	}
 
