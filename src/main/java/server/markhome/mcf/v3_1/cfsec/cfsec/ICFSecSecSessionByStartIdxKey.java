@@ -39,7 +39,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 //import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
 /**
- *	ICFSecSecSessionByStartIdxKeys has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
+ *	ICFSecSecSessionByStartIdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFSecSecSessionByStartIdxKey
 {

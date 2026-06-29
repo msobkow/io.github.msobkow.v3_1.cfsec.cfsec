@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 
 /*
- *	CFSecSecUserPWHistoryTable database interface for SecUserPWHistory has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
+ *	CFSecSecUserPWHistoryTable database interface for SecUserPWHistory has CodeVis Private, meaning that only the back-end code for the schema implementation can access it, and even the code specific user interface cannot.
  */
 public interface ICFSecSecUserPWHistoryTable
 {

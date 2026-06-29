@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 
 /**
- *	ICFSecSecUserPWHistoryPKey primary key interface for SecUserPWHistory has CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
+ *	ICFSecSecUserPWHistoryPKey primary key interface for SecUserPWHistory has CodeVis Private, meaning that only the back-end code for the schema implementation can access it, and even the code specific user interface cannot.
  *		requiredSecUserId	Required object attribute SecUserId.
  *		requiredPWSetStamp	Required object attribute PWSetStamp.
  */
