@@ -43,7 +43,8 @@ import java.util.concurrent.atomic.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffSchema;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffFactoryService;
 
@@ -52,59 +53,59 @@ public interface ICFSecSchema
 	public static final String SCHEMA_NAME = "CFSec";
 	public static final String DBSCHEMA_NAME = "CFSec31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecTableData TABLE_DATA[] = {new CFSecTableData("CFSec", "Cluster", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOCcy", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOCtry", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOCtryCcy", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOCtryLang", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOLang", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "ISOTZone", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "SecClusGrp", null, true, false, "Cluster", "Protected"),
-		new CFSecTableData("CFSec", "SecClusGrpMemb", null, true, false, "Cluster", "Protected"),
-		new CFSecTableData("CFSec", "SecClusRole", null, true, false, "Cluster", "Protected"),
-		new CFSecTableData("CFSec", "SecClusRoleMemb", null, true, false, "Cluster", "Protected"),
-		new CFSecTableData("CFSec", "SecSession", null, false, false, "System", "Public"),
-		new CFSecTableData("CFSec", "SecSysGrp", null, true, false, "System", "Public"),
-		new CFSecTableData("CFSec", "SecSysGrpInc", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecSysGrpMemb", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecSysRole", null, true, false, "System", "Public"),
-		new CFSecTableData("CFSec", "SecSysRoleEnables", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecSysRoleMemb", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecTentGrp", null, true, false, "Tenant", "Protected"),
-		new CFSecTableData("CFSec", "SecTentGrpMemb", null, true, false, "Tenant", "Protected"),
-		new CFSecTableData("CFSec", "SecTentRole", null, true, false, "Tenant", "Protected"),
-		new CFSecTableData("CFSec", "SecTentRoleMemb", null, true, false, "Tenant", "Protected"),
-		new CFSecTableData("CFSec", "SecUser", null, true, false, "System", "Public"),
-		new CFSecTableData("CFSec", "SecUserEMConf", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecUserPWHistory", null, false, false, "System", "Private"),
-		new CFSecTableData("CFSec", "SecUserPWReset", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecUserPassword", null, false, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SysCluster", null, false, false, "System", "Public"),
-		new CFSecTableData("CFSec", "TableInfo", null, true, false, "Global", "Public"),
-		new CFSecTableData("CFSec", "Tenant", null, true, false, "System", "Public")};
-	public static final AtomicReference<CFSecTableData[]> consolidatedTableData = new AtomicReference<>(null);
-	public static final CFSecRoleInfo ROLE_INFO[] = {new CFSecRoleInfo("secclusmanager", "ClusRole", "sectentmanager createsecclusmemb updatesecclusmemb deletesecclusmemb createsecclusrolememb updatesecclusrolememb deletesecclusrolememb", "systemadmin"),
-		new CFSecRoleInfo("secclusadmin", "ClusRole", "secclusmanager createsecclusgrp updatesecclusgrp deletesecclusgrp readsecclusrole updatesecclusrole createsecclusrole deletesecclusrole", "systemadmin"),
-		new CFSecRoleInfo("secsysmanager", "SysRole", "secuser secclusmanager createsecsysmemb updatesecsysmemb deletesecsysmemb create secsysrolememb updatesecsysrolememb deletesecsysrolememb", "systemadmin"),
-		new CFSecRoleInfo("sectentmanager", "TentRole", "secuser createsectentmemb updatesectentmemb deletesectentmemb createsectentrolememb updatesectentrolememb deletesectentrolememb", "systemadmin"),
-		new CFSecRoleInfo("sectentadmin", "TentRole", "sectentmanager createsectentgrp updatesectentgrp deletesectentgrp createsectentrole updatesectentrole deletesectentrole", "systemadmin"),
-		new CFSecRoleInfo("secsysadmin", "SysRole", "sectentadmin secclusadmin secsysmanager updatecluster deletecluster updatetenant deletetenant createsecsysgrp updatesecsysgrp deletesecsysgrp createsecsysrole updatesecsysrole deletesecsysrole createsecsysinc updatesecsysinc deletesecsysinc ", "systemadmin"),
-		new CFSecRoleInfo("secuser", "SysRole", "readcluster readtenant readsecsysgrp readsecsysinc readsecsysmemb readsecsysrole readsecsysinc readsecsysroleenable readsecsysrolememb readsecclusgrp readsecclusmemb readsecclusrole readsecclusrolememb readsectentgrp readsectentmemb readsectentrole readsectentrolememb", "systemadmin")};
-	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
+	public static final CFSecPubTableData TABLE_DATA[] = {new CFSecPubTableData("CFSec", "Cluster", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOCcy", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOCtry", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOCtryCcy", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOCtryLang", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOLang", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "ISOTZone", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "SecClusGrp", null, true, false, "Cluster", "Protected"),
+		new CFSecPubTableData("CFSec", "SecClusGrpMemb", null, true, false, "Cluster", "Protected"),
+		new CFSecPubTableData("CFSec", "SecClusRole", null, true, false, "Cluster", "Protected"),
+		new CFSecPubTableData("CFSec", "SecClusRoleMemb", null, true, false, "Cluster", "Protected"),
+		new CFSecPubTableData("CFSec", "SecSession", null, false, false, "System", "Public"),
+		new CFSecPubTableData("CFSec", "SecSysGrp", null, true, false, "System", "Public"),
+		new CFSecPubTableData("CFSec", "SecSysGrpInc", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecSysGrpMemb", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecSysRole", null, true, false, "System", "Public"),
+		new CFSecPubTableData("CFSec", "SecSysRoleEnables", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecSysRoleMemb", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecTentGrp", null, true, false, "Tenant", "Protected"),
+		new CFSecPubTableData("CFSec", "SecTentGrpMemb", null, true, false, "Tenant", "Protected"),
+		new CFSecPubTableData("CFSec", "SecTentRole", null, true, false, "Tenant", "Protected"),
+		new CFSecPubTableData("CFSec", "SecTentRoleMemb", null, true, false, "Tenant", "Protected"),
+		new CFSecPubTableData("CFSec", "SecUser", null, true, false, "System", "Public"),
+		new CFSecPubTableData("CFSec", "SecUserEMConf", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecUserPWHistory", null, false, false, "System", "Private"),
+		new CFSecPubTableData("CFSec", "SecUserPWReset", null, true, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SecUserPassword", null, false, false, "System", "Protected"),
+		new CFSecPubTableData("CFSec", "SysCluster", null, false, false, "System", "Public"),
+		new CFSecPubTableData("CFSec", "TableInfo", null, true, false, "Global", "Public"),
+		new CFSecPubTableData("CFSec", "Tenant", null, true, false, "System", "Public")};
+	public static final AtomicReference<CFSecPubTableData[]> consolidatedTableData = new AtomicReference<>(null);
+	public static final CFSecPubRoleInfo ROLE_INFO[] = {new CFSecPubRoleInfo("secclusmanager", "ClusRole", "sectentmanager createsecclusmemb updatesecclusmemb deletesecclusmemb createsecclusrolememb updatesecclusrolememb deletesecclusrolememb", "systemadmin"),
+		new CFSecPubRoleInfo("secclusadmin", "ClusRole", "secclusmanager createsecclusgrp updatesecclusgrp deletesecclusgrp readsecclusrole updatesecclusrole createsecclusrole deletesecclusrole", "systemadmin"),
+		new CFSecPubRoleInfo("secsysmanager", "SysRole", "secuser secclusmanager createsecsysmemb updatesecsysmemb deletesecsysmemb create secsysrolememb updatesecsysrolememb deletesecsysrolememb", "systemadmin"),
+		new CFSecPubRoleInfo("sectentmanager", "TentRole", "secuser createsectentmemb updatesectentmemb deletesectentmemb createsectentrolememb updatesectentrolememb deletesectentrolememb", "systemadmin"),
+		new CFSecPubRoleInfo("sectentadmin", "TentRole", "sectentmanager createsectentgrp updatesectentgrp deletesectentgrp createsectentrole updatesectentrole deletesectentrole", "systemadmin"),
+		new CFSecPubRoleInfo("secsysadmin", "SysRole", "sectentadmin secclusadmin secsysmanager updatecluster deletecluster updatetenant deletetenant createsecsysgrp updatesecsysgrp deletesecsysgrp createsecsysrole updatesecsysrole deletesecsysrole createsecsysinc updatesecsysinc deletesecsysinc ", "systemadmin"),
+		new CFSecPubRoleInfo("secuser", "SysRole", "readcluster readtenant readsecsysgrp readsecsysinc readsecsysmemb readsecsysrole readsecsysinc readsecsysroleenable readsecsysrolememb readsecclusgrp readsecclusmemb readsecclusrole readsecclusrolememb readsectentgrp readsectentmemb readsectentrole readsectentrolememb", "systemadmin")};
+	public static final AtomicReference<CFSecPubRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
 
-	public static CFSecTableData[] getTableData() {
+	public static CFSecPubTableData[] getTableData() {
 		return TABLE_DATA;
 	}
 
-	public static CFSecTableData[] getConsolidatedTableData() {
+	public static CFSecPubTableData[] getConsolidatedTableData() {
 		if (consolidatedTableData.get() == null) {
-			ArrayList<CFSecTableData> lst = new ArrayList<>();
-			for( CFSecTableData data: TABLE_DATA) {
+			ArrayList<CFSecPubTableData> lst = new ArrayList<>();
+			for( CFSecPubTableData data: TABLE_DATA) {
 				lst.add(data);
 			}
-			CFSecTableData arr[] = new CFSecTableData[lst.size()];
+			CFSecPubTableData arr[] = new CFSecPubTableData[lst.size()];
 			int idx = 0;
-			for(CFSecTableData data: lst) {
+			for(CFSecPubTableData data: lst) {
 				arr[idx++] = data;
 			}
 			consolidatedTableData.compareAndSet(null, arr);
@@ -112,21 +113,21 @@ public interface ICFSecSchema
 		return(consolidatedTableData.get());
 	}
 
-	public static CFSecRoleInfo[] getRoleInfo() {
+	public static CFSecPubRoleInfo[] getRoleInfo() {
 		return ROLE_INFO;
 	}
 
-	public static CFSecRoleInfo[] getConsolidatedRoleInfo() {
+	public static CFSecPubRoleInfo[] getConsolidatedRoleInfo() {
 		if (consolidatedRoleInfo.get() == null) {
-			ArrayList<CFSecRoleInfo> lst = new ArrayList<>();
-			for( CFSecRoleInfo info: ROLE_INFO) {
+			ArrayList<CFSecPubRoleInfo> lst = new ArrayList<>();
+			for( CFSecPubRoleInfo info: ROLE_INFO) {
 				lst.add(info);
 			}
 			// Dependency order is the natural order of role info comparison
-			lst.sort(new CFSecRoleInfoDependencyComparator());
-			CFSecRoleInfo arr[] = new CFSecRoleInfo[lst.size()];
+			lst.sort(new CFSecPubRoleInfoDependencyComparator());
+			CFSecPubRoleInfo arr[] = new CFSecPubRoleInfo[lst.size()];
 			int idx = 0;
-			for(CFSecRoleInfo info: lst) {
+			for(CFSecPubRoleInfo info: lst) {
 				arr[idx++] = info;
 			}
 			consolidatedRoleInfo.compareAndSet(null, arr);
@@ -1172,6 +1173,6 @@ public interface ICFSecSchema
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema(CFSecTableData tableData[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableData tableData[]);
+	public void bootstrapSchema(CFSecPubTableData tableData[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
 }
