@@ -67,7 +67,7 @@ public interface ICFSecSchema
 		new CFSecTableData("CFSec", "SecSysGrp", null, true, false, "System", "Public"),
 		new CFSecTableData("CFSec", "SecSysGrpInc", null, true, false, "System", "Protected"),
 		new CFSecTableData("CFSec", "SecSysGrpMemb", null, true, false, "System", "Protected"),
-		new CFSecTableData("CFSec", "SecSysRole", null, true, false, "System", "Protected"),
+		new CFSecTableData("CFSec", "SecSysRole", null, true, false, "System", "Public"),
 		new CFSecTableData("CFSec", "SecSysRoleEnables", null, true, false, "System", "Protected"),
 		new CFSecTableData("CFSec", "SecSysRoleMemb", null, true, false, "System", "Protected"),
 		new CFSecTableData("CFSec", "SecTentGrp", null, true, false, "Tenant", "Protected"),
