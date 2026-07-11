@@ -82,10 +82,26 @@ public interface ICFSecSecClusGrp
 	public ICFSecCluster getRequiredOwnerCluster();
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
-	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);
+	public default void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
+		if (argObj == null) {
+			setRequiredOwnerCluster((ICFSecCluster)null);
+		}
+		else {
+			setRequiredOwnerCluster(argObj.getRequiredClusterId());
+		}
+	}
+
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj);
+	public default void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
+		if (argObj == null) {
+			setRequiredContainerSysGrp((ICFSecSecSysGrp)null);
+		}
+		else {
+			setRequiredContainerSysGrp(argObj.getRequiredName());
+		}
+	}
+
 	public void setRequiredContainerSysGrp(String argName);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();

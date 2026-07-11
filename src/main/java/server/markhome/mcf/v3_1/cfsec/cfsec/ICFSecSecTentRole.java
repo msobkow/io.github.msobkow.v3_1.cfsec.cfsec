@@ -82,10 +82,26 @@ public interface ICFSecSecTentRole
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
-	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
+	public default void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
+		if (argObj == null) {
+			setRequiredOwnerTenant((ICFSecTenant)null);
+		}
+		else {
+			setRequiredOwnerTenant(argObj.getRequiredTenantId());
+		}
+	}
+
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
+	public default void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
+		if (argObj == null) {
+			setRequiredContainerSysRole((ICFSecSecSysGrp)null);
+		}
+		else {
+			setRequiredContainerSysRole(argObj.getRequiredName());
+		}
+	}
+
 	public void setRequiredContainerSysRole(String argName);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
