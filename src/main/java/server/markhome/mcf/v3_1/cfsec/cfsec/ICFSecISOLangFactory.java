@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecISOLangFactory interface for ISOLang
  */
-public interface ICFSecISOLangFactory
+public interface ICFSecISOLangFactory extends ICFSecProtISOLangFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecISOLangFactory
 	ICFSecISOLangHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for ISOLang instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtISOLangHPKey asProtected(ICFSecISOLangHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for ISOLang instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubISOLangHPKey asPublic(ICFSecISOLangHPKey src);
+
+	/**
 	 *	Allocate a Code3Idx key over ISOLang instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOLangByCode3IdxKey newByCode3IdxKey();
+
+	/**
+	 *	Allocate a protected Code3Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOLangByCode3IdxKey asProtected(ICFSecISOLangByCode3IdxKey src);
+
+	/**
+	 *	Allocate a public Code3Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOLangByCode3IdxKey asPublic(ICFSecISOLangByCode3IdxKey src);
 
 	/**
 	 *	Allocate a Code2Idx key over ISOLang instances.
@@ -67,6 +99,20 @@ public interface ICFSecISOLangFactory
 	public ICFSecISOLangByCode2IdxKey newByCode2IdxKey();
 
 	/**
+	 *	Allocate a protected Code2Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOLangByCode2IdxKey asProtected(ICFSecISOLangByCode2IdxKey src);
+
+	/**
+	 *	Allocate a public Code2Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOLangByCode2IdxKey asPublic(ICFSecISOLangByCode2IdxKey src);
+
+	/**
 	 *	Allocate a ISOLang interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -74,10 +120,38 @@ public interface ICFSecISOLangFactory
 	public ICFSecISOLang newRec();
 
 	/**
+	 *	Allocate a protected ISOLang interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOLang asProtected(ICFSecISOLang src);
+
+	/**
+	 *	Allocate a public ISOLang interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOLang asPublic(ICFSecISOLang src);
+
+	/**
 	 *	Allocate a ISOLang history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOLangH newHRec();
+
+	/**
+	 *	Allocate a protected ISOLang history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOLangH asProtected(ICFSecISOLangH src);
+
+	/**
+	 *	Allocate a public ISOLang history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOLangH asPublic(ICFSecISOLangH src);
 
 }

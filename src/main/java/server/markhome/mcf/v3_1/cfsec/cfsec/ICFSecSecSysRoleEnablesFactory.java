@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecSysRoleEnablesFactory interface for SecSysRoleEnables
  */
-public interface ICFSecSecSysRoleEnablesFactory
+public interface ICFSecSecSysRoleEnablesFactory extends ICFSecProtSecSysRoleEnablesFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecSysRoleEnablesFactory
 	public ICFSecSecSysRoleEnablesPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for SecSysRoleEnables instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleEnablesPKey asProtected(ICFSecSecSysRoleEnablesPKey src);
+
+	/**
 	 *	Allocate a primary history key for SecSysRoleEnables instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecSecSysRoleEnablesHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for SecSysRoleEnables instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecSysRoleEnablesHPKey asProtected(ICFSecSecSysRoleEnablesHPKey src);
 
 	/**
 	 *	Allocate a SysRoleIdx key over SecSysRoleEnables instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecSysRoleEnablesFactory
 	public ICFSecSecSysRoleEnablesBySysRoleIdxKey newBySysRoleIdxKey();
 
 	/**
+	 *	Allocate a protected SysRoleIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleEnablesBySysRoleIdxKey asProtected(ICFSecSecSysRoleEnablesBySysRoleIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over SecSysRoleEnables instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysRoleEnablesByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleEnablesByNameIdxKey asProtected(ICFSecSecSysRoleEnablesByNameIdxKey src);
 
 	/**
 	 *	Allocate a SecSysRoleEnables interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecSysRoleEnablesFactory
 	public ICFSecSecSysRoleEnables newRec();
 
 	/**
+	 *	Allocate a protected SecSysRoleEnables interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleEnables asProtected(ICFSecSecSysRoleEnables src);
+
+	/**
 	 *	Allocate a SecSysRoleEnables history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysRoleEnablesH newHRec();
+
+	/**
+	 *	Allocate a protected SecSysRoleEnables history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleEnablesH asProtected(ICFSecSecSysRoleEnablesH src);
 
 }

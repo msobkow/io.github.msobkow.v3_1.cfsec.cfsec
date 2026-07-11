@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecSysGrpIncFactory interface for SecSysGrpInc
  */
-public interface ICFSecSecSysGrpIncFactory
+public interface ICFSecSecSysGrpIncFactory extends ICFSecProtSecSysGrpIncFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecSysGrpIncFactory
 	public ICFSecSecSysGrpIncPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for SecSysGrpInc instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysGrpIncPKey asProtected(ICFSecSecSysGrpIncPKey src);
+
+	/**
 	 *	Allocate a primary history key for SecSysGrpInc instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecSecSysGrpIncHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for SecSysGrpInc instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecSysGrpIncHPKey asProtected(ICFSecSecSysGrpIncHPKey src);
 
 	/**
 	 *	Allocate a SysGrpIdx key over SecSysGrpInc instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecSysGrpIncFactory
 	public ICFSecSecSysGrpIncBySysGrpIdxKey newBySysGrpIdxKey();
 
 	/**
+	 *	Allocate a protected SysGrpIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysGrpIncBySysGrpIdxKey asProtected(ICFSecSecSysGrpIncBySysGrpIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over SecSysGrpInc instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysGrpIncByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysGrpIncByNameIdxKey asProtected(ICFSecSecSysGrpIncByNameIdxKey src);
 
 	/**
 	 *	Allocate a SecSysGrpInc interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecSysGrpIncFactory
 	public ICFSecSecSysGrpInc newRec();
 
 	/**
+	 *	Allocate a protected SecSysGrpInc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysGrpInc asProtected(ICFSecSecSysGrpInc src);
+
+	/**
 	 *	Allocate a SecSysGrpInc history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysGrpIncH newHRec();
+
+	/**
+	 *	Allocate a protected SecSysGrpInc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysGrpIncH asProtected(ICFSecSecSysGrpIncH src);
 
 }

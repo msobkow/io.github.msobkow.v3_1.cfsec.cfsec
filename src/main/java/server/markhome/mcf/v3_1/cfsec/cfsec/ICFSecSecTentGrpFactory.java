@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecTentGrpFactory interface for SecTentGrp
  */
-public interface ICFSecSecTentGrpFactory
+public interface ICFSecSecTentGrpFactory extends ICFSecProtSecTentGrpFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecTentGrpFactory
 	ICFSecSecTentGrpHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecTentGrp instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecTentGrpHPKey asProtected(ICFSecSecTentGrpHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over SecTentGrp instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecTentGrpByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentGrpByTenantIdxKey asProtected(ICFSecSecTentGrpByTenantIdxKey src);
 
 	/**
 	 *	Allocate a NameIdx key over SecTentGrp instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecTentGrpFactory
 	public ICFSecSecTentGrpByNameIdxKey newByNameIdxKey();
 
 	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentGrpByNameIdxKey asProtected(ICFSecSecTentGrpByNameIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over SecTentGrp instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecTentGrpByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentGrpByUNameIdxKey asProtected(ICFSecSecTentGrpByUNameIdxKey src);
 
 	/**
 	 *	Allocate a SecTentGrp interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecTentGrpFactory
 	public ICFSecSecTentGrp newRec();
 
 	/**
+	 *	Allocate a protected SecTentGrp interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentGrp asProtected(ICFSecSecTentGrp src);
+
+	/**
 	 *	Allocate a SecTentGrp history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecTentGrpH newHRec();
+
+	/**
+	 *	Allocate a protected SecTentGrp history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentGrpH asProtected(ICFSecSecTentGrpH src);
 
 }

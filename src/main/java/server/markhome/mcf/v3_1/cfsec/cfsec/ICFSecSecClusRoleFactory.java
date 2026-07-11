@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecClusRoleFactory interface for SecClusRole
  */
-public interface ICFSecSecClusRoleFactory
+public interface ICFSecSecClusRoleFactory extends ICFSecProtSecClusRoleFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecClusRoleFactory
 	ICFSecSecClusRoleHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecClusRole instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecClusRoleHPKey asProtected(ICFSecSecClusRoleHPKey src);
+
+	/**
 	 *	Allocate a ClusterIdx key over SecClusRole instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusRoleByClusterIdxKey newByClusterIdxKey();
+
+	/**
+	 *	Allocate a protected ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusRoleByClusterIdxKey asProtected(ICFSecSecClusRoleByClusterIdxKey src);
 
 	/**
 	 *	Allocate a NameIdx key over SecClusRole instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecClusRoleFactory
 	public ICFSecSecClusRoleByNameIdxKey newByNameIdxKey();
 
 	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusRoleByNameIdxKey asProtected(ICFSecSecClusRoleByNameIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over SecClusRole instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusRoleByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusRoleByUNameIdxKey asProtected(ICFSecSecClusRoleByUNameIdxKey src);
 
 	/**
 	 *	Allocate a SecClusRole interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecClusRoleFactory
 	public ICFSecSecClusRole newRec();
 
 	/**
+	 *	Allocate a protected SecClusRole interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusRole asProtected(ICFSecSecClusRole src);
+
+	/**
 	 *	Allocate a SecClusRole history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusRoleH newHRec();
+
+	/**
+	 *	Allocate a protected SecClusRole history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusRoleH asProtected(ICFSecSecClusRoleH src);
 
 }

@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecClusterFactory interface for Cluster
  */
-public interface ICFSecClusterFactory
+public interface ICFSecClusterFactory extends ICFSecProtClusterFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecClusterFactory
 	ICFSecClusterHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for Cluster instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtClusterHPKey asProtected(ICFSecClusterHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for Cluster instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubClusterHPKey asPublic(ICFSecClusterHPKey src);
+
+	/**
 	 *	Allocate a UDomNameIdx key over Cluster instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecClusterByUDomNameIdxKey newByUDomNameIdxKey();
+
+	/**
+	 *	Allocate a protected UDomNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtClusterByUDomNameIdxKey asProtected(ICFSecClusterByUDomNameIdxKey src);
+
+	/**
+	 *	Allocate a public UDomNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubClusterByUDomNameIdxKey asPublic(ICFSecClusterByUDomNameIdxKey src);
 
 	/**
 	 *	Allocate a UDescrIdx key over Cluster instances.
@@ -67,6 +99,20 @@ public interface ICFSecClusterFactory
 	public ICFSecClusterByUDescrIdxKey newByUDescrIdxKey();
 
 	/**
+	 *	Allocate a protected UDescrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtClusterByUDescrIdxKey asProtected(ICFSecClusterByUDescrIdxKey src);
+
+	/**
+	 *	Allocate a public UDescrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubClusterByUDescrIdxKey asPublic(ICFSecClusterByUDescrIdxKey src);
+
+	/**
 	 *	Allocate a Cluster interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -74,10 +120,38 @@ public interface ICFSecClusterFactory
 	public ICFSecCluster newRec();
 
 	/**
+	 *	Allocate a protected Cluster interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtCluster asProtected(ICFSecCluster src);
+
+	/**
+	 *	Allocate a public Cluster interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubCluster asPublic(ICFSecCluster src);
+
+	/**
 	 *	Allocate a Cluster history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecClusterH newHRec();
+
+	/**
+	 *	Allocate a protected Cluster history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtClusterH asProtected(ICFSecClusterH src);
+
+	/**
+	 *	Allocate a public Cluster history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubClusterH asPublic(ICFSecClusterH src);
 
 }

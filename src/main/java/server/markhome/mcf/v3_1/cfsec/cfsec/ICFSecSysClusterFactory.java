@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSysClusterFactory interface for SysCluster
  */
-public interface ICFSecSysClusterFactory
+public interface ICFSecSysClusterFactory extends ICFSecProtSysClusterFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecSysClusterFactory
 	ICFSecSysClusterHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SysCluster instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSysClusterHPKey asProtected(ICFSecSysClusterHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for SysCluster instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubSysClusterHPKey asPublic(ICFSecSysClusterHPKey src);
+
+	/**
 	 *	Allocate a ClusterIdx key over SysCluster instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSysClusterByClusterIdxKey newByClusterIdxKey();
+
+	/**
+	 *	Allocate a protected ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSysClusterByClusterIdxKey asProtected(ICFSecSysClusterByClusterIdxKey src);
+
+	/**
+	 *	Allocate a public ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSysClusterByClusterIdxKey asPublic(ICFSecSysClusterByClusterIdxKey src);
 
 	/**
 	 *	Allocate a SysCluster interface implementation.
@@ -67,10 +99,38 @@ public interface ICFSecSysClusterFactory
 	public ICFSecSysCluster newRec();
 
 	/**
+	 *	Allocate a protected SysCluster interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSysCluster asProtected(ICFSecSysCluster src);
+
+	/**
+	 *	Allocate a public SysCluster interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSysCluster asPublic(ICFSecSysCluster src);
+
+	/**
 	 *	Allocate a SysCluster history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSysClusterH newHRec();
+
+	/**
+	 *	Allocate a protected SysCluster history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSysClusterH asProtected(ICFSecSysClusterH src);
+
+	/**
+	 *	Allocate a public SysCluster history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSysClusterH asPublic(ICFSecSysClusterH src);
 
 }

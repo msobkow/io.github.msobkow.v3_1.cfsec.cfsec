@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecISOCtryCcyFactory interface for ISOCtryCcy
  */
-public interface ICFSecISOCtryCcyFactory
+public interface ICFSecISOCtryCcyFactory extends ICFSecProtISOCtryCcyFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecISOCtryCcyFactory
 	public ICFSecISOCtryCcyPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for ISOCtryCcy instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryCcyPKey asProtected(ICFSecISOCtryCcyPKey src);
+
+	/**
+	 *	Allocate a public key for ISOCtryCcy instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryCcyPKey asPublic(ICFSecISOCtryCcyPKey src);
+
+	/**
 	 *	Allocate a primary history key for ISOCtryCcy instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecISOCtryCcyHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for ISOCtryCcy instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtISOCtryCcyHPKey asProtected(ICFSecISOCtryCcyHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for ISOCtryCcy instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubISOCtryCcyHPKey asPublic(ICFSecISOCtryCcyHPKey src);
 
 	/**
 	 *	Allocate a CtryIdx key over ISOCtryCcy instances.
@@ -67,11 +99,39 @@ public interface ICFSecISOCtryCcyFactory
 	public ICFSecISOCtryCcyByCtryIdxKey newByCtryIdxKey();
 
 	/**
+	 *	Allocate a protected CtryIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryCcyByCtryIdxKey asProtected(ICFSecISOCtryCcyByCtryIdxKey src);
+
+	/**
+	 *	Allocate a public CtryIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryCcyByCtryIdxKey asPublic(ICFSecISOCtryCcyByCtryIdxKey src);
+
+	/**
 	 *	Allocate a CcyIdx key over ISOCtryCcy instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOCtryCcyByCcyIdxKey newByCcyIdxKey();
+
+	/**
+	 *	Allocate a protected CcyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryCcyByCcyIdxKey asProtected(ICFSecISOCtryCcyByCcyIdxKey src);
+
+	/**
+	 *	Allocate a public CcyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryCcyByCcyIdxKey asPublic(ICFSecISOCtryCcyByCcyIdxKey src);
 
 	/**
 	 *	Allocate a ISOCtryCcy interface implementation.
@@ -81,10 +141,38 @@ public interface ICFSecISOCtryCcyFactory
 	public ICFSecISOCtryCcy newRec();
 
 	/**
+	 *	Allocate a protected ISOCtryCcy interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryCcy asProtected(ICFSecISOCtryCcy src);
+
+	/**
+	 *	Allocate a public ISOCtryCcy interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryCcy asPublic(ICFSecISOCtryCcy src);
+
+	/**
 	 *	Allocate a ISOCtryCcy history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOCtryCcyH newHRec();
+
+	/**
+	 *	Allocate a protected ISOCtryCcy history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryCcyH asProtected(ICFSecISOCtryCcyH src);
+
+	/**
+	 *	Allocate a public ISOCtryCcy history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryCcyH asPublic(ICFSecISOCtryCcyH src);
 
 }

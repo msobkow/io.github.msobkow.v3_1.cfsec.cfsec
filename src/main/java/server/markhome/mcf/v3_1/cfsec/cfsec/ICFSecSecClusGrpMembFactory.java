@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecClusGrpMembFactory interface for SecClusGrpMemb
  */
-public interface ICFSecSecClusGrpMembFactory
+public interface ICFSecSecClusGrpMembFactory extends ICFSecProtSecClusGrpMembFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecClusGrpMembFactory
 	public ICFSecSecClusGrpMembPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for SecClusGrpMemb instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpMembPKey asProtected(ICFSecSecClusGrpMembPKey src);
+
+	/**
 	 *	Allocate a primary history key for SecClusGrpMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecSecClusGrpMembHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for SecClusGrpMemb instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecClusGrpMembHPKey asProtected(ICFSecSecClusGrpMembHPKey src);
 
 	/**
 	 *	Allocate a ClusGrpIdx key over SecClusGrpMemb instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecClusGrpMembFactory
 	public ICFSecSecClusGrpMembByClusGrpIdxKey newByClusGrpIdxKey();
 
 	/**
+	 *	Allocate a protected ClusGrpIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpMembByClusGrpIdxKey asProtected(ICFSecSecClusGrpMembByClusGrpIdxKey src);
+
+	/**
 	 *	Allocate a LoginIdx key over SecClusGrpMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusGrpMembByLoginIdxKey newByLoginIdxKey();
+
+	/**
+	 *	Allocate a protected LoginIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpMembByLoginIdxKey asProtected(ICFSecSecClusGrpMembByLoginIdxKey src);
 
 	/**
 	 *	Allocate a SecClusGrpMemb interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecClusGrpMembFactory
 	public ICFSecSecClusGrpMemb newRec();
 
 	/**
+	 *	Allocate a protected SecClusGrpMemb interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpMemb asProtected(ICFSecSecClusGrpMemb src);
+
+	/**
 	 *	Allocate a SecClusGrpMemb history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusGrpMembH newHRec();
+
+	/**
+	 *	Allocate a protected SecClusGrpMemb history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpMembH asProtected(ICFSecSecClusGrpMembH src);
 
 }

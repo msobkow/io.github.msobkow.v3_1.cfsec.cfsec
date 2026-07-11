@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecTenantFactory interface for Tenant
  */
-public interface ICFSecTenantFactory
+public interface ICFSecTenantFactory extends ICFSecProtTenantFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecTenantFactory
 	ICFSecTenantHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for Tenant instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtTenantHPKey asProtected(ICFSecTenantHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for Tenant instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubTenantHPKey asPublic(ICFSecTenantHPKey src);
+
+	/**
 	 *	Allocate a ClusterIdx key over Tenant instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecTenantByClusterIdxKey newByClusterIdxKey();
+
+	/**
+	 *	Allocate a protected ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTenantByClusterIdxKey asProtected(ICFSecTenantByClusterIdxKey src);
+
+	/**
+	 *	Allocate a public ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTenantByClusterIdxKey asPublic(ICFSecTenantByClusterIdxKey src);
 
 	/**
 	 *	Allocate a UNameIdx key over Tenant instances.
@@ -67,6 +99,20 @@ public interface ICFSecTenantFactory
 	public ICFSecTenantByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTenantByUNameIdxKey asProtected(ICFSecTenantByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTenantByUNameIdxKey asPublic(ICFSecTenantByUNameIdxKey src);
+
+	/**
 	 *	Allocate a Tenant interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -74,10 +120,38 @@ public interface ICFSecTenantFactory
 	public ICFSecTenant newRec();
 
 	/**
+	 *	Allocate a protected Tenant interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTenant asProtected(ICFSecTenant src);
+
+	/**
+	 *	Allocate a public Tenant interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTenant asPublic(ICFSecTenant src);
+
+	/**
 	 *	Allocate a Tenant history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecTenantH newHRec();
+
+	/**
+	 *	Allocate a protected Tenant history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTenantH asProtected(ICFSecTenantH src);
+
+	/**
+	 *	Allocate a public Tenant history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTenantH asPublic(ICFSecTenantH src);
 
 }

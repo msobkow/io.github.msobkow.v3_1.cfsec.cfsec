@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecISOCtryLangFactory interface for ISOCtryLang
  */
-public interface ICFSecISOCtryLangFactory
+public interface ICFSecISOCtryLangFactory extends ICFSecProtISOCtryLangFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecISOCtryLangFactory
 	public ICFSecISOCtryLangPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for ISOCtryLang instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryLangPKey asProtected(ICFSecISOCtryLangPKey src);
+
+	/**
+	 *	Allocate a public key for ISOCtryLang instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryLangPKey asPublic(ICFSecISOCtryLangPKey src);
+
+	/**
 	 *	Allocate a primary history key for ISOCtryLang instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecISOCtryLangHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for ISOCtryLang instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtISOCtryLangHPKey asProtected(ICFSecISOCtryLangHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for ISOCtryLang instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubISOCtryLangHPKey asPublic(ICFSecISOCtryLangHPKey src);
 
 	/**
 	 *	Allocate a CtryIdx key over ISOCtryLang instances.
@@ -67,11 +99,39 @@ public interface ICFSecISOCtryLangFactory
 	public ICFSecISOCtryLangByCtryIdxKey newByCtryIdxKey();
 
 	/**
+	 *	Allocate a protected CtryIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryLangByCtryIdxKey asProtected(ICFSecISOCtryLangByCtryIdxKey src);
+
+	/**
+	 *	Allocate a public CtryIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryLangByCtryIdxKey asPublic(ICFSecISOCtryLangByCtryIdxKey src);
+
+	/**
 	 *	Allocate a LangIdx key over ISOCtryLang instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOCtryLangByLangIdxKey newByLangIdxKey();
+
+	/**
+	 *	Allocate a protected LangIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryLangByLangIdxKey asProtected(ICFSecISOCtryLangByLangIdxKey src);
+
+	/**
+	 *	Allocate a public LangIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryLangByLangIdxKey asPublic(ICFSecISOCtryLangByLangIdxKey src);
 
 	/**
 	 *	Allocate a ISOCtryLang interface implementation.
@@ -81,10 +141,38 @@ public interface ICFSecISOCtryLangFactory
 	public ICFSecISOCtryLang newRec();
 
 	/**
+	 *	Allocate a protected ISOCtryLang interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryLang asProtected(ICFSecISOCtryLang src);
+
+	/**
+	 *	Allocate a public ISOCtryLang interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryLang asPublic(ICFSecISOCtryLang src);
+
+	/**
 	 *	Allocate a ISOCtryLang history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOCtryLangH newHRec();
+
+	/**
+	 *	Allocate a protected ISOCtryLang history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCtryLangH asProtected(ICFSecISOCtryLangH src);
+
+	/**
+	 *	Allocate a public ISOCtryLang history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCtryLangH asPublic(ICFSecISOCtryLangH src);
 
 }

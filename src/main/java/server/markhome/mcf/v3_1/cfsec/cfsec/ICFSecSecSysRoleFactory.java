@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecSysRoleFactory interface for SecSysRole
  */
-public interface ICFSecSecSysRoleFactory
+public interface ICFSecSecSysRoleFactory extends ICFSecProtSecSysRoleFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecSecSysRoleFactory
 	ICFSecSecSysRoleHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecSysRole instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecSysRoleHPKey asProtected(ICFSecSecSysRoleHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for SecSysRole instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubSecSysRoleHPKey asPublic(ICFSecSecSysRoleHPKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over SecSysRole instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysRoleByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleByUNameIdxKey asProtected(ICFSecSecSysRoleByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecSysRoleByUNameIdxKey asPublic(ICFSecSecSysRoleByUNameIdxKey src);
 
 	/**
 	 *	Allocate a SecSysRole interface implementation.
@@ -67,10 +99,38 @@ public interface ICFSecSecSysRoleFactory
 	public ICFSecSecSysRole newRec();
 
 	/**
+	 *	Allocate a protected SecSysRole interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRole asProtected(ICFSecSecSysRole src);
+
+	/**
+	 *	Allocate a public SecSysRole interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecSysRole asPublic(ICFSecSecSysRole src);
+
+	/**
 	 *	Allocate a SecSysRole history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecSysRoleH newHRec();
+
+	/**
+	 *	Allocate a protected SecSysRole history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecSysRoleH asProtected(ICFSecSecSysRoleH src);
+
+	/**
+	 *	Allocate a public SecSysRole history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecSysRoleH asPublic(ICFSecSecSysRoleH src);
 
 }

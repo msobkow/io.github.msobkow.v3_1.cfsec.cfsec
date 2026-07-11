@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecUserPWResetFactory interface for SecUserPWReset
  */
-public interface ICFSecSecUserPWResetFactory
+public interface ICFSecSecUserPWResetFactory extends ICFSecProtSecUserPWResetFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecUserPWResetFactory
 	ICFSecSecUserPWResetHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecUserPWReset instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecUserPWResetHPKey asProtected(ICFSecSecUserPWResetHPKey src);
+
+	/**
 	 *	Allocate a UUuid6Idx key over SecUserPWReset instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPWResetByUUuid6IdxKey newByUUuid6IdxKey();
+
+	/**
+	 *	Allocate a protected UUuid6Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetByUUuid6IdxKey asProtected(ICFSecSecUserPWResetByUUuid6IdxKey src);
 
 	/**
 	 *	Allocate a SentEMAddrIdx key over SecUserPWReset instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecUserPWResetFactory
 	public ICFSecSecUserPWResetBySentEMAddrIdxKey newBySentEMAddrIdxKey();
 
 	/**
+	 *	Allocate a protected SentEMAddrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetBySentEMAddrIdxKey asProtected(ICFSecSecUserPWResetBySentEMAddrIdxKey src);
+
+	/**
 	 *	Allocate a NewAcctIdx key over SecUserPWReset instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPWResetByNewAcctIdxKey newByNewAcctIdxKey();
+
+	/**
+	 *	Allocate a protected NewAcctIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetByNewAcctIdxKey asProtected(ICFSecSecUserPWResetByNewAcctIdxKey src);
 
 	/**
 	 *	Allocate a SecUserPWReset interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecUserPWResetFactory
 	public ICFSecSecUserPWReset newRec();
 
 	/**
+	 *	Allocate a protected SecUserPWReset interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWReset asProtected(ICFSecSecUserPWReset src);
+
+	/**
 	 *	Allocate a SecUserPWReset history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPWResetH newHRec();
+
+	/**
+	 *	Allocate a protected SecUserPWReset history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetH asProtected(ICFSecSecUserPWResetH src);
 
 }

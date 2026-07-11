@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecUserFactory interface for SecUser
  */
-public interface ICFSecSecUserFactory
+public interface ICFSecSecUserFactory extends ICFSecProtSecUserFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecSecUserFactory
 	ICFSecSecUserHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecUser instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecUserHPKey asProtected(ICFSecSecUserHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for SecUser instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubSecUserHPKey asPublic(ICFSecSecUserHPKey src);
+
+	/**
 	 *	Allocate a ULoginIdx key over SecUser instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserByULoginIdxKey newByULoginIdxKey();
+
+	/**
+	 *	Allocate a protected ULoginIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserByULoginIdxKey asProtected(ICFSecSecUserByULoginIdxKey src);
+
+	/**
+	 *	Allocate a public ULoginIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecUserByULoginIdxKey asPublic(ICFSecSecUserByULoginIdxKey src);
 
 	/**
 	 *	Allocate a EMAddrIdx key over SecUser instances.
@@ -67,6 +99,13 @@ public interface ICFSecSecUserFactory
 	public ICFSecSecUserByEMAddrIdxKey newByEMAddrIdxKey();
 
 	/**
+	 *	Allocate a protected EMAddrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserByEMAddrIdxKey asProtected(ICFSecSecUserByEMAddrIdxKey src);
+
+	/**
 	 *	Allocate a SecUser interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -74,10 +113,38 @@ public interface ICFSecSecUserFactory
 	public ICFSecSecUser newRec();
 
 	/**
+	 *	Allocate a protected SecUser interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUser asProtected(ICFSecSecUser src);
+
+	/**
+	 *	Allocate a public SecUser interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecUser asPublic(ICFSecSecUser src);
+
+	/**
 	 *	Allocate a SecUser history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserH newHRec();
+
+	/**
+	 *	Allocate a protected SecUser history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserH asProtected(ICFSecSecUserH src);
+
+	/**
+	 *	Allocate a public SecUser history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubSecUserH asPublic(ICFSecSecUserH src);
 
 }

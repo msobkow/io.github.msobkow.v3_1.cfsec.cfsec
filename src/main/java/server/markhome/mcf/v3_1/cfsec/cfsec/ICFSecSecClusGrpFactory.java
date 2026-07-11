@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecClusGrpFactory interface for SecClusGrp
  */
-public interface ICFSecSecClusGrpFactory
+public interface ICFSecSecClusGrpFactory extends ICFSecProtSecClusGrpFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecClusGrpFactory
 	ICFSecSecClusGrpHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecClusGrp instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecClusGrpHPKey asProtected(ICFSecSecClusGrpHPKey src);
+
+	/**
 	 *	Allocate a ClusterIdx key over SecClusGrp instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusGrpByClusterIdxKey newByClusterIdxKey();
+
+	/**
+	 *	Allocate a protected ClusterIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpByClusterIdxKey asProtected(ICFSecSecClusGrpByClusterIdxKey src);
 
 	/**
 	 *	Allocate a NameIdx key over SecClusGrp instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecClusGrpFactory
 	public ICFSecSecClusGrpByNameIdxKey newByNameIdxKey();
 
 	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpByNameIdxKey asProtected(ICFSecSecClusGrpByNameIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over SecClusGrp instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusGrpByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpByUNameIdxKey asProtected(ICFSecSecClusGrpByUNameIdxKey src);
 
 	/**
 	 *	Allocate a SecClusGrp interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecClusGrpFactory
 	public ICFSecSecClusGrp newRec();
 
 	/**
+	 *	Allocate a protected SecClusGrp interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrp asProtected(ICFSecSecClusGrp src);
+
+	/**
 	 *	Allocate a SecClusGrp history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecClusGrpH newHRec();
+
+	/**
+	 *	Allocate a protected SecClusGrp history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecClusGrpH asProtected(ICFSecSecClusGrpH src);
 
 }

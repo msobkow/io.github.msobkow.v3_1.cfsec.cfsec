@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecTentRoleMembFactory interface for SecTentRoleMemb
  */
-public interface ICFSecSecTentRoleMembFactory
+public interface ICFSecSecTentRoleMembFactory extends ICFSecProtSecTentRoleMembFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecTentRoleMembFactory
 	public ICFSecSecTentRoleMembPKey newPKey();
 
 	/**
+	 *	Allocate a protected key for SecTentRoleMemb instances from a private key.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentRoleMembPKey asProtected(ICFSecSecTentRoleMembPKey src);
+
+	/**
 	 *	Allocate a primary history key for SecTentRoleMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	ICFSecSecTentRoleMembHPKey newHPKey();
+
+	/**
+	 *	Allocate a protected primary history key for SecTentRoleMemb instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecTentRoleMembHPKey asProtected(ICFSecSecTentRoleMembHPKey src);
 
 	/**
 	 *	Allocate a TentRoleIdx key over SecTentRoleMemb instances.
@@ -67,11 +85,25 @@ public interface ICFSecSecTentRoleMembFactory
 	public ICFSecSecTentRoleMembByTentRoleIdxKey newByTentRoleIdxKey();
 
 	/**
+	 *	Allocate a protected TentRoleIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentRoleMembByTentRoleIdxKey asProtected(ICFSecSecTentRoleMembByTentRoleIdxKey src);
+
+	/**
 	 *	Allocate a UserIdx key over SecTentRoleMemb instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecTentRoleMembByUserIdxKey newByUserIdxKey();
+
+	/**
+	 *	Allocate a protected UserIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentRoleMembByUserIdxKey asProtected(ICFSecSecTentRoleMembByUserIdxKey src);
 
 	/**
 	 *	Allocate a SecTentRoleMemb interface implementation.
@@ -81,10 +113,24 @@ public interface ICFSecSecTentRoleMembFactory
 	public ICFSecSecTentRoleMemb newRec();
 
 	/**
+	 *	Allocate a protected SecTentRoleMemb interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentRoleMemb asProtected(ICFSecSecTentRoleMemb src);
+
+	/**
 	 *	Allocate a SecTentRoleMemb history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecTentRoleMembH newHRec();
+
+	/**
+	 *	Allocate a protected SecTentRoleMemb history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecTentRoleMembH asProtected(ICFSecSecTentRoleMembH src);
 
 }

@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecSecUserPasswordFactory interface for SecUserPassword
  */
-public interface ICFSecSecUserPasswordFactory
+public interface ICFSecSecUserPasswordFactory extends ICFSecProtSecUserPasswordFactory
 {
 
 	/**
@@ -53,11 +57,25 @@ public interface ICFSecSecUserPasswordFactory
 	ICFSecSecUserPasswordHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SecUserPassword instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtSecUserPasswordHPKey asProtected(ICFSecSecUserPasswordHPKey src);
+
+	/**
 	 *	Allocate a SetStampIdx key over SecUserPassword instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPasswordBySetStampIdxKey newBySetStampIdxKey();
+
+	/**
+	 *	Allocate a protected SetStampIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPasswordBySetStampIdxKey asProtected(ICFSecSecUserPasswordBySetStampIdxKey src);
 
 	/**
 	 *	Allocate a SecUserPassword interface implementation.
@@ -67,10 +85,24 @@ public interface ICFSecSecUserPasswordFactory
 	public ICFSecSecUserPassword newRec();
 
 	/**
+	 *	Allocate a protected SecUserPassword interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPassword asProtected(ICFSecSecUserPassword src);
+
+	/**
 	 *	Allocate a SecUserPassword history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPasswordH newHRec();
+
+	/**
+	 *	Allocate a protected SecUserPassword history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPasswordH asProtected(ICFSecSecUserPasswordH src);
 
 }

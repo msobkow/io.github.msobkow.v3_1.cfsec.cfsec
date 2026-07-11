@@ -38,11 +38,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /*
  *	ICFSecISOTZoneFactory interface for ISOTZone
  */
-public interface ICFSecISOTZoneFactory
+public interface ICFSecISOTZoneFactory extends ICFSecProtISOTZoneFactory
 {
 
 	/**
@@ -53,11 +57,39 @@ public interface ICFSecISOTZoneFactory
 	ICFSecISOTZoneHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for ISOTZone instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecProtISOTZoneHPKey asProtected(ICFSecISOTZoneHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for ISOTZone instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFSecPubISOTZoneHPKey asPublic(ICFSecISOTZoneHPKey src);
+
+	/**
 	 *	Allocate a OffsetIdx key over ISOTZone instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOTZoneByOffsetIdxKey newByOffsetIdxKey();
+
+	/**
+	 *	Allocate a protected OffsetIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByOffsetIdxKey asProtected(ICFSecISOTZoneByOffsetIdxKey src);
+
+	/**
+	 *	Allocate a public OffsetIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByOffsetIdxKey asPublic(ICFSecISOTZoneByOffsetIdxKey src);
 
 	/**
 	 *	Allocate a UTZNameIdx key over ISOTZone instances.
@@ -67,11 +99,39 @@ public interface ICFSecISOTZoneFactory
 	public ICFSecISOTZoneByUTZNameIdxKey newByUTZNameIdxKey();
 
 	/**
+	 *	Allocate a protected UTZNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByUTZNameIdxKey asProtected(ICFSecISOTZoneByUTZNameIdxKey src);
+
+	/**
+	 *	Allocate a public UTZNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByUTZNameIdxKey asPublic(ICFSecISOTZoneByUTZNameIdxKey src);
+
+	/**
 	 *	Allocate a Iso8601Idx key over ISOTZone instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOTZoneByIso8601IdxKey newByIso8601IdxKey();
+
+	/**
+	 *	Allocate a protected Iso8601Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByIso8601IdxKey asProtected(ICFSecISOTZoneByIso8601IdxKey src);
+
+	/**
+	 *	Allocate a public Iso8601Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByIso8601IdxKey asPublic(ICFSecISOTZoneByIso8601IdxKey src);
 
 	/**
 	 *	Allocate a ISOTZone interface implementation.
@@ -81,10 +141,38 @@ public interface ICFSecISOTZoneFactory
 	public ICFSecISOTZone newRec();
 
 	/**
+	 *	Allocate a protected ISOTZone interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZone asProtected(ICFSecISOTZone src);
+
+	/**
+	 *	Allocate a public ISOTZone interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZone asPublic(ICFSecISOTZone src);
+
+	/**
 	 *	Allocate a ISOTZone history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOTZoneH newHRec();
+
+	/**
+	 *	Allocate a protected ISOTZone history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneH asProtected(ICFSecISOTZoneH src);
+
+	/**
+	 *	Allocate a public ISOTZone history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneH asPublic(ICFSecISOTZoneH src);
 
 }
