@@ -36,7 +36,11 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-//import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 /**
  *	ICFSecSecClusRole persistence instances have CodeVis Protected, meaning that any only user interfaces and application code specific to the defining schema can access it.
@@ -78,8 +82,10 @@ public interface ICFSecSecClusRole
 	public ICFSecCluster getRequiredOwnerCluster();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
+	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
 	public void setRequiredContainerSysRole(String argName);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
