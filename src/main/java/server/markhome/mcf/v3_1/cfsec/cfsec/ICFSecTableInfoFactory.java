@@ -78,11 +78,39 @@ public interface ICFSecTableInfoFactory extends ICFSecProtTableInfoFactory
 	public ICFSecTableInfoByTableNameIdxKey newByTableNameIdxKey();
 
 	/**
+	 *	Allocate a protected TableNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTableInfoByTableNameIdxKey asProtected(ICFSecTableInfoByTableNameIdxKey src);
+
+	/**
+	 *	Allocate a public TableNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTableInfoByTableNameIdxKey asPublic(ICFSecTableInfoByTableNameIdxKey src);
+
+	/**
 	 *	Allocate a SuperNameIdx key over TableInfo instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecTableInfoBySuperNameIdxKey newBySuperNameIdxKey();
+
+	/**
+	 *	Allocate a protected SuperNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTableInfoBySuperNameIdxKey asProtected(ICFSecTableInfoBySuperNameIdxKey src);
+
+	/**
+	 *	Allocate a public SuperNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTableInfoBySuperNameIdxKey asPublic(ICFSecTableInfoBySuperNameIdxKey src);
 
 	/**
 	 *	Allocate a SchemaNameIdx key over TableInfo instances.
@@ -92,6 +120,20 @@ public interface ICFSecTableInfoFactory extends ICFSecProtTableInfoFactory
 	public ICFSecTableInfoBySchemaNameIdxKey newBySchemaNameIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTableInfoBySchemaNameIdxKey asProtected(ICFSecTableInfoBySchemaNameIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTableInfoBySchemaNameIdxKey asPublic(ICFSecTableInfoBySchemaNameIdxKey src);
+
+	/**
 	 *	Allocate a SchemaBkCodeIdx key over TableInfo instances.
 	 *
 	 *	@return	The new instance.
@@ -99,11 +141,39 @@ public interface ICFSecTableInfoFactory extends ICFSecProtTableInfoFactory
 	public ICFSecTableInfoBySchemaBkCodeIdxKey newBySchemaBkCodeIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaBkCodeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTableInfoBySchemaBkCodeIdxKey asProtected(ICFSecTableInfoBySchemaBkCodeIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaBkCodeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTableInfoBySchemaBkCodeIdxKey asPublic(ICFSecTableInfoBySchemaBkCodeIdxKey src);
+
+	/**
 	 *	Allocate a SchemaRTCodeIdx key over TableInfo instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecTableInfoBySchemaRTCodeIdxKey newBySchemaRTCodeIdxKey();
+
+	/**
+	 *	Allocate a protected SchemaRTCodeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTableInfoBySchemaRTCodeIdxKey asProtected(ICFSecTableInfoBySchemaRTCodeIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaRTCodeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTableInfoBySchemaRTCodeIdxKey asPublic(ICFSecTableInfoBySchemaRTCodeIdxKey src);
 
 	/**
 	 *	Allocate a TableInfo interface implementation.

@@ -99,6 +99,20 @@ public interface ICFSecTenantFactory extends ICFSecProtTenantFactory
 	public ICFSecTenantByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtTenantByUNameIdxKey asProtected(ICFSecTenantByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubTenantByUNameIdxKey asPublic(ICFSecTenantByUNameIdxKey src);
+
+	/**
 	 *	Allocate a Tenant interface implementation.
 	 *
 	 *	@return	The new instance.

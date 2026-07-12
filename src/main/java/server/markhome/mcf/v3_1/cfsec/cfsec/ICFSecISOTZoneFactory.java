@@ -78,6 +78,20 @@ public interface ICFSecISOTZoneFactory extends ICFSecProtISOTZoneFactory
 	public ICFSecISOTZoneByOffsetIdxKey newByOffsetIdxKey();
 
 	/**
+	 *	Allocate a protected OffsetIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByOffsetIdxKey asProtected(ICFSecISOTZoneByOffsetIdxKey src);
+
+	/**
+	 *	Allocate a public OffsetIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByOffsetIdxKey asPublic(ICFSecISOTZoneByOffsetIdxKey src);
+
+	/**
 	 *	Allocate a UTZNameIdx key over ISOTZone instances.
 	 *
 	 *	@return	The new instance.
@@ -85,11 +99,39 @@ public interface ICFSecISOTZoneFactory extends ICFSecProtISOTZoneFactory
 	public ICFSecISOTZoneByUTZNameIdxKey newByUTZNameIdxKey();
 
 	/**
+	 *	Allocate a protected UTZNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByUTZNameIdxKey asProtected(ICFSecISOTZoneByUTZNameIdxKey src);
+
+	/**
+	 *	Allocate a public UTZNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByUTZNameIdxKey asPublic(ICFSecISOTZoneByUTZNameIdxKey src);
+
+	/**
 	 *	Allocate a Iso8601Idx key over ISOTZone instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecISOTZoneByIso8601IdxKey newByIso8601IdxKey();
+
+	/**
+	 *	Allocate a protected Iso8601Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOTZoneByIso8601IdxKey asProtected(ICFSecISOTZoneByIso8601IdxKey src);
+
+	/**
+	 *	Allocate a public Iso8601Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOTZoneByIso8601IdxKey asPublic(ICFSecISOTZoneByIso8601IdxKey src);
 
 	/**
 	 *	Allocate a ISOTZone interface implementation.

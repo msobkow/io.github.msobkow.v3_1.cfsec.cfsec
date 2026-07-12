@@ -78,11 +78,39 @@ public interface ICFSecClusterFactory extends ICFSecProtClusterFactory
 	public ICFSecClusterByUDomNameIdxKey newByUDomNameIdxKey();
 
 	/**
+	 *	Allocate a protected UDomNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtClusterByUDomNameIdxKey asProtected(ICFSecClusterByUDomNameIdxKey src);
+
+	/**
+	 *	Allocate a public UDomNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubClusterByUDomNameIdxKey asPublic(ICFSecClusterByUDomNameIdxKey src);
+
+	/**
 	 *	Allocate a UDescrIdx key over Cluster instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecClusterByUDescrIdxKey newByUDescrIdxKey();
+
+	/**
+	 *	Allocate a protected UDescrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtClusterByUDescrIdxKey asProtected(ICFSecClusterByUDescrIdxKey src);
+
+	/**
+	 *	Allocate a public UDescrIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubClusterByUDescrIdxKey asPublic(ICFSecClusterByUDescrIdxKey src);
 
 	/**
 	 *	Allocate a Cluster interface implementation.

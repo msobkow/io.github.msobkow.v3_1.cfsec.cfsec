@@ -99,6 +99,20 @@ public interface ICFSecISOCcyFactory extends ICFSecProtISOCcyFactory
 	public ICFSecISOCcyByCcyNmIdxKey newByCcyNmIdxKey();
 
 	/**
+	 *	Allocate a protected CcyNmIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtISOCcyByCcyNmIdxKey asProtected(ICFSecISOCcyByCcyNmIdxKey src);
+
+	/**
+	 *	Allocate a public CcyNmIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecPubISOCcyByCcyNmIdxKey asPublic(ICFSecISOCcyByCcyNmIdxKey src);
+
+	/**
 	 *	Allocate a ISOCcy interface implementation.
 	 *
 	 *	@return	The new instance.

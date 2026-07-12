@@ -71,6 +71,13 @@ public interface ICFSecSecUserPWResetFactory extends ICFSecProtSecUserPWResetFac
 	public ICFSecSecUserPWResetByUUuid6IdxKey newByUUuid6IdxKey();
 
 	/**
+	 *	Allocate a protected UUuid6Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetByUUuid6IdxKey asProtected(ICFSecSecUserPWResetByUUuid6IdxKey src);
+
+	/**
 	 *	Allocate a SentEMAddrIdx key over SecUserPWReset instances.
 	 *
 	 *	@return	The new instance.
@@ -90,6 +97,13 @@ public interface ICFSecSecUserPWResetFactory extends ICFSecProtSecUserPWResetFac
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserPWResetByNewAcctIdxKey newByNewAcctIdxKey();
+
+	/**
+	 *	Allocate a protected NewAcctIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFSecProtSecUserPWResetByNewAcctIdxKey asProtected(ICFSecSecUserPWResetByNewAcctIdxKey src);
 
 	/**
 	 *	Allocate a SecUserPWReset interface implementation.
