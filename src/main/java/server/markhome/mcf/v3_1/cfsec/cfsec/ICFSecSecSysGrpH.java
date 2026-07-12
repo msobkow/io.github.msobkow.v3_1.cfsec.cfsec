@@ -72,8 +72,8 @@ public interface ICFSecSecSysGrpH
 
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	public ICFSecSchema.SecLevelEnum getRequiredSecLevel();
-	public void setRequiredSecLevel( ICFSecSchema.SecLevelEnum value );
+	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
+	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value );
 	@Override
 	public boolean equals( Object obj );
 

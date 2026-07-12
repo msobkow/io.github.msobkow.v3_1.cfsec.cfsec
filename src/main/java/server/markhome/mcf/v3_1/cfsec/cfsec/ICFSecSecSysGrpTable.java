@@ -117,7 +117,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum argSecLevel );
+		ICFSecPubSchema.SecLevelEnum argSecLevel );
 
 	/**
 	 *	Delete the SecSysGrp instances identified by the key SecLevelIdx.
@@ -201,7 +201,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysGrp[] readDerivedBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum SecLevel );
+		ICFSecPubSchema.SecLevelEnum SecLevel );
 
 	/**
 	 *	Read the specific SecSysGrp record instance identified by the primary key.
@@ -284,5 +284,5 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp[] readRecBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecSchema.SecLevelEnum SecLevel );
+		ICFSecPubSchema.SecLevelEnum SecLevel );
 }

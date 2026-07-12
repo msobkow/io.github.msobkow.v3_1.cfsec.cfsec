@@ -53,7 +53,7 @@ public class CFSecBuffSecUser
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUser.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredLoginId;
-	protected ICFSecSchema.SecAccountStatusEnum requiredAccountStatus;
+	protected ICFSecPubSchema.SecAccountStatusEnum requiredAccountStatus;
 	protected String optionalDfltSysGrpName;
 	protected String optionalDfltClusGrpName;
 	protected String optionalDfltTentGrpName;

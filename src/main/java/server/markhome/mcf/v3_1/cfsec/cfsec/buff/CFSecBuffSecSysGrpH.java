@@ -52,7 +52,7 @@ public class CFSecBuffSecSysGrpH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrp.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredName;
-	protected ICFSecSchema.SecLevelEnum requiredSecLevel;
+	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 
     public CFSecBuffSecSysGrpH() {
             // The primary key member attributes are initialized on construction

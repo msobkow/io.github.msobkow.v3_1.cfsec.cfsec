@@ -72,8 +72,8 @@ public interface ICFSecSecUserH
 
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
-	public ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
-	public void setRequiredAccountStatus( ICFSecSchema.SecAccountStatusEnum value );
+	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value );
 	public String getOptionalDfltSysGrpName();
 	public void setOptionalDfltSysGrpName( String value );
 	public String getOptionalDfltClusGrpName();

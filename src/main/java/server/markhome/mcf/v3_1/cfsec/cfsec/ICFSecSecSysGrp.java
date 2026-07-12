@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecSysGrp
 {
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecSchema.SecLevelEnum.System;
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecSchema.SecLevelEnum.TentRole;
+	public static final ICFSecPubSchema.SecLevelEnum SECLEVEL_MIN_VALUE = ICFSecPubSchema.SecLevelEnum.System;
+	public static final ICFSecPubSchema.SecLevelEnum SECLEVEL_MAX_VALUE = ICFSecPubSchema.SecLevelEnum.TentRole;
 	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
 	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -56,7 +56,7 @@ public interface ICFSecSecSysGrp
 	public static final String S_SECSYSGRPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SECSYSGRPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECSYSGRPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final ICFSecSchema.SecLevelEnum SECLEVEL_INIT_VALUE = ICFSecSchema.ordinalToSecLevelEnum( 0 );
+	public static final ICFSecPubSchema.SecLevelEnum SECLEVEL_INIT_VALUE = ICFSecPubSchema.ordinalToSecLevelEnum( 0 );
 	public final static int CLASS_CODE = 0xa00e;
 	public final static String S_CLASS_CODE = "a00e";
 
@@ -90,8 +90,8 @@ public interface ICFSecSecSysGrp
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	public ICFSecSchema.SecLevelEnum getRequiredSecLevel();
-	public void setRequiredSecLevel( ICFSecSchema.SecLevelEnum value );
+	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
+	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value );
 	@Override
 	public boolean equals( Object obj );
 	

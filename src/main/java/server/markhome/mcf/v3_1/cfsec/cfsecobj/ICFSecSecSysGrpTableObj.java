@@ -36,7 +36,10 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFSecSecSysGrpTableObj
 {
@@ -188,7 +191,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	List of CFSecSecSysGrpObj cached instances sorted by their primary keys for the duplicate SecLevelIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel );
+	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
 
 	/**
 	 *	Get the map of CFSecSecSysGrpObj instances sorted by their primary keys for the duplicate SecLevelIdx key.
@@ -198,20 +201,20 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	List of CFSecSecSysGrpObj cached instances sorted by their primary keys for the duplicate SecLevelIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel,
+	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel,
 		boolean forceRead );
 
 	ICFSecSecSysGrpObj readCachedSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId );
 
 	ICFSecSecSysGrpObj readCachedSecSysGrpByUNameIdx( String Name );
 
-	List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel );
+	List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
 
 	void deepDisposeSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId );
 
 	void deepDisposeSecSysGrpByUNameIdx( String Name );
 
-	void deepDisposeSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel );
+	void deepDisposeSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
 
 	/**
 	 *	Internal use only.
@@ -242,5 +245,5 @@ public interface ICFSecSecSysGrpTableObj
 	 *
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel );
+	void deleteSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
 }

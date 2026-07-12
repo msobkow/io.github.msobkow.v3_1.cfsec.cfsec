@@ -35,8 +35,12 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFSecSecSysGrpEditObj
 	extends ICFSecSecSysGrpObj
@@ -203,18 +207,18 @@ public interface ICFSecSecSysGrpEditObj
 	void setRequiredName(String value);
 
 	/**
-	 *	Get the required ICFSecSchema.SecLevelEnum attribute SecLevel.
+	 *	Get the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
 	 *
-	 *	@return	The required ICFSecSchema.SecLevelEnum attribute SecLevel.
+	 *	@return	The required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
 	 */
-	ICFSecSchema.SecLevelEnum getRequiredSecLevel();
+	ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
 
 	/**
-	 *	Set the required ICFSecSchema.SecLevelEnum attribute SecLevel.
+	 *	Set the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
 	 *
-	 *	@param value The required ICFSecSchema.SecLevelEnum attribute SecLevel value to be applied.
+	 *	@param value The required ICFSecPubSchema.SecLevelEnum attribute SecLevel value to be applied.
 	 */
-	void setRequiredSecLevel(ICFSecSchema.SecLevelEnum value);
+	void setRequiredSecLevel(ICFSecPubSchema.SecLevelEnum value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

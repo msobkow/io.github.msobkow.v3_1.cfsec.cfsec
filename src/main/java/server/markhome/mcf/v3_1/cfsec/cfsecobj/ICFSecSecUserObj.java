@@ -36,7 +36,10 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFSecSecUserObj
 	extends ICFLibAnyObj
@@ -311,11 +314,11 @@ public interface ICFSecSecUserObj
 	String getRequiredLoginId();
 
 	/**
-	 *	Get the required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	Get the required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
 	 *
-	 *	@return	The required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	@return	The required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
 	 */
-	ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
 
 	/**
 	 *	Get the optional String attribute DfltSysGrpName.
