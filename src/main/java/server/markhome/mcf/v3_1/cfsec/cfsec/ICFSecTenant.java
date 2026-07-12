@@ -87,7 +87,7 @@ public interface ICFSecTenant
 			setRequiredContainerCluster((ICFSecCluster)null);
 		}
 		else {
-			setRequiredContainerCluster(argObj.getRequiredClusterId());
+			setRequiredContainerCluster(argObj.getRequiredId());
 		}
 	}
 

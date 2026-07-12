@@ -81,7 +81,7 @@ public interface ICFSecTableInfo
 			setOptionalParentSuperRef((ICFSecTableInfo)null);
 		}
 		else {
-			setOptionalParentSuperRef(argObj.getOptionalSuperName());
+			setOptionalParentSuperRef(argObj.getRequiredTableName());
 		}
 	}
 

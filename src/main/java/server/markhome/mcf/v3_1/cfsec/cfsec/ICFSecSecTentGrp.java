@@ -87,7 +87,7 @@ public interface ICFSecSecTentGrp
 			setRequiredOwnerTenant((ICFSecTenant)null);
 		}
 		else {
-			setRequiredOwnerTenant(argObj.getRequiredTenantId());
+			setRequiredOwnerTenant(argObj.getRequiredId());
 		}
 	}
 

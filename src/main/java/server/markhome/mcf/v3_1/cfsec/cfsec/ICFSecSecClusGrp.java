@@ -87,7 +87,7 @@ public interface ICFSecSecClusGrp
 			setRequiredOwnerCluster((ICFSecCluster)null);
 		}
 		else {
-			setRequiredOwnerCluster(argObj.getRequiredClusterId());
+			setRequiredOwnerCluster(argObj.getRequiredId());
 		}
 	}
 
