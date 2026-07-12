@@ -71,13 +71,6 @@ public interface ICFSecSecUserPasswordFactory extends ICFSecProtSecUserPasswordF
 	public ICFSecSecUserPasswordBySetStampIdxKey newBySetStampIdxKey();
 
 	/**
-	 *	Allocate a protected SetStampIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecProtSecUserPasswordBySetStampIdxKey asProtected(ICFSecSecUserPasswordBySetStampIdxKey src);
-
-	/**
 	 *	Allocate a SecUserPassword interface implementation.
 	 *
 	 *	@return	The new instance.

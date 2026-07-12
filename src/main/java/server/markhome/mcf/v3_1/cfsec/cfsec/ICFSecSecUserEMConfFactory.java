@@ -71,13 +71,6 @@ public interface ICFSecSecUserEMConfFactory extends ICFSecProtSecUserEMConfFacto
 	public ICFSecSecUserEMConfByUUuid6IdxKey newByUUuid6IdxKey();
 
 	/**
-	 *	Allocate a protected UUuid6Idx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecProtSecUserEMConfByUUuid6IdxKey asProtected(ICFSecSecUserEMConfByUUuid6IdxKey src);
-
-	/**
 	 *	Allocate a ConfEMAddrIdx key over SecUserEMConf instances.
 	 *
 	 *	@return	The new instance.
@@ -99,25 +92,11 @@ public interface ICFSecSecUserEMConfFactory extends ICFSecProtSecUserEMConfFacto
 	public ICFSecSecUserEMConfBySentStampIdxKey newBySentStampIdxKey();
 
 	/**
-	 *	Allocate a protected SentStampIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecProtSecUserEMConfBySentStampIdxKey asProtected(ICFSecSecUserEMConfBySentStampIdxKey src);
-
-	/**
 	 *	Allocate a NewAcctIdx key over SecUserEMConf instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFSecSecUserEMConfByNewAcctIdxKey newByNewAcctIdxKey();
-
-	/**
-	 *	Allocate a protected NewAcctIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFSecProtSecUserEMConfByNewAcctIdxKey asProtected(ICFSecSecUserEMConfByNewAcctIdxKey src);
 
 	/**
 	 *	Allocate a SecUserEMConf interface implementation.
