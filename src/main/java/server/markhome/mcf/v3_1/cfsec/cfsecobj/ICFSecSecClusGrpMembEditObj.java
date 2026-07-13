@@ -40,7 +40,8 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public interface ICFSecSecClusGrpMembEditObj
 	extends ICFSecSecClusGrpMembObj
