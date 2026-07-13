@@ -238,7 +238,7 @@ public class CFSecBuffSecUserH
 	}
 
 	@Override
-	public void setRequiredAccountStatus( ICFSecSchema.SecAccountStatusEnum value ) {
+	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredAccountStatus",

@@ -230,7 +230,7 @@ public class CFSecBuffSecSysGrpH
 	}
 
 	@Override
-	public void setRequiredSecLevel( ICFSecSchema.SecLevelEnum value ) {
+	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecLevel",
