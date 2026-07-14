@@ -84,7 +84,16 @@ public interface ICFSecSecClusRole
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 	public default void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
 		if (argObj == null) {
-			setRequiredOwnerCluster((ICFSecCluster)null);
+			setRequiredOwnerCluster((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredOwnerCluster(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
+		if (argObj == null) {
+			setRequiredOwnerCluster((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredOwnerCluster(argObj.getRequiredId());
@@ -95,7 +104,16 @@ public interface ICFSecSecClusRole
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
 	public default void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
 		if (argObj == null) {
-			setRequiredContainerSysRole((ICFSecSecSysGrp)null);
+			setRequiredContainerSysRole((String)null);
+		}
+		else {
+			setRequiredContainerSysRole(argObj.getRequiredName());
+		}
+	}
+
+	public default void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
+		if (argObj == null) {
+			setRequiredContainerSysRole((String)null);
 		}
 		else {
 			setRequiredContainerSysRole(argObj.getRequiredName());

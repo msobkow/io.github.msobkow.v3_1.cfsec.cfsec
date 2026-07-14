@@ -84,7 +84,16 @@ public interface ICFSecSecTentGrp
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public default void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
 		if (argObj == null) {
-			setRequiredOwnerTenant((ICFSecTenant)null);
+			setRequiredOwnerTenant((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredOwnerTenant(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		if (argObj == null) {
+			setRequiredOwnerTenant((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredOwnerTenant(argObj.getRequiredId());
@@ -95,7 +104,16 @@ public interface ICFSecSecTentGrp
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
 	public default void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
 		if (argObj == null) {
-			setRequiredContainerSysGrp((ICFSecSecSysGrp)null);
+			setRequiredContainerSysGrp((String)null);
+		}
+		else {
+			setRequiredContainerSysGrp(argObj.getRequiredName());
+		}
+	}
+
+	public default void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj) {
+		if (argObj == null) {
+			setRequiredContainerSysGrp((String)null);
 		}
 		else {
 			setRequiredContainerSysGrp(argObj.getRequiredName());

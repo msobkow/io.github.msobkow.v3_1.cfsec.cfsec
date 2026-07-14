@@ -84,7 +84,16 @@ public interface ICFSecSecTentRole
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public default void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
 		if (argObj == null) {
-			setRequiredOwnerTenant((ICFSecTenant)null);
+			setRequiredOwnerTenant((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredOwnerTenant(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		if (argObj == null) {
+			setRequiredOwnerTenant((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredOwnerTenant(argObj.getRequiredId());
@@ -95,7 +104,16 @@ public interface ICFSecSecTentRole
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
 	public default void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
 		if (argObj == null) {
-			setRequiredContainerSysRole((ICFSecSecSysGrp)null);
+			setRequiredContainerSysRole((String)null);
+		}
+		else {
+			setRequiredContainerSysRole(argObj.getRequiredName());
+		}
+	}
+
+	public default void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
+		if (argObj == null) {
+			setRequiredContainerSysRole((String)null);
 		}
 		else {
 			setRequiredContainerSysRole(argObj.getRequiredName());

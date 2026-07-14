@@ -193,16 +193,6 @@ public class CFSecBuffSecTentGrp
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
-		if(argObj == null) {
-			requiredTenantId = null;
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
 		requiredTenantId = argTenantId;
 	}
@@ -224,16 +214,6 @@ public class CFSecBuffSecTentGrp
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
-		}
-		else {
-			requiredName = argObj.getRequiredName();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
-		if(argObj == null) {
-			requiredName = null;
 		}
 		else {
 			requiredName = argObj.getRequiredName();
