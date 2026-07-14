@@ -291,8 +291,7 @@ public class CFSecBuffCluster
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecCluster ) {
-			ICFSecCluster rhs = (ICFSecCluster)obj;
+		else if( obj instanceof ICFSecCluster rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -458,6 +457,334 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtCluster rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtClusterH rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtClusterHPKey rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
+			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
+			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubCluster rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubClusterH rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubClusterHPKey rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
+			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
+			if( getRequiredFullDomName() != null ) {
+				if( rhs.getRequiredFullDomName() != null ) {
+					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredFullDomName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
+			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -487,8 +814,7 @@ public class CFSecBuffCluster
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecCluster ) {
-			ICFSecCluster rhs = (ICFSecCluster)obj;
+		else if( obj instanceof ICFSecCluster rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -555,8 +881,7 @@ public class CFSecBuffCluster
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecClusterHPKey ) {
-			ICFSecClusterHPKey rhs = (ICFSecClusterHPKey)obj;
+		else if( obj instanceof ICFSecClusterHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -579,8 +904,7 @@ public class CFSecBuffCluster
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecClusterH ) {
-			ICFSecClusterH rhs = (ICFSecClusterH)obj;
+		else if( obj instanceof ICFSecClusterH rhs ) {
 			cmp = 0;
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
@@ -626,9 +950,7 @@ public class CFSecBuffCluster
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
-			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
-
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey rhs ) {
 			if (getRequiredFullDomName() != null) {
 				if (rhs.getRequiredFullDomName() != null) {
 					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
@@ -644,9 +966,343 @@ public class CFSecBuffCluster
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
-			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey rhs ) {
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtCluster rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtClusterHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtClusterH rhs ) {
+			cmp = 0;
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtClusterByUDomNameIdxKey rhs ) {
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtClusterByUDescrIdxKey rhs ) {
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubCluster rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubClusterHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubClusterH rhs ) {
+			cmp = 0;
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubClusterByUDomNameIdxKey rhs ) {
+			if (getRequiredFullDomName() != null) {
+				if (rhs.getRequiredFullDomName() != null) {
+					cmp = getRequiredFullDomName().compareTo( rhs.getRequiredFullDomName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredFullDomName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubClusterByUDescrIdxKey rhs ) {
 			if (getRequiredDescription() != null) {
 				if (rhs.getRequiredDescription() != null) {
 					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
@@ -695,6 +1351,64 @@ public class CFSecBuffCluster
 
 	@Override
 	public void setCluster( ICFSecClusterH src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredFullDomName(src.getRequiredFullDomName());
+		setRequiredDescription(src.getRequiredDescription());
+	}
+
+	@Override
+	public void set( ICFSecProtCluster src ) {
+		setCluster( src );
+	}
+
+	@Override
+	public void setCluster( ICFSecProtCluster src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredFullDomName(src.getRequiredFullDomName());
+		setRequiredDescription(src.getRequiredDescription());
+	}
+
+	@Override
+	public void set( ICFSecProtClusterH src ) {
+		setCluster( src );
+	}
+
+	@Override
+	public void setCluster( ICFSecProtClusterH src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredFullDomName(src.getRequiredFullDomName());
+		setRequiredDescription(src.getRequiredDescription());
+	}
+
+	@Override
+	public void set( ICFSecPubCluster src ) {
+		setCluster( src );
+	}
+
+	@Override
+	public void setCluster( ICFSecPubCluster src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredFullDomName(src.getRequiredFullDomName());
+		setRequiredDescription(src.getRequiredDescription());
+	}
+
+	@Override
+	public void set( ICFSecPubClusterH src ) {
+		setCluster( src );
+	}
+
+	@Override
+	public void setCluster( ICFSecPubClusterH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredFullDomName(src.getRequiredFullDomName());
 		setRequiredDescription(src.getRequiredDescription());

@@ -165,8 +165,7 @@ public class CFSecBuffSecUserPassword
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecUserPassword ) {
-			ICFSecSecUserPassword rhs = (ICFSecSecUserPassword)obj;
+		else if( obj instanceof ICFSecSecUserPassword rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -326,8 +325,7 @@ public class CFSecBuffSecUserPassword
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecUserPassword ) {
-			ICFSecSecUserPassword rhs = (ICFSecSecUserPassword)obj;
+		else if( obj instanceof ICFSecSecUserPassword rhs ) {
 			cmp = 0;
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
@@ -373,8 +371,7 @@ public class CFSecBuffSecUserPassword
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPasswordHPKey ) {
-			ICFSecSecUserPasswordHPKey rhs = (ICFSecSecUserPasswordHPKey)obj;
+		else if( obj instanceof ICFSecSecUserPasswordHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -397,8 +394,7 @@ public class CFSecBuffSecUserPassword
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPasswordH ) {
-			ICFSecSecUserPasswordH rhs = (ICFSecSecUserPasswordH)obj;
+		else if( obj instanceof ICFSecSecUserPasswordH rhs ) {
 			cmp = 0;
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
@@ -444,9 +440,7 @@ public class CFSecBuffSecUserPassword
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPasswordBySetStampIdxKey ) {
-			ICFSecSecUserPasswordBySetStampIdxKey rhs = (ICFSecSecUserPasswordBySetStampIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPasswordBySetStampIdxKey rhs ) {
 			if (getRequiredPWSetStamp() != null) {
 				if (rhs.getRequiredPWSetStamp() != null) {
 					cmp = getRequiredPWSetStamp().compareTo( rhs.getRequiredPWSetStamp() );

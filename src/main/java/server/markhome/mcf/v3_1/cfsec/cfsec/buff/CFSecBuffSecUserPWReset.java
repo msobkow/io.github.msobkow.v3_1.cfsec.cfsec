@@ -220,8 +220,7 @@ public class CFSecBuffSecUserPWReset
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecUserPWReset ) {
-			ICFSecSecUserPWReset rhs = (ICFSecSecUserPWReset)obj;
+		else if( obj instanceof ICFSecSecUserPWReset rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -400,6 +399,183 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtSecUserPWReset rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSentToEMailAddr() != null ) {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					if( ! getRequiredSentToEMailAddr().equals( rhs.getRequiredSentToEMailAddr() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredPasswordResetUuid6() != null ) {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					if( ! getRequiredPasswordResetUuid6().equals( rhs.getRequiredPasswordResetUuid6() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetH rhs ) {
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSentToEMailAddr() != null ) {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					if( ! getRequiredSentToEMailAddr().equals( rhs.getRequiredSentToEMailAddr() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredPasswordResetUuid6() != null ) {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					if( ! getRequiredPasswordResetUuid6().equals( rhs.getRequiredPasswordResetUuid6() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetHPKey rhs ) {
+			if( getRequiredSecUserId() != null ) {
+				if( rhs.getRequiredSecUserId() != null ) {
+					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecUserId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey ) {
+			ICFSecSecUserPWResetByUUuid6IdxKey rhs = (ICFSecSecUserPWResetByUUuid6IdxKey)obj;
+			if( getRequiredPasswordResetUuid6() != null ) {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					if( ! getRequiredPasswordResetUuid6().equals( rhs.getRequiredPasswordResetUuid6() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredPasswordResetUuid6() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey ) {
+			ICFSecSecUserPWResetBySentEMAddrIdxKey rhs = (ICFSecSecUserPWResetBySentEMAddrIdxKey)obj;
+			if( getRequiredSentToEMailAddr() != null ) {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					if( ! getRequiredSentToEMailAddr().equals( rhs.getRequiredSentToEMailAddr() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSentToEMailAddr() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey ) {
+			ICFSecSecUserPWResetByNewAcctIdxKey rhs = (ICFSecSecUserPWResetByNewAcctIdxKey)obj;
+			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
+				return( false );
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -433,8 +609,7 @@ public class CFSecBuffSecUserPWReset
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecUserPWReset ) {
-			ICFSecSecUserPWReset rhs = (ICFSecSecUserPWReset)obj;
+		else if( obj instanceof ICFSecSecUserPWReset rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -511,8 +686,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetHPKey ) {
-			ICFSecSecUserPWResetHPKey rhs = (ICFSecSecUserPWResetHPKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -535,8 +709,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetH ) {
-			ICFSecSecUserPWResetH rhs = (ICFSecSecUserPWResetH)obj;
+		else if( obj instanceof ICFSecSecUserPWResetH rhs ) {
 			cmp = 0;
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
@@ -592,9 +765,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey ) {
-			ICFSecSecUserPWResetByUUuid6IdxKey rhs = (ICFSecSecUserPWResetByUUuid6IdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey rhs ) {
 			if (getRequiredPasswordResetUuid6() != null) {
 				if (rhs.getRequiredPasswordResetUuid6() != null) {
 					cmp = getRequiredPasswordResetUuid6().compareTo( rhs.getRequiredPasswordResetUuid6() );
@@ -610,9 +781,7 @@ public class CFSecBuffSecUserPWReset
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey ) {
-			ICFSecSecUserPWResetBySentEMAddrIdxKey rhs = (ICFSecSecUserPWResetBySentEMAddrIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey rhs ) {
 			if (getRequiredSentToEMailAddr() != null) {
 				if (rhs.getRequiredSentToEMailAddr() != null) {
 					cmp = getRequiredSentToEMailAddr().compareTo( rhs.getRequiredSentToEMailAddr() );
@@ -628,9 +797,207 @@ public class CFSecBuffSecUserPWReset
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey ) {
-			ICFSecSecUserPWResetByNewAcctIdxKey rhs = (ICFSecSecUserPWResetByNewAcctIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey rhs ) {
+			if( getRequiredNewAccount() ) {
+				if( ! rhs.getRequiredNewAccount() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredNewAccount() ) {
+					return( -1 );
+				}
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWReset rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if (getRequiredSentToEMailAddr() != null) {
+				if (rhs.getRequiredSentToEMailAddr() != null) {
+					cmp = getRequiredSentToEMailAddr().compareTo( rhs.getRequiredSentToEMailAddr() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSentToEMailAddr() != null) {
+				return( -1 );
+			}
+			if (getRequiredPasswordResetUuid6() != null) {
+				if (rhs.getRequiredPasswordResetUuid6() != null) {
+					cmp = getRequiredPasswordResetUuid6().compareTo( rhs.getRequiredPasswordResetUuid6() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPasswordResetUuid6() != null) {
+				return( -1 );
+			}
+			if( getRequiredNewAccount() ) {
+				if( ! rhs.getRequiredNewAccount() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredNewAccount() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtSecUserPWResetHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetH rhs ) {
+			cmp = 0;
+			if (getRequiredSecUserId() != null) {
+				if (rhs.getRequiredSecUserId() != null) {
+					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecUserId() != null) {
+				return( -1 );
+			}
+			if (getRequiredSentToEMailAddr() != null) {
+				if (rhs.getRequiredSentToEMailAddr() != null) {
+					cmp = getRequiredSentToEMailAddr().compareTo( rhs.getRequiredSentToEMailAddr() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSentToEMailAddr() != null) {
+				return( -1 );
+			}
+			if (getRequiredPasswordResetUuid6() != null) {
+				if (rhs.getRequiredPasswordResetUuid6() != null) {
+					cmp = getRequiredPasswordResetUuid6().compareTo( rhs.getRequiredPasswordResetUuid6() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPasswordResetUuid6() != null) {
+				return( -1 );
+			}
+			if( getRequiredNewAccount() ) {
+				if( ! rhs.getRequiredNewAccount() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredNewAccount() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetByUUuid6IdxKey rhs ) {
+			if (getRequiredPasswordResetUuid6() != null) {
+				if (rhs.getRequiredPasswordResetUuid6() != null) {
+					cmp = getRequiredPasswordResetUuid6().compareTo( rhs.getRequiredPasswordResetUuid6() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredPasswordResetUuid6() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetBySentEMAddrIdxKey rhs ) {
+			if (getRequiredSentToEMailAddr() != null) {
+				if (rhs.getRequiredSentToEMailAddr() != null) {
+					cmp = getRequiredSentToEMailAddr().compareTo( rhs.getRequiredSentToEMailAddr() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSentToEMailAddr() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecUserPWResetByNewAcctIdxKey rhs ) {
 			if( getRequiredNewAccount() ) {
 				if( ! rhs.getRequiredNewAccount() ) {
 					return( 1 );
@@ -676,6 +1043,37 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public void setSecUserPWReset( ICFSecSecUserPWResetH src ) {
+		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredSentToEMailAddr(src.getRequiredSentToEMailAddr());
+		setRequiredPasswordResetUuid6(src.getRequiredPasswordResetUuid6());
+		setRequiredNewAccount(src.getRequiredNewAccount());
+	}
+
+	@Override
+	public void set( ICFSecProtSecUserPWReset src ) {
+		setSecUserPWReset( src );
+	}
+
+	@Override
+	public void setSecUserPWReset( ICFSecProtSecUserPWReset src ) {
+		setRequiredContainerUser(src.getRequiredContainerUser());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredSentToEMailAddr(src.getRequiredSentToEMailAddr());
+		setRequiredPasswordResetUuid6(src.getRequiredPasswordResetUuid6());
+		setRequiredNewAccount(src.getRequiredNewAccount());
+	}
+
+	@Override
+	public void set( ICFSecProtSecUserPWResetH src ) {
+		setSecUserPWReset( src );
+	}
+
+	@Override
+	public void setSecUserPWReset( ICFSecProtSecUserPWResetH src ) {
 		setRequiredContainerUser(src.getRequiredSecUserId());
 		setRequiredSentToEMailAddr(src.getRequiredSentToEMailAddr());
 		setRequiredPasswordResetUuid6(src.getRequiredPasswordResetUuid6());

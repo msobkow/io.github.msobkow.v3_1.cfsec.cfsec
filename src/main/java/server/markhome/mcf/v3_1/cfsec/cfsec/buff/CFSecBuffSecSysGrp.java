@@ -388,8 +388,7 @@ public class CFSecBuffSecSysGrp
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecSysGrp ) {
-			ICFSecSecSysGrp rhs = (ICFSecSecSysGrp)obj;
+		else if( obj instanceof ICFSecSecSysGrp rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -555,6 +554,334 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtSecSysGrp rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrpH rhs ) {
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrpHPKey rhs ) {
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
+			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
+			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrp rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpH rhs ) {
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpHPKey rhs ) {
+			if( getRequiredSecSysGrpId() != null ) {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysGrpId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
+			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
+			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+			if( getRequiredSecLevel() != null ) {
+				if( rhs.getRequiredSecLevel() != null ) {
+					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecLevel() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -582,8 +909,7 @@ public class CFSecBuffSecSysGrp
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecSysGrp ) {
-			ICFSecSecSysGrp rhs = (ICFSecSecSysGrp)obj;
+		else if( obj instanceof ICFSecSecSysGrp rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -650,8 +976,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysGrpHPKey ) {
-			ICFSecSecSysGrpHPKey rhs = (ICFSecSecSysGrpHPKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -674,8 +999,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysGrpH ) {
-			ICFSecSecSysGrpH rhs = (ICFSecSecSysGrpH)obj;
+		else if( obj instanceof ICFSecSecSysGrpH rhs ) {
 			cmp = 0;
 			if (getRequiredSecSysGrpId() != null) {
 				if (rhs.getRequiredSecSysGrpId() != null) {
@@ -721,9 +1045,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
-			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -739,9 +1061,343 @@ public class CFSecBuffSecSysGrp
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
-			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey rhs ) {
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrp rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtSecSysGrpHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrpH rhs ) {
+			cmp = 0;
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrpByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysGrpBySecLevelIdxKey rhs ) {
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrp rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpH rhs ) {
+			cmp = 0;
+			if (getRequiredSecSysGrpId() != null) {
+				if (rhs.getRequiredSecSysGrpId() != null) {
+					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysGrpId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredSecLevel() != null) {
+				if (rhs.getRequiredSecLevel() != null) {
+					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecLevel() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubSecSysGrpBySecLevelIdxKey rhs ) {
 			if (getRequiredSecLevel() != null) {
 				if (rhs.getRequiredSecLevel() != null) {
 					cmp = getRequiredSecLevel().compareTo( rhs.getRequiredSecLevel() );
@@ -790,6 +1446,64 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public void setSecSysGrp( ICFSecSecSysGrpH src ) {
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredName(src.getRequiredName());
+		setRequiredSecLevel(src.getRequiredSecLevel());
+	}
+
+	@Override
+	public void set( ICFSecProtSecSysGrp src ) {
+		setSecSysGrp( src );
+	}
+
+	@Override
+	public void setSecSysGrp( ICFSecProtSecSysGrp src ) {
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setRequiredSecLevel(src.getRequiredSecLevel());
+	}
+
+	@Override
+	public void set( ICFSecProtSecSysGrpH src ) {
+		setSecSysGrp( src );
+	}
+
+	@Override
+	public void setSecSysGrp( ICFSecProtSecSysGrpH src ) {
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredName(src.getRequiredName());
+		setRequiredSecLevel(src.getRequiredSecLevel());
+	}
+
+	@Override
+	public void set( ICFSecPubSecSysGrp src ) {
+		setSecSysGrp( src );
+	}
+
+	@Override
+	public void setSecSysGrp( ICFSecPubSecSysGrp src ) {
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setRequiredSecLevel(src.getRequiredSecLevel());
+	}
+
+	@Override
+	public void set( ICFSecPubSecSysGrpH src ) {
+		setSecSysGrp( src );
+	}
+
+	@Override
+	public void setSecSysGrp( ICFSecPubSecSysGrpH src ) {
 		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
 		setRequiredName(src.getRequiredName());
 		setRequiredSecLevel(src.getRequiredSecLevel());

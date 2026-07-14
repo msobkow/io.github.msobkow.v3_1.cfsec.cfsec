@@ -240,8 +240,7 @@ public class CFSecBuffSecTentRole
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecTentRole ) {
-			ICFSecSecTentRole rhs = (ICFSecSecTentRole)obj;
+		else if( obj instanceof ICFSecSecTentRole rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -441,6 +440,204 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtSecTentRole rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredSecTentRoleId() != null ) {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					if( ! getRequiredSecTentRoleId().equals( rhs.getRequiredSecTentRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleH rhs ) {
+			if( getRequiredSecTentRoleId() != null ) {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					if( ! getRequiredSecTentRoleId().equals( rhs.getRequiredSecTentRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleHPKey rhs ) {
+			if( getRequiredSecTentRoleId() != null ) {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					if( ! getRequiredSecTentRoleId().equals( rhs.getRequiredSecTentRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecTentRoleId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey ) {
+			ICFSecSecTentRoleByTenantIdxKey rhs = (ICFSecSecTentRoleByTenantIdxKey)obj;
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey ) {
+			ICFSecSecTentRoleByNameIdxKey rhs = (ICFSecSecTentRoleByNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey ) {
+			ICFSecSecTentRoleByUNameIdxKey rhs = (ICFSecSecTentRoleByUNameIdxKey)obj;
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -468,8 +665,7 @@ public class CFSecBuffSecTentRole
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecTentRole ) {
-			ICFSecSecTentRole rhs = (ICFSecSecTentRole)obj;
+		else if( obj instanceof ICFSecSecTentRole rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -536,8 +732,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecTentRoleHPKey ) {
-			ICFSecSecTentRoleHPKey rhs = (ICFSecSecTentRoleHPKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -560,8 +755,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecTentRoleH ) {
-			ICFSecSecTentRoleH rhs = (ICFSecSecTentRoleH)obj;
+		else if( obj instanceof ICFSecSecTentRoleH rhs ) {
 			cmp = 0;
 			if (getRequiredSecTentRoleId() != null) {
 				if (rhs.getRequiredSecTentRoleId() != null) {
@@ -607,9 +801,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey ) {
-			ICFSecSecTentRoleByTenantIdxKey rhs = (ICFSecSecTentRoleByTenantIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -625,9 +817,7 @@ public class CFSecBuffSecTentRole
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey ) {
-			ICFSecSecTentRoleByNameIdxKey rhs = (ICFSecSecTentRoleByNameIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -643,9 +833,205 @@ public class CFSecBuffSecTentRole
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey ) {
-			ICFSecSecTentRoleByUNameIdxKey rhs = (ICFSecSecTentRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey rhs ) {
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecTentRole rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredSecTentRoleId() != null) {
+				if (rhs.getRequiredSecTentRoleId() != null) {
+					cmp = getRequiredSecTentRoleId().compareTo( rhs.getRequiredSecTentRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecTentRoleId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtSecTentRoleHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredSecTentRoleId() != null) {
+				if (rhs.getRequiredSecTentRoleId() != null) {
+					cmp = getRequiredSecTentRoleId().compareTo( rhs.getRequiredSecTentRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecTentRoleId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleH rhs ) {
+			cmp = 0;
+			if (getRequiredSecTentRoleId() != null) {
+				if (rhs.getRequiredSecTentRoleId() != null) {
+					cmp = getRequiredSecTentRoleId().compareTo( rhs.getRequiredSecTentRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecTentRoleId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleByTenantIdxKey rhs ) {
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleByNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecTentRoleByUNameIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -708,6 +1094,35 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setSecTentRole( ICFSecSecTentRoleH src ) {
+		setRequiredSecTentRoleId(src.getRequiredSecTentRoleId());
+		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredContainerSysRole(src.getRequiredName());
+	}
+
+	@Override
+	public void set( ICFSecProtSecTentRole src ) {
+		setSecTentRole( src );
+	}
+
+	@Override
+	public void setSecTentRole( ICFSecProtSecTentRole src ) {
+		setRequiredSecTentRoleId(src.getRequiredSecTentRoleId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
+	}
+
+	@Override
+	public void set( ICFSecProtSecTentRoleH src ) {
+		setSecTentRole( src );
+	}
+
+	@Override
+	public void setSecTentRole( ICFSecProtSecTentRoleH src ) {
 		setRequiredSecTentRoleId(src.getRequiredSecTentRoleId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerSysRole(src.getRequiredName());

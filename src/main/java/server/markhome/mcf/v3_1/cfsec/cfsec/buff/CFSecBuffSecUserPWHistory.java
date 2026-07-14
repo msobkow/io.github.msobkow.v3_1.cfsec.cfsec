@@ -157,8 +157,7 @@ public class CFSecBuffSecUserPWHistory
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistory ) {
-			ICFSecSecUserPWHistory rhs = (ICFSecSecUserPWHistory)obj;
+		else if( obj instanceof ICFSecSecUserPWHistory rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -404,8 +403,7 @@ public class CFSecBuffSecUserPWHistory
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistory ) {
-			ICFSecSecUserPWHistory rhs = (ICFSecSecUserPWHistory)obj;
+		else if( obj instanceof ICFSecSecUserPWHistory rhs ) {
 			cmp = 0;
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
@@ -465,8 +463,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryHPKey ) {
-			ICFSecSecUserPWHistoryHPKey rhs = (ICFSecSecUserPWHistoryHPKey)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -503,8 +500,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryH ) {
-			ICFSecSecUserPWHistoryH rhs = (ICFSecSecUserPWHistoryH)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryH rhs ) {
 			cmp = 0;
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
@@ -564,9 +560,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryByUserIdxKey ) {
-			ICFSecSecUserPWHistoryByUserIdxKey rhs = (ICFSecSecUserPWHistoryByUserIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPWHistoryByUserIdxKey rhs ) {
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
 					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );
@@ -582,9 +576,7 @@ public class CFSecBuffSecUserPWHistory
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryBySetStampIdxKey ) {
-			ICFSecSecUserPWHistoryBySetStampIdxKey rhs = (ICFSecSecUserPWHistoryBySetStampIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPWHistoryBySetStampIdxKey rhs ) {
 			if (getRequiredPWSetStamp() != null) {
 				if (rhs.getRequiredPWSetStamp() != null) {
 					cmp = getRequiredPWSetStamp().compareTo( rhs.getRequiredPWSetStamp() );
@@ -600,9 +592,7 @@ public class CFSecBuffSecUserPWHistory
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryByReplacedStampIdxKey ) {
-			ICFSecSecUserPWHistoryByReplacedStampIdxKey rhs = (ICFSecSecUserPWHistoryByReplacedStampIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecUserPWHistoryByReplacedStampIdxKey rhs ) {
 			if (getRequiredPWReplacedStamp() != null) {
 				if (rhs.getRequiredPWReplacedStamp() != null) {
 					cmp = getRequiredPWReplacedStamp().compareTo( rhs.getRequiredPWReplacedStamp() );

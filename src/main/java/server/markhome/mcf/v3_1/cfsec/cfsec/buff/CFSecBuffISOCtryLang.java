@@ -203,8 +203,7 @@ public class CFSecBuffISOCtryLang
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecISOCtryLang ) {
-			ICFSecISOCtryLang rhs = (ICFSecISOCtryLang)obj;
+		else if( obj instanceof ICFSecISOCtryLang rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -259,6 +258,112 @@ public class CFSecBuffISOCtryLang
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtISOCtryLang rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLangH rhs ) {
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLangHPKey rhs ) {
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
+			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
+			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLang rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangH rhs ) {
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangHPKey rhs ) {
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
+			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
+			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
+			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
+				return( false );
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -283,8 +388,7 @@ public class CFSecBuffISOCtryLang
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecISOCtryLang ) {
-			ICFSecISOCtryLang rhs = (ICFSecISOCtryLang)obj;
+		else if( obj instanceof ICFSecISOCtryLang rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -321,8 +425,7 @@ public class CFSecBuffISOCtryLang
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecISOCtryLangHPKey ) {
-			ICFSecISOCtryLangHPKey rhs = (ICFSecISOCtryLangHPKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -343,8 +446,7 @@ public class CFSecBuffISOCtryLang
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecISOCtryLangH ) {
-			ICFSecISOCtryLangH rhs = (ICFSecISOCtryLangH)obj;
+		else if( obj instanceof ICFSecISOCtryLangH rhs ) {
 			cmp = 0;
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
@@ -360,9 +462,7 @@ public class CFSecBuffISOCtryLang
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
-			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
-
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}
@@ -370,9 +470,187 @@ public class CFSecBuffISOCtryLang
 				return( 1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
-			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey rhs ) {
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLang rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtISOCtryLangHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLangH rhs ) {
+			cmp = 0;
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLangByCtryIdxKey rhs ) {
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtISOCtryLangByLangIdxKey rhs ) {
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLang rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangH rhs ) {
+			cmp = 0;
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOLangId() > rhs.getRequiredISOLangId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangByCtryIdxKey rhs ) {
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecPubISOCtryLangByLangIdxKey rhs ) {
 			if( getRequiredISOLangId() < rhs.getRequiredISOLangId() ) {
 				return( -1 );
 			}
@@ -412,6 +690,60 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setISOCtryLang( ICFSecISOCtryLangH src ) {
+		setRequiredContainerCtry(src.getRequiredISOCtryId());
+		setRequiredParentLang(src.getRequiredISOLangId());
+	}
+
+	@Override
+	public void set( ICFSecProtISOCtryLang src ) {
+		setISOCtryLang( src );
+	}
+
+	@Override
+	public void setISOCtryLang( ICFSecProtISOCtryLang src ) {
+		setRequiredContainerCtry(src.getRequiredContainerCtry());
+		setRequiredParentLang(src.getRequiredParentLang());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+	}
+
+	@Override
+	public void set( ICFSecProtISOCtryLangH src ) {
+		setISOCtryLang( src );
+	}
+
+	@Override
+	public void setISOCtryLang( ICFSecProtISOCtryLangH src ) {
+		setRequiredContainerCtry(src.getRequiredISOCtryId());
+		setRequiredParentLang(src.getRequiredISOLangId());
+	}
+
+	@Override
+	public void set( ICFSecPubISOCtryLang src ) {
+		setISOCtryLang( src );
+	}
+
+	@Override
+	public void setISOCtryLang( ICFSecPubISOCtryLang src ) {
+		setRequiredContainerCtry(src.getRequiredContainerCtry());
+		setRequiredParentLang(src.getRequiredParentLang());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+	}
+
+	@Override
+	public void set( ICFSecPubISOCtryLangH src ) {
+		setISOCtryLang( src );
+	}
+
+	@Override
+	public void setISOCtryLang( ICFSecPubISOCtryLangH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentLang(src.getRequiredISOLangId());
 	}

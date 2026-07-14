@@ -203,8 +203,7 @@ public class CFSecBuffSecSysRoleEnables
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnables ) {
-			ICFSecSecSysRoleEnables rhs = (ICFSecSecSysRoleEnables)obj;
+		else if( obj instanceof ICFSecSecSysRoleEnables rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -355,6 +354,155 @@ public class CFSecBuffSecSysRoleEnables
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnables rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredSecSysRoleId() != null ) {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					if( ! getRequiredSecSysRoleId().equals( rhs.getRequiredSecSysRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredEnableName() != null ) {
+				if( rhs.getRequiredEnableName() != null ) {
+					if( ! getRequiredEnableName().equals( rhs.getRequiredEnableName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredEnableName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesH rhs ) {
+			if( getRequiredSecSysRoleId() != null ) {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					if( ! getRequiredSecSysRoleId().equals( rhs.getRequiredSecSysRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredEnableName() != null ) {
+				if( rhs.getRequiredEnableName() != null ) {
+					if( ! getRequiredEnableName().equals( rhs.getRequiredEnableName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredEnableName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesHPKey rhs ) {
+			if( getRequiredSecSysRoleId() != null ) {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					if( ! getRequiredSecSysRoleId().equals( rhs.getRequiredSecSysRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredEnableName() != null ) {
+				if( rhs.getRequiredEnableName() != null ) {
+					if( ! getRequiredEnableName().equals( rhs.getRequiredEnableName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredEnableName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysRoleEnablesBySysRoleIdxKey ) {
+			ICFSecSecSysRoleEnablesBySysRoleIdxKey rhs = (ICFSecSecSysRoleEnablesBySysRoleIdxKey)obj;
+			if( getRequiredSecSysRoleId() != null ) {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					if( ! getRequiredSecSysRoleId().equals( rhs.getRequiredSecSysRoleId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredSecSysRoleId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFSecSecSysRoleEnablesByNameIdxKey ) {
+			ICFSecSecSysRoleEnablesByNameIdxKey rhs = (ICFSecSecSysRoleEnablesByNameIdxKey)obj;
+			if( getRequiredEnableName() != null ) {
+				if( rhs.getRequiredEnableName() != null ) {
+					if( ! getRequiredEnableName().equals( rhs.getRequiredEnableName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredEnableName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -381,8 +529,7 @@ public class CFSecBuffSecSysRoleEnables
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnables ) {
-			ICFSecSecSysRoleEnables rhs = (ICFSecSecSysRoleEnables)obj;
+		else if( obj instanceof ICFSecSecSysRoleEnables rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -435,8 +582,7 @@ public class CFSecBuffSecSysRoleEnables
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnablesHPKey ) {
-			ICFSecSecSysRoleEnablesHPKey rhs = (ICFSecSecSysRoleEnablesHPKey)obj;
+		else if( obj instanceof ICFSecSecSysRoleEnablesHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -473,8 +619,7 @@ public class CFSecBuffSecSysRoleEnables
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnablesH ) {
-			ICFSecSecSysRoleEnablesH rhs = (ICFSecSecSysRoleEnablesH)obj;
+		else if( obj instanceof ICFSecSecSysRoleEnablesH rhs ) {
 			cmp = 0;
 			if (getRequiredSecSysRoleId() != null) {
 				if (rhs.getRequiredSecSysRoleId() != null) {
@@ -506,9 +651,7 @@ public class CFSecBuffSecSysRoleEnables
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnablesBySysRoleIdxKey ) {
-			ICFSecSecSysRoleEnablesBySysRoleIdxKey rhs = (ICFSecSecSysRoleEnablesBySysRoleIdxKey)obj;
-
+		else if( obj instanceof ICFSecSecSysRoleEnablesBySysRoleIdxKey rhs ) {
 			if (getRequiredSecSysRoleId() != null) {
 				if (rhs.getRequiredSecSysRoleId() != null) {
 					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
@@ -524,9 +667,161 @@ public class CFSecBuffSecSysRoleEnables
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecSecSysRoleEnablesByNameIdxKey ) {
-			ICFSecSecSysRoleEnablesByNameIdxKey rhs = (ICFSecSecSysRoleEnablesByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysRoleEnablesByNameIdxKey rhs ) {
+			if (getRequiredEnableName() != null) {
+				if (rhs.getRequiredEnableName() != null) {
+					cmp = getRequiredEnableName().compareTo( rhs.getRequiredEnableName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredEnableName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnables rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredSecSysRoleId() != null) {
+				if (rhs.getRequiredSecSysRoleId() != null) {
+					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysRoleId() != null) {
+				return( -1 );
+			}
+			if (getRequiredEnableName() != null) {
+				if (rhs.getRequiredEnableName() != null) {
+					cmp = getRequiredEnableName().compareTo( rhs.getRequiredEnableName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredEnableName() != null) {
+				return( -1 );
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredSecSysRoleId() != null) {
+				if (rhs.getRequiredSecSysRoleId() != null) {
+					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysRoleId() != null) {
+				return( -1 );
+			}
+			if (getRequiredEnableName() != null) {
+				if (rhs.getRequiredEnableName() != null) {
+					cmp = getRequiredEnableName().compareTo( rhs.getRequiredEnableName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredEnableName() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesH rhs ) {
+			cmp = 0;
+			if (getRequiredSecSysRoleId() != null) {
+				if (rhs.getRequiredSecSysRoleId() != null) {
+					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysRoleId() != null) {
+				return( -1 );
+			}
+			if (getRequiredEnableName() != null) {
+				if (rhs.getRequiredEnableName() != null) {
+					cmp = getRequiredEnableName().compareTo( rhs.getRequiredEnableName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredEnableName() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesBySysRoleIdxKey rhs ) {
+			if (getRequiredSecSysRoleId() != null) {
+				if (rhs.getRequiredSecSysRoleId() != null) {
+					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredSecSysRoleId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFSecProtSecSysRoleEnablesByNameIdxKey rhs ) {
 			if (getRequiredEnableName() != null) {
 				if (rhs.getRequiredEnableName() != null) {
 					cmp = getRequiredEnableName().compareTo( rhs.getRequiredEnableName() );
@@ -574,6 +869,33 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnablesH src ) {
+		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
+		setRequiredParentEnableGroup(src.getRequiredEnableName());
+	}
+
+	@Override
+	public void set( ICFSecProtSecSysRoleEnables src ) {
+		setSecSysRoleEnables( src );
+	}
+
+	@Override
+	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnables src ) {
+		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
+		setRequiredParentEnableGroup(src.getRequiredParentEnableGroup());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+	}
+
+	@Override
+	public void set( ICFSecProtSecSysRoleEnablesH src ) {
+		setSecSysRoleEnables( src );
+	}
+
+	@Override
+	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnablesH src ) {
 		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
 		setRequiredParentEnableGroup(src.getRequiredEnableName());
 	}
