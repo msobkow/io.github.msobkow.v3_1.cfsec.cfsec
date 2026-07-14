@@ -92,6 +92,16 @@ public interface ICFSecSysCluster
 	public void set( ICFSecSysClusterH src );
 	public void setSysCluster( ICFSecSysClusterH src );
 
+	public void set( ICFSecProtSysCluster src );
+	public void setSysCluster( ICFSecProtSysCluster src );
+	public void set( ICFSecProtSysClusterH src );
+	public void setSysCluster( ICFSecProtSysClusterH src );
+
+	public void set( ICFSecPubSysCluster src );
+	public void setSysCluster( ICFSecPubSysCluster src );
+	public void set( ICFSecPubSysClusterH src );
+	public void setSysCluster( ICFSecPubSysClusterH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

@@ -102,6 +102,11 @@ public interface ICFSecSecUserEMConf
 	public void set( ICFSecSecUserEMConfH src );
 	public void setSecUserEMConf( ICFSecSecUserEMConfH src );
 
+	public void set( ICFSecProtSecUserEMConf src );
+	public void setSecUserEMConf( ICFSecProtSecUserEMConf src );
+	public void set( ICFSecProtSecUserEMConfH src );
+	public void setSecUserEMConf( ICFSecProtSecUserEMConfH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

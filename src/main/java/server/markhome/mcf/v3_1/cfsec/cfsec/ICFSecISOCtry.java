@@ -97,6 +97,16 @@ public interface ICFSecISOCtry
 	public void set( ICFSecISOCtryH src );
 	public void setISOCtry( ICFSecISOCtryH src );
 
+	public void set( ICFSecProtISOCtry src );
+	public void setISOCtry( ICFSecProtISOCtry src );
+	public void set( ICFSecProtISOCtryH src );
+	public void setISOCtry( ICFSecProtISOCtryH src );
+
+	public void set( ICFSecPubISOCtry src );
+	public void setISOCtry( ICFSecPubISOCtry src );
+	public void set( ICFSecPubISOCtryH src );
+	public void setISOCtry( ICFSecPubISOCtryH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

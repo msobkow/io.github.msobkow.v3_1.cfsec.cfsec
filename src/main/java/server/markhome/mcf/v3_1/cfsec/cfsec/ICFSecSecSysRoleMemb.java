@@ -96,6 +96,11 @@ public interface ICFSecSecSysRoleMemb
 	public void set( ICFSecSecSysRoleMembH src );
 	public void setSecSysRoleMemb( ICFSecSecSysRoleMembH src );
 
+	public void set( ICFSecProtSecSysRoleMemb src );
+	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMemb src );
+	public void set( ICFSecProtSecSysRoleMembH src );
+	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMembH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

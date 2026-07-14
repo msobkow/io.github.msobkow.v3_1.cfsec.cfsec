@@ -119,6 +119,11 @@ public interface ICFSecSecTentRole
 	public void set( ICFSecSecTentRoleH src );
 	public void setSecTentRole( ICFSecSecTentRoleH src );
 
+	public void set( ICFSecProtSecTentRole src );
+	public void setSecTentRole( ICFSecProtSecTentRole src );
+	public void set( ICFSecProtSecTentRoleH src );
+	public void setSecTentRole( ICFSecProtSecTentRoleH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

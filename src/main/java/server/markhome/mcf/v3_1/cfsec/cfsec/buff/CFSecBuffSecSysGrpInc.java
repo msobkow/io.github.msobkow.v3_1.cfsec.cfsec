@@ -158,7 +158,7 @@ public class CFSecBuffSecSysGrpInc
 	@Override
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
@@ -170,6 +170,7 @@ public class CFSecBuffSecSysGrpInc
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
 		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
 	}
+
 	@Override
 	public ICFSecSecSysGrp getRequiredParentSubGroup() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -186,7 +187,7 @@ public class CFSecBuffSecSysGrpInc
 	@Override
 	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSubGroup", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredInclName(argObj.getRequiredName());
@@ -198,6 +199,7 @@ public class CFSecBuffSecSysGrpInc
 	public void setRequiredParentSubGroup(String argInclName) {
 		getPKey().setRequiredInclName(argInclName);
 	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {

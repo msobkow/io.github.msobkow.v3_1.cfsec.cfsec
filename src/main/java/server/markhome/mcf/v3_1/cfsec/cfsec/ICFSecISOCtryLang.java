@@ -97,6 +97,16 @@ public interface ICFSecISOCtryLang
 	public void set( ICFSecISOCtryLangH src );
 	public void setISOCtryLang( ICFSecISOCtryLangH src );
 
+	public void set( ICFSecProtISOCtryLang src );
+	public void setISOCtryLang( ICFSecProtISOCtryLang src );
+	public void set( ICFSecProtISOCtryLangH src );
+	public void setISOCtryLang( ICFSecProtISOCtryLangH src );
+
+	public void set( ICFSecPubISOCtryLang src );
+	public void setISOCtryLang( ICFSecPubISOCtryLang src );
+	public void set( ICFSecPubISOCtryLangH src );
+	public void setISOCtryLang( ICFSecPubISOCtryLangH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

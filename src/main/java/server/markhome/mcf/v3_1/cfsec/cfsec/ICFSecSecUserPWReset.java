@@ -99,6 +99,11 @@ public interface ICFSecSecUserPWReset
 	public void set( ICFSecSecUserPWResetH src );
 	public void setSecUserPWReset( ICFSecSecUserPWResetH src );
 
+	public void set( ICFSecProtSecUserPWReset src );
+	public void setSecUserPWReset( ICFSecProtSecUserPWReset src );
+	public void set( ICFSecProtSecUserPWResetH src );
+	public void setSecUserPWReset( ICFSecProtSecUserPWResetH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

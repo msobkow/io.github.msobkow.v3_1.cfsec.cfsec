@@ -158,7 +158,7 @@ public class CFSecBuffISOCtryCcy
 	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
@@ -170,6 +170,7 @@ public class CFSecBuffISOCtryCcy
 	public void setRequiredContainerCtry(short argISOCtryId) {
 		getPKey().setRequiredISOCtryId(argISOCtryId);
 	}
+
 	@Override
 	public ICFSecISOCcy getRequiredParentCcy() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -186,7 +187,7 @@ public class CFSecBuffISOCtryCcy
 	@Override
 	public void setRequiredParentCcy(ICFSecISOCcy argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
@@ -198,6 +199,7 @@ public class CFSecBuffISOCtryCcy
 	public void setRequiredParentCcy(short argISOCcyId) {
 		getPKey().setRequiredISOCcyId(argISOCcyId);
 	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {

@@ -96,6 +96,11 @@ public interface ICFSecSecClusGrpMemb
 	public void set( ICFSecSecClusGrpMembH src );
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMembH src );
 
+	public void set( ICFSecProtSecClusGrpMemb src );
+	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMemb src );
+	public void set( ICFSecProtSecClusGrpMembH src );
+	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMembH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

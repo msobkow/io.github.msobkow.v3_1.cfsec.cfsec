@@ -99,6 +99,16 @@ public interface ICFSecISOLang
 	public void set( ICFSecISOLangH src );
 	public void setISOLang( ICFSecISOLangH src );
 
+	public void set( ICFSecProtISOLang src );
+	public void setISOLang( ICFSecProtISOLang src );
+	public void set( ICFSecProtISOLangH src );
+	public void setISOLang( ICFSecProtISOLangH src );
+
+	public void set( ICFSecPubISOLang src );
+	public void setISOLang( ICFSecPubISOLang src );
+	public void set( ICFSecPubISOLangH src );
+	public void setISOLang( ICFSecPubISOLangH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

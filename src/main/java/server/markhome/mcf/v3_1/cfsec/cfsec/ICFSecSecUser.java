@@ -115,6 +115,16 @@ public interface ICFSecSecUser
 	public void set( ICFSecSecUserH src );
 	public void setSecUser( ICFSecSecUserH src );
 
+	public void set( ICFSecProtSecUser src );
+	public void setSecUser( ICFSecProtSecUser src );
+	public void set( ICFSecProtSecUserH src );
+	public void setSecUser( ICFSecProtSecUserH src );
+
+	public void set( ICFSecPubSecUser src );
+	public void setSecUser( ICFSecPubSecUser src );
+	public void set( ICFSecPubSecUserH src );
+	public void setSecUser( ICFSecPubSecUserH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

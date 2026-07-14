@@ -117,6 +117,16 @@ public interface ICFSecTableInfo
 	public void set( ICFSecTableInfoH src );
 	public void setTableInfo( ICFSecTableInfoH src );
 
+	public void set( ICFSecProtTableInfo src );
+	public void setTableInfo( ICFSecProtTableInfo src );
+	public void set( ICFSecProtTableInfoH src );
+	public void setTableInfo( ICFSecProtTableInfoH src );
+
+	public void set( ICFSecPubTableInfo src );
+	public void setTableInfo( ICFSecPubTableInfo src );
+	public void set( ICFSecPubTableInfoH src );
+	public void setTableInfo( ICFSecPubTableInfoH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

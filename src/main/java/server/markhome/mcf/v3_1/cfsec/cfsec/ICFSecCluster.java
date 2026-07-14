@@ -99,6 +99,16 @@ public interface ICFSecCluster
 	public void set( ICFSecClusterH src );
 	public void setCluster( ICFSecClusterH src );
 
+	public void set( ICFSecProtCluster src );
+	public void setCluster( ICFSecProtCluster src );
+	public void set( ICFSecProtClusterH src );
+	public void setCluster( ICFSecProtClusterH src );
+
+	public void set( ICFSecPubCluster src );
+	public void setCluster( ICFSecPubCluster src );
+	public void set( ICFSecPubClusterH src );
+	public void setCluster( ICFSecPubClusterH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

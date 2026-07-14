@@ -103,6 +103,16 @@ public interface ICFSecISOCcy
 	public void set( ICFSecISOCcyH src );
 	public void setISOCcy( ICFSecISOCcyH src );
 
+	public void set( ICFSecProtISOCcy src );
+	public void setISOCcy( ICFSecProtISOCcy src );
+	public void set( ICFSecProtISOCcyH src );
+	public void setISOCcy( ICFSecProtISOCcyH src );
+
+	public void set( ICFSecPubISOCcy src );
+	public void setISOCcy( ICFSecPubISOCcy src );
+	public void set( ICFSecPubISOCcyH src );
+	public void setISOCcy( ICFSecPubISOCcyH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

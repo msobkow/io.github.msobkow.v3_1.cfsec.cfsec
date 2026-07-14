@@ -96,6 +96,11 @@ public interface ICFSecSecSysGrpInc
 	public void set( ICFSecSecSysGrpIncH src );
 	public void setSecSysGrpInc( ICFSecSecSysGrpIncH src );
 
+	public void set( ICFSecProtSecSysGrpInc src );
+	public void setSecSysGrpInc( ICFSecProtSecSysGrpInc src );
+	public void set( ICFSecProtSecSysGrpIncH src );
+	public void setSecSysGrpInc( ICFSecProtSecSysGrpIncH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

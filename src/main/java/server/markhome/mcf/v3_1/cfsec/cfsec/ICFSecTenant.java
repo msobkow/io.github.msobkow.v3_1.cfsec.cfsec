@@ -109,6 +109,16 @@ public interface ICFSecTenant
 	public void set( ICFSecTenantH src );
 	public void setTenant( ICFSecTenantH src );
 
+	public void set( ICFSecProtTenant src );
+	public void setTenant( ICFSecProtTenant src );
+	public void set( ICFSecProtTenantH src );
+	public void setTenant( ICFSecProtTenantH src );
+
+	public void set( ICFSecPubTenant src );
+	public void setTenant( ICFSecPubTenant src );
+	public void set( ICFSecPubTenantH src );
+	public void setTenant( ICFSecPubTenantH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

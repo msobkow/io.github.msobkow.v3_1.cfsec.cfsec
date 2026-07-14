@@ -158,7 +158,7 @@ public class CFSecBuffISOCtryLang
 	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
@@ -170,6 +170,7 @@ public class CFSecBuffISOCtryLang
 	public void setRequiredContainerCtry(short argISOCtryId) {
 		getPKey().setRequiredISOCtryId(argISOCtryId);
 	}
+
 	@Override
 	public ICFSecISOLang getRequiredParentLang() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -186,7 +187,7 @@ public class CFSecBuffISOCtryLang
 	@Override
 	public void setRequiredParentLang(ICFSecISOLang argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 1, "argObj");
 		}
 		else {
 			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
@@ -198,6 +199,7 @@ public class CFSecBuffISOCtryLang
 	public void setRequiredParentLang(short argISOLangId) {
 		getPKey().setRequiredISOLangId(argISOLangId);
 	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {

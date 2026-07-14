@@ -119,6 +119,11 @@ public interface ICFSecSecClusGrp
 	public void set( ICFSecSecClusGrpH src );
 	public void setSecClusGrp( ICFSecSecClusGrpH src );
 
+	public void set( ICFSecProtSecClusGrp src );
+	public void setSecClusGrp( ICFSecProtSecClusGrp src );
+	public void set( ICFSecProtSecClusGrpH src );
+	public void setSecClusGrp( ICFSecProtSecClusGrpH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

@@ -96,6 +96,11 @@ public interface ICFSecSecSysRoleEnables
 	public void set( ICFSecSecSysRoleEnablesH src );
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnablesH src );
 
+	public void set( ICFSecProtSecSysRoleEnables src );
+	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnables src );
+	public void set( ICFSecProtSecSysRoleEnablesH src );
+	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnablesH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

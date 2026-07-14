@@ -111,6 +111,16 @@ public interface ICFSecISOTZone
 	public void set( ICFSecISOTZoneH src );
 	public void setISOTZone( ICFSecISOTZoneH src );
 
+	public void set( ICFSecProtISOTZone src );
+	public void setISOTZone( ICFSecProtISOTZone src );
+	public void set( ICFSecProtISOTZoneH src );
+	public void setISOTZone( ICFSecProtISOTZoneH src );
+
+	public void set( ICFSecPubISOTZone src );
+	public void setISOTZone( ICFSecPubISOTZone src );
+	public void set( ICFSecPubISOTZoneH src );
+	public void setISOTZone( ICFSecPubISOTZoneH src );
+
 	public String getXmlAttrFragment();
 
 	@Override
