@@ -81,26 +81,10 @@ public interface ICFSecTenant
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
-	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public default void setRequiredContainerCluster(ICFSecProtCluster argObj) {
-		if (argObj == null) {
-			setRequiredContainerCluster((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerCluster(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerCluster(ICFSecPubCluster argObj) {
-		if (argObj == null) {
-			setRequiredContainerCluster((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerCluster(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+	public void setRequiredContainerCluster(ICFSecCluster argObj);
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj);
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );

@@ -75,26 +75,10 @@ public interface ICFSecTableInfo
 
 	public ICFSecTableInfo getOptionalParentSuperRef();
 	public List<ICFSecTableInfo> getOptionalChildrenSubRefs();
-	public void setOptionalParentSuperRef(ICFSecTableInfo argObj);
-	public default void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
-		if (argObj == null) {
-			setOptionalParentSuperRef((String)null);
-		}
-		else {
-			setOptionalParentSuperRef(argObj.getRequiredTableName());
-		}
-	}
-
-	public default void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
-		if (argObj == null) {
-			setOptionalParentSuperRef((String)null);
-		}
-		else {
-			setOptionalParentSuperRef(argObj.getRequiredTableName());
-		}
-	}
-
 	public void setOptionalParentSuperRef(String argSuperName);
+	public void setOptionalParentSuperRef(ICFSecTableInfo argObj);
+	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj);
+	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj);
 	public String getRequiredSchemaName();
 	public void setRequiredSchemaName( String value );
 	public String getRequiredTableName();
