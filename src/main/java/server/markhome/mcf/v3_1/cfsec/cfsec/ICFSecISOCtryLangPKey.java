@@ -56,7 +56,7 @@ public interface ICFSecISOCtryLangPKey
 	public int hashCode();
 
 	//@Override
-	public int compareTo( ICFSecISOCtryLangPKey rhs );
+	public int compareTo( Object rhs );
 
 	public String getXmlAttrFragment();
 

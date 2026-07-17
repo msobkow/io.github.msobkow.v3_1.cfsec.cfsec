@@ -56,7 +56,7 @@ public interface ICFSecSecUserPWHistoryPKey
 	public int hashCode();
 
 	//@Override
-	public int compareTo( ICFSecSecUserPWHistoryPKey rhs );
+	public int compareTo( Object rhs );
 
 	public String getXmlAttrFragment();
 

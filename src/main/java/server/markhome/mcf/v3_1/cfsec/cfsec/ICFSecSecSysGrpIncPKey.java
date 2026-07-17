@@ -56,7 +56,7 @@ public interface ICFSecSecSysGrpIncPKey
 	public int hashCode();
 
 	//@Override
-	public int compareTo( ICFSecSecSysGrpIncPKey rhs );
+	public int compareTo( Object rhs );
 
 	public String getXmlAttrFragment();
 

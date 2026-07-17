@@ -56,7 +56,7 @@ public interface ICFSecSecSysRoleEnablesPKey
 	public int hashCode();
 
 	//@Override
-	public int compareTo( ICFSecSecSysRoleEnablesPKey rhs );
+	public int compareTo( Object rhs );
 
 	public String getXmlAttrFragment();
 
