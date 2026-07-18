@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredEnableName	Required object attribute EnableName.
  */
 public class CFSecBuffSecSysRoleEnablesPKey
-	implements ICFSecSecSysRoleEnablesPKey, Comparable<ICFSecSecSysRoleEnablesPKey>, Serializable
+	implements ICFSecSecSysRoleEnablesPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 requiredSecSysRoleId;
 	protected String requiredEnableName;

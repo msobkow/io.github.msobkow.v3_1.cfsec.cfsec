@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredISOCcyId	Required object attribute ISOCcyId.
  */
 public class CFSecBuffISOCtryCcyPKey
-	implements ICFSecISOCtryCcyPKey, Comparable<ICFSecISOCtryCcyPKey>, Serializable
+	implements ICFSecISOCtryCcyPKey, Comparable<Object>, Serializable
 {
 	protected short requiredISOCtryId;
 	protected short requiredISOCcyId;

@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredInclName	Required object attribute InclName.
  */
 public class CFSecBuffSecSysGrpIncPKey
-	implements ICFSecSecSysGrpIncPKey, Comparable<ICFSecSecSysGrpIncPKey>, Serializable
+	implements ICFSecSecSysGrpIncPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 requiredSecSysGrpId;
 	protected String requiredInclName;

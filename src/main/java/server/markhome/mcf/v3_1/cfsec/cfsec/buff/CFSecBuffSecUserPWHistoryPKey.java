@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredPWSetStamp	Required object attribute PWSetStamp.
  */
 public class CFSecBuffSecUserPWHistoryPKey
-	implements ICFSecSecUserPWHistoryPKey, Comparable<ICFSecSecUserPWHistoryPKey>, Serializable
+	implements ICFSecSecUserPWHistoryPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	protected LocalDateTime requiredPWSetStamp;

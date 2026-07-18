@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredLoginId	Required object attribute LoginId.
  */
 public class CFSecBuffSecClusGrpMembPKey
-	implements ICFSecSecClusGrpMembPKey, Comparable<ICFSecSecClusGrpMembPKey>, Serializable
+	implements ICFSecSecClusGrpMembPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 requiredSecClusGrpId;
 	protected String requiredLoginId;

@@ -54,7 +54,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
  *		requiredISOLangId	Required object attribute ISOLangId.
  */
 public class CFSecBuffISOCtryLangPKey
-	implements ICFSecISOCtryLangPKey, Comparable<ICFSecISOCtryLangPKey>, Serializable
+	implements ICFSecISOCtryLangPKey, Comparable<Object>, Serializable
 {
 	protected short requiredISOCtryId;
 	protected short requiredISOLangId;
