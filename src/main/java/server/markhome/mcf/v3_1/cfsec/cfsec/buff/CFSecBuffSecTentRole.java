@@ -193,6 +193,16 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
+	public void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
 		requiredTenantId = argTenantId;
 	}
@@ -218,6 +228,16 @@ public class CFSecBuffSecTentRole
 		else {
 			requiredName = argObj.getRequiredName();
 		}
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredName());
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredName());
 	}
 
 	@Override

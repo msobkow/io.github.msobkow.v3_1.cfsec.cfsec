@@ -167,6 +167,16 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj) {
+		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+	}
+
+	@Override
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
+		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+	}
+
+	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
 		getPKey().setRequiredISOCtryId(argISOCtryId);
 	}
@@ -193,6 +203,16 @@ public class CFSecBuffISOCtryLang
 			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	
+	}
+
+	@Override
+	public void setRequiredParentLang(ICFSecProtISOLang argObj) {
+		setRequiredParentLang(argObj.getRequiredISOLangId());
+	}
+
+	@Override
+	public void setRequiredParentLang(ICFSecPubISOLang argObj) {
+		setRequiredParentLang(argObj.getRequiredISOLangId());
 	}
 
 	@Override

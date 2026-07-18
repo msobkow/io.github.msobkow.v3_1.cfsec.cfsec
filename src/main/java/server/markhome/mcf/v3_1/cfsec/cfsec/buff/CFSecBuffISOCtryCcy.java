@@ -167,6 +167,16 @@ public class CFSecBuffISOCtryCcy
 	}
 
 	@Override
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj) {
+		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+	}
+
+	@Override
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
+		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+	}
+
+	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
 		getPKey().setRequiredISOCtryId(argISOCtryId);
 	}
@@ -193,6 +203,16 @@ public class CFSecBuffISOCtryCcy
 			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	
+	}
+
+	@Override
+	public void setRequiredParentCcy(ICFSecProtISOCcy argObj) {
+		setRequiredParentCcy(argObj.getRequiredISOCcyId());
+	}
+
+	@Override
+	public void setRequiredParentCcy(ICFSecPubISOCcy argObj) {
+		setRequiredParentCcy(argObj.getRequiredISOCcyId());
 	}
 
 	@Override

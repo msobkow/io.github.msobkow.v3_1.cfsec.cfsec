@@ -143,6 +143,16 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
+	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
+		setOptionalParentSuperRef(argObj.getRequiredTableName());
+	}
+
+	@Override
+	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
+		setOptionalParentSuperRef(argObj.getRequiredTableName());
+	}
+
+	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
 		optionalSuperName = argSuperName;
 	}

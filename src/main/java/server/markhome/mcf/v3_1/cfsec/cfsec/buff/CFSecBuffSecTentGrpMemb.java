@@ -167,6 +167,11 @@ public class CFSecBuffSecTentGrpMemb
 	}
 
 	@Override
+	public void setRequiredContainerGroup(ICFSecProtSecTentGrp argObj) {
+		setRequiredContainerGroup(argObj.getRequiredSecTentGrpId());
+	}
+
+	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId) {
 		getPKey().setRequiredSecTentGrpId(argSecTentGrpId);
 	}
@@ -193,6 +198,16 @@ public class CFSecBuffSecTentGrpMemb
 			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	
+	}
+
+	@Override
+	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
+		setRequiredParentUser(argObj.getRequiredLoginId());
+	}
+
+	@Override
+	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
+		setRequiredParentUser(argObj.getRequiredLoginId());
 	}
 
 	@Override
