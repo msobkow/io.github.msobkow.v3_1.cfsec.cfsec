@@ -204,24 +204,6 @@ public class CFSecBuffSecClusGrpHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecSecClusGrpPKey rhs) {
-			if( getRequiredSecClusGrpId() != null ) {
-				if( rhs.getRequiredSecClusGrpId() != null ) {
-					if( ! getRequiredSecClusGrpId().equals( rhs.getRequiredSecClusGrpId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecClusGrpId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecSecClusGrpH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -349,24 +331,6 @@ public class CFSecBuffSecClusGrpHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredSecClusGrpId() != null ) {
-				if( rhs.getRequiredSecClusGrpId() != null ) {
-					if( ! getRequiredSecClusGrpId().equals( rhs.getRequiredSecClusGrpId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecClusGrpId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecProtSecClusGrpPKey rhs) {
 			if( getRequiredSecClusGrpId() != null ) {
 				if( rhs.getRequiredSecClusGrpId() != null ) {
 					if( ! getRequiredSecClusGrpId().equals( rhs.getRequiredSecClusGrpId() ) ) {
@@ -552,23 +516,6 @@ public class CFSecBuffSecClusGrpHPKey
 					return( cmp );
 				}
 			}
-			if (getRequiredSecClusGrpId() != null) {
-				if (rhs.getRequiredSecClusGrpId() != null) {
-					cmp = getRequiredSecClusGrpId().compareTo( rhs.getRequiredSecClusGrpId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecClusGrpId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecSecClusGrpPKey rhs) {
 			if (getRequiredSecClusGrpId() != null) {
 				if (rhs.getRequiredSecClusGrpId() != null) {
 					cmp = getRequiredSecClusGrpId().compareTo( rhs.getRequiredSecClusGrpId() );

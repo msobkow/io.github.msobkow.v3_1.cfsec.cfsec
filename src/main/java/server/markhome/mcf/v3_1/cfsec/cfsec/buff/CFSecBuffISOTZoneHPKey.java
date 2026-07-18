@@ -194,12 +194,6 @@ public class CFSecBuffISOTZoneHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOTZonePKey rhs) {
-			if( getRequiredISOTZoneId() != rhs.getRequiredISOTZoneId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecISOTZoneH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -308,12 +302,6 @@ public class CFSecBuffISOTZoneHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecProtISOTZonePKey rhs) {
-			if( getRequiredISOTZoneId() != rhs.getRequiredISOTZoneId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecProtISOTZoneH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -417,12 +405,6 @@ public class CFSecBuffISOTZoneHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOTZoneId() != rhs.getRequiredISOTZoneId() ) {
-				return( false );
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecPubISOTZonePKey rhs) {
 			if( getRequiredISOTZoneId() != rhs.getRequiredISOTZoneId() ) {
 				return( false );
 			}
@@ -572,15 +554,6 @@ public class CFSecBuffISOTZoneHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOTZoneId() > rhs.getRequiredISOTZoneId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecISOTZonePKey rhs) {
 			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
 				return( -1 );
 			}
@@ -861,15 +834,6 @@ public class CFSecBuffISOTZoneHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOTZoneId() > rhs.getRequiredISOTZoneId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecPubISOTZonePKey rhs) {
 			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
 				return( -1 );
 			}

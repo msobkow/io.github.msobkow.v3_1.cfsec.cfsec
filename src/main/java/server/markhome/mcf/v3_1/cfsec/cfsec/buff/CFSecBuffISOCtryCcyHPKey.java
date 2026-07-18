@@ -828,6 +828,21 @@ public class CFSecBuffISOCtryCcyHPKey
 			}
 			return( 0 );
 		}
+		else if (obj instanceof ICFSecProtISOCtryCcyPKey rhs) {
+			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
+				return( 1 );
+			}
+			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
+				return( -1 );
+			}
+			else if( getRequiredISOCcyId() > rhs.getRequiredISOCcyId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
 		else if (obj instanceof ICFSecProtISOCtryCcyH rhs) {
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {

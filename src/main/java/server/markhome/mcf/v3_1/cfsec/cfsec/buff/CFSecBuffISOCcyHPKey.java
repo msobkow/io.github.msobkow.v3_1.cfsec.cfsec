@@ -194,12 +194,6 @@ public class CFSecBuffISOCcyHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCcyPKey rhs) {
-			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecISOCcyH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -308,12 +302,6 @@ public class CFSecBuffISOCcyHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecProtISOCcyPKey rhs) {
-			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecProtISOCcyH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -417,12 +405,6 @@ public class CFSecBuffISOCcyHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
-				return( false );
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecPubISOCcyPKey rhs) {
 			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
 				return( false );
 			}
@@ -572,15 +554,6 @@ public class CFSecBuffISOCcyHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOCcyId() > rhs.getRequiredISOCcyId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecISOCcyPKey rhs) {
 			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
 				return( -1 );
 			}
@@ -861,15 +834,6 @@ public class CFSecBuffISOCcyHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOCcyId() > rhs.getRequiredISOCcyId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecPubISOCcyPKey rhs) {
 			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
 				return( -1 );
 			}

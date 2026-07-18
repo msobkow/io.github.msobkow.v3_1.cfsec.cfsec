@@ -194,12 +194,6 @@ public class CFSecBuffISOCtryHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecISOCtryPKey rhs) {
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecISOCtryH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -308,12 +302,6 @@ public class CFSecBuffISOCtryHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecProtISOCtryPKey rhs) {
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecProtISOCtryH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -417,12 +405,6 @@ public class CFSecBuffISOCtryHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
-				return( false );
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecPubISOCtryPKey rhs) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
@@ -572,15 +554,6 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecISOCtryPKey rhs) {
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}
@@ -861,15 +834,6 @@ public class CFSecBuffISOCtryHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
-				return( -1 );
-			}
-			else if( getRequiredISOCtryId() > rhs.getRequiredISOCtryId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecPubISOCtryPKey rhs) {
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}

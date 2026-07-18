@@ -204,24 +204,6 @@ public class CFSecBuffSecTentGrpHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecSecTentGrpPKey rhs) {
-			if( getRequiredSecTentGrpId() != null ) {
-				if( rhs.getRequiredSecTentGrpId() != null ) {
-					if( ! getRequiredSecTentGrpId().equals( rhs.getRequiredSecTentGrpId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecTentGrpId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecSecTentGrpH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -349,24 +331,6 @@ public class CFSecBuffSecTentGrpHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredSecTentGrpId() != null ) {
-				if( rhs.getRequiredSecTentGrpId() != null ) {
-					if( ! getRequiredSecTentGrpId().equals( rhs.getRequiredSecTentGrpId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredSecTentGrpId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecProtSecTentGrpPKey rhs) {
 			if( getRequiredSecTentGrpId() != null ) {
 				if( rhs.getRequiredSecTentGrpId() != null ) {
 					if( ! getRequiredSecTentGrpId().equals( rhs.getRequiredSecTentGrpId() ) ) {
@@ -552,23 +516,6 @@ public class CFSecBuffSecTentGrpHPKey
 					return( cmp );
 				}
 			}
-			if (getRequiredSecTentGrpId() != null) {
-				if (rhs.getRequiredSecTentGrpId() != null) {
-					cmp = getRequiredSecTentGrpId().compareTo( rhs.getRequiredSecTentGrpId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecTentGrpId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecSecTentGrpPKey rhs) {
 			if (getRequiredSecTentGrpId() != null) {
 				if (rhs.getRequiredSecTentGrpId() != null) {
 					cmp = getRequiredSecTentGrpId().compareTo( rhs.getRequiredSecTentGrpId() );

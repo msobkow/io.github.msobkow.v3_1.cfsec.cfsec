@@ -202,12 +202,6 @@ public class CFSecBuffSysClusterHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecSysClusterPKey rhs) {
-			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecSysClusterH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -316,12 +310,6 @@ public class CFSecBuffSysClusterHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFSecProtSysClusterPKey rhs) {
-			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFSecProtSysClusterH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -425,12 +413,6 @@ public class CFSecBuffSysClusterHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
-				return( false );
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFSecPubSysClusterPKey rhs) {
 			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
 				return( false );
 			}
@@ -580,15 +562,6 @@ public class CFSecBuffSysClusterHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
-				return( -1 );
-			}
-			else if( getRequiredSingletonId() > rhs.getRequiredSingletonId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecSysClusterPKey rhs) {
 			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
@@ -869,15 +842,6 @@ public class CFSecBuffSysClusterHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
-				return( -1 );
-			}
-			else if( getRequiredSingletonId() > rhs.getRequiredSingletonId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFSecPubSysClusterPKey rhs) {
 			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
