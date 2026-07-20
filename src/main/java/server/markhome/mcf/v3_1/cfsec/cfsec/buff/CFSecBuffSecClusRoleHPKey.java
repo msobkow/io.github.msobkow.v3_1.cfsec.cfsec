@@ -692,23 +692,6 @@ public class CFSecBuffSecClusRoleHPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecProtSecClusRolePKey rhs) {
-			if (getRequiredSecClusRoleId() != null) {
-				if (rhs.getRequiredSecClusRoleId() != null) {
-					cmp = getRequiredSecClusRoleId().compareTo( rhs.getRequiredSecClusRoleId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredSecClusRoleId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
 		else if (obj instanceof ICFSecProtSecClusRoleH rhs) {
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
