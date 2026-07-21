@@ -431,7 +431,7 @@ public class CFSecBuffSecClusRoleMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecSecClusRoleMembPKeyH rhs) {
+		else if (obj instanceof ICFSecSecClusRoleMembHPKey rhs) {
 			if (getRequiredSecClusRoleId() != null) {
 				if (rhs.getRequiredSecClusRoleId() != null) {
 					cmp = getRequiredSecClusRoleId().compareTo( rhs.getRequiredSecClusRoleId() );
@@ -555,7 +555,7 @@ public class CFSecBuffSecClusRoleMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecProtSecClusRoleMembPKeyH rhs) {
+		else if (obj instanceof ICFSecProtSecClusRoleMembHPKey rhs) {
 			if (getRequiredSecClusRoleId() != null) {
 				if (rhs.getRequiredSecClusRoleId() != null) {
 					cmp = getRequiredSecClusRoleId().compareTo( rhs.getRequiredSecClusRoleId() );

@@ -125,11 +125,6 @@ public class CFSecBuffSysCluster
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
-	}
-
-	@Override
 	public void setRequiredContainerCluster(ICFSecCluster argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
@@ -141,22 +136,17 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
-		}
-		else {
-			requiredClusterId = argObj.getRequiredId();
-		}
+		setRequiredContainerCluster(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
-		}
-		else {
-			requiredClusterId = argObj.getRequiredId();
-		}
+		setRequiredContainerCluster(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		requiredClusterId = argClusterId;
 	}
 
 	@Override

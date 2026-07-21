@@ -291,7 +291,7 @@ public class CFSecBuffSecUserPWHistoryPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecSecUserPWHistoryPKeyH rhs) {
+		else if (obj instanceof ICFSecSecUserPWHistoryHPKey rhs) {
 			if (getRequiredSecUserId() != null) {
 				if (rhs.getRequiredSecUserId() != null) {
 					cmp = getRequiredSecUserId().compareTo( rhs.getRequiredSecUserId() );

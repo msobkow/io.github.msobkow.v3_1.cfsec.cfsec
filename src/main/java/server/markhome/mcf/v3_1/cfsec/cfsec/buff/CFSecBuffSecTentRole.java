@@ -183,11 +183,6 @@ public class CFSecBuffSecTentRole
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
-	}
-
-	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
@@ -199,22 +194,17 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
+		setRequiredOwnerTenant(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
 	}
 
 	@Override
@@ -231,11 +221,6 @@ public class CFSecBuffSecTentRole
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerSysRole(String argName) {
-		requiredName = argName;
-	}
-
-	@Override
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
@@ -247,22 +232,17 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
-		}
-		else {
-			requiredName = argObj.getRequiredName();
-		}
+		setRequiredContainerSysRole(argObj.getRequiredName());
 	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
-		}
-		else {
-			requiredName = argObj.getRequiredName();
-		}
+		setRequiredContainerSysRole(argObj.getRequiredName());
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(String argName) {
+		requiredName = argName;
 	}
 
 	@Override

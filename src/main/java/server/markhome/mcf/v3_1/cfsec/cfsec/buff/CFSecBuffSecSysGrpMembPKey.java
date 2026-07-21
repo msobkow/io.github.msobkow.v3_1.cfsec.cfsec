@@ -431,7 +431,7 @@ public class CFSecBuffSecSysGrpMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecSecSysGrpMembPKeyH rhs) {
+		else if (obj instanceof ICFSecSecSysGrpMembHPKey rhs) {
 			if (getRequiredSecSysGrpId() != null) {
 				if (rhs.getRequiredSecSysGrpId() != null) {
 					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );
@@ -555,7 +555,7 @@ public class CFSecBuffSecSysGrpMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecProtSecSysGrpMembPKeyH rhs) {
+		else if (obj instanceof ICFSecProtSecSysGrpMembHPKey rhs) {
 			if (getRequiredSecSysGrpId() != null) {
 				if (rhs.getRequiredSecSysGrpId() != null) {
 					cmp = getRequiredSecSysGrpId().compareTo( rhs.getRequiredSecSysGrpId() );

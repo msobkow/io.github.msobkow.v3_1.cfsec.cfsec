@@ -431,7 +431,7 @@ public class CFSecBuffSecClusGrpMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecSecClusGrpMembPKeyH rhs) {
+		else if (obj instanceof ICFSecSecClusGrpMembHPKey rhs) {
 			if (getRequiredSecClusGrpId() != null) {
 				if (rhs.getRequiredSecClusGrpId() != null) {
 					cmp = getRequiredSecClusGrpId().compareTo( rhs.getRequiredSecClusGrpId() );
@@ -555,7 +555,7 @@ public class CFSecBuffSecClusGrpMembPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFSecProtSecClusGrpMembPKeyH rhs) {
+		else if (obj instanceof ICFSecProtSecClusGrpMembHPKey rhs) {
 			if (getRequiredSecClusGrpId() != null) {
 				if (rhs.getRequiredSecClusGrpId() != null) {
 					cmp = getRequiredSecClusGrpId().compareTo( rhs.getRequiredSecClusGrpId() );
