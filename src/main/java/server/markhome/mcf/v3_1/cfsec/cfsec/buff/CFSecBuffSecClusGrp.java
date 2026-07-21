@@ -183,6 +183,11 @@ public class CFSecBuffSecClusGrp
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
+		requiredClusterId = argClusterId;
+	}
+
+	@Override
 	public void setRequiredOwnerCluster(ICFSecCluster argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
@@ -194,17 +199,22 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
-		setRequiredOwnerCluster(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
-		setRequiredOwnerCluster(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -221,6 +231,11 @@ public class CFSecBuffSecClusGrp
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredContainerSysGrp(String argName) {
+		requiredName = argName;
+	}
+
+	@Override
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
@@ -232,17 +247,22 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
-		setRequiredContainerSysGrp(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
+		}
+		else {
+			requiredName = argObj.getRequiredName();
+		}
 	}
 
 	@Override
 	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj) {
-		setRequiredContainerSysGrp(argObj.getRequiredName());
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(String argName) {
-		requiredName = argName;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
+		}
+		else {
+			requiredName = argObj.getRequiredName();
+		}
 	}
 
 	@Override
