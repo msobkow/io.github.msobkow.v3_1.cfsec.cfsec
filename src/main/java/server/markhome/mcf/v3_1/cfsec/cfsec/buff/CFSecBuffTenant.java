@@ -99,6 +99,7 @@ public class CFSecBuffTenant
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -122,6 +123,7 @@ public class CFSecBuffTenant
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -177,6 +179,7 @@ public class CFSecBuffTenant
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -205,6 +208,7 @@ public class CFSecBuffTenant
 		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerCluster(ICFSecCluster argObj) {
 		if(argObj == null) {

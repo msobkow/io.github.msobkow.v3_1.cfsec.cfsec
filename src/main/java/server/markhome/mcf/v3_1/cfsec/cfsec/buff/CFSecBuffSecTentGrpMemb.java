@@ -127,6 +127,7 @@ public class CFSecBuffSecTentGrpMemb
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -155,6 +156,7 @@ public class CFSecBuffSecTentGrpMemb
 		ICFSecSecTentGrp targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentGrpId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj) {
 		if(argObj == null) {
@@ -189,6 +191,7 @@ public class CFSecBuffSecTentGrpMemb
 		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
 		if(argObj == null) {

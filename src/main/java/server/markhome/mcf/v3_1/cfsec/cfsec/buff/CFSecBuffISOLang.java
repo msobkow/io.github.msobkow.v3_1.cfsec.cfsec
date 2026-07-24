@@ -101,6 +101,7 @@ public class CFSecBuffISOLang
 			return( results );
 		}
 	}
+
 	@Override
 	public short getRequiredISOLangId() {
 		return( requiredISOLangId );
@@ -158,6 +159,7 @@ public class CFSecBuffISOLang
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

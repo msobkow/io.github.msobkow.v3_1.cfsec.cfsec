@@ -150,6 +150,7 @@ public class CFSecBuffSecUserPWReset
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

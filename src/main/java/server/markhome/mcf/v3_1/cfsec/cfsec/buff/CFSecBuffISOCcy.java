@@ -103,6 +103,7 @@ public class CFSecBuffISOCcy
 			return( results );
 		}
 	}
+
 	@Override
 	public short getRequiredISOCcyId() {
 		return( requiredISOCcyId );
@@ -160,6 +161,7 @@ public class CFSecBuffISOCcy
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

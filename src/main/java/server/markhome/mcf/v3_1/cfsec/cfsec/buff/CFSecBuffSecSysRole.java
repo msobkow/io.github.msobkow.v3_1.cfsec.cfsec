@@ -97,6 +97,7 @@ public class CFSecBuffSecSysRole
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -120,6 +121,7 @@ public class CFSecBuffSecSysRole
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
 		return( requiredSecSysRoleId );
@@ -175,6 +177,7 @@ public class CFSecBuffSecSysRole
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

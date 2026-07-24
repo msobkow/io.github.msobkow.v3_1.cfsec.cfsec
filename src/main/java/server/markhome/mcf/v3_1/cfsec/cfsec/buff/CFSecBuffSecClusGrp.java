@@ -99,6 +99,7 @@ public class CFSecBuffSecClusGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
 		return( requiredSecClusGrpId );
@@ -154,6 +155,7 @@ public class CFSecBuffSecClusGrp
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -182,6 +184,7 @@ public class CFSecBuffSecClusGrp
 		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerCluster(ICFSecCluster argObj) {
 		if(argObj == null) {
@@ -220,6 +223,7 @@ public class CFSecBuffSecClusGrp
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {

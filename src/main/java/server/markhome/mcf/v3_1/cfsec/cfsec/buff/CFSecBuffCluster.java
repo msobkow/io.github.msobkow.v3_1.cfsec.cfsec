@@ -99,6 +99,7 @@ public class CFSecBuffCluster
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -122,6 +123,7 @@ public class CFSecBuffCluster
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecClusRole> getOptionalComponentsSecRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -145,6 +147,7 @@ public class CFSecBuffCluster
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -168,6 +171,7 @@ public class CFSecBuffCluster
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -223,6 +227,7 @@ public class CFSecBuffCluster
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

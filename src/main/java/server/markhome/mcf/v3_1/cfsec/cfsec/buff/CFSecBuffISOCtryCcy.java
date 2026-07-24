@@ -127,6 +127,7 @@ public class CFSecBuffISOCtryCcy
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -155,6 +156,7 @@ public class CFSecBuffISOCtryCcy
 		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
 		if(argObj == null) {
@@ -194,6 +196,7 @@ public class CFSecBuffISOCtryCcy
 		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredParentCcy(ICFSecISOCcy argObj) {
 		if(argObj == null) {

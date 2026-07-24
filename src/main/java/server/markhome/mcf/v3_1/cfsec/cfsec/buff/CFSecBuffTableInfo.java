@@ -132,6 +132,7 @@ public class CFSecBuffTableInfo
 		ICFSecTableInfo targetRec = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSuperName());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalParentSuperRef(ICFSecTableInfo argObj) {
 		if(argObj == null) {
@@ -180,6 +181,7 @@ public class CFSecBuffTableInfo
 			return( results );
 		}
 	}
+
 	@Override
 	public String getRequiredSchemaName() {
 		return( requiredSchemaName );

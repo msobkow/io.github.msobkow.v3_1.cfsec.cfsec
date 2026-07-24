@@ -99,6 +99,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -122,6 +123,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public ICFSecSecSysRole getOptionalComponentsImplSysRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -135,6 +137,7 @@ public class CFSecBuffSecSysGrp
 		ICFSecSecSysRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
 		return(targetRec);
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
 		return( requiredSecSysGrpId );
@@ -190,6 +193,7 @@ public class CFSecBuffSecSysGrp
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -228,6 +232,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -251,6 +256,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -274,6 +280,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -297,6 +304,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -320,6 +328,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -343,6 +352,7 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );

@@ -99,6 +99,7 @@ public class CFSecBuffISOCtry
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecISOCtryLang> getOptionalComponentsLang() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -122,6 +123,7 @@ public class CFSecBuffISOCtry
 			return( results );
 		}
 	}
+
 	@Override
 	public short getRequiredISOCtryId() {
 		return( requiredISOCtryId );
@@ -179,6 +181,7 @@ public class CFSecBuffISOCtry
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );

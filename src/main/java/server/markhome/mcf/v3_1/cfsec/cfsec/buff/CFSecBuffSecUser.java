@@ -97,6 +97,7 @@ public class CFSecBuffSecUser
 		ICFSecSecUserPassword targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
+
 	@Override
 	public ICFSecSecUserEMConf getOptionalComponentsEMConf() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -110,6 +111,7 @@ public class CFSecBuffSecUser
 		ICFSecSecUserEMConf targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
+
 	@Override
 	public ICFSecSecUserPWReset getOptionalComponentsPWReset() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -123,6 +125,7 @@ public class CFSecBuffSecUser
 		ICFSecSecUserPWReset targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return( requiredSecUserId );
@@ -178,6 +181,7 @@ public class CFSecBuffSecUser
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -216,6 +220,7 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenClusSecGrpMemb() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -239,6 +244,7 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -262,6 +268,7 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
+
 	@Override
 	public String getRequiredLoginId() {
 		return( requiredLoginId );
