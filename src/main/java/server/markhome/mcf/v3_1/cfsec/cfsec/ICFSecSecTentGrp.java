@@ -72,7 +72,8 @@ public interface ICFSecSecTentGrp
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentGrpId);
-
+	
+	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -80,7 +81,6 @@ public interface ICFSecSecTentGrp
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
-	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);

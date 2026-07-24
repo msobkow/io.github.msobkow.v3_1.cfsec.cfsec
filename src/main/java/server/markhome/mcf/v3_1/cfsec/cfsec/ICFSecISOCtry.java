@@ -71,14 +71,14 @@ public interface ICFSecISOCtry
 
 	public Short getPKey();
 	public void setPKey(Short requiredISOCtryId);
-
+	
+	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
+	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
 	public short getRequiredISOCtryId();
 	public void setRequiredISOCtryId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
-	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
 	public String getRequiredISOCode();
 	public void setRequiredISOCode( String value );
 	public String getRequiredName();

@@ -100,6 +100,22 @@ public class CFSecBuffSecClusGrp
 		}
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
+		return( requiredSecClusGrpId );
+	}
+
+	@Override
+	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusGrpId",
+				1,
+				"value" );
+		}
+		requiredSecClusGrpId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -177,6 +193,16 @@ public class CFSecBuffSecClusGrp
 	}
 
 	@Override
+	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
+		setRequiredOwnerCluster(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
+		setRequiredOwnerCluster(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
 		requiredClusterId = argClusterId;
 	}
@@ -202,6 +228,16 @@ public class CFSecBuffSecClusGrp
 		else {
 			requiredName = argObj.getRequiredName();
 		}
+	}
+
+	@Override
+	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
+		setRequiredContainerSysGrp(argObj.getRequiredName());
+	}
+
+	@Override
+	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj) {
+		setRequiredContainerSysGrp(argObj.getRequiredName());
 	}
 
 	@Override

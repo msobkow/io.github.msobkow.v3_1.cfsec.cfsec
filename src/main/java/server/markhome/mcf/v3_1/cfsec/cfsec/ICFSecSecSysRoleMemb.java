@@ -70,22 +70,18 @@ public interface ICFSecSecSysRoleMemb
 
 	public ICFSecSecSysRoleMembPKey getPKey();
 	public void setPKey(ICFSecSecSysRoleMembPKey pkey );
-
+	
+	public ICFSecSecSysRole getRequiredContainerSysRole();
+	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
+	public ICFSecSecUser getRequiredParentUser();
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void setRequiredParentUser(String argLoginId);
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
 	public String getRequiredLoginId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecSysRole getRequiredContainerSysRole();
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
-	public void setRequiredParentUser(String argLoginId);
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(ICFSecProtSecUser argObj);
-	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 	@Override
 	public boolean equals( Object obj );
 	

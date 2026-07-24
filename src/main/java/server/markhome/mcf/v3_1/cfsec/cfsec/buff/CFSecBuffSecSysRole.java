@@ -121,6 +121,22 @@ public class CFSecBuffSecSysRole
 		}
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return( requiredSecSysRoleId );
+	}
+
+	@Override
+	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysRoleId",
+				1,
+				"value" );
+		}
+		requiredSecSysRoleId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

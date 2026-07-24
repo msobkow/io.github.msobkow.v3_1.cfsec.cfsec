@@ -85,6 +85,24 @@ public class CFSecBuffISOTZone
 	}
 
 	@Override
+	public short getRequiredISOTZoneId() {
+		return( requiredISOTZoneId );
+	}
+
+	@Override
+	public void setRequiredISOTZoneId( short value ) {
+		if( value < ICFSecISOTZone.ISOTZONEID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOTZoneId",
+				1,
+				"value",
+				value,
+				ICFSecISOTZone.ISOTZONEID_MIN_VALUE );
+		}
+		requiredISOTZoneId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

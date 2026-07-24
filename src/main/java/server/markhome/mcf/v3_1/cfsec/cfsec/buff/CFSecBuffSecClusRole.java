@@ -100,6 +100,22 @@ public class CFSecBuffSecClusRole
 		}
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+		return( requiredSecClusRoleId );
+	}
+
+	@Override
+	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusRoleId",
+				1,
+				"value" );
+		}
+		requiredSecClusRoleId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -177,6 +193,16 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
+	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
+		setRequiredOwnerCluster(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
+		setRequiredOwnerCluster(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
 		requiredClusterId = argClusterId;
 	}
@@ -202,6 +228,16 @@ public class CFSecBuffSecClusRole
 		else {
 			requiredName = argObj.getRequiredName();
 		}
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredName());
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredName());
 	}
 
 	@Override

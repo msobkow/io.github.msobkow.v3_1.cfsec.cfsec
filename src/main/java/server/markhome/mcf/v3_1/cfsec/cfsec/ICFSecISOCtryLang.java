@@ -71,22 +71,18 @@ public interface ICFSecISOCtryLang
 
 	public ICFSecISOCtryLangPKey getPKey();
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
-
+	
+	public ICFSecISOCtry getRequiredContainerCtry();
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
+	public void setRequiredContainerCtry(short argISOCtryId);
+	public ICFSecISOLang getRequiredParentLang();
+	public void setRequiredParentLang(ICFSecISOLang argObj);
+	public void setRequiredParentLang(short argISOLangId);
 	public short getRequiredISOCtryId();
 	public short getRequiredISOLangId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public ICFSecISOLang getRequiredParentLang();
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
-	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
-	public void setRequiredParentLang(short argISOLangId);
-	public void setRequiredParentLang(ICFSecISOLang argObj);
-	public void setRequiredParentLang(ICFSecProtISOLang argObj);
-	public void setRequiredParentLang(ICFSecPubISOLang argObj);
 	@Override
 	public boolean equals( Object obj );
 	

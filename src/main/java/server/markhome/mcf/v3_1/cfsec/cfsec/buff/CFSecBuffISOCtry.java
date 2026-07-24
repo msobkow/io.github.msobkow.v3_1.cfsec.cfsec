@@ -123,6 +123,24 @@ public class CFSecBuffISOCtry
 		}
 	}
 	@Override
+	public short getRequiredISOCtryId() {
+		return( requiredISOCtryId );
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecISOCtry.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecISOCtry.ISOCTRYID_MIN_VALUE );
+		}
+		requiredISOCtryId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

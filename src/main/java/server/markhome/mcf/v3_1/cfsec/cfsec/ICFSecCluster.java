@@ -71,16 +71,16 @@ public interface ICFSecCluster
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
+	
+	public List<ICFSecTenant> getOptionalComponentsTenant();
+	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
+	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public List<ICFSecTenant> getOptionalComponentsTenant();
-	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
-	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
-	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 	public String getRequiredFullDomName();
 	public void setRequiredFullDomName( String value );
 	public String getRequiredDescription();

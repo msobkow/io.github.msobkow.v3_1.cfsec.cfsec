@@ -107,6 +107,11 @@ public class CFSecBuffSecUserPWReset
 		requiredSecUserId = argSecUserId;
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( requiredSecUserId );
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

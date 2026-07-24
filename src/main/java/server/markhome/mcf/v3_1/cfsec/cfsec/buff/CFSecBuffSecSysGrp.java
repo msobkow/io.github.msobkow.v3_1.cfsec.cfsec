@@ -136,6 +136,22 @@ public class CFSecBuffSecSysGrp
 		return(targetRec);
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return( requiredSecSysGrpId );
+	}
+
+	@Override
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		requiredSecSysGrpId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -212,7 +228,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -236,7 +251,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -260,7 +274,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -284,7 +297,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -308,7 +320,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -332,7 +343,6 @@ public class CFSecBuffSecSysGrp
 			return( results );
 		}
 	}
-
 	@Override
 	public String getRequiredName() {
 		return( requiredName );

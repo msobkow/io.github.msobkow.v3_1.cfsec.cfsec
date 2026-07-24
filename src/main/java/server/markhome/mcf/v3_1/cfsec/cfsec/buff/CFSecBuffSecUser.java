@@ -124,6 +124,22 @@ public class CFSecBuffSecUser
 		return(targetRec);
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( requiredSecUserId );
+	}
+
+	@Override
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -200,7 +216,6 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenClusSecGrpMemb() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -224,7 +239,6 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
-
 	@Override
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
@@ -248,7 +262,6 @@ public class CFSecBuffSecUser
 			return( results );
 		}
 	}
-
 	@Override
 	public String getRequiredLoginId() {
 		return( requiredLoginId );

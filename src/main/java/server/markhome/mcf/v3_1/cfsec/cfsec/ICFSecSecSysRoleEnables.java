@@ -70,22 +70,18 @@ public interface ICFSecSecSysRoleEnables
 
 	public ICFSecSecSysRoleEnablesPKey getPKey();
 	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
-
+	
+	public ICFSecSecSysRole getRequiredContainerSysRole();
+	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
+	public ICFSecSecSysGrp getRequiredParentEnableGroup();
+	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
+	public void setRequiredParentEnableGroup(String argEnableName);
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
 	public String getRequiredEnableName();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecSysRole getRequiredContainerSysRole();
-	public ICFSecSecSysGrp getRequiredParentEnableGroup();
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
-	public void setRequiredParentEnableGroup(String argEnableName);
-	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj);
-	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
 	@Override
 	public boolean equals( Object obj );
 	

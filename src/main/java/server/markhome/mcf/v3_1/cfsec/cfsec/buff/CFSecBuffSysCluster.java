@@ -71,6 +71,32 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
+	public int getRequiredSingletonId() {
+		return( requiredSingletonId );
+	}
+
+	@Override
+	public void setRequiredSingletonId( int value ) {
+		if( value < ICFSecSysCluster.SINGLETONID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredSingletonId",
+				1,
+				"value",
+				value,
+				ICFSecSysCluster.SINGLETONID_MIN_VALUE );
+		}
+		if( value > ICFSecSysCluster.SINGLETONID_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredSingletonId",
+				1,
+				"value",
+				value,
+				ICFSecSysCluster.SINGLETONID_MAX_VALUE );
+		}
+		requiredSingletonId = value;
+	}
+
+	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}
@@ -106,6 +132,16 @@ public class CFSecBuffSysCluster
 		else {
 			requiredClusterId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
+		setRequiredContainerCluster(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
+		setRequiredContainerCluster(argObj.getRequiredId());
 	}
 
 	@Override

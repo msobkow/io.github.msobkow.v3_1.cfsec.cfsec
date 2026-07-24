@@ -58,7 +58,7 @@ public interface ICFSecSecUserPWHistory
 
 	public ICFSecSecUserPWHistoryPKey getPKey();
 	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
-
+	
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public LocalDateTime getRequiredPWSetStamp();
