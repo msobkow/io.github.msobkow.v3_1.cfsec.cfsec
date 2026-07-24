@@ -104,24 +104,6 @@ public class CFSecBuffISOCcy
 		}
 	}
 	@Override
-	public short getRequiredISOCcyId() {
-		return( requiredISOCcyId );
-	}
-
-	@Override
-	public void setRequiredISOCcyId( short value ) {
-		if( value < ICFSecISOCcy.ISOCCYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCcyId",
-				1,
-				"value",
-				value,
-				ICFSecISOCcy.ISOCCYID_MIN_VALUE );
-		}
-		requiredISOCcyId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

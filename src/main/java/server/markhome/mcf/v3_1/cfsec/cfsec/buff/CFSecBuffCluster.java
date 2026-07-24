@@ -169,22 +169,6 @@ public class CFSecBuffCluster
 		}
 	}
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
-	}
-
-	@Override
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

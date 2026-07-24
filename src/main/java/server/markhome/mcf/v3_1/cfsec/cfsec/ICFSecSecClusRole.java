@@ -72,8 +72,7 @@ public interface ICFSecSecClusRole
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusRoleId);
-	
-	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
+
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -81,6 +80,7 @@ public interface ICFSecSecClusRole
 
 	public ICFSecCluster getRequiredOwnerCluster();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);

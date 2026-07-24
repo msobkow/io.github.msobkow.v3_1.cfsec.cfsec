@@ -72,8 +72,7 @@ public interface ICFSecSecTentRole
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentRoleId);
-	
-	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
+
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
 	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -81,6 +80,7 @@ public interface ICFSecSecTentRole
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);

@@ -70,18 +70,22 @@ public interface ICFSecSecSysGrpInc
 
 	public ICFSecSecSysGrpIncPKey getPKey();
 	public void setPKey(ICFSecSecSysGrpIncPKey pkey );
-	
-	public ICFSecSecSysGrp getRequiredContainerGroup();
-	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
-	public ICFSecSecSysGrp getRequiredParentSubGroup();
-	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredParentSubGroup(String argInclName);
+
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 	public String getRequiredInclName();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecSysGrp getRequiredContainerGroup();
+	public ICFSecSecSysGrp getRequiredParentSubGroup();
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
+	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj);
+	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj);
+	public void setRequiredParentSubGroup(String argInclName);
+	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj);
+	public void setRequiredParentSubGroup(ICFSecProtSecSysGrp argObj);
+	public void setRequiredParentSubGroup(ICFSecPubSecSysGrp argObj);
 	@Override
 	public boolean equals( Object obj );
 	

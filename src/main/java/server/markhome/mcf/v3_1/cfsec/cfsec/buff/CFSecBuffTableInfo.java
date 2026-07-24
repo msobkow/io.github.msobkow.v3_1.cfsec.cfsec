@@ -87,24 +87,6 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
-	public int getRequiredTableInfoId() {
-		return( requiredTableInfoId );
-	}
-
-	@Override
-	public void setRequiredTableInfoId( int value ) {
-		if( value < ICFSecTableInfo.TABLEINFOID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredTableInfoId",
-				1,
-				"value",
-				value,
-				ICFSecTableInfo.TABLEINFOID_MIN_VALUE );
-		}
-		requiredTableInfoId = value;
-	}
-
-	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}
@@ -143,16 +125,6 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
-	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
-		setOptionalParentSuperRef(argObj.getRequiredTableName());
-	}
-
-	@Override
-	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
-		setOptionalParentSuperRef(argObj.getRequiredTableName());
-	}
-
-	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
 		optionalSuperName = argSuperName;
 	}
@@ -180,6 +152,7 @@ public class CFSecBuffTableInfo
 			return( results );
 		}
 	}
+
 	@Override
 	public String getRequiredSchemaName() {
 		return( requiredSchemaName );

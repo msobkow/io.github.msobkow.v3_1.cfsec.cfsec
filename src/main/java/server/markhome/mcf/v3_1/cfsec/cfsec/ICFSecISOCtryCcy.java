@@ -71,18 +71,22 @@ public interface ICFSecISOCtryCcy
 
 	public ICFSecISOCtryCcyPKey getPKey();
 	public void setPKey(ICFSecISOCtryCcyPKey pkey );
-	
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public ICFSecISOCcy getRequiredParentCcy();
-	public void setRequiredParentCcy(ICFSecISOCcy argObj);
-	public void setRequiredParentCcy(short argISOCcyId);
+
 	public short getRequiredISOCtryId();
 	public short getRequiredISOCcyId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecISOCtry getRequiredContainerCtry();
+	public ICFSecISOCcy getRequiredParentCcy();
+	public void setRequiredContainerCtry(short argISOCtryId);
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+	public void setRequiredParentCcy(short argISOCcyId);
+	public void setRequiredParentCcy(ICFSecISOCcy argObj);
+	public void setRequiredParentCcy(ICFSecProtISOCcy argObj);
+	public void setRequiredParentCcy(ICFSecPubISOCcy argObj);
 	@Override
 	public boolean equals( Object obj );
 	

@@ -70,14 +70,14 @@ public interface ICFSecSecSysRole
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysRoleId);
-	
-	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
-	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
+
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
+	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

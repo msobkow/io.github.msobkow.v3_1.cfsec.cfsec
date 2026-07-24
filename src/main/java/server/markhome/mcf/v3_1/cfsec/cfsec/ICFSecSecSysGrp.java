@@ -73,17 +73,17 @@ public interface ICFSecSecSysGrp
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysGrpId);
-	
-	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
-	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
-	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
+
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
 	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp();
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp();
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole();
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole();
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();

@@ -72,15 +72,15 @@ public interface ICFSecTenant
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
-	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
-	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
+	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
 	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
 	public void setRequiredContainerCluster(ICFSecProtCluster argObj);

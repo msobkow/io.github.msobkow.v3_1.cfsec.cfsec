@@ -70,18 +70,21 @@ public interface ICFSecSecTentGrpMemb
 
 	public ICFSecSecTentGrpMembPKey getPKey();
 	public void setPKey(ICFSecSecTentGrpMembPKey pkey );
-	
-	public ICFSecSecTentGrp getRequiredContainerGroup();
-	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId);
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(String argLoginId);
+
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 	public String getRequiredLoginId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecTentGrp getRequiredContainerGroup();
+	public ICFSecSecUser getRequiredParentUser();
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId);
+	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
+	public void setRequiredContainerGroup(ICFSecProtSecTentGrp argObj);
+	public void setRequiredParentUser(String argLoginId);
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 	@Override
 	public boolean equals( Object obj );
 	
