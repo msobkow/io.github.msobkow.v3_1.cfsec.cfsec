@@ -121,7 +121,6 @@ public interface ICFSecISOTZone
 
 	public void set( ICFSecProtISOTZone src );
 
-	@Override
 	public void setISOTZone( ICFSecProtISOTZone src );
 
 	public void set( ICFSecProtISOTZoneH src );

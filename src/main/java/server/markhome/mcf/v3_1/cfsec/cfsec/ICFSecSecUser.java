@@ -128,7 +128,6 @@ public interface ICFSecSecUser
 
 	public void set( ICFSecProtSecUser src );
 
-	@Override
 	public void setSecUser( ICFSecProtSecUser src );
 
 	public void set( ICFSecProtSecUserH src );

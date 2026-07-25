@@ -103,7 +103,6 @@ public interface ICFSecISOCtryLang
 
 	public void set( ICFSecProtISOCtryLang src );
 
-	@Override
 	public void setISOCtryLang( ICFSecProtISOCtryLang src );
 
 	public void set( ICFSecProtISOCtryLangH src );

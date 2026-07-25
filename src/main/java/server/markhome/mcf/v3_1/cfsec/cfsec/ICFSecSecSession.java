@@ -92,7 +92,6 @@ public interface ICFSecSecSession
 
 	public void set( ICFSecProtSecSession src );
 
-	@Override
 	public void setSecSession( ICFSecProtSecSession src );
 
 	public void set( ICFSecProtSecSessionH src );

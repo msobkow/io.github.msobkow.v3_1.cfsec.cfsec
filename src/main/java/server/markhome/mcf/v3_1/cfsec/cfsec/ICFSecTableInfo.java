@@ -85,7 +85,6 @@ public interface ICFSecTableInfo
 	public String getRequiredTableName();
 	public void setRequiredTableName( String value );
 	public String getOptionalSuperName();
-	public void setOptionalSuperName( String value );
 	public int getRequiredBackingClassCode();
 	public void setRequiredBackingClassCode( int value );
 	public int getRequiredRuntimeClassCode();
@@ -114,7 +113,6 @@ public interface ICFSecTableInfo
 
 	public void set( ICFSecProtTableInfo src );
 
-	@Override
 	public void setTableInfo( ICFSecProtTableInfo src );
 
 	public void set( ICFSecProtTableInfoH src );

@@ -99,9 +99,7 @@ public interface ICFSecSecClusRole
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
-	public void setRequiredName( String value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -118,7 +116,6 @@ public interface ICFSecSecClusRole
 
 	public void set( ICFSecProtSecClusRole src );
 
-	@Override
 	public void setSecClusRole( ICFSecProtSecClusRole src );
 
 	public void set( ICFSecProtSecClusRoleH src );

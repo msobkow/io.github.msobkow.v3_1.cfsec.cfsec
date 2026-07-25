@@ -109,7 +109,6 @@ public interface ICFSecISOCtry
 
 	public void set( ICFSecProtISOCtry src );
 
-	@Override
 	public void setISOCtry( ICFSecProtISOCtry src );
 
 	public void set( ICFSecProtISOCtryH src );

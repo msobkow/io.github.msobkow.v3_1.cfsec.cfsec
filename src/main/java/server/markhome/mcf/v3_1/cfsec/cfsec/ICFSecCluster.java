@@ -113,7 +113,6 @@ public interface ICFSecCluster
 
 	public void set( ICFSecProtCluster src );
 
-	@Override
 	public void setCluster( ICFSecProtCluster src );
 
 	public void set( ICFSecProtClusterH src );

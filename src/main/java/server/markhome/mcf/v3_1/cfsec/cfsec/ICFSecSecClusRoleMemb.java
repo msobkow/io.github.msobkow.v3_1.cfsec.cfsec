@@ -102,7 +102,6 @@ public interface ICFSecSecClusRoleMemb
 
 	public void set( ICFSecProtSecClusRoleMemb src );
 
-	@Override
 	public void setSecClusRoleMemb( ICFSecProtSecClusRoleMemb src );
 
 	public void set( ICFSecProtSecClusRoleMembH src );

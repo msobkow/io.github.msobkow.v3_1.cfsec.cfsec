@@ -102,7 +102,6 @@ public interface ICFSecSecSysGrpMemb
 
 	public void set( ICFSecProtSecSysGrpMemb src );
 
-	@Override
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMemb src );
 
 	public void set( ICFSecProtSecSysGrpMembH src );

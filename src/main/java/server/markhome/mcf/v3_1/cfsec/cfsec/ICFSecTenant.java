@@ -96,7 +96,6 @@ public interface ICFSecTenant
 	public void setRequiredContainerCluster(ICFSecProtCluster argObj);
 	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );
 	public boolean equals( Object obj );
@@ -115,7 +114,6 @@ public interface ICFSecTenant
 
 	public void set( ICFSecProtTenant src );
 
-	@Override
 	public void setTenant( ICFSecProtTenant src );
 
 	public void set( ICFSecProtTenantH src );

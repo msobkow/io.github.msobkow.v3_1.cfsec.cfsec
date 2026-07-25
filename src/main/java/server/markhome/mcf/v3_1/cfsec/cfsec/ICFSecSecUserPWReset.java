@@ -112,7 +112,6 @@ public interface ICFSecSecUserPWReset
 
 	public void set( ICFSecProtSecUserPWReset src );
 
-	@Override
 	public void setSecUserPWReset( ICFSecProtSecUserPWReset src );
 
 	public void set( ICFSecProtSecUserPWResetH src );

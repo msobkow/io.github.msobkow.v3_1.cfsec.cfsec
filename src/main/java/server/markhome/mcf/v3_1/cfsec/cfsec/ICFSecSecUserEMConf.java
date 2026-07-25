@@ -115,7 +115,6 @@ public interface ICFSecSecUserEMConf
 
 	public void set( ICFSecProtSecUserEMConf src );
 
-	@Override
 	public void setSecUserEMConf( ICFSecProtSecUserEMConf src );
 
 	public void set( ICFSecProtSecUserEMConfH src );

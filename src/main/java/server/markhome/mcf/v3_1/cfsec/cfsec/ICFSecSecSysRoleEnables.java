@@ -102,7 +102,6 @@ public interface ICFSecSecSysRoleEnables
 
 	public void set( ICFSecProtSecSysRoleEnables src );
 
-	@Override
 	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnables src );
 
 	public void set( ICFSecProtSecSysRoleEnablesH src );

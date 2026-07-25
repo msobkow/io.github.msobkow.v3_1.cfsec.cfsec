@@ -106,7 +106,6 @@ public interface ICFSecSecSysRole
 
 	public void set( ICFSecProtSecSysRole src );
 
-	@Override
 	public void setSecSysRole( ICFSecProtSecSysRole src );
 
 	public void set( ICFSecProtSecSysRoleH src );

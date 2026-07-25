@@ -114,7 +114,6 @@ public interface ICFSecISOCcy
 
 	public void set( ICFSecProtISOCcy src );
 
-	@Override
 	public void setISOCcy( ICFSecProtISOCcy src );
 
 	public void set( ICFSecProtISOCcyH src );

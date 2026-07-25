@@ -102,7 +102,6 @@ public interface ICFSecSecSysRoleMemb
 
 	public void set( ICFSecProtSecSysRoleMemb src );
 
-	@Override
 	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMemb src );
 
 	public void set( ICFSecProtSecSysRoleMembH src );

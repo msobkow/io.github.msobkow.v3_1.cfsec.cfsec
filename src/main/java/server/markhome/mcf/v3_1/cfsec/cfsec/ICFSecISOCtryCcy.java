@@ -103,7 +103,6 @@ public interface ICFSecISOCtryCcy
 
 	public void set( ICFSecProtISOCtryCcy src );
 
-	@Override
 	public void setISOCtryCcy( ICFSecProtISOCtryCcy src );
 
 	public void set( ICFSecProtISOCtryCcyH src );

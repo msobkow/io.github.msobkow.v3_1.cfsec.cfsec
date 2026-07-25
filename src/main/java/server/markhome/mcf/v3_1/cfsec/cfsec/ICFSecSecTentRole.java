@@ -99,9 +99,7 @@ public interface ICFSecSecTentRole
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
-	public void setRequiredName( String value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -118,7 +116,6 @@ public interface ICFSecSecTentRole
 
 	public void set( ICFSecProtSecTentRole src );
 
-	@Override
 	public void setSecTentRole( ICFSecProtSecTentRole src );
 
 	public void set( ICFSecProtSecTentRoleH src );

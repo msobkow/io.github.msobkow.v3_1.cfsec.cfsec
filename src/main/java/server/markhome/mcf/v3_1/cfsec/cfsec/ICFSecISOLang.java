@@ -110,7 +110,6 @@ public interface ICFSecISOLang
 
 	public void set( ICFSecProtISOLang src );
 
-	@Override
 	public void setISOLang( ICFSecProtISOLang src );
 
 	public void set( ICFSecProtISOLangH src );
