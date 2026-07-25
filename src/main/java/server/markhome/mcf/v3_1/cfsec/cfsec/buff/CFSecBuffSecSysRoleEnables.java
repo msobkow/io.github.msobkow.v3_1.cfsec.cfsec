@@ -158,6 +158,11 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
+	}
+
+	@Override
 	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
@@ -179,11 +184,6 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
-		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
-	}
-
-	@Override
 	public ICFSecSecSysGrp getRequiredParentEnableGroup() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -195,6 +195,11 @@ public class CFSecBuffSecSysRoleEnables
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredEnableName());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredParentEnableGroup(String argEnableName) {
+		getPKey().setRequiredEnableName(argEnableName);
 	}
 
 	@Override
@@ -216,11 +221,6 @@ public class CFSecBuffSecSysRoleEnables
 	@Override
 	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj) {
 		setRequiredParentEnableGroup(argObj.getRequiredName());
-	}
-
-	@Override
-	public void setRequiredParentEnableGroup(String argEnableName) {
-		getPKey().setRequiredEnableName(argEnableName);
 	}
 
 	@Override

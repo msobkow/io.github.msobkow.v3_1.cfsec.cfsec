@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a TableInfo record implementation
+// Description: Java 25 interface for a TableInfo record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -66,8 +66,9 @@ public interface ICFSecTableInfo
 	public int getClassCode();
 
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredTableInfoId);
-	
+
 	public int getRequiredTableInfoId();
 	public void setRequiredTableInfoId( int value );
 	public int getRequiredRevision();
@@ -84,6 +85,7 @@ public interface ICFSecTableInfo
 	public String getRequiredTableName();
 	public void setRequiredTableName( String value );
 	public String getOptionalSuperName();
+	public void setOptionalSuperName( String value );
 	public int getRequiredBackingClassCode();
 	public void setRequiredBackingClassCode( int value );
 	public int getRequiredRuntimeClassCode();
@@ -96,32 +98,38 @@ public interface ICFSecTableInfo
 	public void setRequiredSecScopeName( String value );
 	public String getRequiredCodeVis();
 	public void setRequiredCodeVis( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecTableInfo src );
+
 	public void setTableInfo( ICFSecTableInfo src );
+
 	public void set( ICFSecTableInfoH src );
+
 	public void setTableInfo( ICFSecTableInfoH src );
 
 	public void set( ICFSecProtTableInfo src );
+
+	@Override
 	public void setTableInfo( ICFSecProtTableInfo src );
+
 	public void set( ICFSecProtTableInfoH src );
+
 	public void setTableInfo( ICFSecProtTableInfoH src );
 
 	public void set( ICFSecPubTableInfo src );
+
 	public void setTableInfo( ICFSecPubTableInfo src );
+
 	public void set( ICFSecPubTableInfoH src );
+
 	public void setTableInfo( ICFSecPubTableInfoH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

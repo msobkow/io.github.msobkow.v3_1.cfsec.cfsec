@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUserPassword record implementation
+// Description: Java 25 interface for a SecUserPassword record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -56,11 +56,15 @@ public interface ICFSecSecUserPassword
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-	
+
 	public ICFSecSecUser getRequiredContainerUser();
+
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
@@ -69,22 +73,21 @@ public interface ICFSecSecUserPassword
 	public void setRequiredPWSetStamp( LocalDateTime value );
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecUserPassword src );
+
 	public void setSecUserPassword( ICFSecSecUserPassword src );
+
 	public void set( ICFSecSecUserPasswordH src );
+
 	public void setSecUserPassword( ICFSecSecUserPasswordH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

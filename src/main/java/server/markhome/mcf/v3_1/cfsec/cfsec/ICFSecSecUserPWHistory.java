@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUserPWHistory record implementation
+// Description: Java 25 interface for a SecUserPWHistory record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -57,12 +57,17 @@ public interface ICFSecSecUserPWHistory
 	public int getClassCode();
 
 	public ICFSecSecUserPWHistoryPKey getPKey();
+
 	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
-	
+
 	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+
+	public void setRequiredSecUserId(CFLibDbKeyHash256 value);
+
 	public LocalDateTime getRequiredPWSetStamp();
-	public void setRequiredPWSetStamp( LocalDateTime value );
+
+	public void setRequiredPWSetStamp(LocalDateTime value);
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -70,22 +75,21 @@ public interface ICFSecSecUserPWHistory
 	public void setRequiredPWReplacedStamp( LocalDateTime value );
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecUserPWHistory src );
+
 	public void setSecUserPWHistory( ICFSecSecUserPWHistory src );
+
 	public void set( ICFSecSecUserPWHistoryH src );
+
 	public void setSecUserPWHistory( ICFSecSecUserPWHistoryH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

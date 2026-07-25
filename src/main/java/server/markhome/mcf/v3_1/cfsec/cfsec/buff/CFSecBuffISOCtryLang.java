@@ -158,6 +158,11 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
+	public void setRequiredContainerCtry(short argISOCtryId) {
+		getPKey().setRequiredISOCtryId(argISOCtryId);
+	}
+
+	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
@@ -179,11 +184,6 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
-	public void setRequiredContainerCtry(short argISOCtryId) {
-		getPKey().setRequiredISOCtryId(argISOCtryId);
-	}
-
-	@Override
 	public ICFSecISOLang getRequiredParentLang() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -195,6 +195,11 @@ public class CFSecBuffISOCtryLang
 		}
 		ICFSecISOLang targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredParentLang(short argISOLangId) {
+		getPKey().setRequiredISOLangId(argISOLangId);
 	}
 
 	@Override
@@ -216,11 +221,6 @@ public class CFSecBuffISOCtryLang
 	@Override
 	public void setRequiredParentLang(ICFSecPubISOLang argObj) {
 		setRequiredParentLang(argObj.getRequiredISOLangId());
-	}
-
-	@Override
-	public void setRequiredParentLang(short argISOLangId) {
-		getPKey().setRequiredISOLangId(argISOLangId);
 	}
 
 	@Override

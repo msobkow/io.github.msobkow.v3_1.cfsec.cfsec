@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecTentRole record implementation
+// Description: Java 25 interface for a SecTentRole record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -62,18 +62,27 @@ public interface ICFSecSecTentRole
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentRoleId);
-	
+
 	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
+
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
 	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -90,28 +99,33 @@ public interface ICFSecSecTentRole
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
-	@Override
+	public void setRequiredName( String value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecTentRole src );
+
 	public void setSecTentRole( ICFSecSecTentRole src );
+
 	public void set( ICFSecSecTentRoleH src );
+
 	public void setSecTentRole( ICFSecSecTentRoleH src );
 
 	public void set( ICFSecProtSecTentRole src );
+
+	@Override
 	public void setSecTentRole( ICFSecProtSecTentRole src );
+
 	public void set( ICFSecProtSecTentRoleH src );
+
 	public void setSecTentRole( ICFSecProtSecTentRoleH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

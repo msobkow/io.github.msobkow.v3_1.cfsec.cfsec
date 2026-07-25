@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecSysRoleMemb record implementation
+// Description: Java 25 interface for a SecSysRoleMemb record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -60,49 +60,56 @@ public interface ICFSecSecSysRoleMemb
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecSecSysRoleMembPKey getPKey();
+
 	public void setPKey(ICFSecSecSysRoleMembPKey pkey );
-	
-	public ICFSecSecSysRole getRequiredContainerSysRole();
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(String argLoginId);
+
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
+
 	public String getRequiredLoginId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecSysRoleMemb src );
+
 	public void setSecSysRoleMemb( ICFSecSecSysRoleMemb src );
+
 	public void set( ICFSecSecSysRoleMembH src );
+
 	public void setSecSysRoleMemb( ICFSecSecSysRoleMembH src );
 
 	public void set( ICFSecProtSecSysRoleMemb src );
+
+	@Override
 	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMemb src );
+
 	public void set( ICFSecProtSecSysRoleMembH src );
+
 	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMembH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

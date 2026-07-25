@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecSession record implementation
+// Description: Java 25 interface for a SecSession record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -60,8 +60,9 @@ public interface ICFSecSecSession
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecSessionId);
-	
+
 	public CFLibDbKeyHash256 getRequiredSecSessionId();
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -75,32 +76,38 @@ public interface ICFSecSecSession
 	public void setOptionalFinish( LocalDateTime value );
 	public CFLibDbKeyHash256 getOptionalSecProxyId();
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecSession src );
+
 	public void setSecSession( ICFSecSecSession src );
+
 	public void set( ICFSecSecSessionH src );
+
 	public void setSecSession( ICFSecSecSessionH src );
 
 	public void set( ICFSecProtSecSession src );
+
+	@Override
 	public void setSecSession( ICFSecProtSecSession src );
+
 	public void set( ICFSecProtSecSessionH src );
+
 	public void setSecSession( ICFSecProtSecSessionH src );
 
 	public void set( ICFSecPubSecSession src );
+
 	public void setSecSession( ICFSecPubSecSession src );
+
 	public void set( ICFSecPubSecSessionH src );
+
 	public void setSecSession( ICFSecPubSecSessionH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

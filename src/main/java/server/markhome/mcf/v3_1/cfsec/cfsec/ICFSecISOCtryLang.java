@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a ISOCtryLang record implementation
+// Description: Java 25 interface for a ISOCtryLang record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -61,54 +61,64 @@ public interface ICFSecISOCtryLang
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecISOCtryLangPKey getPKey();
+
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
-	
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public ICFSecISOLang getRequiredParentLang();
-	public void setRequiredParentLang(ICFSecISOLang argObj);
-	public void setRequiredParentLang(short argISOLangId);
+
 	public short getRequiredISOCtryId();
+
 	public short getRequiredISOLangId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecISOCtryLang src );
+
 	public void setISOCtryLang( ICFSecISOCtryLang src );
+
 	public void set( ICFSecISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecISOCtryLangH src );
 
 	public void set( ICFSecProtISOCtryLang src );
+
+	@Override
 	public void setISOCtryLang( ICFSecProtISOCtryLang src );
+
 	public void set( ICFSecProtISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecProtISOCtryLangH src );
 
 	public void set( ICFSecPubISOCtryLang src );
+
 	public void setISOCtryLang( ICFSecPubISOCtryLang src );
+
 	public void set( ICFSecPubISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecPubISOCtryLangH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

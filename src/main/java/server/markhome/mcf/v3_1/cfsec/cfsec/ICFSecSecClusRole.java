@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecClusRole record implementation
+// Description: Java 25 interface for a SecClusRole record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -62,18 +62,27 @@ public interface ICFSecSecClusRole
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusRoleId);
-	
+
 	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
+
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -90,28 +99,33 @@ public interface ICFSecSecClusRole
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
-	@Override
+	public void setRequiredName( String value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecClusRole src );
+
 	public void setSecClusRole( ICFSecSecClusRole src );
+
 	public void set( ICFSecSecClusRoleH src );
+
 	public void setSecClusRole( ICFSecSecClusRoleH src );
 
 	public void set( ICFSecProtSecClusRole src );
+
+	@Override
 	public void setSecClusRole( ICFSecProtSecClusRole src );
+
 	public void set( ICFSecProtSecClusRoleH src );
+
 	public void setSecClusRole( ICFSecProtSecClusRoleH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

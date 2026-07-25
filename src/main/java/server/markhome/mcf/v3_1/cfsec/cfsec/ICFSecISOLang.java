@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a ISOLang record implementation
+// Description: Java 25 interface for a ISOLang record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -62,18 +62,27 @@ public interface ICFSecISOLang
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Short getPKey();
+
 	public void setPKey(Short requiredISOLangId);
-	
+
 	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
+
 	public short getRequiredISOLangId();
 	public void setRequiredISOLangId( short value );
 	public int getRequiredRevision();
@@ -85,32 +94,38 @@ public interface ICFSecISOLang
 	public void setOptionalISO6391Code( String value );
 	public String getRequiredEnglishName();
 	public void setRequiredEnglishName( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecISOLang src );
+
 	public void setISOLang( ICFSecISOLang src );
+
 	public void set( ICFSecISOLangH src );
+
 	public void setISOLang( ICFSecISOLangH src );
 
 	public void set( ICFSecProtISOLang src );
+
+	@Override
 	public void setISOLang( ICFSecProtISOLang src );
+
 	public void set( ICFSecProtISOLangH src );
+
 	public void setISOLang( ICFSecProtISOLangH src );
 
 	public void set( ICFSecPubISOLang src );
+
 	public void setISOLang( ICFSecPubISOLang src );
+
 	public void set( ICFSecPubISOLangH src );
+
 	public void setISOLang( ICFSecPubISOLangH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

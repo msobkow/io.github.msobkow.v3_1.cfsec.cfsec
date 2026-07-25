@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SysCluster record implementation
+// Description: Java 25 interface for a SysCluster record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -58,8 +58,9 @@ public interface ICFSecSysCluster
 	public int getClassCode();
 
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredSingletonId);
-	
+
 	public int getRequiredSingletonId();
 	public void setRequiredSingletonId( int value );
 	public int getRequiredRevision();
@@ -71,32 +72,39 @@ public interface ICFSecSysCluster
 	public void setRequiredContainerCluster(ICFSecProtCluster argObj);
 	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
-	@Override
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSysCluster src );
+
 	public void setSysCluster( ICFSecSysCluster src );
+
 	public void set( ICFSecSysClusterH src );
+
 	public void setSysCluster( ICFSecSysClusterH src );
 
 	public void set( ICFSecProtSysCluster src );
+
+	@Override
 	public void setSysCluster( ICFSecProtSysCluster src );
+
 	public void set( ICFSecProtSysClusterH src );
+
 	public void setSysCluster( ICFSecProtSysClusterH src );
 
 	public void set( ICFSecPubSysCluster src );
+
 	public void setSysCluster( ICFSecPubSysCluster src );
+
 	public void set( ICFSecPubSysClusterH src );
+
 	public void setSysCluster( ICFSecPubSysClusterH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

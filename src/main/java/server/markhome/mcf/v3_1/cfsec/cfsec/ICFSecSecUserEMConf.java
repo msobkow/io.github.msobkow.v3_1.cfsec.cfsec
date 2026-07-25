@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUserEMConf record implementation
+// Description: Java 25 interface for a SecUserEMConf record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -62,20 +62,31 @@ public interface ICFSecSecUserEMConf
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-	
+
 	public ICFSecSecUser getRequiredContainerUser();
+
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
@@ -88,27 +99,30 @@ public interface ICFSecSecUserEMConf
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value );
 	public boolean getRequiredNewAccount();
 	public void setRequiredNewAccount( boolean value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecUserEMConf src );
+
 	public void setSecUserEMConf( ICFSecSecUserEMConf src );
+
 	public void set( ICFSecSecUserEMConfH src );
+
 	public void setSecUserEMConf( ICFSecSecUserEMConfH src );
 
 	public void set( ICFSecProtSecUserEMConf src );
+
+	@Override
 	public void setSecUserEMConf( ICFSecProtSecUserEMConf src );
+
 	public void set( ICFSecProtSecUserEMConfH src );
+
 	public void setSecUserEMConf( ICFSecProtSecUserEMConfH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

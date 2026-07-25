@@ -158,6 +158,11 @@ public class CFSecBuffSecTentGrpMemb
 	}
 
 	@Override
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId) {
+		getPKey().setRequiredSecTentGrpId(argSecTentGrpId);
+	}
+
+	@Override
 	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
@@ -174,11 +179,6 @@ public class CFSecBuffSecTentGrpMemb
 	}
 
 	@Override
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId) {
-		getPKey().setRequiredSecTentGrpId(argSecTentGrpId);
-	}
-
-	@Override
 	public ICFSecSecUser getRequiredParentUser() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -190,6 +190,11 @@ public class CFSecBuffSecTentGrpMemb
 		}
 		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredParentUser(String argLoginId) {
+		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override
@@ -211,11 +216,6 @@ public class CFSecBuffSecTentGrpMemb
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
 		setRequiredParentUser(argObj.getRequiredLoginId());
-	}
-
-	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecClusGrpMemb record implementation
+// Description: Java 25 interface for a SecClusGrpMemb record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -60,49 +60,56 @@ public interface ICFSecSecClusGrpMemb
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecSecClusGrpMembPKey getPKey();
+
 	public void setPKey(ICFSecSecClusGrpMembPKey pkey );
-	
-	public ICFSecSecClusGrp getRequiredContainerGroup();
-	public void setRequiredContainerGroup(ICFSecSecClusGrp argObj);
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecClusGrpId);
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(String argLoginId);
+
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
+
 	public String getRequiredLoginId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecClusGrpMemb src );
+
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMemb src );
+
 	public void set( ICFSecSecClusGrpMembH src );
+
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMembH src );
 
 	public void set( ICFSecProtSecClusGrpMemb src );
+
+	@Override
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMemb src );
+
 	public void set( ICFSecProtSecClusGrpMembH src );
+
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMembH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

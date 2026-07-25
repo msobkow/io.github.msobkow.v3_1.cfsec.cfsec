@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a ISOCtry record implementation
+// Description: Java 25 interface for a ISOCtry record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -61,19 +61,29 @@ public interface ICFSecISOCtry
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Short getPKey();
+
 	public void setPKey(Short requiredISOCtryId);
-	
+
 	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
+
 	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
+
 	public short getRequiredISOCtryId();
 	public void setRequiredISOCtryId( short value );
 	public int getRequiredRevision();
@@ -83,32 +93,38 @@ public interface ICFSecISOCtry
 	public void setRequiredISOCode( String value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecISOCtry src );
+
 	public void setISOCtry( ICFSecISOCtry src );
+
 	public void set( ICFSecISOCtryH src );
+
 	public void setISOCtry( ICFSecISOCtryH src );
 
 	public void set( ICFSecProtISOCtry src );
+
+	@Override
 	public void setISOCtry( ICFSecProtISOCtry src );
+
 	public void set( ICFSecProtISOCtryH src );
+
 	public void setISOCtry( ICFSecProtISOCtryH src );
 
 	public void set( ICFSecPubISOCtry src );
+
 	public void setISOCtry( ICFSecPubISOCtry src );
+
 	public void set( ICFSecPubISOCtryH src );
+
 	public void setISOCtry( ICFSecPubISOCtryH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

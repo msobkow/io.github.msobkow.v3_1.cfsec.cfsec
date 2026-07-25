@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecUser record implementation
+// Description: Java 25 interface for a SecUser record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -67,20 +67,31 @@ public interface ICFSecSecUser
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-	
+
 	public ICFSecSecUserPassword getOptionalComponentsPassword();
+
 	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
+
 	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
+
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -101,32 +112,38 @@ public interface ICFSecSecUser
 	public void setOptionalDfltTentGrpName( String value );
 	public String getRequiredEMailAddress();
 	public void setRequiredEMailAddress( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecUser src );
+
 	public void setSecUser( ICFSecSecUser src );
+
 	public void set( ICFSecSecUserH src );
+
 	public void setSecUser( ICFSecSecUserH src );
 
 	public void set( ICFSecProtSecUser src );
+
+	@Override
 	public void setSecUser( ICFSecProtSecUser src );
+
 	public void set( ICFSecProtSecUserH src );
+
 	public void setSecUser( ICFSecProtSecUserH src );
 
 	public void set( ICFSecPubSecUser src );
+
 	public void setSecUser( ICFSecPubSecUser src );
+
 	public void set( ICFSecPubSecUserH src );
+
 	public void setSecUser( ICFSecPubSecUserH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

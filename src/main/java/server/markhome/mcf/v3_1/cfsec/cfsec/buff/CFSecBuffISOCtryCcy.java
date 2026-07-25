@@ -158,6 +158,11 @@ public class CFSecBuffISOCtryCcy
 	}
 
 	@Override
+	public void setRequiredContainerCtry(short argISOCtryId) {
+		getPKey().setRequiredISOCtryId(argISOCtryId);
+	}
+
+	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
@@ -179,11 +184,6 @@ public class CFSecBuffISOCtryCcy
 	}
 
 	@Override
-	public void setRequiredContainerCtry(short argISOCtryId) {
-		getPKey().setRequiredISOCtryId(argISOCtryId);
-	}
-
-	@Override
 	public ICFSecISOCcy getRequiredParentCcy() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -195,6 +195,11 @@ public class CFSecBuffISOCtryCcy
 		}
 		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredParentCcy(short argISOCcyId) {
+		getPKey().setRequiredISOCcyId(argISOCcyId);
 	}
 
 	@Override
@@ -216,11 +221,6 @@ public class CFSecBuffISOCtryCcy
 	@Override
 	public void setRequiredParentCcy(ICFSecPubISOCcy argObj) {
 		setRequiredParentCcy(argObj.getRequiredISOCcyId());
-	}
-
-	@Override
-	public void setRequiredParentCcy(short argISOCcyId) {
-		getPKey().setRequiredISOCcyId(argISOCcyId);
 	}
 
 	@Override

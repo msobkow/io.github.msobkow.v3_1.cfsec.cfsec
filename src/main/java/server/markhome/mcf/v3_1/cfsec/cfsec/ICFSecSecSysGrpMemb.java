@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a SecSysGrpMemb record implementation
+// Description: Java 25 interface for a SecSysGrpMemb record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -60,49 +60,56 @@ public interface ICFSecSecSysGrpMemb
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecSecSysGrpMembPKey getPKey();
+
 	public void setPKey(ICFSecSecSysGrpMembPKey pkey );
-	
-	public ICFSecSecSysGrp getRequiredContainerGroup();
-	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(String argLoginId);
+
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
+
 	public String getRequiredLoginId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecSecSysGrpMemb src );
+
 	public void setSecSysGrpMemb( ICFSecSecSysGrpMemb src );
+
 	public void set( ICFSecSecSysGrpMembH src );
+
 	public void setSecSysGrpMemb( ICFSecSecSysGrpMembH src );
 
 	public void set( ICFSecProtSecSysGrpMemb src );
+
+	@Override
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMemb src );
+
 	public void set( ICFSecProtSecSysGrpMembH src );
+
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMembH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

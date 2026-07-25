@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a ISOCtryCcy record implementation
+// Description: Java 25 interface for a ISOCtryCcy record declementation
 
 /*
  *	server.markhome.mcf.CFSec
@@ -61,54 +61,64 @@ public interface ICFSecISOCtryCcy
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecISOCtryCcyPKey getPKey();
+
 	public void setPKey(ICFSecISOCtryCcyPKey pkey );
-	
-	public ICFSecISOCtry getRequiredContainerCtry();
-	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
-	public void setRequiredContainerCtry(short argISOCtryId);
-	public ICFSecISOCcy getRequiredParentCcy();
-	public void setRequiredParentCcy(ICFSecISOCcy argObj);
-	public void setRequiredParentCcy(short argISOCcyId);
+
 	public short getRequiredISOCtryId();
+
 	public short getRequiredISOCcyId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFSecISOCtryCcy src );
+
 	public void setISOCtryCcy( ICFSecISOCtryCcy src );
+
 	public void set( ICFSecISOCtryCcyH src );
+
 	public void setISOCtryCcy( ICFSecISOCtryCcyH src );
 
 	public void set( ICFSecProtISOCtryCcy src );
+
+	@Override
 	public void setISOCtryCcy( ICFSecProtISOCtryCcy src );
+
 	public void set( ICFSecProtISOCtryCcyH src );
+
 	public void setISOCtryCcy( ICFSecProtISOCtryCcyH src );
 
 	public void set( ICFSecPubISOCtryCcy src );
+
 	public void setISOCtryCcy( ICFSecPubISOCtryCcy src );
+
 	public void set( ICFSecPubISOCtryCcyH src );
+
 	public void setISOCtryCcy( ICFSecPubISOCtryCcyH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }
