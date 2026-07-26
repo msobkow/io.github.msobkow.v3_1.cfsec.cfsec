@@ -88,6 +88,8 @@ public interface ICFSecSecSysRole
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
+	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

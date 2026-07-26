@@ -93,6 +93,10 @@ public interface ICFSecCluster
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecTenant> getOptionalComponentsTenant();
+	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
+	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 	public String getRequiredFullDomName();
 	public void setRequiredFullDomName( String value );
 	public String getRequiredDescription();

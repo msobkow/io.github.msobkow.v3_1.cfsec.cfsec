@@ -97,6 +97,9 @@ public interface ICFSecSecUser
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecUserPassword getOptionalComponentsPassword();
+	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
+	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenClusSecGrpMemb();
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb();

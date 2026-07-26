@@ -90,6 +90,7 @@ public interface ICFSecSecClusRole
 
 	public ICFSecCluster getRequiredOwnerCluster();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);

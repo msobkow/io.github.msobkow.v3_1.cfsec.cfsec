@@ -90,6 +90,7 @@ public interface ICFSecSecTentRole
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);

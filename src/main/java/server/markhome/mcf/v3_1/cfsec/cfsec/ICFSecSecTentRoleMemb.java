@@ -86,6 +86,15 @@ public interface ICFSecSecTentRoleMemb
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecTentRole getRequiredContainerRole();
+	public ICFSecSecUser getRequiredParentUser();
+	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecTentRoleId);
+	public void setRequiredContainerRole(ICFSecSecTentRole argObj);
+	public void setRequiredContainerRole(ICFSecProtSecTentRole argObj);
+	public void setRequiredParentUser(String argLoginId);
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 	public boolean equals( Object obj );
 
 	public int hashCode();

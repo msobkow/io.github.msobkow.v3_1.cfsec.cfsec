@@ -87,6 +87,16 @@ public interface ICFSecISOCtryLang
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecISOCtry getRequiredContainerCtry();
+	public ICFSecISOLang getRequiredParentLang();
+	public void setRequiredContainerCtry(short argISOCtryId);
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+	public void setRequiredParentLang(short argISOLangId);
+	public void setRequiredParentLang(ICFSecISOLang argObj);
+	public void setRequiredParentLang(ICFSecProtISOLang argObj);
+	public void setRequiredParentLang(ICFSecPubISOLang argObj);
 	public boolean equals( Object obj );
 
 	public int hashCode();
