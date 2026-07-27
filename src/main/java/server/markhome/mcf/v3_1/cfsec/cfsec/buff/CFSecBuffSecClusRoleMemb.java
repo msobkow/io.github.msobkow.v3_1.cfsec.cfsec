@@ -158,38 +158,6 @@ public class CFSecBuffSecClusRoleMemb
 	}
 
 	@Override
-	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecClusRoleId) {
-		getPKey().setRequiredSecClusRoleId(argSecClusRoleId);
-	}
-
-	@Override
-	public void setRequiredContainerRole(ICFSecSecClusRole argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerRole", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredSecClusRoleId(argObj.getRequiredSecClusRoleId());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecClusRoleId) {
-		getPKey().setRequiredSecClusRoleId(argSecClusRoleId);
-	}
-
-	@Override
-	public void setRequiredContainerRole(ICFSecProtSecClusRole argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerRole", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredSecClusRoleId(argObj.getRequiredSecClusRoleId());
-		}
-	
-	}
-
-	@Override
 	public ICFSecSecUser getRequiredParentUser() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -201,49 +169,6 @@ public class CFSecBuffSecClusRoleMemb
 		}
 		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
-	}
-
-	@Override
-	public void setRequiredParentUser(ICFSecSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
-	}
-
-	@Override
-	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
-		}
-	
 	}
 
 	@Override

@@ -158,49 +158,6 @@ public class CFSecBuffSecSysGrpInc
 	}
 
 	@Override
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
-		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
-	}
-
-	@Override
-	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
-		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
-	}
-
-	@Override
-	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
-		}
-	
-	}
-
-	@Override
 	public ICFSecSecSysGrp getRequiredParentSubGroup() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -212,49 +169,6 @@ public class CFSecBuffSecSysGrpInc
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredInclName());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredParentSubGroup(String argInclName) {
-		getPKey().setRequiredInclName(argInclName);
-	}
-
-	@Override
-	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSubGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredParentSubGroup(String argInclName) {
-		getPKey().setRequiredInclName(argInclName);
-	}
-
-	@Override
-	public void setRequiredParentSubGroup(ICFSecProtSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSubGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
-		}
-	
-	}
-
-	@Override
-	public void setRequiredParentSubGroup(ICFSecPubSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSubGroup", 1, "argObj");
-		}
-		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
-		}
-	
 	}
 
 	@Override
