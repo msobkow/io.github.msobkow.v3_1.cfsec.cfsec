@@ -190,11 +190,6 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
-		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
-	}
-
-	@Override
 	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
@@ -249,11 +244,6 @@ public class CFSecBuffSecSysGrpMemb
 			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	
-	}
-
-	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override

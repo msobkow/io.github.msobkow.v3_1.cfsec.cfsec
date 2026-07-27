@@ -190,11 +190,6 @@ public class CFSecBuffISOCtryCcy
 	}
 
 	@Override
-	public void setRequiredContainerCtry(short argISOCtryId) {
-		getPKey().setRequiredISOCtryId(argISOCtryId);
-	}
-
-	@Override
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
@@ -249,11 +244,6 @@ public class CFSecBuffISOCtryCcy
 			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	
-	}
-
-	@Override
-	public void setRequiredParentCcy(short argISOCcyId) {
-		getPKey().setRequiredISOCcyId(argISOCcyId);
 	}
 
 	@Override

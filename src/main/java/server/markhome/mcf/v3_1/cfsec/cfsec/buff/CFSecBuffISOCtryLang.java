@@ -190,11 +190,6 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
-	public void setRequiredContainerCtry(short argISOCtryId) {
-		getPKey().setRequiredISOCtryId(argISOCtryId);
-	}
-
-	@Override
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
@@ -249,11 +244,6 @@ public class CFSecBuffISOCtryLang
 			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	
-	}
-
-	@Override
-	public void setRequiredParentLang(short argISOLangId) {
-		getPKey().setRequiredISOLangId(argISOLangId);
 	}
 
 	@Override

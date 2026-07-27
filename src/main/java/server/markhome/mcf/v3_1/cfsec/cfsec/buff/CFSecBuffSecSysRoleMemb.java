@@ -190,11 +190,6 @@ public class CFSecBuffSecSysRoleMemb
 	}
 
 	@Override
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
-		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
-	}
-
-	@Override
 	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
@@ -249,11 +244,6 @@ public class CFSecBuffSecSysRoleMemb
 			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	
-	}
-
-	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override

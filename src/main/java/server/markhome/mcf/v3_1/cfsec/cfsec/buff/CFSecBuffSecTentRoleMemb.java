@@ -236,11 +236,6 @@ public class CFSecBuffSecTentRoleMemb
 	}
 
 	@Override
-	public void setRequiredParentUser(String argLoginId) {
-		getPKey().setRequiredLoginId(argLoginId);
-	}
-
-	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
