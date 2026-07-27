@@ -89,8 +89,6 @@ public interface ICFSecISOCtry
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
-	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
 	public String getRequiredISOCode();
 	public void setRequiredISOCode( String value );
 	public String getRequiredName();

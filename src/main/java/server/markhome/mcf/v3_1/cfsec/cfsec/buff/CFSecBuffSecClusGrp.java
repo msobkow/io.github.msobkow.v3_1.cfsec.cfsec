@@ -186,31 +186,6 @@ public class CFSecBuffSecClusGrp
 	}
 
 	@Override
-	public void setRequiredOwnerCluster(ICFSecCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
-		}
-		else {
-			requiredClusterId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
-		setRequiredOwnerCluster(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
-		setRequiredOwnerCluster(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
-	}
-
-	@Override
 	public ICFSecSecSysGrp getRequiredContainerSysGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -222,31 +197,6 @@ public class CFSecBuffSecClusGrp
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
-		}
-		else {
-			requiredName = argObj.getRequiredName();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj) {
-		setRequiredContainerSysGrp(argObj.getRequiredName());
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj) {
-		setRequiredContainerSysGrp(argObj.getRequiredName());
-	}
-
-	@Override
-	public void setRequiredContainerSysGrp(String argName) {
-		requiredName = argName;
 	}
 
 	@Override

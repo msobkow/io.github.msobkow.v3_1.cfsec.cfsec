@@ -90,15 +90,6 @@ public interface ICFSecSecClusGrp
 
 	public ICFSecCluster getRequiredOwnerCluster();
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
-	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
-	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
-	public void setRequiredOwnerCluster(ICFSecCluster argObj);
-	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);
-	public void setRequiredOwnerCluster(ICFSecPubCluster argObj);
-	public void setRequiredContainerSysGrp(String argName);
-	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
-	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj);
-	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	public boolean equals( Object obj );

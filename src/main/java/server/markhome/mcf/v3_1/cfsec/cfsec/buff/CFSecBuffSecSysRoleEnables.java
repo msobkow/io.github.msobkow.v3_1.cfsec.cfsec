@@ -174,13 +174,35 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
+	}
+
+	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
 	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
+	
 	}
 
 	@Override
@@ -214,13 +236,35 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
+	public void setRequiredParentEnableGroup(String argEnableName) {
+		getPKey().setRequiredEnableName(argEnableName);
+	}
+
+	@Override
 	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj) {
-		setRequiredParentEnableGroup(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredEnableName(argObj.getRequiredName());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredParentEnableGroup(String argEnableName) {
+		getPKey().setRequiredEnableName(argEnableName);
 	}
 
 	@Override
 	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj) {
-		setRequiredParentEnableGroup(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredEnableName(argObj.getRequiredName());
+		}
+	
 	}
 
 	@Override

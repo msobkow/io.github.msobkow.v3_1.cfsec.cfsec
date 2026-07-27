@@ -174,13 +174,35 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
+	public void setRequiredContainerCtry(short argISOCtryId) {
+		getPKey().setRequiredISOCtryId(argISOCtryId);
+	}
+
+	@Override
 	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredContainerCtry(short argISOCtryId) {
+		getPKey().setRequiredISOCtryId(argISOCtryId);
 	}
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
+	
 	}
 
 	@Override
@@ -214,13 +236,35 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
+	public void setRequiredParentLang(short argISOLangId) {
+		getPKey().setRequiredISOLangId(argISOLangId);
+	}
+
+	@Override
 	public void setRequiredParentLang(ICFSecProtISOLang argObj) {
-		setRequiredParentLang(argObj.getRequiredISOLangId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredParentLang(short argISOLangId) {
+		getPKey().setRequiredISOLangId(argISOLangId);
 	}
 
 	@Override
 	public void setRequiredParentLang(ICFSecPubISOLang argObj) {
-		setRequiredParentLang(argObj.getRequiredISOLangId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+		}
+	
 	}
 
 	@Override

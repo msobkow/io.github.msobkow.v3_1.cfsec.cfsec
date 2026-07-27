@@ -174,13 +174,35 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
+		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
+	}
+
+	@Override
 	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
+		getPKey().setRequiredSecSysGrpId(argSecSysGrpId);
 	}
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
+	
 	}
 
 	@Override
@@ -214,13 +236,35 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
+	public void setRequiredParentUser(String argLoginId) {
+		getPKey().setRequiredLoginId(argLoginId);
+	}
+
+	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredParentUser(String argLoginId) {
+		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	
 	}
 
 	@Override

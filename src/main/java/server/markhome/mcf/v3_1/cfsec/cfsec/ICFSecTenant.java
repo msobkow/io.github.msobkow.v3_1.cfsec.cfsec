@@ -91,12 +91,6 @@ public interface ICFSecTenant
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
-	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
-	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
-	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
-	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(ICFSecProtCluster argObj);
-	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );

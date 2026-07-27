@@ -174,13 +174,35 @@ public class CFSecBuffSecSysRoleMemb
 	}
 
 	@Override
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
+	}
+
+	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		getPKey().setRequiredSecSysRoleId(argSecSysRoleId);
 	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
+	
 	}
 
 	@Override
@@ -214,13 +236,35 @@ public class CFSecBuffSecSysRoleMemb
 	}
 
 	@Override
+	public void setRequiredParentUser(String argLoginId) {
+		getPKey().setRequiredLoginId(argLoginId);
+	}
+
+	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	
+	}
+
+	@Override
+	public void setRequiredParentUser(String argLoginId) {
+		getPKey().setRequiredLoginId(argLoginId);
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	
 	}
 
 	@Override

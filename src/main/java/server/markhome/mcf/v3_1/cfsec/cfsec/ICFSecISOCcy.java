@@ -90,7 +90,6 @@ public interface ICFSecISOCcy
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry();
 	public String getRequiredISOCode();
 	public void setRequiredISOCode( String value );
 	public String getRequiredName();

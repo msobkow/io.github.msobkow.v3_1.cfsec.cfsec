@@ -86,16 +86,6 @@ public interface ICFSecSecSysRoleEnables
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecSysRole getRequiredContainerSysRole();
-	public ICFSecSecSysGrp getRequiredParentEnableGroup();
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
-	public void setRequiredParentEnableGroup(String argEnableName);
-	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
-	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj);
-	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
 	public boolean equals( Object obj );
 
 	public int hashCode();

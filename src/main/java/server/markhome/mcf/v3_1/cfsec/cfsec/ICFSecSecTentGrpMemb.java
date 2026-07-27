@@ -86,15 +86,6 @@ public interface ICFSecSecTentGrpMemb
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecTentGrp getRequiredContainerGroup();
-	public ICFSecSecUser getRequiredParentUser();
-	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId);
-	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
-	public void setRequiredContainerGroup(ICFSecProtSecTentGrp argObj);
-	public void setRequiredParentUser(String argLoginId);
-	public void setRequiredParentUser(ICFSecSecUser argObj);
-	public void setRequiredParentUser(ICFSecProtSecUser argObj);
-	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 	public boolean equals( Object obj );
 
 	public int hashCode();
