@@ -77,56 +77,8 @@ public class CFSecBuffTenant
 	}
 
 	@Override
-	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecTentGrpTable targetTable = targetBackingSchema.getTableSecTentGrp();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
-		}
-		ICFSecSecTentGrp[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentGrp> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecTentGrp> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
-	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecTentRoleTable targetTable = targetBackingSchema.getTableSecTentRole();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
-		}
-		ICFSecSecTentRole[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentRole> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecTentRole> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -137,7 +89,7 @@ public class CFSecBuffTenant
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -207,6 +159,54 @@ public class CFSecBuffTenant
 		}
 		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentGrpTable targetTable = targetBackingSchema.getTableSecTentGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
+		}
+		ICFSecSecTentGrp[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFSecSecTentGrp> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentGrp> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleTable targetTable = targetBackingSchema.getTableSecTentRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
+		}
+		ICFSecSecTentRole[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFSecSecTentRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentRole> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

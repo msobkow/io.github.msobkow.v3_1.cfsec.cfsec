@@ -72,7 +72,7 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public int getRequiredSingletonId() {
-		return( requiredSingletonId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class CFSecBuffSysCluster
 				value,
 				ICFSecSysCluster.SINGLETONID_MAX_VALUE );
 		}
-		requiredSingletonId = value;
+		setPKey( value );
 	}
 
 	@Override

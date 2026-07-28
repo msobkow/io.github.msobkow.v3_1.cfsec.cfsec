@@ -75,56 +75,8 @@ public class CFSecBuffSecSysRole
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecSysRoleEnablesTable targetTable = targetBackingSchema.getTableSecSysRoleEnables();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
-		}
-		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
-		if( targetArr != null ) {
-			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecSysRoleEnables> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
-	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecSysRoleMembTable targetTable = targetBackingSchema.getTableSecSysRoleMemb();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
-		}
-		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
-		if( targetArr != null ) {
-			List<ICFSecSecSysRoleMemb> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecSysRoleMemb> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( requiredSecSysRoleId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -135,7 +87,7 @@ public class CFSecBuffSecSysRole
 				1,
 				"value" );
 		}
-		requiredSecSysRoleId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -191,6 +143,54 @@ public class CFSecBuffSecSysRole
 	@Override
 	public int getClassCode() {
 		return( ICFSecSecSysRole.CLASS_CODE );
+	}
+
+	@Override
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleEnablesTable targetTable = targetBackingSchema.getTableSecSysRoleEnables();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
+		}
+		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleMembTable targetTable = targetBackingSchema.getTableSecSysRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
+		}
+		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

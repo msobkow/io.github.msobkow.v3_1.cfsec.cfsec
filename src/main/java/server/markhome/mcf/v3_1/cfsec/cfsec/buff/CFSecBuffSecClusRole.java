@@ -77,32 +77,8 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecClusRoleMembTable targetTable = targetBackingSchema.getTableSecClusRoleMemb();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRoleMemb()");
-		}
-		ICFSecSecClusRoleMemb[] targetArr = targetTable.readDerivedByClusRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
-		if( targetArr != null ) {
-			List<ICFSecSecClusRoleMemb> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecClusRoleMemb> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		return( requiredSecClusRoleId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -113,7 +89,7 @@ public class CFSecBuffSecClusRole
 				1,
 				"value" );
 		}
-		requiredSecClusRoleId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -197,6 +173,30 @@ public class CFSecBuffSecClusRole
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusRoleMembTable targetTable = targetBackingSchema.getTableSecClusRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRoleMemb()");
+		}
+		ICFSecSecClusRoleMemb[] targetArr = targetTable.readDerivedByClusRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

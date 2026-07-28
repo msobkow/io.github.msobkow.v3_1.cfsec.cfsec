@@ -88,7 +88,7 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public int getRequiredTableInfoId() {
-		return( requiredTableInfoId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -101,7 +101,7 @@ public class CFSecBuffTableInfo
 				value,
 				ICFSecTableInfo.TABLEINFOID_MIN_VALUE );
 		}
-		requiredTableInfoId = value;
+		setPKey( value );
 	}
 
 	@Override

@@ -81,32 +81,8 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
-		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public short getRequiredISOCcyId() {
-		return( requiredISOCcyId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -119,7 +95,7 @@ public class CFSecBuffISOCcy
 				value,
 				ICFSecISOCcy.ISOCCYID_MIN_VALUE );
 		}
-		requiredISOCcyId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -175,6 +151,30 @@ public class CFSecBuffISOCcy
 	@Override
 	public int getClassCode() {
 		return( ICFSecISOCcy.CLASS_CODE );
+	}
+
+	@Override
+	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		}
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

@@ -58,7 +58,7 @@ public class CFSecBuffSecClusRoleMembByLoginIdxKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return( requiredLoginId );
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class CFSecBuffSecClusRoleMembByLoginIdxKey
 				value.length(),
 				32 );
 		}
-		requiredLoginId = value;
+		getPKey().setRequiredLoginId( value );
 	}
 
 	@Override

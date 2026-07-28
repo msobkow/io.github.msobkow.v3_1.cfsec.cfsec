@@ -78,37 +78,8 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
-	public ICFSecSecUser getRequiredContainerUser() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
-		}
-		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			requiredSecUserId = argObj.getRequiredSecUserId();
-		}
-	
-	}
-
-	@Override
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		requiredSecUserId = argSecUserId;
-	}
-	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return( getPKey() );
 	}
 
 	@Override

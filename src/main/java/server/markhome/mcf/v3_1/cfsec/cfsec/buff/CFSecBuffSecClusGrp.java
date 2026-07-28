@@ -77,32 +77,8 @@ public class CFSecBuffSecClusGrp
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecClusGrpMembTable targetTable = targetBackingSchema.getTableSecClusGrpMemb();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusGrpMemb()");
-		}
-		ICFSecSecClusGrpMemb[] targetArr = targetTable.readDerivedByClusGrpIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusGrpId());
-		if( targetArr != null ) {
-			List<ICFSecSecClusGrpMemb> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecSecClusGrpMemb> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return( requiredSecClusGrpId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -113,7 +89,7 @@ public class CFSecBuffSecClusGrp
 				1,
 				"value" );
 		}
-		requiredSecClusGrpId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -197,6 +173,30 @@ public class CFSecBuffSecClusGrp
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusGrpMembTable targetTable = targetBackingSchema.getTableSecClusGrpMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusGrpMemb()");
+		}
+		ICFSecSecClusGrpMemb[] targetArr = targetTable.readDerivedByClusGrpIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusGrpId());
+		if( targetArr != null ) {
+			List<ICFSecSecClusGrpMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusGrpMemb> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

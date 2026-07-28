@@ -58,7 +58,7 @@ public class CFSecBuffSecTentRoleMembByTentRoleIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return( requiredSecTentRoleId );
+		return( getPKey().getRequiredSecTentRoleId() );
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class CFSecBuffSecTentRoleMembByTentRoleIdxKey
 				1,
 				"value" );
 		}
-		requiredSecTentRoleId = value;
+		getPKey().setRequiredSecTentRoleId( value );
 	}
 
 	@Override

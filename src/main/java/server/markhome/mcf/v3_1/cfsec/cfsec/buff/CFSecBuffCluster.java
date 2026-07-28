@@ -77,6 +77,77 @@ public class CFSecBuffCluster
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
+
+	@Override
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getCreatedByUserId() {
+		return( createdByUserId );
+	}
+
+	@Override
+	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
+		createdByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( createdAt );
+	}
+
+	@Override
+	public void setCreatedAt( LocalDateTime value ) {
+		createdAt = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getUpdatedByUserId() {
+		return( updatedByUserId );
+	}
+
+	@Override
+	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
+		updatedByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( updatedAt );
+	}
+
+	@Override
+	public void setUpdatedAt( LocalDateTime value ) {
+		updatedAt = value;
+	}
+
+	@Override
+	public int getRequiredRevision() {
+		return( requiredRevision );
+	}
+
+	@Override
+	public void setRequiredRevision( int value ) {
+		requiredRevision = value;
+	}
+
+	@Override
+	public int getClassCode() {
+		return( ICFSecCluster.CLASS_CODE );
+	}
+
+	@Override
 	public List<ICFSecTenant> getOptionalComponentsTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -170,77 +241,6 @@ public class CFSecBuffCluster
 			List<ICFSecSysCluster> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
-	}
-
-	@Override
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getCreatedByUserId() {
-		return( createdByUserId );
-	}
-
-	@Override
-	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
-		createdByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getCreatedAt() {
-		return( createdAt );
-	}
-
-	@Override
-	public void setCreatedAt( LocalDateTime value ) {
-		createdAt = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getUpdatedByUserId() {
-		return( updatedByUserId );
-	}
-
-	@Override
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
-		updatedByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getUpdatedAt() {
-		return( updatedAt );
-	}
-
-	@Override
-	public void setUpdatedAt( LocalDateTime value ) {
-		updatedAt = value;
-	}
-
-	@Override
-	public int getRequiredRevision() {
-		return( requiredRevision );
-	}
-
-	@Override
-	public void setRequiredRevision( int value ) {
-		requiredRevision = value;
-	}
-
-	@Override
-	public int getClassCode() {
-		return( ICFSecCluster.CLASS_CODE );
 	}
 
 	@Override
