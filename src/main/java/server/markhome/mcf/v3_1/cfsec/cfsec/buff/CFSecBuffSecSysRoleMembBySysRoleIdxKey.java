@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleMembBySysRoleIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( getPKey().getRequiredSecSysRoleId() );
+		return( requiredSecSysRoleId );
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class CFSecBuffSecSysRoleMembBySysRoleIdxKey
 				1,
 				"value" );
 		}
-		getPKey().setRequiredSecSysRoleId( value );
+		requiredSecSysRoleId = value;
 	}
 
 	@Override

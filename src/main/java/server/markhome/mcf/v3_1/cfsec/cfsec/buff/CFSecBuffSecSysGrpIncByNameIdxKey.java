@@ -58,7 +58,7 @@ public class CFSecBuffSecSysGrpIncByNameIdxKey
 
 	@Override
 	public String getRequiredInclName() {
-		return( getPKey().getRequiredInclName() );
+		return( requiredInclName );
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class CFSecBuffSecSysGrpIncByNameIdxKey
 				value.length(),
 				64 );
 		}
-		getPKey().setRequiredInclName( value );
+		requiredInclName = value;
 	}
 
 	@Override

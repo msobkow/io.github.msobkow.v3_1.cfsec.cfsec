@@ -58,7 +58,7 @@ public class CFSecBuffSecUserPWHistoryBySetStampIdxKey
 
 	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
-		return( getPKey().getRequiredPWSetStamp() );
+		return( requiredPWSetStamp );
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class CFSecBuffSecUserPWHistoryBySetStampIdxKey
 				1,
 				"value" );
 		}
-		getPKey().setRequiredPWSetStamp( value );
+		requiredPWSetStamp = value;
 	}
 
 	@Override

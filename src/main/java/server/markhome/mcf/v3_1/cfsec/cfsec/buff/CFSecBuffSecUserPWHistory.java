@@ -83,8 +83,14 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
-		getPKey().setRequiredSecUserId(value);
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecUserId( value );
 	}
 
 	@Override
@@ -93,8 +99,14 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public void setRequiredPWSetStamp(LocalDateTime value) {
-		getPKey().setRequiredPWSetStamp(value);
+	public void setRequiredPWSetStamp( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPWSetStamp",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredPWSetStamp( value );
 	}
 
 	@Override

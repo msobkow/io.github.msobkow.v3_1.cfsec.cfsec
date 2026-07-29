@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleEnablesByNameIdxKey
 
 	@Override
 	public String getRequiredEnableName() {
-		return( getPKey().getRequiredEnableName() );
+		return( requiredEnableName );
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class CFSecBuffSecSysRoleEnablesByNameIdxKey
 				value.length(),
 				64 );
 		}
-		getPKey().setRequiredEnableName( value );
+		requiredEnableName = value;
 	}
 
 	@Override

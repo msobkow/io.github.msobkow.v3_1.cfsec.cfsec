@@ -58,7 +58,7 @@ public class CFSecBuffISOCtryLangByLangIdxKey
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( getPKey().getRequiredISOLangId() );
+		return( requiredISOLangId );
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class CFSecBuffISOCtryLangByLangIdxKey
 				value,
 				ICFSecISOCtryLang.ISOLANGID_MIN_VALUE );
 		}
-		getPKey().setRequiredISOLangId( value );
+		requiredISOLangId = value;
 	}
 
 	@Override

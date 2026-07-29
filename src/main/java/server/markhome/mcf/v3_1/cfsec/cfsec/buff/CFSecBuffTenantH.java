@@ -206,17 +206,6 @@ public class CFSecBuffTenantH
 	}
 
 	@Override
-	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredClusterId",
-				1,
-				"value" );
-		}
-		requiredClusterId = value;
-	}
-
-	@Override
 	public String getRequiredTenantName() {
 		return( requiredTenantName );
 	}

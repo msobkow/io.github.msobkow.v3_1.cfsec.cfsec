@@ -165,7 +165,7 @@ public class CFSecBuffSecUser
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPassword", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPassword()");
 		}
-		ICFSecSecUserPassword targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		ICFSecSecUserPassword targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
@@ -179,7 +179,7 @@ public class CFSecBuffSecUser
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEMConf", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserEMConf()");
 		}
-		ICFSecSecUserEMConf targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		ICFSecSecUserEMConf targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
@@ -193,7 +193,7 @@ public class CFSecBuffSecUser
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPWReset", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPWReset()");
 		}
-		ICFSecSecUserPWReset targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		ICFSecSecUserPWReset targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
