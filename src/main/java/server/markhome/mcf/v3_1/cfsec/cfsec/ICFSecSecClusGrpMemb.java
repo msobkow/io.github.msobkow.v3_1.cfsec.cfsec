@@ -58,32 +58,61 @@ public interface ICFSecSecClusGrpMemb
 	public final static String S_CLASS_CODE = "a013";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public ICFSecSecClusGrpMembPKey getPKey();
+
 	public void setPKey(ICFSecSecClusGrpMembPKey pkey );
+
+	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
+
+	public String getRequiredLoginId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecClusGrp getRequiredContainerGroup();
+
 	public ICFSecSecUser getRequiredParentUser();
+
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecClusGrpMemb src );
+
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMemb src );
+
 	public void set( ICFSecSecClusGrpMembH src );
+
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMembH src );
+
 	public void set( ICFSecProtSecClusGrpMemb src );
+
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMemb src );
+
 	public void set( ICFSecProtSecClusGrpMembH src );
+
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMembH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

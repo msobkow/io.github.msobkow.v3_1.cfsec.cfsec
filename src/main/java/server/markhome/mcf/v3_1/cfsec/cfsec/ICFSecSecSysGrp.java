@@ -61,47 +61,91 @@ public interface ICFSecSecSysGrp
 	public final static String S_CLASS_CODE = "a00e";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysGrpId);
+
+	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
+
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
+
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
+
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
+
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
+
 	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
+
 	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp();
+
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp();
+
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole();
+
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole();
+
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();
+
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
+
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecSysGrp src );
+
 	public void setSecSysGrp( ICFSecSecSysGrp src );
+
 	public void set( ICFSecSecSysGrpH src );
+
 	public void setSecSysGrp( ICFSecSecSysGrpH src );
+
 	public void set( ICFSecProtSecSysGrp src );
+
 	public void setSecSysGrp( ICFSecProtSecSysGrp src );
+
 	public void set( ICFSecProtSecSysGrpH src );
+
 	public void setSecSysGrp( ICFSecProtSecSysGrpH src );
+
 	public void set( ICFSecPubSecSysGrp src );
+
 	public void setSecSysGrp( ICFSecPubSecSysGrp src );
+
 	public void set( ICFSecPubSecSysGrpH src );
+
 	public void setSecSysGrp( ICFSecPubSecSysGrpH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

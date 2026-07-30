@@ -59,36 +59,69 @@ public interface ICFSecISOCtryLang
 	public final static String S_CLASS_CODE = "a006";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public ICFSecISOCtryLangPKey getPKey();
+
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
+
+	public short getRequiredISOCtryId();
+
+	public short getRequiredISOLangId();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecISOCtry getRequiredContainerCtry();
+
 	public ICFSecISOLang getRequiredParentLang();
+
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecISOCtryLang src );
+
 	public void setISOCtryLang( ICFSecISOCtryLang src );
+
 	public void set( ICFSecISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecISOCtryLangH src );
+
 	public void set( ICFSecProtISOCtryLang src );
+
 	public void setISOCtryLang( ICFSecProtISOCtryLang src );
+
 	public void set( ICFSecProtISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecProtISOCtryLangH src );
+
 	public void set( ICFSecPubISOCtryLang src );
+
 	public void setISOCtryLang( ICFSecPubISOCtryLang src );
+
 	public void set( ICFSecPubISOCtryLangH src );
+
 	public void setISOCtryLang( ICFSecPubISOCtryLangH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

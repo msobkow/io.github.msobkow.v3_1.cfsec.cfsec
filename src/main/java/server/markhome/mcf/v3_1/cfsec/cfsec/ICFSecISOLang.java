@@ -60,20 +60,36 @@ public interface ICFSecISOLang
 	public final static String S_CLASS_CODE = "a007";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public Short getPKey();
+
 	public void setPKey(Short requiredISOLangId);
+
+	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
+
+	public short getRequiredISOLangId();
+	public void setRequiredISOLangId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
+
 	public String getRequiredISO6392Code();
 	public void setRequiredISO6392Code( String value );
 	public String getOptionalISO6391Code();
@@ -81,20 +97,36 @@ public interface ICFSecISOLang
 	public String getRequiredEnglishName();
 	public void setRequiredEnglishName( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecISOLang src );
+
 	public void setISOLang( ICFSecISOLang src );
+
 	public void set( ICFSecISOLangH src );
+
 	public void setISOLang( ICFSecISOLangH src );
+
 	public void set( ICFSecProtISOLang src );
+
 	public void setISOLang( ICFSecProtISOLang src );
+
 	public void set( ICFSecProtISOLangH src );
+
 	public void setISOLang( ICFSecProtISOLangH src );
+
 	public void set( ICFSecPubISOLang src );
+
 	public void setISOLang( ICFSecPubISOLang src );
+
 	public void set( ICFSecPubISOLangH src );
+
 	public void setISOLang( ICFSecPubISOLangH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

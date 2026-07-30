@@ -64,13 +64,20 @@ public interface ICFSecTableInfo
 	public final static String S_CLASS_CODE = "a020";
 
 	public int getClassCode();
+
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredTableInfoId);
+
+	public int getRequiredTableInfoId();
+	public void setRequiredTableInfoId( int value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTableInfo getOptionalParentSuperRef();
+
 	public List<ICFSecTableInfo> getOptionalChildrenSubRefs();
+
 	public String getRequiredSchemaName();
 	public void setRequiredSchemaName( String value );
 	public String getRequiredTableName();
@@ -89,20 +96,36 @@ public interface ICFSecTableInfo
 	public String getRequiredCodeVis();
 	public void setRequiredCodeVis( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecTableInfo src );
+
 	public void setTableInfo( ICFSecTableInfo src );
+
 	public void set( ICFSecTableInfoH src );
+
 	public void setTableInfo( ICFSecTableInfoH src );
+
 	public void set( ICFSecProtTableInfo src );
+
 	public void setTableInfo( ICFSecProtTableInfo src );
+
 	public void set( ICFSecProtTableInfoH src );
+
 	public void setTableInfo( ICFSecProtTableInfoH src );
+
 	public void set( ICFSecPubTableInfo src );
+
 	public void setTableInfo( ICFSecPubTableInfo src );
+
 	public void set( ICFSecPubTableInfoH src );
+
 	public void setTableInfo( ICFSecPubTableInfoH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

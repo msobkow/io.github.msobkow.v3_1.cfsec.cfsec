@@ -54,27 +54,52 @@ public interface ICFSecSecUserPassword
 	public final static String S_CLASS_CODE = "a00a";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
+
+	public ICFSecSecUser getRequiredContainerUser();
+
+	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
+
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
+
+	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecUser getRequiredContainerUser();
+
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
 	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
+
 	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
+
 	public LocalDateTime getRequiredPWSetStamp();
 	public void setRequiredPWSetStamp( LocalDateTime value );
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecUserPassword src );
+
 	public void setSecUserPassword( ICFSecSecUserPassword src );
+
 	public void set( ICFSecSecUserPasswordH src );
+
 	public void setSecUserPassword( ICFSecSecUserPasswordH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -58,32 +58,61 @@ public interface ICFSecSecSysRoleEnables
 	public final static String S_CLASS_CODE = "a018";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public ICFSecSecSysRoleEnablesPKey getPKey();
+
 	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
+
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
+
+	public String getRequiredEnableName();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecSysRole getRequiredContainerSysRole();
+
 	public ICFSecSecSysGrp getRequiredParentEnableGroup();
+
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecSysRoleEnables src );
+
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnables src );
+
 	public void set( ICFSecSecSysRoleEnablesH src );
+
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnablesH src );
+
 	public void set( ICFSecProtSecSysRoleEnables src );
+
 	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnables src );
+
 	public void set( ICFSecProtSecSysRoleEnablesH src );
+
 	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnablesH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

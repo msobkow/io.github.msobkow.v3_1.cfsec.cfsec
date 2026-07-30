@@ -58,32 +58,61 @@ public interface ICFSecSecSysGrpInc
 	public final static String S_CLASS_CODE = "a00f";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public ICFSecSecSysGrpIncPKey getPKey();
+
 	public void setPKey(ICFSecSecSysGrpIncPKey pkey );
+
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
+
+	public String getRequiredInclName();
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecSysGrp getRequiredContainerGroup();
+
 	public ICFSecSecSysGrp getRequiredParentSubGroup();
+
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecSysGrpInc src );
+
 	public void setSecSysGrpInc( ICFSecSecSysGrpInc src );
+
 	public void set( ICFSecSecSysGrpIncH src );
+
 	public void setSecSysGrpInc( ICFSecSecSysGrpIncH src );
+
 	public void set( ICFSecProtSecSysGrpInc src );
+
 	public void setSecSysGrpInc( ICFSecProtSecSysGrpInc src );
+
 	public void set( ICFSecProtSecSysGrpIncH src );
+
 	public void setSecSysGrpInc( ICFSecProtSecSysGrpIncH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

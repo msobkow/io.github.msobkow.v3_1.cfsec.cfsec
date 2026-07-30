@@ -58,38 +58,73 @@ public interface ICFSecSecSysRole
 	public final static String S_CLASS_CODE = "a017";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysRoleId);
+
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
+
+	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
+
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole();
+
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
+
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecSysRole src );
+
 	public void setSecSysRole( ICFSecSecSysRole src );
+
 	public void set( ICFSecSecSysRoleH src );
+
 	public void setSecSysRole( ICFSecSecSysRoleH src );
+
 	public void set( ICFSecProtSecSysRole src );
+
 	public void setSecSysRole( ICFSecProtSecSysRole src );
+
 	public void set( ICFSecProtSecSysRoleH src );
+
 	public void setSecSysRole( ICFSecProtSecSysRoleH src );
+
 	public void set( ICFSecPubSecSysRole src );
+
 	public void setSecSysRole( ICFSecPubSecSysRole src );
+
 	public void set( ICFSecPubSecSysRoleH src );
+
 	public void setSecSysRole( ICFSecPubSecSysRoleH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

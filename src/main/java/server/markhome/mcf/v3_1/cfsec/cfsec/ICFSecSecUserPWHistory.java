@@ -55,8 +55,19 @@ public interface ICFSecSecUserPWHistory
 	public final static String S_CLASS_CODE = "a00d";
 
 	public int getClassCode();
+
 	public ICFSecSecUserPWHistoryPKey getPKey();
+
 	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
+
+	public CFLibDbKeyHash256 getRequiredSecUserId();
+
+	public void setRequiredSecUserId(CFLibDbKeyHash256 value);
+
+	public LocalDateTime getRequiredPWSetStamp();
+
+	public void setRequiredPWSetStamp(LocalDateTime value);
+
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -65,12 +76,20 @@ public interface ICFSecSecUserPWHistory
 	public String getRequiredPasswordHash();
 	public void setRequiredPasswordHash( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFSecSecUserPWHistory src );
+
 	public void setSecUserPWHistory( ICFSecSecUserPWHistory src );
+
 	public void set( ICFSecSecUserPWHistoryH src );
+
 	public void setSecUserPWHistory( ICFSecSecUserPWHistoryH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }
