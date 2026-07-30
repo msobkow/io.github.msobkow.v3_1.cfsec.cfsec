@@ -65,50 +65,25 @@ public interface ICFSecSecUser
 	public final static String S_CLASS_CODE = "a009";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-
-	public ICFSecSecUserPassword getOptionalComponentsPassword();
-
-	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
-
-	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
-
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecUserPassword getOptionalComponentsPassword();
-
 	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
-
 	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
-
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
-
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenClusSecGrpMemb();
-
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenTentSecGrpMemb();
-
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
 	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
@@ -122,36 +97,20 @@ public interface ICFSecSecUser
 	public String getRequiredEMailAddress();
 	public void setRequiredEMailAddress( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSecUser src );
-
 	public void setSecUser( ICFSecSecUser src );
-
 	public void set( ICFSecSecUserH src );
-
 	public void setSecUser( ICFSecSecUserH src );
-
 	public void set( ICFSecProtSecUser src );
-
 	public void setSecUser( ICFSecProtSecUser src );
-
 	public void set( ICFSecProtSecUserH src );
-
 	public void setSecUser( ICFSecProtSecUserH src );
-
 	public void set( ICFSecPubSecUser src );
-
 	public void setSecUser( ICFSecPubSecUser src );
-
 	public void set( ICFSecPubSecUserH src );
-
 	public void setSecUser( ICFSecPubSecUserH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

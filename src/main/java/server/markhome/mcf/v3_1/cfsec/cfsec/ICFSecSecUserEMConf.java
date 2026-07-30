@@ -60,49 +60,24 @@ public interface ICFSecSecUserEMConf
 	public final static String S_CLASS_CODE = "a00b";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-
-	public ICFSecSecUser getRequiredContainerUser();
-
-	public void setRequiredContainerUser(ICFSecSecUser argObj);
-
-	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
-
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
-
-	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecUser getRequiredContainerUser();
-
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
-
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
-
 	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
-
 	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
-
 	public String getRequiredConfirmEMailAddr();
 	public void setRequiredConfirmEMailAddr( String value );
 	public LocalDateTime getRequiredEMailSentStamp();
@@ -112,28 +87,16 @@ public interface ICFSecSecUserEMConf
 	public boolean getRequiredNewAccount();
 	public void setRequiredNewAccount( boolean value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSecUserEMConf src );
-
 	public void setSecUserEMConf( ICFSecSecUserEMConf src );
-
 	public void set( ICFSecSecUserEMConfH src );
-
 	public void setSecUserEMConf( ICFSecSecUserEMConfH src );
-
 	public void set( ICFSecProtSecUserEMConf src );
-
 	public void setSecUserEMConf( ICFSecProtSecUserEMConf src );
-
 	public void set( ICFSecProtSecUserEMConfH src );
-
 	public void setSecUserEMConf( ICFSecProtSecUserEMConfH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

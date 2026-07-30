@@ -59,75 +59,40 @@ public interface ICFSecISOCtry
 	public final static String S_CLASS_CODE = "a004";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public Short getPKey();
-
 	public void setPKey(Short requiredISOCtryId);
-
-	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
-
-	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
-
-	public short getRequiredISOCtryId();
-	public void setRequiredISOCtryId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
-
 	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
-
 	public String getRequiredISOCode();
 	public void setRequiredISOCode( String value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecISOCtry src );
-
 	public void setISOCtry( ICFSecISOCtry src );
-
 	public void set( ICFSecISOCtryH src );
-
 	public void setISOCtry( ICFSecISOCtryH src );
-
 	public void set( ICFSecProtISOCtry src );
-
 	public void setISOCtry( ICFSecProtISOCtry src );
-
 	public void set( ICFSecProtISOCtryH src );
-
 	public void setISOCtry( ICFSecProtISOCtryH src );
-
 	public void set( ICFSecPubISOCtry src );
-
 	public void setISOCtry( ICFSecPubISOCtry src );
-
 	public void set( ICFSecPubISOCtryH src );
-
 	public void setISOCtry( ICFSecPubISOCtryH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

@@ -58,13 +58,8 @@ public interface ICFSecSecSession
 	public final static String S_CLASS_CODE = "a01e";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecSessionId);
-
-	public CFLibDbKeyHash256 getRequiredSecSessionId();
-	public void setRequiredSecSessionId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -77,36 +72,20 @@ public interface ICFSecSecSession
 	public CFLibDbKeyHash256 getOptionalSecProxyId();
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSecSession src );
-
 	public void setSecSession( ICFSecSecSession src );
-
 	public void set( ICFSecSecSessionH src );
-
 	public void setSecSession( ICFSecSecSessionH src );
-
 	public void set( ICFSecProtSecSession src );
-
 	public void setSecSession( ICFSecProtSecSession src );
-
 	public void set( ICFSecProtSecSessionH src );
-
 	public void setSecSession( ICFSecProtSecSessionH src );
-
 	public void set( ICFSecPubSecSession src );
-
 	public void setSecSession( ICFSecPubSecSession src );
-
 	public void set( ICFSecPubSecSessionH src );
-
 	public void setSecSession( ICFSecPubSecSessionH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

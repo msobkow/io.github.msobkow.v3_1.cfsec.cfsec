@@ -58,61 +58,32 @@ public interface ICFSecSecClusRoleMemb
 	public final static String S_CLASS_CODE = "a01b";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public ICFSecSecClusRoleMembPKey getPKey();
-
 	public void setPKey(ICFSecSecClusRoleMembPKey pkey );
-
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
-
-	public String getRequiredLoginId();
-
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecSecClusRole getRequiredContainerRole();
-
 	public ICFSecSecUser getRequiredParentUser();
-
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSecClusRoleMemb src );
-
 	public void setSecClusRoleMemb( ICFSecSecClusRoleMemb src );
-
 	public void set( ICFSecSecClusRoleMembH src );
-
 	public void setSecClusRoleMemb( ICFSecSecClusRoleMembH src );
-
 	public void set( ICFSecProtSecClusRoleMemb src );
-
 	public void setSecClusRoleMemb( ICFSecProtSecClusRoleMemb src );
-
 	public void set( ICFSecProtSecClusRoleMembH src );
-
 	public void setSecClusRoleMemb( ICFSecProtSecClusRoleMembH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

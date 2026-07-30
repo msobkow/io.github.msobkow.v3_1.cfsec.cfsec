@@ -67,29 +67,16 @@ public interface ICFSecISOTZone
 	public final static String S_CLASS_CODE = "a008";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public Short getPKey();
-
 	public void setPKey(Short requiredISOTZoneId);
-
-	public short getRequiredISOTZoneId();
-	public void setRequiredISOTZoneId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -106,36 +93,20 @@ public interface ICFSecISOTZone
 	public boolean getRequiredVisible();
 	public void setRequiredVisible( boolean value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecISOTZone src );
-
 	public void setISOTZone( ICFSecISOTZone src );
-
 	public void set( ICFSecISOTZoneH src );
-
 	public void setISOTZone( ICFSecISOTZoneH src );
-
 	public void set( ICFSecProtISOTZone src );
-
 	public void setISOTZone( ICFSecProtISOTZone src );
-
 	public void set( ICFSecProtISOTZoneH src );
-
 	public void setISOTZone( ICFSecProtISOTZoneH src );
-
 	public void set( ICFSecPubISOTZone src );
-
 	public void setISOTZone( ICFSecPubISOTZone src );
-
 	public void set( ICFSecPubISOTZoneH src );
-
 	public void setISOTZone( ICFSecPubISOTZoneH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

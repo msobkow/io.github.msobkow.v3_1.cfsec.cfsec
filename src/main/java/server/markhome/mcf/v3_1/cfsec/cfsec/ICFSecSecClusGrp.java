@@ -60,65 +60,35 @@ public interface ICFSecSecClusGrp
 	public final static String S_CLASS_CODE = "a011";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusGrpId);
-
-	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
-
-	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
-
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
-
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
-
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSecClusGrp src );
-
 	public void setSecClusGrp( ICFSecSecClusGrp src );
-
 	public void set( ICFSecSecClusGrpH src );
-
 	public void setSecClusGrp( ICFSecSecClusGrpH src );
-
 	public void set( ICFSecProtSecClusGrp src );
-
 	public void setSecClusGrp( ICFSecProtSecClusGrp src );
-
 	public void set( ICFSecProtSecClusGrpH src );
-
 	public void setSecClusGrp( ICFSecProtSecClusGrpH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

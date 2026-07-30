@@ -56,50 +56,28 @@ public interface ICFSecSysCluster
 	public final static String S_CLASS_CODE = "a01f";
 
 	public int getClassCode();
-
 	public Integer getPKey();
-
 	public void setPKey(Integer requiredSingletonId);
-
-	public int getRequiredSingletonId();
-	public void setRequiredSingletonId( int value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
-
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFSecSysCluster src );
-
 	public void setSysCluster( ICFSecSysCluster src );
-
 	public void set( ICFSecSysClusterH src );
-
 	public void setSysCluster( ICFSecSysClusterH src );
-
 	public void set( ICFSecProtSysCluster src );
-
 	public void setSysCluster( ICFSecProtSysCluster src );
-
 	public void set( ICFSecProtSysClusterH src );
-
 	public void setSysCluster( ICFSecProtSysClusterH src );
-
 	public void set( ICFSecPubSysCluster src );
-
 	public void setSysCluster( ICFSecPubSysCluster src );
-
 	public void set( ICFSecPubSysClusterH src );
-
 	public void setSysCluster( ICFSecPubSysClusterH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }
