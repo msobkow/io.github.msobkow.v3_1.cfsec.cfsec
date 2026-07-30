@@ -93,12 +93,24 @@ public interface ICFSecSecSysGrp
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
+
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
+
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
+
 	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp();
+
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp();
+
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole();
+
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole();
+
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName();
+
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
+
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();

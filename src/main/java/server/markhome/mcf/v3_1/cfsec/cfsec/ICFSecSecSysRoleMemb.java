@@ -86,6 +86,10 @@ public interface ICFSecSecSysRoleMemb
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecSysRole getRequiredContainerSysRole();
+
+	public ICFSecSecUser getRequiredParentUser();
+
 	public boolean equals( Object obj );
 
 	public int hashCode();

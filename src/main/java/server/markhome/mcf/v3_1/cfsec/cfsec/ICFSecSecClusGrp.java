@@ -89,7 +89,11 @@ public interface ICFSecSecClusGrp
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
+
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
+
+	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
+
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	public boolean equals( Object obj );

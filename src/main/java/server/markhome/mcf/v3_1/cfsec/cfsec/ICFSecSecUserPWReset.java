@@ -92,6 +92,16 @@ public interface ICFSecSecUserPWReset
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecUser getRequiredContainerUser();
+
+	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+
+	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
+
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
+
 	public String getRequiredSentToEMailAddr();
 	public void setRequiredSentToEMailAddr( String value );
 	public CFLibUuid6 getRequiredPasswordResetUuid6();

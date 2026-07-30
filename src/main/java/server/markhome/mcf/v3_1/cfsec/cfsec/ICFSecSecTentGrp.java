@@ -89,7 +89,11 @@ public interface ICFSecSecTentGrp
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
+
+	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	public boolean equals( Object obj );

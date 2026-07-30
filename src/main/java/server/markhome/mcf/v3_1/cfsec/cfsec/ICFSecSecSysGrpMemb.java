@@ -86,6 +86,10 @@ public interface ICFSecSecSysGrpMemb
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public ICFSecSecSysGrp getRequiredContainerGroup();
+
+	public ICFSecSecUser getRequiredParentUser();
+
 	public boolean equals( Object obj );
 
 	public int hashCode();

@@ -89,7 +89,11 @@ public interface ICFSecSecTentRole
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+
+	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	public boolean equals( Object obj );

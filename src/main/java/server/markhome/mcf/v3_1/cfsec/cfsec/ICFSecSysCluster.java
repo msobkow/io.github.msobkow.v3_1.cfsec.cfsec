@@ -67,6 +67,7 @@ public interface ICFSecSysCluster
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
+
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public boolean equals( Object obj );
 

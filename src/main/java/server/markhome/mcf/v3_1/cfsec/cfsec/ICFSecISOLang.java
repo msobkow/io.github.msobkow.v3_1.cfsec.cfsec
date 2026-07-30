@@ -88,6 +88,8 @@ public interface ICFSecISOLang
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
+	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
+
 	public String getRequiredISO6392Code();
 	public void setRequiredISO6392Code( String value );
 	public String getOptionalISO6391Code();

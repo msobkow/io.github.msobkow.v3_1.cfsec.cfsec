@@ -75,7 +75,9 @@ public interface ICFSecTableInfo
 	public void setRequiredRevision( int value );
 
 	public ICFSecTableInfo getOptionalParentSuperRef();
+
 	public List<ICFSecTableInfo> getOptionalChildrenSubRefs();
+
 	public String getRequiredSchemaName();
 	public void setRequiredSchemaName( String value );
 	public String getRequiredTableName();
