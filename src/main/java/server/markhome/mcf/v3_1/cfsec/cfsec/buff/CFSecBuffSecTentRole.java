@@ -60,6 +60,7 @@ public class CFSecBuffSecTentRole
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
 
+	@Override
 	public CFSecBuffSecTentRole() {
 		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.SECTENTROLEID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.TENANTID_INIT_VALUE.toString() );
@@ -75,6 +76,9 @@ public class CFSecBuffSecTentRole
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentRoleId) {
 		this.requiredSecTentRoleId = requiredSecTentRoleId;
 	}
+
+	@Override
+	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
@@ -162,6 +166,34 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecTenant argObj);
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecProtTenant argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFSecSecSysGrp getRequiredContainerSysRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -176,26 +208,30 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecTentRoleMembTable targetTable = targetBackingSchema.getTableSecTentRoleMemb();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRoleMemb()");
-		}
-		ICFSecSecTentRoleMemb[] targetArr = targetTable.readDerivedByTentRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentRoleId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentRoleMemb> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+	public void setRequiredContainerSysRole(String argName) {
+		requiredName = argName;
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			List<ICFSecSecTentRoleMemb> results = new ArrayList<>();
-			return( results );
+			requiredName = argObj.getRequiredName();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
+		}
+		else {
+			requiredName = argObj.getRequiredName();
 		}
 	}
 

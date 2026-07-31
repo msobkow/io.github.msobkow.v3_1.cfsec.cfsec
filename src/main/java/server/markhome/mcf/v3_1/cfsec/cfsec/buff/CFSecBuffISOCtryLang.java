@@ -58,35 +58,45 @@ public class CFSecBuffISOCtryLang
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryLang.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
+	@Override
 	public CFSecBuffISOCtryLang() {
 		pkey = new CFSecBuffISOCtryLangPKey();
 	}
 
 	@Override
-	public ICFSecISOCtryLangPKey getPKey() {
-		return pkey;
-	}
+	public ICFSecISOCtryLangPKey getPKey();
 
 	@Override
-	public void setPKey(ICFSecISOCtryLangPKey pkey ) {
-		if (pkey == null) {
-			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
-		}
-		else if (!(pkey instanceof CFSecBuffISOCtryLangPKey)) {
-			throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFSecBuffISOCtryLangPKey");
-		}
-		this.pkey = (CFSecBuffISOCtryLangPKey)pkey;
-	}
+	public void setPKey(ICFSecISOCtryLangPKey pkey );
+	@Override
+	public ICFSecISOCtry getRequiredContainerCtry();
 
 	@Override
-	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
-	}
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
 
 	@Override
-	public short getRequiredISOLangId() {
-		return( getPKey().getRequiredISOLangId() );
-	}
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+
+	@Override
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+
+	@Override
+	public ICFSecISOLang getRequiredParentLang();
+
+	@Override
+	public void setRequiredParentLang(ICFSecISOLang argObj);
+
+	@Override
+	public void setRequiredParentLang(ICFSecProtISOLang argObj);
+
+	@Override
+	public void setRequiredParentLang(ICFSecPubISOLang argObj);
+
+	@Override
+	public short get$implColumnBuffAttrOptionality$ISOCtryId();
+
+	@Override
+	public short get$implColumnBuffAttrOptionality$ISOLangId();
 
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
@@ -141,34 +151,6 @@ public class CFSecBuffISOCtryLang
 	@Override
 	public int getClassCode() {
 		return( ICFSecISOCtryLang.CLASS_CODE );
-	}
-
-	@Override
-	public ICFSecISOCtry getRequiredContainerCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryTable targetTable = targetBackingSchema.getTableISOCtry();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
-		}
-		ICFSecISOCtry targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		return(targetRec);
-	}
-
-	@Override
-	public ICFSecISOLang getRequiredParentLang() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOLangTable targetTable = targetBackingSchema.getTableISOLang();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOLang()");
-		}
-		ICFSecISOLang targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
-		return(targetRec);
 	}
 
 	@Override

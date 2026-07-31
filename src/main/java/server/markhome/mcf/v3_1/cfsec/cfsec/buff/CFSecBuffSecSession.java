@@ -58,6 +58,7 @@ public class CFSecBuffSecSession
 	protected LocalDateTime optionalFinish;
 	protected CFLibDbKeyHash256 optionalSecProxyId;
 
+	@Override
 	public CFSecBuffSecSession() {
 		requiredSecSessionId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECSESSIONID_INIT_VALUE.toString() );
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECUSERID_INIT_VALUE.toString() );

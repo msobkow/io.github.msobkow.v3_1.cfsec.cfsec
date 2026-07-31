@@ -63,6 +63,7 @@ public class CFSecBuffTableInfo
 	protected String requiredSecScopeName;
 	protected String requiredCodeVis;
 
+	@Override
 	public CFSecBuffTableInfo() {
 		requiredTableInfoId = ICFSecTableInfo.TABLEINFOID_INIT_VALUE;
 		requiredSchemaName = ICFSecTableInfo.SCHEMANAME_INIT_VALUE;
@@ -131,6 +132,34 @@ public class CFSecBuffTableInfo
 		}
 		ICFSecTableInfo targetRec = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSuperName());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalParentSuperRef(String argSuperName) {
+		optionalSuperName = argSuperName;
+	}
+
+	@Override
+	public void setOptionalParentSuperRef(ICFSecTableInfo argObj);
+
+	@Override
+	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
+		if(argObj == null) {
+			optionalSuperName = null;
+		}
+		else {
+			optionalSuperName = argObj.getRequiredTableName();
+		}
+	}
+
+	@Override
+	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
+		if(argObj == null) {
+			optionalSuperName = null;
+		}
+		else {
+			optionalSuperName = argObj.getRequiredTableName();
+		}
 	}
 
 	@Override

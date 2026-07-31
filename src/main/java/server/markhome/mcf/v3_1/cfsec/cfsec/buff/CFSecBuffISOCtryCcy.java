@@ -58,35 +58,45 @@ public class CFSecBuffISOCtryCcy
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryCcy.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
+	@Override
 	public CFSecBuffISOCtryCcy() {
 		pkey = new CFSecBuffISOCtryCcyPKey();
 	}
 
 	@Override
-	public ICFSecISOCtryCcyPKey getPKey() {
-		return pkey;
-	}
+	public ICFSecISOCtryCcyPKey getPKey();
 
 	@Override
-	public void setPKey(ICFSecISOCtryCcyPKey pkey ) {
-		if (pkey == null) {
-			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
-		}
-		else if (!(pkey instanceof CFSecBuffISOCtryCcyPKey)) {
-			throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFSecBuffISOCtryCcyPKey");
-		}
-		this.pkey = (CFSecBuffISOCtryCcyPKey)pkey;
-	}
+	public void setPKey(ICFSecISOCtryCcyPKey pkey );
+	@Override
+	public ICFSecISOCtry getRequiredContainerCtry();
 
 	@Override
-	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
-	}
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
 
 	@Override
-	public short getRequiredISOCcyId() {
-		return( getPKey().getRequiredISOCcyId() );
-	}
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+
+	@Override
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+
+	@Override
+	public ICFSecISOCcy getRequiredParentCcy();
+
+	@Override
+	public void setRequiredParentCcy(ICFSecISOCcy argObj);
+
+	@Override
+	public void setRequiredParentCcy(ICFSecProtISOCcy argObj);
+
+	@Override
+	public void setRequiredParentCcy(ICFSecPubISOCcy argObj);
+
+	@Override
+	public short get$implColumnBuffAttrOptionality$ISOCtryId();
+
+	@Override
+	public short get$implColumnBuffAttrOptionality$ISOCcyId();
 
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
@@ -141,34 +151,6 @@ public class CFSecBuffISOCtryCcy
 	@Override
 	public int getClassCode() {
 		return( ICFSecISOCtryCcy.CLASS_CODE );
-	}
-
-	@Override
-	public ICFSecISOCtry getRequiredContainerCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryTable targetTable = targetBackingSchema.getTableISOCtry();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
-		}
-		ICFSecISOCtry targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		return(targetRec);
-	}
-
-	@Override
-	public ICFSecISOCcy getRequiredParentCcy() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCcyTable targetTable = targetBackingSchema.getTableISOCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCcy()");
-		}
-		ICFSecISOCcy targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
-		return(targetRec);
 	}
 
 	@Override

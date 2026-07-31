@@ -56,58 +56,28 @@ public class CFSecBuffSecUserPWHistory
 	protected LocalDateTime requiredPWReplacedStamp;
 	protected String requiredPasswordHash;
 
+	@Override
 	public CFSecBuffSecUserPWHistory() {
 		pkey = new CFSecBuffSecUserPWHistoryPKey();
 		requiredPWReplacedStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryPKey getPKey() {
-		return pkey;
-	}
+	public ICFSecSecUserPWHistoryPKey getPKey();
 
 	@Override
-	public void setPKey(ICFSecSecUserPWHistoryPKey pkey ) {
-		if (pkey == null) {
-			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
-		}
-		else if (!(pkey instanceof CFSecBuffSecUserPWHistoryPKey)) {
-			throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFSecBuffSecUserPWHistoryPKey");
-		}
-		this.pkey = (CFSecBuffSecUserPWHistoryPKey)pkey;
-	}
+	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
+	@Override
+	public CFLibDbKeyHash256 get$implColumnBuffAttrOptionality$SecUserId();
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey().getRequiredSecUserId() );
-	}
+	public void set$implColumnBuffAttrOptionality$SecUserId(CFLibDbKeyHash256 value);
 
 	@Override
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		getPKey().setRequiredSecUserId( value );
-	}
+	public LocalDateTime get$implColumnBuffAttrOptionality$PWSetStamp();
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
-		return( getPKey().getRequiredPWSetStamp() );
-	}
-
-	@Override
-	public void setRequiredPWSetStamp( LocalDateTime value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredPWSetStamp",
-				1,
-				"value" );
-		}
-		getPKey().setRequiredPWSetStamp( value );
-	}
+	public void set$implColumnBuffAttrOptionality$PWSetStamp(LocalDateTime value);
 
 	@Override
 	public int getRequiredRevision() {

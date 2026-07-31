@@ -62,6 +62,7 @@ public class CFSecBuffISOCcy
 	protected String optionalUnitSymbol;
 	protected short requiredPrecis;
 
+	@Override
 	public CFSecBuffISOCcy() {
 		requiredISOCcyId = ICFSecISOCcy.ISOCCYID_INIT_VALUE;
 		requiredISOCode = ICFSecISOCcy.ISOCODE_INIT_VALUE;
@@ -79,6 +80,9 @@ public class CFSecBuffISOCcy
 	public void setPKey(Short requiredISOCcyId) {
 		this.requiredISOCcyId = requiredISOCcyId;
 	}
+
+	@Override
+	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry();
 
 	@Override
 	public short getRequiredISOCcyId() {
@@ -151,30 +155,6 @@ public class CFSecBuffISOCcy
 	@Override
 	public int getClassCode() {
 		return( ICFSecISOCcy.CLASS_CODE );
-	}
-
-	@Override
-	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
-		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>();
-			return( results );
-		}
 	}
 
 	@Override

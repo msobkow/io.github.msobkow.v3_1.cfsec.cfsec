@@ -60,6 +60,7 @@ public class CFSecBuffTenant
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredTenantName;
 
+	@Override
 	public CFSecBuffTenant() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFSecTenant.ID_INIT_VALUE.toString() );
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecTenant.CLUSTERID_INIT_VALUE.toString() );
@@ -75,6 +76,12 @@ public class CFSecBuffTenant
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
 		this.requiredId = requiredId;
 	}
+
+	@Override
+	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
+
+	@Override
+	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -162,50 +169,30 @@ public class CFSecBuffTenant
 	}
 
 	@Override
-	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecTentGrpTable targetTable = targetBackingSchema.getTableSecTentGrp();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
-		}
-		ICFSecSecTentGrp[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentGrp> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		requiredClusterId = argClusterId;
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecCluster argObj);
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			List<ICFSecSecTentGrp> results = new ArrayList<>();
-			return( results );
+			requiredClusterId = argObj.getRequiredId();
 		}
 	}
 
 	@Override
-	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecTentRoleTable targetTable = targetBackingSchema.getTableSecTentRole();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
-		}
-		ICFSecSecTentRole[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentRole> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			List<ICFSecSecTentRole> results = new ArrayList<>();
-			return( results );
+			requiredClusterId = argObj.getRequiredId();
 		}
 	}
 

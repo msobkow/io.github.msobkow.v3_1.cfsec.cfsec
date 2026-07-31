@@ -60,6 +60,7 @@ public class CFSecBuffISOCtry
 	protected String requiredISOCode;
 	protected String requiredName;
 
+	@Override
 	public CFSecBuffISOCtry() {
 		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
 		requiredISOCode = ICFSecISOCtry.ISOCODE_INIT_VALUE;
@@ -75,6 +76,12 @@ public class CFSecBuffISOCtry
 	public void setPKey(Short requiredISOCtryId) {
 		this.requiredISOCtryId = requiredISOCtryId;
 	}
+
+	@Override
+	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
+
+	@Override
+	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
 
 	@Override
 	public short getRequiredISOCtryId() {
@@ -147,54 +154,6 @@ public class CFSecBuffISOCtry
 	@Override
 	public int getClassCode() {
 		return( ICFSecISOCtry.CLASS_CODE );
-	}
-
-	@Override
-	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
-		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
-	public List<ICFSecISOCtryLang> getOptionalComponentsLang() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
-		}
-		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryLang> results = new ArrayList<>();
-			return( results );
-		}
 	}
 
 	@Override

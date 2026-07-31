@@ -61,6 +61,7 @@ public class CFSecBuffSecUserPWReset
 	protected CFLibUuid6 requiredPasswordResetUuid6;
 	protected boolean requiredNewAccount;
 
+	@Override
 	public CFSecBuffSecUserPWReset() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWReset.SECUSERID_INIT_VALUE.toString() );
 		requiredSentToEMailAddr = ICFSecSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
@@ -76,6 +77,18 @@ public class CFSecBuffSecUserPWReset
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
 		this.requiredSecUserId = requiredSecUserId;
 	}
+
+	@Override
+	public ICFSecSecUser getRequiredContainerUser();
+
+	@Override
+	public void setRequiredContainerUser(ICFSecSecUser argObj);
+
+	@Override
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
+
+	@Override
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
@@ -135,55 +148,6 @@ public class CFSecBuffSecUserPWReset
 	@Override
 	public int getClassCode() {
 		return( ICFSecSecUserPWReset.CLASS_CODE );
-	}
-
-	@Override
-	public ICFSecSecUser getRequiredContainerUser() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
-		}
-		ICFSecSecUser targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		requiredSecUserId = argSecUserId;
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setPKey(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setPKey(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setPKey(argObj.getRequiredSecUserId());
-		}
 	}
 
 	@Override

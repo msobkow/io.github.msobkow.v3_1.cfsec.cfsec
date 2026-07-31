@@ -64,6 +64,7 @@ public class CFSecBuffSecUser
 	protected String optionalDfltTentGrpName;
 	protected String requiredEMailAddress;
 
+	@Override
 	public CFSecBuffSecUser() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUser.SECUSERID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecUser.LOGINID_INIT_VALUE;
@@ -83,6 +84,15 @@ public class CFSecBuffSecUser
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
 		this.requiredSecUserId = requiredSecUserId;
 	}
+
+	@Override
+	public ICFSecSecUserPassword getOptionalComponentsPassword();
+
+	@Override
+	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
+
+	@Override
+	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
@@ -153,48 +163,6 @@ public class CFSecBuffSecUser
 	@Override
 	public int getClassCode() {
 		return( ICFSecSecUser.CLASS_CODE );
-	}
-
-	@Override
-	public ICFSecSecUserPassword getOptionalComponentsPassword() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPassword", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserPasswordTable targetTable = targetBackingSchema.getTableSecUserPassword();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPassword", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPassword()");
-		}
-		ICFSecSecUserPassword targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
-	}
-
-	@Override
-	public ICFSecSecUserEMConf getOptionalComponentsEMConf() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEMConf", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserEMConfTable targetTable = targetBackingSchema.getTableSecUserEMConf();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEMConf", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserEMConf()");
-		}
-		ICFSecSecUserEMConf targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
-	}
-
-	@Override
-	public ICFSecSecUserPWReset getOptionalComponentsPWReset() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPWReset", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserPWResetTable targetTable = targetBackingSchema.getTableSecUserPWReset();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPWReset", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPWReset()");
-		}
-		ICFSecSecUserPWReset targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
 	}
 
 	@Override

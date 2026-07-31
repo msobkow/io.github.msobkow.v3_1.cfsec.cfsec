@@ -55,6 +55,7 @@ public class CFSecBuffSysCluster
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 requiredClusterId;
 
+	@Override
 	public CFSecBuffSysCluster() {
 		requiredSingletonId = ICFSecSysCluster.SINGLETONID_INIT_VALUE;
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSysCluster.CLUSTERID_INIT_VALUE.toString() );
@@ -123,6 +124,34 @@ public class CFSecBuffSysCluster
 		}
 		ICFSecCluster targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		requiredClusterId = argClusterId;
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecCluster argObj);
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
