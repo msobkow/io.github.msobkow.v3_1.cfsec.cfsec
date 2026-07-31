@@ -79,7 +79,17 @@ public interface ICFSecSecClusGrpMemb
 	public void setPKey(ICFSecSecClusGrpMembPKey pkey );
 	public ICFSecSecClusGrp getRequiredContainerGroup();
 
+	public void setRequiredContainerGroup(ICFSecSecClusGrp argObj);
+
+	public void setRequiredContainerGroup(ICFSecProtSecClusGrp argObj);
+
 	public ICFSecSecUser getRequiredParentUser();
+
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+
+	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+
+	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId();
 

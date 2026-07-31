@@ -80,7 +80,19 @@ public interface ICFSecISOCtryLang
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
 	public ICFSecISOCtry getRequiredContainerCtry();
 
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
+
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+
 	public ICFSecISOLang getRequiredParentLang();
+
+	public void setRequiredParentLang(ICFSecISOLang argObj);
+
+	public void setRequiredParentLang(ICFSecProtISOLang argObj);
+
+	public void setRequiredParentLang(ICFSecPubISOLang argObj);
 
 	public short getRequiredISOCtryId();
 

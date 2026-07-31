@@ -90,6 +90,14 @@ public interface ICFSecTenant
 
 	public ICFSecCluster getRequiredContainerCluster();
 
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+
+	public void setRequiredContainerCluster(ICFSecCluster argObj);
+
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj);
+
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
+
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );

@@ -79,7 +79,17 @@ public interface ICFSecSecTentGrpMemb
 	public void setPKey(ICFSecSecTentGrpMembPKey pkey );
 	public ICFSecSecTentGrp getRequiredContainerGroup();
 
+	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
+
+	public void setRequiredContainerGroup(ICFSecProtSecTentGrp argObj);
+
 	public ICFSecSecUser getRequiredParentUser();
+
+	public void setRequiredParentUser(ICFSecSecUser argObj);
+
+	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+
+	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 

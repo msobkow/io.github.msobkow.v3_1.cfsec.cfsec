@@ -80,7 +80,19 @@ public interface ICFSecISOCtryCcy
 	public void setPKey(ICFSecISOCtryCcyPKey pkey );
 	public ICFSecISOCtry getRequiredContainerCtry();
 
+	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
+
+	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
+
+	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
+
 	public ICFSecISOCcy getRequiredParentCcy();
+
+	public void setRequiredParentCcy(ICFSecISOCcy argObj);
+
+	public void setRequiredParentCcy(ICFSecProtISOCcy argObj);
+
+	public void setRequiredParentCcy(ICFSecPubISOCcy argObj);
 
 	public short getRequiredISOCtryId();
 

@@ -88,7 +88,23 @@ public interface ICFSecSecClusRole
 
 	public ICFSecCluster getRequiredOwnerCluster();
 
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
+
+	public void setRequiredOwnerCluster(ICFSecCluster argObj);
+
+	public void setRequiredOwnerCluster(ICFSecProtCluster argObj);
+
+	public void setRequiredOwnerCluster(ICFSecPubCluster argObj);
+
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
+
+	public void setRequiredContainerSysRole(String argName);
+
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+
+	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj);
+
+	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 
 	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();

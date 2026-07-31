@@ -88,7 +88,23 @@ public interface ICFSecSecTentGrp
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+
+	public void setRequiredOwnerTenant(ICFSecTenant argObj);
+
+	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
+
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
+
+	public void setRequiredContainerSysGrp(String argName);
+
+	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
+
+	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj);
+
+	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
