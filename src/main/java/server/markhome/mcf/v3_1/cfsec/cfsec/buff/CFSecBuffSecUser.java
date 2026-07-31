@@ -64,7 +64,6 @@ public class CFSecBuffSecUser
 	protected String optionalDfltTentGrpName;
 	protected String requiredEMailAddress;
 
-	@Override
 	public CFSecBuffSecUser() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUser.SECUSERID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecUser.LOGINID_INIT_VALUE;
@@ -77,12 +76,14 @@ public class CFSecBuffSecUser
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecUserId();
+		return (requiredSecUserId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
-		this.requiredSecUserId = requiredSecUserId;
+		if(requiredSecUserId != null) {
+			this.requiredSecUserId = requiredSecUserId;
+		}
 	}
 
 	@Override

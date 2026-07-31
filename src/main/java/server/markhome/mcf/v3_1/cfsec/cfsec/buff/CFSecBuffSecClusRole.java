@@ -60,7 +60,6 @@ public class CFSecBuffSecClusRole
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
 
-	@Override
 	public CFSecBuffSecClusRole() {
 		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRole.SECCLUSROLEID_INIT_VALUE.toString() );
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRole.CLUSTERID_INIT_VALUE.toString() );
@@ -69,12 +68,14 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecClusRoleId();
+		return (requiredSecClusRoleId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusRoleId) {
-		this.requiredSecClusRoleId = requiredSecClusRoleId;
+		if(requiredSecClusRoleId != null) {
+			this.requiredSecClusRoleId = requiredSecClusRoleId;
+		}
 	}
 
 	@Override

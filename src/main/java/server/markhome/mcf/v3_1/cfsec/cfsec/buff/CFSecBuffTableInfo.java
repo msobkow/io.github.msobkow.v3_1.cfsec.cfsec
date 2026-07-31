@@ -63,7 +63,6 @@ public class CFSecBuffTableInfo
 	protected String requiredSecScopeName;
 	protected String requiredCodeVis;
 
-	@Override
 	public CFSecBuffTableInfo() {
 		requiredTableInfoId = ICFSecTableInfo.TABLEINFOID_INIT_VALUE;
 		requiredSchemaName = ICFSecTableInfo.SCHEMANAME_INIT_VALUE;
@@ -79,12 +78,14 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public Integer getPKey() {
-		return getRequiredTableInfoId();
+		return (requiredTableInfoId);
 	}
 
 	@Override
 	public void setPKey(Integer requiredTableInfoId) {
-		this.requiredTableInfoId = requiredTableInfoId;
+		if(requiredTableInfoId != null) {
+			this.requiredTableInfoId = requiredTableInfoId;
+		}
 	}
 
 	@Override

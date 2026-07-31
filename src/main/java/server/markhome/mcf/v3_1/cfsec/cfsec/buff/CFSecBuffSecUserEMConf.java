@@ -62,7 +62,6 @@ public class CFSecBuffSecUserEMConf
 	protected CFLibUuid6 requiredEMConfirmationUuid6;
 	protected boolean requiredNewAccount;
 
-	@Override
 	public CFSecBuffSecUserEMConf() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserEMConf.SECUSERID_INIT_VALUE.toString() );
 		requiredConfirmEMailAddr = ICFSecSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
@@ -72,12 +71,14 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecUserId();
+		return (requiredSecUserId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
-		this.requiredSecUserId = requiredSecUserId;
+		if(requiredSecUserId != null) {
+			this.requiredSecUserId = requiredSecUserId;
+		}
 	}
 
 	@Override

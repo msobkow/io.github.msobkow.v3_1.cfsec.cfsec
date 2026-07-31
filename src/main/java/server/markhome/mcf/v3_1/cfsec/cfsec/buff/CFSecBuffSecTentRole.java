@@ -60,7 +60,6 @@ public class CFSecBuffSecTentRole
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
 
-	@Override
 	public CFSecBuffSecTentRole() {
 		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.SECTENTROLEID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.TENANTID_INIT_VALUE.toString() );
@@ -69,12 +68,14 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecTentRoleId();
+		return (requiredSecTentRoleId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentRoleId) {
-		this.requiredSecTentRoleId = requiredSecTentRoleId;
+		if(requiredSecTentRoleId != null) {
+			this.requiredSecTentRoleId = requiredSecTentRoleId;
+		}
 	}
 
 	@Override

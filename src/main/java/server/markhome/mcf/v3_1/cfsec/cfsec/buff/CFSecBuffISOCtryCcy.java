@@ -58,7 +58,6 @@ public class CFSecBuffISOCtryCcy
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryCcy.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
-	@Override
 	public CFSecBuffISOCtryCcy() {
 		pkey = new CFSecBuffISOCtryCcyPKey();
 	}

@@ -58,7 +58,6 @@ public class CFSecBuffISOCtryLang
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryLang.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
-	@Override
 	public CFSecBuffISOCtryLang() {
 		pkey = new CFSecBuffISOCtryLangPKey();
 	}

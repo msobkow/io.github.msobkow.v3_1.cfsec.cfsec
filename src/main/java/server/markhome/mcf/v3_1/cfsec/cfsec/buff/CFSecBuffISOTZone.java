@@ -64,7 +64,6 @@ public class CFSecBuffISOTZone
 	protected String requiredDescription;
 	protected boolean requiredVisible;
 
-	@Override
 	public CFSecBuffISOTZone() {
 		requiredISOTZoneId = ICFSecISOTZone.ISOTZONEID_INIT_VALUE;
 		requiredIso8601 = ICFSecISOTZone.ISO8601_INIT_VALUE;
@@ -77,12 +76,14 @@ public class CFSecBuffISOTZone
 
 	@Override
 	public Short getPKey() {
-		return getRequiredISOTZoneId();
+		return (requiredISOTZoneId);
 	}
 
 	@Override
 	public void setPKey(Short requiredISOTZoneId) {
-		this.requiredISOTZoneId = requiredISOTZoneId;
+		if(requiredISOTZoneId != null) {
+			this.requiredISOTZoneId = requiredISOTZoneId;
+		}
 	}
 
 	@Override

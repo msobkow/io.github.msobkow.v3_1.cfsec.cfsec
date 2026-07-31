@@ -60,7 +60,6 @@ public class CFSecBuffCluster
 	protected String requiredFullDomName;
 	protected String requiredDescription;
 
-	@Override
 	public CFSecBuffCluster() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFSecCluster.ID_INIT_VALUE.toString() );
 		requiredFullDomName = ICFSecCluster.FULLDOMNAME_INIT_VALUE;
@@ -69,12 +68,14 @@ public class CFSecBuffCluster
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

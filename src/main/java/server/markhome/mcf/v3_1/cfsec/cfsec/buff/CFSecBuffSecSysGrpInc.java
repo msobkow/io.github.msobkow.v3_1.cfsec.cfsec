@@ -58,7 +58,6 @@ public class CFSecBuffSecSysGrpInc
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpInc.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
-	@Override
 	public CFSecBuffSecSysGrpInc() {
 		pkey = new CFSecBuffSecSysGrpIncPKey();
 	}

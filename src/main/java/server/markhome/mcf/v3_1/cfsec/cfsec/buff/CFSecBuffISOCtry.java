@@ -60,7 +60,6 @@ public class CFSecBuffISOCtry
 	protected String requiredISOCode;
 	protected String requiredName;
 
-	@Override
 	public CFSecBuffISOCtry() {
 		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
 		requiredISOCode = ICFSecISOCtry.ISOCODE_INIT_VALUE;
@@ -69,12 +68,14 @@ public class CFSecBuffISOCtry
 
 	@Override
 	public Short getPKey() {
-		return getRequiredISOCtryId();
+		return (requiredISOCtryId);
 	}
 
 	@Override
 	public void setPKey(Short requiredISOCtryId) {
-		this.requiredISOCtryId = requiredISOCtryId;
+		if(requiredISOCtryId != null) {
+			this.requiredISOCtryId = requiredISOCtryId;
+		}
 	}
 
 	@Override

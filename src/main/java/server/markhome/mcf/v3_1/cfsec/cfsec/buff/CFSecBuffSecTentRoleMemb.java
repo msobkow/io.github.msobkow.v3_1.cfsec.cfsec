@@ -58,7 +58,6 @@ public class CFSecBuffSecTentRoleMemb
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRoleMemb.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
-	@Override
 	public CFSecBuffSecTentRoleMemb() {
 		pkey = new CFSecBuffSecTentRoleMembPKey();
 	}

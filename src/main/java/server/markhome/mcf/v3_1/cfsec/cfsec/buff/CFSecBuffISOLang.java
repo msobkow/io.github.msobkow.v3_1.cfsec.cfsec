@@ -61,7 +61,6 @@ public class CFSecBuffISOLang
 	protected String optionalISO6391Code;
 	protected String requiredEnglishName;
 
-	@Override
 	public CFSecBuffISOLang() {
 		requiredISOLangId = ICFSecISOLang.ISOLANGID_INIT_VALUE;
 		requiredISO6392Code = ICFSecISOLang.ISO6392CODE_INIT_VALUE;
@@ -71,12 +70,14 @@ public class CFSecBuffISOLang
 
 	@Override
 	public Short getPKey() {
-		return getRequiredISOLangId();
+		return (requiredISOLangId);
 	}
 
 	@Override
 	public void setPKey(Short requiredISOLangId) {
-		this.requiredISOLangId = requiredISOLangId;
+		if(requiredISOLangId != null) {
+			this.requiredISOLangId = requiredISOLangId;
+		}
 	}
 
 	@Override

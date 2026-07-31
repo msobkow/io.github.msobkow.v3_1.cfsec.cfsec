@@ -59,7 +59,6 @@ public class CFSecBuffSecSysRole
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredName;
 
-	@Override
 	public CFSecBuffSecSysRole() {
 		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecSysRole.SECSYSROLEID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecSysRole.NAME_INIT_VALUE;
@@ -67,12 +66,14 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecSysRoleId();
+		return (requiredSecSysRoleId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysRoleId) {
-		this.requiredSecSysRoleId = requiredSecSysRoleId;
+		if(requiredSecSysRoleId != null) {
+			this.requiredSecSysRoleId = requiredSecSysRoleId;
+		}
 	}
 
 	@Override

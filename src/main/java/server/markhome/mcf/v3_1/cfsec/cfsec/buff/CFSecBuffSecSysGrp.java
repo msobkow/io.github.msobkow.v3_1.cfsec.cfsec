@@ -60,7 +60,6 @@ public class CFSecBuffSecSysGrp
 	protected String requiredName;
 	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 
-	@Override
 	public CFSecBuffSecSysGrp() {
 		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecSysGrp.SECSYSGRPID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecSysGrp.NAME_INIT_VALUE;
@@ -69,12 +68,14 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecSysGrpId();
+		return (requiredSecSysGrpId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecSysGrpId) {
-		this.requiredSecSysGrpId = requiredSecSysGrpId;
+		if(requiredSecSysGrpId != null) {
+			this.requiredSecSysGrpId = requiredSecSysGrpId;
+		}
 	}
 
 	@Override

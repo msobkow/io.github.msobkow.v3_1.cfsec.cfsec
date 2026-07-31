@@ -61,7 +61,6 @@ public class CFSecBuffSecUserPWReset
 	protected CFLibUuid6 requiredPasswordResetUuid6;
 	protected boolean requiredNewAccount;
 
-	@Override
 	public CFSecBuffSecUserPWReset() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWReset.SECUSERID_INIT_VALUE.toString() );
 		requiredSentToEMailAddr = ICFSecSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
@@ -70,12 +69,14 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecUserId();
+		return (requiredSecUserId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
-		this.requiredSecUserId = requiredSecUserId;
+		if(requiredSecUserId != null) {
+			this.requiredSecUserId = requiredSecUserId;
+		}
 	}
 
 	@Override

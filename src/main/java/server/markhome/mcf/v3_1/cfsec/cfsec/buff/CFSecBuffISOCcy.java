@@ -62,7 +62,6 @@ public class CFSecBuffISOCcy
 	protected String optionalUnitSymbol;
 	protected short requiredPrecis;
 
-	@Override
 	public CFSecBuffISOCcy() {
 		requiredISOCcyId = ICFSecISOCcy.ISOCCYID_INIT_VALUE;
 		requiredISOCode = ICFSecISOCcy.ISOCODE_INIT_VALUE;
@@ -73,12 +72,14 @@ public class CFSecBuffISOCcy
 
 	@Override
 	public Short getPKey() {
-		return getRequiredISOCcyId();
+		return (requiredISOCcyId);
 	}
 
 	@Override
 	public void setPKey(Short requiredISOCcyId) {
-		this.requiredISOCcyId = requiredISOCcyId;
+		if(requiredISOCcyId != null) {
+			this.requiredISOCcyId = requiredISOCcyId;
+		}
 	}
 
 	@Override

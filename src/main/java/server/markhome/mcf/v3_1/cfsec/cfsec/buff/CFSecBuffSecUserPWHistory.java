@@ -56,7 +56,6 @@ public class CFSecBuffSecUserPWHistory
 	protected LocalDateTime requiredPWReplacedStamp;
 	protected String requiredPasswordHash;
 
-	@Override
 	public CFSecBuffSecUserPWHistory() {
 		pkey = new CFSecBuffSecUserPWHistoryPKey();
 		requiredPWReplacedStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");

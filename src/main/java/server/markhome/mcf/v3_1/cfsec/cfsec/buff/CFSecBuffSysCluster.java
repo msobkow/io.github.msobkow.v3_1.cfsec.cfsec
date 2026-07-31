@@ -55,7 +55,6 @@ public class CFSecBuffSysCluster
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 requiredClusterId;
 
-	@Override
 	public CFSecBuffSysCluster() {
 		requiredSingletonId = ICFSecSysCluster.SINGLETONID_INIT_VALUE;
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSysCluster.CLUSTERID_INIT_VALUE.toString() );
@@ -63,12 +62,14 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public Integer getPKey() {
-		return getRequiredSingletonId();
+		return (requiredSingletonId);
 	}
 
 	@Override
 	public void setPKey(Integer requiredSingletonId) {
-		this.requiredSingletonId = requiredSingletonId;
+		if(requiredSingletonId != null) {
+			this.requiredSingletonId = requiredSingletonId;
+		}
 	}
 
 	@Override

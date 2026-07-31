@@ -60,7 +60,6 @@ public class CFSecBuffSecClusGrp
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
 
-	@Override
 	public CFSecBuffSecClusGrp() {
 		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.SECCLUSGRPID_INIT_VALUE.toString() );
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
@@ -69,12 +68,14 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecClusGrpId();
+		return (requiredSecClusGrpId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecClusGrpId) {
-		this.requiredSecClusGrpId = requiredSecClusGrpId;
+		if(requiredSecClusGrpId != null) {
+			this.requiredSecClusGrpId = requiredSecClusGrpId;
+		}
 	}
 
 	@Override

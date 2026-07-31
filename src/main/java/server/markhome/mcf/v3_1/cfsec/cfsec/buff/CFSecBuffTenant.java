@@ -60,7 +60,6 @@ public class CFSecBuffTenant
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredTenantName;
 
-	@Override
 	public CFSecBuffTenant() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFSecTenant.ID_INIT_VALUE.toString() );
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecTenant.CLUSTERID_INIT_VALUE.toString() );
@@ -69,12 +68,14 @@ public class CFSecBuffTenant
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

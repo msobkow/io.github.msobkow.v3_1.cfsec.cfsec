@@ -56,7 +56,6 @@ public class CFSecBuffSecUserPassword
 	protected LocalDateTime requiredPWSetStamp;
 	protected String requiredPasswordHash;
 
-	@Override
 	public CFSecBuffSecUserPassword() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPassword.SECUSERID_INIT_VALUE.toString() );
 		requiredPWSetStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
@@ -64,12 +63,14 @@ public class CFSecBuffSecUserPassword
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredSecUserId();
+		return (requiredSecUserId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
-		this.requiredSecUserId = requiredSecUserId;
+		if(requiredSecUserId != null) {
+			this.requiredSecUserId = requiredSecUserId;
+		}
 	}
 
 	@Override
