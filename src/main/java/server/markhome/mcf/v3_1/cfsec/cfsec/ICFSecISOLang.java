@@ -78,17 +78,13 @@ public interface ICFSecISOLang
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Short getPKey();
-
 	public void setPKey(Short requiredISOLangId);
-
 	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
 
 	public short getRequiredISOLangId();
 	public void setRequiredISOLangId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
 
 	public String getRequiredISO6392Code();
 	public void setRequiredISO6392Code( String value );

@@ -77,9 +77,7 @@ public interface ICFSecCluster
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
 	public List<ICFSecTenant> getOptionalComponentsTenant();
 
 	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
@@ -92,14 +90,6 @@ public interface ICFSecCluster
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public List<ICFSecTenant> getOptionalComponentsTenant();
-
-	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
-
-	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
-
-	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 
 	public String getRequiredFullDomName();
 	public void setRequiredFullDomName( String value );

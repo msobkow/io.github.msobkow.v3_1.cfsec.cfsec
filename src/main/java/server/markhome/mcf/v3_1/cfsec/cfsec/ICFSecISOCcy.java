@@ -80,17 +80,13 @@ public interface ICFSecISOCcy
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Short getPKey();
-
 	public void setPKey(Short requiredISOCcyId);
-
 	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry();
 
 	public short getRequiredISOCcyId();
 	public void setRequiredISOCcyId( short value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry();
 
 	public String getRequiredISOCode();
 	public void setRequiredISOCode( String value );

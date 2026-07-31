@@ -76,8 +76,10 @@ public interface ICFSecSecTentRoleMemb
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecSecTentRoleMembPKey getPKey();
-
 	public void setPKey(ICFSecSecTentRoleMembPKey pkey );
+	public ICFSecSecTentRole getRequiredContainerRole();
+
+	public ICFSecSecUser getRequiredParentUser();
 
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
 
@@ -85,10 +87,6 @@ public interface ICFSecSecTentRoleMemb
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public ICFSecSecTentRole getRequiredContainerRole();
-
-	public ICFSecSecUser getRequiredParentUser();
 
 	public boolean equals( Object obj );
 

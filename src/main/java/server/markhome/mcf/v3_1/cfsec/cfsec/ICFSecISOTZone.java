@@ -85,9 +85,7 @@ public interface ICFSecISOTZone
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Short getPKey();
-
 	public void setPKey(Short requiredISOTZoneId);
-
 	public short getRequiredISOTZoneId();
 	public void setRequiredISOTZoneId( short value );
 	public int getRequiredRevision();

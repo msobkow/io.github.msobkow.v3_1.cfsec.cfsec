@@ -76,8 +76,10 @@ public interface ICFSecSecSysGrpMemb
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecSecSysGrpMembPKey getPKey();
-
 	public void setPKey(ICFSecSecSysGrpMembPKey pkey );
+	public ICFSecSecSysGrp getRequiredContainerGroup();
+
+	public ICFSecSecUser getRequiredParentUser();
 
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 
@@ -85,10 +87,6 @@ public interface ICFSecSecSysGrpMemb
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public ICFSecSecSysGrp getRequiredContainerGroup();
-
-	public ICFSecSecUser getRequiredParentUser();
 
 	public boolean equals( Object obj );
 

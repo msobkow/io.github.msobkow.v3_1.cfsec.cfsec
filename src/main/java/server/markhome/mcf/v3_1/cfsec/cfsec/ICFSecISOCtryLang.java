@@ -77,8 +77,10 @@ public interface ICFSecISOCtryLang
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFSecISOCtryLangPKey getPKey();
-
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
+	public ICFSecISOCtry getRequiredContainerCtry();
+
+	public ICFSecISOLang getRequiredParentLang();
 
 	public short getRequiredISOCtryId();
 
@@ -86,10 +88,6 @@ public interface ICFSecISOCtryLang
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public ICFSecISOCtry getRequiredContainerCtry();
-
-	public ICFSecISOLang getRequiredParentLang();
 
 	public boolean equals( Object obj );
 

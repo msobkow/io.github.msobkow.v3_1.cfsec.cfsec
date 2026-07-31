@@ -78,9 +78,7 @@ public interface ICFSecSecTentGrp
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecTentGrpId);
-
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
@@ -91,8 +89,6 @@ public interface ICFSecSecTentGrp
 	public ICFSecTenant getRequiredOwnerTenant();
 
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
-
-	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();

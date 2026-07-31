@@ -58,9 +58,7 @@ public interface ICFSecSysCluster
 	public int getClassCode();
 
 	public Integer getPKey();
-
 	public void setPKey(Integer requiredSingletonId);
-
 	public int getRequiredSingletonId();
 	public void setRequiredSingletonId( int value );
 	public int getRequiredRevision();

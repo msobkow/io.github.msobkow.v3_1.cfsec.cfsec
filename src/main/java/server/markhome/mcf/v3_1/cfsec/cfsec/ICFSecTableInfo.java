@@ -66,9 +66,7 @@ public interface ICFSecTableInfo
 	public int getClassCode();
 
 	public Integer getPKey();
-
 	public void setPKey(Integer requiredTableInfoId);
-
 	public int getRequiredTableInfoId();
 	public void setRequiredTableInfoId( int value );
 	public int getRequiredRevision();

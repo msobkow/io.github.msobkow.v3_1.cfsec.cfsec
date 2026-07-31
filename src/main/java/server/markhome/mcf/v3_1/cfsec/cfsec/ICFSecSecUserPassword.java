@@ -56,9 +56,7 @@ public interface ICFSecSecUserPassword
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-
 	public ICFSecSecUser getRequiredContainerUser();
 
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
@@ -70,16 +68,6 @@ public interface ICFSecSecUserPassword
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public ICFSecSecUser getRequiredContainerUser();
-
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
-
-	public void setRequiredContainerUser(ICFSecSecUser argObj);
-
-	public void setRequiredContainerUser(ICFSecProtSecUser argObj);
-
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
 
 	public LocalDateTime getRequiredPWSetStamp();
 	public void setRequiredPWSetStamp( LocalDateTime value );

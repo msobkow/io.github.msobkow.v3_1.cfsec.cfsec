@@ -83,9 +83,7 @@ public interface ICFSecSecUser
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
-
 	public ICFSecSecUserPassword getOptionalComponentsPassword();
 
 	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
@@ -96,12 +94,6 @@ public interface ICFSecSecUser
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
-
-	public ICFSecSecUserPassword getOptionalComponentsPassword();
-
-	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
-
-	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
 
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb();
 
