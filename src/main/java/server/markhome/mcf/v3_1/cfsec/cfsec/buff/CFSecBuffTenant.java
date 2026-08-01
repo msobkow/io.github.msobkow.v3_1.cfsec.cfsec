@@ -212,7 +212,7 @@ public class CFSecBuffTenant
 
 	@Override
 	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
+		setRequiredClusterId(argClusterId);
 	}
 
 	@Override

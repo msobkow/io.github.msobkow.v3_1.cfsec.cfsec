@@ -93,7 +93,7 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
-		requiredISOCtryId = argISOCtryId;
+		setRequiredISOCtryId(argISOCtryId);
 	}
 
 	@Override
@@ -142,7 +142,7 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredParentLang(short argISOLangId) {
-		requiredISOLangId = argISOLangId;
+		setRequiredISOLangId(argISOLangId);
 	}
 
 	@Override
@@ -181,8 +181,18 @@ public class CFSecBuffISOCtryLang
 	}
 
 	@Override
+	public void setRequiredISOCtryId(short value) {
+		getPKey().setRequiredISOCtryId( value );
+	}
+
+	@Override
 	public short getRequiredISOLangId() {
 		return(getPKey().getRequiredISOLangId());
+	}
+
+	@Override
+	public void setRequiredISOLangId(short value) {
+		getPKey().setRequiredISOLangId( value );
 	}
 
 	@Override

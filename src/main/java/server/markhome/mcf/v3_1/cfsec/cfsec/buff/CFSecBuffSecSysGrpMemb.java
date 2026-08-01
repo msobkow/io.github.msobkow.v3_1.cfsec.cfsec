@@ -93,7 +93,7 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
-		requiredSecSysGrpId = argSecSysGrpId;
+		setRequiredSecSysGrpId(argSecSysGrpId);
 	}
 
 	@Override
@@ -142,7 +142,7 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredParentUser(String argLoginId) {
-		requiredLoginId = argLoginId;
+		setRequiredLoginId(argLoginId);
 	}
 
 	@Override
@@ -181,8 +181,18 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
+	public void setRequiredSecSysGrpId(CFLibDbKeyHash256 value) {
+		getPKey().setRequiredSecSysGrpId( value );
+	}
+
+	@Override
 	public String getRequiredLoginId() {
 		return(getPKey().getRequiredLoginId());
+	}
+
+	@Override
+	public void setRequiredLoginId(String value) {
+		getPKey().setRequiredLoginId( value );
 	}
 
 	@Override

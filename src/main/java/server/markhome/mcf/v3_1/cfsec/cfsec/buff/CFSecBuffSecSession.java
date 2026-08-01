@@ -1758,8 +1758,6 @@ public class CFSecBuffSecSession
 				}
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubSecSessionBySecProxyIdxKey rhs ) {			return( 0 );
-		}
 		else {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"compareTo",

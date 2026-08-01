@@ -2063,8 +2063,6 @@ public class CFSecBuffSecUser
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubSecUserByEMAddrIdxKey rhs ) {			return( 0 );
-		}
 		else {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"compareTo",

@@ -100,7 +100,11 @@ public interface ICFSecISOCtryCcy
 
 	public short getRequiredISOCtryId();
 
+	public void setRequiredISOCtryId(short value);
+
 	public short getRequiredISOCcyId();
+
+	public void setRequiredISOCcyId(short value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

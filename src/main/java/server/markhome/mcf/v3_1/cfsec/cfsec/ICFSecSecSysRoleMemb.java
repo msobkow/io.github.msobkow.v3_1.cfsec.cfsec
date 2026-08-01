@@ -99,7 +99,11 @@ public interface ICFSecSecSysRoleMemb
 
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
 
+	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value);
+
 	public String getRequiredLoginId();
+
+	public void setRequiredLoginId(String value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

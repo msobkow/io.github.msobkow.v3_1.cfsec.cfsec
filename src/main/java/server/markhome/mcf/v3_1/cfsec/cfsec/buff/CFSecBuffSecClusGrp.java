@@ -188,7 +188,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
+		setRequiredClusterId(argClusterId);
 	}
 
 	@Override
@@ -237,7 +237,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredContainerSysGrp(String argName) {
-		requiredName = argName;
+		setRequiredName(argName);
 	}
 
 	@Override

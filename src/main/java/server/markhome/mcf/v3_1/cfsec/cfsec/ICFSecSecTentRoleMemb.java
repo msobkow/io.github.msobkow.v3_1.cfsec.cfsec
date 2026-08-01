@@ -97,7 +97,11 @@ public interface ICFSecSecTentRoleMemb
 
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
 
+	public void setRequiredSecTentRoleId(CFLibDbKeyHash256 value);
+
 	public String getRequiredLoginId();
+
+	public void setRequiredLoginId(String value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

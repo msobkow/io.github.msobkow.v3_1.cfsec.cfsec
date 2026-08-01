@@ -97,7 +97,11 @@ public interface ICFSecSecTentGrpMemb
 
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
 
+	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value);
+
 	public String getRequiredLoginId();
+
+	public void setRequiredLoginId(String value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

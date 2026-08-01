@@ -99,7 +99,11 @@ public interface ICFSecSecSysGrpInc
 
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
 
+	public void setRequiredSecSysGrpId(CFLibDbKeyHash256 value);
+
 	public String getRequiredInclName();
+
+	public void setRequiredInclName(String value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

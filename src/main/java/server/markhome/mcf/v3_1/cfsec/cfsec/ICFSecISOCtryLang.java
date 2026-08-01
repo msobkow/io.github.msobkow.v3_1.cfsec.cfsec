@@ -100,7 +100,11 @@ public interface ICFSecISOCtryLang
 
 	public short getRequiredISOCtryId();
 
+	public void setRequiredISOCtryId(short value);
+
 	public short getRequiredISOLangId();
+
+	public void setRequiredISOLangId(short value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

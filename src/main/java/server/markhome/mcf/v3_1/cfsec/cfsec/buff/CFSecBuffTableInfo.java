@@ -137,7 +137,7 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
-		optionalSuperName = argSuperName;
+		setOptionalSuperName(argSuperName);
 	}
 
 	@Override

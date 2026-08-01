@@ -93,7 +93,7 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
-		requiredISOCtryId = argISOCtryId;
+		setRequiredISOCtryId(argISOCtryId);
 	}
 
 	@Override
@@ -142,7 +142,7 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredParentCcy(short argISOCcyId) {
-		requiredISOCcyId = argISOCcyId;
+		setRequiredISOCcyId(argISOCcyId);
 	}
 
 	@Override
@@ -181,8 +181,18 @@ public class CFSecBuffISOCtryCcy
 	}
 
 	@Override
+	public void setRequiredISOCtryId(short value) {
+		getPKey().setRequiredISOCtryId( value );
+	}
+
+	@Override
 	public short getRequiredISOCcyId() {
 		return(getPKey().getRequiredISOCcyId());
+	}
+
+	@Override
+	public void setRequiredISOCcyId(short value) {
+		getPKey().setRequiredISOCcyId( value );
 	}
 
 	@Override

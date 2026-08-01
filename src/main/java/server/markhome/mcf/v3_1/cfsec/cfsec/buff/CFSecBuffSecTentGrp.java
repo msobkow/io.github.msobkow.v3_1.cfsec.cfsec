@@ -188,7 +188,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
+		setRequiredTenantId(argTenantId);
 	}
 
 	@Override
@@ -237,7 +237,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public void setRequiredContainerSysGrp(String argName) {
-		requiredName = argName;
+		setRequiredName(argName);
 	}
 
 	@Override

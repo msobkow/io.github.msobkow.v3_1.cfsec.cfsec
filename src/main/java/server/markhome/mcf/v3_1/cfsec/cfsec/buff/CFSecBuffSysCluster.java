@@ -129,7 +129,7 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
-		requiredClusterId = argClusterId;
+		setRequiredClusterId(argClusterId);
 	}
 
 	@Override

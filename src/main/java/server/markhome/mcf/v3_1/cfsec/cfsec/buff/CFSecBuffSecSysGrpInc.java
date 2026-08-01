@@ -93,7 +93,7 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
-		requiredSecSysGrpId = argSecSysGrpId;
+		setRequiredSecSysGrpId(argSecSysGrpId);
 	}
 
 	@Override
@@ -142,7 +142,7 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredParentSubGroup(String argInclName) {
-		requiredInclName = argInclName;
+		setRequiredInclName(argInclName);
 	}
 
 	@Override
@@ -181,8 +181,18 @@ public class CFSecBuffSecSysGrpInc
 	}
 
 	@Override
+	public void setRequiredSecSysGrpId(CFLibDbKeyHash256 value) {
+		getPKey().setRequiredSecSysGrpId( value );
+	}
+
+	@Override
 	public String getRequiredInclName() {
 		return(getPKey().getRequiredInclName());
+	}
+
+	@Override
+	public void setRequiredInclName(String value) {
+		getPKey().setRequiredInclName( value );
 	}
 
 	@Override

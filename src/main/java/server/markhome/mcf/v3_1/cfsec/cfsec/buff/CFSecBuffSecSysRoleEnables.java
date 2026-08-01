@@ -93,7 +93,7 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
-		requiredSecSysRoleId = argSecSysRoleId;
+		setRequiredSecSysRoleId(argSecSysRoleId);
 	}
 
 	@Override
@@ -142,7 +142,7 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredParentEnableGroup(String argEnableName) {
-		requiredEnableName = argEnableName;
+		setRequiredEnableName(argEnableName);
 	}
 
 	@Override
@@ -181,8 +181,18 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
+	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value) {
+		getPKey().setRequiredSecSysRoleId( value );
+	}
+
+	@Override
 	public String getRequiredEnableName() {
 		return(getPKey().getRequiredEnableName());
+	}
+
+	@Override
+	public void setRequiredEnableName(String value) {
+		getPKey().setRequiredEnableName( value );
 	}
 
 	@Override

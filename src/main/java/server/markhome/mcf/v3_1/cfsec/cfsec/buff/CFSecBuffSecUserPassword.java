@@ -89,7 +89,7 @@ public class CFSecBuffSecUserPassword
 
 	@Override
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		requiredSecUserId = argSecUserId;
+		setRequiredSecUserId(argSecUserId);
 	}
 
 	@Override
