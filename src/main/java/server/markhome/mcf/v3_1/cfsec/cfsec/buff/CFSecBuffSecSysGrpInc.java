@@ -98,17 +98,32 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
@@ -132,17 +147,32 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj) {
-		setRequiredParentSubGroup(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredInclName(argObj.getRequiredName());
+		}
 	}
 
 	@Override
 	public void setRequiredParentSubGroup(ICFSecProtSecSysGrp argObj) {
-		setRequiredParentSubGroup(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredInclName(argObj.getRequiredName());
+		}
 	}
 
 	@Override
 	public void setRequiredParentSubGroup(ICFSecPubSecSysGrp argObj) {
-		setRequiredParentSubGroup(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredInclName(argObj.getRequiredName());
+		}
 	}
 
 	@Override

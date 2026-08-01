@@ -218,7 +218,12 @@ public class CFSecBuffTenant
 
 	@Override
 	public void setRequiredContainerCluster(ICFSecCluster argObj) {
-		setRequiredContainerCluster(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

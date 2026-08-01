@@ -98,17 +98,32 @@ public class CFSecBuffSecSysRoleMemb
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+		}
 	}
 
 	@Override
@@ -132,17 +147,32 @@ public class CFSecBuffSecSysRoleMemb
 
 	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override

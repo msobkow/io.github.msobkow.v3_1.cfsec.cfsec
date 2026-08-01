@@ -102,17 +102,32 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public void setRequiredContainerUser(ICFSecSecUser argObj) {
-		setRequiredContainerUser(argObj.getRequiredSecUserId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setPKey(argObj.getRequiredSecUserId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
-		setRequiredContainerUser(argObj.getRequiredSecUserId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setPKey(argObj.getRequiredSecUserId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
-		setRequiredContainerUser(argObj.getRequiredSecUserId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setPKey(argObj.getRequiredSecUserId());
+		}
 	}
 
 	@Override

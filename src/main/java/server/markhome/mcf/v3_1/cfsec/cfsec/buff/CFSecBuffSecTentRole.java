@@ -194,7 +194,12 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
-		setRequiredOwnerTenant(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -238,7 +243,12 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj) {
-		setRequiredContainerSysRole(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
+		}
+		else {
+			requiredName = argObj.getRequiredName();
+		}
 	}
 
 	@Override

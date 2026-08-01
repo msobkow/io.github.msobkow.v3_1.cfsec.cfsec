@@ -98,17 +98,32 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
-		setRequiredContainerGroup(argObj.getRequiredSecSysGrpId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
 	}
 
 	@Override
@@ -132,17 +147,32 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override

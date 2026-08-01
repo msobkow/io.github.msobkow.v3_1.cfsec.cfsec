@@ -98,12 +98,22 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setRequiredContainerRole(ICFSecSecTentRole argObj) {
-		setRequiredContainerRole(argObj.getRequiredSecTentRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerRole(ICFSecProtSecTentRole argObj) {
-		setRequiredContainerRole(argObj.getRequiredSecTentRoleId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerRole", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
+		}
 	}
 
 	@Override
@@ -127,17 +137,32 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
-		setRequiredParentUser(argObj.getRequiredLoginId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+		}
 	}
 
 	@Override

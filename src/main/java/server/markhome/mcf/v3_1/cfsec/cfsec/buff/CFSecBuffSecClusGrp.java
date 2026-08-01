@@ -194,7 +194,12 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredOwnerCluster(ICFSecCluster argObj) {
-		setRequiredOwnerCluster(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
+		}
+		else {
+			requiredClusterId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -238,7 +243,12 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj) {
-		setRequiredContainerSysGrp(argObj.getRequiredName());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSysGrp", 1, "argObj");
+		}
+		else {
+			requiredName = argObj.getRequiredName();
+		}
 	}
 
 	@Override

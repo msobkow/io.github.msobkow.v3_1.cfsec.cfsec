@@ -98,17 +98,32 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
@@ -132,17 +147,32 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredParentCcy(ICFSecISOCcy argObj) {
-		setRequiredParentCcy(argObj.getRequiredISOCcyId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentCcy(ICFSecProtISOCcy argObj) {
-		setRequiredParentCcy(argObj.getRequiredISOCcyId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentCcy(ICFSecPubISOCcy argObj) {
-		setRequiredParentCcy(argObj.getRequiredISOCcyId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+		}
 	}
 
 	@Override

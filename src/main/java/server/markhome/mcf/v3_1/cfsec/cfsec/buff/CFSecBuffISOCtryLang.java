@@ -98,17 +98,32 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj) {
-		setRequiredContainerCtry(argObj.getRequiredISOCtryId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+		}
 	}
 
 	@Override
@@ -132,17 +147,32 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredParentLang(ICFSecISOLang argObj) {
-		setRequiredParentLang(argObj.getRequiredISOLangId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentLang(ICFSecProtISOLang argObj) {
-		setRequiredParentLang(argObj.getRequiredISOLangId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+		}
 	}
 
 	@Override
 	public void setRequiredParentLang(ICFSecPubISOLang argObj) {
-		setRequiredParentLang(argObj.getRequiredISOLangId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
+		}
+		else {
+			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+		}
 	}
 
 	@Override
