@@ -79,7 +79,28 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusRoleMembTable targetTable = targetBackingSchema.getTableSecClusRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRoleMemb()");
+		}
+		ICFSecSecClusRoleMemb[] targetArr = targetTable.readDerivedByClusRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
@@ -172,7 +193,9 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public void setRequiredOwnerCluster(ICFSecCluster argObj);
+	public void setRequiredOwnerCluster(ICFSecCluster argObj) {
+		setRequiredOwnerCluster(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
@@ -214,7 +237,9 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredName());
+	}
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {

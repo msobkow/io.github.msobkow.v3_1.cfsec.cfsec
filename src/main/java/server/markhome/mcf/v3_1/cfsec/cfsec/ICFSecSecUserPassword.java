@@ -59,6 +59,8 @@ public interface ICFSecSecUserPassword
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	public ICFSecSecUser getRequiredContainerUser();
 
+	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
 
 	public void setRequiredContainerUser(ICFSecProtSecUser argObj);

@@ -80,6 +80,8 @@ public interface ICFSecISOCtryLang
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
 	public ICFSecISOCtry getRequiredContainerCtry();
 
+	public void setRequiredContainerCtry(short argISOCtryId);
+
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
 
 	public void setRequiredContainerCtry(ICFSecProtISOCtry argObj);
@@ -87,6 +89,8 @@ public interface ICFSecISOCtryLang
 	public void setRequiredContainerCtry(ICFSecPubISOCtry argObj);
 
 	public ICFSecISOLang getRequiredParentLang();
+
+	public void setRequiredParentLang(short argISOLangId);
 
 	public void setRequiredParentLang(ICFSecISOLang argObj);
 

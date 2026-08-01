@@ -63,36 +63,92 @@ public class CFSecBuffSecTentRoleMemb
 	}
 
 	@Override
-	public ICFSecSecTentRoleMembPKey getPKey();
+	public ICFSecSecTentRoleMembPKey getPKey() {
+		return(pkey);
+	}
 
 	@Override
-	public void setPKey(ICFSecSecTentRoleMembPKey pkey );
-	@Override
-	public ICFSecSecTentRole getRequiredContainerRole();
+	public void setPKey(ICFSecSecTentRoleMembPKey pkey ) {
+		if (pkey == null) {
+			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
+		}
+		else {
+			this.pkey = pkey;
+		}
+	}
 
 	@Override
-	public void setRequiredContainerRole(ICFSecSecTentRole argObj);
+	public ICFSecSecTentRole getRequiredContainerRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleTable targetTable = targetBackingSchema.getTableSecTentRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
+		}
+		ICFSecSecTentRole targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentRoleId());
+		return(targetRec);
+	}
 
 	@Override
-	public void setRequiredContainerRole(ICFSecProtSecTentRole argObj);
+	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecTentRoleId) {
+		requiredSecTentRoleId = argSecTentRoleId;
+	}
 
 	@Override
-	public ICFSecSecUser getRequiredParentUser();
+	public void setRequiredContainerRole(ICFSecSecTentRole argObj) {
+		setRequiredContainerRole(argObj.getRequiredSecTentRoleId());
+	}
 
 	@Override
-	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void setRequiredContainerRole(ICFSecProtSecTentRole argObj) {
+		setRequiredContainerRole(argObj.getRequiredSecTentRoleId());
+	}
 
 	@Override
-	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+	public ICFSecSecUser getRequiredParentUser() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
+		return(targetRec);
+	}
 
 	@Override
-	public void setRequiredParentUser(ICFSecPubSecUser argObj);
+	public void setRequiredParentUser(String argLoginId) {
+		requiredLoginId = argLoginId;
+	}
 
 	@Override
-	public CFLibDbKeyHash256 get$implColumnBuffAttrOptionality$SecTentRoleId();
+	public void setRequiredParentUser(ICFSecSecUser argObj) {
+		setRequiredParentUser(argObj.getRequiredLoginId());
+	}
 
 	@Override
-	public String get$implColumnBuffAttrOptionality$LoginId();
+	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
+		setRequiredParentUser(argObj.getRequiredLoginId());
+	}
+
+	@Override
+	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
+		setRequiredParentUser(argObj.getRequiredLoginId());
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return( getPKey().getRequiredSecTentRoleId() );
+	}
+
+	@Override
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {

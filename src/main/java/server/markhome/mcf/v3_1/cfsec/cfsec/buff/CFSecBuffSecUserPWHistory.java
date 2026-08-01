@@ -62,21 +62,39 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryPKey getPKey();
+	public ICFSecSecUserPWHistoryPKey getPKey() {
+		return(pkey);
+	}
 
 	@Override
-	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
-	@Override
-	public CFLibDbKeyHash256 get$implColumnBuffAttrOptionality$SecUserId();
+	public void setPKey(ICFSecSecUserPWHistoryPKey pkey ) {
+		if (pkey == null) {
+			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
+		}
+		else {
+			this.pkey = pkey;
+		}
+	}
 
 	@Override
-	public void set$implColumnBuffAttrOptionality$SecUserId(CFLibDbKeyHash256 value);
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey().getRequiredSecUserId() );
+	}
 
 	@Override
-	public LocalDateTime get$implColumnBuffAttrOptionality$PWSetStamp();
+	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
+		getPKey().setRequiredSecUserId(value);
+	}
 
 	@Override
-	public void set$implColumnBuffAttrOptionality$PWSetStamp(LocalDateTime value);
+	public LocalDateTime getRequiredPWSetStamp() {
+		return( getPKey().getRequiredPWSetStamp() );
+	}
+
+	@Override
+	public void setRequiredPWSetStamp(LocalDateTime value) {
+		getPKey().setRequiredPWSetStamp(value);
+	}
 
 	@Override
 	public int getRequiredRevision() {

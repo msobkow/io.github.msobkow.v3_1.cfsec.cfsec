@@ -87,13 +87,46 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
-	public ICFSecSecUserPassword getOptionalComponentsPassword();
+	public ICFSecSecUserPassword getOptionalComponentsPassword() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPassword", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserPasswordTable targetTable = targetBackingSchema.getTableSecUserPassword();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPassword", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPassword()");
+		}
+		ICFSecSecUserPassword targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
 
 	@Override
-	public ICFSecSecUserEMConf getOptionalComponentsEMConf();
+	public ICFSecSecUserEMConf getOptionalComponentsEMConf() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEMConf", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserEMConfTable targetTable = targetBackingSchema.getTableSecUserEMConf();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsEMConf", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserEMConf()");
+		}
+		ICFSecSecUserEMConf targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
 
 	@Override
-	public ICFSecSecUserPWReset getOptionalComponentsPWReset();
+	public ICFSecSecUserPWReset getOptionalComponentsPWReset() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPWReset", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserPWResetTable targetTable = targetBackingSchema.getTableSecUserPWReset();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsPWReset", 0, "ICFSecSchema.getBackingCFSec().getTableSecUserPWReset()");
+		}
+		ICFSecSecUserPWReset targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {

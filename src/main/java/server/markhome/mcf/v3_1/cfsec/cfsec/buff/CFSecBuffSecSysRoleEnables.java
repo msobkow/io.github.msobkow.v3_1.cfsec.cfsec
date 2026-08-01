@@ -63,39 +63,97 @@ public class CFSecBuffSecSysRoleEnables
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesPKey getPKey();
+	public ICFSecSecSysRoleEnablesPKey getPKey() {
+		return(pkey);
+	}
 
 	@Override
-	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
-	@Override
-	public ICFSecSecSysRole getRequiredContainerSysRole();
+	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey ) {
+		if (pkey == null) {
+			throw new CFLibNullArgumentException(getClass(), "setPKey", 1, "pkey");
+		}
+		else {
+			this.pkey = pkey;
+		}
+	}
 
 	@Override
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
+	public ICFSecSecSysRole getRequiredContainerSysRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleTable targetTable = targetBackingSchema.getTableSecSysRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
+		}
+		ICFSecSecSysRole targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
+		return(targetRec);
+	}
 
 	@Override
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
+	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		requiredSecSysRoleId = argSecSysRoleId;
+	}
 
 	@Override
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
+	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+	}
 
 	@Override
-	public ICFSecSecSysGrp getRequiredParentEnableGroup();
+	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+	}
 
 	@Override
-	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj) {
+		setRequiredContainerSysRole(argObj.getRequiredSecSysRoleId());
+	}
 
 	@Override
-	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj);
+	public ICFSecSecSysGrp getRequiredParentEnableGroup() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpTable targetTable = targetBackingSchema.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
+		}
+		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredEnableName());
+		return(targetRec);
+	}
 
 	@Override
-	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
+	public void setRequiredParentEnableGroup(String argEnableName) {
+		requiredEnableName = argEnableName;
+	}
 
 	@Override
-	public CFLibDbKeyHash256 get$implColumnBuffAttrOptionality$SecSysRoleId();
+	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj) {
+		setRequiredParentEnableGroup(argObj.getRequiredName());
+	}
 
 	@Override
-	public String get$implColumnBuffAttrOptionality$EnableName();
+	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj) {
+		setRequiredParentEnableGroup(argObj.getRequiredName());
+	}
+
+	@Override
+	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj) {
+		setRequiredParentEnableGroup(argObj.getRequiredName());
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return( getPKey().getRequiredSecSysRoleId() );
+	}
+
+	@Override
+	public String getRequiredEnableName() {
+		return( getPKey().getRequiredEnableName() );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {

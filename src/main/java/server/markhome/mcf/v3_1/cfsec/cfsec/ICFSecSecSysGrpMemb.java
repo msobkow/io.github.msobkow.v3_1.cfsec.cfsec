@@ -79,6 +79,8 @@ public interface ICFSecSecSysGrpMemb
 	public void setPKey(ICFSecSecSysGrpMembPKey pkey );
 	public ICFSecSecSysGrp getRequiredContainerGroup();
 
+	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId);
+
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj);
 
 	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj);
@@ -86,6 +88,8 @@ public interface ICFSecSecSysGrpMemb
 	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj);
 
 	public ICFSecSecUser getRequiredParentUser();
+
+	public void setRequiredParentUser(String argLoginId);
 
 	public void setRequiredParentUser(ICFSecSecUser argObj);
 

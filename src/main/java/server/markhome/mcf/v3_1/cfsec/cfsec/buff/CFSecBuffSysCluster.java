@@ -133,7 +133,9 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
-	public void setRequiredContainerCluster(ICFSecCluster argObj);
+	public void setRequiredContainerCluster(ICFSecCluster argObj) {
+		setRequiredContainerCluster(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
