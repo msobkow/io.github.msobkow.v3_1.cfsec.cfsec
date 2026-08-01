@@ -191,22 +191,26 @@ public class CFSecBuffSecUserPWResetH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecUserId() {
-        return( pkey.getRequiredSecUserId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId ) {
-        pkey.setRequiredSecUserId( requiredSecUserId );
-    }
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredSentToEMailAddr() {
 		return( requiredSentToEMailAddr );
 	}
 
-	@Override
 	public void setRequiredSentToEMailAddr( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -230,7 +234,6 @@ public class CFSecBuffSecUserPWResetH
 		return( requiredPasswordResetUuid6 );
 	}
 
-	@Override
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -246,7 +249,6 @@ public class CFSecBuffSecUserPWResetH
 		return( requiredNewAccount );
 	}
 
-	@Override
 	public void setRequiredNewAccount( boolean value ) {
 		requiredNewAccount = value;
 	}

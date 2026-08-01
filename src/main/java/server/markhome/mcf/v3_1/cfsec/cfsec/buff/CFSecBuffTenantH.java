@@ -190,19 +190,34 @@ public class CFSecBuffTenantH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredId() {
-        return( pkey.getRequiredId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredId( CFLibDbKeyHash256 requiredId ) {
-        pkey.setRequiredId( requiredId );
-    }
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( requiredClusterId );
+	}
+
+	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
 	}
 
 	@Override
@@ -210,7 +225,6 @@ public class CFSecBuffTenantH
 		return( requiredTenantName );
 	}
 
-	@Override
 	public void setRequiredTenantName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

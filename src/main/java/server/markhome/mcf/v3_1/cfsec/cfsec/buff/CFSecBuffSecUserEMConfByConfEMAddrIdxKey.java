@@ -61,7 +61,6 @@ public class CFSecBuffSecUserEMConfByConfEMAddrIdxKey
 		return( requiredConfirmEMailAddr );
 	}
 
-	@Override
 	public void setRequiredConfirmEMailAddr( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

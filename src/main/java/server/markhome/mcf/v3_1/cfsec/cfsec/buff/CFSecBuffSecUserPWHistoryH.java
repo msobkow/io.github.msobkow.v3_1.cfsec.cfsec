@@ -133,32 +133,41 @@ public class CFSecBuffSecUserPWHistoryH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecUserId() {
-        return( pkey.getRequiredSecUserId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey().getRequiredSecUserId() );
+	}
 
-    @Override
-    public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId ) {
-        pkey.setRequiredSecUserId( requiredSecUserId );
-    }
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecUserId( value );
+	}
 
-    @Override
-    public LocalDateTime getRequiredPWSetStamp() {
-        return( pkey.getRequiredPWSetStamp() );
-    }
+	@Override
+	public LocalDateTime getRequiredPWSetStamp() {
+		return( getPKey().getRequiredPWSetStamp() );
+	}
 
-    @Override
-    public void setRequiredPWSetStamp( LocalDateTime requiredPWSetStamp ) {
-        pkey.setRequiredPWSetStamp( requiredPWSetStamp );
-    }
+	public void setRequiredPWSetStamp( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPWSetStamp",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredPWSetStamp( value );
+	}
 
 	@Override
 	public LocalDateTime getRequiredPWReplacedStamp() {
 		return( requiredPWReplacedStamp );
 	}
 
-	@Override
 	public void setRequiredPWReplacedStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -174,7 +183,6 @@ public class CFSecBuffSecUserPWHistoryH
 		return( requiredPasswordHash );
 	}
 
-	@Override
 	public void setRequiredPasswordHash( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

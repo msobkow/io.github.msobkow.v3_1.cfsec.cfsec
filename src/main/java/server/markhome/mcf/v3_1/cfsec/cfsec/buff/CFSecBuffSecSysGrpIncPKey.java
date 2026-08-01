@@ -69,7 +69,6 @@ public class CFSecBuffSecSysGrpIncPKey
 		return( requiredSecSysGrpId );
 	}
 
-	@Override
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -85,7 +84,6 @@ public class CFSecBuffSecSysGrpIncPKey
 		return( requiredInclName );
 	}
 
-	@Override
 	public void setRequiredInclName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

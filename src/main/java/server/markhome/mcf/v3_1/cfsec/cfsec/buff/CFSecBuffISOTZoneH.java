@@ -198,22 +198,29 @@ public class CFSecBuffISOTZoneH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public short getRequiredISOTZoneId() {
-        return( pkey.getRequiredISOTZoneId() );
-    }
+	@Override
+	public short getRequiredISOTZoneId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredISOTZoneId( short requiredISOTZoneId ) {
-        pkey.setRequiredISOTZoneId( requiredISOTZoneId );
-    }
+	@Override
+	public void setRequiredISOTZoneId( short value ) {
+		if( value < ICFSecISOTZone.ISOTZONEID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOTZoneId",
+				1,
+				"value",
+				value,
+				ICFSecISOTZone.ISOTZONEID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredIso8601() {
 		return( requiredIso8601 );
 	}
 
-	@Override
 	public void setRequiredIso8601( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -237,7 +244,6 @@ public class CFSecBuffISOTZoneH
 		return( requiredTZName );
 	}
 
-	@Override
 	public void setRequiredTZName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -313,7 +319,6 @@ public class CFSecBuffISOTZoneH
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -337,7 +342,6 @@ public class CFSecBuffISOTZoneH
 		return( requiredVisible );
 	}
 
-	@Override
 	public void setRequiredVisible( boolean value ) {
 		requiredVisible = value;
 	}

@@ -61,7 +61,6 @@ public class CFSecBuffSecSessionBySecProxyIdxKey
 		return( optionalSecProxyId );
 	}
 
-	@Override
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
 		optionalSecProxyId = value;
 	}

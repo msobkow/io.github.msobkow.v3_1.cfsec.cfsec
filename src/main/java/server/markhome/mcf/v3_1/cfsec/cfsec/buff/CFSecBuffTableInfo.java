@@ -143,30 +143,30 @@ public class CFSecBuffTableInfo
 	@Override
 	public void setOptionalParentSuperRef(ICFSecTableInfo argObj) {
 		if(argObj == null) {
-			optionalSuperName = null;
+			setOptionalSuperName(null);
 		}
 		else {
-			optionalSuperName = argObj.getRequiredTableName();
+			setOptionalSuperName(argObj.getRequiredTableName());
 		}
 	}
 
 	@Override
 	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
 		if(argObj == null) {
-			optionalSuperName = null;
+			setOptionalSuperName(null);
 		}
 		else {
-			optionalSuperName = argObj.getRequiredTableName();
+			setOptionalSuperName(argObj.getRequiredTableName());
 		}
 	}
 
 	@Override
 	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
 		if(argObj == null) {
-			optionalSuperName = null;
+			setOptionalSuperName(null);
 		}
 		else {
-			optionalSuperName = argObj.getRequiredTableName();
+			setOptionalSuperName(argObj.getRequiredTableName());
 		}
 	}
 
@@ -199,7 +199,6 @@ public class CFSecBuffTableInfo
 		return( requiredSchemaName );
 	}
 
-	@Override
 	public void setRequiredSchemaName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -223,7 +222,6 @@ public class CFSecBuffTableInfo
 		return( requiredTableName );
 	}
 
-	@Override
 	public void setRequiredTableName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -245,6 +243,18 @@ public class CFSecBuffTableInfo
 	@Override
 	public String getOptionalSuperName() {
 		return( optionalSuperName );
+	}
+
+	public void setOptionalSuperName( String value ) {
+		if( value != null && value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setOptionalSuperName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		optionalSuperName = value;
 	}
 
 	@Override
@@ -288,7 +298,6 @@ public class CFSecBuffTableInfo
 		return( requiredHasHistory );
 	}
 
-	@Override
 	public void setRequiredHasHistory( boolean value ) {
 		requiredHasHistory = value;
 	}
@@ -298,7 +307,6 @@ public class CFSecBuffTableInfo
 		return( requiredIsMutable );
 	}
 
-	@Override
 	public void setRequiredIsMutable( boolean value ) {
 		requiredIsMutable = value;
 	}
@@ -308,7 +316,6 @@ public class CFSecBuffTableInfo
 		return( requiredSecScopeName );
 	}
 
-	@Override
 	public void setRequiredSecScopeName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -332,7 +339,6 @@ public class CFSecBuffTableInfo
 		return( requiredCodeVis );
 	}
 
-	@Override
 	public void setRequiredCodeVis( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

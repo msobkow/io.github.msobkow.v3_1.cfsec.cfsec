@@ -61,7 +61,6 @@ public class CFSecBuffSecSysGrpIncByNameIdxKey
 		return( requiredInclName );
 	}
 
-	@Override
 	public void setRequiredInclName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

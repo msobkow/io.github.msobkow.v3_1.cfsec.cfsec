@@ -190,24 +190,57 @@ public class CFSecBuffSecTentRoleH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-        return( pkey.getRequiredSecTentRoleId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecTentRoleId( CFLibDbKeyHash256 requiredSecTentRoleId ) {
-        pkey.setRequiredSecTentRoleId( requiredSecTentRoleId );
-    }
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return( requiredTenantId );
 	}
 
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
 	}
 
     @Override

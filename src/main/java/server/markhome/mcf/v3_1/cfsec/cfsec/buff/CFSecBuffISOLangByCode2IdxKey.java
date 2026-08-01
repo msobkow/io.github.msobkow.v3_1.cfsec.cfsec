@@ -61,7 +61,6 @@ public class CFSecBuffISOLangByCode2IdxKey
 		return( optionalISO6391Code );
 	}
 
-	@Override
 	public void setOptionalISO6391Code( String value ) {
 		if( value != null && value.length() > 2 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

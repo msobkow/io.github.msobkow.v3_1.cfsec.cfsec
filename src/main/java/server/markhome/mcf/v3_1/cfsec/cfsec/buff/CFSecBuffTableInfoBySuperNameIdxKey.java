@@ -61,7 +61,6 @@ public class CFSecBuffTableInfoBySuperNameIdxKey
 		return( optionalSuperName );
 	}
 
-	@Override
 	public void setOptionalSuperName( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

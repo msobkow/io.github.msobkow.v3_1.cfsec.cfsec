@@ -190,22 +190,29 @@ public class CFSecBuffISOCtryH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public short getRequiredISOCtryId() {
-        return( pkey.getRequiredISOCtryId() );
-    }
+	@Override
+	public short getRequiredISOCtryId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredISOCtryId( short requiredISOCtryId ) {
-        pkey.setRequiredISOCtryId( requiredISOCtryId );
-    }
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecISOCtry.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecISOCtry.ISOCTRYID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredISOCode() {
 		return( requiredISOCode );
 	}
 
-	@Override
 	public void setRequiredISOCode( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -229,7 +236,6 @@ public class CFSecBuffISOCtryH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

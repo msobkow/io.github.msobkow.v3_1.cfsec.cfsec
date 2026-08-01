@@ -122,7 +122,6 @@ public class CFSecBuffSecSessionHPKey
 		return( requiredSecSessionId );
 	}
 
-	@Override
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

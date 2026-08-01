@@ -125,7 +125,6 @@ public class CFSecBuffSecUserPWHistoryHPKey
 		return( requiredSecUserId );
 	}
 
-	@Override
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -141,7 +140,6 @@ public class CFSecBuffSecUserPWHistoryHPKey
 		return( requiredPWSetStamp );
 	}
 
-	@Override
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -190,22 +190,26 @@ public class CFSecBuffSecSysGrpH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-        return( pkey.getRequiredSecSysGrpId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecSysGrpId( CFLibDbKeyHash256 requiredSecSysGrpId ) {
-        pkey.setRequiredSecSysGrpId( requiredSecSysGrpId );
-    }
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -229,7 +233,6 @@ public class CFSecBuffSecSysGrpH
 		return( requiredSecLevel );
 	}
 
-	@Override
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

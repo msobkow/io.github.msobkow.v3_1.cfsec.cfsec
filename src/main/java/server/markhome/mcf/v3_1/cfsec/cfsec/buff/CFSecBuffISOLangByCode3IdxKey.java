@@ -61,7 +61,6 @@ public class CFSecBuffISOLangByCode3IdxKey
 		return( requiredISO6392Code );
 	}
 
-	@Override
 	public void setRequiredISO6392Code( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -179,7 +179,6 @@ public class CFSecBuffCluster
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -250,7 +249,6 @@ public class CFSecBuffCluster
 		return( requiredFullDomName );
 	}
 
-	@Override
 	public void setRequiredFullDomName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -274,7 +272,6 @@ public class CFSecBuffCluster
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

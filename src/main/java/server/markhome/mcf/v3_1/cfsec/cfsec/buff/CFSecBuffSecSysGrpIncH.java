@@ -186,25 +186,43 @@ public class CFSecBuffSecSysGrpIncH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-        return( pkey.getRequiredSecSysGrpId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return( getPKey().getRequiredSecSysGrpId() );
+	}
 
-    @Override
-    public void setRequiredSecSysGrpId( CFLibDbKeyHash256 requiredSecSysGrpId ) {
-        pkey.setRequiredSecSysGrpId( requiredSecSysGrpId );
-    }
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecSysGrpId( value );
+	}
 
-    @Override
-    public String getRequiredInclName() {
-        return( pkey.getRequiredInclName() );
-    }
+	@Override
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
+	}
 
-    @Override
-    public void setRequiredInclName( String requiredInclName ) {
-        pkey.setRequiredInclName( requiredInclName );
-    }
+	public void setRequiredInclName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredInclName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredInclName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		getPKey().setRequiredInclName( value );
+	}
 
     @Override
     public boolean equals( Object obj ) {

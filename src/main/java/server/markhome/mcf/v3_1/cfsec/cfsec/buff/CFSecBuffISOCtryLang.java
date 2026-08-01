@@ -102,7 +102,7 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+			setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+			setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffISOCtryLang
 			throw new CFLibNullArgumentException(getClass(), "setParentLang", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOLangId(argObj.getRequiredISOLangId());
+			setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	}
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
+		return(getPKey().getRequiredISOCtryId());
 	}
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( getPKey().getRequiredISOLangId() );
+		return(getPKey().getRequiredISOLangId());
 	}
 
 	@Override

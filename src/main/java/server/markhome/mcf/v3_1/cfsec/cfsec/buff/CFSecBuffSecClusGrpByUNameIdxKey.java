@@ -63,7 +63,6 @@ public class CFSecBuffSecClusGrpByUNameIdxKey
 		return( requiredClusterId );
 	}
 
-	@Override
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -79,7 +78,6 @@ public class CFSecBuffSecClusGrpByUNameIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

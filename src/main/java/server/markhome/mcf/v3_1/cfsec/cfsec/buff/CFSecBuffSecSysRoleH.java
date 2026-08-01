@@ -188,22 +188,26 @@ public class CFSecBuffSecSysRoleH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-        return( pkey.getRequiredSecSysRoleId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecSysRoleId( CFLibDbKeyHash256 requiredSecSysRoleId ) {
-        pkey.setRequiredSecSysRoleId( requiredSecSysRoleId );
-    }
+	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysRoleId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

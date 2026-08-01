@@ -198,22 +198,26 @@ public class CFSecBuffSecUserH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecUserId() {
-        return( pkey.getRequiredSecUserId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId ) {
-        pkey.setRequiredSecUserId( requiredSecUserId );
-    }
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredLoginId() {
 		return( requiredLoginId );
 	}
 
-	@Override
 	public void setRequiredLoginId( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -237,7 +241,6 @@ public class CFSecBuffSecUserH
 		return( requiredAccountStatus );
 	}
 
-	@Override
 	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -253,7 +256,6 @@ public class CFSecBuffSecUserH
 		return( optionalDfltSysGrpName );
 	}
 
-	@Override
 	public void setOptionalDfltSysGrpName( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -271,7 +273,6 @@ public class CFSecBuffSecUserH
 		return( optionalDfltClusGrpName );
 	}
 
-	@Override
 	public void setOptionalDfltClusGrpName( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -289,7 +290,6 @@ public class CFSecBuffSecUserH
 		return( optionalDfltTentGrpName );
 	}
 
-	@Override
 	public void setOptionalDfltTentGrpName( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -307,7 +307,6 @@ public class CFSecBuffSecUserH
 		return( requiredEMailAddress );
 	}
 
-	@Override
 	public void setRequiredEMailAddress( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

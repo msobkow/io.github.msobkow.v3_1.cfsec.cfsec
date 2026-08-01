@@ -122,7 +122,6 @@ public class CFSecBuffSecTentGrpHPKey
 		return( requiredSecTentGrpId );
 	}
 
-	@Override
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

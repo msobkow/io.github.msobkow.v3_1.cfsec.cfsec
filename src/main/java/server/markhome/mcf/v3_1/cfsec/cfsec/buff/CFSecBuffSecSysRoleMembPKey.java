@@ -69,7 +69,6 @@ public class CFSecBuffSecSysRoleMembPKey
 		return( requiredSecSysRoleId );
 	}
 
-	@Override
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -85,7 +84,6 @@ public class CFSecBuffSecSysRoleMembPKey
 		return( requiredLoginId );
 	}
 
-	@Override
 	public void setRequiredLoginId( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

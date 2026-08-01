@@ -61,7 +61,6 @@ public class CFSecBuffSecTentGrpMembByTentGrpIdxKey
 		return( requiredSecTentGrpId );
 	}
 
-	@Override
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

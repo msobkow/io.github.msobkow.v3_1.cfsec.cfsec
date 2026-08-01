@@ -102,7 +102,7 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setContainerCtry", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCtryId(argObj.getRequiredISOCtryId());
+			setRequiredISOCtryId(argObj.getRequiredISOCtryId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+			setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+			setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffISOCtryCcy
 			throw new CFLibNullArgumentException(getClass(), "setParentCcy", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredISOCcyId(argObj.getRequiredISOCcyId());
+			setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	}
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
+		return(getPKey().getRequiredISOCtryId());
 	}
 
 	@Override
 	public short getRequiredISOCcyId() {
-		return( getPKey().getRequiredISOCcyId() );
+		return(getPKey().getRequiredISOCcyId());
 	}
 
 	@Override

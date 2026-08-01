@@ -61,7 +61,6 @@ public class CFSecBuffSecUserPasswordBySetStampIdxKey
 		return( requiredPWSetStamp );
 	}
 
-	@Override
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -184,7 +184,6 @@ public class CFSecBuffISOCcy
 		return( requiredISOCode );
 	}
 
-	@Override
 	public void setRequiredISOCode( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -208,7 +207,6 @@ public class CFSecBuffISOCcy
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -232,7 +230,6 @@ public class CFSecBuffISOCcy
 		return( optionalUnitSymbol );
 	}
 
-	@Override
 	public void setOptionalUnitSymbol( String value ) {
 		if( value != null && value.length() > 4 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

@@ -138,7 +138,7 @@ public class CFSecBuffSysCluster
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -148,7 +148,7 @@ public class CFSecBuffSysCluster
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -158,13 +158,23 @@ public class CFSecBuffSysCluster
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( requiredClusterId );
+	}
+
+	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
 	}
 
 	@Override

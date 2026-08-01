@@ -98,7 +98,7 @@ public class CFSecBuffSecUserPassword
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
@@ -108,7 +108,7 @@ public class CFSecBuffSecUserPassword
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
@@ -118,13 +118,23 @@ public class CFSecBuffSecUserPassword
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
 	}
 
 	@Override
@@ -147,7 +157,6 @@ public class CFSecBuffSecUserPassword
 		return( requiredPWSetStamp );
 	}
 
-	@Override
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -163,7 +172,6 @@ public class CFSecBuffSecUserPassword
 		return( requiredPasswordHash );
 	}
 
-	@Override
 	public void setRequiredPasswordHash( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

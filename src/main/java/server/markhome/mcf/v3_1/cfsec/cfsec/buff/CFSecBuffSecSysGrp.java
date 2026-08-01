@@ -145,7 +145,6 @@ public class CFSecBuffSecSysGrp
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -360,7 +359,6 @@ public class CFSecBuffSecSysGrp
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -384,7 +382,6 @@ public class CFSecBuffSecSysGrp
 		return( requiredSecLevel );
 	}
 
-	@Override
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

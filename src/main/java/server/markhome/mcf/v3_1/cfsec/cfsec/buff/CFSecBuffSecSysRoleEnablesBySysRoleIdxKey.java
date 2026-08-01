@@ -61,7 +61,6 @@ public class CFSecBuffSecSysRoleEnablesBySysRoleIdxKey
 		return( requiredSecSysRoleId );
 	}
 
-	@Override
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

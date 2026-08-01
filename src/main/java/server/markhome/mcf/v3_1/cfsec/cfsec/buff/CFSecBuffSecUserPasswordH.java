@@ -133,22 +133,26 @@ public class CFSecBuffSecUserPasswordH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecUserId() {
-        return( pkey.getRequiredSecUserId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId ) {
-        pkey.setRequiredSecUserId( requiredSecUserId );
-    }
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
 		return( requiredPWSetStamp );
 	}
 
-	@Override
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -164,7 +168,6 @@ public class CFSecBuffSecUserPasswordH
 		return( requiredPasswordHash );
 	}
 
-	@Override
 	public void setRequiredPasswordHash( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

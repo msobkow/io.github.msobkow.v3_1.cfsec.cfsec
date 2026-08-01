@@ -61,7 +61,6 @@ public class CFSecBuffSecSysGrpBySecLevelIdxKey
 		return( requiredSecLevel );
 	}
 
-	@Override
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

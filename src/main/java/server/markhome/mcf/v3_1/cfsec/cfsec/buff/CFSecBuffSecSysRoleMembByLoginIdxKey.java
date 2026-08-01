@@ -61,7 +61,6 @@ public class CFSecBuffSecSysRoleMembByLoginIdxKey
 		return( requiredLoginId );
 	}
 
-	@Override
 	public void setRequiredLoginId( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

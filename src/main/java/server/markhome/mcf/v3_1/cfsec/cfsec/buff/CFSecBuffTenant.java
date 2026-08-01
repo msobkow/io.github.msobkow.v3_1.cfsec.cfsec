@@ -131,7 +131,6 @@ public class CFSecBuffTenant
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -222,7 +221,7 @@ public class CFSecBuffTenant
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -232,7 +231,7 @@ public class CFSecBuffTenant
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -242,7 +241,7 @@ public class CFSecBuffTenant
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -251,12 +250,21 @@ public class CFSecBuffTenant
 		return( requiredClusterId );
 	}
 
+	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
+	}
+
 	@Override
 	public String getRequiredTenantName() {
 		return( requiredTenantName );
 	}
 
-	@Override
 	public void setRequiredTenantName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

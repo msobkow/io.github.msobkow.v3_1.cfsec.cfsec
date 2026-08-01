@@ -194,22 +194,29 @@ public class CFSecBuffISOCcyH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public short getRequiredISOCcyId() {
-        return( pkey.getRequiredISOCcyId() );
-    }
+	@Override
+	public short getRequiredISOCcyId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredISOCcyId( short requiredISOCcyId ) {
-        pkey.setRequiredISOCcyId( requiredISOCcyId );
-    }
+	@Override
+	public void setRequiredISOCcyId( short value ) {
+		if( value < ICFSecISOCcy.ISOCCYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCcyId",
+				1,
+				"value",
+				value,
+				ICFSecISOCcy.ISOCCYID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredISOCode() {
 		return( requiredISOCode );
 	}
 
-	@Override
 	public void setRequiredISOCode( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -233,7 +240,6 @@ public class CFSecBuffISOCcyH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -257,7 +263,6 @@ public class CFSecBuffISOCcyH
 		return( optionalUnitSymbol );
 	}
 
-	@Override
 	public void setOptionalUnitSymbol( String value ) {
 		if( value != null && value.length() > 4 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

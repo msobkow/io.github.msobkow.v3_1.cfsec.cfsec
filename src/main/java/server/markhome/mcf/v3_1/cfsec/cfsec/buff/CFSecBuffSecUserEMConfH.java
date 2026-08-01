@@ -193,22 +193,26 @@ public class CFSecBuffSecUserEMConfH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecUserId() {
-        return( pkey.getRequiredSecUserId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId ) {
-        pkey.setRequiredSecUserId( requiredSecUserId );
-    }
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredConfirmEMailAddr() {
 		return( requiredConfirmEMailAddr );
 	}
 
-	@Override
 	public void setRequiredConfirmEMailAddr( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -232,7 +236,6 @@ public class CFSecBuffSecUserEMConfH
 		return( requiredEMailSentStamp );
 	}
 
-	@Override
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -248,7 +251,6 @@ public class CFSecBuffSecUserEMConfH
 		return( requiredEMConfirmationUuid6 );
 	}
 
-	@Override
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -264,7 +266,6 @@ public class CFSecBuffSecUserEMConfH
 		return( requiredNewAccount );
 	}
 
-	@Override
 	public void setRequiredNewAccount( boolean value ) {
 		requiredNewAccount = value;
 	}

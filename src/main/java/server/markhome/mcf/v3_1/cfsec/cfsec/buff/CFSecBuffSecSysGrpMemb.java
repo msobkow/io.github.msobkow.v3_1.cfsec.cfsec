@@ -102,7 +102,7 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffSecSysGrpMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( getPKey().getRequiredSecSysGrpId() );
+		return(getPKey().getRequiredSecSysGrpId());
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return( getPKey().getRequiredLoginId() );
+		return(getPKey().getRequiredLoginId());
 	}
 
 	@Override

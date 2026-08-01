@@ -107,7 +107,6 @@ public class CFSecBuffSecClusRole
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -198,7 +197,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -208,7 +207,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -218,7 +217,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
 		}
 		else {
-			requiredClusterId = argObj.getRequiredId();
+			setRequiredClusterId(argObj.getRequiredId());
 		}
 	}
 
@@ -247,7 +246,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			requiredName = argObj.getRequiredName();
+			setRequiredName(argObj.getRequiredName());
 		}
 	}
 
@@ -257,7 +256,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			requiredName = argObj.getRequiredName();
+			setRequiredName(argObj.getRequiredName());
 		}
 	}
 
@@ -267,7 +266,7 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			requiredName = argObj.getRequiredName();
+			setRequiredName(argObj.getRequiredName());
 		}
 	}
 
@@ -276,9 +275,37 @@ public class CFSecBuffSecClusRole
 		return( requiredClusterId );
 	}
 
+	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
 	}
 
 	@Override

@@ -192,22 +192,29 @@ public class CFSecBuffISOLangH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public short getRequiredISOLangId() {
-        return( pkey.getRequiredISOLangId() );
-    }
+	@Override
+	public short getRequiredISOLangId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredISOLangId( short requiredISOLangId ) {
-        pkey.setRequiredISOLangId( requiredISOLangId );
-    }
+	@Override
+	public void setRequiredISOLangId( short value ) {
+		if( value < ICFSecISOLang.ISOLANGID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOLangId",
+				1,
+				"value",
+				value,
+				ICFSecISOLang.ISOLANGID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredISO6392Code() {
 		return( requiredISO6392Code );
 	}
 
-	@Override
 	public void setRequiredISO6392Code( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -231,7 +238,6 @@ public class CFSecBuffISOLangH
 		return( optionalISO6391Code );
 	}
 
-	@Override
 	public void setOptionalISO6391Code( String value ) {
 		if( value != null && value.length() > 2 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -249,7 +255,6 @@ public class CFSecBuffISOLangH
 		return( requiredEnglishName );
 	}
 
-	@Override
 	public void setRequiredEnglishName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

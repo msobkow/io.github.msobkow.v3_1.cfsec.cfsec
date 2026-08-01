@@ -61,7 +61,6 @@ public class CFSecBuffSecUserPWResetBySentEMAddrIdxKey
 		return( requiredSentToEMailAddr );
 	}
 
-	@Override
 	public void setRequiredSentToEMailAddr( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

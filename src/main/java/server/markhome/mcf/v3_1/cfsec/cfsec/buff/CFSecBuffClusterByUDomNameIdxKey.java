@@ -61,7 +61,6 @@ public class CFSecBuffClusterByUDomNameIdxKey
 		return( requiredFullDomName );
 	}
 
-	@Override
 	public void setRequiredFullDomName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

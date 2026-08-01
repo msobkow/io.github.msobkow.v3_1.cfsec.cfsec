@@ -102,7 +102,7 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffSecSysRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( getPKey().getRequiredSecSysRoleId() );
+		return(getPKey().getRequiredSecSysRoleId());
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return( getPKey().getRequiredLoginId() );
+		return(getPKey().getRequiredLoginId());
 	}
 
 	@Override

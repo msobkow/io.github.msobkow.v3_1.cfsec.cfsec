@@ -186,25 +186,43 @@ public class CFSecBuffSecSysRoleEnablesH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-        return( pkey.getRequiredSecSysRoleId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return( getPKey().getRequiredSecSysRoleId() );
+	}
 
-    @Override
-    public void setRequiredSecSysRoleId( CFLibDbKeyHash256 requiredSecSysRoleId ) {
-        pkey.setRequiredSecSysRoleId( requiredSecSysRoleId );
-    }
+	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysRoleId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecSysRoleId( value );
+	}
 
-    @Override
-    public String getRequiredEnableName() {
-        return( pkey.getRequiredEnableName() );
-    }
+	@Override
+	public String getRequiredEnableName() {
+		return( getPKey().getRequiredEnableName() );
+	}
 
-    @Override
-    public void setRequiredEnableName( String requiredEnableName ) {
-        pkey.setRequiredEnableName( requiredEnableName );
-    }
+	public void setRequiredEnableName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredEnableName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredEnableName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		getPKey().setRequiredEnableName( value );
+	}
 
     @Override
     public boolean equals( Object obj ) {

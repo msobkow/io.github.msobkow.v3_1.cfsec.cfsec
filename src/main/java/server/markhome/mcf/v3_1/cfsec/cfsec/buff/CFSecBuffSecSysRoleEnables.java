@@ -102,7 +102,7 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
+			setRequiredSecSysRoleId(argObj.getRequiredSecSysRoleId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setParentEnableGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredEnableName(argObj.getRequiredName());
+			setRequiredEnableName(argObj.getRequiredName());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setParentEnableGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredEnableName(argObj.getRequiredName());
+			setRequiredEnableName(argObj.getRequiredName());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffSecSysRoleEnables
 			throw new CFLibNullArgumentException(getClass(), "setParentEnableGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredEnableName(argObj.getRequiredName());
+			setRequiredEnableName(argObj.getRequiredName());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( getPKey().getRequiredSecSysRoleId() );
+		return(getPKey().getRequiredSecSysRoleId());
 	}
 
 	@Override
 	public String getRequiredEnableName() {
-		return( getPKey().getRequiredEnableName() );
+		return(getPKey().getRequiredEnableName());
 	}
 
 	@Override

@@ -61,7 +61,6 @@ public class CFSecBuffSecClusRoleMembByClusRoleIdxKey
 		return( requiredSecClusRoleId );
 	}
 
-	@Override
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

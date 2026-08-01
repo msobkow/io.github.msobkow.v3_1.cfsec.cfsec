@@ -106,7 +106,7 @@ public class CFSecBuffSecUserEMConf
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
@@ -116,7 +116,7 @@ public class CFSecBuffSecUserEMConf
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
@@ -126,13 +126,23 @@ public class CFSecBuffSecUserEMConf
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
 		else {
-			setPKey(argObj.getRequiredSecUserId());
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		setPKey( value );
 	}
 
 	@Override
@@ -195,7 +205,6 @@ public class CFSecBuffSecUserEMConf
 		return( requiredConfirmEMailAddr );
 	}
 
-	@Override
 	public void setRequiredConfirmEMailAddr( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -219,7 +228,6 @@ public class CFSecBuffSecUserEMConf
 		return( requiredEMailSentStamp );
 	}
 
-	@Override
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -235,7 +243,6 @@ public class CFSecBuffSecUserEMConf
 		return( requiredEMConfirmationUuid6 );
 	}
 
-	@Override
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -251,7 +258,6 @@ public class CFSecBuffSecUserEMConf
 		return( requiredNewAccount );
 	}
 
-	@Override
 	public void setRequiredNewAccount( boolean value ) {
 		requiredNewAccount = value;
 	}

@@ -61,7 +61,6 @@ public class CFSecBuffISOTZoneByUTZNameIdxKey
 		return( requiredTZName );
 	}
 
-	@Override
 	public void setRequiredTZName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

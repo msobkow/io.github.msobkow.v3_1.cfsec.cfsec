@@ -186,25 +186,43 @@ public class CFSecBuffSecTentRoleMembH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-        return( pkey.getRequiredSecTentRoleId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return( getPKey().getRequiredSecTentRoleId() );
+	}
 
-    @Override
-    public void setRequiredSecTentRoleId( CFLibDbKeyHash256 requiredSecTentRoleId ) {
-        pkey.setRequiredSecTentRoleId( requiredSecTentRoleId );
-    }
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecTentRoleId( value );
+	}
 
-    @Override
-    public String getRequiredLoginId() {
-        return( pkey.getRequiredLoginId() );
-    }
+	@Override
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
+	}
 
-    @Override
-    public void setRequiredLoginId( String requiredLoginId ) {
-        pkey.setRequiredLoginId( requiredLoginId );
-    }
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		getPKey().setRequiredLoginId( value );
+	}
 
     @Override
     public boolean equals( Object obj ) {

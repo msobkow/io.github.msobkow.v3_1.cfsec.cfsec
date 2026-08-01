@@ -60,7 +60,6 @@ public class CFSecBuffSecUserEMConfByUUuid6IdxKey
 		return( requiredEMConfirmationUuid6 );
 	}
 
-	@Override
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

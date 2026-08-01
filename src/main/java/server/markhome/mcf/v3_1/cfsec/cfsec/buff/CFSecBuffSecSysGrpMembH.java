@@ -186,25 +186,43 @@ public class CFSecBuffSecSysGrpMembH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-        return( pkey.getRequiredSecSysGrpId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return( getPKey().getRequiredSecSysGrpId() );
+	}
 
-    @Override
-    public void setRequiredSecSysGrpId( CFLibDbKeyHash256 requiredSecSysGrpId ) {
-        pkey.setRequiredSecSysGrpId( requiredSecSysGrpId );
-    }
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecSysGrpId( value );
+	}
 
-    @Override
-    public String getRequiredLoginId() {
-        return( pkey.getRequiredLoginId() );
-    }
+	@Override
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
+	}
 
-    @Override
-    public void setRequiredLoginId( String requiredLoginId ) {
-        pkey.setRequiredLoginId( requiredLoginId );
-    }
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		getPKey().setRequiredLoginId( value );
+	}
 
     @Override
     public boolean equals( Object obj ) {

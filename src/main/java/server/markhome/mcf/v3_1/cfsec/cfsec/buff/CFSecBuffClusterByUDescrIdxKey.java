@@ -61,7 +61,6 @@ public class CFSecBuffClusterByUDescrIdxKey
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

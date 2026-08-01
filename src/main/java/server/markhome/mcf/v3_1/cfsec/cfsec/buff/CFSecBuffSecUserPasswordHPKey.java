@@ -122,7 +122,6 @@ public class CFSecBuffSecUserPasswordHPKey
 		return( requiredSecUserId );
 	}
 
-	@Override
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

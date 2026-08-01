@@ -190,24 +190,57 @@ public class CFSecBuffSecClusRoleH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-        return( pkey.getRequiredSecClusRoleId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecClusRoleId( CFLibDbKeyHash256 requiredSecClusRoleId ) {
-        pkey.setRequiredSecClusRoleId( requiredSecClusRoleId );
-    }
+	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusRoleId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( requiredClusterId );
 	}
 
+	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
 	}
 
     @Override

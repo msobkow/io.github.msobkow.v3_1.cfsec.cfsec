@@ -102,7 +102,7 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
+			setRequiredInclName(argObj.getRequiredName());
 		}
 	}
 
@@ -161,7 +161,7 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
+			setRequiredInclName(argObj.getRequiredName());
 		}
 	}
 
@@ -171,18 +171,18 @@ public class CFSecBuffSecSysGrpInc
 			throw new CFLibNullArgumentException(getClass(), "setParentSubGroup", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredInclName(argObj.getRequiredName());
+			setRequiredInclName(argObj.getRequiredName());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( getPKey().getRequiredSecSysGrpId() );
+		return(getPKey().getRequiredSecSysGrpId());
 	}
 
 	@Override
 	public String getRequiredInclName() {
-		return( getPKey().getRequiredInclName() );
+		return(getPKey().getRequiredInclName());
 	}
 
 	@Override

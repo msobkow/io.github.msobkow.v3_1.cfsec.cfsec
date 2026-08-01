@@ -138,22 +138,26 @@ public class CFSecBuffSecSessionH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredSecSessionId() {
-        return( pkey.getRequiredSecSessionId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSessionId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredSecSessionId( CFLibDbKeyHash256 requiredSecSessionId ) {
-        pkey.setRequiredSecSessionId( requiredSecSessionId );
-    }
+	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSessionId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return( requiredSecUserId );
 	}
 
-	@Override
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -169,7 +173,6 @@ public class CFSecBuffSecSessionH
 		return( requiredStart );
 	}
 
-	@Override
 	public void setRequiredStart( LocalDateTime value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -185,7 +188,6 @@ public class CFSecBuffSecSessionH
 		return( optionalFinish );
 	}
 
-	@Override
 	public void setOptionalFinish( LocalDateTime value ) {
 		optionalFinish = value;
 	}
@@ -195,7 +197,6 @@ public class CFSecBuffSecSessionH
 		return( optionalSecProxyId );
 	}
 
-	@Override
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
 		optionalSecProxyId = value;
 	}

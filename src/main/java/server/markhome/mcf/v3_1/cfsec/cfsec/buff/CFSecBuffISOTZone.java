@@ -164,7 +164,6 @@ public class CFSecBuffISOTZone
 		return( requiredIso8601 );
 	}
 
-	@Override
 	public void setRequiredIso8601( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -188,7 +187,6 @@ public class CFSecBuffISOTZone
 		return( requiredTZName );
 	}
 
-	@Override
 	public void setRequiredTZName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -264,7 +262,6 @@ public class CFSecBuffISOTZone
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -288,7 +285,6 @@ public class CFSecBuffISOTZone
 		return( requiredVisible );
 	}
 
-	@Override
 	public void setRequiredVisible( boolean value ) {
 		requiredVisible = value;
 	}

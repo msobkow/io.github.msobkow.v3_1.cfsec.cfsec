@@ -102,7 +102,7 @@ public class CFSecBuffSecTentRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
+			setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CFSecBuffSecTentRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setContainerRole", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
+			setRequiredSecTentRoleId(argObj.getRequiredSecTentRoleId());
 		}
 	}
 
@@ -141,7 +141,7 @@ public class CFSecBuffSecTentRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CFSecBuffSecTentRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
@@ -161,18 +161,18 @@ public class CFSecBuffSecTentRoleMemb
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
 		else {
-			getPKey().setRequiredLoginId(argObj.getRequiredLoginId());
+			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return( getPKey().getRequiredSecTentRoleId() );
+		return(getPKey().getRequiredSecTentRoleId());
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return( getPKey().getRequiredLoginId() );
+		return(getPKey().getRequiredLoginId());
 	}
 
 	@Override
