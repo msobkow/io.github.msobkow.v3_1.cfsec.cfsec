@@ -210,7 +210,8 @@ public class CFSecBuffSecUserH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -233,6 +234,7 @@ public class CFSecBuffSecUserH
 				value.length(),
 				32 );
 		}
+		
 		requiredLoginId = value;
 	}
 
@@ -248,6 +250,7 @@ public class CFSecBuffSecUserH
 				1,
 				"value" );
 		}
+		
 		requiredAccountStatus = value;
 	}
 
@@ -265,6 +268,7 @@ public class CFSecBuffSecUserH
 				value.length(),
 				64 );
 		}
+		
 		optionalDfltSysGrpName = value;
 	}
 
@@ -282,6 +286,7 @@ public class CFSecBuffSecUserH
 				value.length(),
 				64 );
 		}
+		
 		optionalDfltClusGrpName = value;
 	}
 
@@ -299,12 +304,13 @@ public class CFSecBuffSecUserH
 				value.length(),
 				64 );
 		}
+		
 		optionalDfltTentGrpName = value;
 	}
 
 	@Override
 	public String getRequiredEMailAddress() {
-		return( requiredEMailAddress );
+		return(  );
 	}
 
 	public void setRequiredEMailAddress( String value ) {
@@ -322,6 +328,7 @@ public class CFSecBuffSecUserH
 				value.length(),
 				512 );
 		}
+		
 		requiredEMailAddress = value;
 	}
 

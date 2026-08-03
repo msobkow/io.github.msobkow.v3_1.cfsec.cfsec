@@ -202,7 +202,8 @@ public class CFSecBuffClusterH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -225,6 +226,7 @@ public class CFSecBuffClusterH
 				value.length(),
 				192 );
 		}
+		
 		requiredFullDomName = value;
 	}
 
@@ -248,6 +250,7 @@ public class CFSecBuffClusterH
 				value.length(),
 				128 );
 		}
+		
 		requiredDescription = value;
 	}
 

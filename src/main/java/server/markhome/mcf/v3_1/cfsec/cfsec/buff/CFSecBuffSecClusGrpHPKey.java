@@ -119,7 +119,7 @@ public class CFSecBuffSecClusGrpHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return( requiredSecClusGrpId );
+		return(  );
 	}
 
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
@@ -129,6 +129,7 @@ public class CFSecBuffSecClusGrpHPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecClusGrpId = value;
 	}
 

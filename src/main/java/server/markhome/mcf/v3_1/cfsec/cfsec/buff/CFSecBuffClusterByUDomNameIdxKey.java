@@ -76,6 +76,7 @@ public class CFSecBuffClusterByUDomNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredFullDomName = value;
 	}
 

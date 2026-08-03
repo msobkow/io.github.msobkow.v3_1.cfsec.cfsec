@@ -63,13 +63,22 @@ public class CFSecBuffISOCtryLangByLangIdxKey
 
 	@Override
 	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecISOCtryLang.ISOLANGID_MIN_VALUE ) {
+		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",
 				1,
 				"value",
 				value,
-				ICFSecISOCtryLang.ISOLANGID_MIN_VALUE );
+				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
+		}
+		
+		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOLangId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
 		}
 		requiredISOLangId = value;
 	}

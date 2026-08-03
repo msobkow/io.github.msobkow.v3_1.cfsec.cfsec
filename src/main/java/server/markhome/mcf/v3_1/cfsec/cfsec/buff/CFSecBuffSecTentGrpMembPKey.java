@@ -66,7 +66,7 @@ public class CFSecBuffSecTentGrpMembPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return( requiredSecTentGrpId );
+		return(  );
 	}
 
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
@@ -76,12 +76,13 @@ public class CFSecBuffSecTentGrpMembPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecTentGrpId = value;
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return( requiredLoginId );
+		return(  );
 	}
 
 	public void setRequiredLoginId( String value ) {
@@ -99,6 +100,7 @@ public class CFSecBuffSecTentGrpMembPKey
 				value.length(),
 				32 );
 		}
+		
 		requiredLoginId = value;
 	}
 

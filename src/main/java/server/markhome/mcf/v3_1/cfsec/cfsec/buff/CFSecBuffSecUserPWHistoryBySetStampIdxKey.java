@@ -68,6 +68,7 @@ public class CFSecBuffSecUserPWHistoryBySetStampIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredPWSetStamp = value;
 	}
 

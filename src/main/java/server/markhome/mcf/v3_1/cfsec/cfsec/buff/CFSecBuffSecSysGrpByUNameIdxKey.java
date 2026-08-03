@@ -76,6 +76,7 @@ public class CFSecBuffSecSysGrpByUNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

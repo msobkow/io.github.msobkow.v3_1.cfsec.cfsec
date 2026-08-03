@@ -104,7 +104,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return( getPKey() );
+		return(  );
 	}
 
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
@@ -114,7 +114,8 @@ public class CFSecBuffSecTentGrp
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -272,7 +273,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(  );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -282,12 +283,13 @@ public class CFSecBuffSecTentGrp
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(  );
 	}
 
 	public void setRequiredName( String value ) {
@@ -305,6 +307,7 @@ public class CFSecBuffSecTentGrp
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

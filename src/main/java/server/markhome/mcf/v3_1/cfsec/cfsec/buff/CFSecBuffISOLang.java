@@ -111,15 +111,24 @@ public class CFSecBuffISOLang
 
 	@Override
 	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecISOLang.ISOLANGID_MIN_VALUE ) {
+		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",
 				1,
 				"value",
 				value,
-				ICFSecISOLang.ISOLANGID_MIN_VALUE );
+				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
 		}
-		setPKey( value );
+		
+		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOLangId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
+		}
+		setPKey(value);
 	}
 
 	@Override
@@ -197,6 +206,7 @@ public class CFSecBuffISOLang
 				value.length(),
 				3 );
 		}
+		
 		requiredISO6392Code = value;
 	}
 
@@ -214,6 +224,7 @@ public class CFSecBuffISOLang
 				value.length(),
 				2 );
 		}
+		
 		optionalISO6391Code = value;
 	}
 
@@ -237,6 +248,7 @@ public class CFSecBuffISOLang
 				value.length(),
 				64 );
 		}
+		
 		requiredEnglishName = value;
 	}
 

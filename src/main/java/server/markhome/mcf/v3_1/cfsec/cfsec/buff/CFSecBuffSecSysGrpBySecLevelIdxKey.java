@@ -57,17 +57,18 @@ public class CFSecBuffSecSysGrpBySecLevelIdxKey
 	}
 
 	@Override
-	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
+	public $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ getRequiredSecLevel() {
 		return( requiredSecLevel );
 	}
 
-	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
+	public void setRequiredSecLevel( $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecLevel",
 				1,
 				"value" );
 		}
+		
 		requiredSecLevel = value;
 	}
 

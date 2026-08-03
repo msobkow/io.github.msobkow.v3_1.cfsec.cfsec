@@ -76,6 +76,7 @@ public class CFSecBuffISOLangByCode3IdxKey
 				value.length(),
 				3 );
 		}
+		
 		requiredISO6392Code = value;
 	}
 

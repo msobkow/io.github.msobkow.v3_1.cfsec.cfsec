@@ -68,6 +68,7 @@ public class CFSecBuffSecSessionBySecUserIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 

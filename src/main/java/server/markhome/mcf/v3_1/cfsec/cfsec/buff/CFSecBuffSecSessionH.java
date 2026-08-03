@@ -150,7 +150,8 @@ public class CFSecBuffSecSessionH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -165,6 +166,7 @@ public class CFSecBuffSecSessionH
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 
@@ -180,6 +182,7 @@ public class CFSecBuffSecSessionH
 				1,
 				"value" );
 		}
+		
 		requiredStart = value;
 	}
 
@@ -189,15 +192,17 @@ public class CFSecBuffSecSessionH
 	}
 
 	public void setOptionalFinish( LocalDateTime value ) {
+		
 		optionalFinish = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalSecProxyId() {
-		return( optionalSecProxyId );
+		return(  );
 	}
 
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
+		
 		optionalSecProxyId = value;
 	}
 

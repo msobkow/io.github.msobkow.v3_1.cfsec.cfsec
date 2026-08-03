@@ -76,6 +76,7 @@ public class CFSecBuffTableInfoBySchemaNameIdxKey
 				value.length(),
 				32 );
 		}
+		
 		requiredSchemaName = value;
 	}
 

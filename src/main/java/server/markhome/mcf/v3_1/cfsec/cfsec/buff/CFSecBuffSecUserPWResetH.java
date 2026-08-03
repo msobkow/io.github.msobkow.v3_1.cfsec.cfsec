@@ -193,7 +193,7 @@ public class CFSecBuffSecUserPWResetH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey() );
+		return(  );
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -203,12 +203,13 @@ public class CFSecBuffSecUserPWResetH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
 	public String getRequiredSentToEMailAddr() {
-		return( requiredSentToEMailAddr );
+		return(  );
 	}
 
 	public void setRequiredSentToEMailAddr( String value ) {
@@ -226,12 +227,13 @@ public class CFSecBuffSecUserPWResetH
 				value.length(),
 				512 );
 		}
+		
 		requiredSentToEMailAddr = value;
 	}
 
 	@Override
 	public CFLibUuid6 getRequiredPasswordResetUuid6() {
-		return( requiredPasswordResetUuid6 );
+		return(  );
 	}
 
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
@@ -241,15 +243,17 @@ public class CFSecBuffSecUserPWResetH
 				1,
 				"value" );
 		}
+		
 		requiredPasswordResetUuid6 = value;
 	}
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return( requiredNewAccount );
+		return(  );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
+		
 		requiredNewAccount = value;
 	}
 

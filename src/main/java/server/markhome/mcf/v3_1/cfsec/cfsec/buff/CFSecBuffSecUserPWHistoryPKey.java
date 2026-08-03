@@ -76,6 +76,7 @@ public class CFSecBuffSecUserPWHistoryPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 
@@ -91,6 +92,7 @@ public class CFSecBuffSecUserPWHistoryPKey
 				1,
 				"value" );
 		}
+		
 		requiredPWSetStamp = value;
 	}
 

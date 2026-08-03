@@ -129,6 +129,7 @@ public class CFSecBuffSecSysGrpHPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecSysGrpId = value;
 	}
 

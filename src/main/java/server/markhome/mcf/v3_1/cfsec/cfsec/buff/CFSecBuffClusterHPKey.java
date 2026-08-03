@@ -129,6 +129,7 @@ public class CFSecBuffClusterHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

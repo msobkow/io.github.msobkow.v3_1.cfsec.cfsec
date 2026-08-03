@@ -68,6 +68,7 @@ public class CFSecBuffSysClusterByClusterIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClusterId = value;
 	}
 

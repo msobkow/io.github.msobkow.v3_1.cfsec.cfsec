@@ -58,7 +58,7 @@ public class CFSecBuffSecClusGrpMembByLoginIdxKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return( requiredLoginId );
+		return(  );
 	}
 
 	public void setRequiredLoginId( String value ) {
@@ -76,6 +76,7 @@ public class CFSecBuffSecClusGrpMembByLoginIdxKey
 				value.length(),
 				32 );
 		}
+		
 		requiredLoginId = value;
 	}
 

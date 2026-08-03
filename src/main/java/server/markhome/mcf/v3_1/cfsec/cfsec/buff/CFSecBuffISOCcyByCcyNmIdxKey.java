@@ -76,6 +76,7 @@ public class CFSecBuffISOCcyByCcyNmIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

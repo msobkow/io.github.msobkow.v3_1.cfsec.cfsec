@@ -167,22 +167,24 @@ public class CFSecBuffSecTentGrpMemb
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(getPKey().getRequiredSecTentGrpId());
+		return();
 	}
 
 	@Override
 	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
-		getPKey().setRequiredSecTentGrpId( value );
+		
+		getPKey().setRequiredSecTentGrpId(value);
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return(getPKey().getRequiredLoginId());
+		return();
 	}
 
 	@Override
 	public void setRequiredLoginId(String value) {
-		getPKey().setRequiredLoginId( value );
+		
+		getPKey().setRequiredLoginId(value);
 	}
 
 	@Override

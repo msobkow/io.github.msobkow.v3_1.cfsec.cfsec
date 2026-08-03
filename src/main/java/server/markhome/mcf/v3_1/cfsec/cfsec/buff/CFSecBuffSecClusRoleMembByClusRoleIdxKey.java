@@ -58,7 +58,7 @@ public class CFSecBuffSecClusRoleMembByClusRoleIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		return( requiredSecClusRoleId );
+		return(  );
 	}
 
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
@@ -68,6 +68,7 @@ public class CFSecBuffSecClusRoleMembByClusRoleIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecClusRoleId = value;
 	}
 

@@ -68,6 +68,7 @@ public class CFSecBuffTenantByClusterIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClusterId = value;
 	}
 

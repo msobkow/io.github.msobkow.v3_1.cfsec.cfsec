@@ -76,6 +76,7 @@ public class CFSecBuffISOCtryByNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

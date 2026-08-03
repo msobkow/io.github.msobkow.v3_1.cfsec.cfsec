@@ -136,7 +136,8 @@ public class CFSecBuffSecSysRole
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -214,6 +215,7 @@ public class CFSecBuffSecSysRole
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

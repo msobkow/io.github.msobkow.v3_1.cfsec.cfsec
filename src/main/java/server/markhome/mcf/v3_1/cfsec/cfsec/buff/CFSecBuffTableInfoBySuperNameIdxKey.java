@@ -70,6 +70,7 @@ public class CFSecBuffTableInfoBySuperNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		optionalSuperName = value;
 	}
 

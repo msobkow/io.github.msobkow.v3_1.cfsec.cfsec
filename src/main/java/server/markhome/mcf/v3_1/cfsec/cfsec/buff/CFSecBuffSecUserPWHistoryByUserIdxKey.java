@@ -68,6 +68,7 @@ public class CFSecBuffSecUserPWHistoryByUserIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 

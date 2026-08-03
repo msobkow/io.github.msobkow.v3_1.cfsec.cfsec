@@ -76,6 +76,7 @@ public class CFSecBuffTableInfoByTableNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredTableName = value;
 	}
 

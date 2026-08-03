@@ -152,7 +152,8 @@ public class CFSecBuffSecSysGrp
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -374,6 +375,7 @@ public class CFSecBuffSecSysGrp
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -389,6 +391,7 @@ public class CFSecBuffSecSysGrp
 				1,
 				"value" );
 		}
+		
 		requiredSecLevel = value;
 	}
 

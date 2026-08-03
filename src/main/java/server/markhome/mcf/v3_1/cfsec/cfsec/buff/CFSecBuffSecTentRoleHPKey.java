@@ -119,7 +119,7 @@ public class CFSecBuffSecTentRoleHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return( requiredSecTentRoleId );
+		return(  );
 	}
 
 	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
@@ -129,6 +129,7 @@ public class CFSecBuffSecTentRoleHPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecTentRoleId = value;
 	}
 

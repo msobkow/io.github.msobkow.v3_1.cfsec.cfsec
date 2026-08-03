@@ -58,7 +58,7 @@ public class CFSecBuffSecClusGrpByClusterIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return( requiredClusterId );
+		return(  );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -68,6 +68,7 @@ public class CFSecBuffSecClusGrpByClusterIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClusterId = value;
 	}
 

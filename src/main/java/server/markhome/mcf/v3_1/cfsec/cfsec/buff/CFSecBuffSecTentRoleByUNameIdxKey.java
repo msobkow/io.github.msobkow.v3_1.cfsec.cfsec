@@ -60,7 +60,7 @@ public class CFSecBuffSecTentRoleByUNameIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(  );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -70,12 +70,13 @@ public class CFSecBuffSecTentRoleByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(  );
 	}
 
 	public void setRequiredName( String value ) {
@@ -93,6 +94,7 @@ public class CFSecBuffSecTentRoleByUNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

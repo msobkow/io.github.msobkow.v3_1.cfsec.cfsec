@@ -76,6 +76,7 @@ public class CFSecBuffISOTZoneByUTZNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredTZName = value;
 	}
 

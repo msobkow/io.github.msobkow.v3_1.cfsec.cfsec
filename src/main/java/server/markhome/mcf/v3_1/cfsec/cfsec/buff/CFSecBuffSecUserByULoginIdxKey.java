@@ -76,6 +76,7 @@ public class CFSecBuffSecUserByULoginIdxKey
 				value.length(),
 				32 );
 		}
+		
 		requiredLoginId = value;
 	}
 

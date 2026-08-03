@@ -129,6 +129,7 @@ public class CFSecBuffSecSysRoleHPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecSysRoleId = value;
 	}
 

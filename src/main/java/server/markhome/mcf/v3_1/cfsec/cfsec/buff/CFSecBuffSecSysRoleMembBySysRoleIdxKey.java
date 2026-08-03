@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleMembBySysRoleIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( requiredSecSysRoleId );
+		return(  );
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
@@ -68,6 +68,7 @@ public class CFSecBuffSecSysRoleMembBySysRoleIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecSysRoleId = value;
 	}
 

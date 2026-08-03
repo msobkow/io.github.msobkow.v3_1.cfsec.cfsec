@@ -76,6 +76,7 @@ public class CFSecBuffClusterByUDescrIdxKey
 				value.length(),
 				128 );
 		}
+		
 		requiredDescription = value;
 	}
 

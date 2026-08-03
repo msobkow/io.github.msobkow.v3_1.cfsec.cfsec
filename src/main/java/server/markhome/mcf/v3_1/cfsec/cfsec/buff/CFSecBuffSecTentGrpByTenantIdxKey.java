@@ -58,7 +58,7 @@ public class CFSecBuffSecTentGrpByTenantIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(  );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -68,6 +68,7 @@ public class CFSecBuffSecTentGrpByTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

@@ -134,7 +134,8 @@ public class CFSecBuffSecUserPassword
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -164,6 +165,7 @@ public class CFSecBuffSecUserPassword
 				1,
 				"value" );
 		}
+		
 		requiredPWSetStamp = value;
 	}
 
@@ -187,6 +189,7 @@ public class CFSecBuffSecUserPassword
 				value.length(),
 				256 );
 		}
+		
 		requiredPasswordHash = value;
 	}
 

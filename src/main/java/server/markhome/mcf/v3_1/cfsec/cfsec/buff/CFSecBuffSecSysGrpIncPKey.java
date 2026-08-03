@@ -66,7 +66,7 @@ public class CFSecBuffSecSysGrpIncPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( requiredSecSysGrpId );
+		return(  );
 	}
 
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
@@ -76,12 +76,13 @@ public class CFSecBuffSecSysGrpIncPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecSysGrpId = value;
 	}
 
 	@Override
 	public String getRequiredInclName() {
-		return( requiredInclName );
+		return(  );
 	}
 
 	public void setRequiredInclName( String value ) {
@@ -99,6 +100,7 @@ public class CFSecBuffSecSysGrpIncPKey
 				value.length(),
 				64 );
 		}
+		
 		requiredInclName = value;
 	}
 

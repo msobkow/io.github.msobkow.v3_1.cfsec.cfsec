@@ -202,7 +202,8 @@ public class CFSecBuffTenantH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -217,6 +218,7 @@ public class CFSecBuffTenantH
 				1,
 				"value" );
 		}
+		
 		requiredClusterId = value;
 	}
 
@@ -240,6 +242,7 @@ public class CFSecBuffTenantH
 				value.length(),
 				192 );
 		}
+		
 		requiredTenantName = value;
 	}
 

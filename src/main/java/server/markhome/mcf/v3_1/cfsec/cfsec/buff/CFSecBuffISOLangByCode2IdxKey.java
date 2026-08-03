@@ -70,6 +70,7 @@ public class CFSecBuffISOLangByCode2IdxKey
 				value.length(),
 				2 );
 		}
+		
 		optionalISO6391Code = value;
 	}
 

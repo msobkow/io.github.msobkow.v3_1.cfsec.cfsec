@@ -70,6 +70,7 @@ public class CFSecBuffSecSessionByFinishIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 
@@ -79,6 +80,7 @@ public class CFSecBuffSecSessionByFinishIdxKey
 	}
 
 	public void setOptionalFinish( LocalDateTime value ) {
+		
 		optionalFinish = value;
 	}
 

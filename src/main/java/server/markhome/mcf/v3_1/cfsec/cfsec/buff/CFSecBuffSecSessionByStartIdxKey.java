@@ -70,6 +70,7 @@ public class CFSecBuffSecSessionByStartIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 
@@ -85,6 +86,7 @@ public class CFSecBuffSecSessionByStartIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredStart = value;
 	}
 

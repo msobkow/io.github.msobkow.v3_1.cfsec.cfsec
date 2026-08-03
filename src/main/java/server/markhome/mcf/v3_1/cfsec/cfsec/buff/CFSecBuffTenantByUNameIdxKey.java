@@ -70,6 +70,7 @@ public class CFSecBuffTenantByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClusterId = value;
 	}
 
@@ -93,6 +94,7 @@ public class CFSecBuffTenantByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredTenantName = value;
 	}
 

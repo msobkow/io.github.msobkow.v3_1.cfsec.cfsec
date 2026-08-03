@@ -129,6 +129,7 @@ public class CFSecBuffSecUserHPKey
 				1,
 				"value" );
 		}
+		
 		requiredSecUserId = value;
 	}
 
