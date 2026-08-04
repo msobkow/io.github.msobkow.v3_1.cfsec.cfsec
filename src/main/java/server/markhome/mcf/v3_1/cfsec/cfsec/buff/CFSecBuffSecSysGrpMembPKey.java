@@ -60,13 +60,13 @@ public class CFSecBuffSecSysGrpMembPKey
 	protected String requiredLoginId;
 
 	public CFSecBuffSecSysGrpMembPKey() {
-		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecSysGrpMemb.SECSYSGRPID_INIT_VALUE.toString() );
+		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysGrpMemb.SECSYSGRPID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecSysGrpMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return(  );
+		return( requiredSecSysGrpId );
 	}
 
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
@@ -82,7 +82,7 @@ public class CFSecBuffSecSysGrpMembPKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		return( requiredLoginId );
 	}
 
 	public void setRequiredLoginId( String value ) {

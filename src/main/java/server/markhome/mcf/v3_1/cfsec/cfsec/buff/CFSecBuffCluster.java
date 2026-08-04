@@ -176,7 +176,7 @@ public class CFSecBuffCluster
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -187,7 +187,7 @@ public class CFSecBuffCluster
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -358,8 +358,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterH ) {
-			ICFSecClusterH rhs = (ICFSecClusterH)obj;
+		else if( obj instanceof ICFSecClusterH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -426,8 +425,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
-			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey rhs ) {
 			if( getRequiredFullDomName() != null ) {
 				if( rhs.getRequiredFullDomName() != null ) {
 					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
@@ -445,8 +443,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
-			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey rhs ) {
 			if( getRequiredDescription() != null ) {
 				if( rhs.getRequiredDescription() != null ) {
 					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
@@ -590,8 +587,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
-			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey rhs ) {
 			if( getRequiredFullDomName() != null ) {
 				if( rhs.getRequiredFullDomName() != null ) {
 					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
@@ -609,8 +605,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
-			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey rhs ) {
 			if( getRequiredDescription() != null ) {
 				if( rhs.getRequiredDescription() != null ) {
 					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
@@ -754,8 +749,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDomNameIdxKey ) {
-			ICFSecClusterByUDomNameIdxKey rhs = (ICFSecClusterByUDomNameIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDomNameIdxKey rhs ) {
 			if( getRequiredFullDomName() != null ) {
 				if( rhs.getRequiredFullDomName() != null ) {
 					if( ! getRequiredFullDomName().equals( rhs.getRequiredFullDomName() ) ) {
@@ -773,8 +767,7 @@ public class CFSecBuffCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecClusterByUDescrIdxKey ) {
-			ICFSecClusterByUDescrIdxKey rhs = (ICFSecClusterByUDescrIdxKey)obj;
+		else if( obj instanceof ICFSecClusterByUDescrIdxKey rhs ) {
 			if( getRequiredDescription() != null ) {
 				if( rhs.getRequiredDescription() != null ) {
 					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {

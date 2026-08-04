@@ -53,12 +53,12 @@ public class CFSecBuffSecSysRoleEnablesBySysRoleIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecSysRoleId;
 	public CFSecBuffSecSysRoleEnablesBySysRoleIdxKey() {
-		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecSysRoleEnables.SECSYSROLEID_INIT_VALUE.toString() );
+		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleEnables.SECSYSROLEID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(  );
+		return( requiredSecSysRoleId );
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {

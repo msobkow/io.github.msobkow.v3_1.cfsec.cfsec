@@ -140,7 +140,7 @@ public class CFSecBuffSecSessionH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return( getPKey() );
+		return( requiredSecSessionId );
 	}
 
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
@@ -151,7 +151,7 @@ public class CFSecBuffSecSessionH
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecSessionId = value;
 	}
 
 	@Override
@@ -198,7 +198,7 @@ public class CFSecBuffSecSessionH
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalSecProxyId() {
-		return(  );
+		return( optionalSecProxyId );
 	}
 
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {

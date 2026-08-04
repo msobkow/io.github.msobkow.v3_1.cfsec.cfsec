@@ -128,7 +128,7 @@ public class CFSecBuffTenant
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -139,7 +139,7 @@ public class CFSecBuffTenant
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -351,8 +351,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantH ) {
-			ICFSecTenantH rhs = (ICFSecTenantH)obj;
+		else if( obj instanceof ICFSecTenantH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -419,8 +418,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByClusterIdxKey ) {
-			ICFSecTenantByClusterIdxKey rhs = (ICFSecTenantByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -438,8 +436,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByUNameIdxKey ) {
-			ICFSecTenantByUNameIdxKey rhs = (ICFSecTenantByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -598,8 +595,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByClusterIdxKey ) {
-			ICFSecTenantByClusterIdxKey rhs = (ICFSecTenantByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -617,8 +613,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByUNameIdxKey ) {
-			ICFSecTenantByUNameIdxKey rhs = (ICFSecTenantByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -777,8 +772,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByClusterIdxKey ) {
-			ICFSecTenantByClusterIdxKey rhs = (ICFSecTenantByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -796,8 +790,7 @@ public class CFSecBuffTenant
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTenantByUNameIdxKey ) {
-			ICFSecTenantByUNameIdxKey rhs = (ICFSecTenantByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecTenantByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {

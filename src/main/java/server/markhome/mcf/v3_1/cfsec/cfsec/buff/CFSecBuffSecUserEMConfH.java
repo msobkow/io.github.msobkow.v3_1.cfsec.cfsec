@@ -52,9 +52,9 @@ public class CFSecBuffSecUserEMConfH
     implements ICFSecSecUserEMConfH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserEMConfHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserEMConf.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserEMConf.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredConfirmEMailAddr;
 	protected LocalDateTime requiredEMailSentStamp;
@@ -197,21 +197,10 @@ public class CFSecBuffSecUserEMConfH
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return(  );
 	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		
-		setPKey(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredConfirmEMailAddr() {
-		return(  );
+		return( requiredConfirmEMailAddr );
 	}
 
 	public void setRequiredConfirmEMailAddr( String value ) {
@@ -235,7 +224,7 @@ public class CFSecBuffSecUserEMConfH
 
 	@Override
 	public LocalDateTime getRequiredEMailSentStamp() {
-		return(  );
+		return( requiredEMailSentStamp );
 	}
 
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
@@ -251,7 +240,7 @@ public class CFSecBuffSecUserEMConfH
 
 	@Override
 	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return(  );
+		return( requiredEMConfirmationUuid6 );
 	}
 
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
@@ -267,7 +256,7 @@ public class CFSecBuffSecUserEMConfH
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return(  );
+		return( requiredNewAccount );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {

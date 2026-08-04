@@ -53,9 +53,9 @@ public class CFSecBuffSecSysGrpMemb
 {
 	protected ICFSecSecSysGrpMembPKey pkey = new CFSecBuffSecSysGrpMembPKey();
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpMemb.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpMemb.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpMemb.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpMemb.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
 	public CFSecBuffSecSysGrpMemb() {
@@ -302,8 +302,7 @@ public class CFSecBuffSecSysGrpMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpMembH ) {
-			ICFSecSecSysGrpMembH rhs = (ICFSecSecSysGrpMembH)obj;
+		else if( obj instanceof ICFSecSecSysGrpMembH rhs ) {
 			if( getRequiredSecSysGrpId() != null ) {
 				if( rhs.getRequiredSecSysGrpId() != null ) {
 					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
@@ -370,8 +369,7 @@ public class CFSecBuffSecSysGrpMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpMembBySysGrpIdxKey ) {
-			ICFSecSecSysGrpMembBySysGrpIdxKey rhs = (ICFSecSecSysGrpMembBySysGrpIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpMembBySysGrpIdxKey rhs ) {
 			if( getRequiredSecSysGrpId() != null ) {
 				if( rhs.getRequiredSecSysGrpId() != null ) {
 					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
@@ -389,8 +387,7 @@ public class CFSecBuffSecSysGrpMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpMembByLoginIdxKey ) {
-			ICFSecSecSysGrpMembByLoginIdxKey rhs = (ICFSecSecSysGrpMembByLoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpMembByLoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {
@@ -519,8 +516,7 @@ public class CFSecBuffSecSysGrpMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpMembBySysGrpIdxKey ) {
-			ICFSecSecSysGrpMembBySysGrpIdxKey rhs = (ICFSecSecSysGrpMembBySysGrpIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpMembBySysGrpIdxKey rhs ) {
 			if( getRequiredSecSysGrpId() != null ) {
 				if( rhs.getRequiredSecSysGrpId() != null ) {
 					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
@@ -538,8 +534,7 @@ public class CFSecBuffSecSysGrpMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpMembByLoginIdxKey ) {
-			ICFSecSecSysGrpMembByLoginIdxKey rhs = (ICFSecSecSysGrpMembByLoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpMembByLoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {

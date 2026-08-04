@@ -53,12 +53,12 @@ public class CFSecBuffSecTentGrpMembByTentGrpIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecTentGrpId;
 	public CFSecBuffSecTentGrpMembByTentGrpIdxKey() {
-		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecTentGrpMemb.SECTENTGRPID_INIT_VALUE.toString() );
+		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrpMemb.SECTENTGRPID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(  );
+		return( requiredSecTentGrpId );
 	}
 
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {

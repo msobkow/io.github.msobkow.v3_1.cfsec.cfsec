@@ -192,7 +192,7 @@ public class CFSecBuffSecSysGrpH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( getPKey() );
+		return( requiredSecSysGrpId );
 	}
 
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
@@ -203,7 +203,7 @@ public class CFSecBuffSecSysGrpH
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecSysGrpId = value;
 	}
 
 	@Override

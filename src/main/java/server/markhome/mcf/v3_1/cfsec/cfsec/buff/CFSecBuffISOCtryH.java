@@ -192,7 +192,7 @@ public class CFSecBuffISOCtryH
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey() );
+		return( requiredISOCtryId );
 	}
 
 	@Override
@@ -214,7 +214,7 @@ public class CFSecBuffISOCtryH
 				value,
 				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredISOCtryId = value;
 	}
 
 	@Override

@@ -142,7 +142,7 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( getPKey() );
+		return( requiredSecSysGrpId );
 	}
 
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
@@ -153,7 +153,7 @@ public class CFSecBuffSecSysGrp
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecSysGrpId = value;
 	}
 
 	@Override
@@ -460,8 +460,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpH ) {
-			ICFSecSecSysGrpH rhs = (ICFSecSecSysGrpH)obj;
+		else if( obj instanceof ICFSecSecSysGrpH rhs ) {
 			if( getRequiredSecSysGrpId() != null ) {
 				if( rhs.getRequiredSecSysGrpId() != null ) {
 					if( ! getRequiredSecSysGrpId().equals( rhs.getRequiredSecSysGrpId() ) ) {
@@ -528,8 +527,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
-			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -547,8 +545,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
-			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey rhs ) {
 			if( getRequiredSecLevel() != null ) {
 				if( rhs.getRequiredSecLevel() != null ) {
 					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
@@ -692,8 +689,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
-			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -711,8 +707,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
-			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey rhs ) {
 			if( getRequiredSecLevel() != null ) {
 				if( rhs.getRequiredSecLevel() != null ) {
 					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {
@@ -856,8 +851,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey ) {
-			ICFSecSecSysGrpByUNameIdxKey rhs = (ICFSecSecSysGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -875,8 +869,7 @@ public class CFSecBuffSecSysGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey ) {
-			ICFSecSecSysGrpBySecLevelIdxKey rhs = (ICFSecSecSysGrpBySecLevelIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysGrpBySecLevelIdxKey rhs ) {
 			if( getRequiredSecLevel() != null ) {
 				if( rhs.getRequiredSecLevel() != null ) {
 					if( ! getRequiredSecLevel().equals( rhs.getRequiredSecLevel() ) ) {

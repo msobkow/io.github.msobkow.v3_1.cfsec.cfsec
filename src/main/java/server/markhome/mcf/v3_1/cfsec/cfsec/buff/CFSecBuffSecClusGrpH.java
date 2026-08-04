@@ -52,9 +52,9 @@ public class CFSecBuffSecClusGrpH
     implements ICFSecSecClusGrpH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecClusGrpHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusGrp.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusGrp.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
@@ -62,7 +62,7 @@ public class CFSecBuffSecClusGrpH
     public CFSecBuffSecClusGrpH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecClusGrpHPKey();
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecClusGrp.NAME_INIT_VALUE;
     }
 
@@ -194,21 +194,10 @@ public class CFSecBuffSecClusGrpH
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
 		return(  );
 	}
-
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecClusGrpId",
-				1,
-				"value" );
-		}
-		
-		setPKey(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(  );
+		return( requiredClusterId );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -224,7 +213,7 @@ public class CFSecBuffSecClusGrpH
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {

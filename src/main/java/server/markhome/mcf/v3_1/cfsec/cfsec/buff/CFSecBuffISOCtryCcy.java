@@ -294,8 +294,7 @@ public class CFSecBuffISOCtryCcy
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyH ) {
-			ICFSecISOCtryCcyH rhs = (ICFSecISOCtryCcyH)obj;
+		else if( obj instanceof ICFSecISOCtryCcyH rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
@@ -314,15 +313,13 @@ public class CFSecBuffISOCtryCcy
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey ) {
-			ICFSecISOCtryCcyByCtryIdxKey rhs = (ICFSecISOCtryCcyByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey ) {
-			ICFSecISOCtryCcyByCcyIdxKey rhs = (ICFSecISOCtryCcyByCcyIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey rhs ) {
 			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
 				return( false );
 			}
@@ -367,15 +364,13 @@ public class CFSecBuffISOCtryCcy
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey ) {
-			ICFSecISOCtryCcyByCtryIdxKey rhs = (ICFSecISOCtryCcyByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey ) {
-			ICFSecISOCtryCcyByCcyIdxKey rhs = (ICFSecISOCtryCcyByCcyIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey rhs ) {
 			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
 				return( false );
 			}
@@ -420,15 +415,13 @@ public class CFSecBuffISOCtryCcy
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey ) {
-			ICFSecISOCtryCcyByCtryIdxKey rhs = (ICFSecISOCtryCcyByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey ) {
-			ICFSecISOCtryCcyByCcyIdxKey rhs = (ICFSecISOCtryCcyByCcyIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryCcyByCcyIdxKey rhs ) {
 			if( getRequiredISOCcyId() != rhs.getRequiredISOCcyId() ) {
 				return( false );
 			}

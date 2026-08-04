@@ -57,7 +57,7 @@ public class CFSecBuffSecUserPWResetByUUuid6IdxKey
 
 	@Override
 	public CFLibUuid6 getRequiredPasswordResetUuid6() {
-		return(  );
+		return( requiredPasswordResetUuid6 );
 	}
 
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {

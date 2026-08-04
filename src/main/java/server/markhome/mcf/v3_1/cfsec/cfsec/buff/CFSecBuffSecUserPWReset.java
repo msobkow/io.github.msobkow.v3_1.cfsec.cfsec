@@ -53,16 +53,16 @@ public class CFSecBuffSecUserPWReset
 {
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserPWReset.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserPWReset.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredSentToEMailAddr;
 	protected CFLibUuid6 requiredPasswordResetUuid6;
 	protected boolean requiredNewAccount;
 
 	public CFSecBuffSecUserPWReset() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWReset.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserPWReset.SECUSERID_INIT_VALUE.toString() );
 		requiredSentToEMailAddr = ICFSecSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
 		requiredNewAccount = ICFSecSecUserPWReset.NEWACCOUNT_INIT_VALUE;
 	}
@@ -141,7 +141,7 @@ public class CFSecBuffSecUserPWReset
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
@@ -201,7 +201,7 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public String getRequiredSentToEMailAddr() {
-		return(  );
+		return( requiredSentToEMailAddr );
 	}
 
 	public void setRequiredSentToEMailAddr( String value ) {
@@ -225,7 +225,7 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public CFLibUuid6 getRequiredPasswordResetUuid6() {
-		return(  );
+		return( requiredPasswordResetUuid6 );
 	}
 
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
@@ -241,7 +241,7 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return(  );
+		return( requiredNewAccount );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
@@ -317,8 +317,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetH ) {
-			ICFSecSecUserPWResetH rhs = (ICFSecSecUserPWResetH)obj;
+		else if( obj instanceof ICFSecSecUserPWResetH rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -388,8 +387,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey ) {
-			ICFSecSecUserPWResetByUUuid6IdxKey rhs = (ICFSecSecUserPWResetByUUuid6IdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey rhs ) {
 			if( getRequiredPasswordResetUuid6() != null ) {
 				if( rhs.getRequiredPasswordResetUuid6() != null ) {
 					if( ! getRequiredPasswordResetUuid6().equals( rhs.getRequiredPasswordResetUuid6() ) ) {
@@ -407,8 +405,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey ) {
-			ICFSecSecUserPWResetBySentEMAddrIdxKey rhs = (ICFSecSecUserPWResetBySentEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey rhs ) {
 			if( getRequiredSentToEMailAddr() != null ) {
 				if( rhs.getRequiredSentToEMailAddr() != null ) {
 					if( ! getRequiredSentToEMailAddr().equals( rhs.getRequiredSentToEMailAddr() ) ) {
@@ -426,8 +423,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey ) {
-			ICFSecSecUserPWResetByNewAcctIdxKey rhs = (ICFSecSecUserPWResetByNewAcctIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey rhs ) {
 			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
 				return( false );
 			}
@@ -565,8 +561,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey ) {
-			ICFSecSecUserPWResetByUUuid6IdxKey rhs = (ICFSecSecUserPWResetByUUuid6IdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetByUUuid6IdxKey rhs ) {
 			if( getRequiredPasswordResetUuid6() != null ) {
 				if( rhs.getRequiredPasswordResetUuid6() != null ) {
 					if( ! getRequiredPasswordResetUuid6().equals( rhs.getRequiredPasswordResetUuid6() ) ) {
@@ -584,8 +579,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey ) {
-			ICFSecSecUserPWResetBySentEMAddrIdxKey rhs = (ICFSecSecUserPWResetBySentEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetBySentEMAddrIdxKey rhs ) {
 			if( getRequiredSentToEMailAddr() != null ) {
 				if( rhs.getRequiredSentToEMailAddr() != null ) {
 					if( ! getRequiredSentToEMailAddr().equals( rhs.getRequiredSentToEMailAddr() ) ) {
@@ -603,8 +597,7 @@ public class CFSecBuffSecUserPWReset
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey ) {
-			ICFSecSecUserPWResetByNewAcctIdxKey rhs = (ICFSecSecUserPWResetByNewAcctIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWResetByNewAcctIdxKey rhs ) {
 			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
 				return( false );
 			}

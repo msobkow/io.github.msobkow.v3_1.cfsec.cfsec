@@ -128,7 +128,7 @@ public class CFSecBuffISOCtry
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey() );
+		return( requiredISOCtryId );
 	}
 
 	@Override
@@ -150,7 +150,7 @@ public class CFSecBuffISOCtry
 				value,
 				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredISOCtryId = value;
 	}
 
 	@Override
@@ -309,8 +309,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryH ) {
-			ICFSecISOCtryH rhs = (ICFSecISOCtryH)obj;
+		else if( obj instanceof ICFSecISOCtryH rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
@@ -353,8 +352,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey ) {
-			ICFSecISOCtryByISOCodeIdxKey rhs = (ICFSecISOCtryByISOCodeIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey rhs ) {
 			if( getRequiredISOCode() != null ) {
 				if( rhs.getRequiredISOCode() != null ) {
 					if( ! getRequiredISOCode().equals( rhs.getRequiredISOCode() ) ) {
@@ -372,8 +370,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByNameIdxKey ) {
-			ICFSecISOCtryByNameIdxKey rhs = (ICFSecISOCtryByNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -481,8 +478,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey ) {
-			ICFSecISOCtryByISOCodeIdxKey rhs = (ICFSecISOCtryByISOCodeIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey rhs ) {
 			if( getRequiredISOCode() != null ) {
 				if( rhs.getRequiredISOCode() != null ) {
 					if( ! getRequiredISOCode().equals( rhs.getRequiredISOCode() ) ) {
@@ -500,8 +496,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByNameIdxKey ) {
-			ICFSecISOCtryByNameIdxKey rhs = (ICFSecISOCtryByNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -609,8 +604,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey ) {
-			ICFSecISOCtryByISOCodeIdxKey rhs = (ICFSecISOCtryByISOCodeIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByISOCodeIdxKey rhs ) {
 			if( getRequiredISOCode() != null ) {
 				if( rhs.getRequiredISOCode() != null ) {
 					if( ! getRequiredISOCode().equals( rhs.getRequiredISOCode() ) ) {
@@ -628,8 +622,7 @@ public class CFSecBuffISOCtry
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryByNameIdxKey ) {
-			ICFSecISOCtryByNameIdxKey rhs = (ICFSecISOCtryByNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {

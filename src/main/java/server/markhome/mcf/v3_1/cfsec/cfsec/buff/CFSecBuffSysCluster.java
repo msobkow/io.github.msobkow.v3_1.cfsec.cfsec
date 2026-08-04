@@ -74,7 +74,7 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public int getRequiredSingletonId() {
-		return( getPKey() );
+		return( requiredSingletonId );
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class CFSecBuffSysCluster
 				value,
 				ICFSecPubSysCluster.SINGLETONID_MAX_VALUE );
 		}
-		setPKey(value);
+		requiredSingletonId = value;
 	}
 
 	@Override
@@ -221,8 +221,7 @@ public class CFSecBuffSysCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSysClusterH ) {
-			ICFSecSysClusterH rhs = (ICFSecSysClusterH)obj;
+		else if( obj instanceof ICFSecSysClusterH rhs ) {
 			if( getRequiredSingletonId() != rhs.getRequiredSingletonId() ) {
 				return( false );
 			}
@@ -250,8 +249,7 @@ public class CFSecBuffSysCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSysClusterByClusterIdxKey ) {
-			ICFSecSysClusterByClusterIdxKey rhs = (ICFSecSysClusterByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSysClusterByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -317,8 +315,7 @@ public class CFSecBuffSysCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSysClusterByClusterIdxKey ) {
-			ICFSecSysClusterByClusterIdxKey rhs = (ICFSecSysClusterByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSysClusterByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -384,8 +381,7 @@ public class CFSecBuffSysCluster
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSysClusterByClusterIdxKey ) {
-			ICFSecSysClusterByClusterIdxKey rhs = (ICFSecSysClusterByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSysClusterByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {

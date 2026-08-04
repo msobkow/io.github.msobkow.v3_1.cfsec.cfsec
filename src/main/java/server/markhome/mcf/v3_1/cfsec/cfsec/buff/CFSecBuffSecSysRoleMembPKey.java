@@ -60,13 +60,13 @@ public class CFSecBuffSecSysRoleMembPKey
 	protected String requiredLoginId;
 
 	public CFSecBuffSecSysRoleMembPKey() {
-		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecSysRoleMemb.SECSYSROLEID_INIT_VALUE.toString() );
+		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleMemb.SECSYSROLEID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecSysRoleMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(  );
+		return( requiredSecSysRoleId );
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
@@ -82,7 +82,7 @@ public class CFSecBuffSecSysRoleMembPKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		return( requiredLoginId );
 	}
 
 	public void setRequiredLoginId( String value ) {

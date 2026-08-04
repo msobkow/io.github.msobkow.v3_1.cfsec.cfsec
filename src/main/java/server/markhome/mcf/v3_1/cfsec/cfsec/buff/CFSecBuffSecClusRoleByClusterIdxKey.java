@@ -53,12 +53,12 @@ public class CFSecBuffSecClusRoleByClusterIdxKey
 {
 	protected CFLibDbKeyHash256 requiredClusterId;
 	public CFSecBuffSecClusRoleByClusterIdxKey() {
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRole.CLUSTERID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRole.CLUSTERID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(  );
+		return( requiredClusterId );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {

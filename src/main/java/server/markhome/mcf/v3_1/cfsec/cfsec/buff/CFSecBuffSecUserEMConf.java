@@ -53,9 +53,9 @@ public class CFSecBuffSecUserEMConf
 {
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserEMConf.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserEMConf.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredConfirmEMailAddr;
 	protected LocalDateTime requiredEMailSentStamp;
@@ -63,7 +63,7 @@ public class CFSecBuffSecUserEMConf
 	protected boolean requiredNewAccount;
 
 	public CFSecBuffSecUserEMConf() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserEMConf.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserEMConf.SECUSERID_INIT_VALUE.toString() );
 		requiredConfirmEMailAddr = ICFSecSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
 		requiredEMailSentStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 		requiredNewAccount = ICFSecSecUserEMConf.NEWACCOUNT_INIT_VALUE;
@@ -143,7 +143,7 @@ public class CFSecBuffSecUserEMConf
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
@@ -203,7 +203,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public String getRequiredConfirmEMailAddr() {
-		return(  );
+		return( requiredConfirmEMailAddr );
 	}
 
 	public void setRequiredConfirmEMailAddr( String value ) {
@@ -227,7 +227,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public LocalDateTime getRequiredEMailSentStamp() {
-		return(  );
+		return( requiredEMailSentStamp );
 	}
 
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
@@ -243,7 +243,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return(  );
+		return( requiredEMConfirmationUuid6 );
 	}
 
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
@@ -259,7 +259,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return(  );
+		return( requiredNewAccount );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
@@ -350,8 +350,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfH ) {
-			ICFSecSecUserEMConfH rhs = (ICFSecSecUserEMConfH)obj;
+		else if( obj instanceof ICFSecSecUserEMConfH rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -436,8 +435,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByUUuid6IdxKey ) {
-			ICFSecSecUserEMConfByUUuid6IdxKey rhs = (ICFSecSecUserEMConfByUUuid6IdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByUUuid6IdxKey rhs ) {
 			if( getRequiredEMConfirmationUuid6() != null ) {
 				if( rhs.getRequiredEMConfirmationUuid6() != null ) {
 					if( ! getRequiredEMConfirmationUuid6().equals( rhs.getRequiredEMConfirmationUuid6() ) ) {
@@ -455,8 +453,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByConfEMAddrIdxKey ) {
-			ICFSecSecUserEMConfByConfEMAddrIdxKey rhs = (ICFSecSecUserEMConfByConfEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByConfEMAddrIdxKey rhs ) {
 			if( getRequiredConfirmEMailAddr() != null ) {
 				if( rhs.getRequiredConfirmEMailAddr() != null ) {
 					if( ! getRequiredConfirmEMailAddr().equals( rhs.getRequiredConfirmEMailAddr() ) ) {
@@ -474,8 +471,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfBySentStampIdxKey ) {
-			ICFSecSecUserEMConfBySentStampIdxKey rhs = (ICFSecSecUserEMConfBySentStampIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfBySentStampIdxKey rhs ) {
 			if( getRequiredEMailSentStamp() != null ) {
 				if( rhs.getRequiredEMailSentStamp() != null ) {
 					if( ! getRequiredEMailSentStamp().equals( rhs.getRequiredEMailSentStamp() ) ) {
@@ -493,8 +489,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByNewAcctIdxKey ) {
-			ICFSecSecUserEMConfByNewAcctIdxKey rhs = (ICFSecSecUserEMConfByNewAcctIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByNewAcctIdxKey rhs ) {
 			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
 				return( false );
 			}
@@ -662,8 +657,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByUUuid6IdxKey ) {
-			ICFSecSecUserEMConfByUUuid6IdxKey rhs = (ICFSecSecUserEMConfByUUuid6IdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByUUuid6IdxKey rhs ) {
 			if( getRequiredEMConfirmationUuid6() != null ) {
 				if( rhs.getRequiredEMConfirmationUuid6() != null ) {
 					if( ! getRequiredEMConfirmationUuid6().equals( rhs.getRequiredEMConfirmationUuid6() ) ) {
@@ -681,8 +675,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByConfEMAddrIdxKey ) {
-			ICFSecSecUserEMConfByConfEMAddrIdxKey rhs = (ICFSecSecUserEMConfByConfEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByConfEMAddrIdxKey rhs ) {
 			if( getRequiredConfirmEMailAddr() != null ) {
 				if( rhs.getRequiredConfirmEMailAddr() != null ) {
 					if( ! getRequiredConfirmEMailAddr().equals( rhs.getRequiredConfirmEMailAddr() ) ) {
@@ -700,8 +693,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfBySentStampIdxKey ) {
-			ICFSecSecUserEMConfBySentStampIdxKey rhs = (ICFSecSecUserEMConfBySentStampIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfBySentStampIdxKey rhs ) {
 			if( getRequiredEMailSentStamp() != null ) {
 				if( rhs.getRequiredEMailSentStamp() != null ) {
 					if( ! getRequiredEMailSentStamp().equals( rhs.getRequiredEMailSentStamp() ) ) {
@@ -719,8 +711,7 @@ public class CFSecBuffSecUserEMConf
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserEMConfByNewAcctIdxKey ) {
-			ICFSecSecUserEMConfByNewAcctIdxKey rhs = (ICFSecSecUserEMConfByNewAcctIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserEMConfByNewAcctIdxKey rhs ) {
 			if( getRequiredNewAccount() != rhs.getRequiredNewAccount() ) {
 				return( false );
 			}

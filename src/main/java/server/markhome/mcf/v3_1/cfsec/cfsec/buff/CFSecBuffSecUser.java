@@ -130,7 +130,7 @@ public class CFSecBuffSecUser
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey() );
+		return( requiredSecUserId );
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -141,7 +141,7 @@ public class CFSecBuffSecUser
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
@@ -367,7 +367,7 @@ public class CFSecBuffSecUser
 
 	@Override
 	public String getRequiredEMailAddress() {
-		return(  );
+		return( requiredEMailAddress );
 	}
 
 	public void setRequiredEMailAddress( String value ) {
@@ -514,8 +514,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserH ) {
-			ICFSecSecUserH rhs = (ICFSecSecUserH)obj;
+		else if( obj instanceof ICFSecSecUserH rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -642,8 +641,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserByULoginIdxKey ) {
-			ICFSecSecUserByULoginIdxKey rhs = (ICFSecSecUserByULoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserByULoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {
@@ -661,8 +659,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserByEMAddrIdxKey ) {
-			ICFSecSecUserByEMAddrIdxKey rhs = (ICFSecSecUserByEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserByEMAddrIdxKey rhs ) {
 			if( getRequiredEMailAddress() != null ) {
 				if( rhs.getRequiredEMailAddress() != null ) {
 					if( ! getRequiredEMailAddress().equals( rhs.getRequiredEMailAddress() ) ) {
@@ -926,8 +923,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserByULoginIdxKey ) {
-			ICFSecSecUserByULoginIdxKey rhs = (ICFSecSecUserByULoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserByULoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {
@@ -945,8 +941,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserByEMAddrIdxKey ) {
-			ICFSecSecUserByEMAddrIdxKey rhs = (ICFSecSecUserByEMAddrIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserByEMAddrIdxKey rhs ) {
 			if( getRequiredEMailAddress() != null ) {
 				if( rhs.getRequiredEMailAddress() != null ) {
 					if( ! getRequiredEMailAddress().equals( rhs.getRequiredEMailAddress() ) ) {
@@ -1180,8 +1175,7 @@ public class CFSecBuffSecUser
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserByULoginIdxKey ) {
-			ICFSecSecUserByULoginIdxKey rhs = (ICFSecSecUserByULoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserByULoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {

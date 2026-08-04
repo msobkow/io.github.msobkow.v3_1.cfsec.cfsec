@@ -58,7 +58,7 @@ public class CFSecBuffSecUserEMConfBySentStampIdxKey
 
 	@Override
 	public LocalDateTime getRequiredEMailSentStamp() {
-		return(  );
+		return( requiredEMailSentStamp );
 	}
 
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {

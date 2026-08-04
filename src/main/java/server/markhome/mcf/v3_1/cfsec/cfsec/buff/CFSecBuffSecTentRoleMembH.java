@@ -52,9 +52,9 @@ public class CFSecBuffSecTentRoleMembH
     implements ICFSecSecTentRoleMembH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecTentRoleMembHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRoleMemb.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRoleMemb.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRoleMemb.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRoleMemb.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
     public CFSecBuffSecTentRoleMembH() {
@@ -190,42 +190,12 @@ public class CFSecBuffSecTentRoleMembH
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
 		return(  );
 	}
-
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentRoleId",
-				1,
-				"value" );
-		}
-		
-		getPKey().setRequiredSecTentRoleId(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredLoginId() {
 		return(  );
 	}
-
-	public void setRequiredLoginId( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredLoginId",
-				1,
-				"value" );
-		}
-		else if( value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredLoginId",
-				1,
-				"value.length()",
-				value.length(),
-				32 );
-		}
-		
-		getPKey().setRequiredLoginId(value);
-	}
-
+$refernce Column implProtReqSetter$
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

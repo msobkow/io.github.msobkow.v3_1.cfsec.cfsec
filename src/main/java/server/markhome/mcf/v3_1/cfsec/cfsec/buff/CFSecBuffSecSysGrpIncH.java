@@ -52,9 +52,9 @@ public class CFSecBuffSecSysGrpIncH
     implements ICFSecSecSysGrpIncH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecSysGrpIncHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpInc.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpInc.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpInc.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpInc.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
     public CFSecBuffSecSysGrpIncH() {
@@ -190,42 +190,12 @@ public class CFSecBuffSecSysGrpIncH
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
 		return(  );
 	}
-
-	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSysGrpId",
-				1,
-				"value" );
-		}
-		
-		getPKey().setRequiredSecSysGrpId(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredInclName() {
 		return(  );
 	}
-
-	public void setRequiredInclName( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredInclName",
-				1,
-				"value" );
-		}
-		else if( value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredInclName",
-				1,
-				"value.length()",
-				value.length(),
-				64 );
-		}
-		
-		getPKey().setRequiredInclName(value);
-	}
-
+$refernce Column implProtReqSetter$
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

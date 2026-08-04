@@ -66,7 +66,7 @@ public class CFSecBuffSecTentGrpMembHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecTentGrpMemb.SECTENTGRPID_INIT_VALUE.toString() );
+		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrpMemb.SECTENTGRPID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecTentGrpMemb.LOGINID_INIT_VALUE;
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecTentGrpMembHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(  );
+		return( requiredSecTentGrpId );
 	}
 
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
@@ -138,7 +138,7 @@ public class CFSecBuffSecTentGrpMembHPKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		return( requiredLoginId );
 	}
 
 	public void setRequiredLoginId( String value ) {

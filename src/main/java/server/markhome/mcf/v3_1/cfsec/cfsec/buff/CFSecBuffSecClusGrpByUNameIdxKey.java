@@ -54,13 +54,13 @@ public class CFSecBuffSecClusGrpByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
 	public CFSecBuffSecClusGrpByUNameIdxKey() {
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecClusGrp.NAME_INIT_VALUE;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(  );
+		return( requiredClusterId );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -76,7 +76,7 @@ public class CFSecBuffSecClusGrpByUNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {

@@ -294,8 +294,7 @@ public class CFSecBuffISOCtryLang
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangH ) {
-			ICFSecISOCtryLangH rhs = (ICFSecISOCtryLangH)obj;
+		else if( obj instanceof ICFSecISOCtryLangH rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
@@ -314,15 +313,13 @@ public class CFSecBuffISOCtryLang
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
-			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
-			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey rhs ) {
 			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
 				return( false );
 			}
@@ -367,15 +364,13 @@ public class CFSecBuffISOCtryLang
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
-			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
-			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey rhs ) {
 			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
 				return( false );
 			}
@@ -420,15 +415,13 @@ public class CFSecBuffISOCtryLang
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey ) {
-			ICFSecISOCtryLangByCtryIdxKey rhs = (ICFSecISOCtryLangByCtryIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByCtryIdxKey rhs ) {
 			if( getRequiredISOCtryId() != rhs.getRequiredISOCtryId() ) {
 				return( false );
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey ) {
-			ICFSecISOCtryLangByLangIdxKey rhs = (ICFSecISOCtryLangByLangIdxKey)obj;
+		else if( obj instanceof ICFSecISOCtryLangByLangIdxKey rhs ) {
 			if( getRequiredISOLangId() != rhs.getRequiredISOLangId() ) {
 				return( false );
 			}

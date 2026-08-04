@@ -58,7 +58,7 @@ public class CFSecBuffSecUserEMConfByConfEMAddrIdxKey
 
 	@Override
 	public String getRequiredConfirmEMailAddr() {
-		return(  );
+		return( requiredConfirmEMailAddr );
 	}
 
 	public void setRequiredConfirmEMailAddr( String value ) {

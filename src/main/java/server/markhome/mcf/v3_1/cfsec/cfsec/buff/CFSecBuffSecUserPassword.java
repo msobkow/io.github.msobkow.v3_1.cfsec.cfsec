@@ -57,7 +57,7 @@ public class CFSecBuffSecUserPassword
 	protected String requiredPasswordHash;
 
 	public CFSecBuffSecUserPassword() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPassword.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserPassword.SECUSERID_INIT_VALUE.toString() );
 		requiredPWSetStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}
 
@@ -124,7 +124,7 @@ public class CFSecBuffSecUserPassword
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey() );
+		return( requiredSecUserId );
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -135,7 +135,7 @@ public class CFSecBuffSecUserPassword
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
@@ -246,8 +246,7 @@ public class CFSecBuffSecUserPassword
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPasswordH ) {
-			ICFSecSecUserPasswordH rhs = (ICFSecSecUserPasswordH)obj;
+		else if( obj instanceof ICFSecSecUserPasswordH rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -314,8 +313,7 @@ public class CFSecBuffSecUserPassword
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPasswordBySetStampIdxKey ) {
-			ICFSecSecUserPasswordBySetStampIdxKey rhs = (ICFSecSecUserPasswordBySetStampIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPasswordBySetStampIdxKey rhs ) {
 			if( getRequiredPWSetStamp() != null ) {
 				if( rhs.getRequiredPWSetStamp() != null ) {
 					if( ! getRequiredPWSetStamp().equals( rhs.getRequiredPWSetStamp() ) ) {

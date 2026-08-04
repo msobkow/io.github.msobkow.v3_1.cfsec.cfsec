@@ -66,7 +66,7 @@ public class CFSecBuffSecClusGrpMembHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );
+		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );
 		requiredLoginId = ICFSecSecClusGrpMemb.LOGINID_INIT_VALUE;
 	}
 
@@ -122,7 +122,7 @@ public class CFSecBuffSecClusGrpMembHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(  );
+		return( requiredSecClusGrpId );
 	}
 
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
@@ -138,7 +138,7 @@ public class CFSecBuffSecClusGrpMembHPKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		return( requiredLoginId );
 	}
 
 	public void setRequiredLoginId( String value ) {

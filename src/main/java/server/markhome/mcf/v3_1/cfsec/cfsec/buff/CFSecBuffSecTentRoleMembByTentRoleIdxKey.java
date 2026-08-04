@@ -53,12 +53,12 @@ public class CFSecBuffSecTentRoleMembByTentRoleIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecTentRoleId;
 	public CFSecBuffSecTentRoleMembByTentRoleIdxKey() {
-		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRoleMemb.SECTENTROLEID_INIT_VALUE.toString() );
+		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRoleMemb.SECTENTROLEID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return(  );
+		return( requiredSecTentRoleId );
 	}
 
 	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {

@@ -53,16 +53,16 @@ public class CFSecBuffSecClusGrp
 {
 	protected CFLibDbKeyHash256 requiredSecClusGrpId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusGrp.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusGrp.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
 
 	public CFSecBuffSecClusGrp() {
-		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.SECCLUSGRPID_INIT_VALUE.toString() );
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
+		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.SECCLUSGRPID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecClusGrp.NAME_INIT_VALUE;
 	}
 
@@ -115,7 +115,7 @@ public class CFSecBuffSecClusGrp
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecClusGrpId = value;
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(  );
+		return( requiredClusterId );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -289,7 +289,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {
@@ -376,8 +376,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpH ) {
-			ICFSecSecClusGrpH rhs = (ICFSecSecClusGrpH)obj;
+		else if( obj instanceof ICFSecSecClusGrpH rhs ) {
 			if( getRequiredSecClusGrpId() != null ) {
 				if( rhs.getRequiredSecClusGrpId() != null ) {
 					if( ! getRequiredSecClusGrpId().equals( rhs.getRequiredSecClusGrpId() ) ) {
@@ -444,8 +443,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByClusterIdxKey ) {
-			ICFSecSecClusGrpByClusterIdxKey rhs = (ICFSecSecClusGrpByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -463,8 +461,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByNameIdxKey ) {
-			ICFSecSecClusGrpByNameIdxKey rhs = (ICFSecSecClusGrpByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -482,8 +479,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByUNameIdxKey ) {
-			ICFSecSecClusGrpByUNameIdxKey rhs = (ICFSecSecClusGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -642,8 +638,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByClusterIdxKey ) {
-			ICFSecSecClusGrpByClusterIdxKey rhs = (ICFSecSecClusGrpByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -661,8 +656,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByNameIdxKey ) {
-			ICFSecSecClusGrpByNameIdxKey rhs = (ICFSecSecClusGrpByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -680,8 +674,7 @@ public class CFSecBuffSecClusGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusGrpByUNameIdxKey ) {
-			ICFSecSecClusGrpByUNameIdxKey rhs = (ICFSecSecClusGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusGrpByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {

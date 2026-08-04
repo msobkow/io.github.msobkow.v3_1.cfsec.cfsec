@@ -54,13 +54,13 @@ public class CFSecBuffSecTentGrpByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
 	public CFSecBuffSecTentGrpByUNameIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentGrp.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrp.TENANTID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecTentGrp.NAME_INIT_VALUE;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(  );
+		return( requiredTenantId );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -76,7 +76,7 @@ public class CFSecBuffSecTentGrpByUNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {

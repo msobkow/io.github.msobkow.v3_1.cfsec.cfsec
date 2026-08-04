@@ -53,12 +53,12 @@ public class CFSecBuffSecTentRoleByTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFSecBuffSecTentRoleByTenantIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(  );
+		return( requiredTenantId );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {

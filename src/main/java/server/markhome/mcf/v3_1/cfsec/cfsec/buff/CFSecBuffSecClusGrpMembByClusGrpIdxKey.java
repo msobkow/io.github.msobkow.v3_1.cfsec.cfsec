@@ -53,12 +53,12 @@ public class CFSecBuffSecClusGrpMembByClusGrpIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecClusGrpId;
 	public CFSecBuffSecClusGrpMembByClusGrpIdxKey() {
-		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );
+		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(  );
+		return( requiredSecClusGrpId );
 	}
 
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {

@@ -57,7 +57,7 @@ public class CFSecBuffSecUserEMConfByUUuid6IdxKey
 
 	@Override
 	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return(  );
+		return( requiredEMConfirmationUuid6 );
 	}
 
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {

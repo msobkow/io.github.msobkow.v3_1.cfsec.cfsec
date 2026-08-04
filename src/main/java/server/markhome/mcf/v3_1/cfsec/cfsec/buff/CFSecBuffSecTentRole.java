@@ -53,16 +53,16 @@ public class CFSecBuffSecTentRole
 {
 	protected CFLibDbKeyHash256 requiredSecTentRoleId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRole.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRole.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
 
 	public CFSecBuffSecTentRole() {
-		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.SECTENTROLEID_INIT_VALUE.toString() );
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.TENANTID_INIT_VALUE.toString() );
+		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.SECTENTROLEID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecTentRole.NAME_INIT_VALUE;
 	}
 
@@ -115,7 +115,7 @@ public class CFSecBuffSecTentRole
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecTentRoleId = value;
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(  );
+		return( requiredTenantId );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -289,7 +289,7 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {
@@ -376,8 +376,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleH ) {
-			ICFSecSecTentRoleH rhs = (ICFSecSecTentRoleH)obj;
+		else if( obj instanceof ICFSecSecTentRoleH rhs ) {
 			if( getRequiredSecTentRoleId() != null ) {
 				if( rhs.getRequiredSecTentRoleId() != null ) {
 					if( ! getRequiredSecTentRoleId().equals( rhs.getRequiredSecTentRoleId() ) ) {
@@ -444,8 +443,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey ) {
-			ICFSecSecTentRoleByTenantIdxKey rhs = (ICFSecSecTentRoleByTenantIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -463,8 +461,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey ) {
-			ICFSecSecTentRoleByNameIdxKey rhs = (ICFSecSecTentRoleByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -482,8 +479,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey ) {
-			ICFSecSecTentRoleByUNameIdxKey rhs = (ICFSecSecTentRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -642,8 +638,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey ) {
-			ICFSecSecTentRoleByTenantIdxKey rhs = (ICFSecSecTentRoleByTenantIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -661,8 +656,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey ) {
-			ICFSecSecTentRoleByNameIdxKey rhs = (ICFSecSecTentRoleByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -680,8 +674,7 @@ public class CFSecBuffSecTentRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey ) {
-			ICFSecSecTentRoleByUNameIdxKey rhs = (ICFSecSecTentRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentRoleByUNameIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {

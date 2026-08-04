@@ -52,9 +52,9 @@ public class CFSecBuffSecUserPWResetH
     implements ICFSecSecUserPWResetH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserPWResetHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserPWReset.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUserPWReset.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredSentToEMailAddr;
 	protected CFLibUuid6 requiredPasswordResetUuid6;
@@ -195,21 +195,10 @@ public class CFSecBuffSecUserPWResetH
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return(  );
 	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		
-		setPKey(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredSentToEMailAddr() {
-		return(  );
+		return( requiredSentToEMailAddr );
 	}
 
 	public void setRequiredSentToEMailAddr( String value ) {
@@ -233,7 +222,7 @@ public class CFSecBuffSecUserPWResetH
 
 	@Override
 	public CFLibUuid6 getRequiredPasswordResetUuid6() {
-		return(  );
+		return( requiredPasswordResetUuid6 );
 	}
 
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
@@ -249,7 +238,7 @@ public class CFSecBuffSecUserPWResetH
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return(  );
+		return( requiredNewAccount );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {

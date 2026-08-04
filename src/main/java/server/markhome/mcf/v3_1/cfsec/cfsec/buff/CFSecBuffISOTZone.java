@@ -88,7 +88,7 @@ public class CFSecBuffISOTZone
 
 	@Override
 	public short getRequiredISOTZoneId() {
-		return( getPKey() );
+		return( requiredISOTZoneId );
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public class CFSecBuffISOTZone
 				value,
 				ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredISOTZoneId = value;
 	}
 
 	@Override
@@ -413,8 +413,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneH ) {
-			ICFSecISOTZoneH rhs = (ICFSecISOTZoneH)obj;
+		else if( obj instanceof ICFSecISOTZoneH rhs ) {
 			if( getRequiredISOTZoneId() != rhs.getRequiredISOTZoneId() ) {
 				return( false );
 			}
@@ -481,8 +480,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey ) {
-			ICFSecISOTZoneByOffsetIdxKey rhs = (ICFSecISOTZoneByOffsetIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey rhs ) {
 			if( getRequiredTZHourOffset() != rhs.getRequiredTZHourOffset() ) {
 				return( false );
 			}
@@ -491,8 +489,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey ) {
-			ICFSecISOTZoneByUTZNameIdxKey rhs = (ICFSecISOTZoneByUTZNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey rhs ) {
 			if( getRequiredTZName() != null ) {
 				if( rhs.getRequiredTZName() != null ) {
 					if( ! getRequiredTZName().equals( rhs.getRequiredTZName() ) ) {
@@ -510,8 +507,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey ) {
-			ICFSecISOTZoneByIso8601IdxKey rhs = (ICFSecISOTZoneByIso8601IdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey rhs ) {
 			if( getRequiredIso8601() != null ) {
 				if( rhs.getRequiredIso8601() != null ) {
 					if( ! getRequiredIso8601().equals( rhs.getRequiredIso8601() ) ) {
@@ -667,8 +663,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey ) {
-			ICFSecISOTZoneByOffsetIdxKey rhs = (ICFSecISOTZoneByOffsetIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey rhs ) {
 			if( getRequiredTZHourOffset() != rhs.getRequiredTZHourOffset() ) {
 				return( false );
 			}
@@ -677,8 +672,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey ) {
-			ICFSecISOTZoneByUTZNameIdxKey rhs = (ICFSecISOTZoneByUTZNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey rhs ) {
 			if( getRequiredTZName() != null ) {
 				if( rhs.getRequiredTZName() != null ) {
 					if( ! getRequiredTZName().equals( rhs.getRequiredTZName() ) ) {
@@ -696,8 +690,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey ) {
-			ICFSecISOTZoneByIso8601IdxKey rhs = (ICFSecISOTZoneByIso8601IdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey rhs ) {
 			if( getRequiredIso8601() != null ) {
 				if( rhs.getRequiredIso8601() != null ) {
 					if( ! getRequiredIso8601().equals( rhs.getRequiredIso8601() ) ) {
@@ -853,8 +846,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey ) {
-			ICFSecISOTZoneByOffsetIdxKey rhs = (ICFSecISOTZoneByOffsetIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByOffsetIdxKey rhs ) {
 			if( getRequiredTZHourOffset() != rhs.getRequiredTZHourOffset() ) {
 				return( false );
 			}
@@ -863,8 +855,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey ) {
-			ICFSecISOTZoneByUTZNameIdxKey rhs = (ICFSecISOTZoneByUTZNameIdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByUTZNameIdxKey rhs ) {
 			if( getRequiredTZName() != null ) {
 				if( rhs.getRequiredTZName() != null ) {
 					if( ! getRequiredTZName().equals( rhs.getRequiredTZName() ) ) {
@@ -882,8 +873,7 @@ public class CFSecBuffISOTZone
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey ) {
-			ICFSecISOTZoneByIso8601IdxKey rhs = (ICFSecISOTZoneByIso8601IdxKey)obj;
+		else if( obj instanceof ICFSecISOTZoneByIso8601IdxKey rhs ) {
 			if( getRequiredIso8601() != null ) {
 				if( rhs.getRequiredIso8601() != null ) {
 					if( ! getRequiredIso8601().equals( rhs.getRequiredIso8601() ) ) {

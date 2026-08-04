@@ -52,9 +52,9 @@ public class CFSecBuffSecSysGrpMembH
     implements ICFSecSecSysGrpMembH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecSysGrpMembHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpMemb.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpMemb.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecSysGrpMemb.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecSysGrpMemb.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
     public CFSecBuffSecSysGrpMembH() {
@@ -190,42 +190,12 @@ public class CFSecBuffSecSysGrpMembH
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
 		return(  );
 	}
-
-	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSysGrpId",
-				1,
-				"value" );
-		}
-		
-		getPKey().setRequiredSecSysGrpId(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredLoginId() {
 		return(  );
 	}
-
-	public void setRequiredLoginId( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredLoginId",
-				1,
-				"value" );
-		}
-		else if( value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredLoginId",
-				1,
-				"value.length()",
-				value.length(),
-				32 );
-		}
-		
-		getPKey().setRequiredLoginId(value);
-	}
-
+$refernce Column implProtReqSetter$
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

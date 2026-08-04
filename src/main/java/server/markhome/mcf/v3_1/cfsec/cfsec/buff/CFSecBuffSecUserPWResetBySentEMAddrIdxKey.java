@@ -58,7 +58,7 @@ public class CFSecBuffSecUserPWResetBySentEMAddrIdxKey
 
 	@Override
 	public String getRequiredSentToEMailAddr() {
-		return(  );
+		return( requiredSentToEMailAddr );
 	}
 
 	public void setRequiredSentToEMailAddr( String value ) {

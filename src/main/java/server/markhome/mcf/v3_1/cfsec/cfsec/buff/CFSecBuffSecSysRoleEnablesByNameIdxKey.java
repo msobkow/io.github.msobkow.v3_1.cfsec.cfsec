@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleEnablesByNameIdxKey
 
 	@Override
 	public String getRequiredEnableName() {
-		return(  );
+		return( requiredEnableName );
 	}
 
 	public void setRequiredEnableName( String value ) {

@@ -200,7 +200,7 @@ public class CFSecBuffISOTZoneH
 
 	@Override
 	public short getRequiredISOTZoneId() {
-		return( getPKey() );
+		return( requiredISOTZoneId );
 	}
 
 	@Override
@@ -222,7 +222,7 @@ public class CFSecBuffISOTZoneH
 				value,
 				ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredISOTZoneId = value;
 	}
 
 	@Override

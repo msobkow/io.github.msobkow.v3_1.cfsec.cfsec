@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleMembByLoginIdxKey
 
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		return( requiredLoginId );
 	}
 
 	public void setRequiredLoginId( String value ) {

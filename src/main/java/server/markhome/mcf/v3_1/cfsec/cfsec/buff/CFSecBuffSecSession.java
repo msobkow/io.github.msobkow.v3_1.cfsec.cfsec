@@ -80,7 +80,7 @@ public class CFSecBuffSecSession
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return( getPKey() );
+		return( requiredSecSessionId );
 	}
 
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
@@ -91,7 +91,7 @@ public class CFSecBuffSecSession
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecSessionId = value;
 	}
 
 	@Override
@@ -153,7 +153,7 @@ public class CFSecBuffSecSession
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalSecProxyId() {
-		return(  );
+		return( optionalSecProxyId );
 	}
 
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
@@ -244,8 +244,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionH ) {
-			ICFSecSecSessionH rhs = (ICFSecSecSessionH)obj;
+		else if( obj instanceof ICFSecSecSessionH rhs ) {
 			if( getRequiredSecSessionId() != null ) {
 				if( rhs.getRequiredSecSessionId() != null ) {
 					if( ! getRequiredSecSessionId().equals( rhs.getRequiredSecSessionId() ) ) {
@@ -342,8 +341,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
-			ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -361,8 +359,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByStartIdxKey ) {
-			ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByStartIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -395,8 +392,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByFinishIdxKey ) {
-			ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByFinishIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -429,8 +425,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey ) {
-			ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey rhs ) {
 			if( getOptionalSecProxyId() != null ) {
 				if( rhs.getOptionalSecProxyId() != null ) {
 					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
@@ -622,8 +617,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
-			ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -641,8 +635,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByStartIdxKey ) {
-			ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByStartIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -675,8 +668,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByFinishIdxKey ) {
-			ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByFinishIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -709,8 +701,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey ) {
-			ICFSecSecSessionBySecProxyIdxKey rhs = (ICFSecSecSessionBySecProxyIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionBySecProxyIdxKey rhs ) {
 			if( getOptionalSecProxyId() != null ) {
 				if( rhs.getOptionalSecProxyId() != null ) {
 					if( ! getOptionalSecProxyId().equals( rhs.getOptionalSecProxyId() ) ) {
@@ -872,8 +863,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey ) {
-			ICFSecSecSessionBySecUserIdxKey rhs = (ICFSecSecSessionBySecUserIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionBySecUserIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -891,8 +881,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByStartIdxKey ) {
-			ICFSecSecSessionByStartIdxKey rhs = (ICFSecSecSessionByStartIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByStartIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -925,8 +914,7 @@ public class CFSecBuffSecSession
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSessionByFinishIdxKey ) {
-			ICFSecSecSessionByFinishIdxKey rhs = (ICFSecSecSessionByFinishIdxKey)obj;
+		else if( obj instanceof ICFSecSecSessionByFinishIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {

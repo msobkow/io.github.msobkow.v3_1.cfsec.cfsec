@@ -53,12 +53,12 @@ public class CFSecBuffSecClusRoleMembByClusRoleIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecClusRoleId;
 	public CFSecBuffSecClusRoleMembByClusRoleIdxKey() {
-		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRoleMemb.SECCLUSROLEID_INIT_VALUE.toString() );
+		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRoleMemb.SECCLUSROLEID_INIT_VALUE.toString() );
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		return(  );
+		return( requiredSecClusRoleId );
 	}
 
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {

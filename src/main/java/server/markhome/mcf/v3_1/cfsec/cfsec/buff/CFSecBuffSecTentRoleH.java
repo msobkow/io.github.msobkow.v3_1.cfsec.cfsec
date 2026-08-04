@@ -52,9 +52,9 @@ public class CFSecBuffSecTentRoleH
     implements ICFSecSecTentRoleH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecTentRoleHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRole.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentRole.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
@@ -62,7 +62,7 @@ public class CFSecBuffSecTentRoleH
     public CFSecBuffSecTentRoleH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecTentRoleHPKey();
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentRole.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecTentRole.NAME_INIT_VALUE;
     }
 
@@ -194,21 +194,10 @@ public class CFSecBuffSecTentRoleH
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
 		return(  );
 	}
-
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentRoleId",
-				1,
-				"value" );
-		}
-		
-		setPKey(value);
-	}
-
+$refernce Column implProtReqSetter$
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(  );
+		return( requiredTenantId );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -224,7 +213,7 @@ public class CFSecBuffSecTentRoleH
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {

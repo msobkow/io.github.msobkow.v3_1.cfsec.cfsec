@@ -58,7 +58,7 @@ public class CFSecBuffSecUserPWResetByNewAcctIdxKey
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return(  );
+		return( requiredNewAccount );
 	}
 
 	public void setRequiredNewAccount( boolean value ) {

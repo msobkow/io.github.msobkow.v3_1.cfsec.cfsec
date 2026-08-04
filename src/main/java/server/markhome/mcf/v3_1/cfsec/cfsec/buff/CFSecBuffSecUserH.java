@@ -200,7 +200,7 @@ public class CFSecBuffSecUserH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey() );
+		return( requiredSecUserId );
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -211,7 +211,7 @@ public class CFSecBuffSecUserH
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
@@ -310,7 +310,7 @@ public class CFSecBuffSecUserH
 
 	@Override
 	public String getRequiredEMailAddress() {
-		return(  );
+		return( requiredEMailAddress );
 	}
 
 	public void setRequiredEMailAddress( String value ) {

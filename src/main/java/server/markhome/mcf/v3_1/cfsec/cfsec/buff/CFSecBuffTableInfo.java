@@ -90,7 +90,7 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public int getRequiredTableInfoId() {
-		return( getPKey() );
+		return( requiredTableInfoId );
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class CFSecBuffTableInfo
 				value,
 				ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredTableInfoId = value;
 	}
 
 	@Override
@@ -489,8 +489,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoH ) {
-			ICFSecTableInfoH rhs = (ICFSecTableInfoH)obj;
+		else if( obj instanceof ICFSecTableInfoH rhs ) {
 			if( getRequiredTableInfoId() != rhs.getRequiredTableInfoId() ) {
 				return( false );
 			}
@@ -590,8 +589,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey ) {
-			ICFSecTableInfoByTableNameIdxKey rhs = (ICFSecTableInfoByTableNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey rhs ) {
 			if( getRequiredTableName() != null ) {
 				if( rhs.getRequiredTableName() != null ) {
 					if( ! getRequiredTableName().equals( rhs.getRequiredTableName() ) ) {
@@ -609,8 +607,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey ) {
-			ICFSecTableInfoBySuperNameIdxKey rhs = (ICFSecTableInfoBySuperNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey rhs ) {
 			if( getOptionalSuperName() != null ) {
 				if( rhs.getOptionalSuperName() != null ) {
 					if( ! getOptionalSuperName().equals( rhs.getOptionalSuperName() ) ) {
@@ -628,8 +625,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey ) {
-			ICFSecTableInfoBySchemaNameIdxKey rhs = (ICFSecTableInfoBySchemaNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -647,8 +643,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey ) {
-			ICFSecTableInfoBySchemaBkCodeIdxKey rhs = (ICFSecTableInfoBySchemaBkCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -669,8 +664,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey ) {
-			ICFSecTableInfoBySchemaRTCodeIdxKey rhs = (ICFSecTableInfoBySchemaRTCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey rhs ) {
 			if( getRequiredRuntimeClassCode() != rhs.getRequiredRuntimeClassCode() ) {
 				return( false );
 			}
@@ -868,8 +862,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey ) {
-			ICFSecTableInfoByTableNameIdxKey rhs = (ICFSecTableInfoByTableNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey rhs ) {
 			if( getRequiredTableName() != null ) {
 				if( rhs.getRequiredTableName() != null ) {
 					if( ! getRequiredTableName().equals( rhs.getRequiredTableName() ) ) {
@@ -887,8 +880,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey ) {
-			ICFSecTableInfoBySuperNameIdxKey rhs = (ICFSecTableInfoBySuperNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey rhs ) {
 			if( getOptionalSuperName() != null ) {
 				if( rhs.getOptionalSuperName() != null ) {
 					if( ! getOptionalSuperName().equals( rhs.getOptionalSuperName() ) ) {
@@ -906,8 +898,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey ) {
-			ICFSecTableInfoBySchemaNameIdxKey rhs = (ICFSecTableInfoBySchemaNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -925,8 +916,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey ) {
-			ICFSecTableInfoBySchemaBkCodeIdxKey rhs = (ICFSecTableInfoBySchemaBkCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -947,8 +937,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey ) {
-			ICFSecTableInfoBySchemaRTCodeIdxKey rhs = (ICFSecTableInfoBySchemaRTCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey rhs ) {
 			if( getRequiredRuntimeClassCode() != rhs.getRequiredRuntimeClassCode() ) {
 				return( false );
 			}
@@ -1146,8 +1135,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey ) {
-			ICFSecTableInfoByTableNameIdxKey rhs = (ICFSecTableInfoByTableNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoByTableNameIdxKey rhs ) {
 			if( getRequiredTableName() != null ) {
 				if( rhs.getRequiredTableName() != null ) {
 					if( ! getRequiredTableName().equals( rhs.getRequiredTableName() ) ) {
@@ -1165,8 +1153,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey ) {
-			ICFSecTableInfoBySuperNameIdxKey rhs = (ICFSecTableInfoBySuperNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySuperNameIdxKey rhs ) {
 			if( getOptionalSuperName() != null ) {
 				if( rhs.getOptionalSuperName() != null ) {
 					if( ! getOptionalSuperName().equals( rhs.getOptionalSuperName() ) ) {
@@ -1184,8 +1171,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey ) {
-			ICFSecTableInfoBySchemaNameIdxKey rhs = (ICFSecTableInfoBySchemaNameIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaNameIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -1203,8 +1189,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey ) {
-			ICFSecTableInfoBySchemaBkCodeIdxKey rhs = (ICFSecTableInfoBySchemaBkCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaBkCodeIdxKey rhs ) {
 			if( getRequiredSchemaName() != null ) {
 				if( rhs.getRequiredSchemaName() != null ) {
 					if( ! getRequiredSchemaName().equals( rhs.getRequiredSchemaName() ) ) {
@@ -1225,8 +1210,7 @@ public class CFSecBuffTableInfo
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey ) {
-			ICFSecTableInfoBySchemaRTCodeIdxKey rhs = (ICFSecTableInfoBySchemaRTCodeIdxKey)obj;
+		else if( obj instanceof ICFSecTableInfoBySchemaRTCodeIdxKey rhs ) {
 			if( getRequiredRuntimeClassCode() != rhs.getRequiredRuntimeClassCode() ) {
 				return( false );
 			}

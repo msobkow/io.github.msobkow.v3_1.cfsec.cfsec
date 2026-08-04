@@ -126,7 +126,7 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( getPKey() );
+		return( requiredSecSysRoleId );
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
@@ -137,7 +137,7 @@ public class CFSecBuffSecSysRole
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecSysRoleId = value;
 	}
 
 	@Override
@@ -269,8 +269,7 @@ public class CFSecBuffSecSysRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysRoleH ) {
-			ICFSecSecSysRoleH rhs = (ICFSecSecSysRoleH)obj;
+		else if( obj instanceof ICFSecSecSysRoleH rhs ) {
 			if( getRequiredSecSysRoleId() != null ) {
 				if( rhs.getRequiredSecSysRoleId() != null ) {
 					if( ! getRequiredSecSysRoleId().equals( rhs.getRequiredSecSysRoleId() ) ) {
@@ -322,8 +321,7 @@ public class CFSecBuffSecSysRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey ) {
-			ICFSecSecSysRoleByUNameIdxKey rhs = (ICFSecSecSysRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -437,8 +435,7 @@ public class CFSecBuffSecSysRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey ) {
-			ICFSecSecSysRoleByUNameIdxKey rhs = (ICFSecSecSysRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -552,8 +549,7 @@ public class CFSecBuffSecSysRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey ) {
-			ICFSecSecSysRoleByUNameIdxKey rhs = (ICFSecSecSysRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecSysRoleByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {

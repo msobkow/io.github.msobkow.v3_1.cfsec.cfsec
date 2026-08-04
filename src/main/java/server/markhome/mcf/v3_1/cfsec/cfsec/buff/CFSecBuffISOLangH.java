@@ -194,7 +194,7 @@ public class CFSecBuffISOLangH
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( getPKey() );
+		return( requiredISOLangId );
 	}
 
 	@Override
@@ -216,7 +216,7 @@ public class CFSecBuffISOLangH
 				value,
 				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredISOLangId = value;
 	}
 
 	@Override

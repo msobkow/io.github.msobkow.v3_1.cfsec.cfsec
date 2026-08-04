@@ -53,16 +53,16 @@ public class CFSecBuffSecClusRole
 {
 	protected CFLibDbKeyHash256 requiredSecClusRoleId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusRole.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRole.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusRole.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRole.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
 
 	public CFSecBuffSecClusRole() {
-		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRole.SECCLUSROLEID_INIT_VALUE.toString() );
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSecClusRole.CLUSTERID_INIT_VALUE.toString() );
+		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRole.SECCLUSROLEID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRole.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecClusRole.NAME_INIT_VALUE;
 	}
 
@@ -115,7 +115,7 @@ public class CFSecBuffSecClusRole
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecClusRoleId = value;
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(  );
+		return( requiredClusterId );
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -289,7 +289,7 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {
@@ -376,8 +376,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleH ) {
-			ICFSecSecClusRoleH rhs = (ICFSecSecClusRoleH)obj;
+		else if( obj instanceof ICFSecSecClusRoleH rhs ) {
 			if( getRequiredSecClusRoleId() != null ) {
 				if( rhs.getRequiredSecClusRoleId() != null ) {
 					if( ! getRequiredSecClusRoleId().equals( rhs.getRequiredSecClusRoleId() ) ) {
@@ -444,8 +443,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByClusterIdxKey ) {
-			ICFSecSecClusRoleByClusterIdxKey rhs = (ICFSecSecClusRoleByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -463,8 +461,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByNameIdxKey ) {
-			ICFSecSecClusRoleByNameIdxKey rhs = (ICFSecSecClusRoleByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -482,8 +479,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByUNameIdxKey ) {
-			ICFSecSecClusRoleByUNameIdxKey rhs = (ICFSecSecClusRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -642,8 +638,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByClusterIdxKey ) {
-			ICFSecSecClusRoleByClusterIdxKey rhs = (ICFSecSecClusRoleByClusterIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByClusterIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {
@@ -661,8 +656,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByNameIdxKey ) {
-			ICFSecSecClusRoleByNameIdxKey rhs = (ICFSecSecClusRoleByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -680,8 +674,7 @@ public class CFSecBuffSecClusRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleByUNameIdxKey ) {
-			ICFSecSecClusRoleByUNameIdxKey rhs = (ICFSecSecClusRoleByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleByUNameIdxKey rhs ) {
 			if( getRequiredClusterId() != null ) {
 				if( rhs.getRequiredClusterId() != null ) {
 					if( ! getRequiredClusterId().equals( rhs.getRequiredClusterId() ) ) {

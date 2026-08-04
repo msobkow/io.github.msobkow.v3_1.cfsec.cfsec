@@ -78,7 +78,7 @@ public class CFSecBuffSecUserPWHistory
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(getPKey());
+		return(getPKey().getRequiredSecUserId());
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class CFSecBuffSecUserPWHistory
 
 	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
-		return(getPKey());
+		return(getPKey().getRequiredPWSetStamp());
 	}
 
 	@Override
@@ -221,8 +221,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryH ) {
-			ICFSecSecUserPWHistoryH rhs = (ICFSecSecUserPWHistoryH)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryH rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -319,8 +318,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryByUserIdxKey ) {
-			ICFSecSecUserPWHistoryByUserIdxKey rhs = (ICFSecSecUserPWHistoryByUserIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryByUserIdxKey rhs ) {
 			if( getRequiredSecUserId() != null ) {
 				if( rhs.getRequiredSecUserId() != null ) {
 					if( ! getRequiredSecUserId().equals( rhs.getRequiredSecUserId() ) ) {
@@ -338,8 +336,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryBySetStampIdxKey ) {
-			ICFSecSecUserPWHistoryBySetStampIdxKey rhs = (ICFSecSecUserPWHistoryBySetStampIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryBySetStampIdxKey rhs ) {
 			if( getRequiredPWSetStamp() != null ) {
 				if( rhs.getRequiredPWSetStamp() != null ) {
 					if( ! getRequiredPWSetStamp().equals( rhs.getRequiredPWSetStamp() ) ) {
@@ -357,8 +354,7 @@ public class CFSecBuffSecUserPWHistory
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecUserPWHistoryByReplacedStampIdxKey ) {
-			ICFSecSecUserPWHistoryByReplacedStampIdxKey rhs = (ICFSecSecUserPWHistoryByReplacedStampIdxKey)obj;
+		else if( obj instanceof ICFSecSecUserPWHistoryByReplacedStampIdxKey rhs ) {
 			if( getRequiredPWReplacedStamp() != null ) {
 				if( rhs.getRequiredPWReplacedStamp() != null ) {
 					if( ! getRequiredPWReplacedStamp().equals( rhs.getRequiredPWReplacedStamp() ) ) {

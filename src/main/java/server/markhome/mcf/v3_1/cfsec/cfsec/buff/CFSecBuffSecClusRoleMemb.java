@@ -53,9 +53,9 @@ public class CFSecBuffSecClusRoleMemb
 {
 	protected ICFSecSecClusRoleMembPKey pkey = new CFSecBuffSecClusRoleMembPKey();
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusRoleMemb.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRoleMemb.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecClusRoleMemb.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRoleMemb.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
 	public CFSecBuffSecClusRoleMemb() {
@@ -292,8 +292,7 @@ public class CFSecBuffSecClusRoleMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleMembH ) {
-			ICFSecSecClusRoleMembH rhs = (ICFSecSecClusRoleMembH)obj;
+		else if( obj instanceof ICFSecSecClusRoleMembH rhs ) {
 			if( getRequiredSecClusRoleId() != null ) {
 				if( rhs.getRequiredSecClusRoleId() != null ) {
 					if( ! getRequiredSecClusRoleId().equals( rhs.getRequiredSecClusRoleId() ) ) {
@@ -360,8 +359,7 @@ public class CFSecBuffSecClusRoleMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleMembByClusRoleIdxKey ) {
-			ICFSecSecClusRoleMembByClusRoleIdxKey rhs = (ICFSecSecClusRoleMembByClusRoleIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleMembByClusRoleIdxKey rhs ) {
 			if( getRequiredSecClusRoleId() != null ) {
 				if( rhs.getRequiredSecClusRoleId() != null ) {
 					if( ! getRequiredSecClusRoleId().equals( rhs.getRequiredSecClusRoleId() ) ) {
@@ -379,8 +377,7 @@ public class CFSecBuffSecClusRoleMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleMembByLoginIdxKey ) {
-			ICFSecSecClusRoleMembByLoginIdxKey rhs = (ICFSecSecClusRoleMembByLoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleMembByLoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {
@@ -509,8 +506,7 @@ public class CFSecBuffSecClusRoleMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleMembByClusRoleIdxKey ) {
-			ICFSecSecClusRoleMembByClusRoleIdxKey rhs = (ICFSecSecClusRoleMembByClusRoleIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleMembByClusRoleIdxKey rhs ) {
 			if( getRequiredSecClusRoleId() != null ) {
 				if( rhs.getRequiredSecClusRoleId() != null ) {
 					if( ! getRequiredSecClusRoleId().equals( rhs.getRequiredSecClusRoleId() ) ) {
@@ -528,8 +524,7 @@ public class CFSecBuffSecClusRoleMemb
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecClusRoleMembByLoginIdxKey ) {
-			ICFSecSecClusRoleMembByLoginIdxKey rhs = (ICFSecSecClusRoleMembByLoginIdxKey)obj;
+		else if( obj instanceof ICFSecSecClusRoleMembByLoginIdxKey rhs ) {
 			if( getRequiredLoginId() != null ) {
 				if( rhs.getRequiredLoginId() != null ) {
 					if( ! getRequiredLoginId().equals( rhs.getRequiredLoginId() ) ) {

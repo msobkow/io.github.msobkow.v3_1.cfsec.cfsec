@@ -53,16 +53,16 @@ public class CFSecBuffSecTentGrp
 {
 	protected CFLibDbKeyHash256 requiredSecTentGrpId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentGrp.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentGrp.S_INIT_CREATED_BY);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecTentGrp.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentGrp.S_INIT_UPDATED_BY);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
 
 	public CFSecBuffSecTentGrp() {
-		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecTentGrp.SECTENTGRPID_INIT_VALUE.toString() );
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecSecTentGrp.TENANTID_INIT_VALUE.toString() );
+		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrp.SECTENTGRPID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrp.TENANTID_INIT_VALUE.toString() );
 		requiredName = ICFSecSecTentGrp.NAME_INIT_VALUE;
 	}
 
@@ -115,7 +115,7 @@ public class CFSecBuffSecTentGrp
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredSecTentGrpId = value;
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(  );
+		return( requiredTenantId );
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -289,7 +289,7 @@ public class CFSecBuffSecTentGrp
 
 	@Override
 	public String getRequiredName() {
-		return(  );
+		return( requiredName );
 	}
 
 	public void setRequiredName( String value ) {
@@ -376,8 +376,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpH ) {
-			ICFSecSecTentGrpH rhs = (ICFSecSecTentGrpH)obj;
+		else if( obj instanceof ICFSecSecTentGrpH rhs ) {
 			if( getRequiredSecTentGrpId() != null ) {
 				if( rhs.getRequiredSecTentGrpId() != null ) {
 					if( ! getRequiredSecTentGrpId().equals( rhs.getRequiredSecTentGrpId() ) ) {
@@ -444,8 +443,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByTenantIdxKey ) {
-			ICFSecSecTentGrpByTenantIdxKey rhs = (ICFSecSecTentGrpByTenantIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -463,8 +461,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByNameIdxKey ) {
-			ICFSecSecTentGrpByNameIdxKey rhs = (ICFSecSecTentGrpByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -482,8 +479,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByUNameIdxKey ) {
-			ICFSecSecTentGrpByUNameIdxKey rhs = (ICFSecSecTentGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByUNameIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -642,8 +638,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByTenantIdxKey ) {
-			ICFSecSecTentGrpByTenantIdxKey rhs = (ICFSecSecTentGrpByTenantIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -661,8 +656,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByNameIdxKey ) {
-			ICFSecSecTentGrpByNameIdxKey rhs = (ICFSecSecTentGrpByNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -680,8 +674,7 @@ public class CFSecBuffSecTentGrp
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFSecSecTentGrpByUNameIdxKey ) {
-			ICFSecSecTentGrpByUNameIdxKey rhs = (ICFSecSecTentGrpByUNameIdxKey)obj;
+		else if( obj instanceof ICFSecSecTentGrpByUNameIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
