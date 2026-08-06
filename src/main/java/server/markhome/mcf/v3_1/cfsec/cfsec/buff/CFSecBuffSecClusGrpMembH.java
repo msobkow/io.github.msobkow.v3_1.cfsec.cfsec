@@ -188,12 +188,14 @@ public class CFSecBuffSecClusGrpMembH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(  );
+		
+		getPKey().getRequiredSecClusGrpId;
 	}
 $refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		
+		getPKey().getRequiredLoginId;
 	}
 $refernce Column implProtReqSetter$
     @Override

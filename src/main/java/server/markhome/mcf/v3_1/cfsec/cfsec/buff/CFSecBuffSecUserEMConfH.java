@@ -195,12 +195,12 @@ public class CFSecBuffSecUserEMConfH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(  );
+		return(requiredSecUserId);
 	}
 $refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredConfirmEMailAddr() {
-		return( requiredConfirmEMailAddr );
+		return(requiredConfirmEMailAddr);
 	}
 
 	public void setRequiredConfirmEMailAddr( String value ) {
@@ -218,13 +218,12 @@ $refernce Column implProtReqSetter$
 				value.length(),
 				512 );
 		}
-		
 		requiredConfirmEMailAddr = value;
 	}
 
 	@Override
 	public LocalDateTime getRequiredEMailSentStamp() {
-		return( requiredEMailSentStamp );
+		return(requiredEMailSentStamp);
 	}
 
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
@@ -234,13 +233,12 @@ $refernce Column implProtReqSetter$
 				1,
 				"value" );
 		}
-		
 		requiredEMailSentStamp = value;
 	}
 
 	@Override
 	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return( requiredEMConfirmationUuid6 );
+		return(requiredEMConfirmationUuid6);
 	}
 
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
@@ -250,17 +248,15 @@ $refernce Column implProtReqSetter$
 				1,
 				"value" );
 		}
-		
 		requiredEMConfirmationUuid6 = value;
 	}
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return( requiredNewAccount );
+		return(requiredNewAccount);
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
-		
 		requiredNewAccount = value;
 	}
 

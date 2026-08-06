@@ -58,20 +58,11 @@ public class CFSecBuffTableInfoBySchemaRTCodeIdxKey
 
 	@Override
 	public int getRequiredRuntimeClassCode() {
-		return( requiredRuntimeClassCode );
+		return(requiredRuntimeClassCode);
 	}
 
 	@Override
 	public void setRequiredRuntimeClassCode( int value ) {
-		if( value < ICFSecPubTableInfo.RUNTIMECLASSCODE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredRuntimeClassCode",
-				1,
-				"value",
-				value,
-				ICFSecPubTableInfo.RUNTIMECLASSCODE_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubTableInfo.RUNTIMECLASSCODE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredRuntimeClassCode",

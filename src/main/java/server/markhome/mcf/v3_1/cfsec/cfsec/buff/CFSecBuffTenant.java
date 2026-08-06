@@ -128,7 +128,7 @@ public class CFSecBuffTenant
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -138,7 +138,6 @@ public class CFSecBuffTenant
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
@@ -248,7 +247,7 @@ public class CFSecBuffTenant
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return( requiredClusterId );
+		return(requiredClusterId);
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -258,13 +257,12 @@ public class CFSecBuffTenant
 				1,
 				"value" );
 		}
-		
 		requiredClusterId = value;
 	}
 
 	@Override
 	public String getRequiredTenantName() {
-		return( requiredTenantName );
+		return(requiredTenantName);
 	}
 
 	public void setRequiredTenantName( String value ) {
@@ -282,7 +280,6 @@ public class CFSecBuffTenant
 				value.length(),
 				192 );
 		}
-		
 		requiredTenantName = value;
 	}
 
@@ -1419,6 +1416,7 @@ public class CFSecBuffTenant
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredContainerCluster(src.getRequiredContainerCluster());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 
@@ -1431,6 +1429,7 @@ public class CFSecBuffTenant
 	public void setTenant( ICFSecTenantH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 
@@ -1448,6 +1447,7 @@ public class CFSecBuffTenant
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredContainerCluster(src.getRequiredContainerCluster());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 
@@ -1460,6 +1460,7 @@ public class CFSecBuffTenant
 	public void setTenant( ICFSecProtTenantH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 
@@ -1477,6 +1478,7 @@ public class CFSecBuffTenant
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredContainerCluster(src.getRequiredContainerCluster());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 
@@ -1489,6 +1491,7 @@ public class CFSecBuffTenant
 	public void setTenant( ICFSecPubTenantH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
 

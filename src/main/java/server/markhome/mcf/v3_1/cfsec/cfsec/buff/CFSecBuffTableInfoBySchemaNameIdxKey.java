@@ -58,7 +58,7 @@ public class CFSecBuffTableInfoBySchemaNameIdxKey
 
 	@Override
 	public String getRequiredSchemaName() {
-		return( requiredSchemaName );
+		return(requiredSchemaName);
 	}
 
 	public void setRequiredSchemaName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffTableInfoBySchemaNameIdxKey
 				value.length(),
 				32 );
 		}
-		
 		requiredSchemaName = value;
 	}
 

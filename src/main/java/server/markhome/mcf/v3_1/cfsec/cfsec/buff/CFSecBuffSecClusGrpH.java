@@ -192,12 +192,12 @@ public class CFSecBuffSecClusGrpH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(  );
+		return(requiredSecClusGrpId);
 	}
 $refernce Column implProtReqSetter$
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return( requiredClusterId );
+		return(requiredClusterId);
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -207,13 +207,12 @@ $refernce Column implProtReqSetter$
 				1,
 				"value" );
 		}
-		
 		requiredClusterId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -231,7 +230,6 @@ $refernce Column implProtReqSetter$
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

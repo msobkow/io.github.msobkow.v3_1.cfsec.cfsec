@@ -126,7 +126,7 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( requiredSecSysRoleId );
+		return(requiredSecSysRoleId);
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
@@ -136,7 +136,6 @@ public class CFSecBuffSecSysRole
 				1,
 				"value" );
 		}
-		
 		requiredSecSysRoleId = value;
 	}
 
@@ -197,7 +196,7 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -215,7 +214,6 @@ public class CFSecBuffSecSysRole
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

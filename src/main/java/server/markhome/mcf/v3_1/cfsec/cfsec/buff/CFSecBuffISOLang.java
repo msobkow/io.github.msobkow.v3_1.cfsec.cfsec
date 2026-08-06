@@ -106,20 +106,11 @@ public class CFSecBuffISOLang
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( requiredISOLangId );
+		return(requiredISOLangId);
 	}
 
 	@Override
 	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOLangId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",
@@ -188,7 +179,7 @@ public class CFSecBuffISOLang
 
 	@Override
 	public String getRequiredISO6392Code() {
-		return( requiredISO6392Code );
+		return(requiredISO6392Code);
 	}
 
 	public void setRequiredISO6392Code( String value ) {
@@ -206,13 +197,12 @@ public class CFSecBuffISOLang
 				value.length(),
 				3 );
 		}
-		
 		requiredISO6392Code = value;
 	}
 
 	@Override
 	public String getOptionalISO6391Code() {
-		return( optionalISO6391Code );
+		return(optionalISO6391Code);
 	}
 
 	public void setOptionalISO6391Code( String value ) {
@@ -224,13 +214,12 @@ public class CFSecBuffISOLang
 				value.length(),
 				2 );
 		}
-		
 		optionalISO6391Code = value;
 	}
 
 	@Override
 	public String getRequiredEnglishName() {
-		return( requiredEnglishName );
+		return(requiredEnglishName);
 	}
 
 	public void setRequiredEnglishName( String value ) {
@@ -248,7 +237,6 @@ public class CFSecBuffISOLang
 				value.length(),
 				64 );
 		}
-		
 		requiredEnglishName = value;
 	}
 

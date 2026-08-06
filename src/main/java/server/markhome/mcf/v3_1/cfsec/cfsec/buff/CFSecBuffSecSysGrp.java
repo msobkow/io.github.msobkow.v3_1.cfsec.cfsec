@@ -142,7 +142,7 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return( requiredSecSysGrpId );
+		return(requiredSecSysGrpId);
 	}
 
 	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
@@ -152,7 +152,6 @@ public class CFSecBuffSecSysGrp
 				1,
 				"value" );
 		}
-		
 		requiredSecSysGrpId = value;
 	}
 
@@ -357,7 +356,7 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -375,13 +374,12 @@ public class CFSecBuffSecSysGrp
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
-		return( requiredSecLevel );
+		return(requiredSecLevel);
 	}
 
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
@@ -391,7 +389,6 @@ public class CFSecBuffSecSysGrp
 				1,
 				"value" );
 		}
-		
 		requiredSecLevel = value;
 	}
 

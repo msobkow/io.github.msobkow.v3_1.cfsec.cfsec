@@ -58,7 +58,7 @@ public class CFSecBuffISOTZoneByUTZNameIdxKey
 
 	@Override
 	public String getRequiredTZName() {
-		return( requiredTZName );
+		return(requiredTZName);
 	}
 
 	public void setRequiredTZName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffISOTZoneByUTZNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredTZName = value;
 	}
 

@@ -60,7 +60,7 @@ public class CFSecBuffSecSessionByFinishIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -70,17 +70,15 @@ public class CFSecBuffSecSessionByFinishIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
 	@Override
 	public LocalDateTime getOptionalFinish() {
-		return( optionalFinish );
+		return(optionalFinish);
 	}
 
 	public void setOptionalFinish( LocalDateTime value ) {
-		
 		optionalFinish = value;
 	}
 

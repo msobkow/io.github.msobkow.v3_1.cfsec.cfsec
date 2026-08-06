@@ -122,20 +122,11 @@ public class CFSecBuffISOCtryCcyHPKey
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( requiredISOCtryId );
+		return(requiredISOCtryId);
 	}
 
 	@Override
 	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOCtryId",
@@ -149,20 +140,11 @@ public class CFSecBuffISOCtryCcyHPKey
 
 	@Override
 	public short getRequiredISOCcyId() {
-		return( requiredISOCcyId );
+		return(requiredISOCcyId);
 	}
 
 	@Override
 	public void setRequiredISOCcyId( short value ) {
-		if( value < ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCcyId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOCcyId",

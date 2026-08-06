@@ -174,29 +174,7 @@ public class CFSecBuffSecSysRoleEnables
 			setRequiredEnableName(argObj.getRequiredName());
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecSysRoleId(value);
-	}
-
-	@Override
-	public String getRequiredEnableName() {
-		return();
-	}
-
-	@Override
-	public void setRequiredEnableName(String value) {
-		
-		getPKey().setRequiredEnableName(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -904,6 +882,8 @@ public class CFSecBuffSecSysRoleEnables
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnables src ) {
 		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredParentEnableGroup(src.getRequiredParentEnableGroup());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredEnableName(src.getRequiredEnableName());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -920,6 +900,8 @@ public class CFSecBuffSecSysRoleEnables
 	public void setSecSysRoleEnables( ICFSecSecSysRoleEnablesH src ) {
 		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
 		setRequiredParentEnableGroup(src.getRequiredEnableName());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredEnableName(src.getRequiredEnableName());
 	}
 
 	@Override
@@ -931,6 +913,8 @@ public class CFSecBuffSecSysRoleEnables
 	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnables src ) {
 		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredParentEnableGroup(src.getRequiredParentEnableGroup());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredEnableName(src.getRequiredEnableName());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -947,6 +931,8 @@ public class CFSecBuffSecSysRoleEnables
 	public void setSecSysRoleEnables( ICFSecProtSecSysRoleEnablesH src ) {
 		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
 		setRequiredParentEnableGroup(src.getRequiredEnableName());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredEnableName(src.getRequiredEnableName());
 	}
 
 	@Override

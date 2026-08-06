@@ -58,7 +58,7 @@ public class CFSecBuffISOCtryByISOCodeIdxKey
 
 	@Override
 	public String getRequiredISOCode() {
-		return( requiredISOCode );
+		return(requiredISOCode);
 	}
 
 	public void setRequiredISOCode( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffISOCtryByISOCodeIdxKey
 				value.length(),
 				2 );
 		}
-		
 		requiredISOCode = value;
 	}
 

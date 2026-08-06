@@ -58,7 +58,7 @@ public class CFSecBuffISOCtryByNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffISOCtryByNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

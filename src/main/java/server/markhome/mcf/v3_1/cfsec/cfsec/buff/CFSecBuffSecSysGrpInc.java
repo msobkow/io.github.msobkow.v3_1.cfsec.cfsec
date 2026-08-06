@@ -174,29 +174,7 @@ public class CFSecBuffSecSysGrpInc
 			setRequiredInclName(argObj.getRequiredName());
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredSecSysGrpId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecSysGrpId(value);
-	}
-
-	@Override
-	public String getRequiredInclName() {
-		return();
-	}
-
-	@Override
-	public void setRequiredInclName(String value) {
-		
-		getPKey().setRequiredInclName(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -904,6 +882,8 @@ public class CFSecBuffSecSysGrpInc
 	public void setSecSysGrpInc( ICFSecSecSysGrpInc src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentSubGroup(src.getRequiredParentSubGroup());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredInclName(src.getRequiredInclName());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -920,6 +900,8 @@ public class CFSecBuffSecSysGrpInc
 	public void setSecSysGrpInc( ICFSecSecSysGrpIncH src ) {
 		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
 		setRequiredParentSubGroup(src.getRequiredInclName());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredInclName(src.getRequiredInclName());
 	}
 
 	@Override
@@ -931,6 +913,8 @@ public class CFSecBuffSecSysGrpInc
 	public void setSecSysGrpInc( ICFSecProtSecSysGrpInc src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentSubGroup(src.getRequiredParentSubGroup());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredInclName(src.getRequiredInclName());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -947,6 +931,8 @@ public class CFSecBuffSecSysGrpInc
 	public void setSecSysGrpInc( ICFSecProtSecSysGrpIncH src ) {
 		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
 		setRequiredParentSubGroup(src.getRequiredInclName());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredInclName(src.getRequiredInclName());
 	}
 
 	@Override

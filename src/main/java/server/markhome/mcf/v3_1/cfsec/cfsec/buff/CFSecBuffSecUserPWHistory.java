@@ -75,29 +75,7 @@ public class CFSecBuffSecUserPWHistory
 			this.pkey = pkey;
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(getPKey().getRequiredSecUserId());
-	}
-
-	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecUserId(value);
-	}
-
-	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
-		return(getPKey().getRequiredPWSetStamp());
-	}
-
-	@Override
-	public void setRequiredPWSetStamp(LocalDateTime value) {
-		
-		getPKey().setRequiredPWSetStamp(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -115,7 +93,7 @@ public class CFSecBuffSecUserPWHistory
 
 	@Override
 	public LocalDateTime getRequiredPWReplacedStamp() {
-		return( requiredPWReplacedStamp );
+		return(requiredPWReplacedStamp);
 	}
 
 	public void setRequiredPWReplacedStamp( LocalDateTime value ) {
@@ -125,13 +103,12 @@ public class CFSecBuffSecUserPWHistory
 				1,
 				"value" );
 		}
-		
 		requiredPWReplacedStamp = value;
 	}
 
 	@Override
 	public String getRequiredPasswordHash() {
-		return( requiredPasswordHash );
+		return(requiredPasswordHash);
 	}
 
 	public void setRequiredPasswordHash( String value ) {
@@ -149,7 +126,6 @@ public class CFSecBuffSecUserPWHistory
 				value.length(),
 				256 );
 		}
-		
 		requiredPasswordHash = value;
 	}
 

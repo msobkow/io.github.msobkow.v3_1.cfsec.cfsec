@@ -132,7 +132,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(  );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -142,7 +142,6 @@ public class CFSecBuffSecUserEMConf
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
@@ -203,7 +202,7 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public String getRequiredConfirmEMailAddr() {
-		return( requiredConfirmEMailAddr );
+		return(requiredConfirmEMailAddr);
 	}
 
 	public void setRequiredConfirmEMailAddr( String value ) {
@@ -221,13 +220,12 @@ public class CFSecBuffSecUserEMConf
 				value.length(),
 				512 );
 		}
-		
 		requiredConfirmEMailAddr = value;
 	}
 
 	@Override
 	public LocalDateTime getRequiredEMailSentStamp() {
-		return( requiredEMailSentStamp );
+		return(requiredEMailSentStamp);
 	}
 
 	public void setRequiredEMailSentStamp( LocalDateTime value ) {
@@ -237,13 +235,12 @@ public class CFSecBuffSecUserEMConf
 				1,
 				"value" );
 		}
-		
 		requiredEMailSentStamp = value;
 	}
 
 	@Override
 	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return( requiredEMConfirmationUuid6 );
+		return(requiredEMConfirmationUuid6);
 	}
 
 	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
@@ -253,17 +250,15 @@ public class CFSecBuffSecUserEMConf
 				1,
 				"value" );
 		}
-		
 		requiredEMConfirmationUuid6 = value;
 	}
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return( requiredNewAccount );
+		return(requiredNewAccount);
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
-		
 		requiredNewAccount = value;
 	}
 
@@ -1258,6 +1253,7 @@ public class CFSecBuffSecUserEMConf
 	@Override
 	public void setSecUserEMConf( ICFSecSecUserEMConf src ) {
 		setRequiredContainerUser(src.getRequiredContainerUser());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -1277,6 +1273,7 @@ public class CFSecBuffSecUserEMConf
 	@Override
 	public void setSecUserEMConf( ICFSecSecUserEMConfH src ) {
 		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredConfirmEMailAddr(src.getRequiredConfirmEMailAddr());
 		setRequiredEMailSentStamp(src.getRequiredEMailSentStamp());
 		setRequiredEMConfirmationUuid6(src.getRequiredEMConfirmationUuid6());
@@ -1291,6 +1288,7 @@ public class CFSecBuffSecUserEMConf
 	@Override
 	public void setSecUserEMConf( ICFSecProtSecUserEMConf src ) {
 		setRequiredContainerUser(src.getRequiredContainerUser());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -1310,6 +1308,7 @@ public class CFSecBuffSecUserEMConf
 	@Override
 	public void setSecUserEMConf( ICFSecProtSecUserEMConfH src ) {
 		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredConfirmEMailAddr(src.getRequiredConfirmEMailAddr());
 		setRequiredEMailSentStamp(src.getRequiredEMailSentStamp());
 		setRequiredEMConfirmationUuid6(src.getRequiredEMConfirmationUuid6());

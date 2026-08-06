@@ -60,7 +60,7 @@ public class CFSecBuffSecSessionByStartIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -70,13 +70,12 @@ public class CFSecBuffSecSessionByStartIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
 	@Override
 	public LocalDateTime getRequiredStart() {
-		return( requiredStart );
+		return(requiredStart);
 	}
 
 	public void setRequiredStart( LocalDateTime value ) {
@@ -86,7 +85,6 @@ public class CFSecBuffSecSessionByStartIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredStart = value;
 	}
 

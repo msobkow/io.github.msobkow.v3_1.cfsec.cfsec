@@ -66,20 +66,11 @@ public class CFSecBuffISOCtryLangPKey
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( requiredISOCtryId );
+		return(requiredISOCtryId);
 	}
 
 	@Override
 	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOCtryId",
@@ -93,20 +84,11 @@ public class CFSecBuffISOCtryLangPKey
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( requiredISOLangId );
+		return(requiredISOLangId);
 	}
 
 	@Override
 	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOLangId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",

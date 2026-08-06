@@ -58,7 +58,7 @@ public class CFSecBuffClusterByUDescrIdxKey
 
 	@Override
 	public String getRequiredDescription() {
-		return( requiredDescription );
+		return(requiredDescription);
 	}
 
 	public void setRequiredDescription( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffClusterByUDescrIdxKey
 				value.length(),
 				128 );
 		}
-		
 		requiredDescription = value;
 	}
 

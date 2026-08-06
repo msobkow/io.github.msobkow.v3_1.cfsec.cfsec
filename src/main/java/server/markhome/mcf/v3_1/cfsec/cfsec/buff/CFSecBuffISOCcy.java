@@ -108,20 +108,11 @@ public class CFSecBuffISOCcy
 
 	@Override
 	public short getRequiredISOCcyId() {
-		return( requiredISOCcyId );
+		return(requiredISOCcyId);
 	}
 
 	@Override
 	public void setRequiredISOCcyId( short value ) {
-		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCcyId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCcy.ISOCCYID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOCcyId",
@@ -190,7 +181,7 @@ public class CFSecBuffISOCcy
 
 	@Override
 	public String getRequiredISOCode() {
-		return( requiredISOCode );
+		return(requiredISOCode);
 	}
 
 	public void setRequiredISOCode( String value ) {
@@ -208,13 +199,12 @@ public class CFSecBuffISOCcy
 				value.length(),
 				3 );
 		}
-		
 		requiredISOCode = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -232,13 +222,12 @@ public class CFSecBuffISOCcy
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalUnitSymbol() {
-		return( optionalUnitSymbol );
+		return(optionalUnitSymbol);
 	}
 
 	public void setOptionalUnitSymbol( String value ) {
@@ -250,34 +239,16 @@ public class CFSecBuffISOCcy
 				value.length(),
 				4 );
 		}
-		
 		optionalUnitSymbol = value;
 	}
 
 	@Override
 	public short getRequiredPrecis() {
-		return( requiredPrecis );
+		return(requiredPrecis);
 	}
 
 	@Override
 	public void setRequiredPrecis( short value ) {
-		if( value < ICFSecPubISOCcy.PRECIS_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredPrecis",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCcy.PRECIS_MIN_VALUE );
-		}
-		if( value > ICFSecPubISOCcy.PRECIS_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredPrecis",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCcy.PRECIS_MAX_VALUE );
-		}
-		
 		if( value < ICFSecPubISOCcy.PRECIS_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredPrecis",

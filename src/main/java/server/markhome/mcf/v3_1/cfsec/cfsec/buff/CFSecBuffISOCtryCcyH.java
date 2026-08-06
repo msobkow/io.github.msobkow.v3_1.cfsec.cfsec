@@ -188,7 +188,7 @@ public class CFSecBuffISOCtryCcyH
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
+		getPKey().getRequiredISOCtryId();
 	}
 
 	@Override
@@ -215,7 +215,7 @@ public class CFSecBuffISOCtryCcyH
 
 	@Override
 	public short getRequiredISOCcyId() {
-		return( getPKey().getRequiredISOCcyId() );
+		getPKey().getRequiredISOCcyId();
 	}
 
 	@Override

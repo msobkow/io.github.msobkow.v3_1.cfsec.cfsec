@@ -134,28 +134,11 @@ public class CFSecBuffSysClusterH
 
 	@Override
 	public int getRequiredSingletonId() {
-		return( requiredSingletonId );
+		return(requiredSingletonId);
 	}
 
 	@Override
 	public void setRequiredSingletonId( int value ) {
-		if( value < ICFSecPubSysCluster.SINGLETONID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredSingletonId",
-				1,
-				"value",
-				value,
-				ICFSecPubSysCluster.SINGLETONID_MIN_VALUE );
-		}
-		if( value > ICFSecPubSysCluster.SINGLETONID_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredSingletonId",
-				1,
-				"value",
-				value,
-				ICFSecPubSysCluster.SINGLETONID_MAX_VALUE );
-		}
-		
 		if( value < ICFSecPubSysCluster.SINGLETONID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredSingletonId",
@@ -177,7 +160,7 @@ public class CFSecBuffSysClusterH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return( requiredClusterId );
+		return(requiredClusterId);
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -187,7 +170,6 @@ public class CFSecBuffSysClusterH
 				1,
 				"value" );
 		}
-		
 		requiredClusterId = value;
 	}
 

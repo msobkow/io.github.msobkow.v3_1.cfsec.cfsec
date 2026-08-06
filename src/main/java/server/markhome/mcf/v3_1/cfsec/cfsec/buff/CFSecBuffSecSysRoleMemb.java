@@ -174,29 +174,7 @@ public class CFSecBuffSecSysRoleMemb
 			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecSysRoleId(value);
-	}
-
-	@Override
-	public String getRequiredLoginId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredLoginId(String value) {
-		
-		getPKey().setRequiredLoginId(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -904,6 +882,8 @@ public class CFSecBuffSecSysRoleMemb
 	public void setSecSysRoleMemb( ICFSecSecSysRoleMemb src ) {
 		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -920,6 +900,8 @@ public class CFSecBuffSecSysRoleMemb
 	public void setSecSysRoleMemb( ICFSecSecSysRoleMembH src ) {
 		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override
@@ -931,6 +913,8 @@ public class CFSecBuffSecSysRoleMemb
 	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMemb src ) {
 		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -947,6 +931,8 @@ public class CFSecBuffSecSysRoleMemb
 	public void setSecSysRoleMemb( ICFSecProtSecSysRoleMembH src ) {
 		setRequiredContainerSysRole(src.getRequiredSecSysRoleId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecSysRoleId(src.getRequiredSecSysRoleId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override

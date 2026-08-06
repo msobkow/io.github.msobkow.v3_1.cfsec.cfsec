@@ -58,7 +58,7 @@ public class CFSecBuffSecSessionBySecUserIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFSecBuffSecSessionBySecUserIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 

@@ -174,45 +174,7 @@ public class CFSecBuffISOCtryLang
 			setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	}
-
-	@Override
-	public short getRequiredISOCtryId() {
-		return(getPKey().getRequiredISOCtryId());
-	}
-
-	@Override
-	public void setRequiredISOCtryId(short value) {
-		
-		if( value < ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE );
-		}
-		getPKey().setRequiredISOCtryId(value);
-	}
-
-	@Override
-	public short getRequiredISOLangId() {
-		return(getPKey().getRequiredISOLangId());
-	}
-
-	@Override
-	public void setRequiredISOLangId(short value) {
-		
-		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOLangId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
-		}
-		getPKey().setRequiredISOLangId(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -739,6 +701,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecISOCtryLang src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentLang(src.getRequiredParentLang());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -755,6 +719,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecISOCtryLangH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentLang(src.getRequiredISOLangId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 	}
 
 	@Override
@@ -766,6 +732,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecProtISOCtryLang src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentLang(src.getRequiredParentLang());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -782,6 +750,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecProtISOCtryLangH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentLang(src.getRequiredISOLangId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 	}
 
 	@Override
@@ -793,6 +763,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecPubISOCtryLang src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentLang(src.getRequiredParentLang());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -809,6 +781,8 @@ public class CFSecBuffISOCtryLang
 	public void setISOCtryLang( ICFSecPubISOCtryLangH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentLang(src.getRequiredISOLangId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOLangId(src.getRequiredISOLangId());
 	}
 
 	@Override

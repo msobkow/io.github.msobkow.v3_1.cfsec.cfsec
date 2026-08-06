@@ -130,7 +130,7 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(  );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -140,7 +140,6 @@ public class CFSecBuffSecUserPWReset
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
@@ -201,7 +200,7 @@ public class CFSecBuffSecUserPWReset
 
 	@Override
 	public String getRequiredSentToEMailAddr() {
-		return( requiredSentToEMailAddr );
+		return(requiredSentToEMailAddr);
 	}
 
 	public void setRequiredSentToEMailAddr( String value ) {
@@ -219,13 +218,12 @@ public class CFSecBuffSecUserPWReset
 				value.length(),
 				512 );
 		}
-		
 		requiredSentToEMailAddr = value;
 	}
 
 	@Override
 	public CFLibUuid6 getRequiredPasswordResetUuid6() {
-		return( requiredPasswordResetUuid6 );
+		return(requiredPasswordResetUuid6);
 	}
 
 	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
@@ -235,17 +233,15 @@ public class CFSecBuffSecUserPWReset
 				1,
 				"value" );
 		}
-		
 		requiredPasswordResetUuid6 = value;
 	}
 
 	@Override
 	public boolean getRequiredNewAccount() {
-		return( requiredNewAccount );
+		return(requiredNewAccount);
 	}
 
 	public void setRequiredNewAccount( boolean value ) {
-		
 		requiredNewAccount = value;
 	}
 
@@ -1053,6 +1049,7 @@ public class CFSecBuffSecUserPWReset
 	@Override
 	public void setSecUserPWReset( ICFSecSecUserPWReset src ) {
 		setRequiredContainerUser(src.getRequiredContainerUser());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -1071,6 +1068,7 @@ public class CFSecBuffSecUserPWReset
 	@Override
 	public void setSecUserPWReset( ICFSecSecUserPWResetH src ) {
 		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredSentToEMailAddr(src.getRequiredSentToEMailAddr());
 		setRequiredPasswordResetUuid6(src.getRequiredPasswordResetUuid6());
 		setRequiredNewAccount(src.getRequiredNewAccount());
@@ -1084,6 +1082,7 @@ public class CFSecBuffSecUserPWReset
 	@Override
 	public void setSecUserPWReset( ICFSecProtSecUserPWReset src ) {
 		setRequiredContainerUser(src.getRequiredContainerUser());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -1102,6 +1101,7 @@ public class CFSecBuffSecUserPWReset
 	@Override
 	public void setSecUserPWReset( ICFSecProtSecUserPWResetH src ) {
 		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredSentToEMailAddr(src.getRequiredSentToEMailAddr());
 		setRequiredPasswordResetUuid6(src.getRequiredPasswordResetUuid6());
 		setRequiredNewAccount(src.getRequiredNewAccount());

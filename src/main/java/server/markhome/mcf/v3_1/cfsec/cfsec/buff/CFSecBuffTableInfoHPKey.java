@@ -119,20 +119,11 @@ public class CFSecBuffTableInfoHPKey
 
 	@Override
 	public int getRequiredTableInfoId() {
-		return( requiredTableInfoId );
+		return(requiredTableInfoId);
 	}
 
 	@Override
 	public void setRequiredTableInfoId( int value ) {
-		if( value < ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredTableInfoId",
-				1,
-				"value",
-				value,
-				ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredTableInfoId",

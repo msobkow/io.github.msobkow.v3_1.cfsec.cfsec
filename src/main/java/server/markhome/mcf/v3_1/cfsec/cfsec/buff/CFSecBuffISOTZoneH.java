@@ -200,20 +200,11 @@ public class CFSecBuffISOTZoneH
 
 	@Override
 	public short getRequiredISOTZoneId() {
-		return( requiredISOTZoneId );
+		return(requiredISOTZoneId);
 	}
 
 	@Override
 	public void setRequiredISOTZoneId( short value ) {
-		if( value < ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOTZoneId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE );
-		}
-		
 		if( value < ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOTZoneId",
@@ -227,7 +218,7 @@ public class CFSecBuffISOTZoneH
 
 	@Override
 	public String getRequiredIso8601() {
-		return( requiredIso8601 );
+		return(requiredIso8601);
 	}
 
 	public void setRequiredIso8601( String value ) {
@@ -245,13 +236,12 @@ public class CFSecBuffISOTZoneH
 				value.length(),
 				6 );
 		}
-		
 		requiredIso8601 = value;
 	}
 
 	@Override
 	public String getRequiredTZName() {
-		return( requiredTZName );
+		return(requiredTZName);
 	}
 
 	public void setRequiredTZName( String value ) {
@@ -269,34 +259,16 @@ public class CFSecBuffISOTZoneH
 				value.length(),
 				64 );
 		}
-		
 		requiredTZName = value;
 	}
 
 	@Override
 	public short getRequiredTZHourOffset() {
-		return( requiredTZHourOffset );
+		return(requiredTZHourOffset);
 	}
 
 	@Override
 	public void setRequiredTZHourOffset( short value ) {
-		if( value < ICFSecPubISOTZone.TZHOUROFFSET_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredTZHourOffset",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.TZHOUROFFSET_MIN_VALUE );
-		}
-		if( value > ICFSecPubISOTZone.TZHOUROFFSET_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredTZHourOffset",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.TZHOUROFFSET_MAX_VALUE );
-		}
-		
 		if( value < ICFSecPubISOTZone.TZHOUROFFSET_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredTZHourOffset",
@@ -318,28 +290,11 @@ public class CFSecBuffISOTZoneH
 
 	@Override
 	public short getRequiredTZMinOffset() {
-		return( requiredTZMinOffset );
+		return(requiredTZMinOffset);
 	}
 
 	@Override
 	public void setRequiredTZMinOffset( short value ) {
-		if( value < ICFSecPubISOTZone.TZMINOFFSET_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredTZMinOffset",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.TZMINOFFSET_MIN_VALUE );
-		}
-		if( value > ICFSecPubISOTZone.TZMINOFFSET_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredTZMinOffset",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.TZMINOFFSET_MAX_VALUE );
-		}
-		
 		if( value < ICFSecPubISOTZone.TZMINOFFSET_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredTZMinOffset",
@@ -361,7 +316,7 @@ public class CFSecBuffISOTZoneH
 
 	@Override
 	public String getRequiredDescription() {
-		return( requiredDescription );
+		return(requiredDescription);
 	}
 
 	public void setRequiredDescription( String value ) {
@@ -379,17 +334,15 @@ public class CFSecBuffISOTZoneH
 				value.length(),
 				128 );
 		}
-		
 		requiredDescription = value;
 	}
 
 	@Override
 	public boolean getRequiredVisible() {
-		return( requiredVisible );
+		return(requiredVisible);
 	}
 
 	public void setRequiredVisible( boolean value ) {
-		
 		requiredVisible = value;
 	}
 

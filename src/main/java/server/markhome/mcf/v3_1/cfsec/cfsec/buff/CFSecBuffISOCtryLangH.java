@@ -188,7 +188,7 @@ public class CFSecBuffISOCtryLangH
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return( getPKey().getRequiredISOCtryId() );
+		getPKey().getRequiredISOCtryId();
 	}
 
 	@Override
@@ -215,7 +215,7 @@ public class CFSecBuffISOCtryLangH
 
 	@Override
 	public short getRequiredISOLangId() {
-		return( getPKey().getRequiredISOLangId() );
+		getPKey().getRequiredISOLangId();
 	}
 
 	@Override

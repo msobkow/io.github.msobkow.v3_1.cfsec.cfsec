@@ -188,12 +188,14 @@ public class CFSecBuffSecSysGrpIncH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return(  );
+		
+		getPKey().getRequiredSecSysGrpId;
 	}
 $refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredInclName() {
-		return(  );
+		
+		getPKey().getRequiredInclName;
 	}
 $refernce Column implProtReqSetter$
     @Override

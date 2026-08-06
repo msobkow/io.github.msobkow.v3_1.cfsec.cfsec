@@ -135,7 +135,7 @@ public class CFSecBuffSecUserPasswordH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -145,13 +145,12 @@ public class CFSecBuffSecUserPasswordH
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
 	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
-		return( requiredPWSetStamp );
+		return(requiredPWSetStamp);
 	}
 
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
@@ -161,13 +160,12 @@ public class CFSecBuffSecUserPasswordH
 				1,
 				"value" );
 		}
-		
 		requiredPWSetStamp = value;
 	}
 
 	@Override
 	public String getRequiredPasswordHash() {
-		return( requiredPasswordHash );
+		return(requiredPasswordHash);
 	}
 
 	public void setRequiredPasswordHash( String value ) {
@@ -185,7 +183,6 @@ public class CFSecBuffSecUserPasswordH
 				value.length(),
 				256 );
 		}
-		
 		requiredPasswordHash = value;
 	}
 

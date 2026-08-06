@@ -119,7 +119,7 @@ public class CFSecBuffSecSysRoleHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return( requiredSecSysRoleId );
+		return(requiredSecSysRoleId);
 	}
 
 	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
@@ -129,7 +129,6 @@ public class CFSecBuffSecSysRoleHPKey
 				1,
 				"value" );
 		}
-		
 		requiredSecSysRoleId = value;
 	}
 

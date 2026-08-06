@@ -58,7 +58,7 @@ public class CFSecBuffISOLangByCode3IdxKey
 
 	@Override
 	public String getRequiredISO6392Code() {
-		return( requiredISO6392Code );
+		return(requiredISO6392Code);
 	}
 
 	public void setRequiredISO6392Code( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffISOLangByCode3IdxKey
 				value.length(),
 				3 );
 		}
-		
 		requiredISO6392Code = value;
 	}
 

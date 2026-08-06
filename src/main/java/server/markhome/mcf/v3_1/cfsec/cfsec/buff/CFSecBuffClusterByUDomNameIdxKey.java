@@ -58,7 +58,7 @@ public class CFSecBuffClusterByUDomNameIdxKey
 
 	@Override
 	public String getRequiredFullDomName() {
-		return( requiredFullDomName );
+		return(requiredFullDomName);
 	}
 
 	public void setRequiredFullDomName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffClusterByUDomNameIdxKey
 				value.length(),
 				192 );
 		}
-		
 		requiredFullDomName = value;
 	}
 

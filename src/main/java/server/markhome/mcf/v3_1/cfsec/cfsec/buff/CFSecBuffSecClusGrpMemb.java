@@ -164,29 +164,7 @@ public class CFSecBuffSecClusGrpMemb
 			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredSecClusGrpId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecClusGrpId(value);
-	}
-
-	@Override
-	public String getRequiredLoginId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredLoginId(String value) {
-		
-		getPKey().setRequiredLoginId(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -894,6 +872,8 @@ public class CFSecBuffSecClusGrpMemb
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMemb src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -910,6 +890,8 @@ public class CFSecBuffSecClusGrpMemb
 	public void setSecClusGrpMemb( ICFSecSecClusGrpMembH src ) {
 		setRequiredContainerGroup(src.getRequiredSecClusGrpId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override
@@ -921,6 +903,8 @@ public class CFSecBuffSecClusGrpMemb
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMemb src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -937,6 +921,8 @@ public class CFSecBuffSecClusGrpMemb
 	public void setSecClusGrpMemb( ICFSecProtSecClusGrpMembH src ) {
 		setRequiredContainerGroup(src.getRequiredSecClusGrpId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override

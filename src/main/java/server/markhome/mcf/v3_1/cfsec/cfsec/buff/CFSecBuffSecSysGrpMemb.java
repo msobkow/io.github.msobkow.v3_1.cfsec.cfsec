@@ -174,29 +174,7 @@ public class CFSecBuffSecSysGrpMemb
 			setRequiredLoginId(argObj.getRequiredLoginId());
 		}
 	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredSecSysGrpId(CFLibDbKeyHash256 value) {
-		
-		getPKey().setRequiredSecSysGrpId(value);
-	}
-
-	@Override
-	public String getRequiredLoginId() {
-		return();
-	}
-
-	@Override
-	public void setRequiredLoginId(String value) {
-		
-		getPKey().setRequiredLoginId(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -904,6 +882,8 @@ public class CFSecBuffSecSysGrpMemb
 	public void setSecSysGrpMemb( ICFSecSecSysGrpMemb src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -920,6 +900,8 @@ public class CFSecBuffSecSysGrpMemb
 	public void setSecSysGrpMemb( ICFSecSecSysGrpMembH src ) {
 		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override
@@ -931,6 +913,8 @@ public class CFSecBuffSecSysGrpMemb
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMemb src ) {
 		setRequiredContainerGroup(src.getRequiredContainerGroup());
 		setRequiredParentUser(src.getRequiredParentUser());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -947,6 +931,8 @@ public class CFSecBuffSecSysGrpMemb
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMembH src ) {
 		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
 		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
+		setRequiredLoginId(src.getRequiredLoginId());
 	}
 
 	@Override

@@ -107,7 +107,9 @@ public interface ICFSecSecClusGrp
 	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
 	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
+	public void setRequiredName( String value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

@@ -104,7 +104,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(  );
+		return(requiredSecClusGrpId);
 	}
 
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
@@ -114,7 +114,6 @@ public class CFSecBuffSecClusGrp
 				1,
 				"value" );
 		}
-		
 		requiredSecClusGrpId = value;
 	}
 
@@ -273,7 +272,7 @@ public class CFSecBuffSecClusGrp
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return( requiredClusterId );
+		return(requiredClusterId);
 	}
 
 	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
@@ -283,13 +282,12 @@ public class CFSecBuffSecClusGrp
 				1,
 				"value" );
 		}
-		
 		requiredClusterId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -307,7 +305,6 @@ public class CFSecBuffSecClusGrp
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 
@@ -1154,6 +1151,8 @@ public class CFSecBuffSecClusGrp
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerCluster(src.getRequiredOwnerCluster());
 		setRequiredContainerSysGrp(src.getRequiredContainerSysGrp());
+		setRequiredClusterId(src.getRequiredClusterId());
+		setRequiredName(src.getRequiredName());
 	}
 
 	@Override
@@ -1166,6 +1165,8 @@ public class CFSecBuffSecClusGrp
 		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
 		setRequiredOwnerCluster(src.getRequiredClusterId());
 		setRequiredContainerSysGrp(src.getRequiredName());
+		setRequiredClusterId(src.getRequiredClusterId());
+		setRequiredName(src.getRequiredName());
 	}
 
 	@Override
@@ -1183,6 +1184,8 @@ public class CFSecBuffSecClusGrp
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerCluster(src.getRequiredOwnerCluster());
 		setRequiredContainerSysGrp(src.getRequiredContainerSysGrp());
+		setRequiredClusterId(src.getRequiredClusterId());
+		setRequiredName(src.getRequiredName());
 	}
 
 	@Override
@@ -1195,6 +1198,8 @@ public class CFSecBuffSecClusGrp
 		setRequiredSecClusGrpId(src.getRequiredSecClusGrpId());
 		setRequiredOwnerCluster(src.getRequiredClusterId());
 		setRequiredContainerSysGrp(src.getRequiredName());
+		setRequiredClusterId(src.getRequiredClusterId());
+		setRequiredName(src.getRequiredName());
 	}
 
 	@Override

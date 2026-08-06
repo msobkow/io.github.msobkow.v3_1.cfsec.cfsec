@@ -58,7 +58,7 @@ public class CFSecBuffSecUserPasswordBySetStampIdxKey
 
 	@Override
 	public LocalDateTime getRequiredPWSetStamp() {
-		return( requiredPWSetStamp );
+		return(requiredPWSetStamp);
 	}
 
 	public void setRequiredPWSetStamp( LocalDateTime value ) {
@@ -68,7 +68,6 @@ public class CFSecBuffSecUserPasswordBySetStampIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredPWSetStamp = value;
 	}
 

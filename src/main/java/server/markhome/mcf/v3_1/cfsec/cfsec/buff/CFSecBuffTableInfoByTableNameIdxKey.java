@@ -58,7 +58,7 @@ public class CFSecBuffTableInfoByTableNameIdxKey
 
 	@Override
 	public String getRequiredTableName() {
-		return( requiredTableName );
+		return(requiredTableName);
 	}
 
 	public void setRequiredTableName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffTableInfoByTableNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredTableName = value;
 	}
 

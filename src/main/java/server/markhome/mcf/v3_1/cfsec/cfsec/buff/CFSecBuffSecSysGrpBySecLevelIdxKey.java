@@ -58,7 +58,7 @@ public class CFSecBuffSecSysGrpBySecLevelIdxKey
 
 	@Override
 	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
-		return( requiredSecLevel );
+		return(requiredSecLevel);
 	}
 
 	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
@@ -68,7 +68,6 @@ public class CFSecBuffSecSysGrpBySecLevelIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSecLevel = value;
 	}
 

@@ -58,7 +58,7 @@ public class CFSecBuffTableInfoBySuperNameIdxKey
 
 	@Override
 	public String getOptionalSuperName() {
-		return( optionalSuperName );
+		return(optionalSuperName);
 	}
 
 	public void setOptionalSuperName( String value ) {
@@ -70,7 +70,6 @@ public class CFSecBuffTableInfoBySuperNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		optionalSuperName = value;
 	}
 

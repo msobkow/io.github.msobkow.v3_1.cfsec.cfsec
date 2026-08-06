@@ -188,12 +188,14 @@ public class CFSecBuffSecSysRoleMembH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(  );
+		
+		getPKey().getRequiredSecSysRoleId;
 	}
 $refernce Column implProtReqSetter$
 	@Override
 	public String getRequiredLoginId() {
-		return(  );
+		
+		getPKey().getRequiredLoginId;
 	}
 $refernce Column implProtReqSetter$
     @Override

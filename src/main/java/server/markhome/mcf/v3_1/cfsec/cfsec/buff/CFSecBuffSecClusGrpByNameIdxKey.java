@@ -58,7 +58,7 @@ public class CFSecBuffSecClusGrpByNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffSecClusGrpByNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

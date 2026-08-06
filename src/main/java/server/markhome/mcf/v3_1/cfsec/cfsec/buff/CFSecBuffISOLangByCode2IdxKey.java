@@ -58,7 +58,7 @@ public class CFSecBuffISOLangByCode2IdxKey
 
 	@Override
 	public String getOptionalISO6391Code() {
-		return( optionalISO6391Code );
+		return(optionalISO6391Code);
 	}
 
 	public void setOptionalISO6391Code( String value ) {
@@ -70,7 +70,6 @@ public class CFSecBuffISOLangByCode2IdxKey
 				value.length(),
 				2 );
 		}
-		
 		optionalISO6391Code = value;
 	}
 

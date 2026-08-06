@@ -119,7 +119,7 @@ public class CFSecBuffTenantHPKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -129,7 +129,6 @@ public class CFSecBuffTenantHPKey
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 

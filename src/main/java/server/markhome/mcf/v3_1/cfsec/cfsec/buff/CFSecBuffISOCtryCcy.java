@@ -174,45 +174,7 @@ public class CFSecBuffISOCtryCcy
 			setRequiredISOCcyId(argObj.getRequiredISOCcyId());
 		}
 	}
-
-	@Override
-	public short getRequiredISOCtryId() {
-		return(getPKey().getRequiredISOCtryId());
-	}
-
-	@Override
-	public void setRequiredISOCtryId(short value) {
-		
-		if( value < ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE );
-		}
-		getPKey().setRequiredISOCtryId(value);
-	}
-
-	@Override
-	public short getRequiredISOCcyId() {
-		return(getPKey().getRequiredISOCcyId());
-	}
-
-	@Override
-	public void setRequiredISOCcyId(short value) {
-		
-		if( value < ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCcyId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE );
-		}
-		getPKey().setRequiredISOCcyId(value);
-	}
-
+$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
@@ -739,6 +701,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecISOCtryCcy src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentCcy(src.getRequiredParentCcy());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -755,6 +719,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecISOCtryCcyH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentCcy(src.getRequiredISOCcyId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 	}
 
 	@Override
@@ -766,6 +732,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecProtISOCtryCcy src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentCcy(src.getRequiredParentCcy());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -782,6 +750,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecProtISOCtryCcyH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentCcy(src.getRequiredISOCcyId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 	}
 
 	@Override
@@ -793,6 +763,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecPubISOCtryCcy src ) {
 		setRequiredContainerCtry(src.getRequiredContainerCtry());
 		setRequiredParentCcy(src.getRequiredParentCcy());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 		setRequiredRevision( src.getRequiredRevision() );
 		setCreatedByUserId( src.getCreatedByUserId() );
 		setCreatedAt( src.getCreatedAt() );
@@ -809,6 +781,8 @@ public class CFSecBuffISOCtryCcy
 	public void setISOCtryCcy( ICFSecPubISOCtryCcyH src ) {
 		setRequiredContainerCtry(src.getRequiredISOCtryId());
 		setRequiredParentCcy(src.getRequiredISOCcyId());
+		setRequiredISOCtryId(src.getRequiredISOCtryId());
+		setRequiredISOCcyId(src.getRequiredISOCcyId());
 	}
 
 	@Override

@@ -130,7 +130,7 @@ public class CFSecBuffSecUser
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -140,7 +140,6 @@ public class CFSecBuffSecUser
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
@@ -273,7 +272,7 @@ public class CFSecBuffSecUser
 
 	@Override
 	public String getRequiredLoginId() {
-		return( requiredLoginId );
+		return(requiredLoginId);
 	}
 
 	public void setRequiredLoginId( String value ) {
@@ -291,13 +290,12 @@ public class CFSecBuffSecUser
 				value.length(),
 				32 );
 		}
-		
 		requiredLoginId = value;
 	}
 
 	@Override
 	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus() {
-		return( requiredAccountStatus );
+		return(requiredAccountStatus);
 	}
 
 	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
@@ -307,13 +305,12 @@ public class CFSecBuffSecUser
 				1,
 				"value" );
 		}
-		
 		requiredAccountStatus = value;
 	}
 
 	@Override
 	public String getOptionalDfltSysGrpName() {
-		return( optionalDfltSysGrpName );
+		return(optionalDfltSysGrpName);
 	}
 
 	public void setOptionalDfltSysGrpName( String value ) {
@@ -325,13 +322,12 @@ public class CFSecBuffSecUser
 				value.length(),
 				64 );
 		}
-		
 		optionalDfltSysGrpName = value;
 	}
 
 	@Override
 	public String getOptionalDfltClusGrpName() {
-		return( optionalDfltClusGrpName );
+		return(optionalDfltClusGrpName);
 	}
 
 	public void setOptionalDfltClusGrpName( String value ) {
@@ -343,13 +339,12 @@ public class CFSecBuffSecUser
 				value.length(),
 				64 );
 		}
-		
 		optionalDfltClusGrpName = value;
 	}
 
 	@Override
 	public String getOptionalDfltTentGrpName() {
-		return( optionalDfltTentGrpName );
+		return(optionalDfltTentGrpName);
 	}
 
 	public void setOptionalDfltTentGrpName( String value ) {
@@ -361,13 +356,12 @@ public class CFSecBuffSecUser
 				value.length(),
 				64 );
 		}
-		
 		optionalDfltTentGrpName = value;
 	}
 
 	@Override
 	public String getRequiredEMailAddress() {
-		return( requiredEMailAddress );
+		return(requiredEMailAddress);
 	}
 
 	public void setRequiredEMailAddress( String value ) {
@@ -385,7 +379,6 @@ public class CFSecBuffSecUser
 				value.length(),
 				512 );
 		}
-		
 		requiredEMailAddress = value;
 	}
 

@@ -80,7 +80,7 @@ public class CFSecBuffSecSession
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return( requiredSecSessionId );
+		return(requiredSecSessionId);
 	}
 
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFSecBuffSecSession
 				1,
 				"value" );
 		}
-		
 		requiredSecSessionId = value;
 	}
 
@@ -111,7 +110,7 @@ public class CFSecBuffSecSession
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( requiredSecUserId );
+		return(requiredSecUserId);
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -121,13 +120,12 @@ public class CFSecBuffSecSession
 				1,
 				"value" );
 		}
-		
 		requiredSecUserId = value;
 	}
 
 	@Override
 	public LocalDateTime getRequiredStart() {
-		return( requiredStart );
+		return(requiredStart);
 	}
 
 	public void setRequiredStart( LocalDateTime value ) {
@@ -137,27 +135,24 @@ public class CFSecBuffSecSession
 				1,
 				"value" );
 		}
-		
 		requiredStart = value;
 	}
 
 	@Override
 	public LocalDateTime getOptionalFinish() {
-		return( optionalFinish );
+		return(optionalFinish);
 	}
 
 	public void setOptionalFinish( LocalDateTime value ) {
-		
 		optionalFinish = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalSecProxyId() {
-		return( optionalSecProxyId );
+		return(optionalSecProxyId);
 	}
 
 	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
-		
 		optionalSecProxyId = value;
 	}
 

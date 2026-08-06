@@ -58,7 +58,7 @@ public class CFSecBuffSecUserByEMAddrIdxKey
 
 	@Override
 	public String getRequiredEMailAddress() {
-		return( requiredEMailAddress );
+		return(requiredEMailAddress);
 	}
 
 	public void setRequiredEMailAddress( String value ) {
@@ -76,7 +76,6 @@ public class CFSecBuffSecUserByEMAddrIdxKey
 				value.length(),
 				512 );
 		}
-		
 		requiredEMailAddress = value;
 	}
 
