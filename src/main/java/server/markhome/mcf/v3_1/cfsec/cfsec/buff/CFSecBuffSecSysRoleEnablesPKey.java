@@ -61,7 +61,7 @@ public class CFSecBuffSecSysRoleEnablesPKey
 
 	public CFSecBuffSecSysRoleEnablesPKey() {
 		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleEnables.SECSYSROLEID_INIT_VALUE.toString() );
-		requiredEnableName = ICFSecSecSysRoleEnables.ENABLENAME_INIT_VALUE;
+		requiredEnableName = ICFSecProtSecSysRoleEnables.ENABLENAME_INIT_VALUE;
 	}
 
 	@Override

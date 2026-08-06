@@ -53,7 +53,7 @@ public class CFSecBuffSecSysGrpIncByNameIdxKey
 {
 	protected String requiredInclName;
 	public CFSecBuffSecSysGrpIncByNameIdxKey() {
-		requiredInclName = ICFSecSecSysGrpInc.INCLNAME_INIT_VALUE;
+		requiredInclName = ICFSecProtSecSysGrpInc.INCLNAME_INIT_VALUE;
 	}
 
 	@Override

@@ -52,9 +52,11 @@ public class CFSecBuffSecTentRoleH
     implements ICFSecSecTentRoleH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecTentRoleHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentRole.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
@@ -63,7 +65,7 @@ public class CFSecBuffSecTentRoleH
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecTentRoleHPKey();
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecTentRole.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecTentRole.NAME_INIT_VALUE;
     }
 
     @Override
@@ -194,7 +196,17 @@ public class CFSecBuffSecTentRoleH
 	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
 		return(requiredSecTentRoleId);
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return(requiredTenantId);

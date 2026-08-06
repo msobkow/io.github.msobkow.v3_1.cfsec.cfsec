@@ -52,9 +52,11 @@ public class CFSecBuffSecUserEMConfH
     implements ICFSecSecUserEMConfH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserEMConfHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserEMConf.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredConfirmEMailAddr;
 	protected LocalDateTime requiredEMailSentStamp;
@@ -64,9 +66,9 @@ public class CFSecBuffSecUserEMConfH
     public CFSecBuffSecUserEMConfH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecUserEMConfHPKey();
-		requiredConfirmEMailAddr = ICFSecSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
+		requiredConfirmEMailAddr = ICFSecProtSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
 		requiredEMailSentStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
-		requiredNewAccount = ICFSecSecUserEMConf.NEWACCOUNT_INIT_VALUE;
+		requiredNewAccount = ICFSecProtSecUserEMConf.NEWACCOUNT_INIT_VALUE;
     }
 
     @Override
@@ -197,7 +199,17 @@ public class CFSecBuffSecUserEMConfH
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
 	@Override
 	public String getRequiredConfirmEMailAddr() {
 		return(requiredConfirmEMailAddr);

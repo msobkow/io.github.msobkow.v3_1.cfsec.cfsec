@@ -61,7 +61,7 @@ public class CFSecBuffSecTentRoleMembPKey
 
 	public CFSecBuffSecTentRoleMembPKey() {
 		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRoleMemb.SECTENTROLEID_INIT_VALUE.toString() );
-		requiredLoginId = ICFSecSecTentRoleMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecTentRoleMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

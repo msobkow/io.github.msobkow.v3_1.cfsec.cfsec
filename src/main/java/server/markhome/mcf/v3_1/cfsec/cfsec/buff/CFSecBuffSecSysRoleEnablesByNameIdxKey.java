@@ -53,7 +53,7 @@ public class CFSecBuffSecSysRoleEnablesByNameIdxKey
 {
 	protected String requiredEnableName;
 	public CFSecBuffSecSysRoleEnablesByNameIdxKey() {
-		requiredEnableName = ICFSecSecSysRoleEnables.ENABLENAME_INIT_VALUE;
+		requiredEnableName = ICFSecProtSecSysRoleEnables.ENABLENAME_INIT_VALUE;
 	}
 
 	@Override

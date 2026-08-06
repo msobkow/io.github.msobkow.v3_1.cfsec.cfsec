@@ -53,7 +53,7 @@ public class CFSecBuffSecClusGrpByNameIdxKey
 {
 	protected String requiredName;
 	public CFSecBuffSecClusGrpByNameIdxKey() {
-		requiredName = ICFSecSecClusGrp.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecClusGrp.NAME_INIT_VALUE;
 	}
 
 	@Override

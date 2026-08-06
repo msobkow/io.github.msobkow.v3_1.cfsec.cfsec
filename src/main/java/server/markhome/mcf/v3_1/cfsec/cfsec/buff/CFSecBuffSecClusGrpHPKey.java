@@ -59,7 +59,7 @@ public class CFSecBuffSecClusGrpHPKey
 	protected CFLibDbKeyHash256 requiredSecClusGrpId;
 
 	public CFSecBuffSecClusGrpHPKey() {
-		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
+		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;

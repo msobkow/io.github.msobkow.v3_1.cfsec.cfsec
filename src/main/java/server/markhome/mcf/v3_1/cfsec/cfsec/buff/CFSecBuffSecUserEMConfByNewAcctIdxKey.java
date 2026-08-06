@@ -53,7 +53,7 @@ public class CFSecBuffSecUserEMConfByNewAcctIdxKey
 {
 	protected boolean requiredNewAccount;
 	public CFSecBuffSecUserEMConfByNewAcctIdxKey() {
-		requiredNewAccount = ICFSecSecUserEMConf.NEWACCOUNT_INIT_VALUE;
+		requiredNewAccount = ICFSecProtSecUserEMConf.NEWACCOUNT_INIT_VALUE;
 	}
 
 	@Override

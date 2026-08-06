@@ -61,13 +61,13 @@ public class CFSecBuffSecSysRoleMembHPKey
 	protected String requiredLoginId;
 
 	public CFSecBuffSecSysRoleMembHPKey() {
-		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
+		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
 		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleMemb.SECSYSROLEID_INIT_VALUE.toString() );
-		requiredLoginId = ICFSecSecSysRoleMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecSysRoleMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

@@ -53,7 +53,7 @@ public class CFSecBuffSecUserByEMAddrIdxKey
 {
 	protected String requiredEMailAddress;
 	public CFSecBuffSecUserByEMAddrIdxKey() {
-		requiredEMailAddress = ICFSecSecUser.EMAILADDRESS_INIT_VALUE;
+		requiredEMailAddress = ICFSecProtSecUser.EMAILADDRESS_INIT_VALUE;
 	}
 
 	@Override

@@ -52,9 +52,11 @@ public class CFSecBuffSecClusGrpH
     implements ICFSecSecClusGrpH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecClusGrpHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusGrp.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredClusterId;
 	protected String requiredName;
@@ -63,7 +65,7 @@ public class CFSecBuffSecClusGrpH
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecClusGrpHPKey();
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecClusGrp.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecClusGrp.NAME_INIT_VALUE;
     }
 
     @Override
@@ -194,7 +196,17 @@ public class CFSecBuffSecClusGrpH
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
 		return(requiredSecClusGrpId);
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusGrpId",
+				1,
+				"value" );
+		}
+		requiredSecClusGrpId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return(requiredClusterId);

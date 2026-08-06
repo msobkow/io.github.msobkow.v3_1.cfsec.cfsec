@@ -55,7 +55,7 @@ public class CFSecBuffSecClusRoleByUNameIdxKey
 	protected String requiredName;
 	public CFSecBuffSecClusRoleByUNameIdxKey() {
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRole.CLUSTERID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecClusRole.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecClusRole.NAME_INIT_VALUE;
 	}
 
 	@Override

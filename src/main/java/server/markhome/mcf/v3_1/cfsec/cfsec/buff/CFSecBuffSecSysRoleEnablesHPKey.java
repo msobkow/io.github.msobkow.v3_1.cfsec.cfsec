@@ -61,13 +61,13 @@ public class CFSecBuffSecSysRoleEnablesHPKey
 	protected String requiredEnableName;
 
 	public CFSecBuffSecSysRoleEnablesHPKey() {
-		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
+		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
 		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleEnables.SECSYSROLEID_INIT_VALUE.toString() );
-		requiredEnableName = ICFSecSecSysRoleEnables.ENABLENAME_INIT_VALUE;
+		requiredEnableName = ICFSecProtSecSysRoleEnables.ENABLENAME_INIT_VALUE;
 	}
 
 	@Override

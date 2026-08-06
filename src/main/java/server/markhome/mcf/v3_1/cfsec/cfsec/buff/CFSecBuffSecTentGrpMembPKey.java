@@ -61,7 +61,7 @@ public class CFSecBuffSecTentGrpMembPKey
 
 	public CFSecBuffSecTentGrpMembPKey() {
 		requiredSecTentGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrpMemb.SECTENTGRPID_INIT_VALUE.toString() );
-		requiredLoginId = ICFSecSecTentGrpMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecTentGrpMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

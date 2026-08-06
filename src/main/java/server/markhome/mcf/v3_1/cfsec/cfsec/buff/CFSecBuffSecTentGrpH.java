@@ -52,9 +52,11 @@ public class CFSecBuffSecTentGrpH
     implements ICFSecSecTentGrpH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecTentGrpHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentGrp.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecTentGrp.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
@@ -63,7 +65,7 @@ public class CFSecBuffSecTentGrpH
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecTentGrpHPKey();
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentGrp.TENANTID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecTentGrp.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecTentGrp.NAME_INIT_VALUE;
     }
 
     @Override
@@ -194,7 +196,17 @@ public class CFSecBuffSecTentGrpH
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
 		return(requiredSecTentGrpId);
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentGrpId",
+				1,
+				"value" );
+		}
+		requiredSecTentGrpId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return(requiredTenantId);

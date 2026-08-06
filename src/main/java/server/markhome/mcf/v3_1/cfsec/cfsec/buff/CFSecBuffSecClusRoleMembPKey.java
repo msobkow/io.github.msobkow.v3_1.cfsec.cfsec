@@ -61,7 +61,7 @@ public class CFSecBuffSecClusRoleMembPKey
 
 	public CFSecBuffSecClusRoleMembPKey() {
 		requiredSecClusRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRoleMemb.SECCLUSROLEID_INIT_VALUE.toString() );
-		requiredLoginId = ICFSecSecClusRoleMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecClusRoleMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

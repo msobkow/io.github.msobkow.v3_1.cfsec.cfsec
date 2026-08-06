@@ -53,7 +53,7 @@ public class CFSecBuffSecUserPWResetByNewAcctIdxKey
 {
 	protected boolean requiredNewAccount;
 	public CFSecBuffSecUserPWResetByNewAcctIdxKey() {
-		requiredNewAccount = ICFSecSecUserPWReset.NEWACCOUNT_INIT_VALUE;
+		requiredNewAccount = ICFSecProtSecUserPWReset.NEWACCOUNT_INIT_VALUE;
 	}
 
 	@Override

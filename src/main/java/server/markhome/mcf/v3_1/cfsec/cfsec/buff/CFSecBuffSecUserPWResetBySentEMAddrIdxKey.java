@@ -53,7 +53,7 @@ public class CFSecBuffSecUserPWResetBySentEMAddrIdxKey
 {
 	protected String requiredSentToEMailAddr;
 	public CFSecBuffSecUserPWResetBySentEMAddrIdxKey() {
-		requiredSentToEMailAddr = ICFSecSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
+		requiredSentToEMailAddr = ICFSecProtSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
 	}
 
 	@Override

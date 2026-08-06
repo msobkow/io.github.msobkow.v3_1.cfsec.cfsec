@@ -53,7 +53,7 @@ public class CFSecBuffSecSysRoleMembByLoginIdxKey
 {
 	protected String requiredLoginId;
 	public CFSecBuffSecSysRoleMembByLoginIdxKey() {
-		requiredLoginId = ICFSecSecSysRoleMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecSysRoleMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

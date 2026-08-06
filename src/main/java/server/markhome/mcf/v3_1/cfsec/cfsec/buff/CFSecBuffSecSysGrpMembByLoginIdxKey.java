@@ -53,7 +53,7 @@ public class CFSecBuffSecSysGrpMembByLoginIdxKey
 {
 	protected String requiredLoginId;
 	public CFSecBuffSecSysGrpMembByLoginIdxKey() {
-		requiredLoginId = ICFSecSecSysGrpMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecSysGrpMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

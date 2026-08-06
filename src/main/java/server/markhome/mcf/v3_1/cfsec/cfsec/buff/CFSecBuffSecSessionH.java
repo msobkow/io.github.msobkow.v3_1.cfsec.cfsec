@@ -150,7 +150,7 @@ public class CFSecBuffSecSessionH
 				1,
 				"value" );
 		}
-		requiredSecSessionId = value;
+		getPKey().setRequiredSecSessionId(value);
 	}
 
 	@Override

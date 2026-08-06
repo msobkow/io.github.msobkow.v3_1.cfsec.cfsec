@@ -52,9 +52,11 @@ public class CFSecBuffSecUserPWResetH
     implements ICFSecSecUserPWResetH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserPWResetHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecUserPWReset.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredSentToEMailAddr;
 	protected CFLibUuid6 requiredPasswordResetUuid6;
@@ -63,8 +65,8 @@ public class CFSecBuffSecUserPWResetH
     public CFSecBuffSecUserPWResetH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecUserPWResetHPKey();
-		requiredSentToEMailAddr = ICFSecSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
-		requiredNewAccount = ICFSecSecUserPWReset.NEWACCOUNT_INIT_VALUE;
+		requiredSentToEMailAddr = ICFSecProtSecUserPWReset.SENTTOEMAILADDR_INIT_VALUE;
+		requiredNewAccount = ICFSecProtSecUserPWReset.NEWACCOUNT_INIT_VALUE;
     }
 
     @Override
@@ -195,7 +197,17 @@ public class CFSecBuffSecUserPWResetH
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
 	@Override
 	public String getRequiredSentToEMailAddr() {
 		return(requiredSentToEMailAddr);

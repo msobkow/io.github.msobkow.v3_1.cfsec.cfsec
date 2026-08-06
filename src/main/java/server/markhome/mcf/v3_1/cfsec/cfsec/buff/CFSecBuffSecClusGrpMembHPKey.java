@@ -61,13 +61,13 @@ public class CFSecBuffSecClusGrpMembHPKey
 	protected String requiredLoginId;
 
 	public CFSecBuffSecClusGrpMembHPKey() {
-		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
+		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
 		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );
-		requiredLoginId = ICFSecSecClusGrpMemb.LOGINID_INIT_VALUE;
+		requiredLoginId = ICFSecProtSecClusGrpMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override

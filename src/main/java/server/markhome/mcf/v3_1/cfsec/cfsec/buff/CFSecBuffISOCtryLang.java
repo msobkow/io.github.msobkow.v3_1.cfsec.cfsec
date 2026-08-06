@@ -53,9 +53,11 @@ public class CFSecBuffISOCtryLang
 {
 	protected ICFSecISOCtryLangPKey pkey = new CFSecBuffISOCtryLangPKey();
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryLang.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecISOCtryLang.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
 	public CFSecBuffISOCtryLang() {
@@ -174,7 +176,43 @@ public class CFSecBuffISOCtryLang
 			setRequiredISOLangId(argObj.getRequiredISOLangId());
 		}
 	}
-$implDirectColumnGetterSetter$$implDirectColumnGetterSetter$
+
+	@Override
+	public short getRequiredISOCtryId() {
+		return(requiredISOCtryId);
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE );
+		}
+		requiredISOCtryId = value;
+	}
+
+	@Override
+	public short getRequiredISOLangId() {
+		return(requiredISOLangId);
+	}
+
+	@Override
+	public void setRequiredISOLangId( short value ) {
+		if( value < ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOLangId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
+		}
+		requiredISOLangId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );

@@ -52,9 +52,11 @@ public class CFSecBuffSecUserH
     implements ICFSecSecUserH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredLoginId;
 	protected ICFSecPubSchema.SecAccountStatusEnum requiredAccountStatus;
@@ -71,7 +73,7 @@ public class CFSecBuffSecUserH
 		optionalDfltSysGrpName = null;
 		optionalDfltClusGrpName = null;
 		optionalDfltTentGrpName = null;
-		requiredEMailAddress = ICFSecSecUser.EMAILADDRESS_INIT_VALUE;
+		requiredEMailAddress = ICFSecProtSecUser.EMAILADDRESS_INIT_VALUE;
     }
 
     @Override
@@ -210,7 +212,7 @@ public class CFSecBuffSecUserH
 				1,
 				"value" );
 		}
-		requiredSecUserId = value;
+		getPKey().setRequiredSecUserId(value);
 	}
 
 	@Override

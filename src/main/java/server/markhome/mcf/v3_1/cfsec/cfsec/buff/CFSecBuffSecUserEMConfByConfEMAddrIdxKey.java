@@ -53,7 +53,7 @@ public class CFSecBuffSecUserEMConfByConfEMAddrIdxKey
 {
 	protected String requiredConfirmEMailAddr;
 	public CFSecBuffSecUserEMConfByConfEMAddrIdxKey() {
-		requiredConfirmEMailAddr = ICFSecSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
+		requiredConfirmEMailAddr = ICFSecProtSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
 	}
 
 	@Override

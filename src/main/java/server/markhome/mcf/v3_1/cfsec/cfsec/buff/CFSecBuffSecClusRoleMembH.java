@@ -52,9 +52,11 @@ public class CFSecBuffSecClusRoleMembH
     implements ICFSecSecClusRoleMembH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecClusRoleMembHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRoleMemb.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecProtSecClusRoleMemb.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 
     public CFSecBuffSecClusRoleMembH() {
@@ -188,16 +190,42 @@ public class CFSecBuffSecClusRoleMembH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		
-		getPKey().getRequiredSecClusRoleId;
+		return(getPKey().getRequiredSecClusRoleId());
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusRoleId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecClusRoleId(value);
+	}
+
 	@Override
 	public String getRequiredLoginId() {
-		
-		getPKey().getRequiredLoginId;
+		return(getPKey().getRequiredLoginId());
 	}
-$refernce Column implProtReqSetter$
+
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		getPKey().setRequiredLoginId(value);
+	}
+
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

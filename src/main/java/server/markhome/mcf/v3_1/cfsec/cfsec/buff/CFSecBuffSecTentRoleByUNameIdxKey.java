@@ -55,7 +55,7 @@ public class CFSecBuffSecTentRoleByUNameIdxKey
 	protected String requiredName;
 	public CFSecBuffSecTentRoleByUNameIdxKey() {
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecTentRole.NAME_INIT_VALUE;
+		requiredName = ICFSecProtSecTentRole.NAME_INIT_VALUE;
 	}
 
 	@Override

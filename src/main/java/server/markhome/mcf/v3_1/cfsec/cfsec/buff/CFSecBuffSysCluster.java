@@ -95,7 +95,7 @@ public class CFSecBuffSysCluster
 				value,
 				ICFSecPubSysCluster.SINGLETONID_MAX_VALUE );
 		}
-		requiredSingletonId = value;
+		getPKey().setRequiredSingletonId(value);
 	}
 
 	@Override
