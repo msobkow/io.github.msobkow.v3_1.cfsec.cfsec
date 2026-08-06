@@ -52,18 +52,18 @@ public class CFSecBuffSecSysRoleH
     implements ICFSecSecSysRoleH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecSysRoleHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredName;
 
     public CFSecBuffSecSysRoleH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffSecSysRoleHPKey();
-		requiredName = ICFSecSecSysRole.NAME_INIT_VALUE;
+		requiredName = ICFSecPubSecSysRole.NAME_INIT_VALUE;
     }
 
     @Override

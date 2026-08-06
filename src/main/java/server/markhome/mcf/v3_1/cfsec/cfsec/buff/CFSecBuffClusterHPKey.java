@@ -64,7 +64,7 @@ public class CFSecBuffClusterHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFSecCluster.ID_INIT_VALUE.toString() );
+		requiredId = CFLibDbKeyHash256.fromHex( ICFSecPubCluster.ID_INIT_VALUE.toString() );
 	}
 
 	@Override

@@ -54,8 +54,8 @@ public class CFSecBuffISOTZoneByOffsetIdxKey
 	protected short requiredTZHourOffset;
 	protected short requiredTZMinOffset;
 	public CFSecBuffISOTZoneByOffsetIdxKey() {
-		requiredTZHourOffset = ICFSecISOTZone.TZHOUROFFSET_INIT_VALUE;
-		requiredTZMinOffset = ICFSecISOTZone.TZMINOFFSET_INIT_VALUE;
+		requiredTZHourOffset = ICFSecPubISOTZone.TZHOUROFFSET_INIT_VALUE;
+		requiredTZMinOffset = ICFSecPubISOTZone.TZMINOFFSET_INIT_VALUE;
 	}
 
 	@Override

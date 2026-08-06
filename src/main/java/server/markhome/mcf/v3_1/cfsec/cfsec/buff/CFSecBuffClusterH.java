@@ -52,11 +52,11 @@ public class CFSecBuffClusterH
     implements ICFSecClusterH, Comparable<Object>, Serializable
 {
     protected CFSecBuffClusterHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredFullDomName;
 	protected String requiredDescription;
@@ -64,8 +64,8 @@ public class CFSecBuffClusterH
     public CFSecBuffClusterH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffClusterHPKey();
-		requiredFullDomName = ICFSecCluster.FULLDOMNAME_INIT_VALUE;
-		requiredDescription = ICFSecCluster.DESCRIPTION_INIT_VALUE;
+		requiredFullDomName = ICFSecPubCluster.FULLDOMNAME_INIT_VALUE;
+		requiredDescription = ICFSecPubCluster.DESCRIPTION_INIT_VALUE;
     }
 
     @Override

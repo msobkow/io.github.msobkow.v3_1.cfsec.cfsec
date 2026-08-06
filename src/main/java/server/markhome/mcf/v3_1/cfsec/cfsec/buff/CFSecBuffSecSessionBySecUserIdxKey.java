@@ -53,7 +53,7 @@ public class CFSecBuffSecSessionBySecUserIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	public CFSecBuffSecSessionBySecUserIdxKey() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECUSERID_INIT_VALUE.toString() );
 	}
 
 	@Override

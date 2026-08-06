@@ -53,7 +53,7 @@ public class CFSecBuffTenantByClusterIdxKey
 {
 	protected CFLibDbKeyHash256 requiredClusterId;
 	public CFSecBuffTenantByClusterIdxKey() {
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecTenant.CLUSTERID_INIT_VALUE.toString() );
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecPubTenant.CLUSTERID_INIT_VALUE.toString() );
 	}
 
 	@Override

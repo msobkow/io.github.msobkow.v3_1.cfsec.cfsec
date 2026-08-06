@@ -53,7 +53,7 @@ public class CFSecBuffTableInfoBySchemaNameIdxKey
 {
 	protected String requiredSchemaName;
 	public CFSecBuffTableInfoBySchemaNameIdxKey() {
-		requiredSchemaName = ICFSecTableInfo.SCHEMANAME_INIT_VALUE;
+		requiredSchemaName = ICFSecPubTableInfo.SCHEMANAME_INIT_VALUE;
 	}
 
 	@Override

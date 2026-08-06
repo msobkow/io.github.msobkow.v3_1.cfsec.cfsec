@@ -53,7 +53,7 @@ public class CFSecBuffSecUserPWHistoryByUserIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	public CFSecBuffSecUserPWHistoryByUserIdxKey() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWHistory.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecUserPWHistory.SECUSERID_INIT_VALUE.toString() );
 	}
 
 	@Override

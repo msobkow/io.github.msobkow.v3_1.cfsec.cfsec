@@ -53,7 +53,7 @@ public class CFSecBuffISOCtryCcyByCtryIdxKey
 {
 	protected short requiredISOCtryId;
 	public CFSecBuffISOCtryCcyByCtryIdxKey() {
-		requiredISOCtryId = ICFSecISOCtryCcy.ISOCTRYID_INIT_VALUE;
+		requiredISOCtryId = ICFSecPubISOCtryCcy.ISOCTRYID_INIT_VALUE;
 	}
 
 	@Override

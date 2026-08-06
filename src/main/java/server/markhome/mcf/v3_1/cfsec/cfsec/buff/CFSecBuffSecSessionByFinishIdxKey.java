@@ -54,7 +54,7 @@ public class CFSecBuffSecSessionByFinishIdxKey
 	protected CFLibDbKeyHash256 requiredSecUserId;
 	protected LocalDateTime optionalFinish;
 	public CFSecBuffSecSessionByFinishIdxKey() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecSession.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECUSERID_INIT_VALUE.toString() );
 		optionalFinish = null;
 	}
 

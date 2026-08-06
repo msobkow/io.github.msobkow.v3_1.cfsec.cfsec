@@ -53,11 +53,11 @@ public class CFSecBuffISOTZone
 {
 	protected short requiredISOTZoneId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredIso8601;
 	protected String requiredTZName;
@@ -67,13 +67,13 @@ public class CFSecBuffISOTZone
 	protected boolean requiredVisible;
 
 	public CFSecBuffISOTZone() {
-		requiredISOTZoneId = ICFSecISOTZone.ISOTZONEID_INIT_VALUE;
-		requiredIso8601 = ICFSecISOTZone.ISO8601_INIT_VALUE;
-		requiredTZName = ICFSecISOTZone.TZNAME_INIT_VALUE;
-		requiredTZHourOffset = ICFSecISOTZone.TZHOUROFFSET_INIT_VALUE;
-		requiredTZMinOffset = ICFSecISOTZone.TZMINOFFSET_INIT_VALUE;
-		requiredDescription = ICFSecISOTZone.DESCRIPTION_INIT_VALUE;
-		requiredVisible = ICFSecISOTZone.VISIBLE_INIT_VALUE;
+		requiredISOTZoneId = ICFSecPubISOTZone.ISOTZONEID_INIT_VALUE;
+		requiredIso8601 = ICFSecPubISOTZone.ISO8601_INIT_VALUE;
+		requiredTZName = ICFSecPubISOTZone.TZNAME_INIT_VALUE;
+		requiredTZHourOffset = ICFSecPubISOTZone.TZHOUROFFSET_INIT_VALUE;
+		requiredTZMinOffset = ICFSecPubISOTZone.TZMINOFFSET_INIT_VALUE;
+		requiredDescription = ICFSecPubISOTZone.DESCRIPTION_INIT_VALUE;
+		requiredVisible = ICFSecPubISOTZone.VISIBLE_INIT_VALUE;
 	}
 
 	@Override

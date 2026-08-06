@@ -53,19 +53,19 @@ public class CFSecBuffISOCtry
 {
 	protected short requiredISOCtryId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredISOCode;
 	protected String requiredName;
 
 	public CFSecBuffISOCtry() {
-		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
-		requiredISOCode = ICFSecISOCtry.ISOCODE_INIT_VALUE;
-		requiredName = ICFSecISOCtry.NAME_INIT_VALUE;
+		requiredISOCtryId = ICFSecPubISOCtry.ISOCTRYID_INIT_VALUE;
+		requiredISOCode = ICFSecPubISOCtry.ISOCODE_INIT_VALUE;
+		requiredName = ICFSecPubISOCtry.NAME_INIT_VALUE;
 	}
 
 	@Override

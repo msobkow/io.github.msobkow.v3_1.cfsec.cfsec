@@ -53,7 +53,7 @@ public class CFSecBuffTableInfoBySchemaRTCodeIdxKey
 {
 	protected int requiredRuntimeClassCode;
 	public CFSecBuffTableInfoBySchemaRTCodeIdxKey() {
-		requiredRuntimeClassCode = ICFSecTableInfo.RUNTIMECLASSCODE_INIT_VALUE;
+		requiredRuntimeClassCode = ICFSecPubTableInfo.RUNTIMECLASSCODE_INIT_VALUE;
 	}
 
 	@Override

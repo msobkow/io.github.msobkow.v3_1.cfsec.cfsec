@@ -53,19 +53,19 @@ public class CFSecBuffSecSysGrp
 {
 	protected CFLibDbKeyHash256 requiredSecSysGrpId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredName;
 	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 
 	public CFSecBuffSecSysGrp() {
-		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecSecSysGrp.SECSYSGRPID_INIT_VALUE.toString() );
-		requiredName = ICFSecSecSysGrp.NAME_INIT_VALUE;
-		requiredSecLevel = ICFSecSecSysGrp.SECLEVEL_INIT_VALUE;
+		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSysGrp.SECSYSGRPID_INIT_VALUE.toString() );
+		requiredName = ICFSecPubSecSysGrp.NAME_INIT_VALUE;
+		requiredSecLevel = ICFSecPubSecSysGrp.SECLEVEL_INIT_VALUE;
 	}
 
 	@Override

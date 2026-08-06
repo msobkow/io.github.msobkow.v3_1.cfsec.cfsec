@@ -53,7 +53,7 @@ public class CFSecBuffTableInfoByTableNameIdxKey
 {
 	protected String requiredTableName;
 	public CFSecBuffTableInfoByTableNameIdxKey() {
-		requiredTableName = ICFSecTableInfo.TABLENAME_INIT_VALUE;
+		requiredTableName = ICFSecPubTableInfo.TABLENAME_INIT_VALUE;
 	}
 
 	@Override

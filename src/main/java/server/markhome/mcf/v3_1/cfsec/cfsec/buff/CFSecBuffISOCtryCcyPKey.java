@@ -60,8 +60,8 @@ public class CFSecBuffISOCtryCcyPKey
 	protected short requiredISOCcyId;
 
 	public CFSecBuffISOCtryCcyPKey() {
-		requiredISOCtryId = ICFSecISOCtryCcy.ISOCTRYID_INIT_VALUE;
-		requiredISOCcyId = ICFSecISOCtryCcy.ISOCCYID_INIT_VALUE;
+		requiredISOCtryId = ICFSecPubISOCtryCcy.ISOCTRYID_INIT_VALUE;
+		requiredISOCcyId = ICFSecPubISOCtryCcy.ISOCCYID_INIT_VALUE;
 	}
 
 	@Override

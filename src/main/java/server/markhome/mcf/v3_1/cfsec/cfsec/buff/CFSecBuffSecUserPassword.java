@@ -57,7 +57,7 @@ public class CFSecBuffSecUserPassword
 	protected String requiredPasswordHash;
 
 	public CFSecBuffSecUserPassword() {
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserPassword.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecUserPassword.SECUSERID_INIT_VALUE.toString() );
 		requiredPWSetStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}
 

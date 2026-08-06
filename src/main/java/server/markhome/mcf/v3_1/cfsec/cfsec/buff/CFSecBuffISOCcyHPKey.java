@@ -64,7 +64,7 @@ public class CFSecBuffISOCcyHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredISOCcyId = ICFSecISOCcy.ISOCCYID_INIT_VALUE;
+		requiredISOCcyId = ICFSecPubISOCcy.ISOCCYID_INIT_VALUE;
 	}
 
 	@Override

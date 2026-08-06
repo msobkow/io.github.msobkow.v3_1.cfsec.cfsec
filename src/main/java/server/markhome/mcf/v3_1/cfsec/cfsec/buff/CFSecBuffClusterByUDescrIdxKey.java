@@ -53,7 +53,7 @@ public class CFSecBuffClusterByUDescrIdxKey
 {
 	protected String requiredDescription;
 	public CFSecBuffClusterByUDescrIdxKey() {
-		requiredDescription = ICFSecCluster.DESCRIPTION_INIT_VALUE;
+		requiredDescription = ICFSecPubCluster.DESCRIPTION_INIT_VALUE;
 	}
 
 	@Override

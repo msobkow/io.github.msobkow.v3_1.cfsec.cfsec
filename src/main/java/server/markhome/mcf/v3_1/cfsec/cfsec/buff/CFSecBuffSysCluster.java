@@ -56,8 +56,8 @@ public class CFSecBuffSysCluster
 	protected CFLibDbKeyHash256 requiredClusterId;
 
 	public CFSecBuffSysCluster() {
-		requiredSingletonId = ICFSecSysCluster.SINGLETONID_INIT_VALUE;
-		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecSysCluster.CLUSTERID_INIT_VALUE.toString() );
+		requiredSingletonId = ICFSecPubSysCluster.SINGLETONID_INIT_VALUE;
+		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecPubSysCluster.CLUSTERID_INIT_VALUE.toString() );
 	}
 
 	@Override

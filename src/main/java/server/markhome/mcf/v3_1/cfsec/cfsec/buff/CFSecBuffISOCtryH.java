@@ -52,11 +52,11 @@ public class CFSecBuffISOCtryH
     implements ICFSecISOCtryH, Comparable<Object>, Serializable
 {
     protected CFSecBuffISOCtryHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredISOCode;
 	protected String requiredName;
@@ -64,8 +64,8 @@ public class CFSecBuffISOCtryH
     public CFSecBuffISOCtryH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffISOCtryHPKey();
-		requiredISOCode = ICFSecISOCtry.ISOCODE_INIT_VALUE;
-		requiredName = ICFSecISOCtry.NAME_INIT_VALUE;
+		requiredISOCode = ICFSecPubISOCtry.ISOCODE_INIT_VALUE;
+		requiredName = ICFSecPubISOCtry.NAME_INIT_VALUE;
     }
 
     @Override

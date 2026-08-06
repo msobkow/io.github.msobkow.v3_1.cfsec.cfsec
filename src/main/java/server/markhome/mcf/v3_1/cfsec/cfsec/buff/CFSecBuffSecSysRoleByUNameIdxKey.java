@@ -53,7 +53,7 @@ public class CFSecBuffSecSysRoleByUNameIdxKey
 {
 	protected String requiredName;
 	public CFSecBuffSecSysRoleByUNameIdxKey() {
-		requiredName = ICFSecSecSysRole.NAME_INIT_VALUE;
+		requiredName = ICFSecPubSecSysRole.NAME_INIT_VALUE;
 	}
 
 	@Override

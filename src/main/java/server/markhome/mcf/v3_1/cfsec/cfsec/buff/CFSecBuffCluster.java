@@ -53,19 +53,19 @@ public class CFSecBuffCluster
 {
 	protected CFLibDbKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredFullDomName;
 	protected String requiredDescription;
 
 	public CFSecBuffCluster() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFSecCluster.ID_INIT_VALUE.toString() );
-		requiredFullDomName = ICFSecCluster.FULLDOMNAME_INIT_VALUE;
-		requiredDescription = ICFSecCluster.DESCRIPTION_INIT_VALUE;
+		requiredId = CFLibDbKeyHash256.fromHex( ICFSecPubCluster.ID_INIT_VALUE.toString() );
+		requiredFullDomName = ICFSecPubCluster.FULLDOMNAME_INIT_VALUE;
+		requiredDescription = ICFSecPubCluster.DESCRIPTION_INIT_VALUE;
 	}
 
 	@Override

@@ -54,8 +54,8 @@ public class CFSecBuffTableInfoBySchemaBkCodeIdxKey
 	protected String requiredSchemaName;
 	protected int requiredBackingClassCode;
 	public CFSecBuffTableInfoBySchemaBkCodeIdxKey() {
-		requiredSchemaName = ICFSecTableInfo.SCHEMANAME_INIT_VALUE;
-		requiredBackingClassCode = ICFSecTableInfo.BACKINGCLASSCODE_INIT_VALUE;
+		requiredSchemaName = ICFSecPubTableInfo.SCHEMANAME_INIT_VALUE;
+		requiredBackingClassCode = ICFSecPubTableInfo.BACKINGCLASSCODE_INIT_VALUE;
 	}
 
 	@Override

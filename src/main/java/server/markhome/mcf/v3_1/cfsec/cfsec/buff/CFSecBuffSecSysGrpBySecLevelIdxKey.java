@@ -53,7 +53,7 @@ public class CFSecBuffSecSysGrpBySecLevelIdxKey
 {
 	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 	public CFSecBuffSecSysGrpBySecLevelIdxKey() {
-		requiredSecLevel = ICFSecSecSysGrp.SECLEVEL_INIT_VALUE;
+		requiredSecLevel = ICFSecPubSecSysGrp.SECLEVEL_INIT_VALUE;
 	}
 
 	@Override

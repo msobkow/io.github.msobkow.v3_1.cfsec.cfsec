@@ -53,7 +53,7 @@ public class CFSecBuffClusterByUDomNameIdxKey
 {
 	protected String requiredFullDomName;
 	public CFSecBuffClusterByUDomNameIdxKey() {
-		requiredFullDomName = ICFSecCluster.FULLDOMNAME_INIT_VALUE;
+		requiredFullDomName = ICFSecPubCluster.FULLDOMNAME_INIT_VALUE;
 	}
 
 	@Override

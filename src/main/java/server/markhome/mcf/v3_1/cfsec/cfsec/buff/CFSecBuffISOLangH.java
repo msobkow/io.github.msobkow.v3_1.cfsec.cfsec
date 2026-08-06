@@ -52,11 +52,11 @@ public class CFSecBuffISOLangH
     implements ICFSecISOLangH, Comparable<Object>, Serializable
 {
     protected CFSecBuffISOLangHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredISO6392Code;
 	protected String optionalISO6391Code;
@@ -65,9 +65,9 @@ public class CFSecBuffISOLangH
     public CFSecBuffISOLangH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFSecBuffISOLangHPKey();
-		requiredISO6392Code = ICFSecISOLang.ISO6392CODE_INIT_VALUE;
+		requiredISO6392Code = ICFSecPubISOLang.ISO6392CODE_INIT_VALUE;
 		optionalISO6391Code = null;
-		requiredEnglishName = ICFSecISOLang.ENGLISHNAME_INIT_VALUE;
+		requiredEnglishName = ICFSecPubISOLang.ENGLISHNAME_INIT_VALUE;
     }
 
     @Override

@@ -64,7 +64,7 @@ public class CFSecBuffSysClusterHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredSingletonId = ICFSecSysCluster.SINGLETONID_INIT_VALUE;
+		requiredSingletonId = ICFSecPubSysCluster.SINGLETONID_INIT_VALUE;
 	}
 
 	@Override

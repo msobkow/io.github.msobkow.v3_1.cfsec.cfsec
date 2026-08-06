@@ -53,7 +53,7 @@ public class CFSecBuffISOCtryByNameIdxKey
 {
 	protected String requiredName;
 	public CFSecBuffISOCtryByNameIdxKey() {
-		requiredName = ICFSecISOCtry.NAME_INIT_VALUE;
+		requiredName = ICFSecPubISOCtry.NAME_INIT_VALUE;
 	}
 
 	@Override

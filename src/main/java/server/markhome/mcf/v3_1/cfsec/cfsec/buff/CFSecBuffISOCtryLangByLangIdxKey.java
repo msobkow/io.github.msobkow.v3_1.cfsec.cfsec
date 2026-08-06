@@ -53,7 +53,7 @@ public class CFSecBuffISOCtryLangByLangIdxKey
 {
 	protected short requiredISOLangId;
 	public CFSecBuffISOCtryLangByLangIdxKey() {
-		requiredISOLangId = ICFSecISOCtryLang.ISOLANGID_INIT_VALUE;
+		requiredISOLangId = ICFSecPubISOCtryLang.ISOLANGID_INIT_VALUE;
 	}
 
 	@Override

@@ -64,7 +64,7 @@ public class CFSecBuffSecUserPasswordHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserPassword.SECUSERID_INIT_VALUE.toString() );
+		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecUserPassword.SECUSERID_INIT_VALUE.toString() );
 	}
 
 	@Override

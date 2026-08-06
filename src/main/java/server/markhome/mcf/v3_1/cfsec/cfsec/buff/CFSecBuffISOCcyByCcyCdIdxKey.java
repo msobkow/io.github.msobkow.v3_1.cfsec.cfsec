@@ -53,7 +53,7 @@ public class CFSecBuffISOCcyByCcyCdIdxKey
 {
 	protected String requiredISOCode;
 	public CFSecBuffISOCcyByCcyCdIdxKey() {
-		requiredISOCode = ICFSecISOCcy.ISOCODE_INIT_VALUE;
+		requiredISOCode = ICFSecPubISOCcy.ISOCODE_INIT_VALUE;
 	}
 
 	@Override

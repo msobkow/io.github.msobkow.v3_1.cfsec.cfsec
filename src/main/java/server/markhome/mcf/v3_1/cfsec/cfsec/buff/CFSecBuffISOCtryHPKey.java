@@ -64,7 +64,7 @@ public class CFSecBuffISOCtryHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredISOCtryId = ICFSecISOCtry.ISOCTRYID_INIT_VALUE;
+		requiredISOCtryId = ICFSecPubISOCtry.ISOCTRYID_INIT_VALUE;
 	}
 
 	@Override
