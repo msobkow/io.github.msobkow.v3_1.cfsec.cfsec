@@ -217,6 +217,34 @@ public interface ICFSecSecUserObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecSess key.
+	 *
+	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecSess key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalComponentsSecSess();
+
+	/**
+	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecSess key.
+	 *
+	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecSess key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalComponentsSecSess( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecProxy key.
+	 *
+	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecProxy key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy();
+
+	/**
+	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecProxy key.
+	 *
+	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecProxy key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy( boolean forceRead );
+
+	/**
 	 *	Get the optional ICFSecSecUserPasswordObj instance referenced by the Password key.
 	 *
 	 *	@return	The optional ICFSecSecUserPasswordObj instance referenced by the Password key.
@@ -257,6 +285,20 @@ public interface ICFSecSecUserObj
 	 *	@return	The optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
 	 */
 	ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead );
+
+	/**
+	 *	Get the optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 */
+	ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory();
+
+	/**
+	 *	Get the optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 */
+	ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecSysGrpMembObj array of instances referenced by the SysSecGrpMemb key.

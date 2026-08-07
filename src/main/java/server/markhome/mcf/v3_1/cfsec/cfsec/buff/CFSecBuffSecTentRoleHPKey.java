@@ -59,7 +59,7 @@ public class CFSecBuffSecTentRoleHPKey
 	protected CFLibDbKeyHash256 requiredSecTentRoleId;
 
 	public CFSecBuffSecTentRoleHPKey() {
-		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
+		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;

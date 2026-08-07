@@ -59,7 +59,7 @@ public class CFSecBuffISOCcyHPKey
 	protected short requiredISOCcyId;
 
 	public CFSecBuffISOCcyHPKey() {
-		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
+		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;

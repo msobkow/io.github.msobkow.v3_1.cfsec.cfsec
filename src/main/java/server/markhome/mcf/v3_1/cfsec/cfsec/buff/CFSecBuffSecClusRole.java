@@ -120,6 +120,21 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+		return(requiredSecClusRoleId);
+	}
+
+	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusRoleId",
+				1,
+				"value" );
+		}
+		requiredSecClusRoleId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

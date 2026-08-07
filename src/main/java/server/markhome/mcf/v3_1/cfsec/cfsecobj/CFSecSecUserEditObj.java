@@ -50,9 +50,12 @@ public class CFSecSecUserEditObj
 	protected ICFSecSecUser rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
+	protected List<ICFSecSecSessionObj> optionalComponentsSecSess;
+	protected List<ICFSecSecSessionObj> optionalChildrenSecProxy;
 	protected ICFSecSecUserPasswordObj optionalComponentsPassword;
 	protected ICFSecSecUserEMConfObj optionalComponentsEMConf;
 	protected ICFSecSecUserPWResetObj optionalComponentsPWReset;
+	protected ICFSecSecUserPWHistoryObj optionalChildrenPWHistory;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenClusSecGrpMemb;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenTentSecGrpMemb;
@@ -427,9 +430,12 @@ public class CFSecSecUserEditObj
 	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
+			optionalComponentsSecSess = null;
+			optionalChildrenSecProxy = null;
 			optionalComponentsPassword = null;
 			optionalComponentsEMConf = null;
 			optionalComponentsPWReset = null;
+			optionalChildrenPWHistory = null;
 			optionalChildrenSysSecGrpMemb = null;
 			optionalChildrenClusSecGrpMemb = null;
 			optionalChildrenTentSecGrpMemb = null;
@@ -445,9 +451,12 @@ public class CFSecSecUserEditObj
 	public void setRequiredLoginId( String value ) {
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
+			optionalComponentsSecSess = null;
+			optionalChildrenSecProxy = null;
 			optionalComponentsPassword = null;
 			optionalComponentsEMConf = null;
 			optionalComponentsPWReset = null;
+			optionalChildrenPWHistory = null;
 			optionalChildrenSysSecGrpMemb = null;
 			optionalChildrenClusSecGrpMemb = null;
 			optionalChildrenTentSecGrpMemb = null;
@@ -515,6 +524,38 @@ public class CFSecSecUserEditObj
 	}
 
 	@Override
+	public List<ICFSecSecSessionObj> getOptionalComponentsSecSess() {
+		List<ICFSecSecSessionObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecUserIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSessionObj> getOptionalComponentsSecSess( boolean forceRead ) {
+		List<ICFSecSecSessionObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecUserIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSessionObj> getOptionalChildrenSecProxy() {
+		List<ICFSecSecSessionObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecProxyIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSessionObj> getOptionalChildrenSecProxy( boolean forceRead ) {
+		List<ICFSecSecSessionObj> retval;
+		retval = ((ICFSecSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecProxyIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
 	public ICFSecSecUserPasswordObj getOptionalComponentsPassword() {
 		return( getOptionalComponentsPassword( false ) );
 	}
@@ -563,6 +604,23 @@ public class CFSecSecUserEditObj
 			}
 		}
 		return( optionalComponentsPWReset );
+	}
+
+	@Override
+	public ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory() {
+		return( getOptionalChildrenPWHistory( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory( boolean forceRead ) {
+		if( forceRead || ( optionalChildrenPWHistory == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserPWHistoryObj obj = ((ICFSecSchemaObj)getOrigAsSecUser().getSchema()).getSecUserPWHistoryTableObj().readSecUserPWHistoryByUserIdx( getPKey() );
+				optionalChildrenPWHistory = obj;
+			}
+		}
+		return( optionalChildrenPWHistory );
 	}
 
 	@Override

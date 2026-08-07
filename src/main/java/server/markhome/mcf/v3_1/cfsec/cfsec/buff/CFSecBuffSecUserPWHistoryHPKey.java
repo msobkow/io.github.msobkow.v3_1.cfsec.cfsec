@@ -61,7 +61,7 @@ public class CFSecBuffSecUserPWHistoryHPKey
 	protected LocalDateTime requiredPWSetStamp;
 
 	public CFSecBuffSecUserPWHistoryHPKey() {
-		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
+		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
