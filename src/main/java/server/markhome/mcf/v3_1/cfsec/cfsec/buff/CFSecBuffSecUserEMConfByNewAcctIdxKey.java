@@ -57,15 +57,6 @@ public class CFSecBuffSecUserEMConfByNewAcctIdxKey
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
-		return(requiredNewAccount);
-	}
-
-	public void setRequiredNewAccount( boolean value ) {
-		requiredNewAccount = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

@@ -132,47 +132,6 @@ public class CFSecBuffSysClusterH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-	@Override
-	public int getRequiredSingletonId() {
-		return(requiredSingletonId);
-	}
-
-	@Override
-	public void setRequiredSingletonId( int value ) {
-		if( value < ICFSecPubSysCluster.SINGLETONID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredSingletonId",
-				1,
-				"value",
-				value,
-				ICFSecPubSysCluster.SINGLETONID_MIN_VALUE );
-		}
-		if( value > ICFSecPubSysCluster.SINGLETONID_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredSingletonId",
-				1,
-				"value",
-				value,
-				ICFSecPubSysCluster.SINGLETONID_MAX_VALUE );
-		}
-		getPKey().setRequiredSingletonId(value);
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredClusterId() {
-		return(requiredClusterId);
-	}
-
-	public void setRequiredClusterId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredClusterId",
-				1,
-				"value" );
-		}
-		requiredClusterId = value;
-	}
-
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

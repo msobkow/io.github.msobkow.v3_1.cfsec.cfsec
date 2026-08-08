@@ -57,21 +57,6 @@ public class CFSecBuffSecUserPWHistoryBySetStampIdxKey
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
-		return(requiredPWSetStamp);
-	}
-
-	public void setRequiredPWSetStamp( LocalDateTime value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredPWSetStamp",
-				1,
-				"value" );
-		}
-		requiredPWSetStamp = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

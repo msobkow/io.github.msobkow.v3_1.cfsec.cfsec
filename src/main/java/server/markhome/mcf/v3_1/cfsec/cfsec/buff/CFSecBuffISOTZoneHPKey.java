@@ -118,24 +118,6 @@ public class CFSecBuffISOTZoneHPKey
 	}
 
 	@Override
-	public short getRequiredISOTZoneId() {
-		return(requiredISOTZoneId);
-	}
-
-	@Override
-	public void setRequiredISOTZoneId( short value ) {
-		if( value < ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOTZoneId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE );
-		}
-		requiredISOTZoneId = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

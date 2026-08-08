@@ -118,24 +118,6 @@ public class CFSecBuffISOCcyHPKey
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
-		return(requiredISOCcyId);
-	}
-
-	@Override
-	public void setRequiredISOCcyId( short value ) {
-		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCcyId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCcy.ISOCCYID_MIN_VALUE );
-		}
-		requiredISOCcyId = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

@@ -84,85 +84,6 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public ICFSecSecUser getRequiredContainerUser() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
-		}
-		ICFSecSecUser targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		setRequiredSecUserId(argSecUserId);
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(requiredSecUserId);
-	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		requiredSecUserId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(requiredSecUserId);
-	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		requiredSecUserId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -218,65 +139,52 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
-		return(requiredConfirmEMailAddr);
-	}
-
-	public void setRequiredConfirmEMailAddr( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredConfirmEMailAddr",
-				1,
-				"value" );
+	public ICFSecSecUser getRequiredContainerUser() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		else if( value.length() > 512 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredConfirmEMailAddr",
-				1,
-				"value.length()",
-				value.length(),
-				512 );
+		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		requiredConfirmEMailAddr = value;
+		ICFSecSecUser targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
 	}
 
 	@Override
-	public LocalDateTime getRequiredEMailSentStamp() {
-		return(requiredEMailSentStamp);
-	}
-
-	public void setRequiredEMailSentStamp( LocalDateTime value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredEMailSentStamp",
-				1,
-				"value" );
-		}
-		requiredEMailSentStamp = value;
+	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
+		setRequiredSecUserId(argSecUserId);
 	}
 
 	@Override
-	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
-		return(requiredEMConfirmationUuid6);
-	}
-
-	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredEMConfirmationUuid6",
-				1,
-				"value" );
+	public void setRequiredContainerUser(ICFSecSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
-		requiredEMConfirmationUuid6 = value;
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
-		return(requiredNewAccount);
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
 	}
 
-	public void setRequiredNewAccount( boolean value ) {
-		requiredNewAccount = value;
+	@Override
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
 	}
 
 	@Override

@@ -65,44 +65,6 @@ public class CFSecBuffSecSysRoleEnablesPKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(requiredSecSysRoleId);
-	}
-
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSysRoleId",
-				1,
-				"value" );
-		}
-		requiredSecSysRoleId = value;
-	}
-
-	@Override
-	public String getRequiredEnableName() {
-		return(requiredEnableName);
-	}
-
-	public void setRequiredEnableName( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredEnableName",
-				1,
-				"value" );
-		}
-		else if( value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredEnableName",
-				1,
-				"value.length()",
-				value.length(),
-				64 );
-		}
-		requiredEnableName = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

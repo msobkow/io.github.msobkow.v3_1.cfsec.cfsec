@@ -83,66 +83,6 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public List<ICFSecISOCtryLang> getOptionalChildrenCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
-		}
-		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByLangIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryLang> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
-	public short getRequiredISOLangId() {
-		return(requiredISOLangId);
-	}
-
-	@Override
-	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOLangId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
-		}
-		getPKey().setRequiredISOLangId(value);
-	}
-
-	@Override
-	public short getRequiredISOLangId() {
-		return(requiredISOLangId);
-	}
-
-	@Override
-	public void setRequiredISOLangId( short value ) {
-		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOLangId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
-		}
-		requiredISOLangId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -198,26 +138,27 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
-		return(requiredISO6392Code);
-	}
-
-	public void setRequiredISO6392Code( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredISO6392Code",
-				1,
-				"value" );
+	public List<ICFSecISOCtryLang> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		else if( value.length() > 3 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredISO6392Code",
-				1,
-				"value.length()",
-				value.length(),
-				3 );
+		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}
-		requiredISO6392Code = value;
+		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByLangIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryLang> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override
@@ -235,29 +176,6 @@ public class CFSecBuffISOLang
 				2 );
 		}
 		optionalISO6391Code = value;
-	}
-
-	@Override
-	public String getRequiredEnglishName() {
-		return(requiredEnglishName);
-	}
-
-	public void setRequiredEnglishName( String value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredEnglishName",
-				1,
-				"value" );
-		}
-		else if( value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredEnglishName",
-				1,
-				"value.length()",
-				value.length(),
-				64 );
-		}
-		requiredEnglishName = value;
 	}
 
 	@Override
