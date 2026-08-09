@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPWHistory
 	implements ICFSecSecUserPWHistory, Comparable<Object>, Serializable
 {
-	protected ICFSecSecUserPWHistoryPKey pkey;
+	protected ICFSecSecUserPWHistoryPKey pkey = new CFSecBuffSecUserPWHistoryPKey();
 	protected int requiredRevision;
 	protected LocalDateTime requiredPWReplacedStamp;
 	protected String requiredPasswordHash;
@@ -77,6 +77,36 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(getPKey().getRequiredSecUserId());
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecUserId(value);
+	}
+
+	@Override
+	public LocalDateTime getRequiredPWSetStamp() {
+		return(getPKey().getRequiredPWSetStamp());
+	}
+
+	public void setRequiredPWSetStamp( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPWSetStamp",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredPWSetStamp(value);
+	}
+
+	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}
@@ -89,6 +119,44 @@ public class CFSecBuffSecUserPWHistory
 	@Override
 	public int getClassCode() {
 		return( ICFSecSecUserPWHistory.CLASS_CODE );
+	}
+
+	@Override
+	public LocalDateTime getRequiredPWReplacedStamp() {
+		return(requiredPWReplacedStamp);
+	}
+
+	public void setRequiredPWReplacedStamp( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPWReplacedStamp",
+				1,
+				"value" );
+		}
+		requiredPWReplacedStamp = value;
+	}
+
+	@Override
+	public String getRequiredPasswordHash() {
+		return(requiredPasswordHash);
+	}
+
+	public void setRequiredPasswordHash( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPasswordHash",
+				1,
+				"value" );
+		}
+		else if( value.length() > 256 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredPasswordHash",
+				1,
+				"value.length()",
+				value.length(),
+				256 );
+		}
+		requiredPasswordHash = value;
 	}
 
 	@Override

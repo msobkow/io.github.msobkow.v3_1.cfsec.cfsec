@@ -81,6 +81,90 @@ public class CFSecBuffISOCtry
 	}
 
 	@Override
+	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		}
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecISOCtryLang> getOptionalComponentsLang() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
+		}
+		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryLang> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public short getRequiredISOCtryId() {
+		return(requiredISOCtryId);
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
+		}
+		getPKey().setRequiredISOCtryId(value);
+	}
+
+	@Override
+	public short getRequiredISOCtryId() {
+		return(requiredISOCtryId);
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
+		}
+		requiredISOCtryId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -136,51 +220,49 @@ public class CFSecBuffISOCtry
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec()");
+	public String getRequiredISOCode() {
+		return(requiredISOCode);
+	}
+
+	public void setRequiredISOCode( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value" );
 		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		else if( value.length() > 2 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value.length()",
+				value.length(),
+				2 );
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>();
-			return( results );
-		}
+		requiredISOCode = value;
 	}
 
 	@Override
-	public List<ICFSecISOCtryLang> getOptionalComponentsLang() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec()");
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
 		}
-		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
 		}
-		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecISOCtryLang> results = new ArrayList<>();
-			return( results );
-		}
+		requiredName = value;
 	}
 
 	@Override

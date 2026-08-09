@@ -121,6 +121,44 @@ public class CFSecBuffSecTentRoleMembHPKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return(requiredSecTentRoleId);
+	}
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
+	@Override
+	public String getRequiredLoginId() {
+		return(requiredLoginId);
+	}
+
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		requiredLoginId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

@@ -65,6 +65,44 @@ public class CFSecBuffSecSysGrpMembPKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return(requiredSecSysGrpId);
+	}
+
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		requiredSecSysGrpId = value;
+	}
+
+	@Override
+	public String getRequiredLoginId() {
+		return(requiredLoginId);
+	}
+
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		requiredLoginId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

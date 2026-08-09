@@ -57,6 +57,21 @@ public class CFSecBuffSecSysGrpMembBySysGrpIdxKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return(requiredSecSysGrpId);
+	}
+
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		requiredSecSysGrpId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

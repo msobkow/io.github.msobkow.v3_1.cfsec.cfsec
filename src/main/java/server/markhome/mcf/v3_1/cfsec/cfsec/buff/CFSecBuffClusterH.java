@@ -192,6 +192,67 @@ public class CFSecBuffClusterH
         pkey.setAuditSessionId(auditSessionId);
     }
 
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredId(value);
+	}
+
+	@Override
+	public String getRequiredFullDomName() {
+		return(requiredFullDomName);
+	}
+
+	public void setRequiredFullDomName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredFullDomName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 192 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredFullDomName",
+				1,
+				"value.length()",
+				value.length(),
+				192 );
+		}
+		requiredFullDomName = value;
+	}
+
+	@Override
+	public String getRequiredDescription() {
+		return(requiredDescription);
+	}
+
+	public void setRequiredDescription( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value" );
+		}
+		else if( value.length() > 128 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value.length()",
+				value.length(),
+				128 );
+		}
+		requiredDescription = value;
+	}
+
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

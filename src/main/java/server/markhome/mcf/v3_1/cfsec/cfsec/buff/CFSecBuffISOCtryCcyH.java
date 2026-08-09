@@ -188,6 +188,42 @@ public class CFSecBuffISOCtryCcyH
         pkey.setAuditSessionId(auditSessionId);
     }
 
+	@Override
+	public short getRequiredISOCtryId() {
+		return(getPKey().getRequiredISOCtryId());
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE );
+		}
+		getPKey().setRequiredISOCtryId(value);
+	}
+
+	@Override
+	public short getRequiredISOCcyId() {
+		return(getPKey().getRequiredISOCcyId());
+	}
+
+	@Override
+	public void setRequiredISOCcyId( short value ) {
+		if( value < ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCcyId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE );
+		}
+		getPKey().setRequiredISOCcyId(value);
+	}
+
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

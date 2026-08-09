@@ -82,6 +82,85 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
+	public ICFSecSecUser getRequiredContainerUser() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
+		setRequiredSecUserId(argSecUserId);
+	}
+
+	@Override
+	public void setRequiredContainerUser(ICFSecSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -137,52 +216,50 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
-	public ICFSecSecUser getRequiredContainerUser() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
+	public String getRequiredSentToEMailAddr() {
+		return(requiredSentToEMailAddr);
+	}
+
+	public void setRequiredSentToEMailAddr( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSentToEMailAddr",
+				1,
+				"value" );
 		}
-		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		else if( value.length() > 512 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredSentToEMailAddr",
+				1,
+				"value.length()",
+				value.length(),
+				512 );
 		}
-		ICFSecSecUser targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		return(targetRec);
+		requiredSentToEMailAddr = value;
 	}
 
 	@Override
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		setRequiredSecUserId(argSecUserId);
+	public CFLibUuid6 getRequiredPasswordResetUuid6() {
+		return(requiredPasswordResetUuid6);
+	}
+
+	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPasswordResetUuid6",
+				1,
+				"value" );
+		}
+		requiredPasswordResetUuid6 = value;
 	}
 
 	@Override
-	public void setRequiredContainerUser(ICFSecSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
+	public boolean getRequiredNewAccount() {
+		return(requiredNewAccount);
 	}
 
-	@Override
-	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
+	public void setRequiredNewAccount( boolean value ) {
+		requiredNewAccount = value;
 	}
 
 	@Override

@@ -85,6 +85,66 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
+	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		}
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public short getRequiredISOCcyId() {
+		return(requiredISOCcyId);
+	}
+
+	@Override
+	public void setRequiredISOCcyId( short value ) {
+		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCcyId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.ISOCCYID_MIN_VALUE );
+		}
+		getPKey().setRequiredISOCcyId(value);
+	}
+
+	@Override
+	public short getRequiredISOCcyId() {
+		return(requiredISOCcyId);
+	}
+
+	@Override
+	public void setRequiredISOCcyId( short value ) {
+		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCcyId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.ISOCCYID_MIN_VALUE );
+		}
+		requiredISOCcyId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -140,27 +200,49 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+	public String getRequiredISOCode() {
+		return(requiredISOCode);
+	}
+
+	public void setRequiredISOCode( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value" );
 		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		else if( value.length() > 3 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value.length()",
+				value.length(),
+				3 );
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
-		if( targetArr != null ) {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+		requiredISOCode = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
 		}
-		else {
-			List<ICFSecISOCtryCcy> results = new ArrayList<>();
-			return( results );
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
 		}
+		requiredName = value;
 	}
 
 	@Override
@@ -178,6 +260,32 @@ public class CFSecBuffISOCcy
 				4 );
 		}
 		optionalUnitSymbol = value;
+	}
+
+	@Override
+	public short getRequiredPrecis() {
+		return(requiredPrecis);
+	}
+
+	@Override
+	public void setRequiredPrecis( short value ) {
+		if( value < ICFSecPubISOCcy.PRECIS_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredPrecis",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.PRECIS_MIN_VALUE );
+		}
+		if( value > ICFSecPubISOCcy.PRECIS_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredPrecis",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.PRECIS_MAX_VALUE );
+		}
+		requiredPrecis = value;
 	}
 
 	@Override

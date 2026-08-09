@@ -57,6 +57,24 @@ public class CFSecBuffISOCtryCcyByCtryIdxKey
 	}
 
 	@Override
+	public short getRequiredISOCtryId() {
+		return(requiredISOCtryId);
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE );
+		}
+		requiredISOCtryId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

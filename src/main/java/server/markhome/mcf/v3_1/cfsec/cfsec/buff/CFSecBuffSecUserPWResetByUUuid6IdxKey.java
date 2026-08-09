@@ -56,6 +56,21 @@ public class CFSecBuffSecUserPWResetByUUuid6IdxKey
 	}
 
 	@Override
+	public CFLibUuid6 getRequiredPasswordResetUuid6() {
+		return(requiredPasswordResetUuid6);
+	}
+
+	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPasswordResetUuid6",
+				1,
+				"value" );
+		}
+		requiredPasswordResetUuid6 = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

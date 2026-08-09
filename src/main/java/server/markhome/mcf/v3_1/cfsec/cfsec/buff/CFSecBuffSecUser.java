@@ -89,61 +89,6 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getCreatedByUserId() {
-		return( createdByUserId );
-	}
-
-	@Override
-	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
-		createdByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getCreatedAt() {
-		return( createdAt );
-	}
-
-	@Override
-	public void setCreatedAt( LocalDateTime value ) {
-		createdAt = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getUpdatedByUserId() {
-		return( updatedByUserId );
-	}
-
-	@Override
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
-		updatedByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getUpdatedAt() {
-		return( updatedAt );
-	}
-
-	@Override
-	public void setUpdatedAt( LocalDateTime value ) {
-		updatedAt = value;
-	}
-
-	@Override
-	public int getRequiredRevision() {
-		return( requiredRevision );
-	}
-
-	@Override
-	public void setRequiredRevision( int value ) {
-		requiredRevision = value;
-	}
-
-	@Override
-	public int getClassCode() {
-		return( ICFSecSecUser.CLASS_CODE );
-	}
-
-	@Override
 	public List<ICFSecSecSession> getOptionalComponentsSecSess() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -248,6 +193,91 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecUserId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getCreatedByUserId() {
+		return( createdByUserId );
+	}
+
+	@Override
+	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
+		createdByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( createdAt );
+	}
+
+	@Override
+	public void setCreatedAt( LocalDateTime value ) {
+		createdAt = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getUpdatedByUserId() {
+		return( updatedByUserId );
+	}
+
+	@Override
+	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
+		updatedByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( updatedAt );
+	}
+
+	@Override
+	public void setUpdatedAt( LocalDateTime value ) {
+		updatedAt = value;
+	}
+
+	@Override
+	public int getRequiredRevision() {
+		return( requiredRevision );
+	}
+
+	@Override
+	public void setRequiredRevision( int value ) {
+		requiredRevision = value;
+	}
+
+	@Override
+	public int getClassCode() {
+		return( ICFSecSecUser.CLASS_CODE );
+	}
+
+	@Override
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenSysSecGrpMemb() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -320,6 +350,44 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
+	public String getRequiredLoginId() {
+		return(requiredLoginId);
+	}
+
+	public void setRequiredLoginId( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value" );
+		}
+		else if( value.length() > 32 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredLoginId",
+				1,
+				"value.length()",
+				value.length(),
+				32 );
+		}
+		requiredLoginId = value;
+	}
+
+	@Override
+	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus() {
+		return(requiredAccountStatus);
+	}
+
+	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredAccountStatus",
+				1,
+				"value" );
+		}
+		requiredAccountStatus = value;
+	}
+
+	@Override
 	public String getOptionalDfltSysGrpName() {
 		return(optionalDfltSysGrpName);
 	}
@@ -368,6 +436,29 @@ public class CFSecBuffSecUser
 				64 );
 		}
 		optionalDfltTentGrpName = value;
+	}
+
+	@Override
+	public String getRequiredEMailAddress() {
+		return(requiredEMailAddress);
+	}
+
+	public void setRequiredEMailAddress( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredEMailAddress",
+				1,
+				"value" );
+		}
+		else if( value.length() > 512 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredEMailAddress",
+				1,
+				"value.length()",
+				value.length(),
+				512 );
+		}
+		requiredEMailAddress = value;
 	}
 
 	@Override

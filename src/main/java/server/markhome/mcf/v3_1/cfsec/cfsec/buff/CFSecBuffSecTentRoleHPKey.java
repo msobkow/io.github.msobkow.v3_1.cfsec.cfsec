@@ -118,6 +118,21 @@ public class CFSecBuffSecTentRoleHPKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return(requiredSecTentRoleId);
+	}
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if (obj == null) {
 			return( false );

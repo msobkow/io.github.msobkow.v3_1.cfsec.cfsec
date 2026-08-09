@@ -81,6 +81,60 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
+	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole() {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleMembTable targetTable = targetBackingSchema.getTableSecTentRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRoleMemb()");
+		}
+		ICFSecSecTentRoleMemb[] targetArr = targetTable.readDerivedByTentRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecTentRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return(requiredSecTentRoleId);
+	}
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return(requiredSecTentRoleId);
+	}
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -234,27 +288,41 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
+	public CFLibDbKeyHash256 getRequiredTenantId() {
+		return(requiredTenantId);
+	}
+
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
 		}
-		ICFSecSecTentRoleMembTable targetTable = targetBackingSchema.getTableSecTentRoleMemb();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRoleMemb()");
+		requiredTenantId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
 		}
-		ICFSecSecTentRoleMemb[] targetArr = targetTable.readDerivedByTentRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentRoleId());
-		if( targetArr != null ) {
-			List<ICFSecSecTentRoleMemb> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
 		}
-		else {
-			List<ICFSecSecTentRoleMemb> results = new ArrayList<>();
-			return( results );
-		}
+		requiredName = value;
 	}
 
 	@Override

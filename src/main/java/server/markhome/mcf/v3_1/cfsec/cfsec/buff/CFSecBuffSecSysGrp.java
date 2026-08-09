@@ -81,61 +81,6 @@ public class CFSecBuffSecSysGrp
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getCreatedByUserId() {
-		return( createdByUserId );
-	}
-
-	@Override
-	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
-		createdByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getCreatedAt() {
-		return( createdAt );
-	}
-
-	@Override
-	public void setCreatedAt( LocalDateTime value ) {
-		createdAt = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getUpdatedByUserId() {
-		return( updatedByUserId );
-	}
-
-	@Override
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
-		updatedByUserId = value;
-	}
-
-	@Override
-	public LocalDateTime getUpdatedAt() {
-		return( updatedAt );
-	}
-
-	@Override
-	public void setUpdatedAt( LocalDateTime value ) {
-		updatedAt = value;
-	}
-
-	@Override
-	public int getRequiredRevision() {
-		return( requiredRevision );
-	}
-
-	@Override
-	public void setRequiredRevision( int value ) {
-		requiredRevision = value;
-	}
-
-	@Override
-	public int getClassCode() {
-		return( ICFSecSecSysGrp.CLASS_CODE );
-	}
-
-	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -195,6 +140,91 @@ public class CFSecBuffSecSysGrp
 		}
 		ICFSecSecSysRole targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
 		return(targetRec);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return(requiredSecSysGrpId);
+	}
+
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecSysGrpId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+		return(requiredSecSysGrpId);
+	}
+
+	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysGrpId",
+				1,
+				"value" );
+		}
+		requiredSecSysGrpId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getCreatedByUserId() {
+		return( createdByUserId );
+	}
+
+	@Override
+	public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
+		createdByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( createdAt );
+	}
+
+	@Override
+	public void setCreatedAt( LocalDateTime value ) {
+		createdAt = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getUpdatedByUserId() {
+		return( updatedByUserId );
+	}
+
+	@Override
+	public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
+		updatedByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( updatedAt );
+	}
+
+	@Override
+	public void setUpdatedAt( LocalDateTime value ) {
+		updatedAt = value;
+	}
+
+	@Override
+	public int getRequiredRevision() {
+		return( requiredRevision );
+	}
+
+	@Override
+	public void setRequiredRevision( int value ) {
+		requiredRevision = value;
+	}
+
+	@Override
+	public int getClassCode() {
+		return( ICFSecSecSysGrp.CLASS_CODE );
 	}
 
 	@Override
@@ -339,6 +369,44 @@ public class CFSecBuffSecSysGrp
 			List<ICFSecSecSysRoleEnables> results = new ArrayList<>();
 			return( results );
 		}
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
+		return(requiredSecLevel);
+	}
+
+	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecLevel",
+				1,
+				"value" );
+		}
+		requiredSecLevel = value;
 	}
 
 	@Override

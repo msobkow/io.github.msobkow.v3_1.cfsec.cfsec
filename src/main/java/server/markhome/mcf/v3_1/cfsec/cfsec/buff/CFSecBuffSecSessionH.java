@@ -139,6 +139,51 @@ public class CFSecBuffSecSessionH
     }
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSessionId() {
+		return(requiredSecSessionId);
+	}
+
+	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSessionId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredSecSessionId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getRequiredStart() {
+		return(requiredStart);
+	}
+
+	public void setRequiredStart( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredStart",
+				1,
+				"value" );
+		}
+		requiredStart = value;
+	}
+
+	@Override
 	public LocalDateTime getOptionalFinish() {
 		return(optionalFinish);
 	}
