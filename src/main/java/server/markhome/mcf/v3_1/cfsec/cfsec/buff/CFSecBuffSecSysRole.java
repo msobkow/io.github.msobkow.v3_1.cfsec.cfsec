@@ -138,7 +138,7 @@ public class CFSecBuffSecSysRole
 				1,
 				"value" );
 		}
-		getPKey().setRequiredSecSysRoleId(value);
+		requiredSecSysRoleId = value;
 	}
 
 	@Override

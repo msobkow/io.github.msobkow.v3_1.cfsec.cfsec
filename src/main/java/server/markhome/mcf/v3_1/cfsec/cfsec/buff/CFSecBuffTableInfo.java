@@ -103,7 +103,7 @@ public class CFSecBuffTableInfo
 				value,
 				ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE );
 		}
-		getPKey().setRequiredTableInfoId(value);
+		requiredTableInfoId = value;
 	}
 
 	@Override

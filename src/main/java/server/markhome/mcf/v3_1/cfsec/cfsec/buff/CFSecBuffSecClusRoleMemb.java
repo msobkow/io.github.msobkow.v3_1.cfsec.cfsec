@@ -81,7 +81,7 @@ public class CFSecBuffSecClusRoleMemb
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		return(getPKey().getRequiredSecClusRoleId());
+		return(requiredSecClusRoleId);
 	}
 
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
@@ -91,12 +91,12 @@ public class CFSecBuffSecClusRoleMemb
 				1,
 				"value" );
 		}
-		getPKey().setRequiredSecClusRoleId(value);
+		requiredSecClusRoleId = value;
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return(getPKey().getRequiredLoginId());
+		return(requiredLoginId);
 	}
 
 	public void setRequiredLoginId( String value ) {
@@ -114,7 +114,7 @@ public class CFSecBuffSecClusRoleMemb
 				value.length(),
 				32 );
 		}
-		getPKey().setRequiredLoginId(value);
+		requiredLoginId = value;
 	}
 
 	@Override

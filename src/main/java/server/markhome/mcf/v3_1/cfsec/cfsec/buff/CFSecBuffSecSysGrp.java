@@ -154,7 +154,7 @@ public class CFSecBuffSecSysGrp
 				1,
 				"value" );
 		}
-		getPKey().setRequiredSecSysGrpId(value);
+		requiredSecSysGrpId = value;
 	}
 
 	@Override

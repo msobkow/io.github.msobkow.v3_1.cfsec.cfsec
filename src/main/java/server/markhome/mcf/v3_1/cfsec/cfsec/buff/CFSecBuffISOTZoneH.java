@@ -215,7 +215,7 @@ public class CFSecBuffISOTZoneH
 				value,
 				ICFSecPubISOTZone.ISOTZONEID_MIN_VALUE );
 		}
-		getPKey().setRequiredISOTZoneId(value);
+		requiredISOTZoneId = value;
 	}
 
 	@Override

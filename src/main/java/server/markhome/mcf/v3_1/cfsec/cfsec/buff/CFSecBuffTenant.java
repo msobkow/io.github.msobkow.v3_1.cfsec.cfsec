@@ -140,7 +140,7 @@ public class CFSecBuffTenant
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override

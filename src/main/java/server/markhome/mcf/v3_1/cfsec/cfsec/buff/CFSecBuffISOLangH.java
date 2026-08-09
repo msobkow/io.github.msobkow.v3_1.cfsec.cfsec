@@ -209,7 +209,7 @@ public class CFSecBuffISOLangH
 				value,
 				ICFSecPubISOLang.ISOLANGID_MIN_VALUE );
 		}
-		getPKey().setRequiredISOLangId(value);
+		requiredISOLangId = value;
 	}
 
 	@Override

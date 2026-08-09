@@ -204,7 +204,7 @@ public class CFSecBuffSecUser
 				1,
 				"value" );
 		}
-		getPKey().setRequiredSecUserId(value);
+		requiredSecUserId = value;
 	}
 
 	@Override
