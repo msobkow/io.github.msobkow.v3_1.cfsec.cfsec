@@ -79,6 +79,21 @@ public class CFSecBuffSecSysRole
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return(requiredSecSysRoleId);
+	}
+
+	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecSysRoleId",
+				1,
+				"value" );
+		}
+		requiredSecSysRoleId = value;
+	}
+
+	@Override
 	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -124,36 +139,6 @@ public class CFSecBuffSecSysRole
 			List<ICFSecSecSysRoleMemb> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(requiredSecSysRoleId);
-	}
-
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSysRoleId",
-				1,
-				"value" );
-		}
-		requiredSecSysRoleId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
-		return(requiredSecSysRoleId);
-	}
-
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSysRoleId",
-				1,
-				"value" );
-		}
-		requiredSecSysRoleId = value;
 	}
 
 	@Override

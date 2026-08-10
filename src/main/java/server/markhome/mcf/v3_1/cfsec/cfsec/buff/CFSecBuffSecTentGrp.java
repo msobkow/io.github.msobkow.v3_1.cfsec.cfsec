@@ -81,6 +81,21 @@ public class CFSecBuffSecTentGrp
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
+		return(requiredSecTentGrpId);
+	}
+
+	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentGrpId",
+				1,
+				"value" );
+		}
+		requiredSecTentGrpId = value;
+	}
+
+	@Override
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -102,36 +117,6 @@ public class CFSecBuffSecTentGrp
 			List<ICFSecSecTentGrpMemb> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(requiredSecTentGrpId);
-	}
-
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentGrpId",
-				1,
-				"value" );
-		}
-		requiredSecTentGrpId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(requiredSecTentGrpId);
-	}
-
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentGrpId",
-				1,
-				"value" );
-		}
-		requiredSecTentGrpId = value;
 	}
 
 	@Override

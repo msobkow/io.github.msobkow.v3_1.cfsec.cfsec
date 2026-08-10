@@ -190,7 +190,7 @@ public class CFSecBuffISOCtryLangH
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return(requiredISOCtryId);
+		return(getPKey().getRequiredISOCtryId());
 	}
 
 	@Override
@@ -203,12 +203,12 @@ public class CFSecBuffISOCtryLangH
 				value,
 				ICFSecPubISOCtryLang.ISOCTRYID_MIN_VALUE );
 		}
-		requiredISOCtryId = value;
+		getPKey().setRequiredISOCtryId(value);
 	}
 
 	@Override
 	public short getRequiredISOLangId() {
-		return(requiredISOLangId);
+		return(getPKey().getRequiredISOLangId());
 	}
 
 	@Override
@@ -221,7 +221,7 @@ public class CFSecBuffISOCtryLangH
 				value,
 				ICFSecPubISOCtryLang.ISOLANGID_MIN_VALUE );
 		}
-		requiredISOLangId = value;
+		getPKey().setRequiredISOLangId(value);
 	}
 
     @Override

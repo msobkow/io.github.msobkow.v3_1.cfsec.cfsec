@@ -81,6 +81,21 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+		return(requiredSecTentRoleId);
+	}
+
+	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecTentRoleId",
+				1,
+				"value" );
+		}
+		requiredSecTentRoleId = value;
+	}
+
+	@Override
 	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -102,36 +117,6 @@ public class CFSecBuffSecTentRole
 			List<ICFSecSecTentRoleMemb> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return(requiredSecTentRoleId);
-	}
-
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentRoleId",
-				1,
-				"value" );
-		}
-		requiredSecTentRoleId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
-		return(requiredSecTentRoleId);
-	}
-
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecTentRoleId",
-				1,
-				"value" );
-		}
-		requiredSecTentRoleId = value;
 	}
 
 	@Override

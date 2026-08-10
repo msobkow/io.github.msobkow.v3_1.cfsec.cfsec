@@ -194,7 +194,7 @@ public class CFSecBuffSecClusRoleH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
-		return(requiredSecClusRoleId);
+		return(getPKey().getRequiredSecClusRoleId());
 	}
 
 	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
@@ -204,7 +204,7 @@ public class CFSecBuffSecClusRoleH
 				1,
 				"value" );
 		}
-		requiredSecClusRoleId = value;
+		getPKey().setRequiredSecClusRoleId(value);
 	}
 
 	@Override

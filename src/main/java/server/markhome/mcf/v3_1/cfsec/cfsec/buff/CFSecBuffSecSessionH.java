@@ -140,7 +140,7 @@ public class CFSecBuffSecSessionH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return(requiredSecSessionId);
+		return(getPKey().getRequiredSecSessionId());
 	}
 
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
@@ -150,7 +150,7 @@ public class CFSecBuffSecSessionH
 				1,
 				"value" );
 		}
-		requiredSecSessionId = value;
+		getPKey().setRequiredSecSessionId(value);
 	}
 
 	@Override

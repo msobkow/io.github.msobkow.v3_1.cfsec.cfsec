@@ -190,7 +190,7 @@ public class CFSecBuffISOCtryCcyH
 
 	@Override
 	public short getRequiredISOCtryId() {
-		return(requiredISOCtryId);
+		return(getPKey().getRequiredISOCtryId());
 	}
 
 	@Override
@@ -203,12 +203,12 @@ public class CFSecBuffISOCtryCcyH
 				value,
 				ICFSecPubISOCtryCcy.ISOCTRYID_MIN_VALUE );
 		}
-		requiredISOCtryId = value;
+		getPKey().setRequiredISOCtryId(value);
 	}
 
 	@Override
 	public short getRequiredISOCcyId() {
-		return(requiredISOCcyId);
+		return(getPKey().getRequiredISOCcyId());
 	}
 
 	@Override
@@ -221,7 +221,7 @@ public class CFSecBuffISOCtryCcyH
 				value,
 				ICFSecPubISOCtryCcy.ISOCCYID_MIN_VALUE );
 		}
-		requiredISOCcyId = value;
+		getPKey().setRequiredISOCcyId(value);
 	}
 
     @Override

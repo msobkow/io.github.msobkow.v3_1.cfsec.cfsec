@@ -190,7 +190,7 @@ public class CFSecBuffSecClusGrpMembH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(requiredSecClusGrpId);
+		return(getPKey().getRequiredSecClusGrpId());
 	}
 
 	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
@@ -200,12 +200,12 @@ public class CFSecBuffSecClusGrpMembH
 				1,
 				"value" );
 		}
-		requiredSecClusGrpId = value;
+		getPKey().setRequiredSecClusGrpId(value);
 	}
 
 	@Override
 	public String getRequiredLoginId() {
-		return(requiredLoginId);
+		return(getPKey().getRequiredLoginId());
 	}
 
 	public void setRequiredLoginId( String value ) {
@@ -223,7 +223,7 @@ public class CFSecBuffSecClusGrpMembH
 				value.length(),
 				32 );
 		}
-		requiredLoginId = value;
+		getPKey().setRequiredLoginId(value);
 	}
 
     @Override

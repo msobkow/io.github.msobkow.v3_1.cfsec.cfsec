@@ -135,7 +135,7 @@ public class CFSecBuffSecUserPasswordH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(requiredSecUserId);
+		return(getPKey().getRequiredSecUserId());
 	}
 
 	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
@@ -145,7 +145,7 @@ public class CFSecBuffSecUserPasswordH
 				1,
 				"value" );
 		}
-		requiredSecUserId = value;
+		getPKey().setRequiredSecUserId(value);
 	}
 
 	@Override

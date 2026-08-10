@@ -107,24 +107,6 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
-	public int getRequiredTableInfoId() {
-		return(requiredTableInfoId);
-	}
-
-	@Override
-	public void setRequiredTableInfoId( int value ) {
-		if( value < ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredTableInfoId",
-				1,
-				"value",
-				value,
-				ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE );
-		}
-		requiredTableInfoId = value;
-	}
-
-	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}

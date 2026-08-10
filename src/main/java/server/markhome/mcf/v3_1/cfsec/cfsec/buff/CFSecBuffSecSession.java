@@ -94,21 +94,6 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSessionId() {
-		return(requiredSecSessionId);
-	}
-
-	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecSessionId",
-				1,
-				"value" );
-		}
-		requiredSecSessionId = value;
-	}
-
-	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}

@@ -194,7 +194,7 @@ public class CFSecBuffSecTentGrpH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return(requiredSecTentGrpId);
+		return(getPKey().getRequiredSecTentGrpId());
 	}
 
 	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
@@ -204,7 +204,7 @@ public class CFSecBuffSecTentGrpH
 				1,
 				"value" );
 		}
-		requiredSecTentGrpId = value;
+		getPKey().setRequiredSecTentGrpId(value);
 	}
 
 	@Override

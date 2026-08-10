@@ -81,6 +81,21 @@ public class CFSecBuffSecClusGrp
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
+		return(requiredSecClusGrpId);
+	}
+
+	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecClusGrpId",
+				1,
+				"value" );
+		}
+		requiredSecClusGrpId = value;
+	}
+
+	@Override
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -102,36 +117,6 @@ public class CFSecBuffSecClusGrp
 			List<ICFSecSecClusGrpMemb> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(requiredSecClusGrpId);
-	}
-
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecClusGrpId",
-				1,
-				"value" );
-		}
-		requiredSecClusGrpId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
-		return(requiredSecClusGrpId);
-	}
-
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecClusGrpId",
-				1,
-				"value" );
-		}
-		requiredSecClusGrpId = value;
 	}
 
 	@Override

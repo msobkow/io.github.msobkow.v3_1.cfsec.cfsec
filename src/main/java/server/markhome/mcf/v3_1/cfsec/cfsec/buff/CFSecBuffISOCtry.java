@@ -81,6 +81,24 @@ public class CFSecBuffISOCtry
 	}
 
 	@Override
+	public short getRequiredISOCtryId() {
+		return(requiredISOCtryId);
+	}
+
+	@Override
+	public void setRequiredISOCtryId( short value ) {
+		if( value < ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredISOCtryId",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
+		}
+		requiredISOCtryId = value;
+	}
+
+	@Override
 	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -126,42 +144,6 @@ public class CFSecBuffISOCtry
 			List<ICFSecISOCtryLang> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public short getRequiredISOCtryId() {
-		return(requiredISOCtryId);
-	}
-
-	@Override
-	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
-		}
-		requiredISOCtryId = value;
-	}
-
-	@Override
-	public short getRequiredISOCtryId() {
-		return(requiredISOCtryId);
-	}
-
-	@Override
-	public void setRequiredISOCtryId( short value ) {
-		if( value < ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredISOCtryId",
-				1,
-				"value",
-				value,
-				ICFSecPubISOCtry.ISOCTRYID_MIN_VALUE );
-		}
-		requiredISOCtryId = value;
 	}
 
 	@Override

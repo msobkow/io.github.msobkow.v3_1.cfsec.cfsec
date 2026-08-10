@@ -82,6 +82,21 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
 	public ICFSecSecUser getRequiredContainerUser() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -128,36 +143,6 @@ public class CFSecBuffSecUserPWReset
 		else {
 			setRequiredSecUserId(argObj.getRequiredSecUserId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(requiredSecUserId);
-	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		requiredSecUserId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return(requiredSecUserId);
-	}
-
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSecUserId",
-				1,
-				"value" );
-		}
-		requiredSecUserId = value;
 	}
 
 	@Override
