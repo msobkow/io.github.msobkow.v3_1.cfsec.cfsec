@@ -124,7 +124,13 @@ public class CFSecBuffSecSession
 
 	@Override
 	public void setRequiredContainerSecUser(CFLibDbKeyHash256 argSecUserId) {
+		ICFSecSecUser found = getRequiredContainerSecUser(argSecUserId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
 		setRequiredSecUserId(argSecUserId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSecUser-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+		}
 	}
 
 	@Override
@@ -173,7 +179,13 @@ public class CFSecBuffSecSession
 
 	@Override
 	public void setRequiredParentSecProxy(CFLibDbKeyHash256 argSecProxyId) {
+		ICFSecSecUser found = getRequiredParentSecProxy(argSecProxyId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
 		setOptionalSecProxyId(argSecProxyId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentSecProxy-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+		}
 	}
 
 	@Override

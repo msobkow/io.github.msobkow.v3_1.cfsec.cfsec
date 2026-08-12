@@ -133,7 +133,13 @@ public class CFSecBuffSecTentGrpMemb
 
 	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecTentGrpId) {
+		ICFSecSecTentGrp found = getRequiredContainerGroup(argSecTentGrpId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecTentGrp) && (!found instanceof ICFSecProtSecTentGrp))) {
 		setRequiredSecTentGrpId(argSecTentGrpId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerGroup-args", "ICFSecSecTentGrpICFSecProtSecTentGrp", found);
+		}
 	}
 
 	@Override
@@ -172,7 +178,13 @@ public class CFSecBuffSecTentGrpMemb
 
 	@Override
 	public void setRequiredParentUser(String argLoginId) {
+		ICFSecSecUser found = getRequiredParentUser(argLoginId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
 		setRequiredLoginId(argLoginId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentUser-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+		}
 	}
 
 	@Override

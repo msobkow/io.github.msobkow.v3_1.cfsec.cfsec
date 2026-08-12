@@ -133,7 +133,13 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
+		ICFSecSecSysRole found = getRequiredContainerSysRole(argSecSysRoleId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecSysRole) && (!found instanceof ICFSecProtSecSysRole) && (!found instanceof ICFSecPubSecSysRole))) {
 		setRequiredSecSysRoleId(argSecSysRoleId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysRole-args", "ICFSecSecSysRoleICFSecProtSecSysRoleICFSecPubSecSysRole", found);
+		}
 	}
 
 	@Override
@@ -182,7 +188,13 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredParentEnableGroup(String argEnableName) {
+		ICFSecSecSysGrp found = getRequiredParentEnableGroup(argEnableName);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecSysGrp) && (!found instanceof ICFSecProtSecSysGrp) && (!found instanceof ICFSecPubSecSysGrp))) {
 		setRequiredEnableName(argEnableName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentEnableGroup-args", "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp", found);
+		}
 	}
 
 	@Override

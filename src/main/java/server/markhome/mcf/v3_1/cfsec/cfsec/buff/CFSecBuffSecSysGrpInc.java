@@ -133,7 +133,13 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecSysGrpId) {
+		ICFSecSecSysGrp found = getRequiredContainerGroup(argSecSysGrpId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecSysGrp) && (!found instanceof ICFSecProtSecSysGrp) && (!found instanceof ICFSecPubSecSysGrp))) {
 		setRequiredSecSysGrpId(argSecSysGrpId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerGroup-args", "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp", found);
+		}
 	}
 
 	@Override
@@ -182,7 +188,13 @@ public class CFSecBuffSecSysGrpInc
 
 	@Override
 	public void setRequiredParentSubGroup(String argInclName) {
+		ICFSecSecSysGrp found = getRequiredParentSubGroup(argInclName);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecSysGrp) && (!found instanceof ICFSecProtSecSysGrp) && (!found instanceof ICFSecPubSecSysGrp))) {
 		setRequiredInclName(argInclName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentSubGroup-args", "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp", found);
+		}
 	}
 
 	@Override

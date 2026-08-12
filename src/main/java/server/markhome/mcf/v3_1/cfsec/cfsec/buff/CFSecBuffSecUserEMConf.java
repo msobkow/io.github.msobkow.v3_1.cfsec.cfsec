@@ -114,7 +114,13 @@ public class CFSecBuffSecUserEMConf
 
 	@Override
 	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
+		ICFSecSecUser found = getRequiredContainerUser(argSecUserId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
 		setRequiredSecUserId(argSecUserId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerUser-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+		}
 	}
 
 	@Override

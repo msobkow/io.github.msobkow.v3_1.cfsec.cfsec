@@ -133,7 +133,13 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecTentRoleId) {
+		ICFSecSecTentRole found = getRequiredContainerRole(argSecTentRoleId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecTentRole) && (!found instanceof ICFSecProtSecTentRole))) {
 		setRequiredSecTentRoleId(argSecTentRoleId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerRole-args", "ICFSecSecTentRoleICFSecProtSecTentRole", found);
+		}
 	}
 
 	@Override
@@ -172,7 +178,13 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setRequiredParentUser(String argLoginId) {
+		ICFSecSecUser found = getRequiredParentUser(argLoginId);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
 		setRequiredLoginId(argLoginId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentUser-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+		}
 	}
 
 	@Override

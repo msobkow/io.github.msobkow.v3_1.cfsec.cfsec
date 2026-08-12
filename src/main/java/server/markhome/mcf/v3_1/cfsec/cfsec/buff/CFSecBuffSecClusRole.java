@@ -190,7 +190,13 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
+		ICFSecCluster found = getRequiredOwnerCluster(argClusterId);
+		if (found == null || (found != null && ((!found instanceof ICFSecCluster) && (!found instanceof ICFSecProtCluster) && (!found instanceof ICFSecPubCluster))) {
 		setRequiredClusterId(argClusterId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerCluster-args", "ICFSecClusterICFSecProtClusterICFSecPubCluster", found);
+		}
 	}
 
 	@Override
@@ -239,7 +245,13 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public void setRequiredContainerSysRole(String argName) {
+		ICFSecSecSysGrp found = getRequiredContainerSysRole(argName);
+		if (found == null || (found != null && ((!found instanceof ICFSecSecSysGrp) && (!found instanceof ICFSecProtSecSysGrp) && (!found instanceof ICFSecPubSecSysGrp))) {
 		setRequiredName(argName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysRole-args", "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp", found);
+		}
 	}
 
 	@Override

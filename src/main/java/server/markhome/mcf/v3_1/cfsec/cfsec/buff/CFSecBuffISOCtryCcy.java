@@ -131,7 +131,13 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
+		ICFSecISOCtry found = getRequiredContainerCtry(argISOCtryId);
+		if (found == null || (found != null && ((!found instanceof ICFSecISOCtry) && (!found instanceof ICFSecProtISOCtry) && (!found instanceof ICFSecPubISOCtry))) {
 		setRequiredISOCtryId(argISOCtryId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCtry-args", "ICFSecISOCtryICFSecProtISOCtryICFSecPubISOCtry", found);
+		}
 	}
 
 	@Override
@@ -180,7 +186,13 @@ public class CFSecBuffISOCtryCcy
 
 	@Override
 	public void setRequiredParentCcy(short argISOCcyId) {
+		ICFSecISOCcy found = getRequiredParentCcy(argISOCcyId);
+		if (found == null || (found != null && ((!found instanceof ICFSecISOCcy) && (!found instanceof ICFSecProtISOCcy) && (!found instanceof ICFSecPubISOCcy))) {
 		setRequiredISOCcyId(argISOCcyId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentCcy-args", "ICFSecISOCcyICFSecProtISOCcyICFSecPubISOCcy", found);
+		}
 	}
 
 	@Override

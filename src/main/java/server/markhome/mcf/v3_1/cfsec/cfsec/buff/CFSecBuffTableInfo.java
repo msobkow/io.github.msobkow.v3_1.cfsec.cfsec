@@ -137,7 +137,13 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
+		ICFSecTableInfo found = getOptionalParentSuperRef(argSuperName);
+		if (found == null || (found != null && ((!found instanceof ICFSecTableInfo) && (!found instanceof ICFSecProtTableInfo) && (!found instanceof ICFSecPubTableInfo))) {
 		setOptionalSuperName(argSuperName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalParentSuperRef-args", "ICFSecTableInfoICFSecProtTableInfoICFSecPubTableInfo", found);
+		}
 	}
 
 	@Override

@@ -214,7 +214,13 @@ public class CFSecBuffTenant
 
 	@Override
 	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		ICFSecCluster found = getRequiredContainerCluster(argClusterId);
+		if (found == null || (found != null && ((!found instanceof ICFSecCluster) && (!found instanceof ICFSecProtCluster) && (!found instanceof ICFSecPubCluster))) {
 		setRequiredClusterId(argClusterId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCluster-args", "ICFSecClusterICFSecProtClusterICFSecPubCluster", found);
+		}
 	}
 
 	@Override

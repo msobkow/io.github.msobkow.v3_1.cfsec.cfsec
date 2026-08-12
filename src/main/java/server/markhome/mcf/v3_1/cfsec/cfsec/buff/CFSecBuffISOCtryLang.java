@@ -131,7 +131,13 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredContainerCtry(short argISOCtryId) {
+		ICFSecISOCtry found = getRequiredContainerCtry(argISOCtryId);
+		if (found == null || (found != null && ((!found instanceof ICFSecISOCtry) && (!found instanceof ICFSecProtISOCtry) && (!found instanceof ICFSecPubISOCtry))) {
 		setRequiredISOCtryId(argISOCtryId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCtry-args", "ICFSecISOCtryICFSecProtISOCtryICFSecPubISOCtry", found);
+		}
 	}
 
 	@Override
@@ -180,7 +186,13 @@ public class CFSecBuffISOCtryLang
 
 	@Override
 	public void setRequiredParentLang(short argISOLangId) {
+		ICFSecISOLang found = getRequiredParentLang(argISOLangId);
+		if (found == null || (found != null && ((!found instanceof ICFSecISOLang) && (!found instanceof ICFSecProtISOLang) && (!found instanceof ICFSecPubISOLang))) {
 		setRequiredISOLangId(argISOLangId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentLang-args", "ICFSecISOLangICFSecProtISOLangICFSecPubISOLang", found);
+		}
 	}
 
 	@Override
