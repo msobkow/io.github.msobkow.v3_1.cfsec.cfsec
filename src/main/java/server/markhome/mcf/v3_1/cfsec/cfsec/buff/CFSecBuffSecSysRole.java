@@ -95,11 +95,11 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysRoleEnablesTable targetTable = targetBackingSchema.getTableSecSysRoleEnables();
+		ICFSecSecSysRoleEnablesTable targetTable = targetBackingCFSec.getTableSecSysRoleEnables();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
 		}
@@ -119,11 +119,11 @@ public class CFSecBuffSecSysRole
 
 	@Override
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysRoleMembTable targetTable = targetBackingSchema.getTableSecSysRoleMemb();
+		ICFSecSecSysRoleMembTable targetTable = targetBackingCFSec.getTableSecSysRoleMemb();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
 		}

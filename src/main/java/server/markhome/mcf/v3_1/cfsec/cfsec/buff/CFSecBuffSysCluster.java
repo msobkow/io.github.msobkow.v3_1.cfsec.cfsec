@@ -115,16 +115,38 @@ public class CFSecBuffSysCluster
 
 	@Override
 	public ICFSecCluster getRequiredContainerCluster() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecClusterTable targetTable = targetBackingSchema.getTableCluster();
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
 		}
 		ICFSecCluster targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecCluster found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClusterId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
+		setRequiredClusterId(argClusterId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");
+		}
 	}
 
 	@Override
@@ -144,6 +166,28 @@ public class CFSecBuffSysCluster
 		}
 		else {
 			setRequiredClusterId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId) {
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+		}
+		ICFSecPubClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster", 0, "ICFSecPubSchema.getBackingCFSec().getTableCluster()");
+		}
+		ICFSecPubCluster found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClusterId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
+		setRequiredClusterId(argClusterId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");
 		}
 	}
 

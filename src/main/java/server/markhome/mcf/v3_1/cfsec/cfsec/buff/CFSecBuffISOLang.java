@@ -102,11 +102,11 @@ public class CFSecBuffISOLang
 
 	@Override
 	public List<ICFSecISOCtryLang> getOptionalChildrenCtry() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
+		ICFSecISOCtryLangTable targetTable = targetBackingCFSec.getTableISOCtryLang();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}

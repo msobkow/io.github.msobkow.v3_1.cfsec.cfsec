@@ -123,16 +123,35 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public ICFSecTableInfo getOptionalParentSuperRef() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecTableInfoTable targetTable = targetBackingSchema.getTableTableInfo();
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
 		}
 		ICFSecTableInfo targetRec = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSuperName());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalParentSuperRef(String argSuperName) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
+		if (found == null || (found != null && ((found instanceof ICFSecTableInfo) || (found instanceof ICFSecProtTableInfo) || (found instanceof ICFSecPubTableInfo)))) {
+		setOptionalSuperName(argSuperName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalParentSuperRef-args", "found", found, "ICFSecTableInfoICFSecProtTableInfoICFSecPubTableInfo");
+		}
 	}
 
 	@Override
@@ -156,6 +175,25 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
+	public void setOptionalParentSuperRef(String argSuperName) {
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+		}
+		ICFSecPubTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecPubSchema.getBackingCFSec().getTableTableInfo()");
+		}
+		ICFSecPubTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
+		if (found == null || (found != null && ((found instanceof ICFSecTableInfo) || (found instanceof ICFSecProtTableInfo) || (found instanceof ICFSecPubTableInfo)))) {
+		setOptionalSuperName(argSuperName);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalParentSuperRef-args", "found", found, "ICFSecTableInfoICFSecProtTableInfoICFSecPubTableInfo");
+		}
+	}
+
+	@Override
 	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
 		if(argObj == null) {
 			setOptionalSuperName(null);
@@ -167,11 +205,11 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public List<ICFSecTableInfo> getOptionalChildrenSubRefs() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecTableInfoTable targetTable = targetBackingSchema.getTableTableInfo();
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
 		}

@@ -100,11 +100,11 @@ public class CFSecBuffISOCtry
 
 	@Override
 	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCtryCcyTable targetTable = targetBackingSchema.getTableISOCtryCcy();
+		ICFSecISOCtryCcyTable targetTable = targetBackingCFSec.getTableISOCtryCcy();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
@@ -124,11 +124,11 @@ public class CFSecBuffISOCtry
 
 	@Override
 	public List<ICFSecISOCtryLang> getOptionalComponentsLang() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCtryLangTable targetTable = targetBackingSchema.getTableISOCtryLang();
+		ICFSecISOCtryLangTable targetTable = targetBackingCFSec.getTableISOCtryLang();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}

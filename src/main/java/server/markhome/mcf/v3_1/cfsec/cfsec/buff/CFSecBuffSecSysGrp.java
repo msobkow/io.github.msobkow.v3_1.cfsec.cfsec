@@ -97,11 +97,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsIncByGrp", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysGrpIncTable targetTable = targetBackingSchema.getTableSecSysGrpInc();
+		ICFSecSecSysGrpIncTable targetTable = targetBackingCFSec.getTableSecSysGrpInc();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsIncByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpInc()");
 		}
@@ -121,11 +121,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysGrpMembTable targetTable = targetBackingSchema.getTableSecSysGrpMemb();
+		ICFSecSecSysGrpMembTable targetTable = targetBackingCFSec.getTableSecSysGrpMemb();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpMemb()");
 		}
@@ -145,11 +145,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public ICFSecSecSysRole getOptionalComponentsImplSysRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysRoleTable targetTable = targetBackingSchema.getTableSecSysRole();
+		ICFSecSecSysRoleTable targetTable = targetBackingCFSec.getTableSecSysRole();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
 		}
@@ -214,11 +214,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusGrp", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecClusGrpTable targetTable = targetBackingSchema.getTableSecClusGrp();
+		ICFSecSecClusGrpTable targetTable = targetBackingCFSec.getTableSecClusGrp();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusGrp()");
 		}
@@ -238,11 +238,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentGrp", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecTentGrpTable targetTable = targetBackingSchema.getTableSecTentGrp();
+		ICFSecSecTentGrpTable targetTable = targetBackingCFSec.getTableSecTentGrp();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
 		}
@@ -262,11 +262,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecClusRoleTable targetTable = targetBackingSchema.getTableSecClusRole();
+		ICFSecSecClusRoleTable targetTable = targetBackingCFSec.getTableSecClusRole();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRole()");
 		}
@@ -286,11 +286,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecTentRoleTable targetTable = targetBackingSchema.getTableSecTentRole();
+		ICFSecSecTentRoleTable targetTable = targetBackingCFSec.getTableSecTentRole();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
 		}
@@ -310,11 +310,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSysGrpByName", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysGrpIncTable targetTable = targetBackingSchema.getTableSecSysGrpInc();
+		ICFSecSecSysGrpIncTable targetTable = targetBackingCFSec.getTableSecSysGrpInc();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSysGrpByName", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpInc()");
 		}
@@ -334,11 +334,11 @@ public class CFSecBuffSecSysGrp
 
 	@Override
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRoleByEnableName", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecSecSysRoleEnablesTable targetTable = targetBackingSchema.getTableSecSysRoleEnables();
+		ICFSecSecSysRoleEnablesTable targetTable = targetBackingCFSec.getTableSecSysRoleEnables();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRoleByEnableName", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
 		}

@@ -310,7 +310,7 @@ public interface ICFSecSchema
 		
 		public ICFSecSchema getCFSecSchema();
 		public void setCFSecSchema(ICFSecSchema schema);
-		
+
 		public static int doInitClassMapEntries(int value) {
 			if (ICFSecSchema.entries.isEmpty()) {
 				ICFSecSchema.ClassMapEntry entry;
