@@ -133,12 +133,23 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId) {
-		ICFSecSecSysRole found = getRequiredContainerSysRole(argSecSysRoleId);
-		if (found == null || (found != null && ((!found instanceof ICFSecSecSysRole) && (!found instanceof ICFSecProtSecSysRole) && (!found instanceof ICFSecPubSecSysRole))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleTable targetTable = targetBackingSchema.getTableSecSysRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
+		}
+		ICFSecSecSysRole found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecSysRoleId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecSecSysRole) || (found instanceof ICFSecProtSecSysRole) || (found instanceof ICFSecPubSecSysRole)) {
 		setRequiredSecSysRoleId(argSecSysRoleId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysRole-args", "ICFSecSecSysRoleICFSecProtSecSysRoleICFSecPubSecSysRole", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysRole-args", "found", found, "ICFSecSecSysRoleICFSecProtSecSysRoleICFSecPubSecSysRole");
 		}
 	}
 
@@ -188,12 +199,23 @@ public class CFSecBuffSecSysRoleEnables
 
 	@Override
 	public void setRequiredParentEnableGroup(String argEnableName) {
-		ICFSecSecSysGrp found = getRequiredParentEnableGroup(argEnableName);
-		if (found == null || (found != null && ((!found instanceof ICFSecSecSysGrp) && (!found instanceof ICFSecProtSecSysGrp) && (!found instanceof ICFSecPubSecSysGrp))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpTable targetTable = targetBackingSchema.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
+		}
+		ICFSecSecSysGrp found = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argEnableName);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentEnableGroup-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecSecSysGrp) || (found instanceof ICFSecProtSecSysGrp) || (found instanceof ICFSecPubSecSysGrp)) {
 		setRequiredEnableName(argEnableName);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentEnableGroup-args", "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentEnableGroup-args", "found", found, "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp");
 		}
 	}
 

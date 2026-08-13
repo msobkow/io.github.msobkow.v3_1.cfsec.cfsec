@@ -133,12 +133,23 @@ public class CFSecBuffSecClusGrpMemb
 
 	@Override
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecClusGrpId) {
-		ICFSecSecClusGrp found = getRequiredContainerGroup(argSecClusGrpId);
-		if (found == null || (found != null && ((!found instanceof ICFSecSecClusGrp) && (!found instanceof ICFSecProtSecClusGrp))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusGrpTable targetTable = targetBackingSchema.getTableSecClusGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusGrp()");
+		}
+		ICFSecSecClusGrp found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecClusGrpId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerGroup-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecSecClusGrp) || (found instanceof ICFSecProtSecClusGrp)) {
 		setRequiredSecClusGrpId(argSecClusGrpId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerGroup-args", "ICFSecSecClusGrpICFSecProtSecClusGrp", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerGroup-args", "found", found, "ICFSecSecClusGrpICFSecProtSecClusGrp");
 		}
 	}
 
@@ -178,12 +189,23 @@ public class CFSecBuffSecClusGrpMemb
 
 	@Override
 	public void setRequiredParentUser(String argLoginId) {
-		ICFSecSecUser found = getRequiredParentUser(argLoginId);
-		if (found == null || (found != null && ((!found instanceof ICFSecSecUser) && (!found instanceof ICFSecProtSecUser) && (!found instanceof ICFSecPubSecUser))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingSchema.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser found = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argLoginId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentUser-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecSecUser) || (found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
 		setRequiredLoginId(argLoginId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentUser-args", "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentUser-args", "found", found, "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser");
 		}
 	}
 
