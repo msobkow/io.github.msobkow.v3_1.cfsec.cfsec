@@ -176,15 +176,15 @@ public class CFSecBuffTableInfo
 
 	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecPubSchema.getBackingCFSec().getTableTableInfo()");
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
 		}
-		ICFSecPubTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
+		ICFSecTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
 		if (found == null || (found != null && ((found instanceof ICFSecTableInfo) || (found instanceof ICFSecProtTableInfo) || (found instanceof ICFSecPubTableInfo)))) {
 		setOptionalSuperName(argSuperName);
 		}

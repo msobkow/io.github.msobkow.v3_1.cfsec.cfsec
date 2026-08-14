@@ -232,15 +232,15 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
@@ -320,15 +320,15 @@ public class CFSecBuffSecTentRole
 
 	@Override
 	public void setRequiredContainerSysRole(String argName) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
+		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecPubSchema.getBackingCFSec().getTableSecSysGrp()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
 		}
-		ICFSecPubSecSysGrp found = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argName);
+		ICFSecSecSysGrp found = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argName);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "found");
 		}

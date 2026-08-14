@@ -166,15 +166,15 @@ public class CFSecBuffSecSession
 
 	@Override
 	public void setRequiredContainerSecUser(CFLibDbKeyHash256 argSecUserId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser", 0, "ICFSecPubSchema.getBackingCFSec().getTableSecUser()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecPubSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecUserId);
+		ICFSecSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecUserId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser-args", 0, "found");
 		}
@@ -254,15 +254,15 @@ public class CFSecBuffSecSession
 
 	@Override
 	public void setRequiredParentSecProxy(CFLibDbKeyHash256 argSecProxyId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy", 0, "ICFSecPubSchema.getBackingCFSec().getTableSecUser()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecPubSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecProxyId);
+		ICFSecSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecProxyId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy-args", 0, "found");
 		}
