@@ -262,7 +262,7 @@ public class CFSecBuffTenant
 		}
 		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecCluster found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClusterId);
 		if (found == null) {

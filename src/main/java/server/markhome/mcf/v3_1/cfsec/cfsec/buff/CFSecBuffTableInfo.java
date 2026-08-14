@@ -182,7 +182,7 @@ public class CFSecBuffTableInfo
 		}
 		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
+			throw new CFLibNullArgumentException(getClass(), "setOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
 		if (found == null || (found != null && ((found instanceof ICFSecTableInfo) || (found instanceof ICFSecProtTableInfo) || (found instanceof ICFSecPubTableInfo)))) {

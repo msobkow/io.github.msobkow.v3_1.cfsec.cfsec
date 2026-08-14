@@ -172,7 +172,7 @@ public class CFSecBuffSecSession
 		}
 		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecUserId);
 		if (found == null) {
@@ -260,7 +260,7 @@ public class CFSecBuffSecSession
 		}
 		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec()");
 		}
 		ICFSecSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecProxyId);
 		if (found == null) {

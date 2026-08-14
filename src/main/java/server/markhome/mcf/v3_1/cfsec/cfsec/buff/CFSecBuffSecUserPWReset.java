@@ -153,38 +153,6 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId) {
-		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser-args", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
-		}
-		ICFSecSecUser found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSecUserId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerUser-args", 0, "found");
-		}
-		else if ((found instanceof ICFSecSecUser) || (found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
-		setRequiredSecUserId(argSecUserId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerUser-args", "found", found, "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
-		}
-		else {
-			setRequiredSecUserId(argObj.getRequiredSecUserId());
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

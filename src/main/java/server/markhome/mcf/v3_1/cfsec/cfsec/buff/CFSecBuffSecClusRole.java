@@ -231,38 +231,6 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId) {
-		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCluster-args", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
-		}
-		ICFSecCluster found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClusterId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCluster-args", 0, "found");
-		}
-		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
-		setRequiredClusterId(argClusterId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCluster(ICFSecPubCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
-		}
-		else {
-			setRequiredClusterId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
 	public ICFSecSecSysGrp getRequiredContainerSysRole() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -310,38 +278,6 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
-		}
-		else {
-			setRequiredName(argObj.getRequiredName());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSysRole(String argName) {
-		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
-		}
-		ICFSecSecSysGrp found = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argName);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysRole-args", 0, "found");
-		}
-		else if ((found instanceof ICFSecSecSysGrp) || (found instanceof ICFSecProtSecSysGrp) || (found instanceof ICFSecPubSecSysGrp)) {
-		setRequiredName(argName);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysRole-args", "found", found, "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
