@@ -125,7 +125,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecISOCtry targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
+		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
 
@@ -139,7 +139,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCtry found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
+		ICFSecISOCtry found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry-args", 0, "found");
 		}
@@ -181,7 +181,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecPubSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecPubISOCtry found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
+		ICFSecPubISOCtry found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry-args", 0, "found");
 		}
@@ -213,7 +213,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOLang()");
 		}
-		ICFSecISOLang targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
+		ICFSecISOLang targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
 		return(targetRec);
 	}
 
@@ -227,7 +227,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOLang found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOLangId);
+		ICFSecISOLang found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOLangId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang-args", 0, "found");
 		}
@@ -269,7 +269,7 @@ public class CFSecBuffISOCtryLang
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang", 0, "ICFSecPubSchema.getBackingCFSec().getTableISOLang()");
 		}
-		ICFSecPubISOLang found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOLangId);
+		ICFSecPubISOLang found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOLangId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentLang-args", 0, "found");
 		}

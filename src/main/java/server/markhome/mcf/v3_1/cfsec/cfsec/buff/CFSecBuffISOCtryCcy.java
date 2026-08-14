@@ -125,7 +125,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecISOCtry targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
+		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
 
@@ -139,7 +139,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCtry found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
+		ICFSecISOCtry found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry-args", 0, "found");
 		}
@@ -181,7 +181,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry", 0, "ICFSecPubSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecPubISOCtry found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
+		ICFSecPubISOCtry found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCtryId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCtry-args", 0, "found");
 		}
@@ -213,7 +213,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCcy()");
 		}
-		ICFSecISOCcy targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
+		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
 	}
 
@@ -227,7 +227,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecISOCcy found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCcyId);
+		ICFSecISOCcy found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCcyId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy-args", 0, "found");
 		}
@@ -269,7 +269,7 @@ public class CFSecBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy", 0, "ICFSecPubSchema.getBackingCFSec().getTableISOCcy()");
 		}
-		ICFSecPubISOCcy found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCcyId);
+		ICFSecPubISOCcy found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argISOCcyId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentCcy-args", 0, "found");
 		}
