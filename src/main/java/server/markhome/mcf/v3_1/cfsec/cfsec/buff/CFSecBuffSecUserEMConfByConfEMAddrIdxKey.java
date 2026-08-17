@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConfByConfEMAddrIdxKey
 	implements ICFSecSecUserEMConfByConfEMAddrIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredConfirmEMailAddr;
+	protected $implJavaAtomType$ requiredConfirmEMailAddr;
 	public CFSecBuffSecUserEMConfByConfEMAddrIdxKey() {
 		requiredConfirmEMailAddr = ICFSecProtSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
 	}

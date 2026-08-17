@@ -94,7 +94,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@param	LoginId	The SecTentGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpMembByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSecTentGrpId,
+		ICFLibKeyHash256 argSecTentGrpId,
 		String argLoginId );
 	/**
 	 *	Delete the SecTentGrpMemb instance identified by the primary key.
@@ -113,7 +113,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@param	SecTentGrpId	The SecTentGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpMembByTentGrpIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSecTentGrpId );
+		ICFLibKeyHash256 argSecTentGrpId );
 
 	/**
 	 *	Delete the SecTentGrpMemb instances identified by the key TentGrpIdx.
@@ -167,7 +167,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrpMemb readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 SecTentGrpId,
 		String LoginId );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrpMemb readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 SecTentGrpId,
 		String LoginId );
 
 	/**
@@ -218,7 +218,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentGrpMemb[] readDerivedByTentGrpIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId );
+		ICFLibKeyHash256 SecTentGrpId );
 
 	/**
 	 *	Read an array of the derived SecTentGrpMemb record instances identified by the duplicate key UserIdx.
@@ -260,7 +260,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 SecTentGrpId,
 		String LoginId );
 
 	/**
@@ -295,7 +295,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@return All the specific SecTentGrpMemb instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecTentGrpMemb[] pageAllRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 priorSecTentGrpId,
+		ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId );
 
 	/**
@@ -313,7 +313,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 SecTentGrpId,
 		String LoginId );
 
 	/**
@@ -328,7 +328,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] readRecByTentGrpIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId );
+		ICFLibKeyHash256 SecTentGrpId );
 
 	/**
 	 *	Read an array of the specific SecTentGrpMemb record instances identified by the duplicate key UserIdx.
@@ -356,8 +356,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] pageRecByTentGrpIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentGrpId,
-		CFLibDbKeyHash256 priorSecTentGrpId,
+		ICFLibKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId );
 
 	/**
@@ -373,6 +373,6 @@ public interface ICFSecSecTentGrpMembTable
 	 */
 	ICFSecSecTentGrpMemb[] pageRecByUserIdx( ICFSecAuthorization Authorization,
 		String LoginId,
-		CFLibDbKeyHash256 priorSecTentGrpId,
+		ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId );
 }

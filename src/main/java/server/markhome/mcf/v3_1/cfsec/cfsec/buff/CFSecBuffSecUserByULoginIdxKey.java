@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserByULoginIdxKey
 	implements ICFSecSecUserByULoginIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredLoginId;
+	protected $implJavaAtomType$ requiredLoginId;
 	public CFSecBuffSecUserByULoginIdxKey() {
 		requiredLoginId = ICFSecPubSecUser.LOGINID_INIT_VALUE;
 	}

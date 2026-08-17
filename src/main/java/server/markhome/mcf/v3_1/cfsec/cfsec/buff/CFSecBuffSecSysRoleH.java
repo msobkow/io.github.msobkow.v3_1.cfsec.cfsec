@@ -58,7 +58,7 @@ public class CFSecBuffSecSysRoleH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredName;
 
     public CFSecBuffSecSysRoleH() {
             // The primary key member attributes are initialized on construction

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecClusGrpByClusterIdxKey
 	implements ICFSecSecClusGrpByClusterIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredClusterId;
+	protected $implJavaAtomType$ requiredClusterId;
 	public CFSecBuffSecClusGrpByClusterIdxKey() {
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
 	}

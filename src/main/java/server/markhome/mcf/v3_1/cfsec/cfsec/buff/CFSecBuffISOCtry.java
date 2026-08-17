@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCtry
 	implements ICFSecISOCtry, Comparable<Object>, Serializable
 {
-	protected short requiredISOCtryId;
+	protected $implJavaAtomType$ requiredISOCtryId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,8 +59,8 @@ public class CFSecBuffISOCtry
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredISOCode;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredISOCode;
+	protected $implJavaAtomType$ requiredName;
 
 	public CFSecBuffISOCtry() {
 		requiredISOCtryId = ICFSecPubISOCtry.ISOCTRYID_INIT_VALUE;
@@ -69,12 +69,12 @@ public class CFSecBuffISOCtry
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredISOCtryId);
 	}
 
 	@Override
-	public void setPKey(Short requiredISOCtryId) {
+	public void setPKey($implJavaOptAtomType$ requiredISOCtryId) {
 		if(requiredISOCtryId != null) {
 			this.requiredISOCtryId = requiredISOCtryId;
 		}

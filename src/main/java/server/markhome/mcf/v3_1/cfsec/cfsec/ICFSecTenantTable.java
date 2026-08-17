@@ -92,7 +92,7 @@ public interface ICFSecTenantTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteTenantByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the Tenant instances identified by the key ClusterIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFSecTenantTable
 	 *	@param	ClusterId	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClusterId );
+		ICFLibKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the Tenant instances identified by the key ClusterIdx.
@@ -122,7 +122,7 @@ public interface ICFSecTenantTable
 	 *	@param	TenantName	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClusterId,
+		ICFLibKeyHash256 argClusterId,
 		String argTenantName );
 
 	/**
@@ -147,7 +147,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Tenant record instance by primary key.
@@ -160,7 +160,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all Tenant instances.
@@ -182,7 +182,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Tenant record instances identified by the duplicate key ClusterIdx.
@@ -194,7 +194,7 @@ public interface ICFSecTenantTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecTenant[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Read the derived Tenant record instance identified by the unique key UNameIdx.
@@ -209,7 +209,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId,
+		ICFLibKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -225,7 +225,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Tenant record instance identified by the primary key.
@@ -240,7 +240,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Tenant record instances.
@@ -259,7 +259,7 @@ public interface ICFSecTenantTable
 	 *	@return All the specific Tenant instances in the database accessible for the Authorization.
 	 */
 	ICFSecTenant[] pageAllRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 priorId );
+		ICFLibKeyHash256 priorId );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the unique key IdIdx.
@@ -274,7 +274,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Tenant record instances identified by the duplicate key ClusterIdx.
@@ -288,7 +288,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the unique key UNameIdx.
@@ -305,7 +305,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId,
+		ICFLibKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -320,6 +320,6 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId,
-		CFLibDbKeyHash256 priorId );
+		ICFLibKeyHash256 ClusterId,
+		ICFLibKeyHash256 priorId );
 }

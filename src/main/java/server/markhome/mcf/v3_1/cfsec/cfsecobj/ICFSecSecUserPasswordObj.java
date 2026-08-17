@@ -159,18 +159,18 @@ public interface ICFSecSecUserPasswordObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	ICFLibKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	ICFLibKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param ICFLibKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( ICFLibKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -204,11 +204,11 @@ public interface ICFSecSecUserPasswordObj
 	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	ICFLibKeyHash256 getRequiredSecUserId();
 
 	/**
 	 *	Get the required LocalDateTime attribute PWSetStamp.

@@ -79,7 +79,7 @@ public interface ICFSecSecTentRoleMemb
 	public void setPKey(ICFSecSecTentRoleMembPKey pkey );
 	public ICFSecSecTentRole getRequiredContainerRole();
 
-	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecTentRoleId);
+	public void setRequiredContainerRole(ICFLibKeyHash256 argSecTentRoleId);
 
 	public void setRequiredContainerRole(ICFSecSecTentRole argObj);
 
@@ -95,9 +95,9 @@ public interface ICFSecSecTentRoleMemb
 
 	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
+	public ICFLibKeyHash256 getRequiredSecTentRoleId();
 
-	public void setRequiredSecTentRoleId(CFLibDbKeyHash256 value);
+	public void setRequiredSecTentRoleId(ICFLibKeyHash256 value);
 
 	public String getRequiredLoginId();
 

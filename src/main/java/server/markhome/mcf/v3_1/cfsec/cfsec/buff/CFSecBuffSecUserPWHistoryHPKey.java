@@ -57,8 +57,8 @@ public class CFSecBuffSecUserPWHistoryHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected CFLibDbKeyHash256 requiredSecUserId;
-	protected LocalDateTime requiredPWSetStamp;
+	protected $implJavaAtomType$ requiredSecUserId;
+	protected $implJavaAtomType$ requiredPWSetStamp;
 
 	public CFSecBuffSecUserPWHistoryHPKey() {
 		auditClusterId = ICFSecCluster.ID_INIT_VALUE;

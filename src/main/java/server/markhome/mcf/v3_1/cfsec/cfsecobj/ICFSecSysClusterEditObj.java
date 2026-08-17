@@ -117,11 +117,11 @@ public interface ICFSecSysClusterEditObj
 	void setRequiredSingletonId(int value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
+	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
 	 */
-	CFLibDbKeyHash256 getRequiredClusterId();
+	ICFLibKeyHash256 getRequiredClusterId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

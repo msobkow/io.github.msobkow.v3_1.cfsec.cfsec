@@ -396,12 +396,12 @@ public class CFSecSecSysRoleEnablesEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+	public $implJavaAtomType$ getRequiredSecSysRoleId() {
 		return( getPKey().getRequiredSecSysRoleId() );
 	}
 
 	@Override
-	public String getRequiredEnableName() {
+	public $implJavaAtomType$ getRequiredEnableName() {
 		return( getPKey().getRequiredEnableName() );
 	}
 

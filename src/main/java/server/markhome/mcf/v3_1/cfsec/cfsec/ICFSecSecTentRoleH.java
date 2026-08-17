@@ -70,8 +70,8 @@ public interface ICFSecSecTentRoleH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId();
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 requiredSecTentRoleId );
+	public ICFLibKeyHash256 getRequiredSecTentRoleId();
+	public void setRequiredSecTentRoleId( ICFLibKeyHash256 requiredSecTentRoleId );
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( CFLibDbKeyHash256 value );

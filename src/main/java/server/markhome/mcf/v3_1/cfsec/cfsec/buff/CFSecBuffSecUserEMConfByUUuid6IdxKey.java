@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConfByUUuid6IdxKey
 	implements ICFSecSecUserEMConfByUUuid6IdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibUuid6 requiredEMConfirmationUuid6;
+	protected $implJavaAtomType$ requiredEMConfirmationUuid6;
 	public CFSecBuffSecUserEMConfByUUuid6IdxKey() {
 	}
 

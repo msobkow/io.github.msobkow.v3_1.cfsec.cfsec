@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPasswordBySetStampIdxKey
 	implements ICFSecSecUserPasswordBySetStampIdxKey, Comparable<Object>, Serializable
 {
-	protected LocalDateTime requiredPWSetStamp;
+	protected $implJavaAtomType$ requiredPWSetStamp;
 	public CFSecBuffSecUserPasswordBySetStampIdxKey() {
 		requiredPWSetStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}

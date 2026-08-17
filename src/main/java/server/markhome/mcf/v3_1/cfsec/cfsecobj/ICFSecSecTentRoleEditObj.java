@@ -159,25 +159,25 @@ public interface ICFSecSecTentRoleEditObj
 	List<ICFSecSecTentRoleMembObj> getOptionalChildrenMembByRole();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecTentRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecTentRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecTentRoleId();
+	ICFLibKeyHash256 getRequiredSecTentRoleId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	Set the required ICFLibKeyHash256 attribute SecTentRoleId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecTentRoleId value to be applied.
+	 *	@param value The required ICFLibKeyHash256 attribute SecTentRoleId value to be applied.
 	 */
-	void setRequiredSecTentRoleId(CFLibDbKeyHash256 value);
+	void setRequiredSecTentRoleId(ICFLibKeyHash256 value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Get the required String attribute Name.

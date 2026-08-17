@@ -58,12 +58,12 @@ public class CFSecBuffSecUserH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredLoginId;
-	protected ICFSecPubSchema.SecAccountStatusEnum requiredAccountStatus;
-	protected String optionalDfltSysGrpName;
-	protected String optionalDfltClusGrpName;
-	protected String optionalDfltTentGrpName;
-	protected String requiredEMailAddress;
+	protected $implJavaAtomType$ requiredLoginId;
+	protected $implJavaAtomType$ requiredAccountStatus;
+	protected $implJavaAtomType$ optionalDfltSysGrpName;
+	protected $implJavaAtomType$ optionalDfltClusGrpName;
+	protected $implJavaAtomType$ optionalDfltTentGrpName;
+	protected $implJavaAtomType$ requiredEMailAddress;
 
     public CFSecBuffSecUserH() {
             // The primary key member attributes are initialized on construction

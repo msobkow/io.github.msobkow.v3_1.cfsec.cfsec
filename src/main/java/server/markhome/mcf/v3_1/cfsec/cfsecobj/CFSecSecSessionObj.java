@@ -49,7 +49,7 @@ public class CFSecSecSessionObj
 	protected boolean isNew;
 	protected ICFSecSecSessionEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecSession rec;
 	protected ICFSecSecUserObj requiredContainerSecUser;
 	protected ICFSecSecUserObj requiredParentSecProxy;
@@ -285,12 +285,12 @@ public class CFSecSecSessionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -339,7 +339,7 @@ public class CFSecSecSessionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSessionId() {
+	public $implJavaAtomType$ getRequiredSecSessionId() {
 		return( getPKey() );
 	}
 
@@ -379,22 +379,22 @@ public class CFSecSecSessionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getSecSessionRec().getRequiredSecUserId() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredStart() {
+	public $implJavaAtomType$ getRequiredStart() {
 		return( getSecSessionRec().getRequiredStart() );
 	}
 
 	@Override
-	public LocalDateTime getOptionalFinish() {
+	public $implJavaAtomType$ getOptionalFinish() {
 		return( getSecSessionRec().getOptionalFinish() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalSecProxyId() {
+	public $implJavaAtomType$ getOptionalSecProxyId() {
 		return( getSecSessionRec().getOptionalSecProxyId() );
 	}
 

@@ -101,7 +101,7 @@ public interface ICFSecSysClusterTable
 	 *	@param	ClusterId	The SysCluster key attribute of the instance generating the id.
 	 */
 	void deleteSysClusterByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClusterId );
+		ICFLibKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the SysCluster instances identified by the key ClusterIdx.
@@ -172,7 +172,7 @@ public interface ICFSecSysClusterTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSysCluster[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Read the specific SysCluster record instance identified by the primary key.
@@ -240,5 +240,5 @@ public interface ICFSecSysClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSysCluster[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 }

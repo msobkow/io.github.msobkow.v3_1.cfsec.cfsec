@@ -58,10 +58,10 @@ public class CFSecBuffISOCcyH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredISOCode;
-	protected String requiredName;
-	protected String optionalUnitSymbol;
-	protected short requiredPrecis;
+	protected $implJavaAtomType$ requiredISOCode;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalUnitSymbol;
+	protected $implJavaAtomType$ requiredPrecis;
 
     public CFSecBuffISOCcyH() {
             // The primary key member attributes are initialized on construction

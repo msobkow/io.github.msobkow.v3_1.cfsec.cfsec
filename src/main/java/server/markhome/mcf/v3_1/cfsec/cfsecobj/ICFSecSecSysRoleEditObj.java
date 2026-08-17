@@ -124,18 +124,18 @@ public interface ICFSecSecSysRoleEditObj
 	List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecSysRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecSysRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecSysRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecSysRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecSysRoleId();
+	ICFLibKeyHash256 getRequiredSecSysRoleId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecSysRoleId.
+	 *	Set the required ICFLibKeyHash256 attribute SecSysRoleId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecSysRoleId value to be applied.
+	 *	@param value The required ICFLibKeyHash256 attribute SecSysRoleId value to be applied.
 	 */
-	void setRequiredSecSysRoleId(CFLibDbKeyHash256 value);
+	void setRequiredSecSysRoleId(ICFLibKeyHash256 value);
 
 	/**
 	 *	Get the required String attribute Name.

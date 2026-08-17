@@ -57,8 +57,8 @@ public class CFSecBuffISOCtryLangHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected short requiredISOCtryId;
-	protected short requiredISOLangId;
+	protected $implJavaAtomType$ requiredISOCtryId;
+	protected $implJavaAtomType$ requiredISOLangId;
 
 	public CFSecBuffISOCtryLangHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

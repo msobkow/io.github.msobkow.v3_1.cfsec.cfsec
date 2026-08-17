@@ -51,7 +51,7 @@ public class CFSecSecTentGrpObj
 	protected boolean isNew;
 	protected ICFSecSecTentGrpEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecTentGrp rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFSecSecSysGrpObj requiredContainerSysGrp;
@@ -282,12 +282,12 @@ public class CFSecSecTentGrpObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -364,7 +364,7 @@ public class CFSecSecTentGrpObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
+	public $implJavaAtomType$ getRequiredSecTentGrpId() {
 		return( getPKey() );
 	}
 
@@ -417,12 +417,12 @@ public class CFSecSecTentGrpObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getSecTentGrpRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSecTentGrpRec().getRequiredName() );
 	}
 

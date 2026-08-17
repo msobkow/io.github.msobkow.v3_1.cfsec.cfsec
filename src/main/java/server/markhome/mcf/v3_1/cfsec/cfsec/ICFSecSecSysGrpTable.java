@@ -92,7 +92,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecSysGrpByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecSysGrp instances identified by the key UNameIdx.
 	 *
@@ -144,7 +144,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecSysGrp record instance by primary key.
@@ -157,7 +157,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecSysGrp instances.
@@ -179,7 +179,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysGrpId );
+		ICFLibKeyHash256 SecSysGrpId );
 
 	/**
 	 *	Read the derived SecSysGrp record instance identified by the unique key UNameIdx.
@@ -219,7 +219,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecSysGrp record instance identified by the primary key.
@@ -234,7 +234,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecSysGrp record instances.
@@ -258,7 +258,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysGrpId );
+		ICFLibKeyHash256 SecSysGrpId );
 
 	/**
 	 *	Read the specific SecSysGrp record instance identified by the unique key UNameIdx.

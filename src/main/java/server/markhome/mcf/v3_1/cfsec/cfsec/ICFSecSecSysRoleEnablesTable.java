@@ -94,7 +94,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@param	EnableName	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleEnablesByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSecSysRoleId,
+		ICFLibKeyHash256 argSecSysRoleId,
 		String argEnableName );
 	/**
 	 *	Delete the SecSysRoleEnables instance identified by the primary key.
@@ -113,7 +113,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@param	SecSysRoleId	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleEnablesBySysRoleIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSecSysRoleId );
+		ICFLibKeyHash256 argSecSysRoleId );
 
 	/**
 	 *	Delete the SecSysRoleEnables instances identified by the key SysRoleIdx.
@@ -167,7 +167,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleEnables readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 SecSysRoleId,
 		String EnableName );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleEnables readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 SecSysRoleId,
 		String EnableName );
 
 	/**
@@ -218,7 +218,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysRoleEnables[] readDerivedBySysRoleIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId );
+		ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Read an array of the derived SecSysRoleEnables record instances identified by the duplicate key NameIdx.
@@ -260,7 +260,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 SecSysRoleId,
 		String EnableName );
 
 	/**
@@ -295,7 +295,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@return All the specific SecSysRoleEnables instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecSysRoleEnables[] pageAllRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 priorSecSysRoleId,
+		ICFLibKeyHash256 priorSecSysRoleId,
 		String priorEnableName );
 
 	/**
@@ -313,7 +313,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 SecSysRoleId,
 		String EnableName );
 
 	/**
@@ -328,7 +328,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] readRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId );
+		ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Read an array of the specific SecSysRoleEnables record instances identified by the duplicate key NameIdx.
@@ -356,8 +356,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] pageRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId,
-		CFLibDbKeyHash256 priorSecSysRoleId,
+		ICFLibKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 priorSecSysRoleId,
 		String priorEnableName );
 
 	/**
@@ -373,6 +373,6 @@ public interface ICFSecSecSysRoleEnablesTable
 	 */
 	ICFSecSecSysRoleEnables[] pageRecByNameIdx( ICFSecAuthorization Authorization,
 		String EnableName,
-		CFLibDbKeyHash256 priorSecSysRoleId,
+		ICFLibKeyHash256 priorSecSysRoleId,
 		String priorEnableName );
 }

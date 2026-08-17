@@ -92,7 +92,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecTentRoleByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecTentRole instances identified by the key TenantIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	TenantId	The SecTentRole key attribute of the instance generating the id.
 	 */
 	void deleteSecTentRoleByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SecTentRole instances identified by the key TenantIdx.
@@ -141,7 +141,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	Name	The SecTentRole key attribute of the instance generating the id.
 	 */
 	void deleteSecTentRoleByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId,
+		ICFLibKeyHash256 argTenantId,
 		String argName );
 
 	/**
@@ -166,7 +166,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecTentRole record instance by primary key.
@@ -179,7 +179,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecTentRole instances.
@@ -201,7 +201,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentRoleId );
+		ICFLibKeyHash256 SecTentRoleId );
 
 	/**
 	 *	Read an array of the derived SecTentRole record instances identified by the duplicate key TenantIdx.
@@ -213,7 +213,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentRole[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SecTentRole record instances identified by the duplicate key NameIdx.
@@ -240,7 +240,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId,
+		ICFLibKeyHash256 TenantId,
 		String Name );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecTentRole record instance identified by the primary key.
@@ -271,7 +271,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecTentRole record instances.
@@ -295,7 +295,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecTentRoleId );
+		ICFLibKeyHash256 SecTentRoleId );
 
 	/**
 	 *	Read an array of the specific SecTentRole record instances identified by the duplicate key TenantIdx.
@@ -309,7 +309,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SecTentRole record instances identified by the duplicate key NameIdx.
@@ -340,6 +340,6 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId,
+		ICFLibKeyHash256 TenantId,
 		String Name );
 }

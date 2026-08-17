@@ -186,18 +186,18 @@ public interface ICFSecSecSysGrpObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	ICFLibKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	ICFLibKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param ICFLibKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( ICFLibKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -343,11 +343,11 @@ public interface ICFSecSecSysGrpObj
 	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.
+	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecSysGrpId();
+	ICFLibKeyHash256 getRequiredSecSysGrpId();
 
 	/**
 	 *	Get the required String attribute Name.

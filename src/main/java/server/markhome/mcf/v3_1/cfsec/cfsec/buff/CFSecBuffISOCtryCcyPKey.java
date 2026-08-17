@@ -56,8 +56,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCtryCcyPKey
 	implements ICFSecISOCtryCcyPKey, Comparable<Object>, Serializable
 {
-	protected short requiredISOCtryId;
-	protected short requiredISOCcyId;
+	protected $implJavaAtomType$ requiredISOCtryId;
+	protected $implJavaAtomType$ requiredISOCcyId;
 
 	public CFSecBuffISOCtryCcyPKey() {
 		requiredISOCtryId = ICFSecPubISOCtryCcy.ISOCTRYID_INIT_VALUE;

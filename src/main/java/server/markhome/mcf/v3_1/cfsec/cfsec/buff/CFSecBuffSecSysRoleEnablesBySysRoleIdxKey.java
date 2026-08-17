@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSysRoleEnablesBySysRoleIdxKey
 	implements ICFSecSecSysRoleEnablesBySysRoleIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecSysRoleId;
+	protected $implJavaAtomType$ requiredSecSysRoleId;
 	public CFSecBuffSecSysRoleEnablesBySysRoleIdxKey() {
 		requiredSecSysRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysRoleEnables.SECSYSROLEID_INIT_VALUE.toString() );
 	}

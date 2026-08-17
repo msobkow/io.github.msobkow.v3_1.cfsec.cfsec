@@ -100,7 +100,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	The SecSysRole-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey );
+	ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a SecSysRole-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	The SecSysRole-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey,
+	ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFSecSecSysRoleObj readCachedSecSysRole( CFLibDbKeyHash256 pkey );
+	ICFSecSecSysRoleObj readCachedSecSysRole( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeSecSysRole( ICFSecSecSysRoleObj obj );
 
-	void deepDisposeSecSysRole( CFLibDbKeyHash256 pkey );
+	void deepDisposeSecSysRole( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecSysRoleObj lockSecSysRole( CFLibDbKeyHash256 pkey );
+	ICFSecSecSysRoleObj lockSecSysRole( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the SecSysRole-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId );
+	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Get the CFSecSecSysRoleObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		boolean forceRead );
 
 	/**
@@ -184,11 +184,11 @@ public interface ICFSecSecSysRoleTableObj
 	ICFSecSecSysRoleObj readSecSysRoleByUNameIdx(String Name,
 		boolean forceRead );
 
-	ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId );
+	ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
 
 	ICFSecSecSysRoleObj readCachedSecSysRoleByUNameIdx( String Name );
 
-	void deepDisposeSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId );
+	void deepDisposeSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
 
 	void deepDisposeSecSysRoleByUNameIdx( String Name );
 
@@ -207,7 +207,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *
 	 *	@param	SecSysRoleId	The SecSysRole key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId );
+	void deleteSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Internal use only.

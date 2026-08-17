@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSessionByStartIdxKey
 	implements ICFSecSecSessionByStartIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecUserId;
-	protected LocalDateTime requiredStart;
+	protected $implJavaAtomType$ requiredSecUserId;
+	protected $implJavaAtomType$ requiredStart;
 	public CFSecBuffSecSessionByStartIdxKey() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECUSERID_INIT_VALUE.toString() );
 		requiredStart = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");

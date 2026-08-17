@@ -92,7 +92,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecSysRoleByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecSysRole instances identified by the key UNameIdx.
 	 *
@@ -125,7 +125,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecSysRole record instance by primary key.
@@ -138,7 +138,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecSysRole instances.
@@ -160,7 +160,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId );
+		ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Read the derived SecSysRole record instance identified by the unique key UNameIdx.
@@ -188,7 +188,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecSysRole record instance identified by the primary key.
@@ -203,7 +203,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecSysRole record instances.
@@ -227,7 +227,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecSysRoleId );
+		ICFLibKeyHash256 SecSysRoleId );
 
 	/**
 	 *	Read the specific SecSysRole record instance identified by the unique key UNameIdx.

@@ -159,25 +159,25 @@ public interface ICFSecSecClusGrpEditObj
 	List<ICFSecSecClusGrpMembObj> getOptionalChildrenMembByGrp();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecClusGrpId.
+	 *	Get the required ICFLibKeyHash256 attribute SecClusGrpId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecClusGrpId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecClusGrpId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecClusGrpId();
+	ICFLibKeyHash256 getRequiredSecClusGrpId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecClusGrpId.
+	 *	Set the required ICFLibKeyHash256 attribute SecClusGrpId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecClusGrpId value to be applied.
+	 *	@param value The required ICFLibKeyHash256 attribute SecClusGrpId value to be applied.
 	 */
-	void setRequiredSecClusGrpId(CFLibDbKeyHash256 value);
+	void setRequiredSecClusGrpId(ICFLibKeyHash256 value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
+	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
 	 */
-	CFLibDbKeyHash256 getRequiredClusterId();
+	ICFLibKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Get the required String attribute Name.

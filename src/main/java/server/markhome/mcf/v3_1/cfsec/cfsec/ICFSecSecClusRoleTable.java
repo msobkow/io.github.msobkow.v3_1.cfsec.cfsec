@@ -92,7 +92,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecClusRoleByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecClusRole instances identified by the key ClusterIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	ClusterId	The SecClusRole key attribute of the instance generating the id.
 	 */
 	void deleteSecClusRoleByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClusterId );
+		ICFLibKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the SecClusRole instances identified by the key ClusterIdx.
@@ -141,7 +141,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	Name	The SecClusRole key attribute of the instance generating the id.
 	 */
 	void deleteSecClusRoleByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClusterId,
+		ICFLibKeyHash256 argClusterId,
 		String argName );
 
 	/**
@@ -166,7 +166,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecClusRole record instance by primary key.
@@ -179,7 +179,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecClusRole instances.
@@ -201,7 +201,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecClusRoleId );
+		ICFLibKeyHash256 SecClusRoleId );
 
 	/**
 	 *	Read an array of the derived SecClusRole record instances identified by the duplicate key ClusterIdx.
@@ -213,7 +213,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusRole[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the derived SecClusRole record instances identified by the duplicate key NameIdx.
@@ -240,7 +240,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId,
+		ICFLibKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecClusRole record instance identified by the primary key.
@@ -271,7 +271,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecClusRole record instances.
@@ -295,7 +295,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecClusRoleId );
+		ICFLibKeyHash256 SecClusRoleId );
 
 	/**
 	 *	Read an array of the specific SecClusRole record instances identified by the duplicate key ClusterIdx.
@@ -309,7 +309,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId );
+		ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the specific SecClusRole record instances identified by the duplicate key NameIdx.
@@ -340,6 +340,6 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClusterId,
+		ICFLibKeyHash256 ClusterId,
 		String Name );
 }

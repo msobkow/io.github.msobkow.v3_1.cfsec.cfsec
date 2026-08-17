@@ -82,18 +82,18 @@ public interface ICFSecSecUserPWHistoryEditObj
 	CFSecSecUserPWHistoryEditObj deleteInstance();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	ICFLibKeyHash256 getRequiredSecUserId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Set the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute SecUserId value to be applied.
+	 *	@param value The required ICFLibKeyHash256 attribute SecUserId value to be applied.
 	 */
-	void setRequiredSecUserId(CFLibDbKeyHash256 value);
+	void setRequiredSecUserId(ICFLibKeyHash256 value);
 
 	/**
 	 *	Get the required LocalDateTime attribute PWSetStamp.

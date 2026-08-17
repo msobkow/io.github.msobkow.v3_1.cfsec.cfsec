@@ -369,12 +369,12 @@ public class CFSecSecSysGrpIncObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysGrpId() {
+	public $implJavaAtomType$ getRequiredSecSysGrpId() {
 		return( getPKey().getRequiredSecSysGrpId() );
 	}
 
 	@Override
-	public String getRequiredInclName() {
+	public $implJavaAtomType$ getRequiredInclName() {
 		return( getPKey().getRequiredInclName() );
 	}
 

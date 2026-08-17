@@ -49,12 +49,12 @@ public class CFSecSecTentGrpTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecTentGrp.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecTentGrp.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> allSecTentGrp;
+	private Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> allSecTentGrp;
 	private Map< ICFSecSecTentGrpByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > > indexByTenantIdx;
 	private Map< ICFSecSecTentGrpByNameIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > > indexByNameIdx;
+		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > > indexByNameIdx;
 	private Map< ICFSecSecTentGrpByUNameIdxKey,
 		ICFSecSecTentGrpObj > indexByUNameIdx;
 	public static String TABLE_NAME = "SecTentGrp";
@@ -62,7 +62,7 @@ public class CFSecSecTentGrpTableObj
 
 	public CFSecSecTentGrpTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecTentGrpObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
 		allSecTentGrp = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -71,7 +71,7 @@ public class CFSecSecTentGrpTableObj
 
 	public CFSecSecTentGrpTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecTentGrpObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
 		allSecTentGrp = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -198,7 +198,7 @@ public class CFSecSecTentGrpTableObj
 	@Override
 	public ICFSecSecTentGrpObj realiseSecTentGrp( ICFSecSecTentGrpObj Obj ) {
 		ICFSecSecTentGrpObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecTentGrpObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecTentGrpObj existingObj = members.get( pkey );
@@ -215,7 +215,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -228,7 +228,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.remove( keepObj.getPKey() );
 					if( mapNameIdx.size() <= 0 ) {
@@ -252,7 +252,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -262,7 +262,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -294,7 +294,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -304,7 +304,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -336,12 +336,12 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj readSecTentGrp( ICFLibKeyHash256 pkey ) {
 		return( readSecTentGrp( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrp( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecTentGrpObj readSecTentGrp( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecTentGrpObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -360,7 +360,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj readCachedSecTentGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentGrpObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -376,7 +376,7 @@ public class CFSecSecTentGrpTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecTentGrpObj existing = readCachedSecTentGrp( pkey );
 		if( existing == null ) {
 			return;
@@ -420,7 +420,7 @@ public class CFSecSecTentGrpTableObj
 
 	}
 	@Override
-	public void deepDisposeSecTentGrp( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecTentGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrp( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -428,7 +428,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj lockSecTentGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj lockSecTentGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentGrpObj locked = null;
 		ICFSecSecTentGrp lockRec = schema.getCFSecBackingStore().getTableSecTentGrp().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -452,7 +452,7 @@ public class CFSecSecTentGrpTableObj
 	public List<ICFSecSecTentGrpObj> readAllSecTentGrp( boolean forceRead ) {
 		final String S_ProcName = "readAllSecTentGrp";
 		if( ( allSecTentGrp == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecTentGrpObj>();
+			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecTentGrpObj>();
 			allSecTentGrp = map;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readAllDerived( null );
 			ICFSecSecTentGrp rec;
@@ -508,8 +508,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -566,8 +566,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -578,43 +578,43 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		return( readSecTentGrpByIdIdx( SecTentGrpId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( CFLibDbKeyHash256 SecTentGrpId, boolean forceRead )
+	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId, boolean forceRead )
 	{
 		ICFSecSecTentGrpObj obj = readSecTentGrp( SecTentGrpId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readSecTentGrpByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentGrpByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecTentGrpObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
 			ICFSecSecTentGrpObj obj;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readDerivedByTenantIdx( null,
 				TenantId );
@@ -672,8 +672,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -698,16 +698,16 @@ public class CFSecSecTentGrpTableObj
 		final String S_ProcName = "readSecTentGrpByNameIdx";
 		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
-		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentGrpByNameIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
 		}
 		if( ( ! forceRead ) && indexByNameIdx.containsKey( key ) ) {
 			dict = indexByNameIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecTentGrpObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
 			ICFSecSecTentGrpObj obj;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readDerivedByNameIdx( null,
 				Name );
@@ -765,8 +765,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -778,7 +778,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		return( readSecTentGrpByUNameIdx( TenantId,
@@ -787,7 +787,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -816,7 +816,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrpByIdIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public ICFSecSecTentGrpObj readCachedSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = null;
 		obj = readCachedSecTentGrp( SecTentGrpId );
@@ -824,14 +824,14 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -889,8 +889,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -908,7 +908,7 @@ public class CFSecSecTentGrpTableObj
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByNameIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
 			if( indexByNameIdx.containsKey( key ) ) {
 				dict = indexByNameIdx.get( key );
 				int len = dict.size();
@@ -966,8 +966,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -978,7 +978,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrpByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentGrpObj readCachedSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentGrpObj obj = null;
@@ -1016,7 +1016,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByIdIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public void deepDisposeSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrpByIdIdx( SecTentGrpId );
 		if( obj != null ) {
@@ -1025,7 +1025,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpObj obj;
@@ -1059,7 +1059,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public void deepDisposeSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrpByUNameIdx( TenantId,
@@ -1088,7 +1088,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByIdIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public void deleteSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = readSecTentGrp(SecTentGrpId);
 		if( obj != null ) {
@@ -1118,16 +1118,16 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentGrpByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict = indexByTenantIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentGrp().deleteSecTentGrpByTenantIdx( null,
 				TenantId );
 			Iterator<ICFSecSecTentGrpObj> iter = dict.values().iterator();
@@ -1158,10 +1158,10 @@ public class CFSecSecTentGrpTableObj
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentGrpByNameIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
 		}
 		if( indexByNameIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict = indexByNameIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict = indexByNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentGrp().deleteSecTentGrpByNameIdx( null,
 				Name );
 			Iterator<ICFSecSecTentGrpObj> iter = dict.values().iterator();
@@ -1186,7 +1186,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public void deleteSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

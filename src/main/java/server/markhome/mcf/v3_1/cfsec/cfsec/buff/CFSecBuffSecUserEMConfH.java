@@ -58,10 +58,10 @@ public class CFSecBuffSecUserEMConfH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredConfirmEMailAddr;
-	protected LocalDateTime requiredEMailSentStamp;
-	protected CFLibUuid6 requiredEMConfirmationUuid6;
-	protected boolean requiredNewAccount;
+	protected $implJavaAtomType$ requiredConfirmEMailAddr;
+	protected $implJavaAtomType$ requiredEMailSentStamp;
+	protected $implJavaAtomType$ requiredEMConfirmationUuid6;
+	protected $implJavaAtomType$ requiredNewAccount;
 
     public CFSecBuffSecUserEMConfH() {
             // The primary key member attributes are initialized on construction

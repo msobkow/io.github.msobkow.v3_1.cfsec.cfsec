@@ -51,9 +51,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSysCluster
 	implements ICFSecSysCluster, Comparable<Object>, Serializable
 {
-	protected int requiredSingletonId;
+	protected $implJavaAtomType$ requiredSingletonId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 requiredClusterId;
+	protected $implJavaAtomType$ requiredClusterId;
 
 	public CFSecBuffSysCluster() {
 		requiredSingletonId = ICFSecPubSysCluster.SINGLETONID_INIT_VALUE;
@@ -61,12 +61,12 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSingletonId);
 	}
 
 	@Override
-	public void setPKey(Integer requiredSingletonId) {
+	public void setPKey($implJavaOptAtomType$ requiredSingletonId) {
 		if(requiredSingletonId != null) {
 			this.requiredSingletonId = requiredSingletonId;
 		}

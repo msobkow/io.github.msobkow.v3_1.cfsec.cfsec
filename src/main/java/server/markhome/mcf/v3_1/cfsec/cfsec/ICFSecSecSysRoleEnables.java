@@ -79,7 +79,7 @@ public interface ICFSecSecSysRoleEnables
 	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
 	public ICFSecSecSysRole getRequiredContainerSysRole();
 
-	public void setRequiredContainerSysRole(CFLibDbKeyHash256 argSecSysRoleId);
+	public void setRequiredContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
 
 	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
 
@@ -97,9 +97,9 @@ public interface ICFSecSecSysRoleEnables
 
 	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
 
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
+	public ICFLibKeyHash256 getRequiredSecSysRoleId();
 
-	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value);
+	public void setRequiredSecSysRoleId(ICFLibKeyHash256 value);
 
 	public String getRequiredEnableName();
 

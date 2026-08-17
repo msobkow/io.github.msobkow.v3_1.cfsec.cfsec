@@ -70,8 +70,8 @@ public interface ICFSecSecSysGrpIncH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
-	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 requiredSecSysGrpId );
+	public ICFLibKeyHash256 getRequiredSecSysGrpId();
+	public void setRequiredSecSysGrpId( ICFLibKeyHash256 requiredSecSysGrpId );
 
 	public String getRequiredInclName();
 	public void setRequiredInclName( String requiredInclName );

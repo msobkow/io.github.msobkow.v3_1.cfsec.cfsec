@@ -186,18 +186,18 @@ public interface ICFSecSecTentRoleObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	ICFLibKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	ICFLibKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param ICFLibKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( ICFLibKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -259,18 +259,18 @@ public interface ICFSecSecTentRoleObj
 	List<ICFSecSecTentRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecTentRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecTentRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecTentRoleId();
+	ICFLibKeyHash256 getRequiredSecTentRoleId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Get the required String attribute Name.

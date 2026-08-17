@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTenantByUNameIdxKey
 	implements ICFSecTenantByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredClusterId;
-	protected String requiredTenantName;
+	protected $implJavaAtomType$ requiredClusterId;
+	protected $implJavaAtomType$ requiredTenantName;
 	public CFSecBuffTenantByUNameIdxKey() {
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecPubTenant.CLUSTERID_INIT_VALUE.toString() );
 		requiredTenantName = ICFSecPubTenant.TENANTNAME_INIT_VALUE;

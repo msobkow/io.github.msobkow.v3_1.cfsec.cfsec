@@ -245,11 +245,11 @@ public interface ICFSecSecSysRoleEnablesObj
 	ICFSecSecSysGrpObj getRequiredParentEnableGroup( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecSysRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecSysRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecSysRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecSysRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecSysRoleId();
+	ICFLibKeyHash256 getRequiredSecSysRoleId();
 
 	/**
 	 *	Get the required String attribute EnableName.

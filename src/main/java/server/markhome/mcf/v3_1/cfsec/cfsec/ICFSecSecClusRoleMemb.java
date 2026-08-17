@@ -79,7 +79,7 @@ public interface ICFSecSecClusRoleMemb
 	public void setPKey(ICFSecSecClusRoleMembPKey pkey );
 	public ICFSecSecClusRole getRequiredContainerRole();
 
-	public void setRequiredContainerRole(CFLibDbKeyHash256 argSecClusRoleId);
+	public void setRequiredContainerRole(ICFLibKeyHash256 argSecClusRoleId);
 
 	public void setRequiredContainerRole(ICFSecSecClusRole argObj);
 
@@ -95,9 +95,9 @@ public interface ICFSecSecClusRoleMemb
 
 	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
+	public ICFLibKeyHash256 getRequiredSecClusRoleId();
 
-	public void setRequiredSecClusRoleId(CFLibDbKeyHash256 value);
+	public void setRequiredSecClusRoleId(ICFLibKeyHash256 value);
 
 	public String getRequiredLoginId();
 

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSessionBySecProxyIdxKey
 	implements ICFSecSecSessionBySecProxyIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalSecProxyId;
+	protected $implJavaAtomType$ optionalSecProxyId;
 	public CFSecBuffSecSessionBySecProxyIdxKey() {
 		optionalSecProxyId = CFLibDbKeyHash256.nullGet();
 	}

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfoBySchemaRTCodeIdxKey
 	implements ICFSecTableInfoBySchemaRTCodeIdxKey, Comparable<Object>, Serializable
 {
-	protected int requiredRuntimeClassCode;
+	protected $implJavaAtomType$ requiredRuntimeClassCode;
 	public CFSecBuffTableInfoBySchemaRTCodeIdxKey() {
 		requiredRuntimeClassCode = ICFSecPubTableInfo.RUNTIMECLASSCODE_INIT_VALUE;
 	}

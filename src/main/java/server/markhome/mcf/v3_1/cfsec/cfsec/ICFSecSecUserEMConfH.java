@@ -70,8 +70,8 @@ public interface ICFSecSecUserEMConfH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 requiredSecUserId );
+	public ICFLibKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( ICFLibKeyHash256 requiredSecUserId );
 
 	public String getRequiredConfirmEMailAddr();
 	public void setRequiredConfirmEMailAddr( String value );

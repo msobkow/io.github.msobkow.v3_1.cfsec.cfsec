@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPWReset
 	implements ICFSecSecUserPWReset, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecUserId;
+	protected $implJavaAtomType$ requiredSecUserId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,9 +59,9 @@ public class CFSecBuffSecUserPWReset
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredSentToEMailAddr;
-	protected CFLibUuid6 requiredPasswordResetUuid6;
-	protected boolean requiredNewAccount;
+	protected $implJavaAtomType$ requiredSentToEMailAddr;
+	protected $implJavaAtomType$ requiredPasswordResetUuid6;
+	protected $implJavaAtomType$ requiredNewAccount;
 
 	public CFSecBuffSecUserPWReset() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserPWReset.SECUSERID_INIT_VALUE.toString() );
@@ -70,12 +70,12 @@ public class CFSecBuffSecUserPWReset
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
+	public void setPKey($implJavaOptAtomType$ requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}

@@ -100,7 +100,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	The SecUserPassword-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPassword( CFLibDbKeyHash256 pkey );
+	ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a SecUserPassword-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	The SecUserPassword-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPassword( CFLibDbKeyHash256 pkey,
+	ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFSecSecUserPasswordObj readCachedSecUserPassword( CFLibDbKeyHash256 pkey );
+	ICFSecSecUserPasswordObj readCachedSecUserPassword( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeSecUserPassword( ICFSecSecUserPasswordObj obj );
 
-	void deepDisposeSecUserPassword( CFLibDbKeyHash256 pkey );
+	void deepDisposeSecUserPassword( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecUserPasswordObj lockSecUserPassword( CFLibDbKeyHash256 pkey );
+	ICFSecSecUserPasswordObj lockSecUserPassword( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the SecUserPassword-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	CFSecSecUserPasswordObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
+	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserPasswordObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	CFSecSecUserPasswordObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId,
+	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId,
 		boolean forceRead );
 
 	/**
@@ -184,11 +184,11 @@ public interface ICFSecSecUserPasswordTableObj
 	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp,
 		boolean forceRead );
 
-	ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
+	ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
 
 	List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
 
-	void deepDisposeSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
+	void deepDisposeSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
 
 	void deepDisposeSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
 
@@ -207,7 +207,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *
 	 *	@param	SecUserId	The SecUserPassword key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId );
+	void deleteSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Internal use only.

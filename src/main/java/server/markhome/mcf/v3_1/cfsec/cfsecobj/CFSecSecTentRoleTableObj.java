@@ -49,12 +49,12 @@ public class CFSecSecTentRoleTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecTentRole.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecTentRole.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> allSecTentRole;
+	private Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> allSecTentRole;
 	private Map< ICFSecSecTentRoleByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > > indexByTenantIdx;
 	private Map< ICFSecSecTentRoleByNameIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > > indexByNameIdx;
+		Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > > indexByNameIdx;
 	private Map< ICFSecSecTentRoleByUNameIdxKey,
 		ICFSecSecTentRoleObj > indexByUNameIdx;
 	public static String TABLE_NAME = "SecTentRole";
@@ -62,7 +62,7 @@ public class CFSecSecTentRoleTableObj
 
 	public CFSecSecTentRoleTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecTentRoleObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentRoleObj>();
 		allSecTentRole = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -71,7 +71,7 @@ public class CFSecSecTentRoleTableObj
 
 	public CFSecSecTentRoleTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecTentRoleObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentRoleObj>();
 		allSecTentRole = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -198,7 +198,7 @@ public class CFSecSecTentRoleTableObj
 	@Override
 	public ICFSecSecTentRoleObj realiseSecTentRole( ICFSecSecTentRoleObj Obj ) {
 		ICFSecSecTentRoleObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecTentRoleObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecTentRoleObj existingObj = members.get( pkey );
@@ -215,7 +215,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -228,7 +228,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.remove( keepObj.getPKey() );
 					if( mapNameIdx.size() <= 0 ) {
@@ -252,7 +252,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -262,7 +262,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -294,7 +294,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -304,7 +304,7 @@ public class CFSecSecTentRoleTableObj
 				ICFSecSecTentRoleByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<ICFLibKeyHash256, ICFSecSecTentRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -336,12 +336,12 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentRoleObj readSecTentRole( ICFLibKeyHash256 pkey ) {
 		return( readSecTentRole( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRole( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecTentRoleObj readSecTentRole( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecTentRoleObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -360,7 +360,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readCachedSecTentRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentRoleObj readCachedSecTentRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentRoleObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -376,7 +376,7 @@ public class CFSecSecTentRoleTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecTentRoleObj existing = readCachedSecTentRole( pkey );
 		if( existing == null ) {
 			return;
@@ -420,7 +420,7 @@ public class CFSecSecTentRoleTableObj
 
 	}
 	@Override
-	public void deepDisposeSecTentRole( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecTentRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentRoleObj obj = readCachedSecTentRole( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -428,7 +428,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj lockSecTentRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecTentRoleObj lockSecTentRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecTentRoleObj locked = null;
 		ICFSecSecTentRole lockRec = schema.getCFSecBackingStore().getTableSecTentRole().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -452,7 +452,7 @@ public class CFSecSecTentRoleTableObj
 	public List<ICFSecSecTentRoleObj> readAllSecTentRole( boolean forceRead ) {
 		final String S_ProcName = "readAllSecTentRole";
 		if( ( allSecTentRole == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecTentRoleObj>();
+			Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecTentRoleObj>();
 			allSecTentRole = map;
 			ICFSecSecTentRole[] recList = schema.getCFSecBackingStore().getTableSecTentRole().readAllDerived( null );
 			ICFSecSecTentRole rec;
@@ -508,8 +508,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -566,8 +566,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -578,43 +578,43 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( CFLibDbKeyHash256 SecTentRoleId )
+	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
 	{
 		return( readSecTentRoleByIdIdx( SecTentRoleId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( CFLibDbKeyHash256 SecTentRoleId, boolean forceRead )
+	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId, boolean forceRead )
 	{
 		ICFSecSecTentRoleObj obj = readSecTentRole( SecTentRoleId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readSecTentRoleByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentRoleByTenantIdx";
 		ICFSecSecTentRoleByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentRoleByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentRoleObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentRoleObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecTentRoleObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentRoleObj>();
 			ICFSecSecTentRoleObj obj;
 			ICFSecSecTentRole[] recList = schema.getCFSecBackingStore().getTableSecTentRole().readDerivedByTenantIdx( null,
 				TenantId );
@@ -672,8 +672,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -698,16 +698,16 @@ public class CFSecSecTentRoleTableObj
 		final String S_ProcName = "readSecTentRoleByNameIdx";
 		ICFSecSecTentRoleByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByNameIdxKey();
 		key.setRequiredName( Name );
-		Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict;
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentRoleByNameIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentRoleObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentRoleObj > >();
 		}
 		if( ( ! forceRead ) && indexByNameIdx.containsKey( key ) ) {
 			dict = indexByNameIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecTentRoleObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentRoleObj>();
 			ICFSecSecTentRoleObj obj;
 			ICFSecSecTentRole[] recList = schema.getCFSecBackingStore().getTableSecTentRole().readDerivedByNameIdx( null,
 				Name );
@@ -765,8 +765,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -778,7 +778,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		return( readSecTentRoleByUNameIdx( TenantId,
@@ -787,7 +787,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -816,7 +816,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readCachedSecTentRoleByIdIdx( CFLibDbKeyHash256 SecTentRoleId )
+	public ICFSecSecTentRoleObj readCachedSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = null;
 		obj = readCachedSecTentRole( SecTentRoleId );
@@ -824,14 +824,14 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readCachedSecTentRoleByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFSecSecTentRoleObj> readCachedSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSecTentRoleByTenantIdx";
 		ICFSecSecTentRoleByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFSecSecTentRoleObj> arrayList = new ArrayList<ICFSecSecTentRoleObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -889,8 +889,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -908,7 +908,7 @@ public class CFSecSecTentRoleTableObj
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecTentRoleObj> arrayList = new ArrayList<ICFSecSecTentRoleObj>();
 		if( indexByNameIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict;
 			if( indexByNameIdx.containsKey( key ) ) {
 				dict = indexByNameIdx.get( key );
 				int len = dict.size();
@@ -966,8 +966,8 @@ public class CFSecSecTentRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -978,7 +978,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readCachedSecTentRoleByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readCachedSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentRoleObj obj = null;
@@ -1016,7 +1016,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByIdIdx( CFLibDbKeyHash256 SecTentRoleId )
+	public void deepDisposeSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = readCachedSecTentRoleByIdIdx( SecTentRoleId );
 		if( obj != null ) {
@@ -1025,7 +1025,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSecTentRoleByTenantIdx";
 		ICFSecSecTentRoleObj obj;
@@ -1059,7 +1059,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public void deepDisposeSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentRoleObj obj = readCachedSecTentRoleByUNameIdx( TenantId,
@@ -1088,7 +1088,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByIdIdx( CFLibDbKeyHash256 SecTentRoleId )
+	public void deleteSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = readSecTentRole(SecTentRoleId);
 		if( obj != null ) {
@@ -1118,16 +1118,16 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFSecSecTentRoleByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentRoleByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentRoleObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentRoleObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict = indexByTenantIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentRole().deleteSecTentRoleByTenantIdx( null,
 				TenantId );
 			Iterator<ICFSecSecTentRoleObj> iter = dict.values().iterator();
@@ -1158,10 +1158,10 @@ public class CFSecSecTentRoleTableObj
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentRoleByNameIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecTentRoleObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecTentRoleObj > >();
 		}
 		if( indexByNameIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecTentRoleObj> dict = indexByNameIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecTentRoleObj> dict = indexByNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentRole().deleteSecTentRoleByNameIdx( null,
 				Name );
 			Iterator<ICFSecSecTentRoleObj> iter = dict.values().iterator();
@@ -1186,7 +1186,7 @@ public class CFSecSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByUNameIdx( CFLibDbKeyHash256 TenantId,
+	public void deleteSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

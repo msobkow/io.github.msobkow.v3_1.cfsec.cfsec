@@ -51,12 +51,12 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSession
 	implements ICFSecSecSession, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecSessionId;
+	protected $implJavaAtomType$ requiredSecSessionId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 requiredSecUserId;
-	protected LocalDateTime requiredStart;
-	protected LocalDateTime optionalFinish;
-	protected CFLibDbKeyHash256 optionalSecProxyId;
+	protected $implJavaAtomType$ requiredSecUserId;
+	protected $implJavaAtomType$ requiredStart;
+	protected $implJavaAtomType$ optionalFinish;
+	protected $implJavaAtomType$ optionalSecProxyId;
 
 	public CFSecBuffSecSession() {
 		requiredSecSessionId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECSESSIONID_INIT_VALUE.toString() );
@@ -67,12 +67,12 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSecSessionId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecSessionId) {
+	public void setPKey($implJavaOptAtomType$ requiredSecSessionId) {
 		if(requiredSecSessionId != null) {
 			this.requiredSecSessionId = requiredSecSessionId;
 		}

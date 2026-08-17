@@ -56,7 +56,7 @@ public class CFSecBuffSecUserHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected CFLibDbKeyHash256 requiredSecUserId;
+	protected $implJavaAtomType$ requiredSecUserId;
 
 	public CFSecBuffSecUserHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

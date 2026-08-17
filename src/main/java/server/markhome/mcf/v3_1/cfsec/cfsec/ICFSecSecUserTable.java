@@ -92,7 +92,7 @@ public interface ICFSecSecUserTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecUser instances identified by the key ULoginIdx.
 	 *
@@ -144,7 +144,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecUser record instance by primary key.
@@ -157,7 +157,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecUser instances.
@@ -179,7 +179,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read the derived SecUser record instance identified by the unique key ULoginIdx.
@@ -219,7 +219,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecUser record instance identified by the primary key.
@@ -234,7 +234,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecUser record instances.
@@ -253,7 +253,7 @@ public interface ICFSecSecUserTable
 	 *	@return All the specific SecUser instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUser[] pageAllRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the unique key IdIdx.
@@ -268,7 +268,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the unique key ULoginIdx.
@@ -312,5 +312,5 @@ public interface ICFSecSecUserTable
 	 */
 	ICFSecSecUser[] pageRecByEMAddrIdx( ICFSecAuthorization Authorization,
 		String EMailAddress,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 }

@@ -52,8 +52,8 @@ public class CFSecBuffSecUserPWHistoryH
     implements ICFSecSecUserPWHistoryH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserPWHistoryHPKey pkey;
-	protected LocalDateTime requiredPWReplacedStamp;
-	protected String requiredPasswordHash;
+	protected $implJavaAtomType$ requiredPWReplacedStamp;
+	protected $implJavaAtomType$ requiredPasswordHash;
 
     public CFSecBuffSecUserPWHistoryH() {
             // The primary key member attributes are initialized on construction

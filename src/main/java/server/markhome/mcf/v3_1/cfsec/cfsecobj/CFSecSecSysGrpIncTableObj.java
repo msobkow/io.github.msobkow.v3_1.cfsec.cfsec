@@ -332,14 +332,14 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpIncObj readSecSysGrpInc( CFLibDbKeyHash256 SecSysGrpId,
+	public ICFSecSecSysGrpIncObj readSecSysGrpInc( ICFLibKeyHash256 SecSysGrpId,
 		String InclName ) {
 		return( readSecSysGrpInc( SecSysGrpId,
 			InclName, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpIncObj readSecSysGrpInc( CFLibDbKeyHash256 SecSysGrpId,
+	public ICFSecSecSysGrpIncObj readSecSysGrpInc( ICFLibKeyHash256 SecSysGrpId,
 		String InclName, boolean forceRead ) {
 		ICFSecSecSysGrpIncObj obj = null;
 		ICFSecSecSysGrpInc readRec = schema.getCFSecBackingStore().getTableSecSysGrpInc().readDerivedByIdIdx( null,
@@ -570,7 +570,7 @@ public class CFSecSecSysGrpIncTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysGrpIncObj> pageAllSecSysGrpInc(CFLibDbKeyHash256 priorSecSysGrpId,
+	public List<ICFSecSecSysGrpIncObj> pageAllSecSysGrpInc(ICFLibKeyHash256 priorSecSysGrpId,
 		String priorInclName )
 	{
 		final String S_ProcName = "pageAllSecSysGrpInc";
@@ -594,7 +594,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( ICFLibKeyHash256 SecSysGrpId,
 		String InclName )
 	{
 		return( readSecSysGrpIncByIdIdx( SecSysGrpId,
@@ -603,7 +603,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( ICFLibKeyHash256 SecSysGrpId,
 		String InclName, boolean forceRead )
 	{
 		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newPKey();
@@ -614,14 +614,14 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpIncObj> readSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public List<ICFSecSecSysGrpIncObj> readSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		return( readSecSysGrpIncBySysGrpIdx( SecSysGrpId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpIncObj> readSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public List<ICFSecSecSysGrpIncObj> readSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpIncBySysGrpIdx";
@@ -800,7 +800,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpIncObj readCachedSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public ICFSecSecSysGrpIncObj readCachedSecSysGrpIncByIdIdx( ICFLibKeyHash256 SecSysGrpId,
 		String InclName )
 	{
 		ICFSecSecSysGrpIncObj obj = null;
@@ -814,7 +814,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		final String S_ProcName = "readCachedSecSysGrpIncBySysGrpIdx";
 		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
@@ -968,7 +968,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public void deepDisposeSecSysGrpIncByIdIdx( ICFLibKeyHash256 SecSysGrpId,
 		String InclName )
 	{
 		ICFSecSecSysGrpIncObj obj = readCachedSecSysGrpIncByIdIdx( SecSysGrpId,
@@ -979,7 +979,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public void deepDisposeSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		final String S_ProcName = "deepDisposeSecSysGrpIncBySysGrpIdx";
 		ICFSecSecSysGrpIncObj obj;
@@ -1022,8 +1022,8 @@ public class CFSecSecSysGrpIncTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId,
-		CFLibDbKeyHash256 priorSecSysGrpId,
+	public List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
+		ICFLibKeyHash256 priorSecSysGrpId,
 		String priorInclName )
 	{
 		final String S_ProcName = "pageSecSysGrpIncBySysGrpIdx";
@@ -1058,7 +1058,7 @@ public class CFSecSecSysGrpIncTableObj
 	 */
 	@Override
 	public List<ICFSecSecSysGrpIncObj> pageSecSysGrpIncByNameIdx( String InclName,
-		CFLibDbKeyHash256 priorSecSysGrpId,
+		ICFLibKeyHash256 priorSecSysGrpId,
 		String priorInclName )
 	{
 		final String S_ProcName = "pageSecSysGrpIncByNameIdx";
@@ -1101,7 +1101,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
+	public void deleteSecSysGrpIncByIdIdx( ICFLibKeyHash256 SecSysGrpId,
 		String InclName )
 	{
 		ICFSecSecSysGrpIncObj obj = readSecSysGrpInc(SecSysGrpId,
@@ -1134,7 +1134,7 @@ public class CFSecSecSysGrpIncTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public void deleteSecSysGrpIncBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );

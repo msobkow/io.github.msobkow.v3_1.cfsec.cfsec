@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOTZoneByIso8601IdxKey
 	implements ICFSecISOTZoneByIso8601IdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredIso8601;
+	protected $implJavaAtomType$ requiredIso8601;
 	public CFSecBuffISOTZoneByIso8601IdxKey() {
 		requiredIso8601 = ICFSecPubISOTZone.ISO8601_INIT_VALUE;
 	}

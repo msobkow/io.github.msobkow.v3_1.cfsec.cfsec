@@ -57,8 +57,8 @@ public class CFSecBuffSecTentGrpMembHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected CFLibDbKeyHash256 requiredSecTentGrpId;
-	protected String requiredLoginId;
+	protected $implJavaAtomType$ requiredSecTentGrpId;
+	protected $implJavaAtomType$ requiredLoginId;
 
 	public CFSecBuffSecTentGrpMembHPKey() {
 		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;

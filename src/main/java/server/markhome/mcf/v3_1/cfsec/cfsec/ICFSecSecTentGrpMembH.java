@@ -70,8 +70,8 @@ public interface ICFSecSecTentGrpMembH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 requiredSecTentGrpId );
+	public ICFLibKeyHash256 getRequiredSecTentGrpId();
+	public void setRequiredSecTentGrpId( ICFLibKeyHash256 requiredSecTentGrpId );
 
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String requiredLoginId );

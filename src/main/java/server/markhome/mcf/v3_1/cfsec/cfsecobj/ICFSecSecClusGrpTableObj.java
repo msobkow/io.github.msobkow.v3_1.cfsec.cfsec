@@ -100,7 +100,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	The SecClusGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrp( CFLibDbKeyHash256 pkey );
+	ICFSecSecClusGrpObj readSecClusGrp( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a SecClusGrp-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	The SecClusGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrp( CFLibDbKeyHash256 pkey,
+	ICFSecSecClusGrpObj readSecClusGrp( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrp( CFLibDbKeyHash256 pkey );
+	ICFSecSecClusGrpObj readCachedSecClusGrp( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeSecClusGrp( ICFSecSecClusGrpObj obj );
 
-	void deepDisposeSecClusGrp( CFLibDbKeyHash256 pkey );
+	void deepDisposeSecClusGrp( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecClusGrpObj lockSecClusGrp( CFLibDbKeyHash256 pkey );
+	ICFSecSecClusGrpObj lockSecClusGrp( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the SecClusGrp-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( CFLibDbKeyHash256 SecClusGrpId );
+	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
 
 	/**
 	 *	Get the CFSecSecClusGrpObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId );
+	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Get the map of CFSecSecClusGrpObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -181,7 +181,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId,
+	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(CFLibDbKeyHash256 ClusterId,
+	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -228,26 +228,26 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(CFLibDbKeyHash256 ClusterId,
+	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
 		String Name,
 		boolean forceRead );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrpByIdIdx( CFLibDbKeyHash256 SecClusGrpId );
+	ICFSecSecClusGrpObj readCachedSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
 
-	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId );
+	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
 
 	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByNameIdx( String Name );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrpByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	ICFSecSecClusGrpObj readCachedSecClusGrpByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String Name );
 
-	void deepDisposeSecClusGrpByIdIdx( CFLibDbKeyHash256 SecClusGrpId );
+	void deepDisposeSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
 
-	void deepDisposeSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId );
+	void deepDisposeSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
 
 	void deepDisposeSecClusGrpByNameIdx( String Name );
 
-	void deepDisposeSecClusGrpByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	void deepDisposeSecClusGrpByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -265,14 +265,14 @@ public interface ICFSecSecClusGrpTableObj
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByIdIdx( CFLibDbKeyHash256 SecClusGrpId );
+	void deleteSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ClusterId	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId );
+	void deleteSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -288,6 +288,6 @@ public interface ICFSecSecClusGrpTableObj
 	 *
 	 *	@param	Name	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByUNameIdx(CFLibDbKeyHash256 ClusterId,
+	void deleteSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
 		String Name );
 }

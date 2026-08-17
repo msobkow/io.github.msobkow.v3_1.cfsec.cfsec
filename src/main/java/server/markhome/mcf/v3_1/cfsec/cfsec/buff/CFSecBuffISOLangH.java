@@ -58,9 +58,9 @@ public class CFSecBuffISOLangH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredISO6392Code;
-	protected String optionalISO6391Code;
-	protected String requiredEnglishName;
+	protected $implJavaAtomType$ requiredISO6392Code;
+	protected $implJavaAtomType$ optionalISO6391Code;
+	protected $implJavaAtomType$ requiredEnglishName;
 
     public CFSecBuffISOLangH() {
             // The primary key member attributes are initialized on construction

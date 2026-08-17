@@ -92,7 +92,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserEMConfByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key UUuid6Idx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	EMConfirmationUuid6	The SecUserEMConf key attribute of the instance generating the id.
 	 */
 	void deleteSecUserEMConfByUUuid6Idx( ICFSecAuthorization Authorization,
-		CFLibUuid6 argEMConfirmationUuid6 );
+		ICFLibUuid6 argEMConfirmationUuid6 );
 
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key UUuid6Idx.
@@ -182,7 +182,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecUserEMConf record instance by primary key.
@@ -195,7 +195,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecUserEMConf instances.
@@ -217,7 +217,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read the derived SecUserEMConf record instance identified by the unique key UUuid6Idx.
@@ -230,7 +230,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerivedByUUuid6Idx( ICFSecAuthorization Authorization,
-		CFLibUuid6 EMConfirmationUuid6 );
+		ICFLibUuid6 EMConfirmationUuid6 );
 
 	/**
 	 *	Read an array of the derived SecUserEMConf record instances identified by the duplicate key ConfEMAddrIdx.
@@ -281,7 +281,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecUserEMConf record instance identified by the primary key.
@@ -296,7 +296,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecUserEMConf record instances.
@@ -315,7 +315,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@return All the specific SecUserEMConf instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUserEMConf[] pageAllRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 
 	/**
 	 *	Read the specific SecUserEMConf record instance identified by the unique key IdIdx.
@@ -330,7 +330,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read the specific SecUserEMConf record instance identified by the unique key UUuid6Idx.
@@ -345,7 +345,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRecByUUuid6Idx( ICFSecAuthorization Authorization,
-		CFLibUuid6 EMConfirmationUuid6 );
+		ICFLibUuid6 EMConfirmationUuid6 );
 
 	/**
 	 *	Read an array of the specific SecUserEMConf record instances identified by the duplicate key ConfEMAddrIdx.
@@ -402,7 +402,7 @@ public interface ICFSecSecUserEMConfTable
 	 */
 	ICFSecSecUserEMConf[] pageRecByConfEMAddrIdx( ICFSecAuthorization Authorization,
 		String ConfirmEMailAddr,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 
 	/**
 	 *	Read a page array of the specific SecUserEMConf record instances identified by the duplicate key SentStampIdx.
@@ -417,7 +417,7 @@ public interface ICFSecSecUserEMConfTable
 	 */
 	ICFSecSecUserEMConf[] pageRecBySentStampIdx( ICFSecAuthorization Authorization,
 		LocalDateTime EMailSentStamp,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 
 	/**
 	 *	Read a page array of the specific SecUserEMConf record instances identified by the duplicate key NewAcctIdx.
@@ -432,5 +432,5 @@ public interface ICFSecSecUserEMConfTable
 	 */
 	ICFSecSecUserEMConf[] pageRecByNewAcctIdx( ICFSecAuthorization Authorization,
 		boolean NewAccount,
-		CFLibDbKeyHash256 priorSecUserId );
+		ICFLibKeyHash256 priorSecUserId );
 }

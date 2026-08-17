@@ -59,8 +59,8 @@ public interface ICFSecSecSession
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredSecSessionId);
+	public ICFLibKeyHash256 getPKey();
+	public void setPKey(ICFLibKeyHash256 requiredSecSessionId);
 	public CFLibDbKeyHash256 getRequiredSecSessionId();
 	public void setRequiredSecSessionId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -68,7 +68,7 @@ public interface ICFSecSecSession
 
 	public ICFSecSecUser getRequiredContainerSecUser();
 
-	public void setRequiredContainerSecUser(CFLibDbKeyHash256 argSecUserId);
+	public void setRequiredContainerSecUser(ICFLibKeyHash256 argSecUserId);
 
 	public void setRequiredContainerSecUser(ICFSecSecUser argObj);
 
@@ -78,7 +78,7 @@ public interface ICFSecSecSession
 
 	public ICFSecSecUser getRequiredParentSecProxy();
 
-	public void setRequiredParentSecProxy(CFLibDbKeyHash256 argSecProxyId);
+	public void setRequiredParentSecProxy(ICFLibKeyHash256 argSecProxyId);
 
 	public void setRequiredParentSecProxy(ICFSecSecUser argObj);
 

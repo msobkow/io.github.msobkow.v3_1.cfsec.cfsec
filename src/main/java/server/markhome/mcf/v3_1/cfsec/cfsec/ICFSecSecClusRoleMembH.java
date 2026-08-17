@@ -70,8 +70,8 @@ public interface ICFSecSecClusRoleMembH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId();
-	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 requiredSecClusRoleId );
+	public ICFLibKeyHash256 getRequiredSecClusRoleId();
+	public void setRequiredSecClusRoleId( ICFLibKeyHash256 requiredSecClusRoleId );
 
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String requiredLoginId );

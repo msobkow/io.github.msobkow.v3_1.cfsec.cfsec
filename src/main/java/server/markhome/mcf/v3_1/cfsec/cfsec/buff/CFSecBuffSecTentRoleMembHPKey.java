@@ -57,8 +57,8 @@ public class CFSecBuffSecTentRoleMembHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected CFLibDbKeyHash256 requiredSecTentRoleId;
-	protected String requiredLoginId;
+	protected $implJavaAtomType$ requiredSecTentRoleId;
+	protected $implJavaAtomType$ requiredLoginId;
 
 	public CFSecBuffSecTentRoleMembHPKey() {
 		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;

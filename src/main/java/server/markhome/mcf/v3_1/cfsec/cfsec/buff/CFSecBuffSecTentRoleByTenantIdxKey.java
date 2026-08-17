@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecTentRoleByTenantIdxKey
 	implements ICFSecSecTentRoleByTenantIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredTenantId;
+	protected $implJavaAtomType$ requiredTenantId;
 	public CFSecBuffSecTentRoleByTenantIdxKey() {
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.TENANTID_INIT_VALUE.toString() );
 	}

@@ -92,7 +92,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserPasswordByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SecUserPassword instances identified by the key SetStampIdx.
 	 *
@@ -125,7 +125,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SecUserPassword record instance by primary key.
@@ -138,7 +138,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SecUserPassword instances.
@@ -160,7 +160,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read an array of the derived SecUserPassword record instances identified by the duplicate key SetStampIdx.
@@ -187,7 +187,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SecUserPassword record instance identified by the primary key.
@@ -202,7 +202,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SecUserPassword record instances.
@@ -226,7 +226,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SecUserId );
+		ICFLibKeyHash256 SecUserId );
 
 	/**
 	 *	Read an array of the specific SecUserPassword record instances identified by the duplicate key SetStampIdx.

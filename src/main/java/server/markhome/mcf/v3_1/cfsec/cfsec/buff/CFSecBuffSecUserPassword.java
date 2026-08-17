@@ -51,10 +51,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPassword
 	implements ICFSecSecUserPassword, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecUserId;
+	protected $implJavaAtomType$ requiredSecUserId;
 	protected int requiredRevision;
-	protected LocalDateTime requiredPWSetStamp;
-	protected String requiredPasswordHash;
+	protected $implJavaAtomType$ requiredPWSetStamp;
+	protected $implJavaAtomType$ requiredPasswordHash;
 
 	public CFSecBuffSecUserPassword() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPassword.SECUSERID_INIT_VALUE.toString() );
@@ -62,12 +62,12 @@ public class CFSecBuffSecUserPassword
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
+	public void setPKey($implJavaOptAtomType$ requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}

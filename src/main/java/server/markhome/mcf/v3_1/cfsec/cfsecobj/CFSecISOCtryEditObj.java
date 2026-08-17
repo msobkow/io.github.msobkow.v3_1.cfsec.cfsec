@@ -391,12 +391,12 @@ public class CFSecISOCtryEditObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOCtryId(short value) {
+	public void setRequiredISOCtryId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsCcy = null;
@@ -405,24 +405,24 @@ public class CFSecISOCtryEditObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implJavaAtomType$ getRequiredISOCode() {
 		return( getISOCtryRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public void setRequiredISOCode( String value ) {
+	public void setRequiredISOCode( $implJavaAtomType$ value ) {
 		if( getISOCtryRec().getRequiredISOCode() != value ) {
 			getISOCtryRec().setRequiredISOCode( value );
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getISOCtryRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getISOCtryRec().getRequiredName() != value ) {
 			getISOCtryRec().setRequiredName( value );
 		}

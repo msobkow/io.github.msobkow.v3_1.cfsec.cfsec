@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfoBySuperNameIdxKey
 	implements ICFSecTableInfoBySuperNameIdxKey, Comparable<Object>, Serializable
 {
-	protected String optionalSuperName;
+	protected $implJavaAtomType$ optionalSuperName;
 	public CFSecBuffTableInfoBySuperNameIdxKey() {
 		optionalSuperName = null;
 	}

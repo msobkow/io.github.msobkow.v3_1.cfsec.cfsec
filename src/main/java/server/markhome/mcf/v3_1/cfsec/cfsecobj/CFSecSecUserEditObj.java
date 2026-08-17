@@ -204,7 +204,7 @@ public class CFSecSecUserEditObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEMConfirmationUuid6");
 				}
-				CFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
+				$implJavaAtomType$ natNextName = CFLibUuid6.fromString(nextName);
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -216,7 +216,7 @@ public class CFSecSecUserEditObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredPasswordResetUuid6");
 				}
-				CFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
+				$implJavaAtomType$ natNextName = CFLibUuid6.fromString(nextName);
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -401,12 +401,12 @@ public class CFSecSecUserEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -422,12 +422,12 @@ public class CFSecSecUserEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
+	public void setRequiredSecUserId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsSecSess = null;
@@ -443,12 +443,12 @@ public class CFSecSecUserEditObj
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implJavaAtomType$ getRequiredLoginId() {
 		return( getSecUserRec().getRequiredLoginId() );
 	}
 
 	@Override
-	public void setRequiredLoginId( String value ) {
+	public void setRequiredLoginId( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
 			optionalComponentsSecSess = null;
@@ -464,60 +464,60 @@ public class CFSecSecUserEditObj
 	}
 
 	@Override
-	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus() {
+	public $implJavaAtomType$ getRequiredAccountStatus() {
 		return( getSecUserRec().getRequiredAccountStatus() );
 	}
 
 	@Override
-	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
+	public void setRequiredAccountStatus( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getRequiredAccountStatus() != value ) {
 			getSecUserRec().setRequiredAccountStatus( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDfltSysGrpName() {
+	public $implJavaAtomType$ getOptionalDfltSysGrpName() {
 		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltSysGrpName( String value ) {
+	public void setOptionalDfltSysGrpName( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getOptionalDfltSysGrpName() != value ) {
 			getSecUserRec().setOptionalDfltSysGrpName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDfltClusGrpName() {
+	public $implJavaAtomType$ getOptionalDfltClusGrpName() {
 		return( getSecUserRec().getOptionalDfltClusGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltClusGrpName( String value ) {
+	public void setOptionalDfltClusGrpName( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getOptionalDfltClusGrpName() != value ) {
 			getSecUserRec().setOptionalDfltClusGrpName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDfltTentGrpName() {
+	public $implJavaAtomType$ getOptionalDfltTentGrpName() {
 		return( getSecUserRec().getOptionalDfltTentGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltTentGrpName( String value ) {
+	public void setOptionalDfltTentGrpName( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getOptionalDfltTentGrpName() != value ) {
 			getSecUserRec().setOptionalDfltTentGrpName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredEMailAddress() {
+	public $implJavaAtomType$ getRequiredEMailAddress() {
 		return( getSecUserRec().getRequiredEMailAddress() );
 	}
 
 	@Override
-	public void setRequiredEMailAddress( String value ) {
+	public void setRequiredEMailAddress( $implJavaAtomType$ value ) {
 		if( getSecUserRec().getRequiredEMailAddress() != value ) {
 			getSecUserRec().setRequiredEMailAddress( value );
 		}

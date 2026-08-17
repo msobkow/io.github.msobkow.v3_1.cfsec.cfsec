@@ -52,7 +52,7 @@ public class CFSecBuffSysClusterH
     implements ICFSecSysClusterH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSysClusterHPKey pkey;
-	protected CFLibDbKeyHash256 requiredClusterId;
+	protected $implJavaAtomType$ requiredClusterId;
 
     public CFSecBuffSysClusterH() {
             // The primary key member attributes are initialized on construction

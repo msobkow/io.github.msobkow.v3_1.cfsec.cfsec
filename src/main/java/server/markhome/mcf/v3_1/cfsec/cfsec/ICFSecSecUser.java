@@ -82,8 +82,8 @@ public interface ICFSecSecUser
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
+	public ICFLibKeyHash256 getPKey();
+	public void setPKey(ICFLibKeyHash256 requiredSecUserId);
 	public List<ICFSecSecSession> getOptionalComponentsSecSess();
 
 	public List<ICFSecSecSession> getOptionalChildrenSecProxy();

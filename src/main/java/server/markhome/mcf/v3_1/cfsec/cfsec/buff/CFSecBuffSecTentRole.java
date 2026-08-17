@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecTentRole
 	implements ICFSecSecTentRole, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecTentRoleId;
+	protected $implJavaAtomType$ requiredSecTentRoleId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,8 +59,8 @@ public class CFSecBuffSecTentRole
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredName;
 
 	public CFSecBuffSecTentRole() {
 		requiredSecTentRoleId = CFLibDbKeyHash256.fromHex( ICFSecProtSecTentRole.SECTENTROLEID_INIT_VALUE.toString() );
@@ -69,12 +69,12 @@ public class CFSecBuffSecTentRole
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSecTentRoleId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecTentRoleId) {
+	public void setPKey($implJavaOptAtomType$ requiredSecTentRoleId) {
 		if(requiredSecTentRoleId != null) {
 			this.requiredSecTentRoleId = requiredSecTentRoleId;
 		}

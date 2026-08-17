@@ -52,15 +52,15 @@ public class CFSecBuffTableInfoH
     implements ICFSecTableInfoH, Comparable<Object>, Serializable
 {
     protected CFSecBuffTableInfoHPKey pkey;
-	protected String requiredSchemaName;
-	protected String requiredTableName;
-	protected String optionalSuperName;
-	protected int requiredBackingClassCode;
-	protected int requiredRuntimeClassCode;
-	protected boolean requiredHasHistory;
-	protected boolean requiredIsMutable;
-	protected String requiredSecScopeName;
-	protected String requiredCodeVis;
+	protected $implJavaAtomType$ requiredSchemaName;
+	protected $implJavaAtomType$ requiredTableName;
+	protected $implJavaAtomType$ optionalSuperName;
+	protected $implJavaAtomType$ requiredBackingClassCode;
+	protected $implJavaAtomType$ requiredRuntimeClassCode;
+	protected $implJavaAtomType$ requiredHasHistory;
+	protected $implJavaAtomType$ requiredIsMutable;
+	protected $implJavaAtomType$ requiredSecScopeName;
+	protected $implJavaAtomType$ requiredCodeVis;
 
     public CFSecBuffTableInfoH() {
             // The primary key member attributes are initialized on construction

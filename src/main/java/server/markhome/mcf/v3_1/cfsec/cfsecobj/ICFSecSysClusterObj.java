@@ -211,11 +211,11 @@ public interface ICFSecSysClusterObj
 	int getRequiredSingletonId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
+	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
 	 */
-	CFLibDbKeyHash256 getRequiredClusterId();
+	ICFLibKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Internal use only.

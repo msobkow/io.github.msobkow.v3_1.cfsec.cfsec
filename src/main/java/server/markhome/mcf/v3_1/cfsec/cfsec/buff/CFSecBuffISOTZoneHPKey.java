@@ -56,7 +56,7 @@ public class CFSecBuffISOTZoneHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected short requiredISOTZoneId;
+	protected $implJavaAtomType$ requiredISOTZoneId;
 
 	public CFSecBuffISOTZoneHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

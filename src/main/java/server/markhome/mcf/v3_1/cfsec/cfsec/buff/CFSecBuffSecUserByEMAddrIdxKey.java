@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserByEMAddrIdxKey
 	implements ICFSecSecUserByEMAddrIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredEMailAddress;
+	protected $implJavaAtomType$ requiredEMailAddress;
 	public CFSecBuffSecUserByEMAddrIdxKey() {
 		requiredEMailAddress = ICFSecProtSecUser.EMAILADDRESS_INIT_VALUE;
 	}

@@ -77,11 +77,11 @@ public interface ICFSecSecUserEMConf
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
+	public ICFLibKeyHash256 getPKey();
+	public void setPKey(ICFLibKeyHash256 requiredSecUserId);
 	public ICFSecSecUser getRequiredContainerUser();
 
-	public void setRequiredContainerUser(CFLibDbKeyHash256 argSecUserId);
+	public void setRequiredContainerUser(ICFLibKeyHash256 argSecUserId);
 
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
 

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUser
 	implements ICFSecSecUser, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSecUserId;
+	protected $implJavaAtomType$ requiredSecUserId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,12 +59,12 @@ public class CFSecBuffSecUser
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredLoginId;
-	protected ICFSecPubSchema.SecAccountStatusEnum requiredAccountStatus;
-	protected String optionalDfltSysGrpName;
-	protected String optionalDfltClusGrpName;
-	protected String optionalDfltTentGrpName;
-	protected String requiredEMailAddress;
+	protected $implJavaAtomType$ requiredLoginId;
+	protected $implJavaAtomType$ requiredAccountStatus;
+	protected $implJavaAtomType$ optionalDfltSysGrpName;
+	protected $implJavaAtomType$ optionalDfltClusGrpName;
+	protected $implJavaAtomType$ optionalDfltTentGrpName;
+	protected $implJavaAtomType$ requiredEMailAddress;
 
 	public CFSecBuffSecUser() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecUser.SECUSERID_INIT_VALUE.toString() );
@@ -77,12 +77,12 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredSecUserId) {
+	public void setPKey($implJavaOptAtomType$ requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}

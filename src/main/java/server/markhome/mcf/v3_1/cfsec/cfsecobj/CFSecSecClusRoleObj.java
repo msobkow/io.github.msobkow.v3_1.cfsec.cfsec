@@ -51,7 +51,7 @@ public class CFSecSecClusRoleObj
 	protected boolean isNew;
 	protected ICFSecSecClusRoleEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecClusRole rec;
 	protected ICFSecClusterObj requiredOwnerCluster;
 	protected ICFSecSecSysGrpObj requiredContainerSysRole;
@@ -282,12 +282,12 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -364,7 +364,7 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+	public $implJavaAtomType$ getRequiredSecClusRoleId() {
 		return( getPKey() );
 	}
 
@@ -417,12 +417,12 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClusterId() {
+	public $implJavaAtomType$ getRequiredClusterId() {
 		return( getSecClusRoleRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSecClusRoleRec().getRequiredName() );
 	}
 

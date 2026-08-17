@@ -49,18 +49,18 @@ public class CFSecSecSysGrpTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecSysGrp.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecSysGrp.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> allSecSysGrp;
+	private Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> allSecSysGrp;
 	private Map< ICFSecSecSysGrpByUNameIdxKey,
 		ICFSecSecSysGrpObj > indexByUNameIdx;
 	private Map< ICFSecSecSysGrpBySecLevelIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > > indexBySecLevelIdx;
+		Map<ICFLibKeyHash256, ICFSecSecSysGrpObj > > indexBySecLevelIdx;
 	public static String TABLE_NAME = "SecSysGrp";
 	public static String TABLE_DBNAME = "secsysgrp";
 
 	public CFSecSecSysGrpTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysGrpObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecSysGrpObj>();
 		allSecSysGrp = null;
 		indexByUNameIdx = null;
 		indexBySecLevelIdx = null;
@@ -68,7 +68,7 @@ public class CFSecSecSysGrpTableObj
 
 	public CFSecSecSysGrpTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysGrpObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecSysGrpObj>();
 		allSecSysGrp = null;
 		indexByUNameIdx = null;
 		indexBySecLevelIdx = null;
@@ -193,7 +193,7 @@ public class CFSecSecSysGrpTableObj
 	@Override
 	public ICFSecSecSysGrpObj realiseSecSysGrp( ICFSecSecSysGrpObj Obj ) {
 		ICFSecSecSysGrpObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecSysGrpObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecSysGrpObj existingObj = members.get( pkey );
@@ -217,7 +217,7 @@ public class CFSecSecSysGrpTableObj
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
-				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
+				Map<ICFLibKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
 					mapSecLevelIdx.remove( keepObj.getPKey() );
 					if( mapSecLevelIdx.size() <= 0 ) {
@@ -240,7 +240,7 @@ public class CFSecSecSysGrpTableObj
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
-				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
+				Map<ICFLibKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
 					mapSecLevelIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -271,7 +271,7 @@ public class CFSecSecSysGrpTableObj
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
-				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
+				Map<ICFLibKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
 					mapSecLevelIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -295,12 +295,12 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readSecSysGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysGrpObj readSecSysGrp( ICFLibKeyHash256 pkey ) {
 		return( readSecSysGrp( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readSecSysGrp( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecSysGrpObj readSecSysGrp( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecSysGrpObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -319,7 +319,7 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readCachedSecSysGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysGrpObj readCachedSecSysGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysGrpObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -335,7 +335,7 @@ public class CFSecSecSysGrpTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecSysGrpObj existing = readCachedSecSysGrp( pkey );
 		if( existing == null ) {
 			return;
@@ -367,7 +367,7 @@ public class CFSecSecSysGrpTableObj
 
 	}
 	@Override
-	public void deepDisposeSecSysGrp( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecSysGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysGrpObj obj = readCachedSecSysGrp( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -375,7 +375,7 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj lockSecSysGrp( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysGrpObj lockSecSysGrp( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysGrpObj locked = null;
 		ICFSecSecSysGrp lockRec = schema.getCFSecBackingStore().getTableSecSysGrp().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -399,7 +399,7 @@ public class CFSecSecSysGrpTableObj
 	public List<ICFSecSecSysGrpObj> readAllSecSysGrp( boolean forceRead ) {
 		final String S_ProcName = "readAllSecSysGrp";
 		if( ( allSecSysGrp == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecSysGrpObj>();
+			Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecSysGrpObj>();
 			allSecSysGrp = map;
 			ICFSecSecSysGrp[] recList = schema.getCFSecBackingStore().getTableSecSysGrp().readAllDerived( null );
 			ICFSecSecSysGrp rec;
@@ -455,8 +455,8 @@ public class CFSecSecSysGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -513,8 +513,8 @@ public class CFSecSecSysGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -525,14 +525,14 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public ICFSecSecSysGrpObj readSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		return( readSecSysGrpByIdIdx( SecSysGrpId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId, boolean forceRead )
+	public ICFSecSecSysGrpObj readSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId, boolean forceRead )
 	{
 		ICFSecSecSysGrpObj obj = readSecSysGrp( SecSysGrpId, forceRead );
 		return( obj );
@@ -585,16 +585,16 @@ public class CFSecSecSysGrpTableObj
 		final String S_ProcName = "readSecSysGrpBySecLevelIdx";
 		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		key.setRequiredSecLevel( SecLevel );
-		Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> dict;
 		if( indexBySecLevelIdx == null ) {
 			indexBySecLevelIdx = new HashMap< ICFSecSecSysGrpBySecLevelIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecSysGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecSysGrpObj > >();
 		}
 		if( ( ! forceRead ) && indexBySecLevelIdx.containsKey( key ) ) {
 			dict = indexBySecLevelIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecSysGrpObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecSysGrpObj>();
 			ICFSecSecSysGrpObj obj;
 			ICFSecSecSysGrp[] recList = schema.getCFSecBackingStore().getTableSecSysGrp().readDerivedBySecLevelIdx( null,
 				SecLevel );
@@ -652,8 +652,8 @@ public class CFSecSecSysGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -665,7 +665,7 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj readCachedSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public ICFSecSecSysGrpObj readCachedSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		ICFSecSecSysGrpObj obj = null;
 		obj = readCachedSecSysGrp( SecSysGrpId );
@@ -716,7 +716,7 @@ public class CFSecSecSysGrpTableObj
 		key.setRequiredSecLevel( SecLevel );
 		ArrayList<ICFSecSecSysGrpObj> arrayList = new ArrayList<ICFSecSecSysGrpObj>();
 		if( indexBySecLevelIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> dict;
 			if( indexBySecLevelIdx.containsKey( key ) ) {
 				dict = indexBySecLevelIdx.get( key );
 				int len = dict.size();
@@ -774,8 +774,8 @@ public class CFSecSecSysGrpTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -786,7 +786,7 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public void deepDisposeSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		ICFSecSecSysGrpObj obj = readCachedSecSysGrpByIdIdx( SecSysGrpId );
 		if( obj != null ) {
@@ -839,7 +839,7 @@ public class CFSecSecSysGrpTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpByIdIdx( CFLibDbKeyHash256 SecSysGrpId )
+	public void deleteSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId )
 	{
 		ICFSecSecSysGrpObj obj = readSecSysGrp(SecSysGrpId);
 		if( obj != null ) {
@@ -898,10 +898,10 @@ public class CFSecSecSysGrpTableObj
 		key.setRequiredSecLevel( SecLevel );
 		if( indexBySecLevelIdx == null ) {
 			indexBySecLevelIdx = new HashMap< ICFSecSecSysGrpBySecLevelIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecSysGrpObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecSysGrpObj > >();
 		}
 		if( indexBySecLevelIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> dict = indexBySecLevelIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecSysGrpObj> dict = indexBySecLevelIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecSysGrp().deleteSecSysGrpBySecLevelIdx( null,
 				SecLevel );
 			Iterator<ICFSecSecSysGrpObj> iter = dict.values().iterator();
