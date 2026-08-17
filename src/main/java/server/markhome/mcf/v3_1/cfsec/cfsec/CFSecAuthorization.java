@@ -58,7 +58,7 @@ public class CFSecAuthorization extends CFSecProtAuthorization implements ICFSec
 		super();
 	}
 
-	public CFSecAuthorization(CFLibUuid6 authUuid6, CFLibDbKeyHash256 secSessionId, CFLibDbKeyHash256 secUserId, CFLibDbKeyHash256 secClusterId, CFLibDbKeyHash256 secTenantId) {
+	public CFSecAuthorization(ICFLibUuid6 authUuid6, CFLibDbKeyHash256 secSessionId, CFLibDbKeyHash256 secUserId, CFLibDbKeyHash256 secClusterId, CFLibDbKeyHash256 secTenantId) {
 		super(authUuid6, secSessionId, secUserId, secClusterId, secTenantId);
 	}
 
@@ -75,7 +75,7 @@ public class CFSecAuthorization extends CFSecProtAuthorization implements ICFSec
 	}
 
 	@Override
-	public void setAuthUuid6( CFLibUuid6 value ) {
+	public void setAuthUuid6( ICFLibUuid6 value ) {
 		this.authUuid6 = new CFLibUuid6(value.getBytes());
 		this.authUuid6Str = this.authUuid6.toString();
 	}

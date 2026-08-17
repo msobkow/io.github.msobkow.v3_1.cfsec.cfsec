@@ -87,7 +87,7 @@ public class CFSecSecUserEMConfObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibUuid6 val = rec.getRequiredEMConfirmationUuid6();
+		ICFLibUuid6 val = rec.getRequiredEMConfirmationUuid6();
 		if (val != null) {
 			objName = val.toString();
 		}

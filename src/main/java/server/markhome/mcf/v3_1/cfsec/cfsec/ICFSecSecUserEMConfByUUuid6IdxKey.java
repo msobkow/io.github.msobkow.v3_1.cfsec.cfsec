@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecUserEMConfByUUuid6IdxKey
 {
-	public CFLibUuid6 getRequiredEMConfirmationUuid6();
-	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value );
+	public ICFLibUuid6 getRequiredEMConfirmationUuid6();
+	public void setRequiredEMConfirmationUuid6( ICFLibUuid6 value );
 	@Override
 	public boolean equals( Object obj );
 

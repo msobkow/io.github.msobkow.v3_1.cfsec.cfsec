@@ -76,8 +76,8 @@ public interface ICFSecSecUserPWResetH
 
 	public String getRequiredSentToEMailAddr();
 	public void setRequiredSentToEMailAddr( String value );
-	public CFLibUuid6 getRequiredPasswordResetUuid6();
-	public void setRequiredPasswordResetUuid6( CFLibUuid6 value );
+	public ICFLibUuid6 getRequiredPasswordResetUuid6();
+	public void setRequiredPasswordResetUuid6( ICFLibUuid6 value );
 	public boolean getRequiredNewAccount();
 	public void setRequiredNewAccount( boolean value );
 	@Override

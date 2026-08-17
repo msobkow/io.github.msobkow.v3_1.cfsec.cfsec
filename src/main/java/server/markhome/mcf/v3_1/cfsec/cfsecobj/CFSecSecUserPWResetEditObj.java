@@ -134,7 +134,7 @@ public class CFSecSecUserPWResetEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibUuid6 val = rec.getRequiredPasswordResetUuid6();
+		ICFLibUuid6 val = rec.getRequiredPasswordResetUuid6();
 		if (val != null) {
 			objName = val.toString();
 		}
