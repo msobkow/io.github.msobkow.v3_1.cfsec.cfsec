@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOTZoneByOffsetIdxKey
 	implements ICFSecISOTZoneByOffsetIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTZHourOffset;
-	protected $implJavaAtomType$ requiredTZMinOffset;
+	protected short requiredTZHourOffset;
+	protected short requiredTZMinOffset;
 	public CFSecBuffISOTZoneByOffsetIdxKey() {
 		requiredTZHourOffset = ICFSecPubISOTZone.TZHOUROFFSET_INIT_VALUE;
 		requiredTZMinOffset = ICFSecPubISOTZone.TZMINOFFSET_INIT_VALUE;

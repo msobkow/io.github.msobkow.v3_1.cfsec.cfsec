@@ -52,10 +52,10 @@ public class CFSecBuffSecSessionH
     implements ICFSecSecSessionH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecSessionHPKey pkey;
-	protected $implJavaAtomType$ requiredSecUserId;
-	protected $implJavaAtomType$ requiredStart;
-	protected $implJavaAtomType$ optionalFinish;
-	protected $implJavaAtomType$ optionalSecProxyId;
+	protected ICFLibKeyHash256 requiredSecUserId;
+	protected LocalDateTime requiredStart;
+	protected LocalDateTime optionalFinish;
+	protected ICFLibKeyHash256 optionalSecProxyId;
 
     public CFSecBuffSecSessionH() {
             // The primary key member attributes are initialized on construction

@@ -53,8 +53,8 @@ public class CFSecBuffSecUserPWHistory
 {
 	protected ICFSecSecUserPWHistoryPKey pkey = new CFSecBuffSecUserPWHistoryPKey();
 	protected int requiredRevision;
-	protected $implJavaAtomType$ requiredPWReplacedStamp;
-	protected $implJavaAtomType$ requiredPasswordHash;
+	protected LocalDateTime requiredPWReplacedStamp;
+	protected String requiredPasswordHash;
 
 	public CFSecBuffSecUserPWHistory() {
 		pkey = new CFSecBuffSecUserPWHistoryPKey();

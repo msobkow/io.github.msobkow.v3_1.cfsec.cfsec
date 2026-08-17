@@ -51,17 +51,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfo
 	implements ICFSecTableInfo, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTableInfoId;
+	protected int requiredTableInfoId;
 	protected int requiredRevision;
-	protected $implJavaAtomType$ requiredSchemaName;
-	protected $implJavaAtomType$ requiredTableName;
-	protected $implJavaAtomType$ optionalSuperName;
-	protected $implJavaAtomType$ requiredBackingClassCode;
-	protected $implJavaAtomType$ requiredRuntimeClassCode;
-	protected $implJavaAtomType$ requiredHasHistory;
-	protected $implJavaAtomType$ requiredIsMutable;
-	protected $implJavaAtomType$ requiredSecScopeName;
-	protected $implJavaAtomType$ requiredCodeVis;
+	protected String requiredSchemaName;
+	protected String requiredTableName;
+	protected String optionalSuperName;
+	protected int requiredBackingClassCode;
+	protected int requiredRuntimeClassCode;
+	protected boolean requiredHasHistory;
+	protected boolean requiredIsMutable;
+	protected String requiredSecScopeName;
+	protected String requiredCodeVis;
 
 	public CFSecBuffTableInfo() {
 		requiredTableInfoId = ICFSecPubTableInfo.TABLEINFOID_INIT_VALUE;
@@ -77,12 +77,12 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public Integer getPKey() {
 		return (requiredTableInfoId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredTableInfoId) {
+	public void setPKey(Integer requiredTableInfoId) {
 		if(requiredTableInfoId != null) {
 			this.requiredTableInfoId = requiredTableInfoId;
 		}

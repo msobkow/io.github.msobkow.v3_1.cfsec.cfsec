@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConfByNewAcctIdxKey
 	implements ICFSecSecUserEMConfByNewAcctIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredNewAccount;
+	protected boolean requiredNewAccount;
 	public CFSecBuffSecUserEMConfByNewAcctIdxKey() {
 		requiredNewAccount = ICFSecProtSecUserEMConf.NEWACCOUNT_INIT_VALUE;
 	}

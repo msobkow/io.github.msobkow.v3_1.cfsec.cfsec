@@ -335,7 +335,7 @@ public class CFSecSecUserPasswordObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -356,12 +356,12 @@ public class CFSecSecUserPasswordObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPWSetStamp() {
+	public LocalDateTime getRequiredPWSetStamp() {
 		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPasswordHash() {
+	public String getRequiredPasswordHash() {
 		return( getSecUserPasswordRec().getRequiredPasswordHash() );
 	}
 

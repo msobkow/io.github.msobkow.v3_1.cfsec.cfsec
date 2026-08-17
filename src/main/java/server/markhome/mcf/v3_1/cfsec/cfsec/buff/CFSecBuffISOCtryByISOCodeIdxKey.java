@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCtryByISOCodeIdxKey
 	implements ICFSecISOCtryByISOCodeIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredISOCode;
+	protected String requiredISOCode;
 	public CFSecBuffISOCtryByISOCodeIdxKey() {
 		requiredISOCode = ICFSecPubISOCtry.ISOCODE_INIT_VALUE;
 	}

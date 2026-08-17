@@ -204,7 +204,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredInclName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByIdIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -217,7 +217,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -230,7 +230,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -243,7 +243,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByUNameIdx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -255,7 +255,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -268,7 +268,7 @@ public class CFSecSecSysGrpEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -475,12 +475,12 @@ public class CFSecSecSysGrpEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSysGrpId() {
+	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecSysGrpId($implJavaAtomType$ value) {
+	public void setRequiredSecSysGrpId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsIncByGrp = null;
@@ -496,12 +496,12 @@ public class CFSecSecSysGrpEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecSysGrpRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getSecSysGrpRec().getRequiredName() != value ) {
 			getSecSysGrpRec().setRequiredName( value );
 			optionalComponentsIncByGrp = null;
@@ -517,12 +517,12 @@ public class CFSecSecSysGrpEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecLevel() {
+	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
 		return( getSecSysGrpRec().getRequiredSecLevel() );
 	}
 
 	@Override
-	public void setRequiredSecLevel( $implJavaAtomType$ value ) {
+	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value ) {
 		if( getSecSysGrpRec().getRequiredSecLevel() != value ) {
 			getSecSysGrpRec().setRequiredSecLevel( value );
 		}

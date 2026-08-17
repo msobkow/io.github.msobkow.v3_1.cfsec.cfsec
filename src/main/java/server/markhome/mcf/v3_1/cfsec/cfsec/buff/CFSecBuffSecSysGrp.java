@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSysGrp
 	implements ICFSecSecSysGrp, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecSysGrpId;
+	protected ICFLibKeyHash256 requiredSecSysGrpId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,8 +59,8 @@ public class CFSecBuffSecSysGrp
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ requiredSecLevel;
+	protected String requiredName;
+	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 
 	public CFSecBuffSecSysGrp() {
 		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSysGrp.SECSYSGRPID_INIT_VALUE.toString() );
@@ -69,12 +69,12 @@ public class CFSecBuffSecSysGrp
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return (requiredSecSysGrpId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredSecSysGrpId) {
+	public void setPKey(ICFLibKeyHash256 requiredSecSysGrpId) {
 		if(requiredSecSysGrpId != null) {
 			this.requiredSecSysGrpId = requiredSecSysGrpId;
 		}

@@ -397,12 +397,12 @@ public class CFSecSecTentRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecTentRoleId() {
+	public ICFLibKeyHash256 getRequiredSecTentRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecTentRoleId($implJavaAtomType$ value) {
+	public void setRequiredSecTentRoleId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -412,12 +412,12 @@ public class CFSecSecTentRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getSecTentRoleRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecTentRoleRec().getRequiredName() );
 	}
 

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOTZoneByUTZNameIdxKey
 	implements ICFSecISOTZoneByUTZNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTZName;
+	protected String requiredTZName;
 	public CFSecBuffISOTZoneByUTZNameIdxKey() {
 		requiredTZName = ICFSecPubISOTZone.TZNAME_INIT_VALUE;
 	}

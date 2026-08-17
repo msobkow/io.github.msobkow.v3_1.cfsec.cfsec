@@ -199,7 +199,7 @@ public class CFSecClusterEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -406,12 +406,12 @@ public class CFSecClusterEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsTenant = null;
@@ -422,24 +422,24 @@ public class CFSecClusterEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredFullDomName() {
+	public String getRequiredFullDomName() {
 		return( getClusterRec().getRequiredFullDomName() );
 	}
 
 	@Override
-	public void setRequiredFullDomName( $implJavaAtomType$ value ) {
+	public void setRequiredFullDomName( String value ) {
 		if( getClusterRec().getRequiredFullDomName() != value ) {
 			getClusterRec().setRequiredFullDomName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getClusterRec().getRequiredDescription() );
 	}
 
 	@Override
-	public void setRequiredDescription( $implJavaAtomType$ value ) {
+	public void setRequiredDescription( String value ) {
 		if( getClusterRec().getRequiredDescription() != value ) {
 			getClusterRec().setRequiredDescription( value );
 		}

@@ -56,8 +56,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecClusGrpMembPKey
 	implements ICFSecSecClusGrpMembPKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecClusGrpId;
-	protected $implJavaAtomType$ requiredLoginId;
+	protected ICFLibKeyHash256 requiredSecClusGrpId;
+	protected String requiredLoginId;
 
 	public CFSecBuffSecClusGrpMembPKey() {
 		requiredSecClusGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrpMemb.SECCLUSGRPID_INIT_VALUE.toString() );

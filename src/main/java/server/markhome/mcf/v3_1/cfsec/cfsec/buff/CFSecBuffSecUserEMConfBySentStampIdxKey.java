@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConfBySentStampIdxKey
 	implements ICFSecSecUserEMConfBySentStampIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredEMailSentStamp;
+	protected LocalDateTime requiredEMailSentStamp;
 	public CFSecBuffSecUserEMConfBySentStampIdxKey() {
 		requiredEMailSentStamp = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}

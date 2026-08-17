@@ -56,7 +56,7 @@ public class CFSecBuffTableInfoHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected $implJavaAtomType$ requiredTableInfoId;
+	protected int requiredTableInfoId;
 
 	public CFSecBuffTableInfoHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOTZone
 	implements ICFSecISOTZone, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredISOTZoneId;
+	protected short requiredISOTZoneId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,12 +59,12 @@ public class CFSecBuffISOTZone
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredIso8601;
-	protected $implJavaAtomType$ requiredTZName;
-	protected $implJavaAtomType$ requiredTZHourOffset;
-	protected $implJavaAtomType$ requiredTZMinOffset;
-	protected $implJavaAtomType$ requiredDescription;
-	protected $implJavaAtomType$ requiredVisible;
+	protected String requiredIso8601;
+	protected String requiredTZName;
+	protected short requiredTZHourOffset;
+	protected short requiredTZMinOffset;
+	protected String requiredDescription;
+	protected boolean requiredVisible;
 
 	public CFSecBuffISOTZone() {
 		requiredISOTZoneId = ICFSecPubISOTZone.ISOTZONEID_INIT_VALUE;
@@ -77,12 +77,12 @@ public class CFSecBuffISOTZone
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public Short getPKey() {
 		return (requiredISOTZoneId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredISOTZoneId) {
+	public void setPKey(Short requiredISOTZoneId) {
 		if(requiredISOTZoneId != null) {
 			this.requiredISOTZoneId = requiredISOTZoneId;
 		}

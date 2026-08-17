@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecClusGrpByUNameIdxKey
 	implements ICFSecSecClusGrpByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredClusterId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredClusterId;
+	protected String requiredName;
 	public CFSecBuffSecClusGrpByUNameIdxKey() {
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusGrp.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecProtSecClusGrp.NAME_INIT_VALUE;

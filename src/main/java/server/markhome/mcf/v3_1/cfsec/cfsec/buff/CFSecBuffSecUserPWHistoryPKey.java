@@ -56,8 +56,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPWHistoryPKey
 	implements ICFSecSecUserPWHistoryPKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecUserId;
-	protected $implJavaAtomType$ requiredPWSetStamp;
+	protected ICFLibKeyHash256 requiredSecUserId;
+	protected LocalDateTime requiredPWSetStamp;
 
 	public CFSecBuffSecUserPWHistoryPKey() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPWHistory.SECUSERID_INIT_VALUE.toString() );

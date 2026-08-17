@@ -57,8 +57,8 @@ public class CFSecBuffSecSysGrpIncHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected $implJavaAtomType$ requiredSecSysGrpId;
-	protected $implJavaAtomType$ requiredInclName;
+	protected ICFLibKeyHash256 requiredSecSysGrpId;
+	protected String requiredInclName;
 
 	public CFSecBuffSecSysGrpIncHPKey() {
 		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;

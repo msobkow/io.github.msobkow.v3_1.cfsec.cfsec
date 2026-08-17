@@ -365,7 +365,7 @@ public class CFSecSecUserPWResetObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -386,17 +386,17 @@ public class CFSecSecUserPWResetObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSentToEMailAddr() {
+	public String getRequiredSentToEMailAddr() {
 		return( getSecUserPWResetRec().getRequiredSentToEMailAddr() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPasswordResetUuid6() {
+	public ICFLibUuid6 getRequiredPasswordResetUuid6() {
 		return( getSecUserPWResetRec().getRequiredPasswordResetUuid6() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredNewAccount() {
+	public boolean getRequiredNewAccount() {
 		return( getSecUserPWResetRec().getRequiredNewAccount() );
 	}
 

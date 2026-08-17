@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfoByTableNameIdxKey
 	implements ICFSecTableInfoByTableNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTableName;
+	protected String requiredTableName;
 	public CFSecBuffTableInfoByTableNameIdxKey() {
 		requiredTableName = ICFSecPubTableInfo.TABLENAME_INIT_VALUE;
 	}

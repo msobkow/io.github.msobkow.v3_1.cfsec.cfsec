@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConf
 	implements ICFSecSecUserEMConf, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecUserId;
+	protected ICFLibKeyHash256 requiredSecUserId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,10 +59,10 @@ public class CFSecBuffSecUserEMConf
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredConfirmEMailAddr;
-	protected $implJavaAtomType$ requiredEMailSentStamp;
-	protected $implJavaAtomType$ requiredEMConfirmationUuid6;
-	protected $implJavaAtomType$ requiredNewAccount;
+	protected String requiredConfirmEMailAddr;
+	protected LocalDateTime requiredEMailSentStamp;
+	protected ICFLibUuid6 requiredEMConfirmationUuid6;
+	protected boolean requiredNewAccount;
 
 	public CFSecBuffSecUserEMConf() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserEMConf.SECUSERID_INIT_VALUE.toString() );
@@ -72,12 +72,12 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredSecUserId) {
+	public void setPKey(ICFLibKeyHash256 requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}

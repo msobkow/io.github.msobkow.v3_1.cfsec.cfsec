@@ -364,7 +364,7 @@ public class CFSecSecTentGrpObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecTentGrpId() {
+	public ICFLibKeyHash256 getRequiredSecTentGrpId() {
 		return( getPKey() );
 	}
 
@@ -417,12 +417,12 @@ public class CFSecSecTentGrpObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getSecTentGrpRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecTentGrpRec().getRequiredName() );
 	}
 

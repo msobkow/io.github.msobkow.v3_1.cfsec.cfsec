@@ -52,8 +52,8 @@ public class CFSecBuffSecUserPasswordH
     implements ICFSecSecUserPasswordH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserPasswordHPKey pkey;
-	protected $implJavaAtomType$ requiredPWSetStamp;
-	protected $implJavaAtomType$ requiredPasswordHash;
+	protected LocalDateTime requiredPWSetStamp;
+	protected String requiredPasswordHash;
 
     public CFSecBuffSecUserPasswordH() {
             // The primary key member attributes are initialized on construction

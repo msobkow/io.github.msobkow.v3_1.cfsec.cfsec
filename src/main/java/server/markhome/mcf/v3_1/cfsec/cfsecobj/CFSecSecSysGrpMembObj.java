@@ -369,12 +369,12 @@ public class CFSecSecSysGrpMembObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSysGrpId() {
+	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
 		return( getPKey().getRequiredSecSysGrpId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

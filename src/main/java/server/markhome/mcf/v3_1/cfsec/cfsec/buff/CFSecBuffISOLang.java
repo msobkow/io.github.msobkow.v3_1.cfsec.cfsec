@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOLang
 	implements ICFSecISOLang, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredISOLangId;
+	protected short requiredISOLangId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,9 +59,9 @@ public class CFSecBuffISOLang
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredISO6392Code;
-	protected $implJavaAtomType$ optionalISO6391Code;
-	protected $implJavaAtomType$ requiredEnglishName;
+	protected String requiredISO6392Code;
+	protected String optionalISO6391Code;
+	protected String requiredEnglishName;
 
 	public CFSecBuffISOLang() {
 		requiredISOLangId = ICFSecPubISOLang.ISOLANGID_INIT_VALUE;
@@ -71,12 +71,12 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public Short getPKey() {
 		return (requiredISOLangId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredISOLangId) {
+	public void setPKey(Short requiredISOLangId) {
 		if(requiredISOLangId != null) {
 			this.requiredISOLangId = requiredISOLangId;
 		}

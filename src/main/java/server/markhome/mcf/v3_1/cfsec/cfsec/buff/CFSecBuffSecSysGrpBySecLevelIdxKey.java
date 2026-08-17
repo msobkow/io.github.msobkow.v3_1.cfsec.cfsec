@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSysGrpBySecLevelIdxKey
 	implements ICFSecSecSysGrpBySecLevelIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecLevel;
+	protected ICFSecPubSchema.SecLevelEnum requiredSecLevel;
 	public CFSecBuffSecSysGrpBySecLevelIdxKey() {
 		requiredSecLevel = ICFSecPubSecSysGrp.SECLEVEL_INIT_VALUE;
 	}

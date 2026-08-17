@@ -396,12 +396,12 @@ public class CFSecSecTentGrpMembEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecTentGrpId() {
+	public ICFLibKeyHash256 getRequiredSecTentGrpId() {
 		return( getPKey().getRequiredSecTentGrpId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

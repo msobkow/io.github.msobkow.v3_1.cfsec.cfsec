@@ -56,8 +56,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSysGrpIncPKey
 	implements ICFSecSecSysGrpIncPKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSecSysGrpId;
-	protected $implJavaAtomType$ requiredInclName;
+	protected ICFLibKeyHash256 requiredSecSysGrpId;
+	protected String requiredInclName;
 
 	public CFSecBuffSecSysGrpIncPKey() {
 		requiredSecSysGrpId = CFLibDbKeyHash256.fromHex( ICFSecProtSecSysGrpInc.SECSYSGRPID_INIT_VALUE.toString() );

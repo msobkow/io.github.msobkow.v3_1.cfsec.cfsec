@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCcy
 	implements ICFSecISOCcy, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredISOCcyId;
+	protected short requiredISOCcyId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,10 +59,10 @@ public class CFSecBuffISOCcy
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredISOCode;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalUnitSymbol;
-	protected $implJavaAtomType$ requiredPrecis;
+	protected String requiredISOCode;
+	protected String requiredName;
+	protected String optionalUnitSymbol;
+	protected short requiredPrecis;
 
 	public CFSecBuffISOCcy() {
 		requiredISOCcyId = ICFSecPubISOCcy.ISOCCYID_INIT_VALUE;
@@ -73,12 +73,12 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public Short getPKey() {
 		return (requiredISOCcyId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredISOCcyId) {
+	public void setPKey(Short requiredISOCcyId) {
 		if(requiredISOCcyId != null) {
 			this.requiredISOCcyId = requiredISOCcyId;
 		}

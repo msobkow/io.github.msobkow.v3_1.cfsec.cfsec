@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecClusRoleByUNameIdxKey
 	implements ICFSecSecClusRoleByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredClusterId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredClusterId;
+	protected String requiredName;
 	public CFSecBuffSecClusRoleByUNameIdxKey() {
 		requiredClusterId = CFLibDbKeyHash256.fromHex( ICFSecProtSecClusRole.CLUSTERID_INIT_VALUE.toString() );
 		requiredName = ICFSecProtSecClusRole.NAME_INIT_VALUE;

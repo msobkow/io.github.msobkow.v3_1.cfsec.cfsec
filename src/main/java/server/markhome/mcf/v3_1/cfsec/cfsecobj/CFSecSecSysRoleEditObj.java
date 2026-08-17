@@ -197,7 +197,7 @@ public class CFSecSecSysRoleEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getRequiredSecSysRoleId(),
 				natNextName, false );
 			}
@@ -404,12 +404,12 @@ public class CFSecSecSysRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSysRoleId() {
+	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecSysRoleId($implJavaAtomType$ value) {
+	public void setRequiredSecSysRoleId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsEnabledByRole = null;
@@ -418,12 +418,12 @@ public class CFSecSecSysRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecSysRoleRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getSecSysRoleRec().getRequiredName() != value ) {
 			getSecSysRoleRec().setRequiredName( value );
 		}

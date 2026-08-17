@@ -364,7 +364,7 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecClusRoleId() {
+	public ICFLibKeyHash256 getRequiredSecClusRoleId() {
 		return( getPKey() );
 	}
 
@@ -417,12 +417,12 @@ public class CFSecSecClusRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getSecClusRoleRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecClusRoleRec().getRequiredName() );
 	}
 

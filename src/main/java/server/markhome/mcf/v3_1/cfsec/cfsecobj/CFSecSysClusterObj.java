@@ -330,7 +330,7 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSingletonId() {
+	public int getRequiredSingletonId() {
 		return( getPKey() );
 	}
 
@@ -351,7 +351,7 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getSysClusterRec().getRequiredClusterId() );
 	}
 

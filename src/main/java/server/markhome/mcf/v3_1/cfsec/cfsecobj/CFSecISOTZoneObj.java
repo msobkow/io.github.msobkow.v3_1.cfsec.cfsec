@@ -354,37 +354,37 @@ public class CFSecISOTZoneObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISOTZoneId() {
+	public short getRequiredISOTZoneId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIso8601() {
+	public String getRequiredIso8601() {
 		return( getISOTZoneRec().getRequiredIso8601() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZName() {
+	public String getRequiredTZName() {
 		return( getISOTZoneRec().getRequiredTZName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZHourOffset() {
+	public short getRequiredTZHourOffset() {
 		return( getISOTZoneRec().getRequiredTZHourOffset() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZMinOffset() {
+	public short getRequiredTZMinOffset() {
 		return( getISOTZoneRec().getRequiredTZMinOffset() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getISOTZoneRec().getRequiredDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredVisible() {
+	public boolean getRequiredVisible() {
 		return( getISOTZoneRec().getRequiredVisible() );
 	}
 

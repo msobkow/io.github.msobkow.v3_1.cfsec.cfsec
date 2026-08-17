@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffClusterByUDescrIdxKey
 	implements ICFSecClusterByUDescrIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredDescription;
+	protected String requiredDescription;
 	public CFSecBuffClusterByUDescrIdxKey() {
 		requiredDescription = ICFSecPubCluster.DESCRIPTION_INIT_VALUE;
 	}

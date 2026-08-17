@@ -153,7 +153,7 @@ public class CFSecTenantObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -166,7 +166,7 @@ public class CFSecTenantObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -387,7 +387,7 @@ public class CFSecTenantObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -440,12 +440,12 @@ public class CFSecTenantObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getTenantRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantName() {
+	public String getRequiredTenantName() {
 		return( getTenantRec().getRequiredTenantName() );
 	}
 
