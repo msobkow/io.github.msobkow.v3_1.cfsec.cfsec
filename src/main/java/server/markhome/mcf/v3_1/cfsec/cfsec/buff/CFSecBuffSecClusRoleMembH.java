@@ -190,11 +190,11 @@ public class CFSecBuffSecClusRoleMembH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+	public ICFLibKeyHash256 getRequiredSecClusRoleId() {
 		return(getPKey().getRequiredSecClusRoleId());
 	}
 
-	public void setRequiredSecClusRoleId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecClusRoleId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecClusRoleId",

@@ -64,8 +64,8 @@ public interface ICFSecSecUserPWHistoryHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( ICFLibKeyHash256 value );
 	public LocalDateTime getRequiredPWSetStamp();
 	public void setRequiredPWSetStamp( LocalDateTime value );
 	@Override

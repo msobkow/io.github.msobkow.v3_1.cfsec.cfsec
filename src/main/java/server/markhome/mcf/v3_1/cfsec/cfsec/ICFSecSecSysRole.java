@@ -79,8 +79,8 @@ public interface ICFSecSecSysRole
 
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole();
 
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

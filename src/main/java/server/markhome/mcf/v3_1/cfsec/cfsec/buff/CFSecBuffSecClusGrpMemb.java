@@ -81,11 +81,11 @@ public class CFSecBuffSecClusGrpMemb
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusGrpId() {
+	public ICFLibKeyHash256 getRequiredSecClusGrpId() {
 		return(getPKey().getRequiredSecClusGrpId());
 	}
 
-	public void setRequiredSecClusGrpId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecClusGrpId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecClusGrpId",

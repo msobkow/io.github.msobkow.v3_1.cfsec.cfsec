@@ -84,8 +84,8 @@ public interface ICFSecCluster
 
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

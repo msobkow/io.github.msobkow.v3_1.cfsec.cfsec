@@ -122,11 +122,11 @@ public class CFSecBuffSecSysRoleMembHPKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
 		return(requiredSecSysRoleId);
 	}
 
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSysRoleId",

@@ -190,11 +190,11 @@ public class CFSecBuffSecTentRoleMembH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+	public ICFLibKeyHash256 getRequiredSecTentRoleId() {
 		return(getPKey().getRequiredSecTentRoleId());
 	}
 
-	public void setRequiredSecTentRoleId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecTentRoleId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecTentRoleId",

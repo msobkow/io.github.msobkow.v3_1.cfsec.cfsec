@@ -84,8 +84,8 @@ public interface ICFSecSecSysGrp
 
 	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
 
-	public CFLibDbKeyHash256 getRequiredSecSysGrpId();
-	public void setRequiredSecSysGrpId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecSysGrpId();
+	public void setRequiredSecSysGrpId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

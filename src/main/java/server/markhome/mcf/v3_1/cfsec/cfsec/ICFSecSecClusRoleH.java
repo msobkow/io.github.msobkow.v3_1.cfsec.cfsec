@@ -74,8 +74,8 @@ public interface ICFSecSecClusRoleH
 	public ICFLibKeyHash256 getRequiredSecClusRoleId();
 	public void setRequiredSecClusRoleId( ICFLibKeyHash256 requiredSecClusRoleId );
 
-	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

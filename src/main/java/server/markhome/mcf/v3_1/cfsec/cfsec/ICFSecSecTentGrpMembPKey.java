@@ -50,8 +50,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 public interface ICFSecSecTentGrpMembPKey
 {
 
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecTentGrpId();
+	public void setRequiredSecTentGrpId( ICFLibKeyHash256 value );
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
 	@Override

@@ -50,8 +50,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 public interface ICFSecSecSysRoleEnablesPKey
 {
 
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value );
 	public String getRequiredEnableName();
 	public void setRequiredEnableName( String value );
 	@Override

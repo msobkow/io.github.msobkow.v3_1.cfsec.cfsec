@@ -74,8 +74,8 @@ public interface ICFSecSecClusGrpH
 	public ICFLibKeyHash256 getRequiredSecClusGrpId();
 	public void setRequiredSecClusGrpId( ICFLibKeyHash256 requiredSecClusGrpId );
 
-	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

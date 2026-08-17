@@ -86,8 +86,8 @@ public interface ICFSecSecUserPWReset
 
 	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

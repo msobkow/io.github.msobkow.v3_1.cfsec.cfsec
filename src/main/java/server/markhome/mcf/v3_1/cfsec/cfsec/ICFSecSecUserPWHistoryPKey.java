@@ -50,8 +50,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 public interface ICFSecSecUserPWHistoryPKey
 {
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( ICFLibKeyHash256 value );
 	public LocalDateTime getRequiredPWSetStamp();
 	public void setRequiredPWSetStamp( LocalDateTime value );
 	@Override

@@ -81,11 +81,11 @@ public class CFSecBuffSecTentGrpMemb
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
+	public ICFLibKeyHash256 getRequiredSecTentGrpId() {
 		return(getPKey().getRequiredSecTentGrpId());
 	}
 
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecTentGrpId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecTentGrpId",

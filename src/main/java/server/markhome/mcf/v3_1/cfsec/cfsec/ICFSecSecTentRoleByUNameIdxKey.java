@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecTentRoleByUNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

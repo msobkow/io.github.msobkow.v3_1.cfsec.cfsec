@@ -74,8 +74,8 @@ public interface ICFSecSecTentGrpH
 	public ICFLibKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( ICFLibKeyHash256 requiredSecTentGrpId );
 
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

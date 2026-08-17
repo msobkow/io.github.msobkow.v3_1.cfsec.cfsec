@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecClusRoleByClusterIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

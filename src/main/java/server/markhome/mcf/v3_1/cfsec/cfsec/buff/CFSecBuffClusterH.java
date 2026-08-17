@@ -194,11 +194,11 @@ public class CFSecBuffClusterH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
+	public void setRequiredId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",

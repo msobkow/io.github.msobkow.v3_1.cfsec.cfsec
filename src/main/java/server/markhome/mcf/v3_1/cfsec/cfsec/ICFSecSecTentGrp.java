@@ -79,8 +79,8 @@ public interface ICFSecSecTentGrp
 	public void setPKey(ICFLibKeyHash256 requiredSecTentGrpId);
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId();
-	public void setRequiredSecTentGrpId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecTentGrpId();
+	public void setRequiredSecTentGrpId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -104,8 +104,8 @@ public interface ICFSecSecTentGrp
 
 	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

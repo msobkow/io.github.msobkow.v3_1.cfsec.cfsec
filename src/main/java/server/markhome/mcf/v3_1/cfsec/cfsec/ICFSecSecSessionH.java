@@ -65,14 +65,14 @@ public interface ICFSecSecSessionH
 	public ICFLibKeyHash256 getRequiredSecSessionId();
 	public void setRequiredSecSessionId( ICFLibKeyHash256 requiredSecSessionId );
 
-	public CFLibDbKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( ICFLibKeyHash256 value );
 	public LocalDateTime getRequiredStart();
 	public void setRequiredStart( LocalDateTime value );
 	public LocalDateTime getOptionalFinish();
 	public void setOptionalFinish( LocalDateTime value );
-	public CFLibDbKeyHash256 getOptionalSecProxyId();
-	public void setOptionalSecProxyId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalSecProxyId();
+	public void setOptionalSecProxyId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

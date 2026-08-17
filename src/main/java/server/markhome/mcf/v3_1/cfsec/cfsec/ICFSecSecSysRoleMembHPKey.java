@@ -64,8 +64,8 @@ public interface ICFSecSecSysRoleMembHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public CFLibDbKeyHash256 getRequiredSecSysRoleId();
-	public void setRequiredSecSysRoleId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value );
 	public String getRequiredLoginId();
 	public void setRequiredLoginId( String value );
 	@Override

@@ -80,11 +80,11 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecSessionId() {
+	public ICFLibKeyHash256 getRequiredSecSessionId() {
 		return(requiredSecSessionId);
 	}
 
-	public void setRequiredSecSessionId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecSessionId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSessionId",
@@ -138,11 +138,11 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
 
-	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -177,11 +177,11 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalSecProxyId() {
+	public ICFLibKeyHash256 getOptionalSecProxyId() {
 		return(optionalSecProxyId);
 	}
 
-	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
+	public void setOptionalSecProxyId( ICFLibKeyHash256 value ) {
 		optionalSecProxyId = value;
 	}
 
