@@ -133,6 +133,34 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
+	public ICFSecSecSysGrp getRequiredContainerGroup() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerGroup", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
+		}
+		ICFSecSecSysGrp targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecSysGrp getRequiredContainerGroup() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerGroup", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
+		}
+		ICFSecPubSecSysGrp targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
@@ -144,6 +172,16 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredContainerGroup(ICFSecProtSecSysGrp argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
+		}
+		else {
+			setRequiredSecSysGrpId(argObj.getRequiredSecSysGrpId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerGroup(ICFSecPubSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerGroup", 1, "argObj");
 		}
@@ -167,6 +205,34 @@ public class CFSecBuffSecSysGrpMemb
 	}
 
 	@Override
+	public ICFSecSecUser getRequiredParentUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecUser getRequiredParentUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecPubSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
@@ -178,6 +244,16 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	}
+
+	@Override
+	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
@@ -909,8 +985,8 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setSecSysGrpMemb( ICFSecSecSysGrpMembH src ) {
-		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
-		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredContainerGroup(src.getRequiredContainerGroup());
+		setRequiredParentUser(src.getRequiredParentUser());
 		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
 		setRequiredLoginId(src.getRequiredLoginId());
 	}
@@ -940,8 +1016,8 @@ public class CFSecBuffSecSysGrpMemb
 
 	@Override
 	public void setSecSysGrpMemb( ICFSecProtSecSysGrpMembH src ) {
-		setRequiredContainerGroup(src.getRequiredSecSysGrpId());
-		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredContainerGroup(src.getRequiredContainerGroup());
+		setRequiredParentUser(src.getRequiredParentUser());
 		setRequiredSecSysGrpId(src.getRequiredSecSysGrpId());
 		setRequiredLoginId(src.getRequiredLoginId());
 	}

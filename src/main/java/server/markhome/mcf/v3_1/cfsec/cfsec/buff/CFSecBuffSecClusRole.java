@@ -121,6 +121,30 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
+	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusRoleMembTable targetTable = targetBackingCFSec.getTableSecClusRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRoleMemb()");
+		}
+		ICFSecSecClusRoleMemb[] targetArr = targetTable.readDerivedByClusRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -190,6 +214,34 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
+	public ICFSecCluster getRequiredOwnerCluster() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
+		}
+		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecCluster getRequiredOwnerCluster() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
+		}
+		ICFSecPubCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredOwnerCluster(ICFLibKeyHash256 argClusterId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -222,13 +274,17 @@ public class CFSecBuffSecClusRole
 	}
 
 	@Override
-	public void setRequiredOwnerCluster(ICFSecProtCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerCluster", 1, "argObj");
+	public ICFSecSecSysGrp getRequiredContainerSysRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		else {
-			setRequiredClusterId(argObj.getRequiredId());
+		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
 		}
+		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		return(targetRec);
 	}
 
 	@Override
@@ -242,6 +298,20 @@ public class CFSecBuffSecClusRole
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
 		}
 		ICFSecSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecSysGrp getRequiredContainerSysRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpTable targetTable = targetBackingCFSec.getTableSecSysGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrp()");
+		}
+		ICFSecPubSecSysGrp targetRec = targetTable.readDerivedByUNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
 		return(targetRec);
 	}
 
@@ -269,16 +339,6 @@ public class CFSecBuffSecClusRole
 
 	@Override
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
-		}
-		else {
-			setRequiredName(argObj.getRequiredName());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSysRole(ICFSecProtSecSysGrp argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSysRole", 1, "argObj");
 		}
@@ -1180,8 +1240,8 @@ public class CFSecBuffSecClusRole
 	@Override
 	public void setSecClusRole( ICFSecSecClusRoleH src ) {
 		setRequiredSecClusRoleId(src.getRequiredSecClusRoleId());
-		setRequiredOwnerCluster(src.getRequiredClusterId());
-		setRequiredContainerSysRole(src.getRequiredName());
+		setRequiredOwnerCluster(src.getRequiredOwnerCluster());
+		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredName(src.getRequiredName());
 	}
@@ -1213,8 +1273,8 @@ public class CFSecBuffSecClusRole
 	@Override
 	public void setSecClusRole( ICFSecProtSecClusRoleH src ) {
 		setRequiredSecClusRoleId(src.getRequiredSecClusRoleId());
-		setRequiredOwnerCluster(src.getRequiredClusterId());
-		setRequiredContainerSysRole(src.getRequiredName());
+		setRequiredOwnerCluster(src.getRequiredOwnerCluster());
+		setRequiredContainerSysRole(src.getRequiredContainerSysRole());
 		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredName(src.getRequiredName());
 	}

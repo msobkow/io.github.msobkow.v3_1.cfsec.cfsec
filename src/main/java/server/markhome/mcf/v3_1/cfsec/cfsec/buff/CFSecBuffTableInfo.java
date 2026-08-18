@@ -137,6 +137,34 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
+	public ICFSecTableInfo getOptionalParentSuperRef() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
+		}
+		ICFSecTableInfo targetRec = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSuperName());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecTableInfo getOptionalParentSuperRef() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalParentSuperRef", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
+		}
+		ICFSecPubTableInfo targetRec = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSuperName());
+		return(targetRec);
+	}
+
+	@Override
 	public void setOptionalParentSuperRef(String argSuperName) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -166,22 +194,26 @@ public class CFSecBuffTableInfo
 	}
 
 	@Override
-	public void setOptionalParentSuperRef(ICFSecProtTableInfo argObj) {
-		if(argObj == null) {
-			setOptionalSuperName(null);
+	public List<ICFSecTableInfo> getOptionalChildrenSubRefs() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
+		}
+		ICFSecTableInfo[] targetArr = targetTable.readDerivedBySuperNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableName());
+		if( targetArr != null ) {
+			List<ICFSecTableInfo> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
 		}
 		else {
-			setOptionalSuperName(argObj.getRequiredTableName());
-		}
-	}
-
-	@Override
-	public void setOptionalParentSuperRef(ICFSecPubTableInfo argObj) {
-		if(argObj == null) {
-			setOptionalSuperName(null);
-		}
-		else {
-			setOptionalSuperName(argObj.getRequiredTableName());
+			List<ICFSecTableInfo> results = new ArrayList<>();
+			return( results );
 		}
 	}
 
@@ -205,6 +237,30 @@ public class CFSecBuffTableInfo
 		}
 		else {
 			List<ICFSecTableInfo> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecTableInfo> getOptionalChildrenSubRefs() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTableInfoTable targetTable = targetBackingCFSec.getTableTableInfo();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSubRefs", 0, "ICFSecSchema.getBackingCFSec().getTableTableInfo()");
+		}
+		ICFSecPubTableInfo[] targetArr = targetTable.readDerivedBySuperNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableName());
+		if( targetArr != null ) {
+			List<ICFSecPubTableInfo> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecPubTableInfo> results = new ArrayList<>();
 			return( results );
 		}
 	}
@@ -2252,7 +2308,7 @@ public class CFSecBuffTableInfo
 	@Override
 	public void setTableInfo( ICFSecTableInfoH src ) {
 		setRequiredTableInfoId(src.getRequiredTableInfoId());
-		setOptionalParentSuperRef(src.getOptionalSuperName());
+		setOptionalParentSuperRef(src.getOptionalParentSuperRef());
 		setRequiredSchemaName(src.getRequiredSchemaName());
 		setRequiredTableName(src.getRequiredTableName());
 		setOptionalSuperName(src.getOptionalSuperName());
@@ -2293,7 +2349,7 @@ public class CFSecBuffTableInfo
 	@Override
 	public void setTableInfo( ICFSecProtTableInfoH src ) {
 		setRequiredTableInfoId(src.getRequiredTableInfoId());
-		setOptionalParentSuperRef(src.getOptionalSuperName());
+		setOptionalParentSuperRef(src.getOptionalParentSuperRef());
 		setRequiredSchemaName(src.getRequiredSchemaName());
 		setRequiredTableName(src.getRequiredTableName());
 		setOptionalSuperName(src.getOptionalSuperName());
@@ -2334,7 +2390,7 @@ public class CFSecBuffTableInfo
 	@Override
 	public void setTableInfo( ICFSecPubTableInfoH src ) {
 		setRequiredTableInfoId(src.getRequiredTableInfoId());
-		setOptionalParentSuperRef(src.getOptionalSuperName());
+		setOptionalParentSuperRef(src.getOptionalParentSuperRef());
 		setRequiredSchemaName(src.getRequiredSchemaName());
 		setRequiredTableName(src.getRequiredTableName());
 		setOptionalSuperName(src.getOptionalSuperName());

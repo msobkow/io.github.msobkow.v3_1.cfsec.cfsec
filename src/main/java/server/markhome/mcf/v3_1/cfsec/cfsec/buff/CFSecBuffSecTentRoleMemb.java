@@ -133,6 +133,20 @@ public class CFSecBuffSecTentRoleMemb
 	}
 
 	@Override
+	public ICFSecSecTentRole getRequiredContainerRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleTable targetTable = targetBackingCFSec.getTableSecTentRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
+		}
+		ICFSecSecTentRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecTentRoleId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerRole(ICFSecSecTentRole argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerRole", 1, "argObj");
@@ -167,6 +181,34 @@ public class CFSecBuffSecTentRoleMemb
 	}
 
 	@Override
+	public ICFSecSecUser getRequiredParentUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecUser getRequiredParentUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecPubSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredParentUser(ICFSecSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
@@ -178,6 +220,16 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setRequiredParentUser(ICFSecProtSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
+		}
+		else {
+			setRequiredLoginId(argObj.getRequiredLoginId());
+		}
+	}
+
+	@Override
+	public void setRequiredParentUser(ICFSecPubSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentUser", 1, "argObj");
 		}
@@ -909,8 +961,8 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setSecTentRoleMemb( ICFSecSecTentRoleMembH src ) {
-		setRequiredContainerRole(src.getRequiredSecTentRoleId());
-		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredContainerRole(src.getRequiredContainerRole());
+		setRequiredParentUser(src.getRequiredParentUser());
 		setRequiredSecTentRoleId(src.getRequiredSecTentRoleId());
 		setRequiredLoginId(src.getRequiredLoginId());
 	}
@@ -940,8 +992,8 @@ public class CFSecBuffSecTentRoleMemb
 
 	@Override
 	public void setSecTentRoleMemb( ICFSecProtSecTentRoleMembH src ) {
-		setRequiredContainerRole(src.getRequiredSecTentRoleId());
-		setRequiredParentUser(src.getRequiredLoginId());
+		setRequiredContainerRole(src.getRequiredContainerRole());
+		setRequiredParentUser(src.getRequiredParentUser());
 		setRequiredSecTentRoleId(src.getRequiredSecTentRoleId());
 		setRequiredLoginId(src.getRequiredLoginId());
 	}

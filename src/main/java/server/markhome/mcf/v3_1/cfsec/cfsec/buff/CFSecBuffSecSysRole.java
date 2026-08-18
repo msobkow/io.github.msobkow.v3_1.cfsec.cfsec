@@ -119,6 +119,54 @@ public class CFSecBuffSecSysRole
 	}
 
 	@Override
+	public List<ICFSecSecSysRoleEnables> getOptionalComponentsEnabledByRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleEnablesTable targetTable = targetBackingCFSec.getTableSecSysRoleEnables();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
+		}
+		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleMembTable targetTable = targetBackingCFSec.getTableSecSysRoleMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
+		}
+		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysRoleMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysRoleMemb> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFSecSecSysRoleMemb> getOptionalChildrenMembByRole() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {

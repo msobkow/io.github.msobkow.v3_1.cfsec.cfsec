@@ -121,6 +121,54 @@ public class CFSecBuffSecSysGrp
 	}
 
 	@Override
+	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsIncByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpIncTable targetTable = targetBackingCFSec.getTableSecSysGrpInc();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsIncByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpInc()");
+		}
+		ICFSecSecSysGrpInc[] targetArr = targetTable.readDerivedBySysGrpIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysGrpInc> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysGrpInc> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpMembTable targetTable = targetBackingCFSec.getTableSecSysGrpMemb();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpMemb()");
+		}
+		ICFSecSecSysGrpMemb[] targetArr = targetTable.readDerivedBySysGrpIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		if( targetArr != null ) {
+			List<ICFSecSecSysGrpMemb> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysGrpMemb> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -155,6 +203,34 @@ public class CFSecBuffSecSysGrp
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
 		}
 		ICFSecSecSysRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleTable targetTable = targetBackingCFSec.getTableSecSysRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
+		}
+		ICFSecSecSysRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecSysRole getOptionalComponentsImplSysRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleTable targetTable = targetBackingCFSec.getTableSecSysRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplSysRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRole()");
+		}
+		ICFSecPubSecSysRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysGrpId());
 		return(targetRec);
 	}
 
@@ -238,6 +314,30 @@ public class CFSecBuffSecSysGrp
 	}
 
 	@Override
+	public List<ICFSecSecClusGrp> getOptionalComponentsImplClusGrp() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusGrpTable targetTable = targetBackingCFSec.getTableSecClusGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusGrp()");
+		}
+		ICFSecSecClusGrp[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecClusGrp> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusGrp> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -257,6 +357,54 @@ public class CFSecBuffSecSysGrp
 		}
 		else {
 			List<ICFSecSecTentGrp> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecTentGrp> getOptionalComponentsImplTentGrp() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentGrp", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentGrpTable targetTable = targetBackingCFSec.getTableSecTentGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentGrp", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
+		}
+		ICFSecSecTentGrp[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecTentGrp> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentGrp> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecClusRole> getOptionalComponentsImplClusRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecClusRoleTable targetTable = targetBackingCFSec.getTableSecClusRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplClusRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRole()");
+		}
+		ICFSecSecClusRole[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecClusRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecClusRole> results = new ArrayList<>();
 			return( results );
 		}
 	}
@@ -310,6 +458,30 @@ public class CFSecBuffSecSysGrp
 	}
 
 	@Override
+	public List<ICFSecSecTentRole> getOptionalComponentsImplTentRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleTable targetTable = targetBackingCFSec.getTableSecTentRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsImplTentRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
+		}
+		ICFSecSecTentRole[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecTentRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentRole> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -329,6 +501,54 @@ public class CFSecBuffSecSysGrp
 		}
 		else {
 			List<ICFSecSecSysGrpInc> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpInc> getOptionalChildrenSysGrpByName() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSysGrpByName", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysGrpIncTable targetTable = targetBackingCFSec.getTableSecSysGrpInc();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSysGrpByName", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysGrpInc()");
+		}
+		ICFSecSecSysGrpInc[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecSysGrpInc> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysGrpInc> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRoleByEnableName", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecSysRoleEnablesTable targetTable = targetBackingCFSec.getTableSecSysRoleEnables();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRoleByEnableName", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
+		}
+		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedByNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredName());
+		if( targetArr != null ) {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecSysRoleEnables> results = new ArrayList<>();
 			return( results );
 		}
 	}

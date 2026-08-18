@@ -104,7 +104,55 @@ public class CFSecBuffSecUserPassword
 	}
 
 	@Override
+	public ICFSecSecUser getRequiredContainerUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecSecUser getRequiredContainerUser() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecUserTable targetTable = targetBackingCFSec.getTableSecUser();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
+		}
+		ICFSecPubSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerUser(ICFSecSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerUser(ICFSecProtSecUser argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
+		}
+		else {
+			setRequiredSecUserId(argObj.getRequiredSecUserId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerUser(ICFSecPubSecUser argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerUser", 1, "argObj");
 		}
@@ -490,7 +538,7 @@ public class CFSecBuffSecUserPassword
 
 	@Override
 	public void setSecUserPassword( ICFSecSecUserPasswordH src ) {
-		setRequiredContainerUser(src.getRequiredSecUserId());
+		setRequiredContainerUser(src.getRequiredContainerUser());
 		setRequiredSecUserId(src.getRequiredSecUserId());
 		setRequiredPWSetStamp(src.getRequiredPWSetStamp());
 		setRequiredPasswordHash(src.getRequiredPasswordHash());

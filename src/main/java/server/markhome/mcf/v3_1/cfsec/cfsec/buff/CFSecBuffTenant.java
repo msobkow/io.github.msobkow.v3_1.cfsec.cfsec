@@ -121,6 +121,54 @@ public class CFSecBuffTenant
 	}
 
 	@Override
+	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentGrpTable targetTable = targetBackingCFSec.getTableSecTentGrp();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSecGroup", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentGrp()");
+		}
+		ICFSecSecTentGrp[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFSecSecTentGrp> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentGrp> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecSecTentRoleTable targetTable = targetBackingCFSec.getTableSecTentRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSecRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecTentRole()");
+		}
+		ICFSecSecTentRole[] targetArr = targetTable.readDerivedByTenantIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFSecSecTentRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecSecTentRole> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFSecSecTentRole> getOptionalComponentsSecRole() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -214,6 +262,34 @@ public class CFSecBuffTenant
 	}
 
 	@Override
+	public ICFSecCluster getRequiredContainerCluster() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
+		}
+		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFSecCluster getRequiredContainerCluster() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
+		}
+		ICFSecPubCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerCluster(ICFLibKeyHash256 argClusterId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
@@ -237,26 +313,6 @@ public class CFSecBuffTenant
 
 	@Override
 	public void setRequiredContainerCluster(ICFSecCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
-		}
-		else {
-			setRequiredClusterId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
-		}
-		else {
-			setRequiredClusterId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
 		}
@@ -1448,7 +1504,7 @@ public class CFSecBuffTenant
 	@Override
 	public void setTenant( ICFSecTenantH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredContainerCluster(src.getRequiredContainerCluster());
 		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
@@ -1479,7 +1535,7 @@ public class CFSecBuffTenant
 	@Override
 	public void setTenant( ICFSecProtTenantH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredContainerCluster(src.getRequiredContainerCluster());
 		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}
@@ -1510,7 +1566,7 @@ public class CFSecBuffTenant
 	@Override
 	public void setTenant( ICFSecPubTenantH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerCluster(src.getRequiredClusterId());
+		setRequiredContainerCluster(src.getRequiredContainerCluster());
 		setRequiredClusterId(src.getRequiredClusterId());
 		setRequiredTenantName(src.getRequiredTenantName());
 	}

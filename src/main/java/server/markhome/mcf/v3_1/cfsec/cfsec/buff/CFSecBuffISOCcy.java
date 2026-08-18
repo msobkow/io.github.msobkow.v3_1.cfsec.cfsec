@@ -128,6 +128,54 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
+	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryCcyTable targetTable = targetBackingCFSec.getTableISOCtryCcy();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		}
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryCcy> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryCcyTable targetTable = targetBackingCFSec.getTableISOCtryCcy();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
+		}
+		ICFSecPubISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
+		if( targetArr != null ) {
+			List<ICFSecPubISOCtryCcy> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecPubISOCtryCcy> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}

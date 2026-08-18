@@ -126,6 +126,54 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
+	public List<ICFSecISOCtryLang> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryLangTable targetTable = targetBackingCFSec.getTableISOCtryLang();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
+		}
+		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByLangIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
+		if( targetArr != null ) {
+			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecISOCtryLang> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFSecISOCtryLang> getOptionalChildrenCtry() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecISOCtryLangTable targetTable = targetBackingCFSec.getTableISOCtryLang();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
+		}
+		ICFSecPubISOCtryLang[] targetArr = targetTable.readDerivedByLangIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOLangId());
+		if( targetArr != null ) {
+			List<ICFSecPubISOCtryLang> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFSecPubISOCtryLang> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
