@@ -214,6 +214,58 @@ public class CFSecBuffTenant
 	}
 
 	@Override
+	public void setRequiredContainerCluster(ICFLibKeyHash256 argClusterId) {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecClusterTable targetTable = targetBackingCFSec.getTableCluster();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecCluster found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClusterId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
+		setRequiredClusterId(argClusterId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			setRequiredClusterId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecProtCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			setRequiredClusterId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerCluster(ICFSecPubCluster argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerCluster", 1, "argObj");
+		}
+		else {
+			setRequiredClusterId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public ICFLibKeyHash256 getRequiredClusterId() {
 		return(requiredClusterId);
 	}
