@@ -1088,7 +1088,7 @@ public class CFSecBuffSecUserHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecUserPKey, ICFSecSecUser$emitHPKeyHistoryClassNames$" );
+				"ICFSecSecUserPKey, ICFSecSecUser, CFSecSecUserHPKey, CFSecSecUserH" );
 		}
 	}
 

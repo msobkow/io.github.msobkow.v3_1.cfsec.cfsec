@@ -911,7 +911,7 @@ public class CFSecBuffISOTZoneHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecISOTZonePKey, ICFSecISOTZone$emitHPKeyHistoryClassNames$" );
+				"ICFSecISOTZonePKey, ICFSecISOTZone, CFSecISOTZoneHPKey, CFSecISOTZoneH" );
 		}
 	}
 

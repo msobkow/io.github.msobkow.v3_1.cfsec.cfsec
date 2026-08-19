@@ -911,7 +911,7 @@ public class CFSecBuffTableInfoHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecTableInfoPKey, ICFSecTableInfo$emitHPKeyHistoryClassNames$" );
+				"ICFSecTableInfoPKey, ICFSecTableInfo, CFSecTableInfoHPKey, CFSecTableInfoH" );
 		}
 	}
 

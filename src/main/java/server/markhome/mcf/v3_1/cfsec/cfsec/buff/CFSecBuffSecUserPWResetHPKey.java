@@ -785,7 +785,7 @@ public class CFSecBuffSecUserPWResetHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecSecUserPWResetPKey, ICFSecSecUserPWReset$emitHPKeyHistoryClassNames$" );
+				"ICFSecSecUserPWResetPKey, ICFSecSecUserPWReset, CFSecSecUserPWResetHPKey, CFSecSecUserPWResetH" );
 		}
 	}
 

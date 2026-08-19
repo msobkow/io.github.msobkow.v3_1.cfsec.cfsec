@@ -1088,7 +1088,7 @@ public class CFSecBuffTenantHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFSecTenantPKey, ICFSecTenant$emitHPKeyHistoryClassNames$" );
+				"ICFSecTenantPKey, ICFSecTenant, CFSecTenantHPKey, CFSecTenantH" );
 		}
 	}
 
