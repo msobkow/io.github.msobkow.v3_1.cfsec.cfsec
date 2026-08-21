@@ -75,23 +75,23 @@ public interface ICFSecSecTentGrpMemb
 
 	public ICFSecSecTentGrpMembPKey getPKey();
 	public void setPKey(ICFSecSecTentGrpMembPKey pkey );
-	public ICFSecSecTentGrp getRequiredContainerGroup();
+	public ICFSecSecTentGrp get$OptionalOrRequired$ContainerGroup();
 
-	public void setRequiredContainerGroup(ICFLibKeyHash256 argSecTentGrpId);
+	public void set$OptionalOrRequired$ContainerGroup(ICFLibKeyHash256 argSecTentGrpId);
 
-	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
+	public void set$OptionalOrRequired$ContainerGroup(ICFSecSecTentGrp argObj);
 
-	public void setRequiredContainerGroup(ICFSecProtSecTentGrp argObj);
+	public void set$OptionalOrRequired$ContainerGroup(ICFSecProtSecTentGrp argObj);
 
-	public ICFSecSecUser getRequiredParentUser();
+	public ICFSecSecUser get$OptionalOrRequired$ParentUser();
 
-	public void setRequiredParentUser(String argLoginId);
+	public void set$OptionalOrRequired$ParentUser(String argLoginId);
 
-	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecSecUser argObj);
 
-	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecProtSecUser argObj);
 
-	public void setRequiredParentUser(ICFSecPubSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecPubSecUser argObj);
 
 	public ICFLibKeyHash256 getRequiredSecTentGrpId();
 

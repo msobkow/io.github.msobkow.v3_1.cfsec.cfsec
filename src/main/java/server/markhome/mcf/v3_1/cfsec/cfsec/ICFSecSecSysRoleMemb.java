@@ -75,25 +75,25 @@ public interface ICFSecSecSysRoleMemb
 
 	public ICFSecSecSysRoleMembPKey getPKey();
 	public void setPKey(ICFSecSecSysRoleMembPKey pkey );
-	public ICFSecSecSysRole getRequiredContainerSysRole();
+	public ICFSecSecSysRole get$OptionalOrRequired$ContainerSysRole();
 
-	public void setRequiredContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
 
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecSecSysRole argObj);
 
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecProtSecSysRole argObj);
 
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecPubSecSysRole argObj);
 
-	public ICFSecSecUser getRequiredParentUser();
+	public ICFSecSecUser get$OptionalOrRequired$ParentUser();
 
-	public void setRequiredParentUser(String argLoginId);
+	public void set$OptionalOrRequired$ParentUser(String argLoginId);
 
-	public void setRequiredParentUser(ICFSecSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecSecUser argObj);
 
-	public void setRequiredParentUser(ICFSecProtSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecProtSecUser argObj);
 
-	public void setRequiredParentUser(ICFSecPubSecUser argObj);
+	public void set$OptionalOrRequired$ParentUser(ICFSecPubSecUser argObj);
 
 	public ICFLibKeyHash256 getRequiredSecSysRoleId();
 

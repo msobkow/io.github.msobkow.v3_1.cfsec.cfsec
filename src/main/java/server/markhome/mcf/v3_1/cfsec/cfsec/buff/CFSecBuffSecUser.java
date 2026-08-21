@@ -225,30 +225,6 @@ public class CFSecBuffSecUser
 	}
 
 	@Override
-	public List<ICFSecSecSession> getOptionalChildrenSecProxy() {
-		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSecProxy", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecSecSessionTable targetTable = targetBackingCFSec.getTableSecSession();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecSession()");
-		}
-		ICFSecPubSecSession[] targetArr = targetTable.readDerivedBySecProxyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
-		if( targetArr != null ) {
-			List<ICFSecPubSecSession> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFSecPubSecSession> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public ICFSecSecUserPassword getOptionalComponentsPassword() {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {

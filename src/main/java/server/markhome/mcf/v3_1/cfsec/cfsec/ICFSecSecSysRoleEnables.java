@@ -75,25 +75,25 @@ public interface ICFSecSecSysRoleEnables
 
 	public ICFSecSecSysRoleEnablesPKey getPKey();
 	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
-	public ICFSecSecSysRole getRequiredContainerSysRole();
+	public ICFSecSecSysRole get$OptionalOrRequired$ContainerSysRole();
 
-	public void setRequiredContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
 
-	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecSecSysRole argObj);
 
-	public void setRequiredContainerSysRole(ICFSecProtSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecProtSecSysRole argObj);
 
-	public void setRequiredContainerSysRole(ICFSecPubSecSysRole argObj);
+	public void set$OptionalOrRequired$ContainerSysRole(ICFSecPubSecSysRole argObj);
 
-	public ICFSecSecSysGrp getRequiredParentEnableGroup();
+	public ICFSecSecSysGrp get$OptionalOrRequired$ParentEnableGroup();
 
-	public void setRequiredParentEnableGroup(String argEnableName);
+	public void set$OptionalOrRequired$ParentEnableGroup(String argEnableName);
 
-	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
+	public void set$OptionalOrRequired$ParentEnableGroup(ICFSecSecSysGrp argObj);
 
-	public void setRequiredParentEnableGroup(ICFSecProtSecSysGrp argObj);
+	public void set$OptionalOrRequired$ParentEnableGroup(ICFSecProtSecSysGrp argObj);
 
-	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
+	public void set$OptionalOrRequired$ParentEnableGroup(ICFSecPubSecSysGrp argObj);
 
 	public ICFLibKeyHash256 getRequiredSecSysRoleId();
 
