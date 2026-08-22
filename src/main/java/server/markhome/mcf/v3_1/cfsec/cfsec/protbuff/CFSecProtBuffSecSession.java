@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffSecSession
-	implJustProtements ICFSecSecSession, Comparable<Object>, Serializable
+	implements ICFSecSecSession, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredSecSessionId;
+	protected ICFLibKeyHash256 requiredSecSessionId;
 	protected int requiredRevision;
 	protected ICFLibKeyHash256 requiredSecUserId;
 	protected LocalDateTime requiredStart;
@@ -117,7 +117,7 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
@@ -131,7 +131,7 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
@@ -145,12 +145,12 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSecUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecPubSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecUserId());
 		return(targetRec);
 	}
 
 	@Override
-	public void setJustProtRequiredContainerSecUser($declSetArgColumn$) {
+	public void setJustProtRequiredContainerSecUser(ICFLibKeyHash256 argSecUserId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerSecUser-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -163,7 +163,8 @@ public class CFSecProtBuffSecSession
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerSecUser-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {$implSchemaProtBuffTableSetAttrArgColumn$
+		else if ((found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
+		requiredSecUserId = argSecUserId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredContainerSecUser-args", "found", found, "ICFSecProtSecUserICFSecPubSecUser");
@@ -190,7 +191,7 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSecProxyId());
 		return(targetRec);
 	}
 
@@ -204,7 +205,7 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSecProxyId());
 		return(targetRec);
 	}
 
@@ -218,12 +219,12 @@ public class CFSecProtBuffSecSession
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentSecProxy", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecPubSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubSecUser targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalSecProxyId());
 		return(targetRec);
 	}
 
 	@Override
-	public void setJustProtRequiredParentSecProxy($declSetArgColumn$) {
+	public void setJustProtRequiredParentSecProxy(ICFLibKeyHash256 argSecProxyId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredParentSecProxy-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -236,7 +237,8 @@ public class CFSecProtBuffSecSession
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredParentSecProxy-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {$implSchemaProtBuffTableSetAttrArgColumn$
+		else if ((found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
+		optionalSecProxyId = argSecProxyId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredParentSecProxy-args", "found", found, "ICFSecProtSecUserICFSecPubSecUser");
@@ -252,7 +254,55 @@ public class CFSecProtBuffSecSession
 			setJustProtOptionalSecProxyId(argObj.getRequiredSecUserId());
 		}
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public ICFLibKeyHash256 getRequiredSecUserId() {
+		return(requiredSecUserId);
+	}
+
+	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSecUserId",
+				1,
+				"value" );
+		}
+		requiredSecUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getRequiredStart() {
+		return(requiredStart);
+	}
+
+	public void setRequiredStart( LocalDateTime value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredStart",
+				1,
+				"value" );
+		}
+		requiredStart = value;
+	}
+
+	@Override
+	public LocalDateTime getOptionalFinish() {
+		return(optionalFinish);
+	}
+
+	public void setOptionalFinish( LocalDateTime value ) {
+		optionalFinish = value;
+	}
+
+	@Override
+	public ICFLibKeyHash256 getOptionalSecProxyId() {
+		return(optionalSecProxyId);
+	}
+
+	public void setOptionalSecProxyId( ICFLibKeyHash256 value ) {
+		optionalSecProxyId = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -1146,7 +1196,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtSecSessionHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtSecSessionHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if (getRequiredSecSessionId() != null) {
 				if (rhs.getRequiredSecSessionId() != null) {
 					cmp = getRequiredSecSessionId().compareTo( rhs.getRequiredSecSessionId() );
@@ -1399,7 +1455,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubSecSessionHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubSecSessionHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if (getRequiredSecSessionId() != null) {
 				if (rhs.getRequiredSecSessionId() != null) {
 					cmp = getRequiredSecSessionId().compareTo( rhs.getRequiredSecSessionId() );

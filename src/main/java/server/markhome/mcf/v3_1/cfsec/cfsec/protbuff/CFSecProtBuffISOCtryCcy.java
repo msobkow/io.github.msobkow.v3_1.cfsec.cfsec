@@ -48,7 +48,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffISOCtryCcy
-	implJustProtements ICFSecISOCtryCcy, Comparable<Object>, Serializable
+	implements ICFSecISOCtryCcy, Comparable<Object>, Serializable
 {
 	protected ICFSecISOCtryCcyPKey pkeyJustProt = new CFSecProtBuffISOCtryCcyPKey();
 	protected int requiredRevision;
@@ -124,7 +124,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
 
@@ -138,7 +138,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
 
@@ -152,7 +152,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtry()");
 		}
-		ICFSecPubISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubISOCtry targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		return(targetRec);
 	}
 
@@ -196,7 +196,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCcy()");
 		}
-		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
 	}
 
@@ -210,7 +210,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCcy()");
 		}
-		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
 	}
 
@@ -224,7 +224,7 @@ public class CFSecProtBuffISOCtryCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCcy()");
 		}
-		ICFSecPubISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubISOCcy targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		return(targetRec);
 	}
 
@@ -533,7 +533,13 @@ public class CFSecProtBuffISOCtryCcy
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtISOCtryCcyHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtISOCtryCcyHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}
@@ -617,7 +623,13 @@ public class CFSecProtBuffISOCtryCcy
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubISOCtryCcyHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubISOCtryCcyHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}

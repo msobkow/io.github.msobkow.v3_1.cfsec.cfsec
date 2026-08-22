@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffISOTZone
-	implJustProtements ICFSecISOTZone, Comparable<Object>, Serializable
+	implements ICFSecISOTZone, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredISOTZoneId;
+	protected short requiredISOTZoneId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -159,7 +159,137 @@ public class CFSecProtBuffISOTZone
 	public int getClassCode() {
 		return( ICFSecISOTZone.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredIso8601() {
+		return(requiredIso8601);
+	}
+
+	public void setRequiredIso8601( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredIso8601",
+				1,
+				"value" );
+		}
+		else if( value.length() > 6 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredIso8601",
+				1,
+				"value.length()",
+				value.length(),
+				6 );
+		}
+		requiredIso8601 = value;
+	}
+
+	@Override
+	public String getRequiredTZName() {
+		return(requiredTZName);
+	}
+
+	public void setRequiredTZName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTZName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredTZName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredTZName = value;
+	}
+
+	@Override
+	public short getRequiredTZHourOffset() {
+		return(requiredTZHourOffset);
+	}
+
+	@Override
+	public void setRequiredTZHourOffset( short value ) {
+		if( value < ICFSecPubISOTZone.TZHOUROFFSET_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredTZHourOffset",
+				1,
+				"value",
+				value,
+				ICFSecPubISOTZone.TZHOUROFFSET_MIN_VALUE );
+		}
+		if( value > ICFSecPubISOTZone.TZHOUROFFSET_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredTZHourOffset",
+				1,
+				"value",
+				value,
+				ICFSecPubISOTZone.TZHOUROFFSET_MAX_VALUE );
+		}
+		requiredTZHourOffset = value;
+	}
+
+	@Override
+	public short getRequiredTZMinOffset() {
+		return(requiredTZMinOffset);
+	}
+
+	@Override
+	public void setRequiredTZMinOffset( short value ) {
+		if( value < ICFSecPubISOTZone.TZMINOFFSET_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredTZMinOffset",
+				1,
+				"value",
+				value,
+				ICFSecPubISOTZone.TZMINOFFSET_MIN_VALUE );
+		}
+		if( value > ICFSecPubISOTZone.TZMINOFFSET_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredTZMinOffset",
+				1,
+				"value",
+				value,
+				ICFSecPubISOTZone.TZMINOFFSET_MAX_VALUE );
+		}
+		requiredTZMinOffset = value;
+	}
+
+	@Override
+	public String getRequiredDescription() {
+		return(requiredDescription);
+	}
+
+	public void setRequiredDescription( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value" );
+		}
+		else if( value.length() > 128 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value.length()",
+				value.length(),
+				128 );
+		}
+		requiredDescription = value;
+	}
+
+	@Override
+	public boolean getRequiredVisible() {
+		return(requiredVisible);
+	}
+
+	public void setRequiredVisible( boolean value ) {
+		requiredVisible = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -850,7 +980,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtISOTZoneHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtISOTZoneHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
 				return( -1 );
 			}
@@ -1074,7 +1210,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubISOTZoneHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubISOTZoneHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOTZoneId() < rhs.getRequiredISOTZoneId() ) {
 				return( -1 );
 			}

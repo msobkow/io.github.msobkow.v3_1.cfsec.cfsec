@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffSysCluster
-	implJustProtements ICFSecSysCluster, Comparable<Object>, Serializable
+	implements ICFSecSysCluster, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredSingletonId;
+	protected int requiredSingletonId;
 	protected int requiredRevision;
 	protected ICFLibKeyHash256 requiredClusterId;
 
@@ -122,7 +122,7 @@ public class CFSecProtBuffSysCluster
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
 		}
-		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
 	}
 
@@ -136,7 +136,7 @@ public class CFSecProtBuffSysCluster
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
 		}
-		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
 	}
 
@@ -150,12 +150,12 @@ public class CFSecProtBuffSysCluster
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerCluster", 0, "ICFSecSchema.getBackingCFSec().getTableCluster()");
 		}
-		ICFSecPubCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubCluster targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClusterId());
 		return(targetRec);
 	}
 
 	@Override
-	public void setJustProtRequiredContainerCluster($declSetArgColumn$) {
+	public void setJustProtRequiredContainerCluster(ICFLibKeyHash256 argClusterId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerCluster-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -168,7 +168,8 @@ public class CFSecProtBuffSysCluster
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerCluster-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {$implSchemaProtBuffTableSetAttrArgColumn$
+		else if ((found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
+		requiredClusterId = argClusterId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredContainerCluster-args", "found", found, "ICFSecProtClusterICFSecPubCluster");
@@ -184,7 +185,22 @@ public class CFSecProtBuffSysCluster
 			setJustProtRequiredClusterId(argObj.getRequiredId());
 		}
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public ICFLibKeyHash256 getRequiredClusterId() {
+		return(requiredClusterId);
+	}
+
+	public void setRequiredClusterId( ICFLibKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClusterId",
+				1,
+				"value" );
+		}
+		requiredClusterId = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -433,7 +449,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtSysClusterHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtSysClusterHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}
@@ -506,7 +528,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubSysClusterHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubSysClusterHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredSingletonId() < rhs.getRequiredSingletonId() ) {
 				return( -1 );
 			}

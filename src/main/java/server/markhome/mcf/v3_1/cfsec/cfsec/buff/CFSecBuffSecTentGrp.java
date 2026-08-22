@@ -256,7 +256,7 @@ public class CFSecBuffSecTentGrp
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-		setRequiredTenantId(argTenantId);
+		requiredTenantId = argTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -330,7 +330,7 @@ public class CFSecBuffSecTentGrp
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysGrp-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecSecSysGrp) || (found instanceof ICFSecProtSecSysGrp) || (found instanceof ICFSecPubSecSysGrp)) {
-		setRequiredName(argName);
+		requiredName = argName;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysGrp-args", "found", found, "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp");

@@ -48,7 +48,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffSecClusRoleMemb
-	implJustProtements ICFSecSecClusRoleMemb, Comparable<Object>, Serializable
+	implements ICFSecSecClusRoleMemb, Comparable<Object>, Serializable
 {
 	protected ICFSecSecClusRoleMembPKey pkeyJustProt = new CFSecProtBuffSecClusRoleMembPKey();
 	protected int requiredRevision;
@@ -126,7 +126,7 @@ public class CFSecProtBuffSecClusRoleMemb
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRole()");
 		}
-		ICFSecSecClusRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecClusRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
 		return(targetRec);
 	}
 
@@ -140,7 +140,7 @@ public class CFSecProtBuffSecClusRoleMemb
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecClusRole()");
 		}
-		ICFSecSecClusRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecClusRole targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecClusRoleId());
 		return(targetRec);
 	}
 
@@ -174,7 +174,7 @@ public class CFSecProtBuffSecClusRoleMemb
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
 	}
 
@@ -188,7 +188,7 @@ public class CFSecProtBuffSecClusRoleMemb
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecSecUser targetRec = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
 	}
 
@@ -202,7 +202,7 @@ public class CFSecProtBuffSecClusRoleMemb
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentUser", 0, "ICFSecSchema.getBackingCFSec().getTableSecUser()");
 		}
-		ICFSecPubSecUser targetRec = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubSecUser targetRec = targetTable.readDerivedByULoginIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredLoginId());
 		return(targetRec);
 	}
 
@@ -670,7 +670,13 @@ public class CFSecProtBuffSecClusRoleMemb
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtSecClusRoleMembHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtSecClusRoleMembHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if (getRequiredSecClusRoleId() != null) {
 				if (rhs.getRequiredSecClusRoleId() != null) {
 					cmp = getRequiredSecClusRoleId().compareTo( rhs.getRequiredSecClusRoleId() );

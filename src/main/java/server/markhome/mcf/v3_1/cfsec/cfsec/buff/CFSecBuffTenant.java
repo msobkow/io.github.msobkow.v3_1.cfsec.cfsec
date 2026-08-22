@@ -304,7 +304,7 @@ public class CFSecBuffTenant
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
-		setRequiredClusterId(argClusterId);
+		requiredClusterId = argClusterId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");

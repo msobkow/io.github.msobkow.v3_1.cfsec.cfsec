@@ -176,7 +176,7 @@ public class CFSecBuffTableInfo
 		}
 		ICFSecTableInfo found = targetTable.readDerivedByTableNameIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSuperName);
 		if (found == null || (found != null && ((found instanceof ICFSecTableInfo) || (found instanceof ICFSecProtTableInfo) || (found instanceof ICFSecPubTableInfo)))) {
-		setOptionalSuperName(argSuperName);
+		optionalSuperName = argSuperName;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalParentSuperRef-args", "found", found, "ICFSecTableInfoICFSecProtTableInfoICFSecPubTableInfo");

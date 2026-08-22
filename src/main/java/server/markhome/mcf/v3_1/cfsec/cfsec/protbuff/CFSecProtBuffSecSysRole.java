@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffSecSysRole
-	implJustProtements ICFSecSecSysRole, Comparable<Object>, Serializable
+	implements ICFSecSecSysRole, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredSecSysRoleId;
+	protected ICFLibKeyHash256 requiredSecSysRoleId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -102,7 +102,7 @@ public class CFSecProtBuffSecSysRole
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
 		}
-		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
 		if( targetArr != null ) {
 			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -126,7 +126,7 @@ public class CFSecProtBuffSecSysRole
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsEnabledByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleEnables()");
 		}
-		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecSysRoleEnables[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
 		if( targetArr != null ) {
 			List<ICFSecSecSysRoleEnables> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -150,7 +150,7 @@ public class CFSecProtBuffSecSysRole
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
 		}
-		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
 		if( targetArr != null ) {
 			List<ICFSecSecSysRoleMemb> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -174,7 +174,7 @@ public class CFSecProtBuffSecSysRole
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenMembByRole", 0, "ICFSecSchema.getBackingCFSec().getTableSecSysRoleMemb()");
 		}
-		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecSecSysRoleMemb[] targetArr = targetTable.readDerivedBySysRoleIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSecSysRoleId());
 		if( targetArr != null ) {
 			List<ICFSecSecSysRoleMemb> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -242,7 +242,30 @@ public class CFSecProtBuffSecSysRole
 	public int getClassCode() {
 		return( ICFSecSecSysRole.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -670,7 +693,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtSecSysRoleHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtSecSysRoleHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if (getRequiredSecSysRoleId() != null) {
 				if (rhs.getRequiredSecSysRoleId() != null) {
 					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );
@@ -788,7 +817,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubSecSysRoleHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubSecSysRoleHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if (getRequiredSecSysRoleId() != null) {
 				if (rhs.getRequiredSecSysRoleId() != null) {
 					cmp = getRequiredSecSysRoleId().compareTo( rhs.getRequiredSecSysRoleId() );

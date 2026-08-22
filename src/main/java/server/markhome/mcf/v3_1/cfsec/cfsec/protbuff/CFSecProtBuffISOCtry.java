@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffISOCtry
-	implJustProtements ICFSecISOCtry, Comparable<Object>, Serializable
+	implements ICFSecISOCtry, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredISOCtryId;
+	protected short requiredISOCtryId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -107,7 +107,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -131,7 +131,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -155,7 +155,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsCcy", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecPubISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubISOCtryCcy[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecPubISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -179,7 +179,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}
-		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -203,7 +203,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}
-		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryLang> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -227,7 +227,7 @@ public class CFSecProtBuffISOCtry
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsLang", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryLang()");
 		}
-		ICFSecPubISOCtryLang[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubISOCtryLang[] targetArr = targetTable.readDerivedByCtryIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCtryId());
 		if( targetArr != null ) {
 			List<ICFSecPubISOCtryLang> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -295,7 +295,53 @@ public class CFSecProtBuffISOCtry
 	public int getClassCode() {
 		return( ICFSecISOCtry.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredISOCode() {
+		return(requiredISOCode);
+	}
+
+	public void setRequiredISOCode( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value" );
+		}
+		else if( value.length() > 2 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value.length()",
+				value.length(),
+				2 );
+		}
+		requiredISOCode = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -768,7 +814,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtISOCtryHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtISOCtryHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}
@@ -906,7 +958,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubISOCtryHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubISOCtryHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCtryId() < rhs.getRequiredISOCtryId() ) {
 				return( -1 );
 			}

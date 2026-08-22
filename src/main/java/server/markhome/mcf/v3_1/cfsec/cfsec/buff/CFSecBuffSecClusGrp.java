@@ -256,7 +256,7 @@ public class CFSecBuffSecClusGrp
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCluster-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecCluster) || (found instanceof ICFSecProtCluster) || (found instanceof ICFSecPubCluster)) {
-		setRequiredClusterId(argClusterId);
+		requiredClusterId = argClusterId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerCluster-args", "found", found, "ICFSecClusterICFSecProtClusterICFSecPubCluster");
@@ -330,7 +330,7 @@ public class CFSecBuffSecClusGrp
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSysGrp-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecSecSysGrp) || (found instanceof ICFSecProtSecSysGrp) || (found instanceof ICFSecPubSecSysGrp)) {
-		setRequiredName(argName);
+		requiredName = argName;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSysGrp-args", "found", found, "ICFSecSecSysGrpICFSecProtSecSysGrpICFSecPubSecSysGrp");

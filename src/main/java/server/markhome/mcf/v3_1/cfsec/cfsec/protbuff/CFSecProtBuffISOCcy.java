@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 
 public class CFSecProtBuffISOCcy
-	implJustProtements ICFSecISOCcy, Comparable<Object>, Serializable
+	implements ICFSecISOCcy, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredISOCcyId;
+	protected short requiredISOCcyId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -111,7 +111,7 @@ public class CFSecProtBuffISOCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -135,7 +135,7 @@ public class CFSecProtBuffISOCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		if( targetArr != null ) {
 			List<ICFSecISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -159,7 +159,7 @@ public class CFSecProtBuffISOCcy
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenCtry", 0, "ICFSecSchema.getBackingCFSec().getTableISOCtryCcy()");
 		}
-		ICFSecPubISOCtryCcy[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		ICFSecPubISOCtryCcy[] targetArr = targetTable.readDerivedByCcyIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredISOCcyId());
 		if( targetArr != null ) {
 			List<ICFSecPubISOCtryCcy> results = new ArrayList<>(targetArr.length);
 			for (int idx = 0; idx < targetArr.length; idx++) {
@@ -227,7 +227,96 @@ public class CFSecProtBuffISOCcy
 	public int getClassCode() {
 		return( ICFSecISOCcy.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredISOCode() {
+		return(requiredISOCode);
+	}
+
+	public void setRequiredISOCode( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value" );
+		}
+		else if( value.length() > 3 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredISOCode",
+				1,
+				"value.length()",
+				value.length(),
+				3 );
+		}
+		requiredISOCode = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public String getOptionalUnitSymbol() {
+		return(optionalUnitSymbol);
+	}
+
+	public void setOptionalUnitSymbol( String value ) {
+		if( value != null && value.length() > 4 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setOptionalUnitSymbol",
+				1,
+				"value.length()",
+				value.length(),
+				4 );
+		}
+		optionalUnitSymbol = value;
+	}
+
+	@Override
+	public short getRequiredPrecis() {
+		return(requiredPrecis);
+	}
+
+	@Override
+	public void setRequiredPrecis( short value ) {
+		if( value < ICFSecPubISOCcy.PRECIS_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredPrecis",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.PRECIS_MIN_VALUE );
+		}
+		if( value > ICFSecPubISOCcy.PRECIS_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredPrecis",
+				1,
+				"value",
+				value,
+				ICFSecPubISOCcy.PRECIS_MAX_VALUE );
+		}
+		requiredPrecis = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -834,7 +923,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFSecProtISOCcyHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecProtISOCcyHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
 				return( -1 );
 			}
@@ -1016,7 +1111,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFSecPubISOCcyHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFSecPubISOCcyHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredISOCcyId() < rhs.getRequiredISOCcyId() ) {
 				return( -1 );
 			}

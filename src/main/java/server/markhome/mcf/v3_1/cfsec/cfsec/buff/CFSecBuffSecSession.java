@@ -166,7 +166,7 @@ public class CFSecBuffSecSession
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecSecUser) || (found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
-		setRequiredSecUserId(argSecUserId);
+		requiredSecUserId = argSecUserId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerSecUser-args", "found", found, "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser");
@@ -240,7 +240,7 @@ public class CFSecBuffSecSession
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecSecUser) || (found instanceof ICFSecProtSecUser) || (found instanceof ICFSecPubSecUser)) {
-		setOptionalSecProxyId(argSecProxyId);
+		optionalSecProxyId = argSecProxyId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentSecProxy-args", "found", found, "ICFSecSecUserICFSecProtSecUserICFSecPubSecUser");
