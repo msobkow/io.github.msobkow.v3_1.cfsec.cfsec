@@ -77,32 +77,32 @@ public interface ICFSecSecTentGrp
 
 	public ICFLibKeyHash256 getPKey();
 	public void setPKey(ICFLibKeyHash256 requiredSecTentGrpId);
-	public List<ICFSecSecTentGrpMemb> get$OptionalOrRequired$ChildrenMembByGrp();
+	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 
 	public ICFLibKeyHash256 getRequiredSecTentGrpId();
 	public void setRequiredSecTentGrpId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecTenant get$OptionalOrRequired$OwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void set$OptionalOrRequired$OwnerTenant(ICFLibKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
 
-	public void set$OptionalOrRequired$OwnerTenant(ICFSecTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 
-	public void set$OptionalOrRequired$OwnerTenant(ICFSecProtTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
 
-	public void set$OptionalOrRequired$OwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
-	public ICFSecSecSysGrp get$OptionalOrRequired$ContainerSysGrp();
+	public ICFSecSecSysGrp getRequiredContainerSysGrp();
 
-	public void set$OptionalOrRequired$ContainerSysGrp(String argName);
+	public void setRequiredContainerSysGrp(String argName);
 
-	public void set$OptionalOrRequired$ContainerSysGrp(ICFSecSecSysGrp argObj);
+	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
 
-	public void set$OptionalOrRequired$ContainerSysGrp(ICFSecProtSecSysGrp argObj);
+	public void setRequiredContainerSysGrp(ICFSecProtSecSysGrp argObj);
 
-	public void set$OptionalOrRequired$ContainerSysGrp(ICFSecPubSecSysGrp argObj);
+	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
 	public ICFLibKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( ICFLibKeyHash256 value );
