@@ -52,7 +52,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConf
 	implements ICFSecSecUserEMConf, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSecUserId;
+	protected $implIJavaAtomType$ requiredSecUserId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -60,10 +60,10 @@ public class CFSecBuffSecUserEMConf
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredConfirmEMailAddr;
-	protected LocalDateTime requiredEMailSentStamp;
-	protected ICFLibUuid6 requiredEMConfirmationUuid6;
-	protected boolean requiredNewAccount;
+	protected $implIJavaAtomType$ requiredConfirmEMailAddr;
+	protected $implIJavaAtomType$ requiredEMailSentStamp;
+	protected $implIJavaAtomType$ requiredEMConfirmationUuid6;
+	protected $implIJavaAtomType$ requiredNewAccount;
 
 	public CFSecBuffSecUserEMConf() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecProtSecUserEMConf.SECUSERID_INIT_VALUE.toString() );
@@ -73,23 +73,23 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredSecUserId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -227,11 +227,11 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
+	public $implIJavaAtomType$ getRequiredConfirmEMailAddr() {
 		return(requiredConfirmEMailAddr);
 	}
 
-	public void setRequiredConfirmEMailAddr( String value ) {
+	public void setRequiredConfirmEMailAddr( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredConfirmEMailAddr",
@@ -250,11 +250,11 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public LocalDateTime getRequiredEMailSentStamp() {
+	public $implIJavaAtomType$ getRequiredEMailSentStamp() {
 		return(requiredEMailSentStamp);
 	}
 
-	public void setRequiredEMailSentStamp( LocalDateTime value ) {
+	public void setRequiredEMailSentStamp( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredEMailSentStamp",
@@ -265,11 +265,11 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public ICFLibUuid6 getRequiredEMConfirmationUuid6() {
+	public $implIJavaAtomType$ getRequiredEMConfirmationUuid6() {
 		return(requiredEMConfirmationUuid6);
 	}
 
-	public void setRequiredEMConfirmationUuid6( ICFLibUuid6 value ) {
+	public void setRequiredEMConfirmationUuid6( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredEMConfirmationUuid6",
@@ -280,11 +280,11 @@ public class CFSecBuffSecUserEMConf
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implIJavaAtomType$ getRequiredNewAccount() {
 		return(requiredNewAccount);
 	}
 
-	public void setRequiredNewAccount( boolean value ) {
+	public void setRequiredNewAccount( $implIJavaAtomType$ value ) {
 		requiredNewAccount = value;
 	}
 

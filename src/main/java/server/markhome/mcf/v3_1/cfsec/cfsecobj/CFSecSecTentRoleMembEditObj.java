@@ -397,12 +397,12 @@ public class CFSecSecTentRoleMembEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecTentRoleId() {
+	public $implIJavaAtomType$ getRequiredSecTentRoleId() {
 		return( getPKey().getRequiredSecTentRoleId() );
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implIJavaAtomType$ getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

@@ -52,9 +52,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSysCluster
 	implements ICFSecSysCluster, Comparable<Object>, Serializable
 {
-	protected int requiredSingletonId;
+	protected $implIJavaAtomType$ requiredSingletonId;
 	protected int requiredRevision;
-	protected ICFLibKeyHash256 requiredClusterId;
+	protected $implIJavaAtomType$ requiredClusterId;
 
 	public CFSecBuffSysCluster() {
 		requiredSingletonId = ICFSecPubSysCluster.SINGLETONID_INIT_VALUE;
@@ -62,24 +62,24 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredSingletonId);
 	}
 
 	@Override
-	public void setPKey(Integer requiredSingletonId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSingletonId) {
 		if(requiredSingletonId != null) {
 			this.requiredSingletonId = requiredSingletonId;
 		}
 	}
 
 	@Override
-	public int getRequiredSingletonId() {
+	public $implIJavaAtomType$ getRequiredSingletonId() {
 		return(requiredSingletonId);
 	}
 
 	@Override
-	public void setRequiredSingletonId( int value ) {
+	public void setRequiredSingletonId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubSysCluster.SINGLETONID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredSingletonId",
@@ -157,7 +157,7 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
-	public void setRequiredContainerCluster(ICFLibKeyHash256 argClusterId) {
+	public void setRequiredContainerCluster($implIJavaAtomType$ argClusterId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerCluster-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -189,11 +189,11 @@ public class CFSecBuffSysCluster
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClusterId() {
+	public $implIJavaAtomType$ getRequiredClusterId() {
 		return(requiredClusterId);
 	}
 
-	public void setRequiredClusterId( ICFLibKeyHash256 value ) {
+	public void setRequiredClusterId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredClusterId",

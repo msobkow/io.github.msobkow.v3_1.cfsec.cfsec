@@ -78,7 +78,7 @@ public interface ICFSecISOCtryLang
 	public void setPKey(ICFSecISOCtryLangPKey pkey );
 	public ICFSecISOCtry getRequiredContainerCtry();
 
-	public void setRequiredContainerCtry(short argISOCtryId);
+	public void setRequiredContainerCtry($implIJavaAtomType$ argISOCtryId);
 
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
 
@@ -88,7 +88,7 @@ public interface ICFSecISOCtryLang
 
 	public ICFSecISOLang getRequiredParentLang();
 
-	public void setRequiredParentLang(short argISOLangId);
+	public void setRequiredParentLang($implIJavaAtomType$ argISOLangId);
 
 	public void setRequiredParentLang(ICFSecISOLang argObj);
 
@@ -96,13 +96,13 @@ public interface ICFSecISOCtryLang
 
 	public void setRequiredParentLang(ICFSecPubISOLang argObj);
 
-	public short getRequiredISOCtryId();
+	public $implIJavaAtomType$ getRequiredISOCtryId();
 
-	public void setRequiredISOCtryId(short value);
+	public void setRequiredISOCtryId($implIJavaAtomType$ value);
 
-	public short getRequiredISOLangId();
+	public $implIJavaAtomType$ getRequiredISOLangId();
 
-	public void setRequiredISOLangId(short value);
+	public void setRequiredISOLangId($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

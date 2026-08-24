@@ -101,7 +101,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	The TableInfo-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecTableInfoObj readTableInfo( Integer pkey );
+	ICFSecTableInfoObj readTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a TableInfo-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	The TableInfo-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecTableInfoObj readTableInfo( Integer pkey,
+	ICFSecTableInfoObj readTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecTableInfoObj readCachedTableInfo( Integer pkey );
+	ICFSecTableInfoObj readCachedTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeTableInfo( ICFSecTableInfoObj obj );
 
-	void deepDisposeTableInfo( Integer pkey );
+	void deepDisposeTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecTableInfoObj lockTableInfo( Integer pkey );
+	ICFSecTableInfoObj lockTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the TableInfo-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoByIdIdx( int TableInfoId );
+	ICFSecTableInfoObj readTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId );
 
 	/**
 	 *	Get the CFSecTableInfoObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoByIdIdx( int TableInfoId,
+	ICFSecTableInfoObj readTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj cached instance for the unique TableNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoByTableNameIdx(String TableName );
+	ICFSecTableInfoObj readTableInfoByTableNameIdx($implIJavaAtomType$ TableName );
 
 	/**
 	 *	Get the CFSecTableInfoObj instance for the unique TableNameIdx key.
@@ -182,7 +182,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj refreshed instance for the unique TableNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoByTableNameIdx(String TableName,
+	ICFSecTableInfoObj readTableInfoByTableNameIdx($implIJavaAtomType$ TableName,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SuperNameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName );
+	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName );
 
 	/**
 	 *	Get the map of CFSecTableInfoObj instances sorted by their primary keys for the duplicate SuperNameIdx key.
@@ -203,7 +203,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SuperNameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName,
+	List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName,
 		boolean forceRead );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SchemaNameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( String SchemaName );
+	List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName );
 
 	/**
 	 *	Get the map of CFSecTableInfoObj instances sorted by their primary keys for the duplicate SchemaNameIdx key.
@@ -224,7 +224,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	List of CFSecTableInfoObj cached instances sorted by their primary keys for the duplicate SchemaNameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( String SchemaName,
+	List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName,
 		boolean forceRead );
 
 	/**
@@ -237,8 +237,8 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj cached instance for the unique SchemaBkCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx(String SchemaName,
-		int BackingClassCode );
+	ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx($implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
 	/**
 	 *	Get the CFSecTableInfoObj instance for the unique SchemaBkCodeIdx key.
@@ -250,8 +250,8 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj refreshed instance for the unique SchemaBkCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx(String SchemaName,
-		int BackingClassCode,
+	ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx($implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode,
 		boolean forceRead );
 
 	/**
@@ -262,7 +262,7 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj cached instance for the unique SchemaRTCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx(int RuntimeClassCode );
+	ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx($implIJavaAtomType$ RuntimeClassCode );
 
 	/**
 	 *	Get the CFSecTableInfoObj instance for the unique SchemaRTCodeIdx key.
@@ -272,34 +272,34 @@ public interface ICFSecTableInfoTableObj
 	 *	@return	CFSecTableInfoObj refreshed instance for the unique SchemaRTCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx(int RuntimeClassCode,
+	ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx($implIJavaAtomType$ RuntimeClassCode,
 		boolean forceRead );
 
-	ICFSecTableInfoObj readCachedTableInfoByIdIdx( int TableInfoId );
+	ICFSecTableInfoObj readCachedTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId );
 
-	ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( String TableName );
+	ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( $implIJavaAtomType$ TableName );
 
-	List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( String SuperName );
+	List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName );
 
-	List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( String SchemaName );
+	List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName );
 
-	ICFSecTableInfoObj readCachedTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode );
+	ICFSecTableInfoObj readCachedTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
-	ICFSecTableInfoObj readCachedTableInfoBySchemaRTCodeIdx( int RuntimeClassCode );
+	ICFSecTableInfoObj readCachedTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode );
 
-	void deepDisposeTableInfoByIdIdx( int TableInfoId );
+	void deepDisposeTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId );
 
-	void deepDisposeTableInfoByTableNameIdx( String TableName );
+	void deepDisposeTableInfoByTableNameIdx( $implIJavaAtomType$ TableName );
 
-	void deepDisposeTableInfoBySuperNameIdx( String SuperName );
+	void deepDisposeTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName );
 
-	void deepDisposeTableInfoBySchemaNameIdx( String SchemaName );
+	void deepDisposeTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName );
 
-	void deepDisposeTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode );
+	void deepDisposeTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
-	void deepDisposeTableInfoBySchemaRTCodeIdx( int RuntimeClassCode );
+	void deepDisposeTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode );
 
 	/**
 	 *	Internal use only.
@@ -316,28 +316,28 @@ public interface ICFSecTableInfoTableObj
 	 *
 	 *	@param	TableInfoId	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoByIdIdx( int TableInfoId );
+	void deleteTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableName	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoByTableNameIdx(String TableName );
+	void deleteTableInfoByTableNameIdx($implIJavaAtomType$ TableName );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoBySuperNameIdx( String SuperName );
+	void deleteTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaName	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoBySchemaNameIdx( String SchemaName );
+	void deleteTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName );
 
 	/**
 	 *	Internal use only.
@@ -346,13 +346,13 @@ public interface ICFSecTableInfoTableObj
 	 *
 	 *	@param	BackingClassCode	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoBySchemaBkCodeIdx(String SchemaName,
-		int BackingClassCode );
+	void deleteTableInfoBySchemaBkCodeIdx($implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RuntimeClassCode	The TableInfo key attribute of the instance generating the id.
 	 */
-	void deleteTableInfoBySchemaRTCodeIdx(int RuntimeClassCode );
+	void deleteTableInfoBySchemaRTCodeIdx($implIJavaAtomType$ RuntimeClassCode );
 }

@@ -57,7 +57,7 @@ public class CFSecBuffSecSessionHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected ICFLibKeyHash256 requiredSecSessionId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecSessionId;
 
 	public CFSecBuffSecSessionHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
@@ -119,11 +119,11 @@ public class CFSecBuffSecSessionHPKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSessionId() {
+	public $implIJavaAtomType$ getRequiredSecSessionId() {
 		return(requiredSecSessionId);
 	}
 
-	public void setRequiredSecSessionId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecSessionId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSessionId",

@@ -101,7 +101,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	The SecUser-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey );
+	ICFSecSecUserObj readSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecUser-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecUserTableObj
 	 *	@return	The SecUser-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey,
+	ICFSecSecUserObj readSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecUserObj readCachedSecUser( ICFLibKeyHash256 pkey );
+	ICFSecSecUserObj readCachedSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecUser( ICFSecSecUserObj obj );
 
-	void deepDisposeSecUser( ICFLibKeyHash256 pkey );
+	void deepDisposeSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecUserObj lockSecUser( ICFLibKeyHash256 pkey );
+	ICFSecSecUserObj lockSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecUser-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	List of ICFSecSecUserObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecUserObj> pageAllSecUser(ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserObj> pageAllSecUser($implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Get the CFSecSecUserObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	CFSecSecUserObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserObj readSecUserByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	CFSecSecUserObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId,
+	ICFSecSecUserObj readSecUserByIdIdx( $implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	CFSecSecUserObj cached instance for the unique ULoginIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserObj readSecUserByULoginIdx(String LoginId );
+	ICFSecSecUserObj readSecUserByULoginIdx($implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Get the CFSecSecUserObj instance for the unique ULoginIdx key.
@@ -190,7 +190,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	CFSecSecUserObj refreshed instance for the unique ULoginIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserObj readSecUserByULoginIdx(String LoginId,
+	ICFSecSecUserObj readSecUserByULoginIdx($implIJavaAtomType$ LoginId,
 		boolean forceRead );
 
 	/**
@@ -201,7 +201,7 @@ public interface ICFSecSecUserTableObj
 	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress );
+	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress );
 
 	/**
 	 *	Get the map of CFSecSecUserObj instances sorted by their primary keys for the duplicate EMAddrIdx key.
@@ -211,20 +211,20 @@ public interface ICFSecSecUserTableObj
 	 *	@return	List of CFSecSecUserObj cached instances sorted by their primary keys for the duplicate EMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress,
+	List<ICFSecSecUserObj> readSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress,
 		boolean forceRead );
 
-	ICFSecSecUserObj readCachedSecUserByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserObj readCachedSecUserByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	ICFSecSecUserObj readCachedSecUserByULoginIdx( String LoginId );
+	ICFSecSecUserObj readCachedSecUserByULoginIdx( $implIJavaAtomType$ LoginId );
 
-	List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( String EMailAddress );
+	List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress );
 
-	void deepDisposeSecUserByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecUserByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecUserByULoginIdx( String LoginId );
+	void deepDisposeSecUserByULoginIdx( $implIJavaAtomType$ LoginId );
 
-	void deepDisposeSecUserByEMAddrIdx( String EMailAddress );
+	void deepDisposeSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress );
 
 	/**
 	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
@@ -235,8 +235,8 @@ public interface ICFSecSecUserTableObj
 	 *	@return	A List of SecUser-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( String EMailAddress,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Internal use only.
@@ -253,19 +253,19 @@ public interface ICFSecSecUserTableObj
 	 *
 	 *	@param	SecUserId	The SecUser key attribute of the instance generating the id.
 	 */
-	void deleteSecUserByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deleteSecUserByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	LoginId	The SecUser key attribute of the instance generating the id.
 	 */
-	void deleteSecUserByULoginIdx(String LoginId );
+	void deleteSecUserByULoginIdx($implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 */
-	void deleteSecUserByEMAddrIdx( String EMailAddress );
+	void deleteSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress );
 }

@@ -187,18 +187,18 @@ public interface ICFSecSecSysGrpObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -344,25 +344,25 @@ public interface ICFSecSecSysGrpObj
 	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	$implIJavaAtomType$ getRequiredSecSysGrpId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Get the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	Get the required $implIJavaAtomType$ attribute SecLevel.
 	 *
-	 *	@return	The required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	@return	The required $implIJavaAtomType$ attribute SecLevel.
 	 */
-	ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
+	$implIJavaAtomType$ getRequiredSecLevel();
 
 	/**
 	 *	Internal use only.

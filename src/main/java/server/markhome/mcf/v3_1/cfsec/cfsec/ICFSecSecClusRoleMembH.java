@@ -71,11 +71,11 @@ public interface ICFSecSecClusRoleMembH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecClusRoleId();
-	public void setRequiredSecClusRoleId( ICFLibKeyHash256 requiredSecClusRoleId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecClusRoleId();
+	public void setRequiredSecClusRoleId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecClusRoleId );
 
-	public String getRequiredLoginId();
-	public void setRequiredLoginId( String requiredLoginId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredLoginId();
+	public void setRequiredLoginId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredLoginId );
 
 	@Override
 	public boolean equals( Object obj );

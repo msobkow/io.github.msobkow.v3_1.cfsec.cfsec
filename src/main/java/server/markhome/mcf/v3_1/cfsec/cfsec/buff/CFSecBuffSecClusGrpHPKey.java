@@ -57,7 +57,7 @@ public class CFSecBuffSecClusGrpHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected ICFLibKeyHash256 requiredSecClusGrpId;
+	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecClusGrpId;
 
 	public CFSecBuffSecClusGrpHPKey() {
 		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;
@@ -119,11 +119,11 @@ public class CFSecBuffSecClusGrpHPKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecClusGrpId() {
+	public $implIJavaAtomType$ getRequiredSecClusGrpId() {
 		return(requiredSecClusGrpId);
 	}
 
-	public void setRequiredSecClusGrpId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecClusGrpId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecClusGrpId",

@@ -153,18 +153,18 @@ public interface ICFSecSecSysRoleMembEditObj
 	void setRequiredParentUser( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysRoleId();
+	$implIJavaAtomType$ getRequiredSecSysRoleId();
 
 	/**
-	 *	Get the required String attribute LoginId.
+	 *	Get the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@return	The required String attribute LoginId.
+	 *	@return	The required $implIJavaAtomType$ attribute LoginId.
 	 */
-	String getRequiredLoginId();
+	$implIJavaAtomType$ getRequiredLoginId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -52,7 +52,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOLang
 	implements ICFSecISOLang, Comparable<Object>, Serializable
 {
-	protected short requiredISOLangId;
+	protected $implIJavaAtomType$ requiredISOLangId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -60,9 +60,9 @@ public class CFSecBuffISOLang
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredISO6392Code;
-	protected String optionalISO6391Code;
-	protected String requiredEnglishName;
+	protected $implIJavaAtomType$ requiredISO6392Code;
+	protected $implIJavaAtomType$ optionalISO6391Code;
+	protected $implIJavaAtomType$ requiredEnglishName;
 
 	public CFSecBuffISOLang() {
 		requiredISOLangId = ICFSecPubISOLang.ISOLANGID_INIT_VALUE;
@@ -72,24 +72,24 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredISOLangId);
 	}
 
 	@Override
-	public void setPKey(Short requiredISOLangId) {
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredISOLangId) {
 		if(requiredISOLangId != null) {
 			this.requiredISOLangId = requiredISOLangId;
 		}
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return(requiredISOLangId);
 	}
 
 	@Override
-	public void setRequiredISOLangId( short value ) {
+	public void setRequiredISOLangId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",
@@ -229,11 +229,11 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implIJavaAtomType$ getRequiredISO6392Code() {
 		return(requiredISO6392Code);
 	}
 
-	public void setRequiredISO6392Code( String value ) {
+	public void setRequiredISO6392Code( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredISO6392Code",
@@ -252,11 +252,11 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public String getOptionalISO6391Code() {
+	public $implIJavaAtomType$ getOptionalISO6391Code() {
 		return(optionalISO6391Code);
 	}
 
-	public void setOptionalISO6391Code( String value ) {
+	public void setOptionalISO6391Code( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 2 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalISO6391Code",
@@ -269,11 +269,11 @@ public class CFSecBuffISOLang
 	}
 
 	@Override
-	public String getRequiredEnglishName() {
+	public $implIJavaAtomType$ getRequiredEnglishName() {
 		return(requiredEnglishName);
 	}
 
-	public void setRequiredEnglishName( String value ) {
+	public void setRequiredEnglishName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredEnglishName",

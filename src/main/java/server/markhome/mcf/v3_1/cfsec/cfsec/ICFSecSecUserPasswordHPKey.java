@@ -63,8 +63,8 @@ public interface ICFSecSecUserPasswordHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

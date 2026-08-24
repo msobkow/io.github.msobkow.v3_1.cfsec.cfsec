@@ -101,7 +101,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	The ISOLang-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOLangObj readISOLang( Short pkey );
+	ICFSecISOLangObj readISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a ISOLang-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecISOLangTableObj
 	 *	@return	The ISOLang-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOLangObj readISOLang( Short pkey,
+	ICFSecISOLangObj readISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecISOLangObj readCachedISOLang( Short pkey );
+	ICFSecISOLangObj readCachedISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeISOLang( ICFSecISOLangObj obj );
 
-	void deepDisposeISOLang( Short pkey );
+	void deepDisposeISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecISOLangObj lockISOLang( Short pkey );
+	ICFSecISOLangObj lockISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the ISOLang-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	CFSecISOLangObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOLangObj readISOLangByIdIdx( short ISOLangId );
+	ICFSecISOLangObj readISOLangByIdIdx( $implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Get the CFSecISOLangObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	CFSecISOLangObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOLangObj readISOLangByIdIdx( short ISOLangId,
+	ICFSecISOLangObj readISOLangByIdIdx( $implIJavaAtomType$ ISOLangId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	CFSecISOLangObj cached instance for the unique Code3Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOLangObj readISOLangByCode3Idx(String ISO6392Code );
+	ICFSecISOLangObj readISOLangByCode3Idx($implIJavaAtomType$ ISO6392Code );
 
 	/**
 	 *	Get the CFSecISOLangObj instance for the unique Code3Idx key.
@@ -182,7 +182,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	CFSecISOLangObj refreshed instance for the unique Code3Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOLangObj readISOLangByCode3Idx(String ISO6392Code,
+	ICFSecISOLangObj readISOLangByCode3Idx($implIJavaAtomType$ ISO6392Code,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecISOLangTableObj
 	 *	@return	List of CFSecISOLangObj cached instances sorted by their primary keys for the duplicate Code2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOLangObj> readISOLangByCode2Idx( String ISO6391Code );
+	List<ICFSecISOLangObj> readISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code );
 
 	/**
 	 *	Get the map of CFSecISOLangObj instances sorted by their primary keys for the duplicate Code2Idx key.
@@ -203,20 +203,20 @@ public interface ICFSecISOLangTableObj
 	 *	@return	List of CFSecISOLangObj cached instances sorted by their primary keys for the duplicate Code2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOLangObj> readISOLangByCode2Idx( String ISO6391Code,
+	List<ICFSecISOLangObj> readISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code,
 		boolean forceRead );
 
-	ICFSecISOLangObj readCachedISOLangByIdIdx( short ISOLangId );
+	ICFSecISOLangObj readCachedISOLangByIdIdx( $implIJavaAtomType$ ISOLangId );
 
-	ICFSecISOLangObj readCachedISOLangByCode3Idx( String ISO6392Code );
+	ICFSecISOLangObj readCachedISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code );
 
-	List<ICFSecISOLangObj> readCachedISOLangByCode2Idx( String ISO6391Code );
+	List<ICFSecISOLangObj> readCachedISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code );
 
-	void deepDisposeISOLangByIdIdx( short ISOLangId );
+	void deepDisposeISOLangByIdIdx( $implIJavaAtomType$ ISOLangId );
 
-	void deepDisposeISOLangByCode3Idx( String ISO6392Code );
+	void deepDisposeISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code );
 
-	void deepDisposeISOLangByCode2Idx( String ISO6391Code );
+	void deepDisposeISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code );
 
 	/**
 	 *	Internal use only.
@@ -233,19 +233,19 @@ public interface ICFSecISOLangTableObj
 	 *
 	 *	@param	ISOLangId	The ISOLang key attribute of the instance generating the id.
 	 */
-	void deleteISOLangByIdIdx( short ISOLangId );
+	void deleteISOLangByIdIdx( $implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISO6392Code	The ISOLang key attribute of the instance generating the id.
 	 */
-	void deleteISOLangByCode3Idx(String ISO6392Code );
+	void deleteISOLangByCode3Idx($implIJavaAtomType$ ISO6392Code );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISO6391Code	The ISOLang key attribute of the instance generating the id.
 	 */
-	void deleteISOLangByCode2Idx( String ISO6391Code );
+	void deleteISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code );
 }

@@ -120,8 +120,8 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	The SecSysRoleEnables-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+	ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read a SecSysRoleEnables-derived instance by it's primary key.
@@ -129,8 +129,8 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	The SecSysRoleEnables-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName,
+	ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName,
 		boolean forceRead );
 
 	ICFSecSecSysRoleEnablesObj readCachedSecSysRoleEnables( ICFSecSecSysRoleEnablesPKey pkey );
@@ -168,8 +168,8 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	List of ICFSecSecSysRoleEnablesObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> pageAllSecSysRoleEnables(ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+	List<ICFSecSecSysRoleEnablesObj> pageAllSecSysRoleEnables($implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 
 	/**
 	 *	Get the CFSecSecSysRoleEnablesObj instance for the primary key attributes.
@@ -181,8 +181,8 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	CFSecSecSysRoleEnablesObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+	ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Get the CFSecSecSysRoleEnablesObj instance for the primary key attributes.
@@ -194,8 +194,8 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	CFSecSecSysRoleEnablesObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName,
+	ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName,
 		boolean forceRead );
 
 	/**
@@ -206,7 +206,7 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	List of CFSecSecSysRoleEnablesObj cached instances sorted by their primary keys for the duplicate SysRoleIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId );
+	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Get the map of CFSecSecSysRoleEnablesObj instances sorted by their primary keys for the duplicate SysRoleIdx key.
@@ -216,7 +216,7 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	List of CFSecSecSysRoleEnablesObj cached instances sorted by their primary keys for the duplicate SysRoleIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
+	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId,
 		boolean forceRead );
 
 	/**
@@ -227,7 +227,7 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	List of CFSecSecSysRoleEnablesObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( String EnableName );
+	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Get the map of CFSecSecSysRoleEnablesObj instances sorted by their primary keys for the duplicate NameIdx key.
@@ -237,22 +237,22 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	List of CFSecSecSysRoleEnablesObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( String EnableName,
+	List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName,
 		boolean forceRead );
 
-	ICFSecSecSysRoleEnablesObj readCachedSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+	ICFSecSecSysRoleEnablesObj readCachedSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
-	List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId );
+	List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId );
 
-	List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesByNameIdx( String EnableName );
+	List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName );
 
-	void deepDisposeSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+	void deepDisposeSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
-	void deepDisposeSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId );
+	void deepDisposeSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId );
 
-	void deepDisposeSecSysRoleEnablesByNameIdx( String EnableName );
+	void deepDisposeSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read a page of data as a List of SecSysRoleEnables-derived instances sorted by their primary keys,
@@ -263,9 +263,9 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	A List of SecSysRoleEnables-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+	List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 
 	/**
 	 *	Read a page of data as a List of SecSysRoleEnables-derived instances sorted by their primary keys,
@@ -276,9 +276,9 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *	@return	A List of SecSysRoleEnables-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesByNameIdx( String EnableName,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+	List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 
 	/**
 	 *	Internal use only.
@@ -297,20 +297,20 @@ public interface ICFSecSecSysRoleEnablesTableObj
 	 *
 	 *	@param	EnableName	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+	void deleteSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecSysRoleId	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId );
+	void deleteSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	EnableName	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleEnablesByNameIdx( String EnableName );
+	void deleteSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName );
 }

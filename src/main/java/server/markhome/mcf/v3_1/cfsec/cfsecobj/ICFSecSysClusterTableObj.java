@@ -101,7 +101,7 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	The SysCluster-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSysClusterObj readSysCluster( Integer pkey );
+	ICFSecSysClusterObj readSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SysCluster-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	The SysCluster-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSysClusterObj readSysCluster( Integer pkey,
+	ICFSecSysClusterObj readSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSysClusterObj readCachedSysCluster( Integer pkey );
+	ICFSecSysClusterObj readCachedSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSysCluster( ICFSecSysClusterObj obj );
 
-	void deepDisposeSysCluster( Integer pkey );
+	void deepDisposeSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSysClusterObj lockSysCluster( Integer pkey );
+	ICFSecSysClusterObj lockSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SysCluster-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	CFSecSysClusterObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSysClusterObj readSysClusterByIdIdx( int SingletonId );
+	ICFSecSysClusterObj readSysClusterByIdIdx( $implIJavaAtomType$ SingletonId );
 
 	/**
 	 *	Get the CFSecSysClusterObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	CFSecSysClusterObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSysClusterObj readSysClusterByIdIdx( int SingletonId,
+	ICFSecSysClusterObj readSysClusterByIdIdx( $implIJavaAtomType$ SingletonId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	List of CFSecSysClusterObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSysClusterObj> readSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecSysClusterObj> readSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Get the map of CFSecSysClusterObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -182,16 +182,16 @@ public interface ICFSecSysClusterTableObj
 	 *	@return	List of CFSecSysClusterObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSysClusterObj> readSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId,
+	List<ICFSecSysClusterObj> readSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId,
 		boolean forceRead );
 
-	ICFSecSysClusterObj readCachedSysClusterByIdIdx( int SingletonId );
+	ICFSecSysClusterObj readCachedSysClusterByIdIdx( $implIJavaAtomType$ SingletonId );
 
-	List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId );
 
-	void deepDisposeSysClusterByIdIdx( int SingletonId );
+	void deepDisposeSysClusterByIdIdx( $implIJavaAtomType$ SingletonId );
 
-	void deepDisposeSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deepDisposeSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -208,12 +208,12 @@ public interface ICFSecSysClusterTableObj
 	 *
 	 *	@param	SingletonId	The SysCluster key attribute of the instance generating the id.
 	 */
-	void deleteSysClusterByIdIdx( int SingletonId );
+	void deleteSysClusterByIdIdx( $implIJavaAtomType$ SingletonId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ClusterId	The SysCluster key attribute of the instance generating the id.
 	 */
-	void deleteSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deleteSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId );
 }

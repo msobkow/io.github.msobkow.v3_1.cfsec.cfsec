@@ -63,8 +63,8 @@ public interface ICFSecSecSysRoleHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredSecSysRoleId();
-	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

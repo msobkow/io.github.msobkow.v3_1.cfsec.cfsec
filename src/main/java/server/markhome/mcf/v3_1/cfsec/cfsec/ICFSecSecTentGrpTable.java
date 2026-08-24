@@ -90,7 +90,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecTentGrpByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecTentGrp instances identified by the key TenantIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@param	TenantId	The SecTentGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId );
 
 	/**
 	 *	Delete the SecTentGrp instances identified by the key TenantIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@param	Name	The SecTentGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpByNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecTentGrp instances identified by the key NameIdx.
@@ -139,8 +139,8 @@ public interface ICFSecSecTentGrpTable
 	 *	@param	Name	The SecTentGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecTentGrp instances identified by the key UNameIdx.
@@ -164,7 +164,7 @@ public interface ICFSecSecTentGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrp readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecTentGrp record instance by primary key.
@@ -177,7 +177,7 @@ public interface ICFSecSecTentGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrp lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecTentGrp instances.
@@ -199,7 +199,7 @@ public interface ICFSecSecTentGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrp readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId );
+		$implIJavaAtomType$ SecTentGrpId );
 
 	/**
 	 *	Read an array of the derived SecTentGrp record instances identified by the duplicate key TenantIdx.
@@ -211,7 +211,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentGrp[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the derived SecTentGrp record instances identified by the duplicate key NameIdx.
@@ -223,7 +223,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentGrp[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the derived SecTentGrp record instance identified by the unique key UNameIdx.
@@ -238,8 +238,8 @@ public interface ICFSecSecTentGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrp readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		String Name );
+		$implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecTentGrp record instance identified by the primary key.
@@ -254,7 +254,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecTentGrp record instance identified by the primary key.
@@ -269,7 +269,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecTentGrp record instances.
@@ -293,7 +293,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId );
+		$implIJavaAtomType$ SecTentGrpId );
 
 	/**
 	 *	Read an array of the specific SecTentGrp record instances identified by the duplicate key TenantIdx.
@@ -307,7 +307,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the specific SecTentGrp record instances identified by the duplicate key NameIdx.
@@ -321,7 +321,7 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecTentGrp record instance identified by the unique key UNameIdx.
@@ -338,6 +338,6 @@ public interface ICFSecSecTentGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrp readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		String Name );
+		$implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name );
 }

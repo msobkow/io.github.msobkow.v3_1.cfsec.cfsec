@@ -118,60 +118,60 @@ public interface ICFSecISOLangEditObj
 	List<ICFSecISOCtryLangObj> getOptionalChildrenCtry();
 
 	/**
-	 *	Get the required short attribute ISOLangId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOLangId.
 	 *
-	 *	@return	The required short attribute ISOLangId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOLangId.
 	 */
-	short getRequiredISOLangId();
+	$implIJavaAtomType$ getRequiredISOLangId();
 
 	/**
-	 *	Set the required short attribute ISOLangId.
+	 *	Set the required $implIJavaAtomType$ attribute ISOLangId.
 	 *
-	 *	@param value The required short attribute ISOLangId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOLangId value to be applied.
 	 */
-	void setRequiredISOLangId(short value);
+	void setRequiredISOLangId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute ISO6392Code.
+	 *	Get the required $implIJavaAtomType$ attribute ISO6392Code.
 	 *
-	 *	@return	The required String attribute ISO6392Code.
+	 *	@return	The required $implIJavaAtomType$ attribute ISO6392Code.
 	 */
-	String getRequiredISO6392Code();
+	$implIJavaAtomType$ getRequiredISO6392Code();
 
 	/**
-	 *	Set the required String attribute ISO6392Code.
+	 *	Set the required $implIJavaAtomType$ attribute ISO6392Code.
 	 *
-	 *	@param value The required String attribute ISO6392Code value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISO6392Code value to be applied.
 	 */
-	void setRequiredISO6392Code(String value);
+	void setRequiredISO6392Code($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute ISO6391Code.
+	 *	Get the optional $implIJavaAtomType$ attribute ISO6391Code.
 	 *
-	 *	@return	The optional String attribute ISO6391Code.
+	 *	@return	The optional $implIJavaAtomType$ attribute ISO6391Code.
 	 */
-	String getOptionalISO6391Code();
+	$implIJavaAtomType$ getOptionalISO6391Code();
 
 	/**
-	 *	Set the optional String attribute ISO6391Code.
+	 *	Set the optional $implIJavaAtomType$ attribute ISO6391Code.
 	 *
-	 *	@param value The optional String attribute ISO6391Code value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute ISO6391Code value to be applied.
 	 */
-	void setOptionalISO6391Code(String value);
+	void setOptionalISO6391Code($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute EnglishName.
+	 *	Get the required $implIJavaAtomType$ attribute EnglishName.
 	 *
-	 *	@return	The required String attribute EnglishName.
+	 *	@return	The required $implIJavaAtomType$ attribute EnglishName.
 	 */
-	String getRequiredEnglishName();
+	$implIJavaAtomType$ getRequiredEnglishName();
 
 	/**
-	 *	Set the required String attribute EnglishName.
+	 *	Set the required $implIJavaAtomType$ attribute EnglishName.
 	 *
-	 *	@param value The required String attribute EnglishName value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute EnglishName value to be applied.
 	 */
-	void setRequiredEnglishName(String value);
+	void setRequiredEnglishName($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

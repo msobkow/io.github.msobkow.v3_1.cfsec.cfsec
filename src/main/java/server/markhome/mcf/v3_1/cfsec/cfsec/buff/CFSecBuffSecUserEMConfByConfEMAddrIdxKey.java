@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserEMConfByConfEMAddrIdxKey
 	implements ICFSecSecUserEMConfByConfEMAddrIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredConfirmEMailAddr;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredConfirmEMailAddr;
 	public CFSecBuffSecUserEMConfByConfEMAddrIdxKey() {
 		requiredConfirmEMailAddr = ICFSecProtSecUserEMConf.CONFIRMEMAILADDR_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
+	public $implIJavaAtomType$ getRequiredConfirmEMailAddr() {
 		return(requiredConfirmEMailAddr);
 	}
 
-	public void setRequiredConfirmEMailAddr( String value ) {
+	public void setRequiredConfirmEMailAddr( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredConfirmEMailAddr",

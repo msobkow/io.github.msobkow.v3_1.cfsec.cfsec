@@ -139,46 +139,46 @@ public interface ICFSecClusterEditObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute FullDomName.
+	 *	Get the required $implIJavaAtomType$ attribute FullDomName.
 	 *
-	 *	@return	The required String attribute FullDomName.
+	 *	@return	The required $implIJavaAtomType$ attribute FullDomName.
 	 */
-	String getRequiredFullDomName();
+	$implIJavaAtomType$ getRequiredFullDomName();
 
 	/**
-	 *	Set the required String attribute FullDomName.
+	 *	Set the required $implIJavaAtomType$ attribute FullDomName.
 	 *
-	 *	@param value The required String attribute FullDomName value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute FullDomName value to be applied.
 	 */
-	void setRequiredFullDomName(String value);
+	void setRequiredFullDomName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Description.
+	 *	Get the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The required String attribute Description.
+	 *	@return	The required $implIJavaAtomType$ attribute Description.
 	 */
-	String getRequiredDescription();
+	$implIJavaAtomType$ getRequiredDescription();
 
 	/**
-	 *	Set the required String attribute Description.
+	 *	Set the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@param value The required String attribute Description value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Description value to be applied.
 	 */
-	void setRequiredDescription(String value);
+	void setRequiredDescription($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

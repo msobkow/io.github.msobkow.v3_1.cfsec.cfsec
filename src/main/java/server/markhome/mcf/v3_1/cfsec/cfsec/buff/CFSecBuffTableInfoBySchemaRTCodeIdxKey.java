@@ -52,18 +52,18 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfoBySchemaRTCodeIdxKey
 	implements ICFSecTableInfoBySchemaRTCodeIdxKey, Comparable<Object>, Serializable
 {
-	protected int requiredRuntimeClassCode;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredRuntimeClassCode;
 	public CFSecBuffTableInfoBySchemaRTCodeIdxKey() {
 		requiredRuntimeClassCode = ICFSecPubTableInfo.RUNTIMECLASSCODE_INIT_VALUE;
 	}
 
 	@Override
-	public int getRequiredRuntimeClassCode() {
+	public $implIJavaAtomType$ getRequiredRuntimeClassCode() {
 		return(requiredRuntimeClassCode);
 	}
 
 	@Override
-	public void setRequiredRuntimeClassCode( int value ) {
+	public void setRequiredRuntimeClassCode( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubTableInfo.RUNTIMECLASSCODE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredRuntimeClassCode",

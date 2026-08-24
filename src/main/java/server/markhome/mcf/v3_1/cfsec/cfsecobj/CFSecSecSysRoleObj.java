@@ -52,7 +52,7 @@ public class CFSecSecSysRoleObj
 	protected boolean isNew;
 	protected ICFSecSecSysRoleEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecSysRole rec;
 	protected List<ICFSecSecSysRoleEnablesObj> optionalComponentsEnabledByRole;
 	protected List<ICFSecSecSysRoleMembObj> optionalChildrenMembByRole;
@@ -150,7 +150,7 @@ public class CFSecSecSysRoleObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getRequiredSecSysRoleId(),
 				natNextName, false );
 			}
@@ -288,12 +288,12 @@ public class CFSecSecSysRoleObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -370,7 +370,7 @@ public class CFSecSecSysRoleObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
+	public $implIJavaAtomType$ getRequiredSecSysRoleId() {
 		return( getPKey() );
 	}
 
@@ -407,7 +407,7 @@ public class CFSecSecSysRoleObj
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getSecSysRoleRec().getRequiredName() );
 	}
 

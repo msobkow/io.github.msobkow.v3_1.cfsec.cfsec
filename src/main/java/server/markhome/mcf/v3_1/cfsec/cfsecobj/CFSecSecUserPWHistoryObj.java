@@ -337,22 +337,22 @@ public class CFSecSecUserPWHistoryObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey().getRequiredSecUserId() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implIJavaAtomType$ getRequiredPWSetStamp() {
 		return( getPKey().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWReplacedStamp() {
+	public $implIJavaAtomType$ getRequiredPWReplacedStamp() {
 		return( getSecUserPWHistoryRec().getRequiredPWReplacedStamp() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implIJavaAtomType$ getRequiredPasswordHash() {
 		return( getSecUserPWHistoryRec().getRequiredPasswordHash() );
 	}
 

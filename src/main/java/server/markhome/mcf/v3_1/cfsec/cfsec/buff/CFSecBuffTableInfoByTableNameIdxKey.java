@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffTableInfoByTableNameIdxKey
 	implements ICFSecTableInfoByTableNameIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredTableName;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredTableName;
 	public CFSecBuffTableInfoByTableNameIdxKey() {
 		requiredTableName = ICFSecPubTableInfo.TABLENAME_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredTableName() {
+	public $implIJavaAtomType$ getRequiredTableName() {
 		return(requiredTableName);
 	}
 
-	public void setRequiredTableName( String value ) {
+	public void setRequiredTableName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTableName",

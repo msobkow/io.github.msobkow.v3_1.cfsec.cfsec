@@ -90,7 +90,7 @@ public interface ICFSecClusterTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteClusterByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the Cluster instances identified by the key UDomNameIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecClusterTable
 	 *	@param	FullDomName	The Cluster key attribute of the instance generating the id.
 	 */
 	void deleteClusterByUDomNameIdx( ICFSecAuthorization Authorization,
-		String argFullDomName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argFullDomName );
 
 	/**
 	 *	Delete the Cluster instances identified by the key UDomNameIdx.
@@ -118,7 +118,7 @@ public interface ICFSecClusterTable
 	 *	@param	Description	The Cluster key attribute of the instance generating the id.
 	 */
 	void deleteClusterByUDescrIdx( ICFSecAuthorization Authorization,
-		String argDescription );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argDescription );
 
 	/**
 	 *	Delete the Cluster instances identified by the key UDescrIdx.
@@ -142,7 +142,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived Cluster record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all Cluster instances.
@@ -177,7 +177,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read the derived Cluster record instance identified by the unique key UDomNameIdx.
@@ -190,7 +190,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerivedByUDomNameIdx( ICFSecAuthorization Authorization,
-		String FullDomName );
+		$implIJavaAtomType$ FullDomName );
 
 	/**
 	 *	Read the derived Cluster record instance identified by the unique key UDescrIdx.
@@ -203,7 +203,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerivedByUDescrIdx( ICFSecAuthorization Authorization,
-		String Description );
+		$implIJavaAtomType$ Description );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the primary key.
@@ -218,7 +218,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific Cluster record instance identified by the primary key.
@@ -233,7 +233,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific Cluster record instances.
@@ -252,7 +252,7 @@ public interface ICFSecClusterTable
 	 *	@return All the specific Cluster instances in the database accessible for the Authorization.
 	 */
 	ICFSecCluster[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorId );
+		$implIJavaOptAtomType$ priorId );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the unique key IdIdx.
@@ -267,7 +267,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the unique key UDomNameIdx.
@@ -282,7 +282,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRecByUDomNameIdx( ICFSecAuthorization Authorization,
-		String FullDomName );
+		$implIJavaAtomType$ FullDomName );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the unique key UDescrIdx.
@@ -297,5 +297,5 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRecByUDescrIdx( ICFSecAuthorization Authorization,
-		String Description );
+		$implIJavaAtomType$ Description );
 }

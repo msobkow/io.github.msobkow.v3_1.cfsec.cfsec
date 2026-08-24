@@ -202,102 +202,102 @@ public interface ICFSecSecUserEditObj
 	List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Set the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecUserId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecUserId value to be applied.
 	 */
-	void setRequiredSecUserId(ICFLibKeyHash256 value);
+	void setRequiredSecUserId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute LoginId.
+	 *	Get the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@return	The required String attribute LoginId.
+	 *	@return	The required $implIJavaAtomType$ attribute LoginId.
 	 */
-	String getRequiredLoginId();
+	$implIJavaAtomType$ getRequiredLoginId();
 
 	/**
-	 *	Set the required String attribute LoginId.
+	 *	Set the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@param value The required String attribute LoginId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute LoginId value to be applied.
 	 */
-	void setRequiredLoginId(String value);
+	void setRequiredLoginId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	Get the required $implIJavaAtomType$ attribute AccountStatus.
 	 *
-	 *	@return	The required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	@return	The required $implIJavaAtomType$ attribute AccountStatus.
 	 */
-	ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	$implIJavaAtomType$ getRequiredAccountStatus();
 
 	/**
-	 *	Set the required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	Set the required $implIJavaAtomType$ attribute AccountStatus.
 	 *
-	 *	@param value The required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute AccountStatus value to be applied.
 	 */
-	void setRequiredAccountStatus(ICFSecPubSchema.SecAccountStatusEnum value);
+	void setRequiredAccountStatus($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute DfltSysGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltSysGrpName.
 	 *
-	 *	@return	The optional String attribute DfltSysGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltSysGrpName.
 	 */
-	String getOptionalDfltSysGrpName();
+	$implIJavaAtomType$ getOptionalDfltSysGrpName();
 
 	/**
-	 *	Set the optional String attribute DfltSysGrpName.
+	 *	Set the optional $implIJavaAtomType$ attribute DfltSysGrpName.
 	 *
-	 *	@param value The optional String attribute DfltSysGrpName value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute DfltSysGrpName value to be applied.
 	 */
-	void setOptionalDfltSysGrpName(String value);
+	void setOptionalDfltSysGrpName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute DfltClusGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltClusGrpName.
 	 *
-	 *	@return	The optional String attribute DfltClusGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltClusGrpName.
 	 */
-	String getOptionalDfltClusGrpName();
+	$implIJavaAtomType$ getOptionalDfltClusGrpName();
 
 	/**
-	 *	Set the optional String attribute DfltClusGrpName.
+	 *	Set the optional $implIJavaAtomType$ attribute DfltClusGrpName.
 	 *
-	 *	@param value The optional String attribute DfltClusGrpName value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute DfltClusGrpName value to be applied.
 	 */
-	void setOptionalDfltClusGrpName(String value);
+	void setOptionalDfltClusGrpName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute DfltTentGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltTentGrpName.
 	 *
-	 *	@return	The optional String attribute DfltTentGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltTentGrpName.
 	 */
-	String getOptionalDfltTentGrpName();
+	$implIJavaAtomType$ getOptionalDfltTentGrpName();
 
 	/**
-	 *	Set the optional String attribute DfltTentGrpName.
+	 *	Set the optional $implIJavaAtomType$ attribute DfltTentGrpName.
 	 *
-	 *	@param value The optional String attribute DfltTentGrpName value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute DfltTentGrpName value to be applied.
 	 */
-	void setOptionalDfltTentGrpName(String value);
+	void setOptionalDfltTentGrpName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute EMailAddress.
+	 *	Get the required $implIJavaAtomType$ attribute EMailAddress.
 	 *
-	 *	@return	The required String attribute EMailAddress.
+	 *	@return	The required $implIJavaAtomType$ attribute EMailAddress.
 	 */
-	String getRequiredEMailAddress();
+	$implIJavaAtomType$ getRequiredEMailAddress();
 
 	/**
-	 *	Set the required String attribute EMailAddress.
+	 *	Set the required $implIJavaAtomType$ attribute EMailAddress.
 	 *
-	 *	@param value The required String attribute EMailAddress value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute EMailAddress value to be applied.
 	 */
-	void setRequiredEMailAddress(String value);
+	void setRequiredEMailAddress($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -64,10 +64,10 @@ public interface ICFSecSecUserPWHistoryHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 value );
-	public LocalDateTime getRequiredPWSetStamp();
-	public void setRequiredPWSetStamp( LocalDateTime value );
+	public $implIJavaAtomType$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPWSetStamp();
+	public void setRequiredPWSetStamp( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

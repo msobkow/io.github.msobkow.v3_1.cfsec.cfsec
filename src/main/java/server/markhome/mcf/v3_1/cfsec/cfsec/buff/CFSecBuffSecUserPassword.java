@@ -52,10 +52,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPassword
 	implements ICFSecSecUserPassword, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSecUserId;
+	protected $implIJavaAtomType$ requiredSecUserId;
 	protected int requiredRevision;
-	protected LocalDateTime requiredPWSetStamp;
-	protected String requiredPasswordHash;
+	protected $implIJavaAtomType$ requiredPWSetStamp;
+	protected $implIJavaAtomType$ requiredPasswordHash;
 
 	public CFSecBuffSecUserPassword() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecSecUserPassword.SECUSERID_INIT_VALUE.toString() );
@@ -63,23 +63,23 @@ public class CFSecBuffSecUserPassword
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredSecUserId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredSecUserId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecUserId) {
 		if(requiredSecUserId != null) {
 			this.requiredSecUserId = requiredSecUserId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -177,11 +177,11 @@ public class CFSecBuffSecUserPassword
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implIJavaAtomType$ getRequiredPWSetStamp() {
 		return(requiredPWSetStamp);
 	}
 
-	public void setRequiredPWSetStamp( LocalDateTime value ) {
+	public void setRequiredPWSetStamp( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPWSetStamp",
@@ -192,11 +192,11 @@ public class CFSecBuffSecUserPassword
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implIJavaAtomType$ getRequiredPasswordHash() {
 		return(requiredPasswordHash);
 	}
 
-	public void setRequiredPasswordHash( String value ) {
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPasswordHash",

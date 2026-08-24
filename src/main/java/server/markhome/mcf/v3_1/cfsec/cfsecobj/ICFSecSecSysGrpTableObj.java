@@ -101,7 +101,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	The SecSysGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecSysGrpObj readSecSysGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecSysGrp-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	The SecSysGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrp( ICFLibKeyHash256 pkey,
+	ICFSecSecSysGrpObj readSecSysGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecSysGrpObj readCachedSecSysGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecSysGrpObj readCachedSecSysGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecSysGrp( ICFSecSecSysGrpObj obj );
 
-	void deepDisposeSecSysGrp( ICFLibKeyHash256 pkey );
+	void deepDisposeSecSysGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecSysGrpObj lockSecSysGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecSysGrpObj lockSecSysGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecSysGrp-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	CFSecSecSysGrpObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId );
+	ICFSecSecSysGrpObj readSecSysGrpByIdIdx( $implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Get the CFSecSecSysGrpObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	CFSecSecSysGrpObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId,
+	ICFSecSecSysGrpObj readSecSysGrpByIdIdx( $implIJavaAtomType$ SecSysGrpId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	CFSecSecSysGrpObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrpByUNameIdx(String Name );
+	ICFSecSecSysGrpObj readSecSysGrpByUNameIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFSecSecSysGrpObj instance for the unique UNameIdx key.
@@ -182,7 +182,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	CFSecSecSysGrpObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpObj readSecSysGrpByUNameIdx(String Name,
+	ICFSecSecSysGrpObj readSecSysGrpByUNameIdx($implIJavaAtomType$ Name,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	List of CFSecSecSysGrpObj cached instances sorted by their primary keys for the duplicate SecLevelIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
+	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( $implIJavaAtomType$ SecLevel );
 
 	/**
 	 *	Get the map of CFSecSecSysGrpObj instances sorted by their primary keys for the duplicate SecLevelIdx key.
@@ -203,20 +203,20 @@ public interface ICFSecSecSysGrpTableObj
 	 *	@return	List of CFSecSecSysGrpObj cached instances sorted by their primary keys for the duplicate SecLevelIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel,
+	List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( $implIJavaAtomType$ SecLevel,
 		boolean forceRead );
 
-	ICFSecSecSysGrpObj readCachedSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId );
+	ICFSecSecSysGrpObj readCachedSecSysGrpByIdIdx( $implIJavaAtomType$ SecSysGrpId );
 
-	ICFSecSecSysGrpObj readCachedSecSysGrpByUNameIdx( String Name );
+	ICFSecSecSysGrpObj readCachedSecSysGrpByUNameIdx( $implIJavaAtomType$ Name );
 
-	List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
+	List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( $implIJavaAtomType$ SecLevel );
 
-	void deepDisposeSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId );
+	void deepDisposeSecSysGrpByIdIdx( $implIJavaAtomType$ SecSysGrpId );
 
-	void deepDisposeSecSysGrpByUNameIdx( String Name );
+	void deepDisposeSecSysGrpByUNameIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
+	void deepDisposeSecSysGrpBySecLevelIdx( $implIJavaAtomType$ SecLevel );
 
 	/**
 	 *	Internal use only.
@@ -233,19 +233,19 @@ public interface ICFSecSecSysGrpTableObj
 	 *
 	 *	@param	SecSysGrpId	The SecSysGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpByIdIdx( ICFLibKeyHash256 SecSysGrpId );
+	void deleteSecSysGrpByIdIdx( $implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The SecSysGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpByUNameIdx(String Name );
+	void deleteSecSysGrpByUNameIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel );
+	void deleteSecSysGrpBySecLevelIdx( $implIJavaAtomType$ SecLevel );
 }

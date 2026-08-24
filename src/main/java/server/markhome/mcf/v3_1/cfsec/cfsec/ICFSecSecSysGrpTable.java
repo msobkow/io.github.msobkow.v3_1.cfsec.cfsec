@@ -90,7 +90,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecSysGrpByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecSysGrp instances identified by the key UNameIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@param	Name	The SecSysGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpByUNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecSysGrp instances identified by the key UNameIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@param	SecLevel	The SecSysGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecPubSchema.SecLevelEnum argSecLevel );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecLevel );
 
 	/**
 	 *	Delete the SecSysGrp instances identified by the key SecLevelIdx.
@@ -142,7 +142,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecSysGrp record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecSysGrp instances.
@@ -177,7 +177,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId );
+		$implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Read the derived SecSysGrp record instance identified by the unique key UNameIdx.
@@ -190,7 +190,7 @@ public interface ICFSecSecSysGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrp readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read an array of the derived SecSysGrp record instances identified by the duplicate key SecLevelIdx.
@@ -202,7 +202,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysGrp[] readDerivedBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecPubSchema.SecLevelEnum SecLevel );
+		$implIJavaAtomType$ SecLevel );
 
 	/**
 	 *	Read the specific SecSysGrp record instance identified by the primary key.
@@ -217,7 +217,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecSysGrp record instance identified by the primary key.
@@ -232,7 +232,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecSysGrp record instances.
@@ -256,7 +256,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId );
+		$implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Read the specific SecSysGrp record instance identified by the unique key UNameIdx.
@@ -271,7 +271,7 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp readRecByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read an array of the specific SecSysGrp record instances identified by the duplicate key SecLevelIdx.
@@ -285,5 +285,5 @@ public interface ICFSecSecSysGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrp[] readRecBySecLevelIdx( ICFSecAuthorization Authorization,
-		ICFSecPubSchema.SecLevelEnum SecLevel );
+		$implIJavaAtomType$ SecLevel );
 }

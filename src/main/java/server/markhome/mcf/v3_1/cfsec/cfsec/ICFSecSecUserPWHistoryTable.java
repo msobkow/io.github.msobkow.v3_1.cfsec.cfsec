@@ -92,8 +92,8 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@param	PWSetStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWHistoryByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecUserId,
-		LocalDateTime argPWSetStamp );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecUserId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argPWSetStamp );
 	/**
 	 *	Delete the SecUserPWHistory instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@param	SecUserId	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWHistoryByUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecUserId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecUserId );
 
 	/**
 	 *	Delete the SecUserPWHistory instances identified by the key UserIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@param	PWSetStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWHistoryBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime argPWSetStamp );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argPWSetStamp );
 
 	/**
 	 *	Delete the SecUserPWHistory instances identified by the key SetStampIdx.
@@ -149,7 +149,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@param	PWReplacedStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWHistoryByReplacedStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime argPWReplacedStamp );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argPWReplacedStamp );
 
 	/**
 	 *	Delete the SecUserPWHistory instances identified by the key ReplacedStampIdx.
@@ -184,8 +184,8 @@ public interface ICFSecSecUserPWHistoryTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWHistory readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Lock the derived SecUserPWHistory record instance by primary key.
@@ -222,8 +222,8 @@ public interface ICFSecSecUserPWHistoryTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWHistory readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read the derived SecUserPWHistory record instance identified by the unique key UserIdx.
@@ -236,7 +236,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWHistory readDerivedByUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the derived SecUserPWHistory record instance identified by the unique key SetStampIdx.
@@ -249,7 +249,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWHistory readDerivedBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read the derived SecUserPWHistory record instance identified by the unique key ReplacedStampIdx.
@@ -262,7 +262,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWHistory readDerivedByReplacedStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWReplacedStamp );
+		$implIJavaAtomType$ PWReplacedStamp );
 
 	/**
 	 *	Read the specific SecUserPWHistory record instance identified by the primary key.
@@ -292,8 +292,8 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWHistory readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Lock the specific SecUserPWHistory record instance identified by the primary key.
@@ -327,7 +327,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@return All the specific SecUserPWHistory instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUserPWHistory[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecUserId,
+		$implIJavaOptAtomType$ priorSecUserId,
 		LocalDateTime priorPWSetStamp );
 
 	/**
@@ -345,8 +345,8 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWHistory readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read the specific SecUserPWHistory record instance identified by the unique key UserIdx.
@@ -361,7 +361,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWHistory readRecByUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the specific SecUserPWHistory record instance identified by the unique key SetStampIdx.
@@ -376,7 +376,7 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWHistory readRecBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read the specific SecUserPWHistory record instance identified by the unique key ReplacedStampIdx.
@@ -391,5 +391,5 @@ public interface ICFSecSecUserPWHistoryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWHistory readRecByReplacedStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWReplacedStamp );
+		$implIJavaAtomType$ PWReplacedStamp );
 }

@@ -62,13 +62,13 @@ public interface ICFSecSecUserPasswordH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 requiredSecUserId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecUserId );
 
-	public LocalDateTime getRequiredPWSetStamp();
-	public void setRequiredPWSetStamp( LocalDateTime value );
-	public String getRequiredPasswordHash();
-	public void setRequiredPasswordHash( String value );
+	public $implIJavaAtomType$ getRequiredPWSetStamp();
+	public void setRequiredPWSetStamp( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPasswordHash();
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

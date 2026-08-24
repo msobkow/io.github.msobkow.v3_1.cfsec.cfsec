@@ -246,18 +246,18 @@ public interface ICFSecSecTentGrpMembObj
 	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecTentGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecTentGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecTentGrpId();
+	$implIJavaAtomType$ getRequiredSecTentGrpId();
 
 	/**
-	 *	Get the required String attribute LoginId.
+	 *	Get the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@return	The required String attribute LoginId.
+	 *	@return	The required $implIJavaAtomType$ attribute LoginId.
 	 */
-	String getRequiredLoginId();
+	$implIJavaAtomType$ getRequiredLoginId();
 
 	/**
 	 *	Internal use only.

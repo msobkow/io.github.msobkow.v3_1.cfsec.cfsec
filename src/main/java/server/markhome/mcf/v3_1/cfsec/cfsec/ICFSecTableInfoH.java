@@ -62,27 +62,27 @@ public interface ICFSecTableInfoH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public int getRequiredTableInfoId();
-	public void setRequiredTableInfoId( int requiredTableInfoId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredTableInfoId();
+	public void setRequiredTableInfoId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredTableInfoId );
 
-	public String getRequiredSchemaName();
-	public void setRequiredSchemaName( String value );
-	public String getRequiredTableName();
-	public void setRequiredTableName( String value );
-	public String getOptionalSuperName();
-	public void setOptionalSuperName( String value );
-	public int getRequiredBackingClassCode();
-	public void setRequiredBackingClassCode( int value );
-	public int getRequiredRuntimeClassCode();
-	public void setRequiredRuntimeClassCode( int value );
-	public boolean getRequiredHasHistory();
-	public void setRequiredHasHistory( boolean value );
-	public boolean getRequiredIsMutable();
-	public void setRequiredIsMutable( boolean value );
-	public String getRequiredSecScopeName();
-	public void setRequiredSecScopeName( String value );
-	public String getRequiredCodeVis();
-	public void setRequiredCodeVis( String value );
+	public $implIJavaAtomType$ getRequiredSchemaName();
+	public void setRequiredSchemaName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredTableName();
+	public void setRequiredTableName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalSuperName();
+	public void setOptionalSuperName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredBackingClassCode();
+	public void setRequiredBackingClassCode( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredRuntimeClassCode();
+	public void setRequiredRuntimeClassCode( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredHasHistory();
+	public void setRequiredHasHistory( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredIsMutable();
+	public void setRequiredIsMutable( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredSecScopeName();
+	public void setRequiredSecScopeName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredCodeVis();
+	public void setRequiredCodeVis( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

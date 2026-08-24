@@ -57,7 +57,7 @@ public class CFSecBuffISOLangHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected short requiredISOLangId;
+	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISOLangId;
 
 	public CFSecBuffISOLangHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
@@ -119,12 +119,12 @@ public class CFSecBuffISOLangHPKey
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return(requiredISOLangId);
 	}
 
 	@Override
-	public void setRequiredISOLangId( short value ) {
+	public void setRequiredISOLangId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubISOLang.ISOLANGID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOLangId",

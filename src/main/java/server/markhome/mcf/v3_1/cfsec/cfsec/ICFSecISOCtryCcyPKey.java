@@ -50,10 +50,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
 public interface ICFSecISOCtryCcyPKey
 {
 
-	public short getRequiredISOCtryId();
-	public void setRequiredISOCtryId( short value );
-	public short getRequiredISOCcyId();
-	public void setRequiredISOCcyId( short value );
+	public $implIJavaAtomType$ getRequiredISOCtryId();
+	public void setRequiredISOCtryId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredISOCcyId();
+	public void setRequiredISOCcyId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

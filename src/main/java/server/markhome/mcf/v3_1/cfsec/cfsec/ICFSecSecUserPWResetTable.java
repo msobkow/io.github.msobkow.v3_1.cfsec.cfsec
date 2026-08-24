@@ -90,7 +90,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserPWResetByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecUserPWReset instances identified by the key UUuid6Idx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@param	PasswordResetUuid6	The SecUserPWReset key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWResetByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 argPasswordResetUuid6 );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argPasswordResetUuid6 );
 
 	/**
 	 *	Delete the SecUserPWReset instances identified by the key UUuid6Idx.
@@ -118,7 +118,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@param	SentToEMailAddr	The SecUserPWReset key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWResetBySentEMAddrIdx( ICFSecAuthorization Authorization,
-		String argSentToEMailAddr );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSentToEMailAddr );
 
 	/**
 	 *	Delete the SecUserPWReset instances identified by the key SentEMAddrIdx.
@@ -137,7 +137,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@param	NewAccount	The SecUserPWReset key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPWResetByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean argNewAccount );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argNewAccount );
 
 	/**
 	 *	Delete the SecUserPWReset instances identified by the key NewAcctIdx.
@@ -161,7 +161,7 @@ public interface ICFSecSecUserPWResetTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWReset readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecUserPWReset record instance by primary key.
@@ -174,7 +174,7 @@ public interface ICFSecSecUserPWResetTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWReset lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecUserPWReset instances.
@@ -196,7 +196,7 @@ public interface ICFSecSecUserPWResetTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWReset readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the derived SecUserPWReset record instance identified by the unique key UUuid6Idx.
@@ -209,7 +209,7 @@ public interface ICFSecSecUserPWResetTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPWReset readDerivedByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 PasswordResetUuid6 );
+		$implIJavaAtomType$ PasswordResetUuid6 );
 
 	/**
 	 *	Read an array of the derived SecUserPWReset record instances identified by the duplicate key SentEMAddrIdx.
@@ -221,7 +221,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserPWReset[] readDerivedBySentEMAddrIdx( ICFSecAuthorization Authorization,
-		String SentToEMailAddr );
+		$implIJavaAtomType$ SentToEMailAddr );
 
 	/**
 	 *	Read an array of the derived SecUserPWReset record instances identified by the duplicate key NewAcctIdx.
@@ -233,7 +233,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserPWReset[] readDerivedByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount );
+		$implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read the specific SecUserPWReset record instance identified by the primary key.
@@ -248,7 +248,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecUserPWReset record instance identified by the primary key.
@@ -263,7 +263,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecUserPWReset record instances.
@@ -282,7 +282,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@return All the specific SecUserPWReset instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUserPWReset[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read the specific SecUserPWReset record instance identified by the unique key IdIdx.
@@ -297,7 +297,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the specific SecUserPWReset record instance identified by the unique key UUuid6Idx.
@@ -312,7 +312,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset readRecByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 PasswordResetUuid6 );
+		$implIJavaAtomType$ PasswordResetUuid6 );
 
 	/**
 	 *	Read an array of the specific SecUserPWReset record instances identified by the duplicate key SentEMAddrIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset[] readRecBySentEMAddrIdx( ICFSecAuthorization Authorization,
-		String SentToEMailAddr );
+		$implIJavaAtomType$ SentToEMailAddr );
 
 	/**
 	 *	Read an array of the specific SecUserPWReset record instances identified by the duplicate key NewAcctIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset[] readRecByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount );
+		$implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read a page array of the specific SecUserPWReset record instances identified by the duplicate key SentEMAddrIdx.
@@ -354,8 +354,8 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset[] pageRecBySentEMAddrIdx( ICFSecAuthorization Authorization,
-		String SentToEMailAddr,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ SentToEMailAddr,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page array of the specific SecUserPWReset record instances identified by the duplicate key NewAcctIdx.
@@ -369,6 +369,6 @@ public interface ICFSecSecUserPWResetTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPWReset[] pageRecByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ NewAccount,
+		$implIJavaOptAtomType$ priorSecUserId );
 }

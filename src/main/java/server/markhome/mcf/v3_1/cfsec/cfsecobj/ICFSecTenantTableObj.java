@@ -101,7 +101,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	The Tenant-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey );
+	ICFSecTenantObj readTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a Tenant-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecTenantTableObj
 	 *	@return	The Tenant-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey,
+	ICFSecTenantObj readTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecTenantObj readCachedTenant( ICFLibKeyHash256 pkey );
+	ICFSecTenantObj readCachedTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeTenant( ICFSecTenantObj obj );
 
-	void deepDisposeTenant( ICFLibKeyHash256 pkey );
+	void deepDisposeTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecTenantObj lockTenant( ICFLibKeyHash256 pkey );
+	ICFSecTenantObj lockTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the Tenant-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	List of ICFSecTenantObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecTenantObj> pageAllTenant(ICFLibKeyHash256 priorId );
+	List<ICFSecTenantObj> pageAllTenant($implIJavaOptAtomType$ priorId );
 
 	/**
 	 *	Get the CFSecTenantObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id );
+	ICFSecTenantObj readTenantByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Get the CFSecTenantObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id,
+	ICFSecTenantObj readTenantByIdIdx( $implIJavaAtomType$ Id,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	List of CFSecTenantObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecTenantObj> readTenantByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Get the map of CFSecTenantObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -190,7 +190,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	List of CFSecTenantObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
+	List<ICFSecTenantObj> readTenantByClusterIdx( $implIJavaAtomType$ ClusterId,
 		boolean forceRead );
 
 	/**
@@ -203,8 +203,8 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String TenantName );
+	ICFSecTenantObj readTenantByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 
 	/**
 	 *	Get the CFSecTenantObj instance for the unique UNameIdx key.
@@ -216,23 +216,23 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String TenantName,
+	ICFSecTenantObj readTenantByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName,
 		boolean forceRead );
 
-	ICFSecTenantObj readCachedTenantByIdIdx( ICFLibKeyHash256 Id );
+	ICFSecTenantObj readCachedTenantByIdIdx( $implIJavaAtomType$ Id );
 
-	List<ICFSecTenantObj> readCachedTenantByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecTenantObj> readCachedTenantByClusterIdx( $implIJavaAtomType$ ClusterId );
 
-	ICFSecTenantObj readCachedTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName );
+	ICFSecTenantObj readCachedTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 
-	void deepDisposeTenantByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeTenantByIdIdx( $implIJavaAtomType$ Id );
 
-	void deepDisposeTenantByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deepDisposeTenantByClusterIdx( $implIJavaAtomType$ ClusterId );
 
-	void deepDisposeTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName );
+	void deepDisposeTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 
 	/**
 	 *	Read a page of data as a List of Tenant-derived instances sorted by their primary keys,
@@ -243,8 +243,8 @@ public interface ICFSecTenantTableObj
 	 *	@return	A List of Tenant-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecTenantObj> pageTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
-		ICFLibKeyHash256 priorId );
+	List<ICFSecTenantObj> pageTenantByClusterIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaOptAtomType$ priorId );
 
 	/**
 	 *	Internal use only.
@@ -261,14 +261,14 @@ public interface ICFSecTenantTableObj
 	 *
 	 *	@param	Id	The Tenant key attribute of the instance generating the id.
 	 */
-	void deleteTenantByIdIdx( ICFLibKeyHash256 Id );
+	void deleteTenantByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ClusterId	The Tenant key attribute of the instance generating the id.
 	 */
-	void deleteTenantByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deleteTenantByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -277,6 +277,6 @@ public interface ICFSecTenantTableObj
 	 *
 	 *	@param	TenantName	The Tenant key attribute of the instance generating the id.
 	 */
-	void deleteTenantByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String TenantName );
+	void deleteTenantByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 }

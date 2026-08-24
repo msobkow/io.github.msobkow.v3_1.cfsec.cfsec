@@ -132,67 +132,67 @@ public interface ICFSecSecUserEMConfEditObj
 	void setRequiredContainerUser( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required String attribute ConfirmEMailAddr.
+	 *	Get the required $implIJavaAtomType$ attribute ConfirmEMailAddr.
 	 *
-	 *	@return	The required String attribute ConfirmEMailAddr.
+	 *	@return	The required $implIJavaAtomType$ attribute ConfirmEMailAddr.
 	 */
-	String getRequiredConfirmEMailAddr();
+	$implIJavaAtomType$ getRequiredConfirmEMailAddr();
 
 	/**
-	 *	Set the required String attribute ConfirmEMailAddr.
+	 *	Set the required $implIJavaAtomType$ attribute ConfirmEMailAddr.
 	 *
-	 *	@param value The required String attribute ConfirmEMailAddr value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ConfirmEMailAddr value to be applied.
 	 */
-	void setRequiredConfirmEMailAddr(String value);
+	void setRequiredConfirmEMailAddr($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required LocalDateTime attribute EMailSentStamp.
+	 *	Get the required $implIJavaAtomType$ attribute EMailSentStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute EMailSentStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute EMailSentStamp.
 	 */
-	LocalDateTime getRequiredEMailSentStamp();
+	$implIJavaAtomType$ getRequiredEMailSentStamp();
 
 	/**
-	 *	Set the required LocalDateTime attribute EMailSentStamp.
+	 *	Set the required $implIJavaAtomType$ attribute EMailSentStamp.
 	 *
-	 *	@param value The required LocalDateTime attribute EMailSentStamp value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute EMailSentStamp value to be applied.
 	 */
-	void setRequiredEMailSentStamp(LocalDateTime value);
+	void setRequiredEMailSentStamp($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibUuid6 attribute EMConfirmationUuid6.
+	 *	Get the required $implIJavaAtomType$ attribute EMConfirmationUuid6.
 	 *
-	 *	@return	The required ICFLibUuid6 attribute EMConfirmationUuid6.
+	 *	@return	The required $implIJavaAtomType$ attribute EMConfirmationUuid6.
 	 */
-	ICFLibUuid6 getRequiredEMConfirmationUuid6();
+	$implIJavaAtomType$ getRequiredEMConfirmationUuid6();
 
 	/**
-	 *	Set the required ICFLibUuid6 attribute EMConfirmationUuid6.
+	 *	Set the required $implIJavaAtomType$ attribute EMConfirmationUuid6.
 	 *
-	 *	@param value The required ICFLibUuid6 attribute EMConfirmationUuid6 value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute EMConfirmationUuid6 value to be applied.
 	 */
-	void setRequiredEMConfirmationUuid6(ICFLibUuid6 value);
+	void setRequiredEMConfirmationUuid6($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required boolean attribute NewAccount.
+	 *	Get the required $implIJavaAtomType$ attribute NewAccount.
 	 *
-	 *	@return	The required boolean attribute NewAccount.
+	 *	@return	The required $implIJavaAtomType$ attribute NewAccount.
 	 */
-	boolean getRequiredNewAccount();
+	$implIJavaAtomType$ getRequiredNewAccount();
 
 	/**
-	 *	Set the required boolean attribute NewAccount.
+	 *	Set the required $implIJavaAtomType$ attribute NewAccount.
 	 *
-	 *	@param value The required boolean attribute NewAccount value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute NewAccount value to be applied.
 	 */
-	void setRequiredNewAccount(boolean value);
+	void setRequiredNewAccount($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

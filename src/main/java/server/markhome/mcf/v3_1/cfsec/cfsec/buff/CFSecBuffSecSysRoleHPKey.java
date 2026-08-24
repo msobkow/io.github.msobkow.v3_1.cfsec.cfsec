@@ -57,7 +57,7 @@ public class CFSecBuffSecSysRoleHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected ICFLibKeyHash256 requiredSecSysRoleId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecSysRoleId;
 
 	public CFSecBuffSecSysRoleHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
@@ -119,11 +119,11 @@ public class CFSecBuffSecSysRoleHPKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
+	public $implIJavaAtomType$ getRequiredSecSysRoleId() {
 		return(requiredSecSysRoleId);
 	}
 
-	public void setRequiredSecSysRoleId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecSysRoleId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSysRoleId",

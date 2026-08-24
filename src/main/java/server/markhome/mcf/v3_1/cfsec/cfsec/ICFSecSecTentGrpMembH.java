@@ -71,11 +71,11 @@ public interface ICFSecSecTentGrpMembH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecTentGrpId();
-	public void setRequiredSecTentGrpId( ICFLibKeyHash256 requiredSecTentGrpId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecTentGrpId();
+	public void setRequiredSecTentGrpId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecTentGrpId );
 
-	public String getRequiredLoginId();
-	public void setRequiredLoginId( String requiredLoginId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredLoginId();
+	public void setRequiredLoginId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredLoginId );
 
 	@Override
 	public boolean equals( Object obj );

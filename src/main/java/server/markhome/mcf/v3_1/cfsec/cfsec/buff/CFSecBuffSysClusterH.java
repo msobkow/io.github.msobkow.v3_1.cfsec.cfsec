@@ -53,7 +53,7 @@ public class CFSecBuffSysClusterH
     implements ICFSecSysClusterH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSysClusterHPKey pkey;
-	protected ICFLibKeyHash256 requiredClusterId;
+	protected $implIJavaAtomType$ requiredClusterId;
 
     public CFSecBuffSysClusterH() {
             // The primary key member attributes are initialized on construction
@@ -134,12 +134,12 @@ public class CFSecBuffSysClusterH
     }
 
 	@Override
-	public int getRequiredSingletonId() {
+	public $implIJavaAtomType$ getRequiredSingletonId() {
 		return(getPKey().getRequiredSingletonId());
 	}
 
 	@Override
-	public void setRequiredSingletonId( int value ) {
+	public void setRequiredSingletonId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubSysCluster.SINGLETONID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredSingletonId",
@@ -160,11 +160,11 @@ public class CFSecBuffSysClusterH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClusterId() {
+	public $implIJavaAtomType$ getRequiredClusterId() {
 		return(requiredClusterId);
 	}
 
-	public void setRequiredClusterId( ICFLibKeyHash256 value ) {
+	public void setRequiredClusterId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredClusterId",

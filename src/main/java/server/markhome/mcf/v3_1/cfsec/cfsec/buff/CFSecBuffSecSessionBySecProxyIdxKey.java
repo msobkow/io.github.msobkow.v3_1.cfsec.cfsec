@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSessionBySecProxyIdxKey
 	implements ICFSecSecSessionBySecProxyIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 optionalSecProxyId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ optionalSecProxyId;
 	public CFSecBuffSecSessionBySecProxyIdxKey() {
 		optionalSecProxyId = CFLibDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalSecProxyId() {
+	public $implIJavaAtomType$ getOptionalSecProxyId() {
 		return(optionalSecProxyId);
 	}
 
-	public void setOptionalSecProxyId( ICFLibKeyHash256 value ) {
+	public void setOptionalSecProxyId( $implIJavaAtomType$ value ) {
 		optionalSecProxyId = value;
 	}
 

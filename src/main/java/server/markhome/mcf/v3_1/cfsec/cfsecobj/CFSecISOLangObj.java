@@ -52,7 +52,7 @@ public class CFSecISOLangObj
 	protected boolean isNew;
 	protected ICFSecISOLangEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOLang rec;
 	protected List<ICFSecISOCtryLangObj> optionalChildrenCtry;
 
@@ -274,12 +274,12 @@ public class CFSecISOLangObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -356,7 +356,7 @@ public class CFSecISOLangObj
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey() );
 	}
 
@@ -377,17 +377,17 @@ public class CFSecISOLangObj
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implIJavaAtomType$ getRequiredISO6392Code() {
 		return( getISOLangRec().getRequiredISO6392Code() );
 	}
 
 	@Override
-	public String getOptionalISO6391Code() {
+	public $implIJavaAtomType$ getOptionalISO6391Code() {
 		return( getISOLangRec().getOptionalISO6391Code() );
 	}
 
 	@Override
-	public String getRequiredEnglishName() {
+	public $implIJavaAtomType$ getRequiredEnglishName() {
 		return( getISOLangRec().getRequiredEnglishName() );
 	}
 

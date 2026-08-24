@@ -111,102 +111,102 @@ public interface ICFSecISOTZoneEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the required short attribute ISOTZoneId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOTZoneId.
 	 *
-	 *	@return	The required short attribute ISOTZoneId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOTZoneId.
 	 */
-	short getRequiredISOTZoneId();
+	$implIJavaAtomType$ getRequiredISOTZoneId();
 
 	/**
-	 *	Set the required short attribute ISOTZoneId.
+	 *	Set the required $implIJavaAtomType$ attribute ISOTZoneId.
 	 *
-	 *	@param value The required short attribute ISOTZoneId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOTZoneId value to be applied.
 	 */
-	void setRequiredISOTZoneId(short value);
+	void setRequiredISOTZoneId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Iso8601.
+	 *	Get the required $implIJavaAtomType$ attribute Iso8601.
 	 *
-	 *	@return	The required String attribute Iso8601.
+	 *	@return	The required $implIJavaAtomType$ attribute Iso8601.
 	 */
-	String getRequiredIso8601();
+	$implIJavaAtomType$ getRequiredIso8601();
 
 	/**
-	 *	Set the required String attribute Iso8601.
+	 *	Set the required $implIJavaAtomType$ attribute Iso8601.
 	 *
-	 *	@param value The required String attribute Iso8601 value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Iso8601 value to be applied.
 	 */
-	void setRequiredIso8601(String value);
+	void setRequiredIso8601($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute TZName.
+	 *	Get the required $implIJavaAtomType$ attribute TZName.
 	 *
-	 *	@return	The required String attribute TZName.
+	 *	@return	The required $implIJavaAtomType$ attribute TZName.
 	 */
-	String getRequiredTZName();
+	$implIJavaAtomType$ getRequiredTZName();
 
 	/**
-	 *	Set the required String attribute TZName.
+	 *	Set the required $implIJavaAtomType$ attribute TZName.
 	 *
-	 *	@param value The required String attribute TZName value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute TZName value to be applied.
 	 */
-	void setRequiredTZName(String value);
+	void setRequiredTZName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required short attribute TZHourOffset.
+	 *	Get the required $implIJavaAtomType$ attribute TZHourOffset.
 	 *
-	 *	@return	The required short attribute TZHourOffset.
+	 *	@return	The required $implIJavaAtomType$ attribute TZHourOffset.
 	 */
-	short getRequiredTZHourOffset();
+	$implIJavaAtomType$ getRequiredTZHourOffset();
 
 	/**
-	 *	Set the required short attribute TZHourOffset.
+	 *	Set the required $implIJavaAtomType$ attribute TZHourOffset.
 	 *
-	 *	@param value The required short attribute TZHourOffset value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute TZHourOffset value to be applied.
 	 */
-	void setRequiredTZHourOffset(short value);
+	void setRequiredTZHourOffset($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required short attribute TZMinOffset.
+	 *	Get the required $implIJavaAtomType$ attribute TZMinOffset.
 	 *
-	 *	@return	The required short attribute TZMinOffset.
+	 *	@return	The required $implIJavaAtomType$ attribute TZMinOffset.
 	 */
-	short getRequiredTZMinOffset();
+	$implIJavaAtomType$ getRequiredTZMinOffset();
 
 	/**
-	 *	Set the required short attribute TZMinOffset.
+	 *	Set the required $implIJavaAtomType$ attribute TZMinOffset.
 	 *
-	 *	@param value The required short attribute TZMinOffset value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute TZMinOffset value to be applied.
 	 */
-	void setRequiredTZMinOffset(short value);
+	void setRequiredTZMinOffset($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Description.
+	 *	Get the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The required String attribute Description.
+	 *	@return	The required $implIJavaAtomType$ attribute Description.
 	 */
-	String getRequiredDescription();
+	$implIJavaAtomType$ getRequiredDescription();
 
 	/**
-	 *	Set the required String attribute Description.
+	 *	Set the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@param value The required String attribute Description value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Description value to be applied.
 	 */
-	void setRequiredDescription(String value);
+	void setRequiredDescription($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required boolean attribute Visible.
+	 *	Get the required $implIJavaAtomType$ attribute Visible.
 	 *
-	 *	@return	The required boolean attribute Visible.
+	 *	@return	The required $implIJavaAtomType$ attribute Visible.
 	 */
-	boolean getRequiredVisible();
+	$implIJavaAtomType$ getRequiredVisible();
 
 	/**
-	 *	Set the required boolean attribute Visible.
+	 *	Set the required $implIJavaAtomType$ attribute Visible.
 	 *
-	 *	@param value The required boolean attribute Visible value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Visible value to be applied.
 	 */
-	void setRequiredVisible(boolean value);
+	void setRequiredVisible($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

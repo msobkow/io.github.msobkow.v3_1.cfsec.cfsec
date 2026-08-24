@@ -50,12 +50,12 @@ public class CFSecSecTentGrpTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecTentGrp.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecTentGrp.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> members;
-	private Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> allSecTentGrp;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> allSecTentGrp;
 	private Map< ICFSecSecTentGrpByTenantIdxKey,
-		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > > indexByTenantIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > > indexByTenantIdx;
 	private Map< ICFSecSecTentGrpByNameIdxKey,
-		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > > indexByNameIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > > indexByNameIdx;
 	private Map< ICFSecSecTentGrpByUNameIdxKey,
 		ICFSecSecTentGrpObj > indexByUNameIdx;
 	public static String TABLE_NAME = "SecTentGrp";
@@ -63,7 +63,7 @@ public class CFSecSecTentGrpTableObj
 
 	public CFSecSecTentGrpTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj>();
 		allSecTentGrp = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -72,7 +72,7 @@ public class CFSecSecTentGrpTableObj
 
 	public CFSecSecTentGrpTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj>();
 		allSecTentGrp = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -199,7 +199,7 @@ public class CFSecSecTentGrpTableObj
 	@Override
 	public ICFSecSecTentGrpObj realiseSecTentGrp( ICFSecSecTentGrpObj Obj ) {
 		ICFSecSecTentGrpObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecTentGrpObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecTentGrpObj existingObj = members.get( pkey );
@@ -216,7 +216,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -229,7 +229,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.remove( keepObj.getPKey() );
 					if( mapNameIdx.size() <= 0 ) {
@@ -253,7 +253,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -263,7 +263,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -295,7 +295,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -305,7 +305,7 @@ public class CFSecSecTentGrpTableObj
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
-				Map<ICFLibKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -337,12 +337,12 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrp( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj readSecTentGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readSecTentGrp( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrp( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecTentGrpObj readSecTentGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecSecTentGrpObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -361,7 +361,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrp( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj readCachedSecTentGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecTentGrpObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -377,7 +377,7 @@ public class CFSecSecTentGrpTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecTentGrpObj existing = readCachedSecTentGrp( pkey );
 		if( existing == null ) {
 			return;
@@ -421,7 +421,7 @@ public class CFSecSecTentGrpTableObj
 
 	}
 	@Override
-	public void deepDisposeSecTentGrp( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeSecTentGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrp( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -429,7 +429,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj lockSecTentGrp( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecTentGrpObj lockSecTentGrp( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecTentGrpObj locked = null;
 		ICFSecSecTentGrp lockRec = schema.getCFSecBackingStore().getTableSecTentGrp().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -453,7 +453,7 @@ public class CFSecSecTentGrpTableObj
 	public List<ICFSecSecTentGrpObj> readAllSecTentGrp( boolean forceRead ) {
 		final String S_ProcName = "readAllSecTentGrp";
 		if( ( allSecTentGrp == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecTentGrpObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecSecTentGrpObj>();
 			allSecTentGrp = map;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readAllDerived( null );
 			ICFSecSecTentGrp rec;
@@ -509,8 +509,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -567,8 +567,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -579,43 +579,43 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
+	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( $implIJavaAtomType$ SecTentGrpId )
 	{
 		return( readSecTentGrpByIdIdx( SecTentGrpId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId, boolean forceRead )
+	public ICFSecSecTentGrpObj readSecTentGrpByIdIdx( $implIJavaAtomType$ SecTentGrpId, boolean forceRead )
 	{
 		ICFSecSecTentGrpObj obj = readSecTentGrp( SecTentGrpId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		return( readSecTentGrpByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByTenantIdx( $implIJavaAtomType$ TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentGrpByTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj>();
 			ICFSecSecTentGrpObj obj;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readDerivedByTenantIdx( null,
 				TenantId );
@@ -673,8 +673,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -686,29 +686,29 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByNameIdx( String Name )
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByNameIdx( $implIJavaAtomType$ Name )
 	{
 		return( readSecTentGrpByNameIdx( Name,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readSecTentGrpByNameIdx( String Name,
+	public List<ICFSecSecTentGrpObj> readSecTentGrpByNameIdx( $implIJavaAtomType$ Name,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpByNameIdx";
 		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
-		Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict;
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentGrpByNameIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > >();
 		}
 		if( ( ! forceRead ) && indexByNameIdx.containsKey( key ) ) {
 			dict = indexByNameIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFSecSecTentGrpObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj>();
 			ICFSecSecTentGrpObj obj;
 			ICFSecSecTentGrp[] recList = schema.getCFSecBackingStore().getTableSecTentGrp().readDerivedByNameIdx( null,
 				Name );
@@ -766,8 +766,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -779,8 +779,8 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
-		String Name )
+	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( $implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name )
 	{
 		return( readSecTentGrpByUNameIdx( TenantId,
 			Name,
@@ -788,8 +788,8 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
-		String Name, boolean forceRead )
+	public ICFSecSecTentGrpObj readSecTentGrpByUNameIdx( $implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFSecSecTentGrpByUNameIdxKey,
@@ -817,7 +817,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
+	public ICFSecSecTentGrpObj readCachedSecTentGrpByIdIdx( $implIJavaAtomType$ SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = null;
 		obj = readCachedSecTentGrp( SecTentGrpId );
@@ -825,14 +825,14 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "readCachedSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByTenantIdx != null ) {
-			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -890,8 +890,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -902,14 +902,14 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByNameIdx( String Name )
+	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByNameIdx( $implIJavaAtomType$ Name )
 	{
 		final String S_ProcName = "readCachedSecTentGrpByNameIdx";
 		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByNameIdx != null ) {
-			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict;
 			if( indexByNameIdx.containsKey( key ) ) {
 				dict = indexByNameIdx.get( key );
 				int len = dict.size();
@@ -967,8 +967,8 @@ public class CFSecSecTentGrpTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -979,8 +979,8 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj readCachedSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
-		String Name )
+	public ICFSecSecTentGrpObj readCachedSecTentGrpByUNameIdx( $implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFSecSecTentGrpObj obj = null;
 		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
@@ -1017,7 +1017,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
+	public void deepDisposeSecTentGrpByIdIdx( $implIJavaAtomType$ SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrpByIdIdx( SecTentGrpId );
 		if( obj != null ) {
@@ -1026,7 +1026,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeSecTentGrpByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "deepDisposeSecTentGrpByTenantIdx";
 		ICFSecSecTentGrpObj obj;
@@ -1043,7 +1043,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByNameIdx( String Name )
+	public void deepDisposeSecTentGrpByNameIdx( $implIJavaAtomType$ Name )
 	{
 		final String S_ProcName = "deepDisposeSecTentGrpByNameIdx";
 		ICFSecSecTentGrpObj obj;
@@ -1060,8 +1060,8 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
-		String Name )
+	public void deepDisposeSecTentGrpByUNameIdx( $implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFSecSecTentGrpObj obj = readCachedSecTentGrpByUNameIdx( TenantId,
 				Name );
@@ -1089,7 +1089,7 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByIdIdx( ICFLibKeyHash256 SecTentGrpId )
+	public void deleteSecTentGrpByIdIdx( $implIJavaAtomType$ SecTentGrpId )
 	{
 		ICFSecSecTentGrpObj obj = readSecTentGrp(SecTentGrpId);
 		if( obj != null ) {
@@ -1119,16 +1119,16 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteSecTentGrpByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentGrpByTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict = indexByTenantIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict = indexByTenantIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentGrp().deleteSecTentGrpByTenantIdx( null,
 				TenantId );
 			Iterator<ICFSecSecTentGrpObj> iter = dict.values().iterator();
@@ -1153,16 +1153,16 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByNameIdx( String Name )
+	public void deleteSecTentGrpByNameIdx( $implIJavaAtomType$ Name )
 	{
 		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentGrpByNameIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecTentGrpObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj > >();
 		}
 		if( indexByNameIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFSecSecTentGrpObj> dict = indexByNameIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecTentGrpObj> dict = indexByNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecTentGrp().deleteSecTentGrpByNameIdx( null,
 				Name );
 			Iterator<ICFSecSecTentGrpObj> iter = dict.values().iterator();
@@ -1187,8 +1187,8 @@ public class CFSecSecTentGrpTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpByUNameIdx( ICFLibKeyHash256 TenantId,
-		String Name )
+	public void deleteSecTentGrpByUNameIdx( $implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFSecSecTentGrpByUNameIdxKey,

@@ -83,60 +83,60 @@ public interface ICFSecSecUserPWHistoryEditObj
 	CFSecSecUserPWHistoryEditObj deleteInstance();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Set the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecUserId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecUserId value to be applied.
 	 */
-	void setRequiredSecUserId(ICFLibKeyHash256 value);
+	void setRequiredSecUserId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required LocalDateTime attribute PWSetStamp.
+	 *	Get the required $implIJavaAtomType$ attribute PWSetStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute PWSetStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute PWSetStamp.
 	 */
-	LocalDateTime getRequiredPWSetStamp();
+	$implIJavaAtomType$ getRequiredPWSetStamp();
 
 	/**
-	 *	Set the required LocalDateTime attribute PWSetStamp.
+	 *	Set the required $implIJavaAtomType$ attribute PWSetStamp.
 	 *
-	 *	@param value The required LocalDateTime attribute PWSetStamp value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PWSetStamp value to be applied.
 	 */
-	void setRequiredPWSetStamp(LocalDateTime value);
+	void setRequiredPWSetStamp($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required LocalDateTime attribute PWReplacedStamp.
+	 *	Get the required $implIJavaAtomType$ attribute PWReplacedStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute PWReplacedStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute PWReplacedStamp.
 	 */
-	LocalDateTime getRequiredPWReplacedStamp();
+	$implIJavaAtomType$ getRequiredPWReplacedStamp();
 
 	/**
-	 *	Set the required LocalDateTime attribute PWReplacedStamp.
+	 *	Set the required $implIJavaAtomType$ attribute PWReplacedStamp.
 	 *
-	 *	@param value The required LocalDateTime attribute PWReplacedStamp value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PWReplacedStamp value to be applied.
 	 */
-	void setRequiredPWReplacedStamp(LocalDateTime value);
+	void setRequiredPWReplacedStamp($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute PasswordHash.
+	 *	Get the required $implIJavaAtomType$ attribute PasswordHash.
 	 *
-	 *	@return	The required String attribute PasswordHash.
+	 *	@return	The required $implIJavaAtomType$ attribute PasswordHash.
 	 */
-	String getRequiredPasswordHash();
+	$implIJavaAtomType$ getRequiredPasswordHash();
 
 	/**
-	 *	Set the required String attribute PasswordHash.
+	 *	Set the required $implIJavaAtomType$ attribute PasswordHash.
 	 *
-	 *	@param value The required String attribute PasswordHash value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PasswordHash value to be applied.
 	 */
-	void setRequiredPasswordHash(String value);
+	void setRequiredPasswordHash($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

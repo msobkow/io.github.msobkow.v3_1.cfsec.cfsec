@@ -52,7 +52,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCcy
 	implements ICFSecISOCcy, Comparable<Object>, Serializable
 {
-	protected short requiredISOCcyId;
+	protected $implIJavaAtomType$ requiredISOCcyId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -60,10 +60,10 @@ public class CFSecBuffISOCcy
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredISOCode;
-	protected String requiredName;
-	protected String optionalUnitSymbol;
-	protected short requiredPrecis;
+	protected $implIJavaAtomType$ requiredISOCode;
+	protected $implIJavaAtomType$ requiredName;
+	protected $implIJavaAtomType$ optionalUnitSymbol;
+	protected $implIJavaAtomType$ requiredPrecis;
 
 	public CFSecBuffISOCcy() {
 		requiredISOCcyId = ICFSecPubISOCcy.ISOCCYID_INIT_VALUE;
@@ -74,24 +74,24 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredISOCcyId);
 	}
 
 	@Override
-	public void setPKey(Short requiredISOCcyId) {
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredISOCcyId) {
 		if(requiredISOCcyId != null) {
 			this.requiredISOCcyId = requiredISOCcyId;
 		}
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
+	public $implIJavaAtomType$ getRequiredISOCcyId() {
 		return(requiredISOCcyId);
 	}
 
 	@Override
-	public void setRequiredISOCcyId( short value ) {
+	public void setRequiredISOCcyId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubISOCcy.ISOCCYID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredISOCcyId",
@@ -231,11 +231,11 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return(requiredISOCode);
 	}
 
-	public void setRequiredISOCode( String value ) {
+	public void setRequiredISOCode( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredISOCode",
@@ -254,11 +254,11 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",
@@ -277,11 +277,11 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public String getOptionalUnitSymbol() {
+	public $implIJavaAtomType$ getOptionalUnitSymbol() {
 		return(optionalUnitSymbol);
 	}
 
-	public void setOptionalUnitSymbol( String value ) {
+	public void setOptionalUnitSymbol( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 4 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalUnitSymbol",
@@ -294,12 +294,12 @@ public class CFSecBuffISOCcy
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implIJavaAtomType$ getRequiredPrecis() {
 		return(requiredPrecis);
 	}
 
 	@Override
-	public void setRequiredPrecis( short value ) {
+	public void setRequiredPrecis( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubISOCcy.PRECIS_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredPrecis",

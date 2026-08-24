@@ -64,10 +64,10 @@ public interface ICFSecSecSysGrpMembHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredSecSysGrpId();
-	public void setRequiredSecSysGrpId( ICFLibKeyHash256 value );
-	public String getRequiredLoginId();
-	public void setRequiredLoginId( String value );
+	public $implIJavaAtomType$ getRequiredSecSysGrpId();
+	public void setRequiredSecSysGrpId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredLoginId();
+	public void setRequiredLoginId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

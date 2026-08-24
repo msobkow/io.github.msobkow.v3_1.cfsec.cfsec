@@ -75,21 +75,21 @@ public interface ICFSecISOLang
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Short getPKey();
-	public void setPKey(Short requiredISOLangId);
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredISOLangId);
 	public List<ICFSecISOCtryLang> getOptionalChildrenCtry();
 
-	public short getRequiredISOLangId();
-	public void setRequiredISOLangId( short value );
+	public $implIJavaAtomType$ getRequiredISOLangId();
+	public void setRequiredISOLangId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredISO6392Code();
-	public void setRequiredISO6392Code( String value );
-	public String getOptionalISO6391Code();
-	public void setOptionalISO6391Code( String value );
-	public String getRequiredEnglishName();
-	public void setRequiredEnglishName( String value );
+	public $implIJavaAtomType$ getRequiredISO6392Code();
+	public void setRequiredISO6392Code( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalISO6391Code();
+	public void setOptionalISO6391Code( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredEnglishName();
+	public void setRequiredEnglishName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

@@ -101,7 +101,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	The ISOCcy-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCcyObj readISOCcy( Short pkey );
+	ICFSecISOCcyObj readISOCcy( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a ISOCcy-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	The ISOCcy-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCcyObj readISOCcy( Short pkey,
+	ICFSecISOCcyObj readISOCcy( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecISOCcyObj readCachedISOCcy( Short pkey );
+	ICFSecISOCcyObj readCachedISOCcy( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeISOCcy( ICFSecISOCcyObj obj );
 
-	void deepDisposeISOCcy( Short pkey );
+	void deepDisposeISOCcy( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecISOCcyObj lockISOCcy( Short pkey );
+	ICFSecISOCcyObj lockISOCcy( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the ISOCcy-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByIdIdx( short ISOCcyId );
+	ICFSecISOCcyObj readISOCcyByIdIdx( $implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Get the CFSecISOCcyObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByIdIdx( short ISOCcyId,
+	ICFSecISOCcyObj readISOCcyByIdIdx( $implIJavaAtomType$ ISOCcyId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj cached instance for the unique CcyCdIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByCcyCdIdx(String ISOCode );
+	ICFSecISOCcyObj readISOCcyByCcyCdIdx($implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Get the CFSecISOCcyObj instance for the unique CcyCdIdx key.
@@ -182,7 +182,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj refreshed instance for the unique CcyCdIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByCcyCdIdx(String ISOCode,
+	ICFSecISOCcyObj readISOCcyByCcyCdIdx($implIJavaAtomType$ ISOCode,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj cached instance for the unique CcyNmIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByCcyNmIdx(String Name );
+	ICFSecISOCcyObj readISOCcyByCcyNmIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFSecISOCcyObj instance for the unique CcyNmIdx key.
@@ -203,20 +203,20 @@ public interface ICFSecISOCcyTableObj
 	 *	@return	CFSecISOCcyObj refreshed instance for the unique CcyNmIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCcyObj readISOCcyByCcyNmIdx(String Name,
+	ICFSecISOCcyObj readISOCcyByCcyNmIdx($implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFSecISOCcyObj readCachedISOCcyByIdIdx( short ISOCcyId );
+	ICFSecISOCcyObj readCachedISOCcyByIdIdx( $implIJavaAtomType$ ISOCcyId );
 
-	ICFSecISOCcyObj readCachedISOCcyByCcyCdIdx( String ISOCode );
+	ICFSecISOCcyObj readCachedISOCcyByCcyCdIdx( $implIJavaAtomType$ ISOCode );
 
-	ICFSecISOCcyObj readCachedISOCcyByCcyNmIdx( String Name );
+	ICFSecISOCcyObj readCachedISOCcyByCcyNmIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeISOCcyByIdIdx( short ISOCcyId );
+	void deepDisposeISOCcyByIdIdx( $implIJavaAtomType$ ISOCcyId );
 
-	void deepDisposeISOCcyByCcyCdIdx( String ISOCode );
+	void deepDisposeISOCcyByCcyCdIdx( $implIJavaAtomType$ ISOCode );
 
-	void deepDisposeISOCcyByCcyNmIdx( String Name );
+	void deepDisposeISOCcyByCcyNmIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -233,19 +233,19 @@ public interface ICFSecISOCcyTableObj
 	 *
 	 *	@param	ISOCcyId	The ISOCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCcyByIdIdx( short ISOCcyId );
+	void deleteISOCcyByIdIdx( $implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOCode	The ISOCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCcyByCcyCdIdx(String ISOCode );
+	void deleteISOCcyByCcyCdIdx($implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The ISOCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCcyByCcyNmIdx(String Name );
+	void deleteISOCcyByCcyNmIdx($implIJavaAtomType$ Name );
 }

@@ -160,18 +160,18 @@ public interface ICFSecSysClusterObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Integer primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Integer getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Integer primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Integer value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -205,18 +205,18 @@ public interface ICFSecSysClusterObj
 	ICFSecClusterObj getRequiredContainerCluster( boolean forceRead );
 
 	/**
-	 *	Get the required int attribute SingletonId.
+	 *	Get the required $implIJavaAtomType$ attribute SingletonId.
 	 *
-	 *	@return	The required int attribute SingletonId.
+	 *	@return	The required $implIJavaAtomType$ attribute SingletonId.
 	 */
-	int getRequiredSingletonId();
+	$implIJavaAtomType$ getRequiredSingletonId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
 	 *	Internal use only.

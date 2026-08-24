@@ -370,12 +370,12 @@ public class CFSecISOLangEditObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -391,12 +391,12 @@ public class CFSecISOLangEditObj
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOLangId(short value) {
+	public void setRequiredISOLangId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalChildrenCtry = null;
@@ -404,36 +404,36 @@ public class CFSecISOLangEditObj
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implIJavaAtomType$ getRequiredISO6392Code() {
 		return( getISOLangRec().getRequiredISO6392Code() );
 	}
 
 	@Override
-	public void setRequiredISO6392Code( String value ) {
+	public void setRequiredISO6392Code( $implIJavaAtomType$ value ) {
 		if( getISOLangRec().getRequiredISO6392Code() != value ) {
 			getISOLangRec().setRequiredISO6392Code( value );
 		}
 	}
 
 	@Override
-	public String getOptionalISO6391Code() {
+	public $implIJavaAtomType$ getOptionalISO6391Code() {
 		return( getISOLangRec().getOptionalISO6391Code() );
 	}
 
 	@Override
-	public void setOptionalISO6391Code( String value ) {
+	public void setOptionalISO6391Code( $implIJavaAtomType$ value ) {
 		if( getISOLangRec().getOptionalISO6391Code() != value ) {
 			getISOLangRec().setOptionalISO6391Code( value );
 		}
 	}
 
 	@Override
-	public String getRequiredEnglishName() {
+	public $implIJavaAtomType$ getRequiredEnglishName() {
 		return( getISOLangRec().getRequiredEnglishName() );
 	}
 
 	@Override
-	public void setRequiredEnglishName( String value ) {
+	public void setRequiredEnglishName( $implIJavaAtomType$ value ) {
 		if( getISOLangRec().getRequiredEnglishName() != value ) {
 			getISOLangRec().setRequiredEnglishName( value );
 		}

@@ -50,7 +50,7 @@ public class CFSecSecUserPasswordObj
 	protected boolean isNew;
 	protected ICFSecSecUserPasswordEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecUserPassword rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
@@ -282,12 +282,12 @@ public class CFSecSecUserPasswordObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -336,7 +336,7 @@ public class CFSecSecUserPasswordObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -357,12 +357,12 @@ public class CFSecSecUserPasswordObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implIJavaAtomType$ getRequiredPWSetStamp() {
 		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implIJavaAtomType$ getRequiredPasswordHash() {
 		return( getSecUserPasswordRec().getRequiredPasswordHash() );
 	}
 

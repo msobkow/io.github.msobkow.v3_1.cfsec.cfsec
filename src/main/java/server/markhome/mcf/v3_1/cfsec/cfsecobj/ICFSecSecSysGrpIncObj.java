@@ -246,18 +246,18 @@ public interface ICFSecSecSysGrpIncObj
 	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	$implIJavaAtomType$ getRequiredSecSysGrpId();
 
 	/**
-	 *	Get the required String attribute InclName.
+	 *	Get the required $implIJavaAtomType$ attribute InclName.
 	 *
-	 *	@return	The required String attribute InclName.
+	 *	@return	The required $implIJavaAtomType$ attribute InclName.
 	 */
-	String getRequiredInclName();
+	$implIJavaAtomType$ getRequiredInclName();
 
 	/**
 	 *	Internal use only.

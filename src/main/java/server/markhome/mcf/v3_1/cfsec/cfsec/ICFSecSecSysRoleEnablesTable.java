@@ -92,8 +92,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@param	EnableName	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleEnablesByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysRoleId,
-		String argEnableName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysRoleId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argEnableName );
 	/**
 	 *	Delete the SecSysRoleEnables instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@param	SecSysRoleId	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleEnablesBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysRoleId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysRoleId );
 
 	/**
 	 *	Delete the SecSysRoleEnables instances identified by the key SysRoleIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@param	EnableName	The SecSysRoleEnables key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleEnablesByNameIdx( ICFSecAuthorization Authorization,
-		String argEnableName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argEnableName );
 
 	/**
 	 *	Delete the SecSysRoleEnables instances identified by the key NameIdx.
@@ -165,8 +165,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleEnables readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Lock the derived SecSysRoleEnables record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleEnables readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read an array of the derived SecSysRoleEnables record instances identified by the duplicate key SysRoleIdx.
@@ -216,7 +216,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysRoleEnables[] readDerivedBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read an array of the derived SecSysRoleEnables record instances identified by the duplicate key NameIdx.
@@ -228,7 +228,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysRoleEnables[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String EnableName );
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read the specific SecSysRoleEnables record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Lock the specific SecSysRoleEnables record instance identified by the primary key.
@@ -293,8 +293,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@return All the specific SecSysRoleEnables instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecSysRoleEnables[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 
 	/**
 	 *	Read the specific SecSysRoleEnables record instance identified by the unique key IdIdx.
@@ -311,8 +311,8 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String EnableName );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read an array of the specific SecSysRoleEnables record instances identified by the duplicate key SysRoleIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] readRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read an array of the specific SecSysRoleEnables record instances identified by the duplicate key NameIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String EnableName );
+		$implIJavaAtomType$ EnableName );
 
 	/**
 	 *	Read a page array of the specific SecSysRoleEnables record instances identified by the duplicate key SysRoleIdx.
@@ -354,9 +354,9 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] pageRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 
 	/**
 	 *	Read a page array of the specific SecSysRoleEnables record instances identified by the duplicate key NameIdx.
@@ -370,7 +370,7 @@ public interface ICFSecSecSysRoleEnablesTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleEnables[] pageRecByNameIdx( ICFSecAuthorization Authorization,
-		String EnableName,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName );
+		$implIJavaAtomType$ EnableName,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName );
 }

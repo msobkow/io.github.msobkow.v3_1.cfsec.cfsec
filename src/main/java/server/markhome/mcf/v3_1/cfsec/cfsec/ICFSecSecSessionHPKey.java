@@ -63,8 +63,8 @@ public interface ICFSecSecSessionHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredSecSessionId();
-	public void setRequiredSecSessionId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecSessionId();
+	public void setRequiredSecSessionId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

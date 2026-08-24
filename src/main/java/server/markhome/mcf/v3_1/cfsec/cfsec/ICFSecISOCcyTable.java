@@ -90,7 +90,7 @@ public interface ICFSecISOCcyTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteISOCcyByIdIdx( ICFSecAuthorization Authorization,
-		Short argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the ISOCcy instances identified by the key CcyCdIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecISOCcyTable
 	 *	@param	ISOCode	The ISOCcy key attribute of the instance generating the id.
 	 */
 	void deleteISOCcyByCcyCdIdx( ICFSecAuthorization Authorization,
-		String argISOCode );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCode );
 
 	/**
 	 *	Delete the ISOCcy instances identified by the key CcyCdIdx.
@@ -118,7 +118,7 @@ public interface ICFSecISOCcyTable
 	 *	@param	Name	The ISOCcy key attribute of the instance generating the id.
 	 */
 	void deleteISOCcyByCcyNmIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the ISOCcy instances identified by the key CcyNmIdx.
@@ -142,7 +142,7 @@ public interface ICFSecISOCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCcy readDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived ISOCcy record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecISOCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCcy lockDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all ISOCcy instances.
@@ -177,7 +177,7 @@ public interface ICFSecISOCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCcy readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read the derived ISOCcy record instance identified by the unique key CcyCdIdx.
@@ -190,7 +190,7 @@ public interface ICFSecISOCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCcy readDerivedByCcyCdIdx( ICFSecAuthorization Authorization,
-		String ISOCode );
+		$implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Read the derived ISOCcy record instance identified by the unique key CcyNmIdx.
@@ -203,7 +203,7 @@ public interface ICFSecISOCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCcy readDerivedByCcyNmIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific ISOCcy record instance identified by the primary key.
@@ -218,7 +218,7 @@ public interface ICFSecISOCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCcy readRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific ISOCcy record instance identified by the primary key.
@@ -233,7 +233,7 @@ public interface ICFSecISOCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCcy lockRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific ISOCcy record instances.
@@ -257,7 +257,7 @@ public interface ICFSecISOCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCcy readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read the specific ISOCcy record instance identified by the unique key CcyCdIdx.
@@ -272,7 +272,7 @@ public interface ICFSecISOCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCcy readRecByCcyCdIdx( ICFSecAuthorization Authorization,
-		String ISOCode );
+		$implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Read the specific ISOCcy record instance identified by the unique key CcyNmIdx.
@@ -287,5 +287,5 @@ public interface ICFSecISOCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCcy readRecByCcyNmIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 }

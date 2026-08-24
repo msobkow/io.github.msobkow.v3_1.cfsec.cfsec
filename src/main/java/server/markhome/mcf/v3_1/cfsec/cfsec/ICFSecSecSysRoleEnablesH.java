@@ -71,11 +71,11 @@ public interface ICFSecSecSysRoleEnablesH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecSysRoleId();
-	public void setRequiredSecSysRoleId( ICFLibKeyHash256 requiredSecSysRoleId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecSysRoleId();
+	public void setRequiredSecSysRoleId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecSysRoleId );
 
-	public String getRequiredEnableName();
-	public void setRequiredEnableName( String requiredEnableName );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredEnableName();
+	public void setRequiredEnableName( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredEnableName );
 
 	@Override
 	public boolean equals( Object obj );

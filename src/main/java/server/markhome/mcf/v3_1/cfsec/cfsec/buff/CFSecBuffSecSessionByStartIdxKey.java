@@ -52,19 +52,19 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSessionByStartIdxKey
 	implements ICFSecSecSessionByStartIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSecUserId;
-	protected LocalDateTime requiredStart;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecUserId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredStart;
 	public CFSecBuffSecSessionByStartIdxKey() {
 		requiredSecUserId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECUSERID_INIT_VALUE.toString() );
 		requiredStart = CFLibXmlUtil.parseTimestamp("2020-01-01T00:00:00");
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -75,11 +75,11 @@ public class CFSecBuffSecSessionByStartIdxKey
 	}
 
 	@Override
-	public LocalDateTime getRequiredStart() {
+	public $implIJavaAtomType$ getRequiredStart() {
 		return(requiredStart);
 	}
 
-	public void setRequiredStart( LocalDateTime value ) {
+	public void setRequiredStart( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredStart",

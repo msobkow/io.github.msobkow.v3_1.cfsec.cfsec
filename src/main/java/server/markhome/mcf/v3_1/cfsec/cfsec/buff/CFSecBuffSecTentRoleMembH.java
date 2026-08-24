@@ -190,11 +190,11 @@ public class CFSecBuffSecTentRoleMembH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecTentRoleId() {
+	public $implIJavaAtomType$ getRequiredSecTentRoleId() {
 		return(getPKey().getRequiredSecTentRoleId());
 	}
 
-	public void setRequiredSecTentRoleId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecTentRoleId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecTentRoleId",
@@ -205,11 +205,11 @@ public class CFSecBuffSecTentRoleMembH
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implIJavaAtomType$ getRequiredLoginId() {
 		return(getPKey().getRequiredLoginId());
 	}
 
-	public void setRequiredLoginId( String value ) {
+	public void setRequiredLoginId( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredLoginId",

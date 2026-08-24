@@ -104,25 +104,25 @@ public interface ICFSecSysClusterEditObj
 	void setRequiredContainerCluster( ICFSecClusterObj value );
 
 	/**
-	 *	Get the required int attribute SingletonId.
+	 *	Get the required $implIJavaAtomType$ attribute SingletonId.
 	 *
-	 *	@return	The required int attribute SingletonId.
+	 *	@return	The required $implIJavaAtomType$ attribute SingletonId.
 	 */
-	int getRequiredSingletonId();
+	$implIJavaAtomType$ getRequiredSingletonId();
 
 	/**
-	 *	Set the required int attribute SingletonId.
+	 *	Set the required $implIJavaAtomType$ attribute SingletonId.
 	 *
-	 *	@param value The required int attribute SingletonId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SingletonId value to be applied.
 	 */
-	void setRequiredSingletonId(int value);
+	void setRequiredSingletonId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

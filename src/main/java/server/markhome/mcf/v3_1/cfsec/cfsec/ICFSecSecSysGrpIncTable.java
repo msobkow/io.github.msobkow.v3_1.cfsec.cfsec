@@ -92,8 +92,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpIncByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysGrpId,
-		String argInclName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysGrpId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argInclName );
 	/**
 	 *	Delete the SecSysGrpInc instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@param	SecSysGrpId	The SecSysGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpIncBySysGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysGrpId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysGrpId );
 
 	/**
 	 *	Delete the SecSysGrpInc instances identified by the key SysGrpIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@param	InclName	The SecSysGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecSysGrpIncByNameIdx( ICFSecAuthorization Authorization,
-		String argInclName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argInclName );
 
 	/**
 	 *	Delete the SecSysGrpInc instances identified by the key NameIdx.
@@ -165,8 +165,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrpInc readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId,
-		String InclName );
+		$implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Lock the derived SecSysGrpInc record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysGrpInc readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId,
-		String InclName );
+		$implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Read an array of the derived SecSysGrpInc record instances identified by the duplicate key SysGrpIdx.
@@ -216,7 +216,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysGrpInc[] readDerivedBySysGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId );
+		$implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Read an array of the derived SecSysGrpInc record instances identified by the duplicate key NameIdx.
@@ -228,7 +228,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysGrpInc[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String InclName );
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Read the specific SecSysGrpInc record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId,
-		String InclName );
+		$implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Lock the specific SecSysGrpInc record instance identified by the primary key.
@@ -293,8 +293,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@return All the specific SecSysGrpInc instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecSysGrpInc[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorInclName );
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorInclName );
 
 	/**
 	 *	Read the specific SecSysGrpInc record instance identified by the unique key IdIdx.
@@ -311,8 +311,8 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId,
-		String InclName );
+		$implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Read an array of the specific SecSysGrpInc record instances identified by the duplicate key SysGrpIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc[] readRecBySysGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId );
+		$implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Read an array of the specific SecSysGrpInc record instances identified by the duplicate key NameIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String InclName );
+		$implIJavaAtomType$ InclName );
 
 	/**
 	 *	Read a page array of the specific SecSysGrpInc record instances identified by the duplicate key SysGrpIdx.
@@ -354,9 +354,9 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc[] pageRecBySysGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysGrpId,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorInclName );
+		$implIJavaAtomType$ SecSysGrpId,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorInclName );
 
 	/**
 	 *	Read a page array of the specific SecSysGrpInc record instances identified by the duplicate key NameIdx.
@@ -370,7 +370,7 @@ public interface ICFSecSecSysGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysGrpInc[] pageRecByNameIdx( ICFSecAuthorization Authorization,
-		String InclName,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorInclName );
+		$implIJavaAtomType$ InclName,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorInclName );
 }

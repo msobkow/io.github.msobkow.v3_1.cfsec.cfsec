@@ -101,7 +101,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	The SecUserEMConf-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConf( ICFLibKeyHash256 pkey );
+	ICFSecSecUserEMConfObj readSecUserEMConf( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecUserEMConf-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	The SecUserEMConf-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConf( ICFLibKeyHash256 pkey,
+	ICFSecSecUserEMConfObj readSecUserEMConf( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecUserEMConfObj readCachedSecUserEMConf( ICFLibKeyHash256 pkey );
+	ICFSecSecUserEMConfObj readCachedSecUserEMConf( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecUserEMConf( ICFSecSecUserEMConfObj obj );
 
-	void deepDisposeSecUserEMConf( ICFLibKeyHash256 pkey );
+	void deepDisposeSecUserEMConf( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecUserEMConfObj lockSecUserEMConf( ICFLibKeyHash256 pkey );
+	ICFSecSecUserEMConfObj lockSecUserEMConf( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecUserEMConf-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of ICFSecSecUserEMConfObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> pageAllSecUserEMConf(ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserEMConfObj> pageAllSecUserEMConf($implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Get the CFSecSecUserEMConfObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	CFSecSecUserEMConfObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserEMConfObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	CFSecSecUserEMConfObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId,
+	ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( $implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	CFSecSecUserEMConfObj cached instance for the unique UUuid6Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx(ICFLibUuid6 EMConfirmationUuid6 );
+	ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx($implIJavaAtomType$ EMConfirmationUuid6 );
 
 	/**
 	 *	Get the CFSecSecUserEMConfObj instance for the unique UUuid6Idx key.
@@ -190,7 +190,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	CFSecSecUserEMConfObj refreshed instance for the unique UUuid6Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx(ICFLibUuid6 EMConfirmationUuid6,
+	ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx($implIJavaAtomType$ EMConfirmationUuid6,
 		boolean forceRead );
 
 	/**
@@ -201,7 +201,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate ConfEMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr );
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr );
 
 	/**
 	 *	Get the map of CFSecSecUserEMConfObj instances sorted by their primary keys for the duplicate ConfEMAddrIdx key.
@@ -211,7 +211,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate ConfEMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr,
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr,
 		boolean forceRead );
 
 	/**
@@ -222,7 +222,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate SentStampIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp );
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp );
 
 	/**
 	 *	Get the map of CFSecSecUserEMConfObj instances sorted by their primary keys for the duplicate SentStampIdx key.
@@ -232,7 +232,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate SentStampIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp,
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp,
 		boolean forceRead );
 
 	/**
@@ -243,7 +243,7 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate NewAcctIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfByNewAcctIdx( boolean NewAccount );
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Get the map of CFSecSecUserEMConfObj instances sorted by their primary keys for the duplicate NewAcctIdx key.
@@ -253,28 +253,28 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	List of CFSecSecUserEMConfObj cached instances sorted by their primary keys for the duplicate NewAcctIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> readSecUserEMConfByNewAcctIdx( boolean NewAccount,
+	List<ICFSecSecUserEMConfObj> readSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount,
 		boolean forceRead );
 
-	ICFSecSecUserEMConfObj readCachedSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserEMConfObj readCachedSecUserEMConfByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	ICFSecSecUserEMConfObj readCachedSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 );
+	ICFSecSecUserEMConfObj readCachedSecUserEMConfByUUuid6Idx( $implIJavaAtomType$ EMConfirmationUuid6 );
 
-	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr );
+	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr );
 
-	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp );
+	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp );
 
-	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfByNewAcctIdx( boolean NewAccount );
+	List<ICFSecSecUserEMConfObj> readCachedSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
-	void deepDisposeSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecUserEMConfByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 );
+	void deepDisposeSecUserEMConfByUUuid6Idx( $implIJavaAtomType$ EMConfirmationUuid6 );
 
-	void deepDisposeSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr );
+	void deepDisposeSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr );
 
-	void deepDisposeSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp );
+	void deepDisposeSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp );
 
-	void deepDisposeSecUserEMConfByNewAcctIdx( boolean NewAccount );
+	void deepDisposeSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read a page of data as a List of SecUserEMConf-derived instances sorted by their primary keys,
@@ -285,8 +285,8 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	A List of SecUserEMConf-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> pageSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserEMConfObj> pageSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page of data as a List of SecUserEMConf-derived instances sorted by their primary keys,
@@ -297,8 +297,8 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	A List of SecUserEMConf-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> pageSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserEMConfObj> pageSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page of data as a List of SecUserEMConf-derived instances sorted by their primary keys,
@@ -309,8 +309,8 @@ public interface ICFSecSecUserEMConfTableObj
 	 *	@return	A List of SecUserEMConf-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserEMConfObj> pageSecUserEMConfByNewAcctIdx( boolean NewAccount,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserEMConfObj> pageSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Internal use only.
@@ -327,33 +327,33 @@ public interface ICFSecSecUserEMConfTableObj
 	 *
 	 *	@param	SecUserId	The SecUserEMConf key attribute of the instance generating the id.
 	 */
-	void deleteSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deleteSecUserEMConfByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	EMConfirmationUuid6	The SecUserEMConf key attribute of the instance generating the id.
 	 */
-	void deleteSecUserEMConfByUUuid6Idx(ICFLibUuid6 EMConfirmationUuid6 );
+	void deleteSecUserEMConfByUUuid6Idx($implIJavaAtomType$ EMConfirmationUuid6 );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ConfirmEMailAddr	The SecUserEMConf key attribute of the instance generating the id.
 	 */
-	void deleteSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr );
+	void deleteSecUserEMConfByConfEMAddrIdx( $implIJavaAtomType$ ConfirmEMailAddr );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	EMailSentStamp	The SecUserEMConf key attribute of the instance generating the id.
 	 */
-	void deleteSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp );
+	void deleteSecUserEMConfBySentStampIdx( $implIJavaAtomType$ EMailSentStamp );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NewAccount	The SecUserEMConf key attribute of the instance generating the id.
 	 */
-	void deleteSecUserEMConfByNewAcctIdx( boolean NewAccount );
+	void deleteSecUserEMConfByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 }

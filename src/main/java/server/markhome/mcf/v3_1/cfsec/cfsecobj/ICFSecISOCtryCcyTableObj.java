@@ -120,8 +120,8 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	The ISOCtryCcy-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryCcyObj readISOCtryCcy( short ISOCtryId,
-		short ISOCcyId );
+	ICFSecISOCtryCcyObj readISOCtryCcy( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read a ISOCtryCcy-derived instance by it's primary key.
@@ -129,8 +129,8 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	The ISOCtryCcy-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryCcyObj readISOCtryCcy( short ISOCtryId,
-		short ISOCcyId,
+	ICFSecISOCtryCcyObj readISOCtryCcy( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId,
 		boolean forceRead );
 
 	ICFSecISOCtryCcyObj readCachedISOCtryCcy( ICFSecISOCtryCcyPKey pkey );
@@ -172,8 +172,8 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	CFSecISOCtryCcyObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId );
+	ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Get the CFSecISOCtryCcyObj instance for the primary key attributes.
@@ -185,8 +185,8 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	CFSecISOCtryCcyObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId,
+	ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId,
 		boolean forceRead );
 
 	/**
@@ -197,7 +197,7 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	List of CFSecISOCtryCcyObj cached instances sorted by their primary keys for the duplicate CtryIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( short ISOCtryId );
+	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Get the map of CFSecISOCtryCcyObj instances sorted by their primary keys for the duplicate CtryIdx key.
@@ -207,7 +207,7 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	List of CFSecISOCtryCcyObj cached instances sorted by their primary keys for the duplicate CtryIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( short ISOCtryId,
+	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId,
 		boolean forceRead );
 
 	/**
@@ -218,7 +218,7 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	List of CFSecISOCtryCcyObj cached instances sorted by their primary keys for the duplicate CcyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( short ISOCcyId );
+	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Get the map of CFSecISOCtryCcyObj instances sorted by their primary keys for the duplicate CcyIdx key.
@@ -228,22 +228,22 @@ public interface ICFSecISOCtryCcyTableObj
 	 *	@return	List of CFSecISOCtryCcyObj cached instances sorted by their primary keys for the duplicate CcyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( short ISOCcyId,
+	List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId,
 		boolean forceRead );
 
-	ICFSecISOCtryCcyObj readCachedISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId );
+	ICFSecISOCtryCcyObj readCachedISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
-	List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCtryIdx( short ISOCtryId );
+	List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
-	List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCcyIdx( short ISOCcyId );
+	List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId );
 
-	void deepDisposeISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId );
+	void deepDisposeISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
-	void deepDisposeISOCtryCcyByCtryIdx( short ISOCtryId );
+	void deepDisposeISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
-	void deepDisposeISOCtryCcyByCcyIdx( short ISOCcyId );
+	void deepDisposeISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Internal use only.
@@ -262,20 +262,20 @@ public interface ICFSecISOCtryCcyTableObj
 	 *
 	 *	@param	ISOCcyId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId );
+	void deleteISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOCtryId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryCcyByCtryIdx( short ISOCtryId );
+	void deleteISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOCcyId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryCcyByCcyIdx( short ISOCcyId );
+	void deleteISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId );
 }

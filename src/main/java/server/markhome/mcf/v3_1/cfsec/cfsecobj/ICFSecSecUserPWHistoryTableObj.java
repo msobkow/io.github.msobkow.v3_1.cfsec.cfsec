@@ -120,8 +120,8 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	The SecUserPWHistory-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistory( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+	ICFSecSecUserPWHistoryObj readSecUserPWHistory( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read a SecUserPWHistory-derived instance by it's primary key.
@@ -129,8 +129,8 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	The SecUserPWHistory-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistory( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp,
+	ICFSecSecUserPWHistoryObj readSecUserPWHistory( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp,
 		boolean forceRead );
 
 	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistory( ICFSecSecUserPWHistoryPKey pkey );
@@ -168,7 +168,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	List of ICFSecSecUserPWHistoryObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory(ICFLibKeyHash256 priorSecUserId,
+	List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory($implIJavaOptAtomType$ priorSecUserId,
 		LocalDateTime priorPWSetStamp );
 
 	/**
@@ -181,8 +181,8 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Get the CFSecSecUserPWHistoryObj instance for the primary key attributes.
@@ -194,8 +194,8 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp,
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp,
 		boolean forceRead );
 
 	/**
@@ -206,7 +206,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj cached instance for the unique UserIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx(ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx($implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserPWHistoryObj instance for the unique UserIdx key.
@@ -216,7 +216,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj refreshed instance for the unique UserIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx(ICFLibKeyHash256 SecUserId,
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx($implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -227,7 +227,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj cached instance for the unique SetStampIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx(LocalDateTime PWSetStamp );
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx($implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Get the CFSecSecUserPWHistoryObj instance for the unique SetStampIdx key.
@@ -237,7 +237,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj refreshed instance for the unique SetStampIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx(LocalDateTime PWSetStamp,
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx($implIJavaAtomType$ PWSetStamp,
 		boolean forceRead );
 
 	/**
@@ -248,7 +248,7 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj cached instance for the unique ReplacedStampIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx(LocalDateTime PWReplacedStamp );
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx($implIJavaAtomType$ PWReplacedStamp );
 
 	/**
 	 *	Get the CFSecSecUserPWHistoryObj instance for the unique ReplacedStampIdx key.
@@ -258,26 +258,26 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *	@return	CFSecSecUserPWHistoryObj refreshed instance for the unique ReplacedStampIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx(LocalDateTime PWReplacedStamp,
+	ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx($implIJavaAtomType$ PWReplacedStamp,
 		boolean forceRead );
 
-	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
-	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId );
 
-	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp );
+	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 
-	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp );
+	ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp );
 
-	void deepDisposeSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+	void deepDisposeSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
-	void deepDisposeSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp );
+	void deepDisposeSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 
-	void deepDisposeSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp );
+	void deepDisposeSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp );
 
 	/**
 	 *	Internal use only.
@@ -296,27 +296,27 @@ public interface ICFSecSecUserPWHistoryTableObj
 	 *
 	 *	@param	PWSetStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp );
+	void deleteSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecUserId	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWHistoryByUserIdx(ICFLibKeyHash256 SecUserId );
+	void deleteSecUserPWHistoryByUserIdx($implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PWSetStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWHistoryBySetStampIdx(LocalDateTime PWSetStamp );
+	void deleteSecUserPWHistoryBySetStampIdx($implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PWReplacedStamp	The SecUserPWHistory key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWHistoryByReplacedStampIdx(LocalDateTime PWReplacedStamp );
+	void deleteSecUserPWHistoryByReplacedStampIdx($implIJavaAtomType$ PWReplacedStamp );
 }

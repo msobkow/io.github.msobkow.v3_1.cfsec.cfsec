@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecUserPWResetByNewAcctIdxKey
 	implements ICFSecSecUserPWResetByNewAcctIdxKey, Comparable<Object>, Serializable
 {
-	protected boolean requiredNewAccount;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredNewAccount;
 	public CFSecBuffSecUserPWResetByNewAcctIdxKey() {
 		requiredNewAccount = ICFSecProtSecUserPWReset.NEWACCOUNT_INIT_VALUE;
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implIJavaAtomType$ getRequiredNewAccount() {
 		return(requiredNewAccount);
 	}
 
-	public void setRequiredNewAccount( boolean value ) {
+	public void setRequiredNewAccount( $implIJavaAtomType$ value ) {
 		requiredNewAccount = value;
 	}
 

@@ -71,21 +71,21 @@ public interface ICFSecSecUserH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 requiredSecUserId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecUserId );
 
-	public String getRequiredLoginId();
-	public void setRequiredLoginId( String value );
-	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
-	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value );
-	public String getOptionalDfltSysGrpName();
-	public void setOptionalDfltSysGrpName( String value );
-	public String getOptionalDfltClusGrpName();
-	public void setOptionalDfltClusGrpName( String value );
-	public String getOptionalDfltTentGrpName();
-	public void setOptionalDfltTentGrpName( String value );
-	public String getRequiredEMailAddress();
-	public void setRequiredEMailAddress( String value );
+	public $implIJavaAtomType$ getRequiredLoginId();
+	public void setRequiredLoginId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredAccountStatus();
+	public void setRequiredAccountStatus( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDfltSysGrpName();
+	public void setOptionalDfltSysGrpName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDfltClusGrpName();
+	public void setOptionalDfltClusGrpName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDfltTentGrpName();
+	public void setOptionalDfltTentGrpName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredEMailAddress();
+	public void setRequiredEMailAddress( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecUserEMConfByNewAcctIdxKey
 {
-	public boolean getRequiredNewAccount();
-	public void setRequiredNewAccount( boolean value );
+	public $implIJavaAtomType$ getRequiredNewAccount();
+	public void setRequiredNewAccount( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

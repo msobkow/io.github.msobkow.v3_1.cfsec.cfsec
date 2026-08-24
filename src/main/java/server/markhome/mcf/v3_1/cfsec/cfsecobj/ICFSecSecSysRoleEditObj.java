@@ -125,32 +125,32 @@ public interface ICFSecSecSysRoleEditObj
 	List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysRoleId();
+	$implIJavaAtomType$ getRequiredSecSysRoleId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	Set the required $implIJavaAtomType$ attribute SecSysRoleId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecSysRoleId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecSysRoleId value to be applied.
 	 */
-	void setRequiredSecSysRoleId(ICFLibKeyHash256 value);
+	void setRequiredSecSysRoleId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

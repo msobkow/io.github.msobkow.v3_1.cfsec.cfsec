@@ -92,8 +92,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@param	LoginId	The SecSysRoleMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleMembByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysRoleId,
-		String argLoginId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysRoleId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 	/**
 	 *	Delete the SecSysRoleMemb instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@param	SecSysRoleId	The SecSysRoleMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleMembBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecSysRoleId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecSysRoleId );
 
 	/**
 	 *	Delete the SecSysRoleMemb instances identified by the key SysRoleIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@param	LoginId	The SecSysRoleMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleMembByLoginIdx( ICFSecAuthorization Authorization,
-		String argLoginId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 
 	/**
 	 *	Delete the SecSysRoleMemb instances identified by the key LoginIdx.
@@ -165,8 +165,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleMemb readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String LoginId );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the derived SecSysRoleMemb record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRoleMemb readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String LoginId );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the derived SecSysRoleMemb record instances identified by the duplicate key SysRoleIdx.
@@ -216,7 +216,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysRoleMemb[] readDerivedBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read an array of the derived SecSysRoleMemb record instances identified by the duplicate key LoginIdx.
@@ -228,7 +228,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSysRoleMemb[] readDerivedByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read the specific SecSysRoleMemb record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String LoginId );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the specific SecSysRoleMemb record instance identified by the primary key.
@@ -293,8 +293,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@return All the specific SecSysRoleMemb instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecSysRoleMemb[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorLoginId );
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read the specific SecSysRoleMemb record instance identified by the unique key IdIdx.
@@ -311,8 +311,8 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		String LoginId );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the specific SecSysRoleMemb record instances identified by the duplicate key SysRoleIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb[] readRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read an array of the specific SecSysRoleMemb record instances identified by the duplicate key LoginIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb[] readRecByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read a page array of the specific SecSysRoleMemb record instances identified by the duplicate key SysRoleIdx.
@@ -354,9 +354,9 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb[] pageRecBySysRoleIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorLoginId );
+		$implIJavaAtomType$ SecSysRoleId,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read a page array of the specific SecSysRoleMemb record instances identified by the duplicate key LoginIdx.
@@ -370,7 +370,7 @@ public interface ICFSecSecSysRoleMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRoleMemb[] pageRecByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorLoginId );
+		$implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorLoginId );
 }

@@ -101,7 +101,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	The ISOTZone-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOTZoneObj readISOTZone( Short pkey );
+	ICFSecISOTZoneObj readISOTZone( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a ISOTZone-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	The ISOTZone-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOTZoneObj readISOTZone( Short pkey,
+	ICFSecISOTZoneObj readISOTZone( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecISOTZoneObj readCachedISOTZone( Short pkey );
+	ICFSecISOTZoneObj readCachedISOTZone( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeISOTZone( ICFSecISOTZoneObj obj );
 
-	void deepDisposeISOTZone( Short pkey );
+	void deepDisposeISOTZone( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecISOTZoneObj lockISOTZone( Short pkey );
+	ICFSecISOTZoneObj lockISOTZone( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the ISOTZone-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	CFSecISOTZoneObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOTZoneObj readISOTZoneByIdIdx( short ISOTZoneId );
+	ICFSecISOTZoneObj readISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId );
 
 	/**
 	 *	Get the CFSecISOTZoneObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	CFSecISOTZoneObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOTZoneObj readISOTZoneByIdIdx( short ISOTZoneId,
+	ICFSecISOTZoneObj readISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId,
 		boolean forceRead );
 
 	/**
@@ -174,8 +174,8 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	List of CFSecISOTZoneObj cached instances sorted by their primary keys for the duplicate OffsetIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset );
+	List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
 	/**
 	 *	Get the map of CFSecISOTZoneObj instances sorted by their primary keys for the duplicate OffsetIdx key.
@@ -187,8 +187,8 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	List of CFSecISOTZoneObj cached instances sorted by their primary keys for the duplicate OffsetIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset,
+	List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset,
 		boolean forceRead );
 
 	/**
@@ -199,7 +199,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	CFSecISOTZoneObj cached instance for the unique UTZNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOTZoneObj readISOTZoneByUTZNameIdx(String TZName );
+	ICFSecISOTZoneObj readISOTZoneByUTZNameIdx($implIJavaAtomType$ TZName );
 
 	/**
 	 *	Get the CFSecISOTZoneObj instance for the unique UTZNameIdx key.
@@ -209,7 +209,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	CFSecISOTZoneObj refreshed instance for the unique UTZNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOTZoneObj readISOTZoneByUTZNameIdx(String TZName,
+	ICFSecISOTZoneObj readISOTZoneByUTZNameIdx($implIJavaAtomType$ TZName,
 		boolean forceRead );
 
 	/**
@@ -220,7 +220,7 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	List of CFSecISOTZoneObj cached instances sorted by their primary keys for the duplicate Iso8601Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( String Iso8601 );
+	List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 );
 
 	/**
 	 *	Get the map of CFSecISOTZoneObj instances sorted by their primary keys for the duplicate Iso8601Idx key.
@@ -230,26 +230,26 @@ public interface ICFSecISOTZoneTableObj
 	 *	@return	List of CFSecISOTZoneObj cached instances sorted by their primary keys for the duplicate Iso8601Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( String Iso8601,
+	List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601,
 		boolean forceRead );
 
-	ICFSecISOTZoneObj readCachedISOTZoneByIdIdx( short ISOTZoneId );
+	ICFSecISOTZoneObj readCachedISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId );
 
-	List<ICFSecISOTZoneObj> readCachedISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset );
+	List<ICFSecISOTZoneObj> readCachedISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
-	ICFSecISOTZoneObj readCachedISOTZoneByUTZNameIdx( String TZName );
+	ICFSecISOTZoneObj readCachedISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName );
 
-	List<ICFSecISOTZoneObj> readCachedISOTZoneByIso8601Idx( String Iso8601 );
+	List<ICFSecISOTZoneObj> readCachedISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 );
 
-	void deepDisposeISOTZoneByIdIdx( short ISOTZoneId );
+	void deepDisposeISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId );
 
-	void deepDisposeISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset );
+	void deepDisposeISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
-	void deepDisposeISOTZoneByUTZNameIdx( String TZName );
+	void deepDisposeISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName );
 
-	void deepDisposeISOTZoneByIso8601Idx( String Iso8601 );
+	void deepDisposeISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 );
 
 	/**
 	 *	Internal use only.
@@ -266,7 +266,7 @@ public interface ICFSecISOTZoneTableObj
 	 *
 	 *	@param	ISOTZoneId	The ISOTZone key attribute of the instance generating the id.
 	 */
-	void deleteISOTZoneByIdIdx( short ISOTZoneId );
+	void deleteISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId );
 
 	/**
 	 *	Internal use only.
@@ -275,20 +275,20 @@ public interface ICFSecISOTZoneTableObj
 	 *
 	 *	@param	TZMinOffset	The ISOTZone key attribute of the instance generating the id.
 	 */
-	void deleteISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset );
+	void deleteISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TZName	The ISOTZone key attribute of the instance generating the id.
 	 */
-	void deleteISOTZoneByUTZNameIdx(String TZName );
+	void deleteISOTZoneByUTZNameIdx($implIJavaAtomType$ TZName );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Iso8601	The ISOTZone key attribute of the instance generating the id.
 	 */
-	void deleteISOTZoneByIso8601Idx( String Iso8601 );
+	void deleteISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 );
 }

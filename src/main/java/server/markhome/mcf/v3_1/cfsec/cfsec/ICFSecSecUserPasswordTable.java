@@ -90,7 +90,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserPasswordByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecUserPassword instances identified by the key SetStampIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 */
 	void deleteSecUserPasswordBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime argPWSetStamp );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argPWSetStamp );
 
 	/**
 	 *	Delete the SecUserPassword instances identified by the key SetStampIdx.
@@ -123,7 +123,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecUserPassword record instance by primary key.
@@ -136,7 +136,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecUserPassword instances.
@@ -158,7 +158,7 @@ public interface ICFSecSecUserPasswordTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserPassword readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read an array of the derived SecUserPassword record instances identified by the duplicate key SetStampIdx.
@@ -170,7 +170,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserPassword[] readDerivedBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Read the specific SecUserPassword record instance identified by the primary key.
@@ -185,7 +185,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecUserPassword record instance identified by the primary key.
@@ -200,7 +200,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecUserPassword record instances.
@@ -224,7 +224,7 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read an array of the specific SecUserPassword record instances identified by the duplicate key SetStampIdx.
@@ -238,5 +238,5 @@ public interface ICFSecSecUserPasswordTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserPassword[] readRecBySetStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime PWSetStamp );
+		$implIJavaAtomType$ PWSetStamp );
 }

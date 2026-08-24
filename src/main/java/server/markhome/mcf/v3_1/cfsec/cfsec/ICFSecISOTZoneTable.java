@@ -90,7 +90,7 @@ public interface ICFSecISOTZoneTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteISOTZoneByIdIdx( ICFSecAuthorization Authorization,
-		Short argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the ISOTZone instances identified by the key OffsetIdx.
 	 *
@@ -101,8 +101,8 @@ public interface ICFSecISOTZoneTable
 	 *	@param	TZMinOffset	The ISOTZone key attribute of the instance generating the id.
 	 */
 	void deleteISOTZoneByOffsetIdx( ICFSecAuthorization Authorization,
-		short argTZHourOffset,
-		short argTZMinOffset );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTZHourOffset,
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTZMinOffset );
 
 	/**
 	 *	Delete the ISOTZone instances identified by the key OffsetIdx.
@@ -121,7 +121,7 @@ public interface ICFSecISOTZoneTable
 	 *	@param	TZName	The ISOTZone key attribute of the instance generating the id.
 	 */
 	void deleteISOTZoneByUTZNameIdx( ICFSecAuthorization Authorization,
-		String argTZName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTZName );
 
 	/**
 	 *	Delete the ISOTZone instances identified by the key UTZNameIdx.
@@ -140,7 +140,7 @@ public interface ICFSecISOTZoneTable
 	 *	@param	Iso8601	The ISOTZone key attribute of the instance generating the id.
 	 */
 	void deleteISOTZoneByIso8601Idx( ICFSecAuthorization Authorization,
-		String argIso8601 );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argIso8601 );
 
 	/**
 	 *	Delete the ISOTZone instances identified by the key Iso8601Idx.
@@ -164,7 +164,7 @@ public interface ICFSecISOTZoneTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOTZone readDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived ISOTZone record instance by primary key.
@@ -177,7 +177,7 @@ public interface ICFSecISOTZoneTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOTZone lockDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all ISOTZone instances.
@@ -199,7 +199,7 @@ public interface ICFSecISOTZoneTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOTZone readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOTZoneId );
+		$implIJavaAtomType$ ISOTZoneId );
 
 	/**
 	 *	Read an array of the derived ISOTZone record instances identified by the duplicate key OffsetIdx.
@@ -213,8 +213,8 @@ public interface ICFSecISOTZoneTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOTZone[] readDerivedByOffsetIdx( ICFSecAuthorization Authorization,
-		short TZHourOffset,
-		short TZMinOffset );
+		$implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
 	/**
 	 *	Read the derived ISOTZone record instance identified by the unique key UTZNameIdx.
@@ -227,7 +227,7 @@ public interface ICFSecISOTZoneTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOTZone readDerivedByUTZNameIdx( ICFSecAuthorization Authorization,
-		String TZName );
+		$implIJavaAtomType$ TZName );
 
 	/**
 	 *	Read an array of the derived ISOTZone record instances identified by the duplicate key Iso8601Idx.
@@ -239,7 +239,7 @@ public interface ICFSecISOTZoneTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOTZone[] readDerivedByIso8601Idx( ICFSecAuthorization Authorization,
-		String Iso8601 );
+		$implIJavaAtomType$ Iso8601 );
 
 	/**
 	 *	Read the specific ISOTZone record instance identified by the primary key.
@@ -254,7 +254,7 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone readRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific ISOTZone record instance identified by the primary key.
@@ -269,7 +269,7 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone lockRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific ISOTZone record instances.
@@ -293,7 +293,7 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOTZoneId );
+		$implIJavaAtomType$ ISOTZoneId );
 
 	/**
 	 *	Read an array of the specific ISOTZone record instances identified by the duplicate key OffsetIdx.
@@ -309,8 +309,8 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone[] readRecByOffsetIdx( ICFSecAuthorization Authorization,
-		short TZHourOffset,
-		short TZMinOffset );
+		$implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset );
 
 	/**
 	 *	Read the specific ISOTZone record instance identified by the unique key UTZNameIdx.
@@ -325,7 +325,7 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone readRecByUTZNameIdx( ICFSecAuthorization Authorization,
-		String TZName );
+		$implIJavaAtomType$ TZName );
 
 	/**
 	 *	Read an array of the specific ISOTZone record instances identified by the duplicate key Iso8601Idx.
@@ -339,5 +339,5 @@ public interface ICFSecISOTZoneTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOTZone[] readRecByIso8601Idx( ICFSecAuthorization Authorization,
-		String Iso8601 );
+		$implIJavaAtomType$ Iso8601 );
 }

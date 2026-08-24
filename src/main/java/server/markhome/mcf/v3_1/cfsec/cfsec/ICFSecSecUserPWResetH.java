@@ -71,15 +71,15 @@ public interface ICFSecSecUserPWResetH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 requiredSecUserId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecUserId );
 
-	public String getRequiredSentToEMailAddr();
-	public void setRequiredSentToEMailAddr( String value );
-	public ICFLibUuid6 getRequiredPasswordResetUuid6();
-	public void setRequiredPasswordResetUuid6( ICFLibUuid6 value );
-	public boolean getRequiredNewAccount();
-	public void setRequiredNewAccount( boolean value );
+	public $implIJavaAtomType$ getRequiredSentToEMailAddr();
+	public void setRequiredSentToEMailAddr( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPasswordResetUuid6();
+	public void setRequiredPasswordResetUuid6( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredNewAccount();
+	public void setRequiredNewAccount( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

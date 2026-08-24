@@ -90,7 +90,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserEMConfByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key UUuid6Idx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	EMConfirmationUuid6	The SecUserEMConf key attribute of the instance generating the id.
 	 */
 	void deleteSecUserEMConfByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 argEMConfirmationUuid6 );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argEMConfirmationUuid6 );
 
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key UUuid6Idx.
@@ -118,7 +118,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	ConfirmEMailAddr	The SecUserEMConf key attribute of the instance generating the id.
 	 */
 	void deleteSecUserEMConfByConfEMAddrIdx( ICFSecAuthorization Authorization,
-		String argConfirmEMailAddr );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argConfirmEMailAddr );
 
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key ConfEMAddrIdx.
@@ -137,7 +137,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	EMailSentStamp	The SecUserEMConf key attribute of the instance generating the id.
 	 */
 	void deleteSecUserEMConfBySentStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime argEMailSentStamp );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argEMailSentStamp );
 
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key SentStampIdx.
@@ -156,7 +156,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@param	NewAccount	The SecUserEMConf key attribute of the instance generating the id.
 	 */
 	void deleteSecUserEMConfByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean argNewAccount );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argNewAccount );
 
 	/**
 	 *	Delete the SecUserEMConf instances identified by the key NewAcctIdx.
@@ -180,7 +180,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecUserEMConf record instance by primary key.
@@ -193,7 +193,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecUserEMConf instances.
@@ -215,7 +215,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the derived SecUserEMConf record instance identified by the unique key UUuid6Idx.
@@ -228,7 +228,7 @@ public interface ICFSecSecUserEMConfTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUserEMConf readDerivedByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 EMConfirmationUuid6 );
+		$implIJavaAtomType$ EMConfirmationUuid6 );
 
 	/**
 	 *	Read an array of the derived SecUserEMConf record instances identified by the duplicate key ConfEMAddrIdx.
@@ -240,7 +240,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserEMConf[] readDerivedByConfEMAddrIdx( ICFSecAuthorization Authorization,
-		String ConfirmEMailAddr );
+		$implIJavaAtomType$ ConfirmEMailAddr );
 
 	/**
 	 *	Read an array of the derived SecUserEMConf record instances identified by the duplicate key SentStampIdx.
@@ -252,7 +252,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserEMConf[] readDerivedBySentStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime EMailSentStamp );
+		$implIJavaAtomType$ EMailSentStamp );
 
 	/**
 	 *	Read an array of the derived SecUserEMConf record instances identified by the duplicate key NewAcctIdx.
@@ -264,7 +264,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUserEMConf[] readDerivedByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount );
+		$implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read the specific SecUserEMConf record instance identified by the primary key.
@@ -279,7 +279,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecUserEMConf record instance identified by the primary key.
@@ -294,7 +294,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecUserEMConf record instances.
@@ -313,7 +313,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@return All the specific SecUserEMConf instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUserEMConf[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read the specific SecUserEMConf record instance identified by the unique key IdIdx.
@@ -328,7 +328,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the specific SecUserEMConf record instance identified by the unique key UUuid6Idx.
@@ -343,7 +343,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf readRecByUUuid6Idx( ICFSecAuthorization Authorization,
-		ICFLibUuid6 EMConfirmationUuid6 );
+		$implIJavaAtomType$ EMConfirmationUuid6 );
 
 	/**
 	 *	Read an array of the specific SecUserEMConf record instances identified by the duplicate key ConfEMAddrIdx.
@@ -357,7 +357,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] readRecByConfEMAddrIdx( ICFSecAuthorization Authorization,
-		String ConfirmEMailAddr );
+		$implIJavaAtomType$ ConfirmEMailAddr );
 
 	/**
 	 *	Read an array of the specific SecUserEMConf record instances identified by the duplicate key SentStampIdx.
@@ -371,7 +371,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] readRecBySentStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime EMailSentStamp );
+		$implIJavaAtomType$ EMailSentStamp );
 
 	/**
 	 *	Read an array of the specific SecUserEMConf record instances identified by the duplicate key NewAcctIdx.
@@ -385,7 +385,7 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] readRecByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount );
+		$implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read a page array of the specific SecUserEMConf record instances identified by the duplicate key ConfEMAddrIdx.
@@ -399,8 +399,8 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] pageRecByConfEMAddrIdx( ICFSecAuthorization Authorization,
-		String ConfirmEMailAddr,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ ConfirmEMailAddr,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page array of the specific SecUserEMConf record instances identified by the duplicate key SentStampIdx.
@@ -414,8 +414,8 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] pageRecBySentStampIdx( ICFSecAuthorization Authorization,
-		LocalDateTime EMailSentStamp,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ EMailSentStamp,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page array of the specific SecUserEMConf record instances identified by the duplicate key NewAcctIdx.
@@ -429,6 +429,6 @@ public interface ICFSecSecUserEMConfTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUserEMConf[] pageRecByNewAcctIdx( ICFSecAuthorization Authorization,
-		boolean NewAccount,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ NewAccount,
+		$implIJavaOptAtomType$ priorSecUserId );
 }

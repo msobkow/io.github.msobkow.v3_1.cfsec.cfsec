@@ -187,18 +187,18 @@ public interface ICFSecClusterObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	$implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	$implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param $implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( $implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -274,25 +274,25 @@ public interface ICFSecClusterObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Get the required String attribute FullDomName.
+	 *	Get the required $implIJavaAtomType$ attribute FullDomName.
 	 *
-	 *	@return	The required String attribute FullDomName.
+	 *	@return	The required $implIJavaAtomType$ attribute FullDomName.
 	 */
-	String getRequiredFullDomName();
+	$implIJavaAtomType$ getRequiredFullDomName();
 
 	/**
-	 *	Get the required String attribute Description.
+	 *	Get the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The required String attribute Description.
+	 *	@return	The required $implIJavaAtomType$ attribute Description.
 	 */
-	String getRequiredDescription();
+	$implIJavaAtomType$ getRequiredDescription();
 
 	/**
 	 *	Internal use only.

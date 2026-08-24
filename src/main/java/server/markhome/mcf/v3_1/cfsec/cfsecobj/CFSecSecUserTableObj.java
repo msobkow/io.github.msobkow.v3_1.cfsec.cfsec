@@ -50,18 +50,18 @@ public class CFSecSecUserTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecUser.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecUser.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFSecSecUserObj> members;
-	private Map<ICFLibKeyHash256, ICFSecSecUserObj> allSecUser;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> allSecUser;
 	private Map< ICFSecSecUserByULoginIdxKey,
 		ICFSecSecUserObj > indexByULoginIdx;
 	private Map< ICFSecSecUserByEMAddrIdxKey,
-		Map<ICFLibKeyHash256, ICFSecSecUserObj > > indexByEMAddrIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > > indexByEMAddrIdx;
 	public static String TABLE_NAME = "SecUser";
 	public static String TABLE_DBNAME = "secuser";
 
 	public CFSecSecUserTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj>();
 		allSecUser = null;
 		indexByULoginIdx = null;
 		indexByEMAddrIdx = null;
@@ -69,7 +69,7 @@ public class CFSecSecUserTableObj
 
 	public CFSecSecUserTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj>();
 		allSecUser = null;
 		indexByULoginIdx = null;
 		indexByEMAddrIdx = null;
@@ -194,7 +194,7 @@ public class CFSecSecUserTableObj
 	@Override
 	public ICFSecSecUserObj realiseSecUser( ICFSecSecUserObj Obj ) {
 		ICFSecSecUserObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecUserObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecUserObj existingObj = members.get( pkey );
@@ -218,7 +218,7 @@ public class CFSecSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.remove( keepObj.getPKey() );
 					if( mapEMAddrIdx.size() <= 0 ) {
@@ -241,7 +241,7 @@ public class CFSecSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -272,7 +272,7 @@ public class CFSecSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -296,12 +296,12 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserObj readSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readSecUser( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecUserObj readSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecSecUserObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -320,7 +320,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readCachedSecUser( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserObj readCachedSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -336,7 +336,7 @@ public class CFSecSecUserTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecUserObj existing = readCachedSecUser( pkey );
 		if( existing == null ) {
 			return;
@@ -373,7 +373,7 @@ public class CFSecSecUserTableObj
 
 	}
 	@Override
-	public void deepDisposeSecUser( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserObj obj = readCachedSecUser( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -381,7 +381,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj lockSecUser( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserObj lockSecUser( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserObj locked = null;
 		ICFSecSecUser lockRec = schema.getCFSecBackingStore().getTableSecUser().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -405,7 +405,7 @@ public class CFSecSecUserTableObj
 	public List<ICFSecSecUserObj> readAllSecUser( boolean forceRead ) {
 		final String S_ProcName = "readAllSecUser";
 		if( ( allSecUser == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecSecUserObj>();
 			allSecUser = map;
 			ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().readAllDerived( null );
 			ICFSecSecUser rec;
@@ -461,8 +461,8 @@ public class CFSecSecUserTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -519,8 +519,8 @@ public class CFSecSecUserTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -537,10 +537,10 @@ public class CFSecSecUserTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecUserObj> pageAllSecUser(ICFLibKeyHash256 priorSecUserId )
+	public List<ICFSecSecUserObj> pageAllSecUser($implIJavaOptAtomType$ priorSecUserId )
 	{
 		final String S_ProcName = "pageAllSecUser";
-		Map<ICFLibKeyHash256, ICFSecSecUserObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserObj>();
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecSecUserObj>();
 		ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().pageAllRec( null,
 			priorSecUserId );
 		ICFSecSecUser rec;
@@ -559,28 +559,28 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserObj readSecUserByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		return( readSecUserByIdIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserObj readSecUserByIdIdx( $implIJavaAtomType$ SecUserId, boolean forceRead )
 	{
 		ICFSecSecUserObj obj = readSecUser( SecUserId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByULoginIdx( String LoginId )
+	public ICFSecSecUserObj readSecUserByULoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		return( readSecUserByULoginIdx( LoginId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByULoginIdx( String LoginId, boolean forceRead )
+	public ICFSecSecUserObj readSecUserByULoginIdx( $implIJavaAtomType$ LoginId, boolean forceRead )
 	{
 		if( indexByULoginIdx == null ) {
 			indexByULoginIdx = new HashMap< ICFSecSecUserByULoginIdxKey,
@@ -606,29 +606,29 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress )
+	public List<ICFSecSecUserObj> readSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress )
 	{
 		return( readSecUserByEMAddrIdx( EMailAddress,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecUserObj> readSecUserByEMAddrIdx( String EMailAddress,
+	public List<ICFSecSecUserObj> readSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecUserByEMAddrIdx";
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
-		Map<ICFLibKeyHash256, ICFSecSecUserObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> dict;
 		if( indexByEMAddrIdx == null ) {
 			indexByEMAddrIdx = new HashMap< ICFSecSecUserByEMAddrIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecUserObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > >();
 		}
 		if( ( ! forceRead ) && indexByEMAddrIdx.containsKey( key ) ) {
 			dict = indexByEMAddrIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj>();
 			ICFSecSecUserObj obj;
 			ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().readDerivedByEMAddrIdx( null,
 				EMailAddress );
@@ -686,8 +686,8 @@ public class CFSecSecUserTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -699,7 +699,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readCachedSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserObj readCachedSecUserByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserObj obj = null;
 		obj = readCachedSecUser( SecUserId );
@@ -707,7 +707,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readCachedSecUserByULoginIdx( String LoginId )
+	public ICFSecSecUserObj readCachedSecUserByULoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecUserObj obj = null;
 		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
@@ -743,14 +743,14 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( String EMailAddress )
+	public List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress )
 	{
 		final String S_ProcName = "readCachedSecUserByEMAddrIdx";
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		ArrayList<ICFSecSecUserObj> arrayList = new ArrayList<ICFSecSecUserObj>();
 		if( indexByEMAddrIdx != null ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> dict;
 			if( indexByEMAddrIdx.containsKey( key ) ) {
 				dict = indexByEMAddrIdx.get( key );
 				int len = dict.size();
@@ -808,8 +808,8 @@ public class CFSecSecUserTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -820,7 +820,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deepDisposeSecUserByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserObj obj = readCachedSecUserByIdIdx( SecUserId );
 		if( obj != null ) {
@@ -829,7 +829,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserByULoginIdx( String LoginId )
+	public void deepDisposeSecUserByULoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecUserObj obj = readCachedSecUserByULoginIdx( LoginId );
 		if( obj != null ) {
@@ -838,7 +838,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserByEMAddrIdx( String EMailAddress )
+	public void deepDisposeSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress )
 	{
 		final String S_ProcName = "deepDisposeSecUserByEMAddrIdx";
 		ICFSecSecUserObj obj;
@@ -864,8 +864,8 @@ public class CFSecSecUserTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( String EMailAddress,
-		ICFLibKeyHash256 priorSecUserId )
+	public List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress,
+		$implIJavaOptAtomType$ priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserByEMAddrIdx";
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
@@ -906,7 +906,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deleteSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deleteSecUserByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserObj obj = readSecUser(SecUserId);
 		if( obj != null ) {
@@ -936,7 +936,7 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deleteSecUserByULoginIdx( String LoginId )
+	public void deleteSecUserByULoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		if( indexByULoginIdx == null ) {
 			indexByULoginIdx = new HashMap< ICFSecSecUserByULoginIdxKey,
@@ -959,16 +959,16 @@ public class CFSecSecUserTableObj
 	}
 
 	@Override
-	public void deleteSecUserByEMAddrIdx( String EMailAddress )
+	public void deleteSecUserByEMAddrIdx( $implIJavaAtomType$ EMailAddress )
 	{
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		if( indexByEMAddrIdx == null ) {
 			indexByEMAddrIdx = new HashMap< ICFSecSecUserByEMAddrIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecUserObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj > >();
 		}
 		if( indexByEMAddrIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserObj> dict = indexByEMAddrIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserObj> dict = indexByEMAddrIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecUser().deleteSecUserByEMAddrIdx( null,
 				EMailAddress );
 			Iterator<ICFSecSecUserObj> iter = dict.values().iterator();

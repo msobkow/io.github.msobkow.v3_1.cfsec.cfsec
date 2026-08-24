@@ -101,7 +101,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	The SecSysRole-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey );
+	ICFSecSecSysRoleObj readSecSysRole( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecSysRole-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	The SecSysRole-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey,
+	ICFSecSecSysRoleObj readSecSysRole( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecSysRoleObj readCachedSecSysRole( ICFLibKeyHash256 pkey );
+	ICFSecSecSysRoleObj readCachedSecSysRole( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecSysRole( ICFSecSecSysRoleObj obj );
 
-	void deepDisposeSecSysRole( ICFLibKeyHash256 pkey );
+	void deepDisposeSecSysRole( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecSysRoleObj lockSecSysRole( ICFLibKeyHash256 pkey );
+	ICFSecSecSysRoleObj lockSecSysRole( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecSysRole-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
+	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( $implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Get the CFSecSecSysRoleObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId,
+	ICFSecSecSysRoleObj readSecSysRoleByIdIdx( $implIJavaAtomType$ SecSysRoleId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByUNameIdx(String Name );
+	ICFSecSecSysRoleObj readSecSysRoleByUNameIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFSecSecSysRoleObj instance for the unique UNameIdx key.
@@ -182,16 +182,16 @@ public interface ICFSecSecSysRoleTableObj
 	 *	@return	CFSecSecSysRoleObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysRoleObj readSecSysRoleByUNameIdx(String Name,
+	ICFSecSecSysRoleObj readSecSysRoleByUNameIdx($implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
+	ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( $implIJavaAtomType$ SecSysRoleId );
 
-	ICFSecSecSysRoleObj readCachedSecSysRoleByUNameIdx( String Name );
+	ICFSecSecSysRoleObj readCachedSecSysRoleByUNameIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
+	void deepDisposeSecSysRoleByIdIdx( $implIJavaAtomType$ SecSysRoleId );
 
-	void deepDisposeSecSysRoleByUNameIdx( String Name );
+	void deepDisposeSecSysRoleByUNameIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -208,12 +208,12 @@ public interface ICFSecSecSysRoleTableObj
 	 *
 	 *	@param	SecSysRoleId	The SecSysRole key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId );
+	void deleteSecSysRoleByIdIdx( $implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The SecSysRole key attribute of the instance generating the id.
 	 */
-	void deleteSecSysRoleByUNameIdx(String Name );
+	void deleteSecSysRoleByUNameIdx($implIJavaAtomType$ Name );
 }

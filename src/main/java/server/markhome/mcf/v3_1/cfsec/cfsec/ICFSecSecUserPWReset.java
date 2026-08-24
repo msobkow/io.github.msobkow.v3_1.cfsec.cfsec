@@ -74,11 +74,11 @@ public interface ICFSecSecUserPWReset
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecUserId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecUserId);
 	public ICFSecSecUser getRequiredContainerUser();
 
-	public void setRequiredContainerUser(ICFLibKeyHash256 argSecUserId);
+	public void setRequiredContainerUser($implIJavaAtomType$ argSecUserId);
 
 	public void setRequiredContainerUser(ICFSecSecUser argObj);
 
@@ -86,17 +86,17 @@ public interface ICFSecSecUserPWReset
 
 	public void setRequiredContainerUser(ICFSecPubSecUser argObj);
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredSentToEMailAddr();
-	public void setRequiredSentToEMailAddr( String value );
-	public ICFLibUuid6 getRequiredPasswordResetUuid6();
-	public void setRequiredPasswordResetUuid6( ICFLibUuid6 value );
-	public boolean getRequiredNewAccount();
-	public void setRequiredNewAccount( boolean value );
+	public $implIJavaAtomType$ getRequiredSentToEMailAddr();
+	public void setRequiredSentToEMailAddr( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPasswordResetUuid6();
+	public void setRequiredPasswordResetUuid6( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredNewAccount();
+	public void setRequiredNewAccount( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

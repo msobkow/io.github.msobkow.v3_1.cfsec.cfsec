@@ -74,21 +74,21 @@ public interface ICFSecISOCtry
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Short getPKey();
-	public void setPKey(Short requiredISOCtryId);
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredISOCtryId);
 	public List<ICFSecISOCtryCcy> getOptionalComponentsCcy();
 
 	public List<ICFSecISOCtryLang> getOptionalComponentsLang();
 
-	public short getRequiredISOCtryId();
-	public void setRequiredISOCtryId( short value );
+	public $implIJavaAtomType$ getRequiredISOCtryId();
+	public void setRequiredISOCtryId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredISOCode();
-	public void setRequiredISOCode( String value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredISOCode();
+	public void setRequiredISOCode( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

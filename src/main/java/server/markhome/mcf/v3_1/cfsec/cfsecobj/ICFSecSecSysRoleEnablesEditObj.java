@@ -153,18 +153,18 @@ public interface ICFSecSecSysRoleEnablesEditObj
 	void setRequiredParentEnableGroup( ICFSecSecSysGrpObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysRoleId();
+	$implIJavaAtomType$ getRequiredSecSysRoleId();
 
 	/**
-	 *	Get the required String attribute EnableName.
+	 *	Get the required $implIJavaAtomType$ attribute EnableName.
 	 *
-	 *	@return	The required String attribute EnableName.
+	 *	@return	The required $implIJavaAtomType$ attribute EnableName.
 	 */
-	String getRequiredEnableName();
+	$implIJavaAtomType$ getRequiredEnableName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

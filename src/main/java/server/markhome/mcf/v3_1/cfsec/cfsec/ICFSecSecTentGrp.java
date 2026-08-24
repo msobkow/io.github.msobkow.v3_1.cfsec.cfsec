@@ -75,18 +75,18 @@ public interface ICFSecSecTentGrp
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecTentGrpId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecTentGrpId);
 	public List<ICFSecSecTentGrpMemb> getOptionalChildrenMembByGrp();
 
-	public ICFLibKeyHash256 getRequiredSecTentGrpId();
-	public void setRequiredSecTentGrpId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecTentGrpId();
+	public void setRequiredSecTentGrpId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant($implIJavaAtomType$ argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 
@@ -96,7 +96,7 @@ public interface ICFSecSecTentGrp
 
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
 
-	public void setRequiredContainerSysGrp(String argName);
+	public void setRequiredContainerSysGrp($implIJavaAtomType$ argName);
 
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
 
@@ -104,10 +104,10 @@ public interface ICFSecSecTentGrp
 
 	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredTenantId();
+	public void setRequiredTenantId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

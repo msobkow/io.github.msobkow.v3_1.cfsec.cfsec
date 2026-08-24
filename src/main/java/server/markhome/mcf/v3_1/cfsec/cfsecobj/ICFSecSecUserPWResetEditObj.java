@@ -132,53 +132,53 @@ public interface ICFSecSecUserPWResetEditObj
 	void setRequiredContainerUser( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required String attribute SentToEMailAddr.
+	 *	Get the required $implIJavaAtomType$ attribute SentToEMailAddr.
 	 *
-	 *	@return	The required String attribute SentToEMailAddr.
+	 *	@return	The required $implIJavaAtomType$ attribute SentToEMailAddr.
 	 */
-	String getRequiredSentToEMailAddr();
+	$implIJavaAtomType$ getRequiredSentToEMailAddr();
 
 	/**
-	 *	Set the required String attribute SentToEMailAddr.
+	 *	Set the required $implIJavaAtomType$ attribute SentToEMailAddr.
 	 *
-	 *	@param value The required String attribute SentToEMailAddr value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SentToEMailAddr value to be applied.
 	 */
-	void setRequiredSentToEMailAddr(String value);
+	void setRequiredSentToEMailAddr($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibUuid6 attribute PasswordResetUuid6.
+	 *	Get the required $implIJavaAtomType$ attribute PasswordResetUuid6.
 	 *
-	 *	@return	The required ICFLibUuid6 attribute PasswordResetUuid6.
+	 *	@return	The required $implIJavaAtomType$ attribute PasswordResetUuid6.
 	 */
-	ICFLibUuid6 getRequiredPasswordResetUuid6();
+	$implIJavaAtomType$ getRequiredPasswordResetUuid6();
 
 	/**
-	 *	Set the required ICFLibUuid6 attribute PasswordResetUuid6.
+	 *	Set the required $implIJavaAtomType$ attribute PasswordResetUuid6.
 	 *
-	 *	@param value The required ICFLibUuid6 attribute PasswordResetUuid6 value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PasswordResetUuid6 value to be applied.
 	 */
-	void setRequiredPasswordResetUuid6(ICFLibUuid6 value);
+	void setRequiredPasswordResetUuid6($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required boolean attribute NewAccount.
+	 *	Get the required $implIJavaAtomType$ attribute NewAccount.
 	 *
-	 *	@return	The required boolean attribute NewAccount.
+	 *	@return	The required $implIJavaAtomType$ attribute NewAccount.
 	 */
-	boolean getRequiredNewAccount();
+	$implIJavaAtomType$ getRequiredNewAccount();
 
 	/**
-	 *	Set the required boolean attribute NewAccount.
+	 *	Set the required $implIJavaAtomType$ attribute NewAccount.
 	 *
-	 *	@param value The required boolean attribute NewAccount value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute NewAccount value to be applied.
 	 */
-	void setRequiredNewAccount(boolean value);
+	void setRequiredNewAccount($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -50,14 +50,14 @@ public class CFSecTableInfoTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecTableInfo.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecTableInfo.CLASS_CODE;
-	private Map<Integer, ICFSecTableInfoObj> members;
-	private Map<Integer, ICFSecTableInfoObj> allTableInfo;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> allTableInfo;
 	private Map< ICFSecTableInfoByTableNameIdxKey,
 		ICFSecTableInfoObj > indexByTableNameIdx;
 	private Map< ICFSecTableInfoBySuperNameIdxKey,
-		Map<Integer, ICFSecTableInfoObj > > indexBySuperNameIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > > indexBySuperNameIdx;
 	private Map< ICFSecTableInfoBySchemaNameIdxKey,
-		Map<Integer, ICFSecTableInfoObj > > indexBySchemaNameIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > > indexBySchemaNameIdx;
 	private Map< ICFSecTableInfoBySchemaBkCodeIdxKey,
 		ICFSecTableInfoObj > indexBySchemaBkCodeIdx;
 	private Map< ICFSecTableInfoBySchemaRTCodeIdxKey,
@@ -67,7 +67,7 @@ public class CFSecTableInfoTableObj
 
 	public CFSecTableInfoTableObj() {
 		schema = null;
-		members = new HashMap<Integer, ICFSecTableInfoObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj>();
 		allTableInfo = null;
 		indexByTableNameIdx = null;
 		indexBySuperNameIdx = null;
@@ -78,7 +78,7 @@ public class CFSecTableInfoTableObj
 
 	public CFSecTableInfoTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<Integer, ICFSecTableInfoObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj>();
 		allTableInfo = null;
 		indexByTableNameIdx = null;
 		indexBySuperNameIdx = null;
@@ -209,7 +209,7 @@ public class CFSecTableInfoTableObj
 	@Override
 	public ICFSecTableInfoObj realiseTableInfo( ICFSecTableInfoObj Obj ) {
 		ICFSecTableInfoObj obj = Obj;
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecTableInfoObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecTableInfoObj existingObj = members.get( pkey );
@@ -233,7 +233,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
-				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
 					mapSuperNameIdx.remove( keepObj.getPKey() );
 					if( mapSuperNameIdx.size() <= 0 ) {
@@ -246,7 +246,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
-				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
 					mapSchemaNameIdx.remove( keepObj.getPKey() );
 					if( mapSchemaNameIdx.size() <= 0 ) {
@@ -284,7 +284,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
-				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
 					mapSuperNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -294,7 +294,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
-				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
 					mapSchemaNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -340,7 +340,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
-				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
 					mapSuperNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -350,7 +350,7 @@ public class CFSecTableInfoTableObj
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
-				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
 					mapSchemaNameIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -389,12 +389,12 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfo( Integer pkey ) {
+	public ICFSecTableInfoObj readTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readTableInfo( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfo( Integer pkey, boolean forceRead ) {
+	public ICFSecTableInfoObj readTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecTableInfoObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -413,7 +413,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readCachedTableInfo( Integer pkey ) {
+	public ICFSecTableInfoObj readCachedTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTableInfoObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -429,7 +429,7 @@ public class CFSecTableInfoTableObj
 		if( obj == null ) {
 			return;
 		}
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecTableInfoObj existing = readCachedTableInfo( pkey );
 		if( existing == null ) {
 			return;
@@ -487,7 +487,7 @@ public class CFSecTableInfoTableObj
 
 	}
 	@Override
-	public void deepDisposeTableInfo( Integer pkey ) {
+	public void deepDisposeTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTableInfoObj obj = readCachedTableInfo( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -495,7 +495,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj lockTableInfo( Integer pkey ) {
+	public ICFSecTableInfoObj lockTableInfo( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTableInfoObj locked = null;
 		ICFSecTableInfo lockRec = schema.getCFSecBackingStore().getTableTableInfo().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -519,7 +519,7 @@ public class CFSecTableInfoTableObj
 	public List<ICFSecTableInfoObj> readAllTableInfo( boolean forceRead ) {
 		final String S_ProcName = "readAllTableInfo";
 		if( ( allTableInfo == null ) || forceRead ) {
-			Map<Integer, ICFSecTableInfoObj> map = new HashMap<Integer,ICFSecTableInfoObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecTableInfoObj>();
 			allTableInfo = map;
 			ICFSecTableInfo[] recList = schema.getCFSecBackingStore().getTableTableInfo().readAllDerived( null );
 			ICFSecTableInfo rec;
@@ -575,8 +575,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -633,8 +633,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -645,28 +645,28 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoByIdIdx( int TableInfoId )
+	public ICFSecTableInfoObj readTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId )
 	{
 		return( readTableInfoByIdIdx( TableInfoId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoByIdIdx( int TableInfoId, boolean forceRead )
+	public ICFSecTableInfoObj readTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId, boolean forceRead )
 	{
 		ICFSecTableInfoObj obj = readTableInfo( TableInfoId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoByTableNameIdx( String TableName )
+	public ICFSecTableInfoObj readTableInfoByTableNameIdx( $implIJavaAtomType$ TableName )
 	{
 		return( readTableInfoByTableNameIdx( TableName,
 			false ) );
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoByTableNameIdx( String TableName, boolean forceRead )
+	public ICFSecTableInfoObj readTableInfoByTableNameIdx( $implIJavaAtomType$ TableName, boolean forceRead )
 	{
 		if( indexByTableNameIdx == null ) {
 			indexByTableNameIdx = new HashMap< ICFSecTableInfoByTableNameIdxKey,
@@ -692,29 +692,29 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName )
+	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName )
 	{
 		return( readTableInfoBySuperNameIdx( SuperName,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName,
+	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTableInfoBySuperNameIdx";
 		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
-		Map<Integer, ICFSecTableInfoObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict;
 		if( indexBySuperNameIdx == null ) {
 			indexBySuperNameIdx = new HashMap< ICFSecTableInfoBySuperNameIdxKey,
-				Map< Integer, ICFSecTableInfoObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > >();
 		}
 		if( ( ! forceRead ) && indexBySuperNameIdx.containsKey( key ) ) {
 			dict = indexBySuperNameIdx.get( key );
 		}
 		else {
-			dict = new HashMap<Integer, ICFSecTableInfoObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj>();
 			ICFSecTableInfoObj obj;
 			ICFSecTableInfo[] recList = schema.getCFSecBackingStore().getTableTableInfo().readDerivedBySuperNameIdx( null,
 				SuperName );
@@ -772,8 +772,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -785,29 +785,29 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( String SchemaName )
+	public List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName )
 	{
 		return( readTableInfoBySchemaNameIdx( SchemaName,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( String SchemaName,
+	public List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTableInfoBySchemaNameIdx";
 		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
-		Map<Integer, ICFSecTableInfoObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict;
 		if( indexBySchemaNameIdx == null ) {
 			indexBySchemaNameIdx = new HashMap< ICFSecTableInfoBySchemaNameIdxKey,
-				Map< Integer, ICFSecTableInfoObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > >();
 		}
 		if( ( ! forceRead ) && indexBySchemaNameIdx.containsKey( key ) ) {
 			dict = indexBySchemaNameIdx.get( key );
 		}
 		else {
-			dict = new HashMap<Integer, ICFSecTableInfoObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj>();
 			ICFSecTableInfoObj obj;
 			ICFSecTableInfo[] recList = schema.getCFSecBackingStore().getTableTableInfo().readDerivedBySchemaNameIdx( null,
 				SchemaName );
@@ -865,8 +865,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -878,8 +878,8 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode )
+	public ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode )
 	{
 		return( readTableInfoBySchemaBkCodeIdx( SchemaName,
 			BackingClassCode,
@@ -887,8 +887,8 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode, boolean forceRead )
+	public ICFSecTableInfoObj readTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode, boolean forceRead )
 	{
 		if( indexBySchemaBkCodeIdx == null ) {
 			indexBySchemaBkCodeIdx = new HashMap< ICFSecTableInfoBySchemaBkCodeIdxKey,
@@ -916,14 +916,14 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx( int RuntimeClassCode )
+	public ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode )
 	{
 		return( readTableInfoBySchemaRTCodeIdx( RuntimeClassCode,
 			false ) );
 	}
 
 	@Override
-	public ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx( int RuntimeClassCode, boolean forceRead )
+	public ICFSecTableInfoObj readTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode, boolean forceRead )
 	{
 		if( indexBySchemaRTCodeIdx == null ) {
 			indexBySchemaRTCodeIdx = new HashMap< ICFSecTableInfoBySchemaRTCodeIdxKey,
@@ -949,7 +949,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readCachedTableInfoByIdIdx( int TableInfoId )
+	public ICFSecTableInfoObj readCachedTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId )
 	{
 		ICFSecTableInfoObj obj = null;
 		obj = readCachedTableInfo( TableInfoId );
@@ -957,7 +957,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( String TableName )
+	public ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( $implIJavaAtomType$ TableName )
 	{
 		ICFSecTableInfoObj obj = null;
 		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
@@ -993,14 +993,14 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( String SuperName )
+	public List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName )
 	{
 		final String S_ProcName = "readCachedTableInfoBySuperNameIdx";
 		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
 		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>();
 		if( indexBySuperNameIdx != null ) {
-			Map<Integer, ICFSecTableInfoObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict;
 			if( indexBySuperNameIdx.containsKey( key ) ) {
 				dict = indexBySuperNameIdx.get( key );
 				int len = dict.size();
@@ -1058,8 +1058,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1070,14 +1070,14 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( String SchemaName )
+	public List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName )
 	{
 		final String S_ProcName = "readCachedTableInfoBySchemaNameIdx";
 		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>();
 		if( indexBySchemaNameIdx != null ) {
-			Map<Integer, ICFSecTableInfoObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict;
 			if( indexBySchemaNameIdx.containsKey( key ) ) {
 				dict = indexBySchemaNameIdx.get( key );
 				int len = dict.size();
@@ -1135,8 +1135,8 @@ public class CFSecTableInfoTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1147,8 +1147,8 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readCachedTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode )
+	public ICFSecTableInfoObj readCachedTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode )
 	{
 		ICFSecTableInfoObj obj = null;
 		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
@@ -1185,7 +1185,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public ICFSecTableInfoObj readCachedTableInfoBySchemaRTCodeIdx( int RuntimeClassCode )
+	public ICFSecTableInfoObj readCachedTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode )
 	{
 		ICFSecTableInfoObj obj = null;
 		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
@@ -1221,7 +1221,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoByIdIdx( int TableInfoId )
+	public void deepDisposeTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId )
 	{
 		ICFSecTableInfoObj obj = readCachedTableInfoByIdIdx( TableInfoId );
 		if( obj != null ) {
@@ -1230,7 +1230,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoByTableNameIdx( String TableName )
+	public void deepDisposeTableInfoByTableNameIdx( $implIJavaAtomType$ TableName )
 	{
 		ICFSecTableInfoObj obj = readCachedTableInfoByTableNameIdx( TableName );
 		if( obj != null ) {
@@ -1239,7 +1239,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoBySuperNameIdx( String SuperName )
+	public void deepDisposeTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName )
 	{
 		final String S_ProcName = "deepDisposeTableInfoBySuperNameIdx";
 		ICFSecTableInfoObj obj;
@@ -1256,7 +1256,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoBySchemaNameIdx( String SchemaName )
+	public void deepDisposeTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName )
 	{
 		final String S_ProcName = "deepDisposeTableInfoBySchemaNameIdx";
 		ICFSecTableInfoObj obj;
@@ -1273,8 +1273,8 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode )
+	public void deepDisposeTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode )
 	{
 		ICFSecTableInfoObj obj = readCachedTableInfoBySchemaBkCodeIdx( SchemaName,
 				BackingClassCode );
@@ -1284,7 +1284,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deepDisposeTableInfoBySchemaRTCodeIdx( int RuntimeClassCode )
+	public void deepDisposeTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode )
 	{
 		ICFSecTableInfoObj obj = readCachedTableInfoBySchemaRTCodeIdx( RuntimeClassCode );
 		if( obj != null ) {
@@ -1311,7 +1311,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoByIdIdx( int TableInfoId )
+	public void deleteTableInfoByIdIdx( $implIJavaAtomType$ TableInfoId )
 	{
 		ICFSecTableInfoObj obj = readTableInfo(TableInfoId);
 		if( obj != null ) {
@@ -1341,7 +1341,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoByTableNameIdx( String TableName )
+	public void deleteTableInfoByTableNameIdx( $implIJavaAtomType$ TableName )
 	{
 		if( indexByTableNameIdx == null ) {
 			indexByTableNameIdx = new HashMap< ICFSecTableInfoByTableNameIdxKey,
@@ -1364,16 +1364,16 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoBySuperNameIdx( String SuperName )
+	public void deleteTableInfoBySuperNameIdx( $implIJavaAtomType$ SuperName )
 	{
 		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
 		if( indexBySuperNameIdx == null ) {
 			indexBySuperNameIdx = new HashMap< ICFSecTableInfoBySuperNameIdxKey,
-				Map< Integer, ICFSecTableInfoObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > >();
 		}
 		if( indexBySuperNameIdx.containsKey( key ) ) {
-			Map<Integer, ICFSecTableInfoObj> dict = indexBySuperNameIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict = indexBySuperNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableTableInfo().deleteTableInfoBySuperNameIdx( null,
 				SuperName );
 			Iterator<ICFSecTableInfoObj> iter = dict.values().iterator();
@@ -1398,16 +1398,16 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoBySchemaNameIdx( String SchemaName )
+	public void deleteTableInfoBySchemaNameIdx( $implIJavaAtomType$ SchemaName )
 	{
 		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		if( indexBySchemaNameIdx == null ) {
 			indexBySchemaNameIdx = new HashMap< ICFSecTableInfoBySchemaNameIdxKey,
-				Map< Integer, ICFSecTableInfoObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj > >();
 		}
 		if( indexBySchemaNameIdx.containsKey( key ) ) {
-			Map<Integer, ICFSecTableInfoObj> dict = indexBySchemaNameIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTableInfoObj> dict = indexBySchemaNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableTableInfo().deleteTableInfoBySchemaNameIdx( null,
 				SchemaName );
 			Iterator<ICFSecTableInfoObj> iter = dict.values().iterator();
@@ -1432,8 +1432,8 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoBySchemaBkCodeIdx( String SchemaName,
-		int BackingClassCode )
+	public void deleteTableInfoBySchemaBkCodeIdx( $implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode )
 	{
 		if( indexBySchemaBkCodeIdx == null ) {
 			indexBySchemaBkCodeIdx = new HashMap< ICFSecTableInfoBySchemaBkCodeIdxKey,
@@ -1460,7 +1460,7 @@ public class CFSecTableInfoTableObj
 	}
 
 	@Override
-	public void deleteTableInfoBySchemaRTCodeIdx( int RuntimeClassCode )
+	public void deleteTableInfoBySchemaRTCodeIdx( $implIJavaAtomType$ RuntimeClassCode )
 	{
 		if( indexBySchemaRTCodeIdx == null ) {
 			indexBySchemaRTCodeIdx = new HashMap< ICFSecTableInfoBySchemaRTCodeIdxKey,

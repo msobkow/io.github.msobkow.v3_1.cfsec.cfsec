@@ -90,7 +90,7 @@ public interface ICFSecISOCtryTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteISOCtryByIdIdx( ICFSecAuthorization Authorization,
-		Short argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the ISOCtry instances identified by the key ISOCodeIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecISOCtryTable
 	 *	@param	ISOCode	The ISOCtry key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryByISOCodeIdx( ICFSecAuthorization Authorization,
-		String argISOCode );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCode );
 
 	/**
 	 *	Delete the ISOCtry instances identified by the key ISOCodeIdx.
@@ -118,7 +118,7 @@ public interface ICFSecISOCtryTable
 	 *	@param	Name	The ISOCtry key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryByNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the ISOCtry instances identified by the key NameIdx.
@@ -142,7 +142,7 @@ public interface ICFSecISOCtryTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtry readDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived ISOCtry record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecISOCtryTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtry lockDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all ISOCtry instances.
@@ -177,7 +177,7 @@ public interface ICFSecISOCtryTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtry readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read the derived ISOCtry record instance identified by the unique key ISOCodeIdx.
@@ -190,7 +190,7 @@ public interface ICFSecISOCtryTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtry readDerivedByISOCodeIdx( ICFSecAuthorization Authorization,
-		String ISOCode );
+		$implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Read the derived ISOCtry record instance identified by the unique key NameIdx.
@@ -203,7 +203,7 @@ public interface ICFSecISOCtryTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtry readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific ISOCtry record instance identified by the primary key.
@@ -218,7 +218,7 @@ public interface ICFSecISOCtryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtry readRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific ISOCtry record instance identified by the primary key.
@@ -233,7 +233,7 @@ public interface ICFSecISOCtryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtry lockRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific ISOCtry record instances.
@@ -257,7 +257,7 @@ public interface ICFSecISOCtryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtry readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read the specific ISOCtry record instance identified by the unique key ISOCodeIdx.
@@ -272,7 +272,7 @@ public interface ICFSecISOCtryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtry readRecByISOCodeIdx( ICFSecAuthorization Authorization,
-		String ISOCode );
+		$implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Read the specific ISOCtry record instance identified by the unique key NameIdx.
@@ -287,5 +287,5 @@ public interface ICFSecISOCtryTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtry readRecByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 }

@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecTableInfoBySuperNameIdxKey
 {
-	public String getOptionalSuperName();
-	public void setOptionalSuperName( String value );
+	public $implIJavaAtomType$ getOptionalSuperName();
+	public void setOptionalSuperName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

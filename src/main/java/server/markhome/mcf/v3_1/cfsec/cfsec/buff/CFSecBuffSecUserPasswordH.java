@@ -53,8 +53,8 @@ public class CFSecBuffSecUserPasswordH
     implements ICFSecSecUserPasswordH, Comparable<Object>, Serializable
 {
     protected CFSecBuffSecUserPasswordHPKey pkey;
-	protected LocalDateTime requiredPWSetStamp;
-	protected String requiredPasswordHash;
+	protected $implIJavaAtomType$ requiredPWSetStamp;
+	protected $implIJavaAtomType$ requiredPasswordHash;
 
     public CFSecBuffSecUserPasswordH() {
             // The primary key member attributes are initialized on construction
@@ -135,11 +135,11 @@ public class CFSecBuffSecUserPasswordH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(getPKey().getRequiredSecUserId());
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -150,11 +150,11 @@ public class CFSecBuffSecUserPasswordH
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implIJavaAtomType$ getRequiredPWSetStamp() {
 		return(requiredPWSetStamp);
 	}
 
-	public void setRequiredPWSetStamp( LocalDateTime value ) {
+	public void setRequiredPWSetStamp( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPWSetStamp",
@@ -165,11 +165,11 @@ public class CFSecBuffSecUserPasswordH
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implIJavaAtomType$ getRequiredPasswordHash() {
 		return(requiredPasswordHash);
 	}
 
-	public void setRequiredPasswordHash( String value ) {
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPasswordHash",

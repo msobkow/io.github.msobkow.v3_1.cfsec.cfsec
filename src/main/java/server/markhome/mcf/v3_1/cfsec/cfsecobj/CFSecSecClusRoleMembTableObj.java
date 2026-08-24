@@ -333,15 +333,15 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusRoleMembObj readSecClusRoleMemb( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId ) {
+	public ICFSecSecClusRoleMembObj readSecClusRoleMemb( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId ) {
 		return( readSecClusRoleMemb( SecClusRoleId,
 			LoginId, false ) );
 	}
 
 	@Override
-	public ICFSecSecClusRoleMembObj readSecClusRoleMemb( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId, boolean forceRead ) {
+	public ICFSecSecClusRoleMembObj readSecClusRoleMemb( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId, boolean forceRead ) {
 		ICFSecSecClusRoleMembObj obj = null;
 		ICFSecSecClusRoleMemb readRec = schema.getCFSecBackingStore().getTableSecClusRoleMemb().readDerivedByIdIdx( null,
 			SecClusRoleId,
@@ -571,8 +571,8 @@ public class CFSecSecClusRoleMembTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusRoleMembObj> pageAllSecClusRoleMemb(ICFLibKeyHash256 priorSecClusRoleId,
-		String priorLoginId )
+	public List<ICFSecSecClusRoleMembObj> pageAllSecClusRoleMemb($implIJavaOptAtomType$ priorSecClusRoleId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageAllSecClusRoleMemb";
 		Map<ICFSecSecClusRoleMembPKey, ICFSecSecClusRoleMembObj> map = new HashMap<ICFSecSecClusRoleMembPKey,ICFSecSecClusRoleMembObj>();
@@ -595,8 +595,8 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusRoleMembObj readSecClusRoleMembByIdIdx( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId )
+	public ICFSecSecClusRoleMembObj readSecClusRoleMembByIdIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId )
 	{
 		return( readSecClusRoleMembByIdIdx( SecClusRoleId,
 			LoginId,
@@ -604,8 +604,8 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusRoleMembObj readSecClusRoleMembByIdIdx( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId, boolean forceRead )
+	public ICFSecSecClusRoleMembObj readSecClusRoleMembByIdIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId, boolean forceRead )
 	{
 		ICFSecSecClusRoleMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newPKey();
 		pkey.setRequiredSecClusRoleId( SecClusRoleId );
@@ -615,14 +615,14 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId )
+	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId )
 	{
 		return( readSecClusRoleMembByClusRoleIdx( SecClusRoleId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId,
+	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusRoleMembByClusRoleIdx";
@@ -708,14 +708,14 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByLoginIdx( String LoginId )
+	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		return( readSecClusRoleMembByLoginIdx( LoginId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByLoginIdx( String LoginId,
+	public List<ICFSecSecClusRoleMembObj> readSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusRoleMembByLoginIdx";
@@ -801,8 +801,8 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusRoleMembObj readCachedSecClusRoleMembByIdIdx( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId )
+	public ICFSecSecClusRoleMembObj readCachedSecClusRoleMembByIdIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusRoleMembObj obj = null;
 		ICFSecSecClusRoleMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newPKey();
@@ -815,7 +815,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readCachedSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId )
+	public List<ICFSecSecClusRoleMembObj> readCachedSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId )
 	{
 		final String S_ProcName = "readCachedSecClusRoleMembByClusRoleIdx";
 		ICFSecSecClusRoleMembByClusRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByClusRoleIdxKey();
@@ -892,7 +892,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusRoleMembObj> readCachedSecClusRoleMembByLoginIdx( String LoginId )
+	public List<ICFSecSecClusRoleMembObj> readCachedSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "readCachedSecClusRoleMembByLoginIdx";
 		ICFSecSecClusRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByLoginIdxKey();
@@ -969,8 +969,8 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusRoleMembByIdIdx( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId )
+	public void deepDisposeSecClusRoleMembByIdIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusRoleMembObj obj = readCachedSecClusRoleMembByIdIdx( SecClusRoleId,
 				LoginId );
@@ -980,7 +980,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId )
+	public void deepDisposeSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId )
 	{
 		final String S_ProcName = "deepDisposeSecClusRoleMembByClusRoleIdx";
 		ICFSecSecClusRoleMembObj obj;
@@ -997,7 +997,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusRoleMembByLoginIdx( String LoginId )
+	public void deepDisposeSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "deepDisposeSecClusRoleMembByLoginIdx";
 		ICFSecSecClusRoleMembObj obj;
@@ -1023,9 +1023,9 @@ public class CFSecSecClusRoleMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusRoleMembObj> pageSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId,
-		ICFLibKeyHash256 priorSecClusRoleId,
-		String priorLoginId )
+	public List<ICFSecSecClusRoleMembObj> pageSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaOptAtomType$ priorSecClusRoleId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecClusRoleMembByClusRoleIdx";
 		ICFSecSecClusRoleMembByClusRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByClusRoleIdxKey();
@@ -1058,9 +1058,9 @@ public class CFSecSecClusRoleMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusRoleMembObj> pageSecClusRoleMembByLoginIdx( String LoginId,
-		ICFLibKeyHash256 priorSecClusRoleId,
-		String priorLoginId )
+	public List<ICFSecSecClusRoleMembObj> pageSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecClusRoleId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecClusRoleMembByLoginIdx";
 		ICFSecSecClusRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByLoginIdxKey();
@@ -1102,8 +1102,8 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusRoleMembByIdIdx( ICFLibKeyHash256 SecClusRoleId,
-		String LoginId )
+	public void deleteSecClusRoleMembByIdIdx( $implIJavaAtomType$ SecClusRoleId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusRoleMembObj obj = readSecClusRoleMemb(SecClusRoleId,
 				LoginId);
@@ -1135,7 +1135,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusRoleMembByClusRoleIdx( ICFLibKeyHash256 SecClusRoleId )
+	public void deleteSecClusRoleMembByClusRoleIdx( $implIJavaAtomType$ SecClusRoleId )
 	{
 		ICFSecSecClusRoleMembByClusRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByClusRoleIdxKey();
 		key.setRequiredSecClusRoleId( SecClusRoleId );
@@ -1169,7 +1169,7 @@ public class CFSecSecClusRoleMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusRoleMembByLoginIdx( String LoginId )
+	public void deleteSecClusRoleMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRoleMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );

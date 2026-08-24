@@ -120,8 +120,8 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	The SecSysGrpMemb-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysGrpMembObj readSecSysGrpMemb( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId );
+	ICFSecSecSysGrpMembObj readSecSysGrpMemb( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read a SecSysGrpMemb-derived instance by it's primary key.
@@ -129,8 +129,8 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	The SecSysGrpMemb-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSysGrpMembObj readSecSysGrpMemb( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId,
+	ICFSecSecSysGrpMembObj readSecSysGrpMemb( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId,
 		boolean forceRead );
 
 	ICFSecSecSysGrpMembObj readCachedSecSysGrpMemb( ICFSecSecSysGrpMembPKey pkey );
@@ -168,8 +168,8 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	List of ICFSecSecSysGrpMembObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> pageAllSecSysGrpMemb(ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId );
+	List<ICFSecSecSysGrpMembObj> pageAllSecSysGrpMemb($implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Get the CFSecSecSysGrpMembObj instance for the primary key attributes.
@@ -181,8 +181,8 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	CFSecSecSysGrpMembObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId );
+	ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Get the CFSecSecSysGrpMembObj instance for the primary key attributes.
@@ -194,8 +194,8 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	CFSecSecSysGrpMembObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId,
+	ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId,
 		boolean forceRead );
 
 	/**
@@ -206,7 +206,7 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	List of CFSecSecSysGrpMembObj cached instances sorted by their primary keys for the duplicate SysGrpIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId );
+	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Get the map of CFSecSecSysGrpMembObj instances sorted by their primary keys for the duplicate SysGrpIdx key.
@@ -216,7 +216,7 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	List of CFSecSecSysGrpMembObj cached instances sorted by their primary keys for the duplicate SysGrpIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
+	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId,
 		boolean forceRead );
 
 	/**
@@ -227,7 +227,7 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	List of CFSecSecSysGrpMembObj cached instances sorted by their primary keys for the duplicate LoginIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( String LoginId );
+	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Get the map of CFSecSecSysGrpMembObj instances sorted by their primary keys for the duplicate LoginIdx key.
@@ -237,22 +237,22 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	List of CFSecSecSysGrpMembObj cached instances sorted by their primary keys for the duplicate LoginIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( String LoginId,
+	List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
 		boolean forceRead );
 
-	ICFSecSecSysGrpMembObj readCachedSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId );
+	ICFSecSecSysGrpMembObj readCachedSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId );
 
-	List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId );
+	List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId );
 
-	List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembByLoginIdx( String LoginId );
+	List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId );
 
-	void deepDisposeSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId );
+	void deepDisposeSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId );
 
-	void deepDisposeSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId );
+	void deepDisposeSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId );
 
-	void deepDisposeSecSysGrpMembByLoginIdx( String LoginId );
+	void deepDisposeSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read a page of data as a List of SecSysGrpMemb-derived instances sorted by their primary keys,
@@ -263,9 +263,9 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	A List of SecSysGrpMemb-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId );
+	List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read a page of data as a List of SecSysGrpMemb-derived instances sorted by their primary keys,
@@ -276,9 +276,9 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *	@return	A List of SecSysGrpMemb-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembByLoginIdx( String LoginId,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId );
+	List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Internal use only.
@@ -297,20 +297,20 @@ public interface ICFSecSecSysGrpMembTableObj
 	 *
 	 *	@param	LoginId	The SecSysGrpMemb key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId );
+	void deleteSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecSysGrpId	The SecSysGrpMemb key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId );
+	void deleteSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	LoginId	The SecSysGrpMemb key attribute of the instance generating the id.
 	 */
-	void deleteSecSysGrpMembByLoginIdx( String LoginId );
+	void deleteSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId );
 }

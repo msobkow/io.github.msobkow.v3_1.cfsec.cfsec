@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSysGrpIncByNameIdxKey
 	implements ICFSecSecSysGrpIncByNameIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredInclName;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredInclName;
 	public CFSecBuffSecSysGrpIncByNameIdxKey() {
 		requiredInclName = ICFSecProtSecSysGrpInc.INCLNAME_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredInclName() {
+	public $implIJavaAtomType$ getRequiredInclName() {
 		return(requiredInclName);
 	}
 
-	public void setRequiredInclName( String value ) {
+	public void setRequiredInclName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredInclName",

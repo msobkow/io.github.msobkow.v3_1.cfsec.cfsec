@@ -90,7 +90,7 @@ public interface ICFSecTenantTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteTenantByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the Tenant instances identified by the key ClusterIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecTenantTable
 	 *	@param	ClusterId	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId );
 
 	/**
 	 *	Delete the Tenant instances identified by the key ClusterIdx.
@@ -120,8 +120,8 @@ public interface ICFSecTenantTable
 	 *	@param	TenantName	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId,
-		String argTenantName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantName );
 
 	/**
 	 *	Delete the Tenant instances identified by the key UNameIdx.
@@ -145,7 +145,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived Tenant record instance by primary key.
@@ -158,7 +158,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all Tenant instances.
@@ -180,7 +180,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the derived Tenant record instances identified by the duplicate key ClusterIdx.
@@ -192,7 +192,7 @@ public interface ICFSecTenantTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecTenant[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read the derived Tenant record instance identified by the unique key UNameIdx.
@@ -207,8 +207,8 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String TenantName );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the primary key.
@@ -223,7 +223,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific Tenant record instance identified by the primary key.
@@ -238,7 +238,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific Tenant record instances.
@@ -257,7 +257,7 @@ public interface ICFSecTenantTable
 	 *	@return All the specific Tenant instances in the database accessible for the Authorization.
 	 */
 	ICFSecTenant[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorId );
+		$implIJavaOptAtomType$ priorId );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the unique key IdIdx.
@@ -272,7 +272,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the specific Tenant record instances identified by the duplicate key ClusterIdx.
@@ -286,7 +286,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the unique key UNameIdx.
@@ -303,8 +303,8 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String TenantName );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName );
 
 	/**
 	 *	Read a page array of the specific Tenant record instances identified by the duplicate key ClusterIdx.
@@ -318,6 +318,6 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		ICFLibKeyHash256 priorId );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaOptAtomType$ priorId );
 }

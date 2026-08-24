@@ -246,18 +246,18 @@ public interface ICFSecISOCtryCcyObj
 	ICFSecISOCcyObj getRequiredParentCcy( boolean forceRead );
 
 	/**
-	 *	Get the required short attribute ISOCtryId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@return	The required short attribute ISOCtryId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCtryId.
 	 */
-	short getRequiredISOCtryId();
+	$implIJavaAtomType$ getRequiredISOCtryId();
 
 	/**
-	 *	Get the required short attribute ISOCcyId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCcyId.
 	 *
-	 *	@return	The required short attribute ISOCcyId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCcyId.
 	 */
-	short getRequiredISOCcyId();
+	$implIJavaAtomType$ getRequiredISOCcyId();
 
 	/**
 	 *	Internal use only.

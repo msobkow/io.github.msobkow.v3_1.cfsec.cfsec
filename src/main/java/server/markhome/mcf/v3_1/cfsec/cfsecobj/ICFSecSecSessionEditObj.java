@@ -125,60 +125,60 @@ public interface ICFSecSecSessionEditObj
 	void setRequiredParentSecProxy( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSessionId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSessionId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSessionId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSessionId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSessionId();
+	$implIJavaAtomType$ getRequiredSecSessionId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecSessionId.
+	 *	Set the required $implIJavaAtomType$ attribute SecSessionId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecSessionId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecSessionId value to be applied.
 	 */
-	void setRequiredSecSessionId(ICFLibKeyHash256 value);
+	void setRequiredSecSessionId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required LocalDateTime attribute Start.
+	 *	Get the required $implIJavaAtomType$ attribute Start.
 	 *
-	 *	@return	The required LocalDateTime attribute Start.
+	 *	@return	The required $implIJavaAtomType$ attribute Start.
 	 */
-	LocalDateTime getRequiredStart();
+	$implIJavaAtomType$ getRequiredStart();
 
 	/**
-	 *	Set the required LocalDateTime attribute Start.
+	 *	Set the required $implIJavaAtomType$ attribute Start.
 	 *
-	 *	@param value The required LocalDateTime attribute Start value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Start value to be applied.
 	 */
-	void setRequiredStart(LocalDateTime value);
+	void setRequiredStart($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional LocalDateTime attribute Finish.
+	 *	Get the optional $implIJavaAtomType$ attribute Finish.
 	 *
-	 *	@return	The optional LocalDateTime attribute Finish.
+	 *	@return	The optional $implIJavaAtomType$ attribute Finish.
 	 */
-	LocalDateTime getOptionalFinish();
+	$implIJavaAtomType$ getOptionalFinish();
 
 	/**
-	 *	Set the optional LocalDateTime attribute Finish.
+	 *	Set the optional $implIJavaAtomType$ attribute Finish.
 	 *
-	 *	@param value The optional LocalDateTime attribute Finish value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute Finish value to be applied.
 	 */
-	void setOptionalFinish(LocalDateTime value);
+	void setOptionalFinish($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute SecProxyId.
+	 *	Get the optional $implIJavaAtomType$ attribute SecProxyId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute SecProxyId.
+	 *	@return	The optional $implIJavaAtomType$ attribute SecProxyId.
 	 */
-	ICFLibKeyHash256 getOptionalSecProxyId();
+	$implIJavaAtomType$ getOptionalSecProxyId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

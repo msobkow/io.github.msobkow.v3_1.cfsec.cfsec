@@ -77,23 +77,23 @@ public interface ICFSecISOCcy
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Short getPKey();
-	public void setPKey(Short requiredISOCcyId);
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredISOCcyId);
 	public List<ICFSecISOCtryCcy> getOptionalChildrenCtry();
 
-	public short getRequiredISOCcyId();
-	public void setRequiredISOCcyId( short value );
+	public $implIJavaAtomType$ getRequiredISOCcyId();
+	public void setRequiredISOCcyId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredISOCode();
-	public void setRequiredISOCode( String value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalUnitSymbol();
-	public void setOptionalUnitSymbol( String value );
-	public short getRequiredPrecis();
-	public void setRequiredPrecis( short value );
+	public $implIJavaAtomType$ getRequiredISOCode();
+	public void setRequiredISOCode( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalUnitSymbol();
+	public void setOptionalUnitSymbol( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPrecis();
+	public void setRequiredPrecis( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

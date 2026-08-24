@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecSysRoleEnablesByNameIdxKey
 {
-	public String getRequiredEnableName();
-	public void setRequiredEnableName( String value );
+	public $implIJavaAtomType$ getRequiredEnableName();
+	public void setRequiredEnableName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

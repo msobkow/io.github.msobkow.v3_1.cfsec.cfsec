@@ -187,18 +187,18 @@ public interface ICFSecSecUserObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -344,53 +344,53 @@ public interface ICFSecSecUserObj
 	List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required String attribute LoginId.
+	 *	Get the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@return	The required String attribute LoginId.
+	 *	@return	The required $implIJavaAtomType$ attribute LoginId.
 	 */
-	String getRequiredLoginId();
+	$implIJavaAtomType$ getRequiredLoginId();
 
 	/**
-	 *	Get the required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	Get the required $implIJavaAtomType$ attribute AccountStatus.
 	 *
-	 *	@return	The required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	@return	The required $implIJavaAtomType$ attribute AccountStatus.
 	 */
-	ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	$implIJavaAtomType$ getRequiredAccountStatus();
 
 	/**
-	 *	Get the optional String attribute DfltSysGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltSysGrpName.
 	 *
-	 *	@return	The optional String attribute DfltSysGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltSysGrpName.
 	 */
-	String getOptionalDfltSysGrpName();
+	$implIJavaAtomType$ getOptionalDfltSysGrpName();
 
 	/**
-	 *	Get the optional String attribute DfltClusGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltClusGrpName.
 	 *
-	 *	@return	The optional String attribute DfltClusGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltClusGrpName.
 	 */
-	String getOptionalDfltClusGrpName();
+	$implIJavaAtomType$ getOptionalDfltClusGrpName();
 
 	/**
-	 *	Get the optional String attribute DfltTentGrpName.
+	 *	Get the optional $implIJavaAtomType$ attribute DfltTentGrpName.
 	 *
-	 *	@return	The optional String attribute DfltTentGrpName.
+	 *	@return	The optional $implIJavaAtomType$ attribute DfltTentGrpName.
 	 */
-	String getOptionalDfltTentGrpName();
+	$implIJavaAtomType$ getOptionalDfltTentGrpName();
 
 	/**
-	 *	Get the required String attribute EMailAddress.
+	 *	Get the required $implIJavaAtomType$ attribute EMailAddress.
 	 *
-	 *	@return	The required String attribute EMailAddress.
+	 *	@return	The required $implIJavaAtomType$ attribute EMailAddress.
 	 */
-	String getRequiredEMailAddress();
+	$implIJavaAtomType$ getRequiredEMailAddress();
 
 	/**
 	 *	Internal use only.

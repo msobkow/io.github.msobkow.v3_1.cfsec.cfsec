@@ -90,7 +90,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecClusRoleByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecClusRole instances identified by the key ClusterIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	ClusterId	The SecClusRole key attribute of the instance generating the id.
 	 */
 	void deleteSecClusRoleByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId );
 
 	/**
 	 *	Delete the SecClusRole instances identified by the key ClusterIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	Name	The SecClusRole key attribute of the instance generating the id.
 	 */
 	void deleteSecClusRoleByNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecClusRole instances identified by the key NameIdx.
@@ -139,8 +139,8 @@ public interface ICFSecSecClusRoleTable
 	 *	@param	Name	The SecClusRole key attribute of the instance generating the id.
 	 */
 	void deleteSecClusRoleByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecClusRole instances identified by the key UNameIdx.
@@ -164,7 +164,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecClusRole record instance by primary key.
@@ -177,7 +177,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecClusRole instances.
@@ -199,7 +199,7 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusRoleId );
+		$implIJavaAtomType$ SecClusRoleId );
 
 	/**
 	 *	Read an array of the derived SecClusRole record instances identified by the duplicate key ClusterIdx.
@@ -211,7 +211,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusRole[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read an array of the derived SecClusRole record instances identified by the duplicate key NameIdx.
@@ -223,7 +223,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusRole[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the derived SecClusRole record instance identified by the unique key UNameIdx.
@@ -238,8 +238,8 @@ public interface ICFSecSecClusRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String Name );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecClusRole record instance identified by the primary key.
@@ -254,7 +254,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecClusRole record instance identified by the primary key.
@@ -269,7 +269,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecClusRole record instances.
@@ -293,7 +293,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusRoleId );
+		$implIJavaAtomType$ SecClusRoleId );
 
 	/**
 	 *	Read an array of the specific SecClusRole record instances identified by the duplicate key ClusterIdx.
@@ -307,7 +307,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read an array of the specific SecClusRole record instances identified by the duplicate key NameIdx.
@@ -321,7 +321,7 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecClusRole record instance identified by the unique key UNameIdx.
@@ -338,6 +338,6 @@ public interface ICFSecSecClusRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String Name );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 }

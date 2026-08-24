@@ -90,7 +90,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecSysRoleByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecSysRole instances identified by the key UNameIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@param	Name	The SecSysRole key attribute of the instance generating the id.
 	 */
 	void deleteSecSysRoleByUNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecSysRole instances identified by the key UNameIdx.
@@ -123,7 +123,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecSysRole record instance by primary key.
@@ -136,7 +136,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecSysRole instances.
@@ -158,7 +158,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read the derived SecSysRole record instance identified by the unique key UNameIdx.
@@ -171,7 +171,7 @@ public interface ICFSecSecSysRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSysRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecSysRole record instance identified by the primary key.
@@ -186,7 +186,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecSysRole record instance identified by the primary key.
@@ -201,7 +201,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecSysRole record instances.
@@ -225,7 +225,7 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSysRoleId );
+		$implIJavaAtomType$ SecSysRoleId );
 
 	/**
 	 *	Read the specific SecSysRole record instance identified by the unique key UNameIdx.
@@ -240,5 +240,5 @@ public interface ICFSecSecSysRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSysRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 }

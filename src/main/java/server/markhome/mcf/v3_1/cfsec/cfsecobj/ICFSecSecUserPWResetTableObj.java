@@ -101,7 +101,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	The SecUserPWReset-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWReset( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPWResetObj readSecUserPWReset( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecUserPWReset-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	The SecUserPWReset-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWReset( ICFLibKeyHash256 pkey,
+	ICFSecSecUserPWResetObj readSecUserPWReset( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecUserPWResetObj readCachedSecUserPWReset( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPWResetObj readCachedSecUserPWReset( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecUserPWReset( ICFSecSecUserPWResetObj obj );
 
-	void deepDisposeSecUserPWReset( ICFLibKeyHash256 pkey );
+	void deepDisposeSecUserPWReset( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecUserPWResetObj lockSecUserPWReset( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPWResetObj lockSecUserPWReset( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecUserPWReset-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	List of ICFSecSecUserPWResetObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> pageAllSecUserPWReset(ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserPWResetObj> pageAllSecUserPWReset($implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Get the CFSecSecUserPWResetObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	CFSecSecUserPWResetObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWResetByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPWResetObj readSecUserPWResetByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserPWResetObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	CFSecSecUserPWResetObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWResetByIdIdx( ICFLibKeyHash256 SecUserId,
+	ICFSecSecUserPWResetObj readSecUserPWResetByIdIdx( $implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	CFSecSecUserPWResetObj cached instance for the unique UUuid6Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWResetByUUuid6Idx(ICFLibUuid6 PasswordResetUuid6 );
+	ICFSecSecUserPWResetObj readSecUserPWResetByUUuid6Idx($implIJavaAtomType$ PasswordResetUuid6 );
 
 	/**
 	 *	Get the CFSecSecUserPWResetObj instance for the unique UUuid6Idx key.
@@ -190,7 +190,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	CFSecSecUserPWResetObj refreshed instance for the unique UUuid6Idx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPWResetObj readSecUserPWResetByUUuid6Idx(ICFLibUuid6 PasswordResetUuid6,
+	ICFSecSecUserPWResetObj readSecUserPWResetByUUuid6Idx($implIJavaAtomType$ PasswordResetUuid6,
 		boolean forceRead );
 
 	/**
@@ -201,7 +201,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	List of CFSecSecUserPWResetObj cached instances sorted by their primary keys for the duplicate SentEMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> readSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr );
+	List<ICFSecSecUserPWResetObj> readSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr );
 
 	/**
 	 *	Get the map of CFSecSecUserPWResetObj instances sorted by their primary keys for the duplicate SentEMAddrIdx key.
@@ -211,7 +211,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	List of CFSecSecUserPWResetObj cached instances sorted by their primary keys for the duplicate SentEMAddrIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> readSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr,
+	List<ICFSecSecUserPWResetObj> readSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr,
 		boolean forceRead );
 
 	/**
@@ -222,7 +222,7 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	List of CFSecSecUserPWResetObj cached instances sorted by their primary keys for the duplicate NewAcctIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> readSecUserPWResetByNewAcctIdx( boolean NewAccount );
+	List<ICFSecSecUserPWResetObj> readSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Get the map of CFSecSecUserPWResetObj instances sorted by their primary keys for the duplicate NewAcctIdx key.
@@ -232,24 +232,24 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	List of CFSecSecUserPWResetObj cached instances sorted by their primary keys for the duplicate NewAcctIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> readSecUserPWResetByNewAcctIdx( boolean NewAccount,
+	List<ICFSecSecUserPWResetObj> readSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount,
 		boolean forceRead );
 
-	ICFSecSecUserPWResetObj readCachedSecUserPWResetByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPWResetObj readCachedSecUserPWResetByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	ICFSecSecUserPWResetObj readCachedSecUserPWResetByUUuid6Idx( ICFLibUuid6 PasswordResetUuid6 );
+	ICFSecSecUserPWResetObj readCachedSecUserPWResetByUUuid6Idx( $implIJavaAtomType$ PasswordResetUuid6 );
 
-	List<ICFSecSecUserPWResetObj> readCachedSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr );
+	List<ICFSecSecUserPWResetObj> readCachedSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr );
 
-	List<ICFSecSecUserPWResetObj> readCachedSecUserPWResetByNewAcctIdx( boolean NewAccount );
+	List<ICFSecSecUserPWResetObj> readCachedSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
-	void deepDisposeSecUserPWResetByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecUserPWResetByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecUserPWResetByUUuid6Idx( ICFLibUuid6 PasswordResetUuid6 );
+	void deepDisposeSecUserPWResetByUUuid6Idx( $implIJavaAtomType$ PasswordResetUuid6 );
 
-	void deepDisposeSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr );
+	void deepDisposeSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr );
 
-	void deepDisposeSecUserPWResetByNewAcctIdx( boolean NewAccount );
+	void deepDisposeSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 
 	/**
 	 *	Read a page of data as a List of SecUserPWReset-derived instances sorted by their primary keys,
@@ -260,8 +260,8 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	A List of SecUserPWReset-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> pageSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserPWResetObj> pageSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read a page of data as a List of SecUserPWReset-derived instances sorted by their primary keys,
@@ -272,8 +272,8 @@ public interface ICFSecSecUserPWResetTableObj
 	 *	@return	A List of SecUserPWReset-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecUserPWResetObj> pageSecUserPWResetByNewAcctIdx( boolean NewAccount,
-		ICFLibKeyHash256 priorSecUserId );
+	List<ICFSecSecUserPWResetObj> pageSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount,
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Internal use only.
@@ -290,26 +290,26 @@ public interface ICFSecSecUserPWResetTableObj
 	 *
 	 *	@param	SecUserId	The SecUserPWReset key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWResetByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deleteSecUserPWResetByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PasswordResetUuid6	The SecUserPWReset key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWResetByUUuid6Idx(ICFLibUuid6 PasswordResetUuid6 );
+	void deleteSecUserPWResetByUUuid6Idx($implIJavaAtomType$ PasswordResetUuid6 );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SentToEMailAddr	The SecUserPWReset key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWResetBySentEMAddrIdx( String SentToEMailAddr );
+	void deleteSecUserPWResetBySentEMAddrIdx( $implIJavaAtomType$ SentToEMailAddr );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NewAccount	The SecUserPWReset key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPWResetByNewAcctIdx( boolean NewAccount );
+	void deleteSecUserPWResetByNewAcctIdx( $implIJavaAtomType$ NewAccount );
 }

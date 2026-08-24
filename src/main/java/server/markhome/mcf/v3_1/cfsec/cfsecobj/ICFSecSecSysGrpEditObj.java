@@ -181,46 +181,46 @@ public interface ICFSecSecSysGrpEditObj
 	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	$implIJavaAtomType$ getRequiredSecSysGrpId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Set the required $implIJavaAtomType$ attribute SecSysGrpId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecSysGrpId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecSysGrpId value to be applied.
 	 */
-	void setRequiredSecSysGrpId(ICFLibKeyHash256 value);
+	void setRequiredSecSysGrpId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	Get the required $implIJavaAtomType$ attribute SecLevel.
 	 *
-	 *	@return	The required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	@return	The required $implIJavaAtomType$ attribute SecLevel.
 	 */
-	ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
+	$implIJavaAtomType$ getRequiredSecLevel();
 
 	/**
-	 *	Set the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	Set the required $implIJavaAtomType$ attribute SecLevel.
 	 *
-	 *	@param value The required ICFSecPubSchema.SecLevelEnum attribute SecLevel value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecLevel value to be applied.
 	 */
-	void setRequiredSecLevel(ICFSecPubSchema.SecLevelEnum value);
+	void setRequiredSecLevel($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

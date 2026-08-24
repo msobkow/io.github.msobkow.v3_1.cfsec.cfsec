@@ -77,7 +77,7 @@ public interface ICFSecSecTentGrpMemb
 	public void setPKey(ICFSecSecTentGrpMembPKey pkey );
 	public ICFSecSecTentGrp getRequiredContainerGroup();
 
-	public void setRequiredContainerGroup(ICFLibKeyHash256 argSecTentGrpId);
+	public void setRequiredContainerGroup($implIJavaAtomType$ argSecTentGrpId);
 
 	public void setRequiredContainerGroup(ICFSecSecTentGrp argObj);
 
@@ -85,7 +85,7 @@ public interface ICFSecSecTentGrpMemb
 
 	public ICFSecSecUser getRequiredParentUser();
 
-	public void setRequiredParentUser(String argLoginId);
+	public void setRequiredParentUser($implIJavaAtomType$ argLoginId);
 
 	public void setRequiredParentUser(ICFSecSecUser argObj);
 
@@ -93,13 +93,13 @@ public interface ICFSecSecTentGrpMemb
 
 	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
-	public ICFLibKeyHash256 getRequiredSecTentGrpId();
+	public $implIJavaAtomType$ getRequiredSecTentGrpId();
 
-	public void setRequiredSecTentGrpId(ICFLibKeyHash256 value);
+	public void setRequiredSecTentGrpId($implIJavaAtomType$ value);
 
-	public String getRequiredLoginId();
+	public $implIJavaAtomType$ getRequiredLoginId();
 
-	public void setRequiredLoginId(String value);
+	public void setRequiredLoginId($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

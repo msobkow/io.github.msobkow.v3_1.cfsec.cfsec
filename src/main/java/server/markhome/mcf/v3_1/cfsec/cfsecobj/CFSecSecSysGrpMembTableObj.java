@@ -333,15 +333,15 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpMembObj readSecSysGrpMemb( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId ) {
+	public ICFSecSecSysGrpMembObj readSecSysGrpMemb( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId ) {
 		return( readSecSysGrpMemb( SecSysGrpId,
 			LoginId, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpMembObj readSecSysGrpMemb( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId, boolean forceRead ) {
+	public ICFSecSecSysGrpMembObj readSecSysGrpMemb( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId, boolean forceRead ) {
 		ICFSecSecSysGrpMembObj obj = null;
 		ICFSecSecSysGrpMemb readRec = schema.getCFSecBackingStore().getTableSecSysGrpMemb().readDerivedByIdIdx( null,
 			SecSysGrpId,
@@ -571,8 +571,8 @@ public class CFSecSecSysGrpMembTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysGrpMembObj> pageAllSecSysGrpMemb(ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId )
+	public List<ICFSecSecSysGrpMembObj> pageAllSecSysGrpMemb($implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageAllSecSysGrpMemb";
 		Map<ICFSecSecSysGrpMembPKey, ICFSecSecSysGrpMembObj> map = new HashMap<ICFSecSecSysGrpMembPKey,ICFSecSecSysGrpMembObj>();
@@ -595,8 +595,8 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId )
+	public ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		return( readSecSysGrpMembByIdIdx( SecSysGrpId,
 			LoginId,
@@ -604,8 +604,8 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId, boolean forceRead )
+	public ICFSecSecSysGrpMembObj readSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId, boolean forceRead )
 	{
 		ICFSecSecSysGrpMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newPKey();
 		pkey.setRequiredSecSysGrpId( SecSysGrpId );
@@ -615,14 +615,14 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
+	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId )
 	{
 		return( readSecSysGrpMembBySysGrpIdx( SecSysGrpId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
+	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpMembBySysGrpIdx";
@@ -708,14 +708,14 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( String LoginId )
+	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		return( readSecSysGrpMembByLoginIdx( LoginId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( String LoginId,
+	public List<ICFSecSecSysGrpMembObj> readSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpMembByLoginIdx";
@@ -801,8 +801,8 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpMembObj readCachedSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId )
+	public ICFSecSecSysGrpMembObj readCachedSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecSysGrpMembObj obj = null;
 		ICFSecSecSysGrpMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newPKey();
@@ -815,7 +815,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
+	public List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId )
 	{
 		final String S_ProcName = "readCachedSecSysGrpMembBySysGrpIdx";
 		ICFSecSecSysGrpMembBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newBySysGrpIdxKey();
@@ -892,7 +892,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembByLoginIdx( String LoginId )
+	public List<ICFSecSecSysGrpMembObj> readCachedSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "readCachedSecSysGrpMembByLoginIdx";
 		ICFSecSecSysGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newByLoginIdxKey();
@@ -969,8 +969,8 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId )
+	public void deepDisposeSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecSysGrpMembObj obj = readCachedSecSysGrpMembByIdIdx( SecSysGrpId,
 				LoginId );
@@ -980,7 +980,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
+	public void deepDisposeSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId )
 	{
 		final String S_ProcName = "deepDisposeSecSysGrpMembBySysGrpIdx";
 		ICFSecSecSysGrpMembObj obj;
@@ -997,7 +997,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpMembByLoginIdx( String LoginId )
+	public void deepDisposeSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "deepDisposeSecSysGrpMembByLoginIdx";
 		ICFSecSecSysGrpMembObj obj;
@@ -1023,9 +1023,9 @@ public class CFSecSecSysGrpMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId )
+	public List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysGrpMembBySysGrpIdx";
 		ICFSecSecSysGrpMembBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newBySysGrpIdxKey();
@@ -1058,9 +1058,9 @@ public class CFSecSecSysGrpMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembByLoginIdx( String LoginId,
-		ICFLibKeyHash256 priorSecSysGrpId,
-		String priorLoginId )
+	public List<ICFSecSecSysGrpMembObj> pageSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecSysGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysGrpMembByLoginIdx";
 		ICFSecSecSysGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newByLoginIdxKey();
@@ -1102,8 +1102,8 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpMembByIdIdx( ICFLibKeyHash256 SecSysGrpId,
-		String LoginId )
+	public void deleteSecSysGrpMembByIdIdx( $implIJavaAtomType$ SecSysGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecSysGrpMembObj obj = readSecSysGrpMemb(SecSysGrpId,
 				LoginId);
@@ -1135,7 +1135,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpMembBySysGrpIdx( ICFLibKeyHash256 SecSysGrpId )
+	public void deleteSecSysGrpMembBySysGrpIdx( $implIJavaAtomType$ SecSysGrpId )
 	{
 		ICFSecSecSysGrpMembBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );
@@ -1169,7 +1169,7 @@ public class CFSecSecSysGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpMembByLoginIdx( String LoginId )
+	public void deleteSecSysGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecSysGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );

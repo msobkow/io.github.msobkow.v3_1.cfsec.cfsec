@@ -77,7 +77,7 @@ public interface ICFSecSecSysRoleEnables
 	public void setPKey(ICFSecSecSysRoleEnablesPKey pkey );
 	public ICFSecSecSysRole getRequiredContainerSysRole();
 
-	public void setRequiredContainerSysRole(ICFLibKeyHash256 argSecSysRoleId);
+	public void setRequiredContainerSysRole($implIJavaAtomType$ argSecSysRoleId);
 
 	public void setRequiredContainerSysRole(ICFSecSecSysRole argObj);
 
@@ -87,7 +87,7 @@ public interface ICFSecSecSysRoleEnables
 
 	public ICFSecSecSysGrp getRequiredParentEnableGroup();
 
-	public void setRequiredParentEnableGroup(String argEnableName);
+	public void setRequiredParentEnableGroup($implIJavaAtomType$ argEnableName);
 
 	public void setRequiredParentEnableGroup(ICFSecSecSysGrp argObj);
 
@@ -95,13 +95,13 @@ public interface ICFSecSecSysRoleEnables
 
 	public void setRequiredParentEnableGroup(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredSecSysRoleId();
+	public $implIJavaAtomType$ getRequiredSecSysRoleId();
 
-	public void setRequiredSecSysRoleId(ICFLibKeyHash256 value);
+	public void setRequiredSecSysRoleId($implIJavaAtomType$ value);
 
-	public String getRequiredEnableName();
+	public $implIJavaAtomType$ getRequiredEnableName();
 
-	public void setRequiredEnableName(String value);
+	public void setRequiredEnableName($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

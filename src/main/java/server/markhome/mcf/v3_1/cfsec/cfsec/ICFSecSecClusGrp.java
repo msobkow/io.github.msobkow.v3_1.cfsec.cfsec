@@ -75,18 +75,18 @@ public interface ICFSecSecClusGrp
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecClusGrpId);
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredSecClusGrpId);
 	public List<ICFSecSecClusGrpMemb> getOptionalChildrenMembByGrp();
 
-	public ICFLibKeyHash256 getRequiredSecClusGrpId();
-	public void setRequiredSecClusGrpId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecClusGrpId();
+	public void setRequiredSecClusGrpId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
 
-	public void setRequiredOwnerCluster(ICFLibKeyHash256 argClusterId);
+	public void setRequiredOwnerCluster($implIJavaAtomType$ argClusterId);
 
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 
@@ -96,7 +96,7 @@ public interface ICFSecSecClusGrp
 
 	public ICFSecSecSysGrp getRequiredContainerSysGrp();
 
-	public void setRequiredContainerSysGrp(String argName);
+	public void setRequiredContainerSysGrp($implIJavaAtomType$ argName);
 
 	public void setRequiredContainerSysGrp(ICFSecSecSysGrp argObj);
 
@@ -104,10 +104,10 @@ public interface ICFSecSecClusGrp
 
 	public void setRequiredContainerSysGrp(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredClusterId();
+	public void setRequiredClusterId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

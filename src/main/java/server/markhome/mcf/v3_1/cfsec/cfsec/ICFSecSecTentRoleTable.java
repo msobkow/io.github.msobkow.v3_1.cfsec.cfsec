@@ -90,7 +90,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecTentRoleByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecTentRole instances identified by the key TenantIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	TenantId	The SecTentRole key attribute of the instance generating the id.
 	 */
 	void deleteSecTentRoleByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId );
 
 	/**
 	 *	Delete the SecTentRole instances identified by the key TenantIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	Name	The SecTentRole key attribute of the instance generating the id.
 	 */
 	void deleteSecTentRoleByNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecTentRole instances identified by the key NameIdx.
@@ -139,8 +139,8 @@ public interface ICFSecSecTentRoleTable
 	 *	@param	Name	The SecTentRole key attribute of the instance generating the id.
 	 */
 	void deleteSecTentRoleByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecTentRole instances identified by the key UNameIdx.
@@ -164,7 +164,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecTentRole record instance by primary key.
@@ -177,7 +177,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecTentRole instances.
@@ -199,7 +199,7 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentRoleId );
+		$implIJavaAtomType$ SecTentRoleId );
 
 	/**
 	 *	Read an array of the derived SecTentRole record instances identified by the duplicate key TenantIdx.
@@ -211,7 +211,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentRole[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the derived SecTentRole record instances identified by the duplicate key NameIdx.
@@ -223,7 +223,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentRole[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the derived SecTentRole record instance identified by the unique key UNameIdx.
@@ -238,8 +238,8 @@ public interface ICFSecSecTentRoleTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		String Name );
+		$implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecTentRole record instance identified by the primary key.
@@ -254,7 +254,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecTentRole record instance identified by the primary key.
@@ -269,7 +269,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecTentRole record instances.
@@ -293,7 +293,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentRoleId );
+		$implIJavaAtomType$ SecTentRoleId );
 
 	/**
 	 *	Read an array of the specific SecTentRole record instances identified by the duplicate key TenantIdx.
@@ -307,7 +307,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the specific SecTentRole record instances identified by the duplicate key NameIdx.
@@ -321,7 +321,7 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecTentRole record instance identified by the unique key UNameIdx.
@@ -338,6 +338,6 @@ public interface ICFSecSecTentRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		String Name );
+		$implIJavaAtomType$ TenantId,
+		$implIJavaAtomType$ Name );
 }

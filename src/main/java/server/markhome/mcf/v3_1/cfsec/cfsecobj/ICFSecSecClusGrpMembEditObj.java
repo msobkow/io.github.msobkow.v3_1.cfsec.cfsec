@@ -153,18 +153,18 @@ public interface ICFSecSecClusGrpMembEditObj
 	void setRequiredParentUser( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecClusGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecClusGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusGrpId();
+	$implIJavaAtomType$ getRequiredSecClusGrpId();
 
 	/**
-	 *	Get the required String attribute LoginId.
+	 *	Get the required $implIJavaAtomType$ attribute LoginId.
 	 *
-	 *	@return	The required String attribute LoginId.
+	 *	@return	The required $implIJavaAtomType$ attribute LoginId.
 	 */
-	String getRequiredLoginId();
+	$implIJavaAtomType$ getRequiredLoginId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

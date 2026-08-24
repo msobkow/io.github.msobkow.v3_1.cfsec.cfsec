@@ -52,7 +52,7 @@ public class CFSecISOCtryObj
 	protected boolean isNew;
 	protected ICFSecISOCtryEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOCtry rec;
 	protected List<ICFSecISOCtryCcyObj> optionalComponentsCcy;
 	protected List<ICFSecISOCtryLangObj> optionalComponentsLang;
@@ -275,12 +275,12 @@ public class CFSecISOCtryObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -357,7 +357,7 @@ public class CFSecISOCtryObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implIJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey() );
 	}
 
@@ -394,12 +394,12 @@ public class CFSecISOCtryObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return( getISOCtryRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getISOCtryRec().getRequiredName() );
 	}
 

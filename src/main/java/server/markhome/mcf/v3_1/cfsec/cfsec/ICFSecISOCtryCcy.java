@@ -78,7 +78,7 @@ public interface ICFSecISOCtryCcy
 	public void setPKey(ICFSecISOCtryCcyPKey pkey );
 	public ICFSecISOCtry getRequiredContainerCtry();
 
-	public void setRequiredContainerCtry(short argISOCtryId);
+	public void setRequiredContainerCtry($implIJavaAtomType$ argISOCtryId);
 
 	public void setRequiredContainerCtry(ICFSecISOCtry argObj);
 
@@ -88,7 +88,7 @@ public interface ICFSecISOCtryCcy
 
 	public ICFSecISOCcy getRequiredParentCcy();
 
-	public void setRequiredParentCcy(short argISOCcyId);
+	public void setRequiredParentCcy($implIJavaAtomType$ argISOCcyId);
 
 	public void setRequiredParentCcy(ICFSecISOCcy argObj);
 
@@ -96,13 +96,13 @@ public interface ICFSecISOCtryCcy
 
 	public void setRequiredParentCcy(ICFSecPubISOCcy argObj);
 
-	public short getRequiredISOCtryId();
+	public $implIJavaAtomType$ getRequiredISOCtryId();
 
-	public void setRequiredISOCtryId(short value);
+	public void setRequiredISOCtryId($implIJavaAtomType$ value);
 
-	public short getRequiredISOCcyId();
+	public $implIJavaAtomType$ getRequiredISOCcyId();
 
-	public void setRequiredISOCcyId(short value);
+	public void setRequiredISOCcyId($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

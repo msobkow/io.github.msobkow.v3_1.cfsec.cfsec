@@ -50,18 +50,18 @@ public class CFSecISOLangTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecISOLang.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecISOLang.CLASS_CODE;
-	private Map<Short, ICFSecISOLangObj> members;
-	private Map<Short, ICFSecISOLangObj> allISOLang;
+	private Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> members;
+	private Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> allISOLang;
 	private Map< ICFSecISOLangByCode3IdxKey,
 		ICFSecISOLangObj > indexByCode3Idx;
 	private Map< ICFSecISOLangByCode2IdxKey,
-		Map<Short, ICFSecISOLangObj > > indexByCode2Idx;
+		Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > > indexByCode2Idx;
 	public static String TABLE_NAME = "ISOLang";
 	public static String TABLE_DBNAME = "iso_lang";
 
 	public CFSecISOLangTableObj() {
 		schema = null;
-		members = new HashMap<Short, ICFSecISOLangObj>();
+		members = new HashMap<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj>();
 		allISOLang = null;
 		indexByCode3Idx = null;
 		indexByCode2Idx = null;
@@ -69,7 +69,7 @@ public class CFSecISOLangTableObj
 
 	public CFSecISOLangTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<Short, ICFSecISOLangObj>();
+		members = new HashMap<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj>();
 		allISOLang = null;
 		indexByCode3Idx = null;
 		indexByCode2Idx = null;
@@ -194,7 +194,7 @@ public class CFSecISOLangTableObj
 	@Override
 	public ICFSecISOLangObj realiseISOLang( ICFSecISOLangObj Obj ) {
 		ICFSecISOLangObj obj = Obj;
-		Short pkey = obj.getPKey();
+		$implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOLangObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecISOLangObj existingObj = members.get( pkey );
@@ -218,7 +218,7 @@ public class CFSecISOLangTableObj
 				ICFSecISOLangByCode2IdxKey keyCode2Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 				keyCode2Idx.setOptionalISO6391Code( keepObj.getOptionalISO6391Code() );
-				Map<Short, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
+				Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
 				if( mapCode2Idx != null ) {
 					mapCode2Idx.remove( keepObj.getPKey() );
 					if( mapCode2Idx.size() <= 0 ) {
@@ -241,7 +241,7 @@ public class CFSecISOLangTableObj
 				ICFSecISOLangByCode2IdxKey keyCode2Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 				keyCode2Idx.setOptionalISO6391Code( keepObj.getOptionalISO6391Code() );
-				Map<Short, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
+				Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
 				if( mapCode2Idx != null ) {
 					mapCode2Idx.put( keepObj.getPKey(), keepObj );
 				}
@@ -272,7 +272,7 @@ public class CFSecISOLangTableObj
 				ICFSecISOLangByCode2IdxKey keyCode2Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 				keyCode2Idx.setOptionalISO6391Code( keepObj.getOptionalISO6391Code() );
-				Map<Short, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
+				Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > mapCode2Idx = indexByCode2Idx.get( keyCode2Idx );
 				if( mapCode2Idx != null ) {
 					mapCode2Idx.put( keepObj.getPKey(), keepObj );
 				}
@@ -296,12 +296,12 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLang( Short pkey ) {
+	public ICFSecISOLangObj readISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readISOLang( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLang( Short pkey, boolean forceRead ) {
+	public ICFSecISOLangObj readISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecISOLangObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -320,7 +320,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj readCachedISOLang( Short pkey ) {
+	public ICFSecISOLangObj readCachedISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOLangObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -336,7 +336,7 @@ public class CFSecISOLangTableObj
 		if( obj == null ) {
 			return;
 		}
-		Short pkey = obj.getPKey();
+		$implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOLangObj existing = readCachedISOLang( pkey );
 		if( existing == null ) {
 			return;
@@ -367,7 +367,7 @@ public class CFSecISOLangTableObj
 
 	}
 	@Override
-	public void deepDisposeISOLang( Short pkey ) {
+	public void deepDisposeISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOLangObj obj = readCachedISOLang( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -375,7 +375,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj lockISOLang( Short pkey ) {
+	public ICFSecISOLangObj lockISOLang( $implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOLangObj locked = null;
 		ICFSecISOLang lockRec = schema.getCFSecBackingStore().getTableISOLang().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -399,7 +399,7 @@ public class CFSecISOLangTableObj
 	public List<ICFSecISOLangObj> readAllISOLang( boolean forceRead ) {
 		final String S_ProcName = "readAllISOLang";
 		if( ( allISOLang == null ) || forceRead ) {
-			Map<Short, ICFSecISOLangObj> map = new HashMap<Short,ICFSecISOLangObj>();
+			Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> map = new HashMap<$implCommaIJavaOptAtomType empty empty )$,ICFSecISOLangObj>();
 			allISOLang = map;
 			ICFSecISOLang[] recList = schema.getCFSecBackingStore().getTableISOLang().readAllDerived( null );
 			ICFSecISOLang rec;
@@ -455,8 +455,8 @@ public class CFSecISOLangTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -513,8 +513,8 @@ public class CFSecISOLangTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -525,28 +525,28 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLangByIdIdx( short ISOLangId )
+	public ICFSecISOLangObj readISOLangByIdIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		return( readISOLangByIdIdx( ISOLangId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLangByIdIdx( short ISOLangId, boolean forceRead )
+	public ICFSecISOLangObj readISOLangByIdIdx( $implIJavaAtomType$ ISOLangId, boolean forceRead )
 	{
 		ICFSecISOLangObj obj = readISOLang( ISOLangId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLangByCode3Idx( String ISO6392Code )
+	public ICFSecISOLangObj readISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code )
 	{
 		return( readISOLangByCode3Idx( ISO6392Code,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOLangObj readISOLangByCode3Idx( String ISO6392Code, boolean forceRead )
+	public ICFSecISOLangObj readISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code, boolean forceRead )
 	{
 		if( indexByCode3Idx == null ) {
 			indexByCode3Idx = new HashMap< ICFSecISOLangByCode3IdxKey,
@@ -572,29 +572,29 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOLangObj> readISOLangByCode2Idx( String ISO6391Code )
+	public List<ICFSecISOLangObj> readISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code )
 	{
 		return( readISOLangByCode2Idx( ISO6391Code,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOLangObj> readISOLangByCode2Idx( String ISO6391Code,
+	public List<ICFSecISOLangObj> readISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOLangByCode2Idx";
 		ICFSecISOLangByCode2IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 		key.setOptionalISO6391Code( ISO6391Code );
-		Map<Short, ICFSecISOLangObj> dict;
+		Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> dict;
 		if( indexByCode2Idx == null ) {
 			indexByCode2Idx = new HashMap< ICFSecISOLangByCode2IdxKey,
-				Map< Short, ICFSecISOLangObj > >();
+				Map< $implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > >();
 		}
 		if( ( ! forceRead ) && indexByCode2Idx.containsKey( key ) ) {
 			dict = indexByCode2Idx.get( key );
 		}
 		else {
-			dict = new HashMap<Short, ICFSecISOLangObj>();
+			dict = new HashMap<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj>();
 			ICFSecISOLangObj obj;
 			ICFSecISOLang[] recList = schema.getCFSecBackingStore().getTableISOLang().readDerivedByCode2Idx( null,
 				ISO6391Code );
@@ -652,8 +652,8 @@ public class CFSecISOLangTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -665,7 +665,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj readCachedISOLangByIdIdx( short ISOLangId )
+	public ICFSecISOLangObj readCachedISOLangByIdIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOLangObj obj = null;
 		obj = readCachedISOLang( ISOLangId );
@@ -673,7 +673,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public ICFSecISOLangObj readCachedISOLangByCode3Idx( String ISO6392Code )
+	public ICFSecISOLangObj readCachedISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code )
 	{
 		ICFSecISOLangObj obj = null;
 		ICFSecISOLangByCode3IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode3IdxKey();
@@ -709,14 +709,14 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOLangObj> readCachedISOLangByCode2Idx( String ISO6391Code )
+	public List<ICFSecISOLangObj> readCachedISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code )
 	{
 		final String S_ProcName = "readCachedISOLangByCode2Idx";
 		ICFSecISOLangByCode2IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 		key.setOptionalISO6391Code( ISO6391Code );
 		ArrayList<ICFSecISOLangObj> arrayList = new ArrayList<ICFSecISOLangObj>();
 		if( indexByCode2Idx != null ) {
-			Map<Short, ICFSecISOLangObj> dict;
+			Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> dict;
 			if( indexByCode2Idx.containsKey( key ) ) {
 				dict = indexByCode2Idx.get( key );
 				int len = dict.size();
@@ -774,8 +774,8 @@ public class CFSecISOLangTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -786,7 +786,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOLangByIdIdx( short ISOLangId )
+	public void deepDisposeISOLangByIdIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOLangObj obj = readCachedISOLangByIdIdx( ISOLangId );
 		if( obj != null ) {
@@ -795,7 +795,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOLangByCode3Idx( String ISO6392Code )
+	public void deepDisposeISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code )
 	{
 		ICFSecISOLangObj obj = readCachedISOLangByCode3Idx( ISO6392Code );
 		if( obj != null ) {
@@ -804,7 +804,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOLangByCode2Idx( String ISO6391Code )
+	public void deepDisposeISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code )
 	{
 		final String S_ProcName = "deepDisposeISOLangByCode2Idx";
 		ICFSecISOLangObj obj;
@@ -839,7 +839,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deleteISOLangByIdIdx( short ISOLangId )
+	public void deleteISOLangByIdIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOLangObj obj = readISOLang(ISOLangId);
 		if( obj != null ) {
@@ -869,7 +869,7 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deleteISOLangByCode3Idx( String ISO6392Code )
+	public void deleteISOLangByCode3Idx( $implIJavaAtomType$ ISO6392Code )
 	{
 		if( indexByCode3Idx == null ) {
 			indexByCode3Idx = new HashMap< ICFSecISOLangByCode3IdxKey,
@@ -892,16 +892,16 @@ public class CFSecISOLangTableObj
 	}
 
 	@Override
-	public void deleteISOLangByCode2Idx( String ISO6391Code )
+	public void deleteISOLangByCode2Idx( $implIJavaAtomType$ ISO6391Code )
 	{
 		ICFSecISOLangByCode2IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newByCode2IdxKey();
 		key.setOptionalISO6391Code( ISO6391Code );
 		if( indexByCode2Idx == null ) {
 			indexByCode2Idx = new HashMap< ICFSecISOLangByCode2IdxKey,
-				Map< Short, ICFSecISOLangObj > >();
+				Map< $implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj > >();
 		}
 		if( indexByCode2Idx.containsKey( key ) ) {
-			Map<Short, ICFSecISOLangObj> dict = indexByCode2Idx.get( key );
+			Map<$implCommaIJavaOptAtomType empty empty )$, ICFSecISOLangObj> dict = indexByCode2Idx.get( key );
 			schema.getCFSecBackingStore().getTableISOLang().deleteISOLangByCode2Idx( null,
 				ISO6391Code );
 			Iterator<ICFSecISOLangObj> iter = dict.values().iterator();

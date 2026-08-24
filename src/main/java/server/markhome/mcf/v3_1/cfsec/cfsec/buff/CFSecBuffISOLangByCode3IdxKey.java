@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOLangByCode3IdxKey
 	implements ICFSecISOLangByCode3IdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredISO6392Code;
+	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISO6392Code;
 	public CFSecBuffISOLangByCode3IdxKey() {
 		requiredISO6392Code = ICFSecPubISOLang.ISO6392CODE_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implIJavaAtomType$ getRequiredISO6392Code() {
 		return(requiredISO6392Code);
 	}
 
-	public void setRequiredISO6392Code( String value ) {
+	public void setRequiredISO6392Code( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredISO6392Code",

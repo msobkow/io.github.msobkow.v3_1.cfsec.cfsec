@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecSysGrpIncByNameIdxKey
 {
-	public String getRequiredInclName();
-	public void setRequiredInclName( String value );
+	public $implIJavaAtomType$ getRequiredInclName();
+	public void setRequiredInclName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

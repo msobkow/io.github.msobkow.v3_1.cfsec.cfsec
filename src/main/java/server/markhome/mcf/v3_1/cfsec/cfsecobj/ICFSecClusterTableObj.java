@@ -101,7 +101,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	The Cluster-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecClusterObj readCluster( ICFLibKeyHash256 pkey );
+	ICFSecClusterObj readCluster( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a Cluster-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecClusterTableObj
 	 *	@return	The Cluster-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecClusterObj readCluster( ICFLibKeyHash256 pkey,
+	ICFSecClusterObj readCluster( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecClusterObj readCachedCluster( ICFLibKeyHash256 pkey );
+	ICFSecClusterObj readCachedCluster( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeCluster( ICFSecClusterObj obj );
 
-	void deepDisposeCluster( ICFLibKeyHash256 pkey );
+	void deepDisposeCluster( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecClusterObj lockCluster( ICFLibKeyHash256 pkey );
+	ICFSecClusterObj lockCluster( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the Cluster-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	List of ICFSecClusterObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecClusterObj> pageAllCluster(ICFLibKeyHash256 priorId );
+	List<ICFSecClusterObj> pageAllCluster($implIJavaOptAtomType$ priorId );
 
 	/**
 	 *	Get the CFSecClusterObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByIdIdx( ICFLibKeyHash256 Id );
+	ICFSecClusterObj readClusterByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Get the CFSecClusterObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByIdIdx( ICFLibKeyHash256 Id,
+	ICFSecClusterObj readClusterByIdIdx( $implIJavaAtomType$ Id,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj cached instance for the unique UDomNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByUDomNameIdx(String FullDomName );
+	ICFSecClusterObj readClusterByUDomNameIdx($implIJavaAtomType$ FullDomName );
 
 	/**
 	 *	Get the CFSecClusterObj instance for the unique UDomNameIdx key.
@@ -190,7 +190,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj refreshed instance for the unique UDomNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByUDomNameIdx(String FullDomName,
+	ICFSecClusterObj readClusterByUDomNameIdx($implIJavaAtomType$ FullDomName,
 		boolean forceRead );
 
 	/**
@@ -201,7 +201,7 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj cached instance for the unique UDescrIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByUDescrIdx(String Description );
+	ICFSecClusterObj readClusterByUDescrIdx($implIJavaAtomType$ Description );
 
 	/**
 	 *	Get the CFSecClusterObj instance for the unique UDescrIdx key.
@@ -211,20 +211,20 @@ public interface ICFSecClusterTableObj
 	 *	@return	CFSecClusterObj refreshed instance for the unique UDescrIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecClusterObj readClusterByUDescrIdx(String Description,
+	ICFSecClusterObj readClusterByUDescrIdx($implIJavaAtomType$ Description,
 		boolean forceRead );
 
-	ICFSecClusterObj readCachedClusterByIdIdx( ICFLibKeyHash256 Id );
+	ICFSecClusterObj readCachedClusterByIdIdx( $implIJavaAtomType$ Id );
 
-	ICFSecClusterObj readCachedClusterByUDomNameIdx( String FullDomName );
+	ICFSecClusterObj readCachedClusterByUDomNameIdx( $implIJavaAtomType$ FullDomName );
 
-	ICFSecClusterObj readCachedClusterByUDescrIdx( String Description );
+	ICFSecClusterObj readCachedClusterByUDescrIdx( $implIJavaAtomType$ Description );
 
-	void deepDisposeClusterByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeClusterByIdIdx( $implIJavaAtomType$ Id );
 
-	void deepDisposeClusterByUDomNameIdx( String FullDomName );
+	void deepDisposeClusterByUDomNameIdx( $implIJavaAtomType$ FullDomName );
 
-	void deepDisposeClusterByUDescrIdx( String Description );
+	void deepDisposeClusterByUDescrIdx( $implIJavaAtomType$ Description );
 
 	/**
 	 *	Internal use only.
@@ -241,19 +241,19 @@ public interface ICFSecClusterTableObj
 	 *
 	 *	@param	Id	The Cluster key attribute of the instance generating the id.
 	 */
-	void deleteClusterByIdIdx( ICFLibKeyHash256 Id );
+	void deleteClusterByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	FullDomName	The Cluster key attribute of the instance generating the id.
 	 */
-	void deleteClusterByUDomNameIdx(String FullDomName );
+	void deleteClusterByUDomNameIdx($implIJavaAtomType$ FullDomName );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Description	The Cluster key attribute of the instance generating the id.
 	 */
-	void deleteClusterByUDescrIdx(String Description );
+	void deleteClusterByUDescrIdx($implIJavaAtomType$ Description );
 }

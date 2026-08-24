@@ -59,8 +59,8 @@ public class CFSecBuffClusterH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFSecPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFSecPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredFullDomName;
-	protected String requiredDescription;
+	protected $implIJavaAtomType$ requiredFullDomName;
+	protected $implIJavaAtomType$ requiredDescription;
 
     public CFSecBuffClusterH() {
             // The primary key member attributes are initialized on construction
@@ -194,11 +194,11 @@ public class CFSecBuffClusterH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",
@@ -209,11 +209,11 @@ public class CFSecBuffClusterH
 	}
 
 	@Override
-	public String getRequiredFullDomName() {
+	public $implIJavaAtomType$ getRequiredFullDomName() {
 		return(requiredFullDomName);
 	}
 
-	public void setRequiredFullDomName( String value ) {
+	public void setRequiredFullDomName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredFullDomName",
@@ -232,11 +232,11 @@ public class CFSecBuffClusterH
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implIJavaAtomType$ getRequiredDescription() {
 		return(requiredDescription);
 	}
 
-	public void setRequiredDescription( String value ) {
+	public void setRequiredDescription( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredDescription",

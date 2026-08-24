@@ -71,15 +71,15 @@ public interface ICFSecISOLangH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public short getRequiredISOLangId();
-	public void setRequiredISOLangId( short requiredISOLangId );
+	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredISOLangId();
+	public void setRequiredISOLangId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISOLangId );
 
-	public String getRequiredISO6392Code();
-	public void setRequiredISO6392Code( String value );
-	public String getOptionalISO6391Code();
-	public void setOptionalISO6391Code( String value );
-	public String getRequiredEnglishName();
-	public void setRequiredEnglishName( String value );
+	public $implIJavaAtomType$ getRequiredISO6392Code();
+	public void setRequiredISO6392Code( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalISO6391Code();
+	public void setOptionalISO6391Code( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredEnglishName();
+	public void setRequiredEnglishName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

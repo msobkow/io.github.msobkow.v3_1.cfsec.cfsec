@@ -90,7 +90,7 @@ public interface ICFSecSysClusterTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSysClusterByIdIdx( ICFSecAuthorization Authorization,
-		Integer argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SysCluster instances identified by the key ClusterIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSysClusterTable
 	 *	@param	ClusterId	The SysCluster key attribute of the instance generating the id.
 	 */
 	void deleteSysClusterByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId );
 
 	/**
 	 *	Delete the SysCluster instances identified by the key ClusterIdx.
@@ -123,7 +123,7 @@ public interface ICFSecSysClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecSysCluster readDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SysCluster record instance by primary key.
@@ -136,7 +136,7 @@ public interface ICFSecSysClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecSysCluster lockDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SysCluster instances.
@@ -158,7 +158,7 @@ public interface ICFSecSysClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecSysCluster readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		int SingletonId );
+		$implIJavaAtomType$ SingletonId );
 
 	/**
 	 *	Read an array of the derived SysCluster record instances identified by the duplicate key ClusterIdx.
@@ -170,7 +170,7 @@ public interface ICFSecSysClusterTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSysCluster[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read the specific SysCluster record instance identified by the primary key.
@@ -185,7 +185,7 @@ public interface ICFSecSysClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSysCluster readRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SysCluster record instance identified by the primary key.
@@ -200,7 +200,7 @@ public interface ICFSecSysClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSysCluster lockRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SysCluster record instances.
@@ -224,7 +224,7 @@ public interface ICFSecSysClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSysCluster readRecByIdIdx( ICFSecAuthorization Authorization,
-		int SingletonId );
+		$implIJavaAtomType$ SingletonId );
 
 	/**
 	 *	Read an array of the specific SysCluster record instances identified by the duplicate key ClusterIdx.
@@ -238,5 +238,5 @@ public interface ICFSecSysClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSysCluster[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 }

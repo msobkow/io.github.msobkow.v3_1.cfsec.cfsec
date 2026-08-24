@@ -75,20 +75,20 @@ public interface ICFSecTenant
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredId);
 	public List<ICFSecSecTentGrp> getOptionalComponentsSecGroup();
 
 	public List<ICFSecSecTentRole> getOptionalComponentsSecRole();
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredId();
+	public void setRequiredId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredContainerCluster();
 
-	public void setRequiredContainerCluster(ICFLibKeyHash256 argClusterId);
+	public void setRequiredContainerCluster($implIJavaAtomType$ argClusterId);
 
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
 
@@ -96,10 +96,10 @@ public interface ICFSecTenant
 
 	public void setRequiredContainerCluster(ICFSecPubCluster argObj);
 
-	public ICFLibKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( ICFLibKeyHash256 value );
-	public String getRequiredTenantName();
-	public void setRequiredTenantName( String value );
+	public $implIJavaAtomType$ getRequiredClusterId();
+	public void setRequiredClusterId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredTenantName();
+	public void setRequiredTenantName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

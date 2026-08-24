@@ -64,10 +64,10 @@ public interface ICFSecISOCtryLangHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public short getRequiredISOCtryId();
-	public void setRequiredISOCtryId( short value );
-	public short getRequiredISOLangId();
-	public void setRequiredISOLangId( short value );
+	public $implIJavaAtomType$ getRequiredISOCtryId();
+	public void setRequiredISOCtryId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredISOLangId();
+	public void setRequiredISOLangId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

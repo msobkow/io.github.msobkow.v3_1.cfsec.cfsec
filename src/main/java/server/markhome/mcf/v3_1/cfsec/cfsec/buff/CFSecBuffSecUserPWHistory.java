@@ -54,8 +54,8 @@ public class CFSecBuffSecUserPWHistory
 {
 	protected ICFSecSecUserPWHistoryPKey pkey = new CFSecBuffSecUserPWHistoryPKey();
 	protected int requiredRevision;
-	protected LocalDateTime requiredPWReplacedStamp;
-	protected String requiredPasswordHash;
+	protected $implIJavaAtomType$ requiredPWReplacedStamp;
+	protected $implIJavaAtomType$ requiredPasswordHash;
 
 	public CFSecBuffSecUserPWHistory() {
 		pkey = new CFSecBuffSecUserPWHistoryPKey();
@@ -78,11 +78,11 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(getPKey().getRequiredSecUserId());
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -93,11 +93,11 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implIJavaAtomType$ getRequiredPWSetStamp() {
 		return(getPKey().getRequiredPWSetStamp());
 	}
 
-	public void setRequiredPWSetStamp( LocalDateTime value ) {
+	public void setRequiredPWSetStamp( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPWSetStamp",
@@ -123,11 +123,11 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWReplacedStamp() {
+	public $implIJavaAtomType$ getRequiredPWReplacedStamp() {
 		return(requiredPWReplacedStamp);
 	}
 
-	public void setRequiredPWReplacedStamp( LocalDateTime value ) {
+	public void setRequiredPWReplacedStamp( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPWReplacedStamp",
@@ -138,11 +138,11 @@ public class CFSecBuffSecUserPWHistory
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implIJavaAtomType$ getRequiredPasswordHash() {
 		return(requiredPasswordHash);
 	}
 
-	public void setRequiredPasswordHash( String value ) {
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPasswordHash",

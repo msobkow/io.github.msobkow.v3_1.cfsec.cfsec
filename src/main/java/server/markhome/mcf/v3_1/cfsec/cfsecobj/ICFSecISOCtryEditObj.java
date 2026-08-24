@@ -125,46 +125,46 @@ public interface ICFSecISOCtryEditObj
 	List<ICFSecISOCtryLangObj> getOptionalComponentsLang();
 
 	/**
-	 *	Get the required short attribute ISOCtryId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@return	The required short attribute ISOCtryId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCtryId.
 	 */
-	short getRequiredISOCtryId();
+	$implIJavaAtomType$ getRequiredISOCtryId();
 
 	/**
-	 *	Set the required short attribute ISOCtryId.
+	 *	Set the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@param value The required short attribute ISOCtryId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOCtryId value to be applied.
 	 */
-	void setRequiredISOCtryId(short value);
+	void setRequiredISOCtryId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute ISOCode.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@return	The required String attribute ISOCode.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCode.
 	 */
-	String getRequiredISOCode();
+	$implIJavaAtomType$ getRequiredISOCode();
 
 	/**
-	 *	Set the required String attribute ISOCode.
+	 *	Set the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@param value The required String attribute ISOCode value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOCode value to be applied.
 	 */
-	void setRequiredISOCode(String value);
+	void setRequiredISOCode($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

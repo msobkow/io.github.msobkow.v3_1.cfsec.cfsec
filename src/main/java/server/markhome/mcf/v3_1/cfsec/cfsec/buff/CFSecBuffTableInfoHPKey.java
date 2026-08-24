@@ -57,7 +57,7 @@ public class CFSecBuffTableInfoHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected int requiredTableInfoId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredTableInfoId;
 
 	public CFSecBuffTableInfoHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
@@ -119,12 +119,12 @@ public class CFSecBuffTableInfoHPKey
 	}
 
 	@Override
-	public int getRequiredTableInfoId() {
+	public $implIJavaAtomType$ getRequiredTableInfoId() {
 		return(requiredTableInfoId);
 	}
 
 	@Override
-	public void setRequiredTableInfoId( int value ) {
+	public void setRequiredTableInfoId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredTableInfoId",

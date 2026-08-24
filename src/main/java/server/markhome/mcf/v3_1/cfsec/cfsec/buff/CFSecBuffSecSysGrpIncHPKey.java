@@ -58,8 +58,8 @@ public class CFSecBuffSecSysGrpIncHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected ICFLibKeyHash256 requiredSecSysGrpId;
-	protected String requiredInclName;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecSysGrpId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredInclName;
 
 	public CFSecBuffSecSysGrpIncHPKey() {
 		auditClusterId = ICFSecProtCluster.ID_INIT_VALUE;
@@ -122,11 +122,11 @@ public class CFSecBuffSecSysGrpIncHPKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
+	public $implIJavaAtomType$ getRequiredSecSysGrpId() {
 		return(requiredSecSysGrpId);
 	}
 
-	public void setRequiredSecSysGrpId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecSysGrpId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSysGrpId",
@@ -137,11 +137,11 @@ public class CFSecBuffSecSysGrpIncHPKey
 	}
 
 	@Override
-	public String getRequiredInclName() {
+	public $implIJavaAtomType$ getRequiredInclName() {
 		return(requiredInclName);
 	}
 
-	public void setRequiredInclName( String value ) {
+	public void setRequiredInclName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredInclName",

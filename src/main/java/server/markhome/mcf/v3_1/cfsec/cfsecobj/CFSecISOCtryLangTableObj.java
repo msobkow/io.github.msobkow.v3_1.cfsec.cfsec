@@ -333,15 +333,15 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryLangObj readISOCtryLang( short ISOCtryId,
-		short ISOLangId ) {
+	public ICFSecISOCtryLangObj readISOCtryLang( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId ) {
 		return( readISOCtryLang( ISOCtryId,
 			ISOLangId, false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryLangObj readISOCtryLang( short ISOCtryId,
-		short ISOLangId, boolean forceRead ) {
+	public ICFSecISOCtryLangObj readISOCtryLang( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId, boolean forceRead ) {
 		ICFSecISOCtryLangObj obj = null;
 		ICFSecISOCtryLang readRec = schema.getCFSecBackingStore().getTableISOCtryLang().readDerivedByIdIdx( null,
 			ISOCtryId,
@@ -565,8 +565,8 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryLangObj readISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId )
+	public ICFSecISOCtryLangObj readISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId )
 	{
 		return( readISOCtryLangByIdIdx( ISOCtryId,
 			ISOLangId,
@@ -574,8 +574,8 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryLangObj readISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId, boolean forceRead )
+	public ICFSecISOCtryLangObj readISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId, boolean forceRead )
 	{
 		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newPKey();
 		pkey.setRequiredISOCtryId( ISOCtryId );
@@ -585,14 +585,14 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( short ISOCtryId )
+	public List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		return( readISOCtryLangByCtryIdx( ISOCtryId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( short ISOCtryId,
+	public List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryLangByCtryIdx";
@@ -678,14 +678,14 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( short ISOLangId )
+	public List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		return( readISOCtryLangByLangIdx( ISOLangId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( short ISOLangId,
+	public List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryLangByLangIdx";
@@ -771,8 +771,8 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryLangObj readCachedISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId )
+	public ICFSecISOCtryLangObj readCachedISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOCtryLangObj obj = null;
 		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newPKey();
@@ -785,7 +785,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByCtryIdx( short ISOCtryId )
+	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		final String S_ProcName = "readCachedISOCtryLangByCtryIdx";
 		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
@@ -862,7 +862,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByLangIdx( short ISOLangId )
+	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		final String S_ProcName = "readCachedISOCtryLangByLangIdx";
 		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
@@ -939,8 +939,8 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId )
+	public void deepDisposeISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOCtryLangObj obj = readCachedISOCtryLangByIdIdx( ISOCtryId,
 				ISOLangId );
@@ -950,7 +950,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryLangByCtryIdx( short ISOCtryId )
+	public void deepDisposeISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		final String S_ProcName = "deepDisposeISOCtryLangByCtryIdx";
 		ICFSecISOCtryLangObj obj;
@@ -967,7 +967,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryLangByLangIdx( short ISOLangId )
+	public void deepDisposeISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		final String S_ProcName = "deepDisposeISOCtryLangByLangIdx";
 		ICFSecISOCtryLangObj obj;
@@ -1002,8 +1002,8 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deleteISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId )
+	public void deleteISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOCtryLangObj obj = readISOCtryLang(ISOCtryId,
 				ISOLangId);
@@ -1035,7 +1035,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deleteISOCtryLangByCtryIdx( short ISOCtryId )
+	public void deleteISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 		key.setRequiredISOCtryId( ISOCtryId );
@@ -1069,7 +1069,7 @@ public class CFSecISOCtryLangTableObj
 	}
 
 	@Override
-	public void deleteISOCtryLangByLangIdx( short ISOLangId )
+	public void deleteISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId )
 	{
 		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 		key.setRequiredISOLangId( ISOLangId );

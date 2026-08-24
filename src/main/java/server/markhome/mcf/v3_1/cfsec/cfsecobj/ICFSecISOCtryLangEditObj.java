@@ -153,18 +153,18 @@ public interface ICFSecISOCtryLangEditObj
 	void setRequiredParentLang( ICFSecISOLangObj value );
 
 	/**
-	 *	Get the required short attribute ISOCtryId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@return	The required short attribute ISOCtryId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCtryId.
 	 */
-	short getRequiredISOCtryId();
+	$implIJavaAtomType$ getRequiredISOCtryId();
 
 	/**
-	 *	Get the required short attribute ISOLangId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOLangId.
 	 *
-	 *	@return	The required short attribute ISOLangId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOLangId.
 	 */
-	short getRequiredISOLangId();
+	$implIJavaAtomType$ getRequiredISOLangId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

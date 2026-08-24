@@ -53,15 +53,15 @@ public class CFSecBuffTableInfoH
     implements ICFSecTableInfoH, Comparable<Object>, Serializable
 {
     protected CFSecBuffTableInfoHPKey pkey;
-	protected String requiredSchemaName;
-	protected String requiredTableName;
-	protected String optionalSuperName;
-	protected int requiredBackingClassCode;
-	protected int requiredRuntimeClassCode;
-	protected boolean requiredHasHistory;
-	protected boolean requiredIsMutable;
-	protected String requiredSecScopeName;
-	protected String requiredCodeVis;
+	protected $implIJavaAtomType$ requiredSchemaName;
+	protected $implIJavaAtomType$ requiredTableName;
+	protected $implIJavaAtomType$ optionalSuperName;
+	protected $implIJavaAtomType$ requiredBackingClassCode;
+	protected $implIJavaAtomType$ requiredRuntimeClassCode;
+	protected $implIJavaAtomType$ requiredHasHistory;
+	protected $implIJavaAtomType$ requiredIsMutable;
+	protected $implIJavaAtomType$ requiredSecScopeName;
+	protected $implIJavaAtomType$ requiredCodeVis;
 
     public CFSecBuffTableInfoH() {
             // The primary key member attributes are initialized on construction
@@ -150,12 +150,12 @@ public class CFSecBuffTableInfoH
     }
 
 	@Override
-	public int getRequiredTableInfoId() {
+	public $implIJavaAtomType$ getRequiredTableInfoId() {
 		return(getPKey().getRequiredTableInfoId());
 	}
 
 	@Override
-	public void setRequiredTableInfoId( int value ) {
+	public void setRequiredTableInfoId( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubTableInfo.TABLEINFOID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredTableInfoId",
@@ -168,11 +168,11 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public String getRequiredSchemaName() {
+	public $implIJavaAtomType$ getRequiredSchemaName() {
 		return(requiredSchemaName);
 	}
 
-	public void setRequiredSchemaName( String value ) {
+	public void setRequiredSchemaName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSchemaName",
@@ -191,11 +191,11 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public String getRequiredTableName() {
+	public $implIJavaAtomType$ getRequiredTableName() {
 		return(requiredTableName);
 	}
 
-	public void setRequiredTableName( String value ) {
+	public void setRequiredTableName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTableName",
@@ -214,11 +214,11 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public String getOptionalSuperName() {
+	public $implIJavaAtomType$ getOptionalSuperName() {
 		return(optionalSuperName);
 	}
 
-	public void setOptionalSuperName( String value ) {
+	public void setOptionalSuperName( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalSuperName",
@@ -231,12 +231,12 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public int getRequiredBackingClassCode() {
+	public $implIJavaAtomType$ getRequiredBackingClassCode() {
 		return(requiredBackingClassCode);
 	}
 
 	@Override
-	public void setRequiredBackingClassCode( int value ) {
+	public void setRequiredBackingClassCode( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubTableInfo.BACKINGCLASSCODE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredBackingClassCode",
@@ -249,12 +249,12 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public int getRequiredRuntimeClassCode() {
+	public $implIJavaAtomType$ getRequiredRuntimeClassCode() {
 		return(requiredRuntimeClassCode);
 	}
 
 	@Override
-	public void setRequiredRuntimeClassCode( int value ) {
+	public void setRequiredRuntimeClassCode( $implIJavaAtomType$ value ) {
 		if( value < ICFSecPubTableInfo.RUNTIMECLASSCODE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredRuntimeClassCode",
@@ -267,29 +267,29 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public boolean getRequiredHasHistory() {
+	public $implIJavaAtomType$ getRequiredHasHistory() {
 		return(requiredHasHistory);
 	}
 
-	public void setRequiredHasHistory( boolean value ) {
+	public void setRequiredHasHistory( $implIJavaAtomType$ value ) {
 		requiredHasHistory = value;
 	}
 
 	@Override
-	public boolean getRequiredIsMutable() {
+	public $implIJavaAtomType$ getRequiredIsMutable() {
 		return(requiredIsMutable);
 	}
 
-	public void setRequiredIsMutable( boolean value ) {
+	public void setRequiredIsMutable( $implIJavaAtomType$ value ) {
 		requiredIsMutable = value;
 	}
 
 	@Override
-	public String getRequiredSecScopeName() {
+	public $implIJavaAtomType$ getRequiredSecScopeName() {
 		return(requiredSecScopeName);
 	}
 
-	public void setRequiredSecScopeName( String value ) {
+	public void setRequiredSecScopeName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecScopeName",
@@ -308,11 +308,11 @@ public class CFSecBuffTableInfoH
 	}
 
 	@Override
-	public String getRequiredCodeVis() {
+	public $implIJavaAtomType$ getRequiredCodeVis() {
 		return(requiredCodeVis);
 	}
 
-	public void setRequiredCodeVis( String value ) {
+	public void setRequiredCodeVis( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredCodeVis",

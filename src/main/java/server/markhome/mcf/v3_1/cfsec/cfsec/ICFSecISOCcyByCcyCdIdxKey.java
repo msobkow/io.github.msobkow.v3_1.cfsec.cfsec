@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecISOCcyByCcyCdIdxKey
 {
-	public String getRequiredISOCode();
-	public void setRequiredISOCode( String value );
+	public $implIJavaAtomType$ getRequiredISOCode();
+	public void setRequiredISOCode( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

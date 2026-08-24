@@ -47,10 +47,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecSessionByStartIdxKey
 {
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 value );
-	public LocalDateTime getRequiredStart();
-	public void setRequiredStart( LocalDateTime value );
+	public $implIJavaAtomType$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredStart();
+	public void setRequiredStart( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

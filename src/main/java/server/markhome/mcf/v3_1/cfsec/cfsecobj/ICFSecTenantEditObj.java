@@ -146,39 +146,39 @@ public interface ICFSecTenantEditObj
 	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
-	 *	Get the required String attribute TenantName.
+	 *	Get the required $implIJavaAtomType$ attribute TenantName.
 	 *
-	 *	@return	The required String attribute TenantName.
+	 *	@return	The required $implIJavaAtomType$ attribute TenantName.
 	 */
-	String getRequiredTenantName();
+	$implIJavaAtomType$ getRequiredTenantName();
 
 	/**
-	 *	Set the required String attribute TenantName.
+	 *	Set the required $implIJavaAtomType$ attribute TenantName.
 	 *
-	 *	@param value The required String attribute TenantName value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute TenantName value to be applied.
 	 */
-	void setRequiredTenantName(String value);
+	void setRequiredTenantName($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

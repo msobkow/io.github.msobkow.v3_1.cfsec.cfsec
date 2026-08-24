@@ -160,32 +160,32 @@ public interface ICFSecSecClusRoleEditObj
 	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecClusRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecClusRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusRoleId();
+	$implIJavaAtomType$ getRequiredSecClusRoleId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	Set the required $implIJavaAtomType$ attribute SecClusRoleId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecClusRoleId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecClusRoleId value to be applied.
 	 */
-	void setRequiredSecClusRoleId(ICFLibKeyHash256 value);
+	void setRequiredSecClusRoleId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

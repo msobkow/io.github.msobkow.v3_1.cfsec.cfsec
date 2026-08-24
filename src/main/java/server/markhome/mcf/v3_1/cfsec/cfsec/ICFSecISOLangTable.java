@@ -90,7 +90,7 @@ public interface ICFSecISOLangTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteISOLangByIdIdx( ICFSecAuthorization Authorization,
-		Short argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the ISOLang instances identified by the key Code3Idx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecISOLangTable
 	 *	@param	ISO6392Code	The ISOLang key attribute of the instance generating the id.
 	 */
 	void deleteISOLangByCode3Idx( ICFSecAuthorization Authorization,
-		String argISO6392Code );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISO6392Code );
 
 	/**
 	 *	Delete the ISOLang instances identified by the key Code3Idx.
@@ -118,7 +118,7 @@ public interface ICFSecISOLangTable
 	 *	@param	ISO6391Code	The ISOLang key attribute of the instance generating the id.
 	 */
 	void deleteISOLangByCode2Idx( ICFSecAuthorization Authorization,
-		String argISO6391Code );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISO6391Code );
 
 	/**
 	 *	Delete the ISOLang instances identified by the key Code2Idx.
@@ -142,7 +142,7 @@ public interface ICFSecISOLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOLang readDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived ISOLang record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecISOLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOLang lockDerived( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all ISOLang instances.
@@ -177,7 +177,7 @@ public interface ICFSecISOLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOLang readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read the derived ISOLang record instance identified by the unique key Code3Idx.
@@ -190,7 +190,7 @@ public interface ICFSecISOLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOLang readDerivedByCode3Idx( ICFSecAuthorization Authorization,
-		String ISO6392Code );
+		$implIJavaAtomType$ ISO6392Code );
 
 	/**
 	 *	Read an array of the derived ISOLang record instances identified by the duplicate key Code2Idx.
@@ -202,7 +202,7 @@ public interface ICFSecISOLangTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOLang[] readDerivedByCode2Idx( ICFSecAuthorization Authorization,
-		String ISO6391Code );
+		$implIJavaAtomType$ ISO6391Code );
 
 	/**
 	 *	Read the specific ISOLang record instance identified by the primary key.
@@ -217,7 +217,7 @@ public interface ICFSecISOLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOLang readRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific ISOLang record instance identified by the primary key.
@@ -232,7 +232,7 @@ public interface ICFSecISOLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOLang lockRec( ICFSecAuthorization Authorization,
-		Short PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific ISOLang record instances.
@@ -256,7 +256,7 @@ public interface ICFSecISOLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOLang readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read the specific ISOLang record instance identified by the unique key Code3Idx.
@@ -271,7 +271,7 @@ public interface ICFSecISOLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOLang readRecByCode3Idx( ICFSecAuthorization Authorization,
-		String ISO6392Code );
+		$implIJavaAtomType$ ISO6392Code );
 
 	/**
 	 *	Read an array of the specific ISOLang record instances identified by the duplicate key Code2Idx.
@@ -285,5 +285,5 @@ public interface ICFSecISOLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOLang[] readRecByCode2Idx( ICFSecAuthorization Authorization,
-		String ISO6391Code );
+		$implIJavaAtomType$ ISO6391Code );
 }

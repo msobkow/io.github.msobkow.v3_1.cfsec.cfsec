@@ -187,18 +187,18 @@ public interface ICFSecISOCcyObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Short primary key for this instance.
+	 *	@return	$implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Short getPKey();
+	$implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Short primary key value for this instance.
+	 *	@param $implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Short value );
+	void setPKey( $implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -232,39 +232,39 @@ public interface ICFSecISOCcyObj
 	List<ICFSecISOCtryCcyObj> getOptionalChildrenCtry( boolean forceRead );
 
 	/**
-	 *	Get the required short attribute ISOCcyId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCcyId.
 	 *
-	 *	@return	The required short attribute ISOCcyId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCcyId.
 	 */
-	short getRequiredISOCcyId();
+	$implIJavaAtomType$ getRequiredISOCcyId();
 
 	/**
-	 *	Get the required String attribute ISOCode.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@return	The required String attribute ISOCode.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCode.
 	 */
-	String getRequiredISOCode();
+	$implIJavaAtomType$ getRequiredISOCode();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Get the optional String attribute UnitSymbol.
+	 *	Get the optional $implIJavaAtomType$ attribute UnitSymbol.
 	 *
-	 *	@return	The optional String attribute UnitSymbol.
+	 *	@return	The optional $implIJavaAtomType$ attribute UnitSymbol.
 	 */
-	String getOptionalUnitSymbol();
+	$implIJavaAtomType$ getOptionalUnitSymbol();
 
 	/**
-	 *	Get the required short attribute Precis.
+	 *	Get the required $implIJavaAtomType$ attribute Precis.
 	 *
-	 *	@return	The required short attribute Precis.
+	 *	@return	The required $implIJavaAtomType$ attribute Precis.
 	 */
-	short getRequiredPrecis();
+	$implIJavaAtomType$ getRequiredPrecis();
 
 	/**
 	 *	Internal use only.

@@ -160,18 +160,18 @@ public interface ICFSecTableInfoObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Integer primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Integer getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Integer primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Integer value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -219,74 +219,74 @@ public interface ICFSecTableInfoObj
 	List<ICFSecTableInfoObj> getOptionalChildrenSubRefs( boolean forceRead );
 
 	/**
-	 *	Get the required int attribute TableInfoId.
+	 *	Get the required $implIJavaAtomType$ attribute TableInfoId.
 	 *
-	 *	@return	The required int attribute TableInfoId.
+	 *	@return	The required $implIJavaAtomType$ attribute TableInfoId.
 	 */
-	int getRequiredTableInfoId();
+	$implIJavaAtomType$ getRequiredTableInfoId();
 
 	/**
-	 *	Get the required String attribute SchemaName.
+	 *	Get the required $implIJavaAtomType$ attribute SchemaName.
 	 *
-	 *	@return	The required String attribute SchemaName.
+	 *	@return	The required $implIJavaAtomType$ attribute SchemaName.
 	 */
-	String getRequiredSchemaName();
+	$implIJavaAtomType$ getRequiredSchemaName();
 
 	/**
-	 *	Get the required String attribute TableName.
+	 *	Get the required $implIJavaAtomType$ attribute TableName.
 	 *
-	 *	@return	The required String attribute TableName.
+	 *	@return	The required $implIJavaAtomType$ attribute TableName.
 	 */
-	String getRequiredTableName();
+	$implIJavaAtomType$ getRequiredTableName();
 
 	/**
-	 *	Get the optional String attribute SuperName.
+	 *	Get the optional $implIJavaAtomType$ attribute SuperName.
 	 *
-	 *	@return	The optional String attribute SuperName.
+	 *	@return	The optional $implIJavaAtomType$ attribute SuperName.
 	 */
-	String getOptionalSuperName();
+	$implIJavaAtomType$ getOptionalSuperName();
 
 	/**
-	 *	Get the required int attribute BackingClassCode.
+	 *	Get the required $implIJavaAtomType$ attribute BackingClassCode.
 	 *
-	 *	@return	The required int attribute BackingClassCode.
+	 *	@return	The required $implIJavaAtomType$ attribute BackingClassCode.
 	 */
-	int getRequiredBackingClassCode();
+	$implIJavaAtomType$ getRequiredBackingClassCode();
 
 	/**
-	 *	Get the required int attribute RuntimeClassCode.
+	 *	Get the required $implIJavaAtomType$ attribute RuntimeClassCode.
 	 *
-	 *	@return	The required int attribute RuntimeClassCode.
+	 *	@return	The required $implIJavaAtomType$ attribute RuntimeClassCode.
 	 */
-	int getRequiredRuntimeClassCode();
+	$implIJavaAtomType$ getRequiredRuntimeClassCode();
 
 	/**
-	 *	Get the required boolean attribute HasHistory.
+	 *	Get the required $implIJavaAtomType$ attribute HasHistory.
 	 *
-	 *	@return	The required boolean attribute HasHistory.
+	 *	@return	The required $implIJavaAtomType$ attribute HasHistory.
 	 */
-	boolean getRequiredHasHistory();
+	$implIJavaAtomType$ getRequiredHasHistory();
 
 	/**
-	 *	Get the required boolean attribute IsMutable.
+	 *	Get the required $implIJavaAtomType$ attribute IsMutable.
 	 *
-	 *	@return	The required boolean attribute IsMutable.
+	 *	@return	The required $implIJavaAtomType$ attribute IsMutable.
 	 */
-	boolean getRequiredIsMutable();
+	$implIJavaAtomType$ getRequiredIsMutable();
 
 	/**
-	 *	Get the required String attribute SecScopeName.
+	 *	Get the required $implIJavaAtomType$ attribute SecScopeName.
 	 *
-	 *	@return	The required String attribute SecScopeName.
+	 *	@return	The required $implIJavaAtomType$ attribute SecScopeName.
 	 */
-	String getRequiredSecScopeName();
+	$implIJavaAtomType$ getRequiredSecScopeName();
 
 	/**
-	 *	Get the required String attribute CodeVis.
+	 *	Get the required $implIJavaAtomType$ attribute CodeVis.
 	 *
-	 *	@return	The required String attribute CodeVis.
+	 *	@return	The required $implIJavaAtomType$ attribute CodeVis.
 	 */
-	String getRequiredCodeVis();
+	$implIJavaAtomType$ getRequiredCodeVis();
 
 	/**
 	 *	Internal use only.

@@ -371,12 +371,12 @@ public class CFSecISOCtryLangObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implIJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey().getRequiredISOCtryId() );
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey().getRequiredISOLangId() );
 	}
 

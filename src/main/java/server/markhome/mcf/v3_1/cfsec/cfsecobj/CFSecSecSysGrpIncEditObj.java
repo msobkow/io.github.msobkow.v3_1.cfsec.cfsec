@@ -397,12 +397,12 @@ public class CFSecSecSysGrpIncEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
+	public $implIJavaAtomType$ getRequiredSecSysGrpId() {
 		return( getPKey().getRequiredSecSysGrpId() );
 	}
 
 	@Override
-	public String getRequiredInclName() {
+	public $implIJavaAtomType$ getRequiredInclName() {
 		return( getPKey().getRequiredInclName() );
 	}
 

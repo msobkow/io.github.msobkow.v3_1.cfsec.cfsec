@@ -52,12 +52,12 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecSession
 	implements ICFSecSecSession, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSecSessionId;
+	protected $implIJavaAtomType$ requiredSecSessionId;
 	protected int requiredRevision;
-	protected ICFLibKeyHash256 requiredSecUserId;
-	protected LocalDateTime requiredStart;
-	protected LocalDateTime optionalFinish;
-	protected ICFLibKeyHash256 optionalSecProxyId;
+	protected $implIJavaAtomType$ requiredSecUserId;
+	protected $implIJavaAtomType$ requiredStart;
+	protected $implIJavaAtomType$ optionalFinish;
+	protected $implIJavaAtomType$ optionalSecProxyId;
 
 	public CFSecBuffSecSession() {
 		requiredSecSessionId = CFLibDbKeyHash256.fromHex( ICFSecPubSecSession.SECSESSIONID_INIT_VALUE.toString() );
@@ -68,23 +68,23 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredSecSessionId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredSecSessionId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecSessionId) {
 		if(requiredSecSessionId != null) {
 			this.requiredSecSessionId = requiredSecSessionId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSessionId() {
+	public $implIJavaAtomType$ getRequiredSecSessionId() {
 		return(requiredSecSessionId);
 	}
 
-	public void setRequiredSecSessionId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecSessionId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSessionId",
@@ -152,7 +152,7 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public void setRequiredContainerSecUser(ICFLibKeyHash256 argSecUserId) {
+	public void setRequiredContainerSecUser($implIJavaAtomType$ argSecUserId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSecUser-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -226,7 +226,7 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public void setRequiredParentSecProxy(ICFLibKeyHash256 argSecProxyId) {
+	public void setRequiredParentSecProxy($implIJavaAtomType$ argSecProxyId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentSecProxy-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -258,11 +258,11 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return(requiredSecUserId);
 	}
 
-	public void setRequiredSecUserId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecUserId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecUserId",
@@ -273,11 +273,11 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public LocalDateTime getRequiredStart() {
+	public $implIJavaAtomType$ getRequiredStart() {
 		return(requiredStart);
 	}
 
-	public void setRequiredStart( LocalDateTime value ) {
+	public void setRequiredStart( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredStart",
@@ -288,20 +288,20 @@ public class CFSecBuffSecSession
 	}
 
 	@Override
-	public LocalDateTime getOptionalFinish() {
+	public $implIJavaAtomType$ getOptionalFinish() {
 		return(optionalFinish);
 	}
 
-	public void setOptionalFinish( LocalDateTime value ) {
+	public void setOptionalFinish( $implIJavaAtomType$ value ) {
 		optionalFinish = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalSecProxyId() {
+	public $implIJavaAtomType$ getOptionalSecProxyId() {
 		return(optionalSecProxyId);
 	}
 
-	public void setOptionalSecProxyId( ICFLibKeyHash256 value ) {
+	public void setOptionalSecProxyId( $implIJavaAtomType$ value ) {
 		optionalSecProxyId = value;
 	}
 

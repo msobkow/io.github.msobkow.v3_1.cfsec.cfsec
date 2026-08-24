@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCcyByCcyCdIdxKey
 	implements ICFSecISOCcyByCcyCdIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredISOCode;
+	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISOCode;
 	public CFSecBuffISOCcyByCcyCdIdxKey() {
 		requiredISOCode = ICFSecPubISOCcy.ISOCODE_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return(requiredISOCode);
 	}
 
-	public void setRequiredISOCode( String value ) {
+	public void setRequiredISOCode( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredISOCode",

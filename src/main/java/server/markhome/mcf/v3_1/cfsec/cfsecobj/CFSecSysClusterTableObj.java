@@ -50,23 +50,23 @@ public class CFSecSysClusterTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSysCluster.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSysCluster.CLASS_CODE;
-	private Map<Integer, ICFSecSysClusterObj> members;
-	private Map<Integer, ICFSecSysClusterObj> allSysCluster;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> allSysCluster;
 	private Map< ICFSecSysClusterByClusterIdxKey,
-		Map<Integer, ICFSecSysClusterObj > > indexByClusterIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > > indexByClusterIdx;
 	public static String TABLE_NAME = "SysCluster";
 	public static String TABLE_DBNAME = "sysclus";
 
 	public CFSecSysClusterTableObj() {
 		schema = null;
-		members = new HashMap<Integer, ICFSecSysClusterObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj>();
 		allSysCluster = null;
 		indexByClusterIdx = null;
 	}
 
 	public CFSecSysClusterTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<Integer, ICFSecSysClusterObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj>();
 		allSysCluster = null;
 		indexByClusterIdx = null;
 	}
@@ -189,7 +189,7 @@ public class CFSecSysClusterTableObj
 	@Override
 	public ICFSecSysClusterObj realiseSysCluster( ICFSecSysClusterObj Obj ) {
 		ICFSecSysClusterObj obj = Obj;
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSysClusterObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSysClusterObj existingObj = members.get( pkey );
@@ -206,7 +206,7 @@ public class CFSecSysClusterTableObj
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.remove( keepObj.getPKey() );
 					if( mapClusterIdx.size() <= 0 ) {
@@ -222,7 +222,7 @@ public class CFSecSysClusterTableObj
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -246,7 +246,7 @@ public class CFSecSysClusterTableObj
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -270,12 +270,12 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public ICFSecSysClusterObj readSysCluster( Integer pkey ) {
+	public ICFSecSysClusterObj readSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readSysCluster( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSysClusterObj readSysCluster( Integer pkey, boolean forceRead ) {
+	public ICFSecSysClusterObj readSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecSysClusterObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -294,7 +294,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public ICFSecSysClusterObj readCachedSysCluster( Integer pkey ) {
+	public ICFSecSysClusterObj readCachedSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSysClusterObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -310,7 +310,7 @@ public class CFSecSysClusterTableObj
 		if( obj == null ) {
 			return;
 		}
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSysClusterObj existing = readCachedSysCluster( pkey );
 		if( existing == null ) {
 			return;
@@ -333,7 +333,7 @@ public class CFSecSysClusterTableObj
 
 	}
 	@Override
-	public void deepDisposeSysCluster( Integer pkey ) {
+	public void deepDisposeSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSysClusterObj obj = readCachedSysCluster( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -341,7 +341,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public ICFSecSysClusterObj lockSysCluster( Integer pkey ) {
+	public ICFSecSysClusterObj lockSysCluster( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSysClusterObj locked = null;
 		ICFSecSysCluster lockRec = schema.getCFSecBackingStore().getTableSysCluster().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -365,7 +365,7 @@ public class CFSecSysClusterTableObj
 	public List<ICFSecSysClusterObj> readAllSysCluster( boolean forceRead ) {
 		final String S_ProcName = "readAllSysCluster";
 		if( ( allSysCluster == null ) || forceRead ) {
-			Map<Integer, ICFSecSysClusterObj> map = new HashMap<Integer,ICFSecSysClusterObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecSysClusterObj>();
 			allSysCluster = map;
 			ICFSecSysCluster[] recList = schema.getCFSecBackingStore().getTableSysCluster().readAllDerived( null );
 			ICFSecSysCluster rec;
@@ -421,8 +421,8 @@ public class CFSecSysClusterTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -479,8 +479,8 @@ public class CFSecSysClusterTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -491,43 +491,43 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public ICFSecSysClusterObj readSysClusterByIdIdx( int SingletonId )
+	public ICFSecSysClusterObj readSysClusterByIdIdx( $implIJavaAtomType$ SingletonId )
 	{
 		return( readSysClusterByIdIdx( SingletonId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSysClusterObj readSysClusterByIdIdx( int SingletonId, boolean forceRead )
+	public ICFSecSysClusterObj readSysClusterByIdIdx( $implIJavaAtomType$ SingletonId, boolean forceRead )
 	{
 		ICFSecSysClusterObj obj = readSysCluster( SingletonId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		return( readSysClusterByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId,
+	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSysClusterByClusterIdx";
 		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
-		Map<Integer, ICFSecSysClusterObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> dict;
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecSysClusterByClusterIdxKey,
-				Map< Integer, ICFSecSysClusterObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > >();
 		}
 		if( ( ! forceRead ) && indexByClusterIdx.containsKey( key ) ) {
 			dict = indexByClusterIdx.get( key );
 		}
 		else {
-			dict = new HashMap<Integer, ICFSecSysClusterObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj>();
 			ICFSecSysClusterObj obj;
 			ICFSecSysCluster[] recList = schema.getCFSecBackingStore().getTableSysCluster().readDerivedByClusterIdx( null,
 				ClusterId );
@@ -585,8 +585,8 @@ public class CFSecSysClusterTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -598,7 +598,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public ICFSecSysClusterObj readCachedSysClusterByIdIdx( int SingletonId )
+	public ICFSecSysClusterObj readCachedSysClusterByIdIdx( $implIJavaAtomType$ SingletonId )
 	{
 		ICFSecSysClusterObj obj = null;
 		obj = readCachedSysCluster( SingletonId );
@@ -606,14 +606,14 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		final String S_ProcName = "readCachedSysClusterByClusterIdx";
 		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecSysClusterObj> arrayList = new ArrayList<ICFSecSysClusterObj>();
 		if( indexByClusterIdx != null ) {
-			Map<Integer, ICFSecSysClusterObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> dict;
 			if( indexByClusterIdx.containsKey( key ) ) {
 				dict = indexByClusterIdx.get( key );
 				int len = dict.size();
@@ -671,8 +671,8 @@ public class CFSecSysClusterTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -683,7 +683,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public void deepDisposeSysClusterByIdIdx( int SingletonId )
+	public void deepDisposeSysClusterByIdIdx( $implIJavaAtomType$ SingletonId )
 	{
 		ICFSecSysClusterObj obj = readCachedSysClusterByIdIdx( SingletonId );
 		if( obj != null ) {
@@ -692,7 +692,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public void deepDisposeSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public void deepDisposeSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		final String S_ProcName = "deepDisposeSysClusterByClusterIdx";
 		ICFSecSysClusterObj obj;
@@ -727,7 +727,7 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public void deleteSysClusterByIdIdx( int SingletonId )
+	public void deleteSysClusterByIdIdx( $implIJavaAtomType$ SingletonId )
 	{
 		ICFSecSysClusterObj obj = readSysCluster(SingletonId);
 		if( obj != null ) {
@@ -757,16 +757,16 @@ public class CFSecSysClusterTableObj
 	}
 
 	@Override
-	public void deleteSysClusterByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public void deleteSysClusterByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecSysClusterByClusterIdxKey,
-				Map< Integer, ICFSecSysClusterObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj > >();
 		}
 		if( indexByClusterIdx.containsKey( key ) ) {
-			Map<Integer, ICFSecSysClusterObj> dict = indexByClusterIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSysClusterObj> dict = indexByClusterIdx.get( key );
 			schema.getCFSecBackingStore().getTableSysCluster().deleteSysClusterByClusterIdx( null,
 				ClusterId );
 			Iterator<ICFSecSysClusterObj> iter = dict.values().iterator();

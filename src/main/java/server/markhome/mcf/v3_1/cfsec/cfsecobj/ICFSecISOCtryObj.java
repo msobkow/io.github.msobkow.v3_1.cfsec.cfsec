@@ -187,18 +187,18 @@ public interface ICFSecISOCtryObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Short primary key for this instance.
+	 *	@return	$implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Short getPKey();
+	$implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Short primary key value for this instance.
+	 *	@param $implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Short value );
+	void setPKey( $implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -246,25 +246,25 @@ public interface ICFSecISOCtryObj
 	List<ICFSecISOCtryLangObj> getOptionalComponentsLang( boolean forceRead );
 
 	/**
-	 *	Get the required short attribute ISOCtryId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@return	The required short attribute ISOCtryId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCtryId.
 	 */
-	short getRequiredISOCtryId();
+	$implIJavaAtomType$ getRequiredISOCtryId();
 
 	/**
-	 *	Get the required String attribute ISOCode.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@return	The required String attribute ISOCode.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCode.
 	 */
-	String getRequiredISOCode();
+	$implIJavaAtomType$ getRequiredISOCode();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
 	 *	Internal use only.

@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecUserPWResetBySentEMAddrIdxKey
 {
-	public String getRequiredSentToEMailAddr();
-	public void setRequiredSentToEMailAddr( String value );
+	public $implIJavaAtomType$ getRequiredSentToEMailAddr();
+	public void setRequiredSentToEMailAddr( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

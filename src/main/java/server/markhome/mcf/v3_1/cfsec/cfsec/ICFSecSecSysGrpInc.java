@@ -77,7 +77,7 @@ public interface ICFSecSecSysGrpInc
 	public void setPKey(ICFSecSecSysGrpIncPKey pkey );
 	public ICFSecSecSysGrp getRequiredContainerGroup();
 
-	public void setRequiredContainerGroup(ICFLibKeyHash256 argSecSysGrpId);
+	public void setRequiredContainerGroup($implIJavaAtomType$ argSecSysGrpId);
 
 	public void setRequiredContainerGroup(ICFSecSecSysGrp argObj);
 
@@ -87,7 +87,7 @@ public interface ICFSecSecSysGrpInc
 
 	public ICFSecSecSysGrp getRequiredParentSubGroup();
 
-	public void setRequiredParentSubGroup(String argInclName);
+	public void setRequiredParentSubGroup($implIJavaAtomType$ argInclName);
 
 	public void setRequiredParentSubGroup(ICFSecSecSysGrp argObj);
 
@@ -95,13 +95,13 @@ public interface ICFSecSecSysGrpInc
 
 	public void setRequiredParentSubGroup(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredSecSysGrpId();
+	public $implIJavaAtomType$ getRequiredSecSysGrpId();
 
-	public void setRequiredSecSysGrpId(ICFLibKeyHash256 value);
+	public void setRequiredSecSysGrpId($implIJavaAtomType$ value);
 
-	public String getRequiredInclName();
+	public $implIJavaAtomType$ getRequiredInclName();
 
-	public void setRequiredInclName(String value);
+	public void setRequiredInclName($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

@@ -50,7 +50,7 @@ public class CFSecTableInfoObj
 	protected boolean isNew;
 	protected ICFSecTableInfoEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Integer pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecTableInfo rec;
 	protected ICFSecTableInfoObj optionalParentSuperRef;
 	protected List<ICFSecTableInfoObj> optionalChildrenSubRefs;
@@ -276,12 +276,12 @@ public class CFSecTableInfoObj
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Integer value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -330,7 +330,7 @@ public class CFSecTableInfoObj
 	}
 
 	@Override
-	public int getRequiredTableInfoId() {
+	public $implIJavaAtomType$ getRequiredTableInfoId() {
 		return( getPKey() );
 	}
 
@@ -370,47 +370,47 @@ public class CFSecTableInfoObj
 	}
 
 	@Override
-	public String getRequiredSchemaName() {
+	public $implIJavaAtomType$ getRequiredSchemaName() {
 		return( getTableInfoRec().getRequiredSchemaName() );
 	}
 
 	@Override
-	public String getRequiredTableName() {
+	public $implIJavaAtomType$ getRequiredTableName() {
 		return( getTableInfoRec().getRequiredTableName() );
 	}
 
 	@Override
-	public String getOptionalSuperName() {
+	public $implIJavaAtomType$ getOptionalSuperName() {
 		return( getTableInfoRec().getOptionalSuperName() );
 	}
 
 	@Override
-	public int getRequiredBackingClassCode() {
+	public $implIJavaAtomType$ getRequiredBackingClassCode() {
 		return( getTableInfoRec().getRequiredBackingClassCode() );
 	}
 
 	@Override
-	public int getRequiredRuntimeClassCode() {
+	public $implIJavaAtomType$ getRequiredRuntimeClassCode() {
 		return( getTableInfoRec().getRequiredRuntimeClassCode() );
 	}
 
 	@Override
-	public boolean getRequiredHasHistory() {
+	public $implIJavaAtomType$ getRequiredHasHistory() {
 		return( getTableInfoRec().getRequiredHasHistory() );
 	}
 
 	@Override
-	public boolean getRequiredIsMutable() {
+	public $implIJavaAtomType$ getRequiredIsMutable() {
 		return( getTableInfoRec().getRequiredIsMutable() );
 	}
 
 	@Override
-	public String getRequiredSecScopeName() {
+	public $implIJavaAtomType$ getRequiredSecScopeName() {
 		return( getTableInfoRec().getRequiredSecScopeName() );
 	}
 
 	@Override
-	public String getRequiredCodeVis() {
+	public $implIJavaAtomType$ getRequiredCodeVis() {
 		return( getTableInfoRec().getRequiredCodeVis() );
 	}
 

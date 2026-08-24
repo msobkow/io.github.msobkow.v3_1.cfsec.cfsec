@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecSessionBySecProxyIdxKey
 {
-	public ICFLibKeyHash256 getOptionalSecProxyId();
-	public void setOptionalSecProxyId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getOptionalSecProxyId();
+	public void setOptionalSecProxyId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

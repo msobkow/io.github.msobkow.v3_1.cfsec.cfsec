@@ -50,23 +50,23 @@ public class CFSecSecUserPasswordTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecSecUserPassword.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecSecUserPassword.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> members;
-	private Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> allSecUserPassword;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> allSecUserPassword;
 	private Map< ICFSecSecUserPasswordBySetStampIdxKey,
-		Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > > indexBySetStampIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > > indexBySetStampIdx;
 	public static String TABLE_NAME = "SecUserPassword";
 	public static String TABLE_DBNAME = "secuserpw";
 
 	public CFSecSecUserPasswordTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj>();
 		allSecUserPassword = null;
 		indexBySetStampIdx = null;
 	}
 
 	public CFSecSecUserPasswordTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj>();
 		allSecUserPassword = null;
 		indexBySetStampIdx = null;
 	}
@@ -189,7 +189,7 @@ public class CFSecSecUserPasswordTableObj
 	@Override
 	public ICFSecSecUserPasswordObj realiseSecUserPassword( ICFSecSecUserPasswordObj Obj ) {
 		ICFSecSecUserPasswordObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecUserPasswordObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecUserPasswordObj existingObj = members.get( pkey );
@@ -206,7 +206,7 @@ public class CFSecSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.remove( keepObj.getPKey() );
 					if( mapSetStampIdx.size() <= 0 ) {
@@ -222,7 +222,7 @@ public class CFSecSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -246,7 +246,7 @@ public class CFSecSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -270,12 +270,12 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj readSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readSecUserPassword( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecUserPasswordObj readSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecSecUserPasswordObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -294,7 +294,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readCachedSecUserPassword( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj readCachedSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserPasswordObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -310,7 +310,7 @@ public class CFSecSecUserPasswordTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecSecUserPasswordObj existing = readCachedSecUserPassword( pkey );
 		if( existing == null ) {
 			return;
@@ -333,7 +333,7 @@ public class CFSecSecUserPasswordTableObj
 
 	}
 	@Override
-	public void deepDisposeSecUserPassword( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserPasswordObj obj = readCachedSecUserPassword( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -341,7 +341,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj lockSecUserPassword( ICFLibKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj lockSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecSecUserPasswordObj locked = null;
 		ICFSecSecUserPassword lockRec = schema.getCFSecBackingStore().getTableSecUserPassword().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -365,7 +365,7 @@ public class CFSecSecUserPasswordTableObj
 	public List<ICFSecSecUserPasswordObj> readAllSecUserPassword( boolean forceRead ) {
 		final String S_ProcName = "readAllSecUserPassword";
 		if( ( allSecUserPassword == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserPasswordObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecSecUserPasswordObj>();
 			allSecUserPassword = map;
 			ICFSecSecUserPassword[] recList = schema.getCFSecBackingStore().getTableSecUserPassword().readAllDerived( null );
 			ICFSecSecUserPassword rec;
@@ -421,8 +421,8 @@ public class CFSecSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -479,8 +479,8 @@ public class CFSecSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -491,43 +491,43 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		return( readSecUserPasswordByIdIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId, boolean forceRead )
 	{
 		ICFSecSecUserPasswordObj obj = readSecUserPassword( SecUserId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		return( readSecUserPasswordBySetStampIdx( PWSetStamp,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp,
+	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
-		Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> dict;
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecUserPasswordObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > >();
 		}
 		if( ( ! forceRead ) && indexBySetStampIdx.containsKey( key ) ) {
 			dict = indexBySetStampIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj>();
 			ICFSecSecUserPasswordObj obj;
 			ICFSecSecUserPassword[] recList = schema.getCFSecBackingStore().getTableSecUserPassword().readDerivedBySetStampIdx( null,
 				PWSetStamp );
@@ -585,8 +585,8 @@ public class CFSecSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -598,7 +598,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = null;
 		obj = readCachedSecUserPassword( SecUserId );
@@ -606,14 +606,14 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		final String S_ProcName = "readCachedSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
 		ArrayList<ICFSecSecUserPasswordObj> arrayList = new ArrayList<ICFSecSecUserPasswordObj>();
 		if( indexBySetStampIdx != null ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> dict;
 			if( indexBySetStampIdx.containsKey( key ) ) {
 				dict = indexBySetStampIdx.get( key );
 				int len = dict.size();
@@ -671,8 +671,8 @@ public class CFSecSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -683,7 +683,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deepDisposeSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = readCachedSecUserPasswordByIdIdx( SecUserId );
 		if( obj != null ) {
@@ -692,7 +692,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public void deepDisposeSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		final String S_ProcName = "deepDisposeSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordObj obj;
@@ -727,7 +727,7 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deleteSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deleteSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = readSecUserPassword(SecUserId);
 		if( obj != null ) {
@@ -757,16 +757,16 @@ public class CFSecSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deleteSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public void deleteSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				Map< ICFLibKeyHash256, ICFSecSecUserPasswordObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj > >();
 		}
 		if( indexBySetStampIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict = indexBySetStampIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecSecUserPasswordObj> dict = indexBySetStampIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecUserPassword().deleteSecUserPasswordBySetStampIdx( null,
 				PWSetStamp );
 			Iterator<ICFSecSecUserPasswordObj> iter = dict.values().iterator();

@@ -187,18 +187,18 @@ public interface ICFSecSecUserEMConfObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -232,39 +232,39 @@ public interface ICFSecSecUserEMConfObj
 	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required String attribute ConfirmEMailAddr.
+	 *	Get the required $implIJavaAtomType$ attribute ConfirmEMailAddr.
 	 *
-	 *	@return	The required String attribute ConfirmEMailAddr.
+	 *	@return	The required $implIJavaAtomType$ attribute ConfirmEMailAddr.
 	 */
-	String getRequiredConfirmEMailAddr();
+	$implIJavaAtomType$ getRequiredConfirmEMailAddr();
 
 	/**
-	 *	Get the required LocalDateTime attribute EMailSentStamp.
+	 *	Get the required $implIJavaAtomType$ attribute EMailSentStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute EMailSentStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute EMailSentStamp.
 	 */
-	LocalDateTime getRequiredEMailSentStamp();
+	$implIJavaAtomType$ getRequiredEMailSentStamp();
 
 	/**
-	 *	Get the required ICFLibUuid6 attribute EMConfirmationUuid6.
+	 *	Get the required $implIJavaAtomType$ attribute EMConfirmationUuid6.
 	 *
-	 *	@return	The required ICFLibUuid6 attribute EMConfirmationUuid6.
+	 *	@return	The required $implIJavaAtomType$ attribute EMConfirmationUuid6.
 	 */
-	ICFLibUuid6 getRequiredEMConfirmationUuid6();
+	$implIJavaAtomType$ getRequiredEMConfirmationUuid6();
 
 	/**
-	 *	Get the required boolean attribute NewAccount.
+	 *	Get the required $implIJavaAtomType$ attribute NewAccount.
 	 *
-	 *	@return	The required boolean attribute NewAccount.
+	 *	@return	The required $implIJavaAtomType$ attribute NewAccount.
 	 */
-	boolean getRequiredNewAccount();
+	$implIJavaAtomType$ getRequiredNewAccount();
 
 	/**
 	 *	Internal use only.

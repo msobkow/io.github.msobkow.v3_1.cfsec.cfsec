@@ -104,39 +104,39 @@ public interface ICFSecSecUserPasswordEditObj
 	void setRequiredContainerUser( ICFSecSecUserObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required LocalDateTime attribute PWSetStamp.
+	 *	Get the required $implIJavaAtomType$ attribute PWSetStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute PWSetStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute PWSetStamp.
 	 */
-	LocalDateTime getRequiredPWSetStamp();
+	$implIJavaAtomType$ getRequiredPWSetStamp();
 
 	/**
-	 *	Set the required LocalDateTime attribute PWSetStamp.
+	 *	Set the required $implIJavaAtomType$ attribute PWSetStamp.
 	 *
-	 *	@param value The required LocalDateTime attribute PWSetStamp value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PWSetStamp value to be applied.
 	 */
-	void setRequiredPWSetStamp(LocalDateTime value);
+	void setRequiredPWSetStamp($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute PasswordHash.
+	 *	Get the required $implIJavaAtomType$ attribute PasswordHash.
 	 *
-	 *	@return	The required String attribute PasswordHash.
+	 *	@return	The required $implIJavaAtomType$ attribute PasswordHash.
 	 */
-	String getRequiredPasswordHash();
+	$implIJavaAtomType$ getRequiredPasswordHash();
 
 	/**
-	 *	Set the required String attribute PasswordHash.
+	 *	Set the required $implIJavaAtomType$ attribute PasswordHash.
 	 *
-	 *	@param value The required String attribute PasswordHash value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute PasswordHash value to be applied.
 	 */
-	void setRequiredPasswordHash(String value);
+	void setRequiredPasswordHash($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

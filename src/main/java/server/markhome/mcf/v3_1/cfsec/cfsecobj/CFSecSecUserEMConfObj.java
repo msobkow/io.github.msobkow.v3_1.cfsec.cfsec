@@ -52,7 +52,7 @@ public class CFSecSecUserEMConfObj
 	protected boolean isNew;
 	protected ICFSecSecUserEMConfEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecUserEMConf rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
@@ -284,12 +284,12 @@ public class CFSecSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -366,7 +366,7 @@ public class CFSecSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -387,22 +387,22 @@ public class CFSecSecUserEMConfObj
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
+	public $implIJavaAtomType$ getRequiredConfirmEMailAddr() {
 		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredEMailSentStamp() {
+	public $implIJavaAtomType$ getRequiredEMailSentStamp() {
 		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
 	}
 
 	@Override
-	public ICFLibUuid6 getRequiredEMConfirmationUuid6() {
+	public $implIJavaAtomType$ getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implIJavaAtomType$ getRequiredNewAccount() {
 		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 

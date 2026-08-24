@@ -50,10 +50,10 @@ public class CFSecTenantTableObj
 	protected ICFSecSchemaObj schema;
 	protected static int runtimeClassCode = ICFSecTenant.CLASS_CODE;
 	protected static final int backingClassCode = ICFSecTenant.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFSecTenantObj> members;
-	private Map<ICFLibKeyHash256, ICFSecTenantObj> allTenant;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> allTenant;
 	private Map< ICFSecTenantByClusterIdxKey,
-		Map<ICFLibKeyHash256, ICFSecTenantObj > > indexByClusterIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > > indexByClusterIdx;
 	private Map< ICFSecTenantByUNameIdxKey,
 		ICFSecTenantObj > indexByUNameIdx;
 	public static String TABLE_NAME = "Tenant";
@@ -61,7 +61,7 @@ public class CFSecTenantTableObj
 
 	public CFSecTenantTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj>();
 		allTenant = null;
 		indexByClusterIdx = null;
 		indexByUNameIdx = null;
@@ -69,7 +69,7 @@ public class CFSecTenantTableObj
 
 	public CFSecTenantTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFSecSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj>();
 		allTenant = null;
 		indexByClusterIdx = null;
 		indexByUNameIdx = null;
@@ -194,7 +194,7 @@ public class CFSecTenantTableObj
 	@Override
 	public ICFSecTenantObj realiseTenant( ICFSecTenantObj Obj ) {
 		ICFSecTenantObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecTenantObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecTenantObj existingObj = members.get( pkey );
@@ -211,7 +211,7 @@ public class CFSecTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.remove( keepObj.getPKey() );
 					if( mapClusterIdx.size() <= 0 ) {
@@ -235,7 +235,7 @@ public class CFSecTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -267,7 +267,7 @@ public class CFSecTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -299,12 +299,12 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey ) {
+	public ICFSecTenantObj readTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readTenant( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecTenantObj readTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecTenantObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -323,7 +323,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenant( ICFLibKeyHash256 pkey ) {
+	public ICFSecTenantObj readCachedTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTenantObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -339,7 +339,7 @@ public class CFSecTenantTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecTenantObj existing = readCachedTenant( pkey );
 		if( existing == null ) {
 			return;
@@ -381,7 +381,7 @@ public class CFSecTenantTableObj
 
 	}
 	@Override
-	public void deepDisposeTenant( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTenantObj obj = readCachedTenant( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -389,7 +389,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj lockTenant( ICFLibKeyHash256 pkey ) {
+	public ICFSecTenantObj lockTenant( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecTenantObj locked = null;
 		ICFSecTenant lockRec = schema.getCFSecBackingStore().getTableTenant().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -413,7 +413,7 @@ public class CFSecTenantTableObj
 	public List<ICFSecTenantObj> readAllTenant( boolean forceRead ) {
 		final String S_ProcName = "readAllTenant";
 		if( ( allTenant == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFSecTenantObj> map = new HashMap<ICFLibKeyHash256,ICFSecTenantObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecTenantObj>();
 			allTenant = map;
 			ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().readAllDerived( null );
 			ICFSecTenant rec;
@@ -469,8 +469,8 @@ public class CFSecTenantTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -527,8 +527,8 @@ public class CFSecTenantTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -545,10 +545,10 @@ public class CFSecTenantTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecTenantObj> pageAllTenant(ICFLibKeyHash256 priorId )
+	public List<ICFSecTenantObj> pageAllTenant($implIJavaOptAtomType$ priorId )
 	{
 		final String S_ProcName = "pageAllTenant";
-		Map<ICFLibKeyHash256, ICFSecTenantObj> map = new HashMap<ICFLibKeyHash256,ICFSecTenantObj>();
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecTenantObj>();
 		ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().pageAllRec( null,
 			priorId );
 		ICFSecTenant rec;
@@ -567,43 +567,43 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id )
+	public ICFSecTenantObj readTenantByIdIdx( $implIJavaAtomType$ Id )
 	{
 		return( readTenantByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFSecTenantObj readTenantByIdIdx( $implIJavaAtomType$ Id, boolean forceRead )
 	{
 		ICFSecTenantObj obj = readTenant( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public List<ICFSecTenantObj> readTenantByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		return( readTenantByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
+	public List<ICFSecTenantObj> readTenantByClusterIdx( $implIJavaAtomType$ ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
-		Map<ICFLibKeyHash256, ICFSecTenantObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> dict;
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecTenantByClusterIdxKey,
-				Map< ICFLibKeyHash256, ICFSecTenantObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > >();
 		}
 		if( ( ! forceRead ) && indexByClusterIdx.containsKey( key ) ) {
 			dict = indexByClusterIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj>();
 			ICFSecTenantObj obj;
 			ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().readDerivedByClusterIdx( null,
 				ClusterId );
@@ -661,8 +661,8 @@ public class CFSecTenantTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -674,8 +674,8 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName )
+	public ICFSecTenantObj readTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName )
 	{
 		return( readTenantByUNameIdx( ClusterId,
 			TenantName,
@@ -683,8 +683,8 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName, boolean forceRead )
+	public ICFSecTenantObj readTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFSecTenantByUNameIdxKey,
@@ -712,7 +712,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenantByIdIdx( ICFLibKeyHash256 Id )
+	public ICFSecTenantObj readCachedTenantByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFSecTenantObj obj = null;
 		obj = readCachedTenant( Id );
@@ -720,14 +720,14 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		final String S_ProcName = "readCachedTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecTenantObj> arrayList = new ArrayList<ICFSecTenantObj>();
 		if( indexByClusterIdx != null ) {
-			Map<ICFLibKeyHash256, ICFSecTenantObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> dict;
 			if( indexByClusterIdx.containsKey( key ) ) {
 				dict = indexByClusterIdx.get( key );
 				int len = dict.size();
@@ -785,8 +785,8 @@ public class CFSecTenantTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -797,8 +797,8 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName )
+	public ICFSecTenantObj readCachedTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName )
 	{
 		ICFSecTenantObj obj = null;
 		ICFSecTenantByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByUNameIdxKey();
@@ -835,7 +835,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTenantByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFSecTenantObj obj = readCachedTenantByIdIdx( Id );
 		if( obj != null ) {
@@ -844,7 +844,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public void deepDisposeTenantByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		final String S_ProcName = "deepDisposeTenantByClusterIdx";
 		ICFSecTenantObj obj;
@@ -861,8 +861,8 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName )
+	public void deepDisposeTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName )
 	{
 		ICFSecTenantObj obj = readCachedTenantByUNameIdx( ClusterId,
 				TenantName );
@@ -881,8 +881,8 @@ public class CFSecTenantTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecTenantObj> pageTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
-		ICFLibKeyHash256 priorId )
+	public List<ICFSecTenantObj> pageTenantByClusterIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaOptAtomType$ priorId )
 	{
 		final String S_ProcName = "pageTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
@@ -923,7 +923,7 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTenantByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFSecTenantObj obj = readTenant(Id);
 		if( obj != null ) {
@@ -953,16 +953,16 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
+	public void deleteTenantByClusterIdx( $implIJavaAtomType$ ClusterId )
 	{
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecTenantByClusterIdxKey,
-				Map< ICFLibKeyHash256, ICFSecTenantObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj > >();
 		}
 		if( indexByClusterIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFSecTenantObj> dict = indexByClusterIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecTenantObj> dict = indexByClusterIdx.get( key );
 			schema.getCFSecBackingStore().getTableTenant().deleteTenantByClusterIdx( null,
 				ClusterId );
 			Iterator<ICFSecTenantObj> iter = dict.values().iterator();
@@ -987,8 +987,8 @@ public class CFSecTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String TenantName )
+	public void deleteTenantByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ TenantName )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFSecTenantByUNameIdxKey,

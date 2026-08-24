@@ -75,18 +75,18 @@ public interface ICFSecSecTentRole
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecTentRoleId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecTentRoleId);
 	public List<ICFSecSecTentRoleMemb> getOptionalChildrenMembByRole();
 
-	public ICFLibKeyHash256 getRequiredSecTentRoleId();
-	public void setRequiredSecTentRoleId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecTentRoleId();
+	public void setRequiredSecTentRoleId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant($implIJavaAtomType$ argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 
@@ -96,7 +96,7 @@ public interface ICFSecSecTentRole
 
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
 
-	public void setRequiredContainerSysRole(String argName);
+	public void setRequiredContainerSysRole($implIJavaAtomType$ argName);
 
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
 
@@ -104,10 +104,10 @@ public interface ICFSecSecTentRole
 
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredTenantId();
+	public void setRequiredTenantId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

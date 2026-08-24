@@ -76,16 +76,16 @@ public interface ICFSecSecSysGrp
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecSysGrpId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecSysGrpId);
 	public List<ICFSecSecSysGrpInc> getOptionalComponentsIncByGrp();
 
 	public List<ICFSecSecSysGrpMemb> getOptionalChildrenMembByGrp();
 
 	public ICFSecSecSysRole getOptionalComponentsImplSysRole();
 
-	public ICFLibKeyHash256 getRequiredSecSysGrpId();
-	public void setRequiredSecSysGrpId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecSysGrpId();
+	public void setRequiredSecSysGrpId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -101,10 +101,10 @@ public interface ICFSecSecSysGrp
 
 	public List<ICFSecSecSysRoleEnables> getOptionalChildrenRoleByEnableName();
 
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
-	public void setRequiredSecLevel( ICFSecPubSchema.SecLevelEnum value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredSecLevel();
+	public void setRequiredSecLevel( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

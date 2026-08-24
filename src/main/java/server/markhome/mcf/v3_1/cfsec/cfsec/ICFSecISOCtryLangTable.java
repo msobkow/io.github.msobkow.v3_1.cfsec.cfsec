@@ -92,8 +92,8 @@ public interface ICFSecISOCtryLangTable
 	 *	@param	ISOLangId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryLangByIdIdx( ICFSecAuthorization Authorization,
-		short argISOCtryId,
-		short argISOLangId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCtryId,
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOLangId );
 	/**
 	 *	Delete the ISOCtryLang instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecISOCtryLangTable
 	 *	@param	ISOCtryId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryLangByCtryIdx( ICFSecAuthorization Authorization,
-		short argISOCtryId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCtryId );
 
 	/**
 	 *	Delete the ISOCtryLang instances identified by the key CtryIdx.
@@ -130,7 +130,7 @@ public interface ICFSecISOCtryLangTable
 	 *	@param	ISOLangId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryLangByLangIdx( ICFSecAuthorization Authorization,
-		short argISOLangId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOLangId );
 
 	/**
 	 *	Delete the ISOCtryLang instances identified by the key LangIdx.
@@ -165,8 +165,8 @@ public interface ICFSecISOCtryLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtryLang readDerived( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Lock the derived ISOCtryLang record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecISOCtryLangTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtryLang readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read an array of the derived ISOCtryLang record instances identified by the duplicate key CtryIdx.
@@ -216,7 +216,7 @@ public interface ICFSecISOCtryLangTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOCtryLang[] readDerivedByCtryIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read an array of the derived ISOCtryLang record instances identified by the duplicate key LangIdx.
@@ -228,7 +228,7 @@ public interface ICFSecISOCtryLangTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOCtryLang[] readDerivedByLangIdx( ICFSecAuthorization Authorization,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read the specific ISOCtryLang record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecISOCtryLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryLang readRec( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Lock the specific ISOCtryLang record instance identified by the primary key.
@@ -300,8 +300,8 @@ public interface ICFSecISOCtryLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryLang readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read an array of the specific ISOCtryLang record instances identified by the duplicate key CtryIdx.
@@ -315,7 +315,7 @@ public interface ICFSecISOCtryLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryLang[] readRecByCtryIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read an array of the specific ISOCtryLang record instances identified by the duplicate key LangIdx.
@@ -329,5 +329,5 @@ public interface ICFSecISOCtryLangTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryLang[] readRecByLangIdx( ICFSecAuthorization Authorization,
-		short ISOLangId );
+		$implIJavaAtomType$ ISOLangId );
 }

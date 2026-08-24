@@ -326,12 +326,12 @@ public class CFSecSecSessionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -347,48 +347,48 @@ public class CFSecSecSessionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSessionId() {
+	public $implIJavaAtomType$ getRequiredSecSessionId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecSessionId(ICFLibKeyHash256 value) {
+	public void setRequiredSecSessionId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getSecSessionRec().getRequiredSecUserId() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredStart() {
+	public $implIJavaAtomType$ getRequiredStart() {
 		return( getSecSessionRec().getRequiredStart() );
 	}
 
 	@Override
-	public void setRequiredStart( LocalDateTime value ) {
+	public void setRequiredStart( $implIJavaAtomType$ value ) {
 		if( getSecSessionRec().getRequiredStart() != value ) {
 			getSecSessionRec().setRequiredStart( value );
 		}
 	}
 
 	@Override
-	public LocalDateTime getOptionalFinish() {
+	public $implIJavaAtomType$ getOptionalFinish() {
 		return( getSecSessionRec().getOptionalFinish() );
 	}
 
 	@Override
-	public void setOptionalFinish( LocalDateTime value ) {
+	public void setOptionalFinish( $implIJavaAtomType$ value ) {
 		if( getSecSessionRec().getOptionalFinish() != value ) {
 			getSecSessionRec().setOptionalFinish( value );
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalSecProxyId() {
+	public $implIJavaAtomType$ getOptionalSecProxyId() {
 		return( getSecSessionRec().getOptionalSecProxyId() );
 	}
 

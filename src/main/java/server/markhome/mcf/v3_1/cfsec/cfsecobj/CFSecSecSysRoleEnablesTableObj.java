@@ -333,15 +333,15 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName ) {
+	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName ) {
 		return( readSecSysRoleEnables( SecSysRoleId,
 			EnableName, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName, boolean forceRead ) {
+	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnables( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName, boolean forceRead ) {
 		ICFSecSecSysRoleEnablesObj obj = null;
 		ICFSecSecSysRoleEnables readRec = schema.getCFSecBackingStore().getTableSecSysRoleEnables().readDerivedByIdIdx( null,
 			SecSysRoleId,
@@ -571,8 +571,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> pageAllSecSysRoleEnables(ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName )
+	public List<ICFSecSecSysRoleEnablesObj> pageAllSecSysRoleEnables($implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName )
 	{
 		final String S_ProcName = "pageAllSecSysRoleEnables";
 		Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj> map = new HashMap<ICFSecSecSysRoleEnablesPKey,ICFSecSecSysRoleEnablesObj>();
@@ -595,8 +595,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName )
+	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName )
 	{
 		return( readSecSysRoleEnablesByIdIdx( SecSysRoleId,
 			EnableName,
@@ -604,8 +604,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName, boolean forceRead )
+	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName, boolean forceRead )
 	{
 		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newPKey();
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
@@ -615,14 +615,14 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
+	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId )
 	{
 		return( readSecSysRoleEnablesBySysRoleIdx( SecSysRoleId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
+	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleEnablesBySysRoleIdx";
@@ -708,14 +708,14 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( String EnableName )
+	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName )
 	{
 		return( readSecSysRoleEnablesByNameIdx( EnableName,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( String EnableName,
+	public List<ICFSecSecSysRoleEnablesObj> readSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleEnablesByNameIdx";
@@ -801,8 +801,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleEnablesObj readCachedSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName )
+	public ICFSecSecSysRoleEnablesObj readCachedSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName )
 	{
 		ICFSecSecSysRoleEnablesObj obj = null;
 		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newPKey();
@@ -815,7 +815,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
+	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId )
 	{
 		final String S_ProcName = "readCachedSecSysRoleEnablesBySysRoleIdx";
 		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
@@ -892,7 +892,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesByNameIdx( String EnableName )
+	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName )
 	{
 		final String S_ProcName = "readCachedSecSysRoleEnablesByNameIdx";
 		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
@@ -969,8 +969,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName )
+	public void deepDisposeSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName )
 	{
 		ICFSecSecSysRoleEnablesObj obj = readCachedSecSysRoleEnablesByIdIdx( SecSysRoleId,
 				EnableName );
@@ -980,7 +980,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
+	public void deepDisposeSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId )
 	{
 		final String S_ProcName = "deepDisposeSecSysRoleEnablesBySysRoleIdx";
 		ICFSecSecSysRoleEnablesObj obj;
@@ -997,7 +997,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleEnablesByNameIdx( String EnableName )
+	public void deepDisposeSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName )
 	{
 		final String S_ProcName = "deepDisposeSecSysRoleEnablesByNameIdx";
 		ICFSecSecSysRoleEnablesObj obj;
@@ -1023,9 +1023,9 @@ public class CFSecSecSysRoleEnablesTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName )
+	public List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName )
 	{
 		final String S_ProcName = "pageSecSysRoleEnablesBySysRoleIdx";
 		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
@@ -1058,9 +1058,9 @@ public class CFSecSecSysRoleEnablesTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesByNameIdx( String EnableName,
-		ICFLibKeyHash256 priorSecSysRoleId,
-		String priorEnableName )
+	public List<ICFSecSecSysRoleEnablesObj> pageSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName,
+		$implIJavaOptAtomType$ priorSecSysRoleId,
+		$implIJavaOptAtomType$ priorEnableName )
 	{
 		final String S_ProcName = "pageSecSysRoleEnablesByNameIdx";
 		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
@@ -1102,8 +1102,8 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleEnablesByIdIdx( ICFLibKeyHash256 SecSysRoleId,
-		String EnableName )
+	public void deleteSecSysRoleEnablesByIdIdx( $implIJavaAtomType$ SecSysRoleId,
+		$implIJavaAtomType$ EnableName )
 	{
 		ICFSecSecSysRoleEnablesObj obj = readSecSysRoleEnables(SecSysRoleId,
 				EnableName);
@@ -1135,7 +1135,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleEnablesBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
+	public void deleteSecSysRoleEnablesBySysRoleIdx( $implIJavaAtomType$ SecSysRoleId )
 	{
 		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
@@ -1169,7 +1169,7 @@ public class CFSecSecSysRoleEnablesTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleEnablesByNameIdx( String EnableName )
+	public void deleteSecSysRoleEnablesByNameIdx( $implIJavaAtomType$ EnableName )
 	{
 		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		key.setRequiredEnableName( EnableName );

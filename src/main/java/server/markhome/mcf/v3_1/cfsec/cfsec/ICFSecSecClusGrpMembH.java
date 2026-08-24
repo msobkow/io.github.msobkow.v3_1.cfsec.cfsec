@@ -71,11 +71,11 @@ public interface ICFSecSecClusGrpMembH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecClusGrpId();
-	public void setRequiredSecClusGrpId( ICFLibKeyHash256 requiredSecClusGrpId );
+	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecClusGrpId();
+	public void setRequiredSecClusGrpId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecClusGrpId );
 
-	public String getRequiredLoginId();
-	public void setRequiredLoginId( String requiredLoginId );
+	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredLoginId();
+	public void setRequiredLoginId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredLoginId );
 
 	@Override
 	public boolean equals( Object obj );

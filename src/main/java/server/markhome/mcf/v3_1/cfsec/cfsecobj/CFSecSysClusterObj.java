@@ -50,7 +50,7 @@ public class CFSecSysClusterObj
 	protected boolean isNew;
 	protected ICFSecSysClusterEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Integer pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSysCluster rec;
 	protected ICFSecClusterObj requiredContainerCluster;
 
@@ -277,12 +277,12 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Integer value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -331,7 +331,7 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public int getRequiredSingletonId() {
+	public $implIJavaAtomType$ getRequiredSingletonId() {
 		return( getPKey() );
 	}
 
@@ -352,7 +352,7 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClusterId() {
+	public $implIJavaAtomType$ getRequiredClusterId() {
 		return( getSysClusterRec().getRequiredClusterId() );
 	}
 

@@ -160,32 +160,32 @@ public interface ICFSecSecTentRoleEditObj
 	List<ICFSecSecTentRoleMembObj> getOptionalChildrenMembByRole();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecTentRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecTentRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecTentRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecTentRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecTentRoleId();
+	$implIJavaAtomType$ getRequiredSecTentRoleId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecTentRoleId.
+	 *	Set the required $implIJavaAtomType$ attribute SecTentRoleId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecTentRoleId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecTentRoleId value to be applied.
 	 */
-	void setRequiredSecTentRoleId(ICFLibKeyHash256 value);
+	void setRequiredSecTentRoleId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required $implIJavaAtomType$ attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required $implIJavaAtomType$ attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	$implIJavaAtomType$ getRequiredTenantId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -191,32 +191,32 @@ public interface ICFSecSecUserPWHistoryObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required $implIJavaAtomType$ attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	$implIJavaAtomType$ getRequiredSecUserId();
 
 	/**
-	 *	Get the required LocalDateTime attribute PWSetStamp.
+	 *	Get the required $implIJavaAtomType$ attribute PWSetStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute PWSetStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute PWSetStamp.
 	 */
-	LocalDateTime getRequiredPWSetStamp();
+	$implIJavaAtomType$ getRequiredPWSetStamp();
 
 	/**
-	 *	Get the required LocalDateTime attribute PWReplacedStamp.
+	 *	Get the required $implIJavaAtomType$ attribute PWReplacedStamp.
 	 *
-	 *	@return	The required LocalDateTime attribute PWReplacedStamp.
+	 *	@return	The required $implIJavaAtomType$ attribute PWReplacedStamp.
 	 */
-	LocalDateTime getRequiredPWReplacedStamp();
+	$implIJavaAtomType$ getRequiredPWReplacedStamp();
 
 	/**
-	 *	Get the required String attribute PasswordHash.
+	 *	Get the required $implIJavaAtomType$ attribute PasswordHash.
 	 *
-	 *	@return	The required String attribute PasswordHash.
+	 *	@return	The required $implIJavaAtomType$ attribute PasswordHash.
 	 */
-	String getRequiredPasswordHash();
+	$implIJavaAtomType$ getRequiredPasswordHash();
 
 	/**
 	 *	Internal use only.

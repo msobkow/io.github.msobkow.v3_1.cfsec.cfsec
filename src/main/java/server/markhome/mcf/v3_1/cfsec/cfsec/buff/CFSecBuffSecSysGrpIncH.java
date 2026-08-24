@@ -190,11 +190,11 @@ public class CFSecBuffSecSysGrpIncH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
+	public $implIJavaAtomType$ getRequiredSecSysGrpId() {
 		return(getPKey().getRequiredSecSysGrpId());
 	}
 
-	public void setRequiredSecSysGrpId( ICFLibKeyHash256 value ) {
+	public void setRequiredSecSysGrpId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecSysGrpId",
@@ -205,11 +205,11 @@ public class CFSecBuffSecSysGrpIncH
 	}
 
 	@Override
-	public String getRequiredInclName() {
+	public $implIJavaAtomType$ getRequiredInclName() {
 		return(getPKey().getRequiredInclName());
 	}
 
-	public void setRequiredInclName( String value ) {
+	public void setRequiredInclName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredInclName",

@@ -90,7 +90,7 @@ public interface ICFSecSecSessionTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecSessionByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecSession instances identified by the key SecUserIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecSessionTable
 	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionBySecUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecUserId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecUserId );
 
 	/**
 	 *	Delete the SecSession instances identified by the key SecUserIdx.
@@ -120,8 +120,8 @@ public interface ICFSecSecSessionTable
 	 *	@param	Start	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionByStartIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecUserId,
-		LocalDateTime argStart );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecUserId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argStart );
 
 	/**
 	 *	Delete the SecSession instances identified by the key StartIdx.
@@ -142,8 +142,8 @@ public interface ICFSecSecSessionTable
 	 *	@param	Finish	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionByFinishIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecUserId,
-		LocalDateTime argFinish );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecUserId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argFinish );
 
 	/**
 	 *	Delete the SecSession instances identified by the key FinishIdx.
@@ -162,7 +162,7 @@ public interface ICFSecSecSessionTable
 	 *	@param	SecProxyId	The SecSession key attribute of the instance generating the id.
 	 */
 	void deleteSecSessionBySecProxyIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecProxyId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecProxyId );
 
 	/**
 	 *	Delete the SecSession instances identified by the key SecProxyIdx.
@@ -186,7 +186,7 @@ public interface ICFSecSecSessionTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSession readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecSession record instance by primary key.
@@ -199,7 +199,7 @@ public interface ICFSecSecSessionTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSession lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecSession instances.
@@ -221,7 +221,7 @@ public interface ICFSecSecSessionTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSession readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSessionId );
+		$implIJavaAtomType$ SecSessionId );
 
 	/**
 	 *	Read an array of the derived SecSession record instances identified by the duplicate key SecUserIdx.
@@ -233,7 +233,7 @@ public interface ICFSecSecSessionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSession[] readDerivedBySecUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the derived SecSession record instance identified by the unique key StartIdx.
@@ -248,8 +248,8 @@ public interface ICFSecSecSessionTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecSession readDerivedByStartIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
 	/**
 	 *	Read an array of the derived SecSession record instances identified by the duplicate key FinishIdx.
@@ -263,8 +263,8 @@ public interface ICFSecSecSessionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSession[] readDerivedByFinishIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
 	/**
 	 *	Read an array of the derived SecSession record instances identified by the duplicate key SecProxyIdx.
@@ -276,7 +276,7 @@ public interface ICFSecSecSessionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecSession[] readDerivedBySecProxyIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecProxyId );
+		$implIJavaAtomType$ SecProxyId );
 
 	/**
 	 *	Read the specific SecSession record instance identified by the primary key.
@@ -291,7 +291,7 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecSession record instance identified by the primary key.
@@ -306,7 +306,7 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecSession record instances.
@@ -325,7 +325,7 @@ public interface ICFSecSecSessionTable
 	 *	@return All the specific SecSession instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecSession[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecSessionId );
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Read the specific SecSession record instance identified by the unique key IdIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecSessionId );
+		$implIJavaAtomType$ SecSessionId );
 
 	/**
 	 *	Read an array of the specific SecSession record instances identified by the duplicate key SecUserIdx.
@@ -354,7 +354,7 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] readRecBySecUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the specific SecSession record instance identified by the unique key StartIdx.
@@ -371,8 +371,8 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession readRecByStartIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
 	/**
 	 *	Read an array of the specific SecSession record instances identified by the duplicate key FinishIdx.
@@ -388,8 +388,8 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] readRecByFinishIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
 	/**
 	 *	Read an array of the specific SecSession record instances identified by the duplicate key SecProxyIdx.
@@ -403,7 +403,7 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] readRecBySecProxyIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecProxyId );
+		$implIJavaAtomType$ SecProxyId );
 
 	/**
 	 *	Read a page array of the specific SecSession record instances identified by the duplicate key SecUserIdx.
@@ -417,8 +417,8 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] pageRecBySecUserIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		ICFLibKeyHash256 priorSecSessionId );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Read a page array of the specific SecSession record instances identified by the duplicate key FinishIdx.
@@ -434,9 +434,9 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] pageRecByFinishIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish,
-		ICFLibKeyHash256 priorSecSessionId );
+		$implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish,
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Read a page array of the specific SecSession record instances identified by the duplicate key SecProxyIdx.
@@ -450,6 +450,6 @@ public interface ICFSecSecSessionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecSession[] pageRecBySecProxyIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecProxyId,
-		ICFLibKeyHash256 priorSecSessionId );
+		$implIJavaAtomType$ SecProxyId,
+		$implIJavaOptAtomType$ priorSecSessionId );
 }

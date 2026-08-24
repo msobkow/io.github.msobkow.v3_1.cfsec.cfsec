@@ -370,12 +370,12 @@ public class CFSecISOCcyEditObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -391,12 +391,12 @@ public class CFSecISOCcyEditObj
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
+	public $implIJavaAtomType$ getRequiredISOCcyId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOCcyId(short value) {
+	public void setRequiredISOCcyId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalChildrenCtry = null;
@@ -404,48 +404,48 @@ public class CFSecISOCcyEditObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return( getISOCcyRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public void setRequiredISOCode( String value ) {
+	public void setRequiredISOCode( $implIJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredISOCode() != value ) {
 			getISOCcyRec().setRequiredISOCode( value );
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getISOCcyRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredName() != value ) {
 			getISOCcyRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalUnitSymbol() {
+	public $implIJavaAtomType$ getOptionalUnitSymbol() {
 		return( getISOCcyRec().getOptionalUnitSymbol() );
 	}
 
 	@Override
-	public void setOptionalUnitSymbol( String value ) {
+	public void setOptionalUnitSymbol( $implIJavaAtomType$ value ) {
 		if( getISOCcyRec().getOptionalUnitSymbol() != value ) {
 			getISOCcyRec().setOptionalUnitSymbol( value );
 		}
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implIJavaAtomType$ getRequiredPrecis() {
 		return( getISOCcyRec().getRequiredPrecis() );
 	}
 
 	@Override
-	public void setRequiredPrecis( short value ) {
+	public void setRequiredPrecis( $implIJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredPrecis() != value ) {
 			getISOCcyRec().setRequiredPrecis( value );
 		}

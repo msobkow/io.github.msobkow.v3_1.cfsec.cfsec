@@ -101,7 +101,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	The SecClusGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecClusGrpObj readSecClusGrp( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecClusGrp-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	The SecClusGrp-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrp( ICFLibKeyHash256 pkey,
+	ICFSecSecClusGrpObj readSecClusGrp( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecClusGrpObj readCachedSecClusGrp( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecClusGrp( ICFSecSecClusGrpObj obj );
 
-	void deepDisposeSecClusGrp( ICFLibKeyHash256 pkey );
+	void deepDisposeSecClusGrp( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecClusGrpObj lockSecClusGrp( ICFLibKeyHash256 pkey );
+	ICFSecSecClusGrpObj lockSecClusGrp( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecClusGrp-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
+	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( $implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Get the CFSecSecClusGrpObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId,
+	ICFSecSecClusGrpObj readSecClusGrpByIdIdx( $implIJavaAtomType$ SecClusGrpId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Get the map of CFSecSecClusGrpObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -182,7 +182,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId,
+	List<ICFSecSecClusGrpObj> readSecClusGrpByClusterIdx( $implIJavaAtomType$ ClusterId,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByNameIdx( String Name );
+	List<ICFSecSecClusGrpObj> readSecClusGrpByNameIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the map of CFSecSecClusGrpObj instances sorted by their primary keys for the duplicate NameIdx key.
@@ -203,7 +203,7 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	List of CFSecSecClusGrpObj cached instances sorted by their primary keys for the duplicate NameIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecClusGrpObj> readSecClusGrpByNameIdx( String Name,
+	List<ICFSecSecClusGrpObj> readSecClusGrpByNameIdx( $implIJavaAtomType$ Name,
 		boolean forceRead );
 
 	/**
@@ -216,8 +216,8 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String Name );
+	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFSecSecClusGrpObj instance for the unique UNameIdx key.
@@ -229,27 +229,27 @@ public interface ICFSecSecClusGrpTableObj
 	 *	@return	CFSecSecClusGrpObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String Name,
+	ICFSecSecClusGrpObj readSecClusGrpByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
+	ICFSecSecClusGrpObj readCachedSecClusGrpByIdIdx( $implIJavaAtomType$ SecClusGrpId );
 
-	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
+	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByClusterIdx( $implIJavaAtomType$ ClusterId );
 
-	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByNameIdx( String Name );
+	List<ICFSecSecClusGrpObj> readCachedSecClusGrpByNameIdx( $implIJavaAtomType$ Name );
 
-	ICFSecSecClusGrpObj readCachedSecClusGrpByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String Name );
+	ICFSecSecClusGrpObj readCachedSecClusGrpByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 
-	void deepDisposeSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
+	void deepDisposeSecClusGrpByIdIdx( $implIJavaAtomType$ SecClusGrpId );
 
-	void deepDisposeSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deepDisposeSecClusGrpByClusterIdx( $implIJavaAtomType$ ClusterId );
 
-	void deepDisposeSecClusGrpByNameIdx( String Name );
+	void deepDisposeSecClusGrpByNameIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeSecClusGrpByUNameIdx( ICFLibKeyHash256 ClusterId,
-		String Name );
+	void deepDisposeSecClusGrpByUNameIdx( $implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -266,21 +266,21 @@ public interface ICFSecSecClusGrpTableObj
 	 *
 	 *	@param	SecClusGrpId	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByIdIdx( ICFLibKeyHash256 SecClusGrpId );
+	void deleteSecClusGrpByIdIdx( $implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ClusterId	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByClusterIdx( ICFLibKeyHash256 ClusterId );
+	void deleteSecClusGrpByClusterIdx( $implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByNameIdx( String Name );
+	void deleteSecClusGrpByNameIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -289,6 +289,6 @@ public interface ICFSecSecClusGrpTableObj
 	 *
 	 *	@param	Name	The SecClusGrp key attribute of the instance generating the id.
 	 */
-	void deleteSecClusGrpByUNameIdx(ICFLibKeyHash256 ClusterId,
-		String Name );
+	void deleteSecClusGrpByUNameIdx($implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 }

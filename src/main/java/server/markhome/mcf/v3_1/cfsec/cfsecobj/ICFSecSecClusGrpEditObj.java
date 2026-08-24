@@ -160,32 +160,32 @@ public interface ICFSecSecClusGrpEditObj
 	List<ICFSecSecClusGrpMembObj> getOptionalChildrenMembByGrp();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecClusGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecClusGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusGrpId();
+	$implIJavaAtomType$ getRequiredSecClusGrpId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	Set the required $implIJavaAtomType$ attribute SecClusGrpId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecClusGrpId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecClusGrpId value to be applied.
 	 */
-	void setRequiredSecClusGrpId(ICFLibKeyHash256 value);
+	void setRequiredSecClusGrpId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

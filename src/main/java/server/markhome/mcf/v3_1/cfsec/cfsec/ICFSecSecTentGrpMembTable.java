@@ -92,8 +92,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@param	LoginId	The SecTentGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpMembByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecTentGrpId,
-		String argLoginId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecTentGrpId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 	/**
 	 *	Delete the SecTentGrpMemb instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@param	SecTentGrpId	The SecTentGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpMembByTentGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecTentGrpId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecTentGrpId );
 
 	/**
 	 *	Delete the SecTentGrpMemb instances identified by the key TentGrpIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@param	LoginId	The SecTentGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecTentGrpMembByUserIdx( ICFSecAuthorization Authorization,
-		String argLoginId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 
 	/**
 	 *	Delete the SecTentGrpMemb instances identified by the key UserIdx.
@@ -165,8 +165,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrpMemb readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecTentGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the derived SecTentGrpMemb record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecTentGrpMemb readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecTentGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the derived SecTentGrpMemb record instances identified by the duplicate key TentGrpIdx.
@@ -216,7 +216,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentGrpMemb[] readDerivedByTentGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId );
+		$implIJavaAtomType$ SecTentGrpId );
 
 	/**
 	 *	Read an array of the derived SecTentGrpMemb record instances identified by the duplicate key UserIdx.
@@ -228,7 +228,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecTentGrpMemb[] readDerivedByUserIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read the specific SecTentGrpMemb record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecTentGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the specific SecTentGrpMemb record instance identified by the primary key.
@@ -293,8 +293,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@return All the specific SecTentGrpMemb instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecTentGrpMemb[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecTentGrpId,
-		String priorLoginId );
+		$implIJavaOptAtomType$ priorSecTentGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read the specific SecTentGrpMemb record instance identified by the unique key IdIdx.
@@ -311,8 +311,8 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecTentGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the specific SecTentGrpMemb record instances identified by the duplicate key TentGrpIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] readRecByTentGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId );
+		$implIJavaAtomType$ SecTentGrpId );
 
 	/**
 	 *	Read an array of the specific SecTentGrpMemb record instances identified by the duplicate key UserIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] readRecByUserIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read a page array of the specific SecTentGrpMemb record instances identified by the duplicate key TentGrpIdx.
@@ -354,9 +354,9 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] pageRecByTentGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecTentGrpId,
-		ICFLibKeyHash256 priorSecTentGrpId,
-		String priorLoginId );
+		$implIJavaAtomType$ SecTentGrpId,
+		$implIJavaOptAtomType$ priorSecTentGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read a page array of the specific SecTentGrpMemb record instances identified by the duplicate key UserIdx.
@@ -370,7 +370,7 @@ public interface ICFSecSecTentGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecTentGrpMemb[] pageRecByUserIdx( ICFSecAuthorization Authorization,
-		String LoginId,
-		ICFLibKeyHash256 priorSecTentGrpId,
-		String priorLoginId );
+		$implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecTentGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 }

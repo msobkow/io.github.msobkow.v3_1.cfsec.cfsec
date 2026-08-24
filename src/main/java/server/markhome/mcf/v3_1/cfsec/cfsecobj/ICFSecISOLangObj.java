@@ -187,18 +187,18 @@ public interface ICFSecISOLangObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Short primary key for this instance.
+	 *	@return	$implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Short getPKey();
+	$implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Short primary key value for this instance.
+	 *	@param $implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Short value );
+	void setPKey( $implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -232,32 +232,32 @@ public interface ICFSecISOLangObj
 	List<ICFSecISOCtryLangObj> getOptionalChildrenCtry( boolean forceRead );
 
 	/**
-	 *	Get the required short attribute ISOLangId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOLangId.
 	 *
-	 *	@return	The required short attribute ISOLangId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOLangId.
 	 */
-	short getRequiredISOLangId();
+	$implIJavaAtomType$ getRequiredISOLangId();
 
 	/**
-	 *	Get the required String attribute ISO6392Code.
+	 *	Get the required $implIJavaAtomType$ attribute ISO6392Code.
 	 *
-	 *	@return	The required String attribute ISO6392Code.
+	 *	@return	The required $implIJavaAtomType$ attribute ISO6392Code.
 	 */
-	String getRequiredISO6392Code();
+	$implIJavaAtomType$ getRequiredISO6392Code();
 
 	/**
-	 *	Get the optional String attribute ISO6391Code.
+	 *	Get the optional $implIJavaAtomType$ attribute ISO6391Code.
 	 *
-	 *	@return	The optional String attribute ISO6391Code.
+	 *	@return	The optional $implIJavaAtomType$ attribute ISO6391Code.
 	 */
-	String getOptionalISO6391Code();
+	$implIJavaAtomType$ getOptionalISO6391Code();
 
 	/**
-	 *	Get the required String attribute EnglishName.
+	 *	Get the required $implIJavaAtomType$ attribute EnglishName.
 	 *
-	 *	@return	The required String attribute EnglishName.
+	 *	@return	The required $implIJavaAtomType$ attribute EnglishName.
 	 */
-	String getRequiredEnglishName();
+	$implIJavaAtomType$ getRequiredEnglishName();
 
 	/**
 	 *	Internal use only.

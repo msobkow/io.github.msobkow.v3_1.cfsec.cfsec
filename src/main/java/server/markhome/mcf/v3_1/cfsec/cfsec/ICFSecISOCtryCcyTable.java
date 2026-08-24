@@ -92,8 +92,8 @@ public interface ICFSecISOCtryCcyTable
 	 *	@param	ISOCcyId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryCcyByIdIdx( ICFSecAuthorization Authorization,
-		short argISOCtryId,
-		short argISOCcyId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCtryId,
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCcyId );
 	/**
 	 *	Delete the ISOCtryCcy instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecISOCtryCcyTable
 	 *	@param	ISOCtryId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryCcyByCtryIdx( ICFSecAuthorization Authorization,
-		short argISOCtryId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCtryId );
 
 	/**
 	 *	Delete the ISOCtryCcy instances identified by the key CtryIdx.
@@ -130,7 +130,7 @@ public interface ICFSecISOCtryCcyTable
 	 *	@param	ISOCcyId	The ISOCtryCcy key attribute of the instance generating the id.
 	 */
 	void deleteISOCtryCcyByCcyIdx( ICFSecAuthorization Authorization,
-		short argISOCcyId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argISOCcyId );
 
 	/**
 	 *	Delete the ISOCtryCcy instances identified by the key CcyIdx.
@@ -165,8 +165,8 @@ public interface ICFSecISOCtryCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtryCcy readDerived( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Lock the derived ISOCtryCcy record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecISOCtryCcyTable
 	 *		no such existing key value.
 	 */
 	ICFSecISOCtryCcy readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read an array of the derived ISOCtryCcy record instances identified by the duplicate key CtryIdx.
@@ -216,7 +216,7 @@ public interface ICFSecISOCtryCcyTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOCtryCcy[] readDerivedByCtryIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read an array of the derived ISOCtryCcy record instances identified by the duplicate key CcyIdx.
@@ -228,7 +228,7 @@ public interface ICFSecISOCtryCcyTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecISOCtryCcy[] readDerivedByCcyIdx( ICFSecAuthorization Authorization,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read the specific ISOCtryCcy record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecISOCtryCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryCcy readRec( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Lock the specific ISOCtryCcy record instance identified by the primary key.
@@ -300,8 +300,8 @@ public interface ICFSecISOCtryCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryCcy readRecByIdIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId );
 
 	/**
 	 *	Read an array of the specific ISOCtryCcy record instances identified by the duplicate key CtryIdx.
@@ -315,7 +315,7 @@ public interface ICFSecISOCtryCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryCcy[] readRecByCtryIdx( ICFSecAuthorization Authorization,
-		short ISOCtryId );
+		$implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Read an array of the specific ISOCtryCcy record instances identified by the duplicate key CcyIdx.
@@ -329,5 +329,5 @@ public interface ICFSecISOCtryCcyTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecISOCtryCcy[] readRecByCcyIdx( ICFSecAuthorization Authorization,
-		short ISOCcyId );
+		$implIJavaAtomType$ ISOCcyId );
 }

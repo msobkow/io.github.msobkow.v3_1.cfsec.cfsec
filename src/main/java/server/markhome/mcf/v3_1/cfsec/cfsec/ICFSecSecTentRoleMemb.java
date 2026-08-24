@@ -77,7 +77,7 @@ public interface ICFSecSecTentRoleMemb
 	public void setPKey(ICFSecSecTentRoleMembPKey pkey );
 	public ICFSecSecTentRole getRequiredContainerRole();
 
-	public void setRequiredContainerRole(ICFLibKeyHash256 argSecTentRoleId);
+	public void setRequiredContainerRole($implIJavaAtomType$ argSecTentRoleId);
 
 	public void setRequiredContainerRole(ICFSecSecTentRole argObj);
 
@@ -85,7 +85,7 @@ public interface ICFSecSecTentRoleMemb
 
 	public ICFSecSecUser getRequiredParentUser();
 
-	public void setRequiredParentUser(String argLoginId);
+	public void setRequiredParentUser($implIJavaAtomType$ argLoginId);
 
 	public void setRequiredParentUser(ICFSecSecUser argObj);
 
@@ -93,13 +93,13 @@ public interface ICFSecSecTentRoleMemb
 
 	public void setRequiredParentUser(ICFSecPubSecUser argObj);
 
-	public ICFLibKeyHash256 getRequiredSecTentRoleId();
+	public $implIJavaAtomType$ getRequiredSecTentRoleId();
 
-	public void setRequiredSecTentRoleId(ICFLibKeyHash256 value);
+	public void setRequiredSecTentRoleId($implIJavaAtomType$ value);
 
-	public String getRequiredLoginId();
+	public $implIJavaAtomType$ getRequiredLoginId();
 
-	public void setRequiredLoginId(String value);
+	public void setRequiredLoginId($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );

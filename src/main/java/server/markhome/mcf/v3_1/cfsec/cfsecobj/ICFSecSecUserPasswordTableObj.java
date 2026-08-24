@@ -101,7 +101,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	The SecUserPassword-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPasswordObj readSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecUserPassword-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	The SecUserPassword-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey,
+	ICFSecSecUserPasswordObj readSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecUserPasswordObj readCachedSecUserPassword( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPasswordObj readCachedSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecUserPassword( ICFSecSecUserPasswordObj obj );
 
-	void deepDisposeSecUserPassword( ICFLibKeyHash256 pkey );
+	void deepDisposeSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecUserPasswordObj lockSecUserPassword( ICFLibKeyHash256 pkey );
+	ICFSecSecUserPasswordObj lockSecUserPassword( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecUserPassword-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	CFSecSecUserPasswordObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the CFSecSecUserPasswordObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	CFSecSecUserPasswordObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId,
+	ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	List of CFSecSecUserPasswordObj cached instances sorted by their primary keys for the duplicate SetStampIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
+	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Get the map of CFSecSecUserPasswordObj instances sorted by their primary keys for the duplicate SetStampIdx key.
@@ -182,16 +182,16 @@ public interface ICFSecSecUserPasswordTableObj
 	 *	@return	List of CFSecSecUserPasswordObj cached instances sorted by their primary keys for the duplicate SetStampIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp,
+	List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp,
 		boolean forceRead );
 
-	ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
+	ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
+	List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 
-	void deepDisposeSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
+	void deepDisposeSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 
 	/**
 	 *	Internal use only.
@@ -208,12 +208,12 @@ public interface ICFSecSecUserPasswordTableObj
 	 *
 	 *	@param	SecUserId	The SecUserPassword key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId );
+	void deleteSecUserPasswordByIdIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PWSetStamp	The SecUserPassword key attribute of the instance generating the id.
 	 */
-	void deleteSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp );
+	void deleteSecUserPasswordBySetStampIdx( $implIJavaAtomType$ PWSetStamp );
 }

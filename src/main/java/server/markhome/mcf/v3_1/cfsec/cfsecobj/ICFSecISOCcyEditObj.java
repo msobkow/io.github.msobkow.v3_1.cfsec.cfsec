@@ -118,74 +118,74 @@ public interface ICFSecISOCcyEditObj
 	List<ICFSecISOCtryCcyObj> getOptionalChildrenCtry();
 
 	/**
-	 *	Get the required short attribute ISOCcyId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCcyId.
 	 *
-	 *	@return	The required short attribute ISOCcyId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCcyId.
 	 */
-	short getRequiredISOCcyId();
+	$implIJavaAtomType$ getRequiredISOCcyId();
 
 	/**
-	 *	Set the required short attribute ISOCcyId.
+	 *	Set the required $implIJavaAtomType$ attribute ISOCcyId.
 	 *
-	 *	@param value The required short attribute ISOCcyId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOCcyId value to be applied.
 	 */
-	void setRequiredISOCcyId(short value);
+	void setRequiredISOCcyId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute ISOCode.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@return	The required String attribute ISOCode.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCode.
 	 */
-	String getRequiredISOCode();
+	$implIJavaAtomType$ getRequiredISOCode();
 
 	/**
-	 *	Set the required String attribute ISOCode.
+	 *	Set the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@param value The required String attribute ISOCode value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute ISOCode value to be applied.
 	 */
-	void setRequiredISOCode(String value);
+	void setRequiredISOCode($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute UnitSymbol.
+	 *	Get the optional $implIJavaAtomType$ attribute UnitSymbol.
 	 *
-	 *	@return	The optional String attribute UnitSymbol.
+	 *	@return	The optional $implIJavaAtomType$ attribute UnitSymbol.
 	 */
-	String getOptionalUnitSymbol();
+	$implIJavaAtomType$ getOptionalUnitSymbol();
 
 	/**
-	 *	Set the optional String attribute UnitSymbol.
+	 *	Set the optional $implIJavaAtomType$ attribute UnitSymbol.
 	 *
-	 *	@param value The optional String attribute UnitSymbol value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute UnitSymbol value to be applied.
 	 */
-	void setOptionalUnitSymbol(String value);
+	void setOptionalUnitSymbol($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required short attribute Precis.
+	 *	Get the required $implIJavaAtomType$ attribute Precis.
 	 *
-	 *	@return	The required short attribute Precis.
+	 *	@return	The required $implIJavaAtomType$ attribute Precis.
 	 */
-	short getRequiredPrecis();
+	$implIJavaAtomType$ getRequiredPrecis();
 
 	/**
-	 *	Set the required short attribute Precis.
+	 *	Set the required $implIJavaAtomType$ attribute Precis.
 	 *
-	 *	@param value The required short attribute Precis value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Precis value to be applied.
 	 */
-	void setRequiredPrecis(short value);
+	void setRequiredPrecis($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

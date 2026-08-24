@@ -56,21 +56,21 @@ public interface ICFSecSecUserPWHistory
 
 	public ICFSecSecUserPWHistoryPKey getPKey();
 	public void setPKey(ICFSecSecUserPWHistoryPKey pkey );
-	public ICFLibKeyHash256 getRequiredSecUserId();
+	public $implIJavaAtomType$ getRequiredSecUserId();
 
-	public void setRequiredSecUserId(ICFLibKeyHash256 value);
+	public void setRequiredSecUserId($implIJavaAtomType$ value);
 
-	public LocalDateTime getRequiredPWSetStamp();
+	public $implIJavaAtomType$ getRequiredPWSetStamp();
 
-	public void setRequiredPWSetStamp(LocalDateTime value);
+	public void setRequiredPWSetStamp($implIJavaAtomType$ value);
 
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public LocalDateTime getRequiredPWReplacedStamp();
-	public void setRequiredPWReplacedStamp( LocalDateTime value );
-	public String getRequiredPasswordHash();
-	public void setRequiredPasswordHash( String value );
+	public $implIJavaAtomType$ getRequiredPWReplacedStamp();
+	public void setRequiredPWReplacedStamp( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPasswordHash();
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

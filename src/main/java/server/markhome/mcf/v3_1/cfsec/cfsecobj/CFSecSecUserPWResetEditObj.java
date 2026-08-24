@@ -379,12 +379,12 @@ public class CFSecSecUserPWResetEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -400,41 +400,41 @@ public class CFSecSecUserPWResetEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredSentToEMailAddr() {
+	public $implIJavaAtomType$ getRequiredSentToEMailAddr() {
 		return( getSecUserPWResetRec().getRequiredSentToEMailAddr() );
 	}
 
 	@Override
-	public void setRequiredSentToEMailAddr( String value ) {
+	public void setRequiredSentToEMailAddr( $implIJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredSentToEMailAddr() != value ) {
 			getSecUserPWResetRec().setRequiredSentToEMailAddr( value );
 		}
 	}
 
 	@Override
-	public ICFLibUuid6 getRequiredPasswordResetUuid6() {
+	public $implIJavaAtomType$ getRequiredPasswordResetUuid6() {
 		return( getSecUserPWResetRec().getRequiredPasswordResetUuid6() );
 	}
 
 	@Override
-	public void setRequiredPasswordResetUuid6( ICFLibUuid6 value ) {
+	public void setRequiredPasswordResetUuid6( $implIJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredPasswordResetUuid6() != value ) {
 			getSecUserPWResetRec().setRequiredPasswordResetUuid6( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implIJavaAtomType$ getRequiredNewAccount() {
 		return( getSecUserPWResetRec().getRequiredNewAccount() );
 	}
 
 	@Override
-	public void setRequiredNewAccount( boolean value ) {
+	public void setRequiredNewAccount( $implIJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredNewAccount() != value ) {
 			getSecUserPWResetRec().setRequiredNewAccount( value );
 		}

@@ -71,11 +71,11 @@ public interface ICFSecISOCtryCcyH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public short getRequiredISOCtryId();
-	public void setRequiredISOCtryId( short requiredISOCtryId );
+	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredISOCtryId();
+	public void setRequiredISOCtryId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISOCtryId );
 
-	public short getRequiredISOCcyId();
-	public void setRequiredISOCcyId( short requiredISOCcyId );
+	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredISOCcyId();
+	public void setRequiredISOCcyId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredISOCcyId );
 
 	@Override
 	public boolean equals( Object obj );

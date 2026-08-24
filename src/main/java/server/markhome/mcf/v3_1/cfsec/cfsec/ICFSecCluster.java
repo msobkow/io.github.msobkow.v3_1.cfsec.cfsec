@@ -74,8 +74,8 @@ public interface ICFSecCluster
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredId);
+	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredId);
 	public List<ICFSecTenant> getOptionalComponentsTenant();
 
 	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
@@ -84,15 +84,15 @@ public interface ICFSecCluster
 
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredId();
+	public void setRequiredId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredFullDomName();
-	public void setRequiredFullDomName( String value );
-	public String getRequiredDescription();
-	public void setRequiredDescription( String value );
+	public $implIJavaAtomType$ getRequiredFullDomName();
+	public void setRequiredFullDomName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredDescription();
+	public void setRequiredDescription( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

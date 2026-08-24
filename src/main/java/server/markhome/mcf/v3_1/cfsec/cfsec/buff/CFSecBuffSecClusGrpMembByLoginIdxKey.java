@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffSecClusGrpMembByLoginIdxKey
 	implements ICFSecSecClusGrpMembByLoginIdxKey, Comparable<Object>, Serializable
 {
-	protected String requiredLoginId;
+	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredLoginId;
 	public CFSecBuffSecClusGrpMembByLoginIdxKey() {
 		requiredLoginId = ICFSecProtSecClusGrpMemb.LOGINID_INIT_VALUE;
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implIJavaAtomType$ getRequiredLoginId() {
 		return(requiredLoginId);
 	}
 
-	public void setRequiredLoginId( String value ) {
+	public void setRequiredLoginId( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredLoginId",

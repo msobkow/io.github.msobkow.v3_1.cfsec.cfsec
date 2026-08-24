@@ -90,7 +90,7 @@ public interface ICFSecTableInfoTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteTableInfoByIdIdx( ICFSecAuthorization Authorization,
-		Integer argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the TableInfo instances identified by the key TableNameIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecTableInfoTable
 	 *	@param	TableName	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoByTableNameIdx( ICFSecAuthorization Authorization,
-		String argTableName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTableName );
 
 	/**
 	 *	Delete the TableInfo instances identified by the key TableNameIdx.
@@ -118,7 +118,7 @@ public interface ICFSecTableInfoTable
 	 *	@param	SuperName	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoBySuperNameIdx( ICFSecAuthorization Authorization,
-		String argSuperName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSuperName );
 
 	/**
 	 *	Delete the TableInfo instances identified by the key SuperNameIdx.
@@ -137,7 +137,7 @@ public interface ICFSecTableInfoTable
 	 *	@param	SchemaName	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoBySchemaNameIdx( ICFSecAuthorization Authorization,
-		String argSchemaName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSchemaName );
 
 	/**
 	 *	Delete the TableInfo instances identified by the key SchemaNameIdx.
@@ -158,8 +158,8 @@ public interface ICFSecTableInfoTable
 	 *	@param	BackingClassCode	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoBySchemaBkCodeIdx( ICFSecAuthorization Authorization,
-		String argSchemaName,
-		int argBackingClassCode );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSchemaName,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argBackingClassCode );
 
 	/**
 	 *	Delete the TableInfo instances identified by the key SchemaBkCodeIdx.
@@ -178,7 +178,7 @@ public interface ICFSecTableInfoTable
 	 *	@param	RuntimeClassCode	The TableInfo key attribute of the instance generating the id.
 	 */
 	void deleteTableInfoBySchemaRTCodeIdx( ICFSecAuthorization Authorization,
-		int argRuntimeClassCode );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argRuntimeClassCode );
 
 	/**
 	 *	Delete the TableInfo instances identified by the key SchemaRTCodeIdx.
@@ -202,7 +202,7 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo readDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived TableInfo record instance by primary key.
@@ -215,7 +215,7 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo lockDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all TableInfo instances.
@@ -237,7 +237,7 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		int TableInfoId );
+		$implIJavaAtomType$ TableInfoId );
 
 	/**
 	 *	Read the derived TableInfo record instance identified by the unique key TableNameIdx.
@@ -250,7 +250,7 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo readDerivedByTableNameIdx( ICFSecAuthorization Authorization,
-		String TableName );
+		$implIJavaAtomType$ TableName );
 
 	/**
 	 *	Read an array of the derived TableInfo record instances identified by the duplicate key SuperNameIdx.
@@ -262,7 +262,7 @@ public interface ICFSecTableInfoTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecTableInfo[] readDerivedBySuperNameIdx( ICFSecAuthorization Authorization,
-		String SuperName );
+		$implIJavaAtomType$ SuperName );
 
 	/**
 	 *	Read an array of the derived TableInfo record instances identified by the duplicate key SchemaNameIdx.
@@ -274,7 +274,7 @@ public interface ICFSecTableInfoTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecTableInfo[] readDerivedBySchemaNameIdx( ICFSecAuthorization Authorization,
-		String SchemaName );
+		$implIJavaAtomType$ SchemaName );
 
 	/**
 	 *	Read the derived TableInfo record instance identified by the unique key SchemaBkCodeIdx.
@@ -289,8 +289,8 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo readDerivedBySchemaBkCodeIdx( ICFSecAuthorization Authorization,
-		String SchemaName,
-		int BackingClassCode );
+		$implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
 	/**
 	 *	Read the derived TableInfo record instance identified by the unique key SchemaRTCodeIdx.
@@ -303,7 +303,7 @@ public interface ICFSecTableInfoTable
 	 *		no such existing key value.
 	 */
 	ICFSecTableInfo readDerivedBySchemaRTCodeIdx( ICFSecAuthorization Authorization,
-		int RuntimeClassCode );
+		$implIJavaAtomType$ RuntimeClassCode );
 
 	/**
 	 *	Read the specific TableInfo record instance identified by the primary key.
@@ -318,7 +318,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo readRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific TableInfo record instance identified by the primary key.
@@ -333,7 +333,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo lockRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific TableInfo record instances.
@@ -357,7 +357,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo readRecByIdIdx( ICFSecAuthorization Authorization,
-		int TableInfoId );
+		$implIJavaAtomType$ TableInfoId );
 
 	/**
 	 *	Read the specific TableInfo record instance identified by the unique key TableNameIdx.
@@ -372,7 +372,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo readRecByTableNameIdx( ICFSecAuthorization Authorization,
-		String TableName );
+		$implIJavaAtomType$ TableName );
 
 	/**
 	 *	Read an array of the specific TableInfo record instances identified by the duplicate key SuperNameIdx.
@@ -386,7 +386,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo[] readRecBySuperNameIdx( ICFSecAuthorization Authorization,
-		String SuperName );
+		$implIJavaAtomType$ SuperName );
 
 	/**
 	 *	Read an array of the specific TableInfo record instances identified by the duplicate key SchemaNameIdx.
@@ -400,7 +400,7 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo[] readRecBySchemaNameIdx( ICFSecAuthorization Authorization,
-		String SchemaName );
+		$implIJavaAtomType$ SchemaName );
 
 	/**
 	 *	Read the specific TableInfo record instance identified by the unique key SchemaBkCodeIdx.
@@ -417,8 +417,8 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo readRecBySchemaBkCodeIdx( ICFSecAuthorization Authorization,
-		String SchemaName,
-		int BackingClassCode );
+		$implIJavaAtomType$ SchemaName,
+		$implIJavaAtomType$ BackingClassCode );
 
 	/**
 	 *	Read the specific TableInfo record instance identified by the unique key SchemaRTCodeIdx.
@@ -433,5 +433,5 @@ public interface ICFSecTableInfoTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTableInfo readRecBySchemaRTCodeIdx( ICFSecAuthorization Authorization,
-		int RuntimeClassCode );
+		$implIJavaAtomType$ RuntimeClassCode );
 }

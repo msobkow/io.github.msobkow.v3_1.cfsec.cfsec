@@ -90,7 +90,7 @@ public interface ICFSecSecUserTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecUserByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecUser instances identified by the key ULoginIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecUserTable
 	 *	@param	LoginId	The SecUser key attribute of the instance generating the id.
 	 */
 	void deleteSecUserByULoginIdx( ICFSecAuthorization Authorization,
-		String argLoginId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 
 	/**
 	 *	Delete the SecUser instances identified by the key ULoginIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecUserTable
 	 *	@param	EMailAddress	The SecUser key attribute of the instance generating the id.
 	 */
 	void deleteSecUserByEMAddrIdx( ICFSecAuthorization Authorization,
-		String argEMailAddress );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argEMailAddress );
 
 	/**
 	 *	Delete the SecUser instances identified by the key EMAddrIdx.
@@ -142,7 +142,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecUser record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecUser instances.
@@ -177,7 +177,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the derived SecUser record instance identified by the unique key ULoginIdx.
@@ -190,7 +190,7 @@ public interface ICFSecSecUserTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecUser readDerivedByULoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the derived SecUser record instances identified by the duplicate key EMAddrIdx.
@@ -202,7 +202,7 @@ public interface ICFSecSecUserTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecUser[] readDerivedByEMAddrIdx( ICFSecAuthorization Authorization,
-		String EMailAddress );
+		$implIJavaAtomType$ EMailAddress );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the primary key.
@@ -217,7 +217,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecUser record instance identified by the primary key.
@@ -232,7 +232,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecUser record instances.
@@ -251,7 +251,7 @@ public interface ICFSecSecUserTable
 	 *	@return All the specific SecUser instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecUser[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaOptAtomType$ priorSecUserId );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the unique key IdIdx.
@@ -266,7 +266,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecUserId );
+		$implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Read the specific SecUser record instance identified by the unique key ULoginIdx.
@@ -281,7 +281,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser readRecByULoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the specific SecUser record instances identified by the duplicate key EMAddrIdx.
@@ -295,7 +295,7 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser[] readRecByEMAddrIdx( ICFSecAuthorization Authorization,
-		String EMailAddress );
+		$implIJavaAtomType$ EMailAddress );
 
 	/**
 	 *	Read a page array of the specific SecUser record instances identified by the duplicate key EMAddrIdx.
@@ -309,6 +309,6 @@ public interface ICFSecSecUserTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecUser[] pageRecByEMAddrIdx( ICFSecAuthorization Authorization,
-		String EMailAddress,
-		ICFLibKeyHash256 priorSecUserId );
+		$implIJavaAtomType$ EMailAddress,
+		$implIJavaOptAtomType$ priorSecUserId );
 }

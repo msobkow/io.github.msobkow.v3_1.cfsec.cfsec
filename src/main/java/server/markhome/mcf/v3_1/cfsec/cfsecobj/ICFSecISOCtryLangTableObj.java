@@ -120,8 +120,8 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	The ISOCtryLang-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryLangObj readISOCtryLang( short ISOCtryId,
-		short ISOLangId );
+	ICFSecISOCtryLangObj readISOCtryLang( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Read a ISOCtryLang-derived instance by it's primary key.
@@ -129,8 +129,8 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	The ISOCtryLang-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryLangObj readISOCtryLang( short ISOCtryId,
-		short ISOLangId,
+	ICFSecISOCtryLangObj readISOCtryLang( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId,
 		boolean forceRead );
 
 	ICFSecISOCtryLangObj readCachedISOCtryLang( ICFSecISOCtryLangPKey pkey );
@@ -172,8 +172,8 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	CFSecISOCtryLangObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryLangObj readISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId );
+	ICFSecISOCtryLangObj readISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Get the CFSecISOCtryLangObj instance for the primary key attributes.
@@ -185,8 +185,8 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	CFSecISOCtryLangObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryLangObj readISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId,
+	ICFSecISOCtryLangObj readISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId,
 		boolean forceRead );
 
 	/**
@@ -197,7 +197,7 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	List of CFSecISOCtryLangObj cached instances sorted by their primary keys for the duplicate CtryIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( short ISOCtryId );
+	List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Get the map of CFSecISOCtryLangObj instances sorted by their primary keys for the duplicate CtryIdx key.
@@ -207,7 +207,7 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	List of CFSecISOCtryLangObj cached instances sorted by their primary keys for the duplicate CtryIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( short ISOCtryId,
+	List<ICFSecISOCtryLangObj> readISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId,
 		boolean forceRead );
 
 	/**
@@ -218,7 +218,7 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	List of CFSecISOCtryLangObj cached instances sorted by their primary keys for the duplicate LangIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( short ISOLangId );
+	List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Get the map of CFSecISOCtryLangObj instances sorted by their primary keys for the duplicate LangIdx key.
@@ -228,22 +228,22 @@ public interface ICFSecISOCtryLangTableObj
 	 *	@return	List of CFSecISOCtryLangObj cached instances sorted by their primary keys for the duplicate LangIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( short ISOLangId,
+	List<ICFSecISOCtryLangObj> readISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId,
 		boolean forceRead );
 
-	ICFSecISOCtryLangObj readCachedISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId );
+	ICFSecISOCtryLangObj readCachedISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
-	List<ICFSecISOCtryLangObj> readCachedISOCtryLangByCtryIdx( short ISOCtryId );
+	List<ICFSecISOCtryLangObj> readCachedISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
-	List<ICFSecISOCtryLangObj> readCachedISOCtryLangByLangIdx( short ISOLangId );
+	List<ICFSecISOCtryLangObj> readCachedISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId );
 
-	void deepDisposeISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId );
+	void deepDisposeISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
-	void deepDisposeISOCtryLangByCtryIdx( short ISOCtryId );
+	void deepDisposeISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
-	void deepDisposeISOCtryLangByLangIdx( short ISOLangId );
+	void deepDisposeISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Internal use only.
@@ -262,20 +262,20 @@ public interface ICFSecISOCtryLangTableObj
 	 *
 	 *	@param	ISOLangId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryLangByIdIdx( short ISOCtryId,
-		short ISOLangId );
+	void deleteISOCtryLangByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOLangId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOCtryId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryLangByCtryIdx( short ISOCtryId );
+	void deleteISOCtryLangByCtryIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOLangId	The ISOCtryLang key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryLangByLangIdx( short ISOLangId );
+	void deleteISOCtryLangByLangIdx( $implIJavaAtomType$ ISOLangId );
 }

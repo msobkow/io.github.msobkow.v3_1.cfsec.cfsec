@@ -160,32 +160,32 @@ public interface ICFSecSecTentGrpEditObj
 	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecTentGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecTentGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecTentGrpId();
+	$implIJavaAtomType$ getRequiredSecTentGrpId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	Set the required $implIJavaAtomType$ attribute SecTentGrpId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute SecTentGrpId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute SecTentGrpId value to be applied.
 	 */
-	void setRequiredSecTentGrpId(ICFLibKeyHash256 value);
+	void setRequiredSecTentGrpId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required $implIJavaAtomType$ attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required $implIJavaAtomType$ attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	$implIJavaAtomType$ getRequiredTenantId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

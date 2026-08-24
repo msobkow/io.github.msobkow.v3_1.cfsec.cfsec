@@ -335,15 +335,15 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistory( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp ) {
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistory( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp ) {
 		return( readSecUserPWHistory( SecUserId,
 			PWSetStamp, false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistory( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp, boolean forceRead ) {
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistory( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp, boolean forceRead ) {
 		ICFSecSecUserPWHistoryObj obj = null;
 		ICFSecSecUserPWHistory readRec = schema.getCFSecBackingStore().getTableSecUserPWHistory().readDerivedByIdIdx( null,
 			SecUserId,
@@ -570,7 +570,7 @@ public class CFSecSecUserPWHistoryTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory(ICFLibKeyHash256 priorSecUserId,
+	public List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory($implIJavaOptAtomType$ priorSecUserId,
 		LocalDateTime priorPWSetStamp )
 	{
 		final String S_ProcName = "pageAllSecUserPWHistory";
@@ -594,8 +594,8 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp )
 	{
 		return( readSecUserPWHistoryByIdIdx( SecUserId,
 			PWSetStamp,
@@ -603,8 +603,8 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp, boolean forceRead )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp, boolean forceRead )
 	{
 		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newPKey();
 		pkey.setRequiredSecUserId( SecUserId );
@@ -614,14 +614,14 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId )
 	{
 		return( readSecUserPWHistoryByUserIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId, boolean forceRead )
 	{
 		if( indexByUserIdx == null ) {
 			indexByUserIdx = new HashMap< ICFSecSecUserPWHistoryByUserIdxKey,
@@ -647,14 +647,14 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		return( readSecUserPWHistoryBySetStampIdx( PWSetStamp,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp, boolean forceRead )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp, boolean forceRead )
 	{
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPWHistoryBySetStampIdxKey,
@@ -680,14 +680,14 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp )
 	{
 		return( readSecUserPWHistoryByReplacedStampIdx( PWReplacedStamp,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp, boolean forceRead )
+	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp, boolean forceRead )
 	{
 		if( indexByReplacedStampIdx == null ) {
 			indexByReplacedStampIdx = new HashMap< ICFSecSecUserPWHistoryByReplacedStampIdxKey,
@@ -713,8 +713,8 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp )
+	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
 		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newPKey();
@@ -727,7 +727,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
 		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
@@ -763,7 +763,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp )
+	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
 		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
@@ -799,7 +799,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp )
+	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
 		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
@@ -835,8 +835,8 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp )
+	public void deepDisposeSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = readCachedSecUserPWHistoryByIdIdx( SecUserId,
 				PWSetStamp );
@@ -846,7 +846,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId )
+	public void deepDisposeSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId )
 	{
 		ICFSecSecUserPWHistoryObj obj = readCachedSecUserPWHistoryByUserIdx( SecUserId );
 		if( obj != null ) {
@@ -855,7 +855,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp )
+	public void deepDisposeSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = readCachedSecUserPWHistoryBySetStampIdx( PWSetStamp );
 		if( obj != null ) {
@@ -864,7 +864,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp )
+	public void deepDisposeSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = readCachedSecUserPWHistoryByReplacedStampIdx( PWReplacedStamp );
 		if( obj != null ) {
@@ -891,8 +891,8 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deleteSecUserPWHistoryByIdIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime PWSetStamp )
+	public void deleteSecUserPWHistoryByIdIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = readSecUserPWHistory(SecUserId,
 				PWSetStamp);
@@ -924,7 +924,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deleteSecUserPWHistoryByUserIdx( ICFLibKeyHash256 SecUserId )
+	public void deleteSecUserPWHistoryByUserIdx( $implIJavaAtomType$ SecUserId )
 	{
 		if( indexByUserIdx == null ) {
 			indexByUserIdx = new HashMap< ICFSecSecUserPWHistoryByUserIdxKey,
@@ -947,7 +947,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deleteSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp )
+	public void deleteSecUserPWHistoryBySetStampIdx( $implIJavaAtomType$ PWSetStamp )
 	{
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPWHistoryBySetStampIdxKey,
@@ -970,7 +970,7 @@ public class CFSecSecUserPWHistoryTableObj
 	}
 
 	@Override
-	public void deleteSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp )
+	public void deleteSecUserPWHistoryByReplacedStampIdx( $implIJavaAtomType$ PWReplacedStamp )
 	{
 		if( indexByReplacedStampIdx == null ) {
 			indexByReplacedStampIdx = new HashMap< ICFSecSecUserPWHistoryByReplacedStampIdxKey,

@@ -101,7 +101,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	The ISOCtry-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryObj readISOCtry( Short pkey );
+	ICFSecISOCtryObj readISOCtry( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a ISOCtry-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	The ISOCtry-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecISOCtryObj readISOCtry( Short pkey,
+	ICFSecISOCtryObj readISOCtry( $implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecISOCtryObj readCachedISOCtry( Short pkey );
+	ICFSecISOCtryObj readCachedISOCtry( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeISOCtry( ICFSecISOCtryObj obj );
 
-	void deepDisposeISOCtry( Short pkey );
+	void deepDisposeISOCtry( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecISOCtryObj lockISOCtry( Short pkey );
+	ICFSecISOCtryObj lockISOCtry( $implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the ISOCtry-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByIdIdx( short ISOCtryId );
+	ICFSecISOCtryObj readISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Get the CFSecISOCtryObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByIdIdx( short ISOCtryId,
+	ICFSecISOCtryObj readISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj cached instance for the unique ISOCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByISOCodeIdx(String ISOCode );
+	ICFSecISOCtryObj readISOCtryByISOCodeIdx($implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Get the CFSecISOCtryObj instance for the unique ISOCodeIdx key.
@@ -182,7 +182,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj refreshed instance for the unique ISOCodeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByISOCodeIdx(String ISOCode,
+	ICFSecISOCtryObj readISOCtryByISOCodeIdx($implIJavaAtomType$ ISOCode,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByNameIdx(String Name );
+	ICFSecISOCtryObj readISOCtryByNameIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFSecISOCtryObj instance for the unique NameIdx key.
@@ -203,20 +203,20 @@ public interface ICFSecISOCtryTableObj
 	 *	@return	CFSecISOCtryObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecISOCtryObj readISOCtryByNameIdx(String Name,
+	ICFSecISOCtryObj readISOCtryByNameIdx($implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFSecISOCtryObj readCachedISOCtryByIdIdx( short ISOCtryId );
+	ICFSecISOCtryObj readCachedISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId );
 
-	ICFSecISOCtryObj readCachedISOCtryByISOCodeIdx( String ISOCode );
+	ICFSecISOCtryObj readCachedISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode );
 
-	ICFSecISOCtryObj readCachedISOCtryByNameIdx( String Name );
+	ICFSecISOCtryObj readCachedISOCtryByNameIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeISOCtryByIdIdx( short ISOCtryId );
+	void deepDisposeISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId );
 
-	void deepDisposeISOCtryByISOCodeIdx( String ISOCode );
+	void deepDisposeISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode );
 
-	void deepDisposeISOCtryByNameIdx( String Name );
+	void deepDisposeISOCtryByNameIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -233,19 +233,19 @@ public interface ICFSecISOCtryTableObj
 	 *
 	 *	@param	ISOCtryId	The ISOCtry key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryByIdIdx( short ISOCtryId );
+	void deleteISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ISOCode	The ISOCtry key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryByISOCodeIdx(String ISOCode );
+	void deleteISOCtryByISOCodeIdx($implIJavaAtomType$ ISOCode );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The ISOCtry key attribute of the instance generating the id.
 	 */
-	void deleteISOCtryByNameIdx(String Name );
+	void deleteISOCtryByNameIdx($implIJavaAtomType$ Name );
 }

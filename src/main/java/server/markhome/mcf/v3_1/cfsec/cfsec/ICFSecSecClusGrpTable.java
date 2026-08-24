@@ -90,7 +90,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSecClusGrpByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the SecClusGrp instances identified by the key ClusterIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@param	ClusterId	The SecClusGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId );
 
 	/**
 	 *	Delete the SecClusGrp instances identified by the key ClusterIdx.
@@ -118,7 +118,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@param	Name	The SecClusGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpByNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecClusGrp instances identified by the key NameIdx.
@@ -139,8 +139,8 @@ public interface ICFSecSecClusGrpTable
 	 *	@param	Name	The SecClusGrp key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argClusterId,
-		String argName );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argClusterId,
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the SecClusGrp instances identified by the key UNameIdx.
@@ -164,7 +164,7 @@ public interface ICFSecSecClusGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrp readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived SecClusGrp record instance by primary key.
@@ -177,7 +177,7 @@ public interface ICFSecSecClusGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrp lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all SecClusGrp instances.
@@ -199,7 +199,7 @@ public interface ICFSecSecClusGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrp readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId );
+		$implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Read an array of the derived SecClusGrp record instances identified by the duplicate key ClusterIdx.
@@ -211,7 +211,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusGrp[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read an array of the derived SecClusGrp record instances identified by the duplicate key NameIdx.
@@ -223,7 +223,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusGrp[] readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the derived SecClusGrp record instance identified by the unique key UNameIdx.
@@ -238,8 +238,8 @@ public interface ICFSecSecClusGrpTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrp readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String Name );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecClusGrp record instance identified by the primary key.
@@ -254,7 +254,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific SecClusGrp record instance identified by the primary key.
@@ -269,7 +269,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific SecClusGrp record instances.
@@ -293,7 +293,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId );
+		$implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Read an array of the specific SecClusGrp record instances identified by the duplicate key ClusterIdx.
@@ -307,7 +307,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId );
+		$implIJavaAtomType$ ClusterId );
 
 	/**
 	 *	Read an array of the specific SecClusGrp record instances identified by the duplicate key NameIdx.
@@ -321,7 +321,7 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp[] readRecByNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific SecClusGrp record instance identified by the unique key UNameIdx.
@@ -338,6 +338,6 @@ public interface ICFSecSecClusGrpTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrp readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ClusterId,
-		String Name );
+		$implIJavaAtomType$ ClusterId,
+		$implIJavaAtomType$ Name );
 }

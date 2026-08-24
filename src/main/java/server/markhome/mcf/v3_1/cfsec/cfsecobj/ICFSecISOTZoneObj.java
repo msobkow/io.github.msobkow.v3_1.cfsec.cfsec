@@ -187,18 +187,18 @@ public interface ICFSecISOTZoneObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Short primary key for this instance.
+	 *	@return	$implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Short getPKey();
+	$implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Short primary key value for this instance.
+	 *	@param $implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Short value );
+	void setPKey( $implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -218,53 +218,53 @@ public interface ICFSecISOTZoneObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required short attribute ISOTZoneId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOTZoneId.
 	 *
-	 *	@return	The required short attribute ISOTZoneId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOTZoneId.
 	 */
-	short getRequiredISOTZoneId();
+	$implIJavaAtomType$ getRequiredISOTZoneId();
 
 	/**
-	 *	Get the required String attribute Iso8601.
+	 *	Get the required $implIJavaAtomType$ attribute Iso8601.
 	 *
-	 *	@return	The required String attribute Iso8601.
+	 *	@return	The required $implIJavaAtomType$ attribute Iso8601.
 	 */
-	String getRequiredIso8601();
+	$implIJavaAtomType$ getRequiredIso8601();
 
 	/**
-	 *	Get the required String attribute TZName.
+	 *	Get the required $implIJavaAtomType$ attribute TZName.
 	 *
-	 *	@return	The required String attribute TZName.
+	 *	@return	The required $implIJavaAtomType$ attribute TZName.
 	 */
-	String getRequiredTZName();
+	$implIJavaAtomType$ getRequiredTZName();
 
 	/**
-	 *	Get the required short attribute TZHourOffset.
+	 *	Get the required $implIJavaAtomType$ attribute TZHourOffset.
 	 *
-	 *	@return	The required short attribute TZHourOffset.
+	 *	@return	The required $implIJavaAtomType$ attribute TZHourOffset.
 	 */
-	short getRequiredTZHourOffset();
+	$implIJavaAtomType$ getRequiredTZHourOffset();
 
 	/**
-	 *	Get the required short attribute TZMinOffset.
+	 *	Get the required $implIJavaAtomType$ attribute TZMinOffset.
 	 *
-	 *	@return	The required short attribute TZMinOffset.
+	 *	@return	The required $implIJavaAtomType$ attribute TZMinOffset.
 	 */
-	short getRequiredTZMinOffset();
+	$implIJavaAtomType$ getRequiredTZMinOffset();
 
 	/**
-	 *	Get the required String attribute Description.
+	 *	Get the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The required String attribute Description.
+	 *	@return	The required $implIJavaAtomType$ attribute Description.
 	 */
-	String getRequiredDescription();
+	$implIJavaAtomType$ getRequiredDescription();
 
 	/**
-	 *	Get the required boolean attribute Visible.
+	 *	Get the required $implIJavaAtomType$ attribute Visible.
 	 *
-	 *	@return	The required boolean attribute Visible.
+	 *	@return	The required $implIJavaAtomType$ attribute Visible.
 	 */
-	boolean getRequiredVisible();
+	$implIJavaAtomType$ getRequiredVisible();
 
 	/**
 	 *	Internal use only.

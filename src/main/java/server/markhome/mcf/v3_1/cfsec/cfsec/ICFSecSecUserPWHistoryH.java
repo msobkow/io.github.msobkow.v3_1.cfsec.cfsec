@@ -62,16 +62,16 @@ public interface ICFSecSecUserPWHistoryH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredSecUserId();
-	public void setRequiredSecUserId( ICFLibKeyHash256 requiredSecUserId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredSecUserId();
+	public void setRequiredSecUserId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSecUserId );
 
-	public LocalDateTime getRequiredPWSetStamp();
-	public void setRequiredPWSetStamp( LocalDateTime requiredPWSetStamp );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredPWSetStamp();
+	public void setRequiredPWSetStamp( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredPWSetStamp );
 
-	public LocalDateTime getRequiredPWReplacedStamp();
-	public void setRequiredPWReplacedStamp( LocalDateTime value );
-	public String getRequiredPasswordHash();
-	public void setRequiredPasswordHash( String value );
+	public $implIJavaAtomType$ getRequiredPWReplacedStamp();
+	public void setRequiredPWReplacedStamp( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredPasswordHash();
+	public void setRequiredPasswordHash( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

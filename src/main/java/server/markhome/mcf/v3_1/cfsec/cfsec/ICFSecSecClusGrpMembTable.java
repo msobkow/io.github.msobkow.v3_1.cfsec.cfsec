@@ -92,8 +92,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpMembByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecClusGrpId,
-		String argLoginId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecClusGrpId,
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 	/**
 	 *	Delete the SecClusGrpMemb instance identified by the primary key.
 	 *
@@ -111,7 +111,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@param	SecClusGrpId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpMembByClusGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSecClusGrpId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSecClusGrpId );
 
 	/**
 	 *	Delete the SecClusGrpMemb instances identified by the key ClusGrpIdx.
@@ -130,7 +130,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@param	LoginId	The SecClusGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecClusGrpMembByLoginIdx( ICFSecAuthorization Authorization,
-		String argLoginId );
+		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argLoginId );
 
 	/**
 	 *	Delete the SecClusGrpMemb instances identified by the key LoginIdx.
@@ -165,8 +165,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrpMemb readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the derived SecClusGrpMemb record instance by primary key.
@@ -203,8 +203,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecClusGrpMemb readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the derived SecClusGrpMemb record instances identified by the duplicate key ClusGrpIdx.
@@ -216,7 +216,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusGrpMemb[] readDerivedByClusGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId );
+		$implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Read an array of the derived SecClusGrpMemb record instances identified by the duplicate key LoginIdx.
@@ -228,7 +228,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecClusGrpMemb[] readDerivedByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read the specific SecClusGrpMemb record instance identified by the primary key.
@@ -258,8 +258,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Lock the specific SecClusGrpMemb record instance identified by the primary key.
@@ -293,8 +293,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@return All the specific SecClusGrpMemb instances in the database accessible for the Authorization.
 	 */
 	ICFSecSecClusGrpMemb[] pageAllRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId );
+		$implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read the specific SecClusGrpMemb record instance identified by the unique key IdIdx.
@@ -311,8 +311,8 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId,
-		String LoginId );
+		$implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read an array of the specific SecClusGrpMemb record instances identified by the duplicate key ClusGrpIdx.
@@ -326,7 +326,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb[] readRecByClusGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId );
+		$implIJavaAtomType$ SecClusGrpId );
 
 	/**
 	 *	Read an array of the specific SecClusGrpMemb record instances identified by the duplicate key LoginIdx.
@@ -340,7 +340,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb[] readRecByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId );
+		$implIJavaAtomType$ LoginId );
 
 	/**
 	 *	Read a page array of the specific SecClusGrpMemb record instances identified by the duplicate key ClusGrpIdx.
@@ -354,9 +354,9 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb[] pageRecByClusGrpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SecClusGrpId,
-		ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId );
+		$implIJavaAtomType$ SecClusGrpId,
+		$implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 
 	/**
 	 *	Read a page array of the specific SecClusGrpMemb record instances identified by the duplicate key LoginIdx.
@@ -370,7 +370,7 @@ public interface ICFSecSecClusGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecClusGrpMemb[] pageRecByLoginIdx( ICFSecAuthorization Authorization,
-		String LoginId,
-		ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId );
+		$implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId );
 }

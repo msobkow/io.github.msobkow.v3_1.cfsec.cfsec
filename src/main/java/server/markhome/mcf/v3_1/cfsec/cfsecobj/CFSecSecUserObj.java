@@ -52,7 +52,7 @@ public class CFSecSecUserObj
 	protected boolean isNew;
 	protected ICFSecSecUserEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecUser rec;
 	protected List<ICFSecSecSessionObj> optionalComponentsSecSess;
 	protected List<ICFSecSecSessionObj> optionalChildrenSecProxy;
@@ -157,7 +157,7 @@ public class CFSecSecUserObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEMConfirmationUuid6");
 				}
-				ICFLibUuid6 natNextName = ICFLibUuid6.fromString(nextName);
+				$implIJavaAtomType$ natNextName = ICFLibUuid6.fromString(nextName);
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -169,7 +169,7 @@ public class CFSecSecUserObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredPasswordResetUuid6");
 				}
-				ICFLibUuid6 natNextName = ICFLibUuid6.fromString(nextName);
+				$implIJavaAtomType$ natNextName = ICFLibUuid6.fromString(nextName);
 				subObj = ((ICFSecSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -306,12 +306,12 @@ public class CFSecSecUserObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -388,7 +388,7 @@ public class CFSecSecUserObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public $implIJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -537,32 +537,32 @@ public class CFSecSecUserObj
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implIJavaAtomType$ getRequiredLoginId() {
 		return( getSecUserRec().getRequiredLoginId() );
 	}
 
 	@Override
-	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus() {
+	public $implIJavaAtomType$ getRequiredAccountStatus() {
 		return( getSecUserRec().getRequiredAccountStatus() );
 	}
 
 	@Override
-	public String getOptionalDfltSysGrpName() {
+	public $implIJavaAtomType$ getOptionalDfltSysGrpName() {
 		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}
 
 	@Override
-	public String getOptionalDfltClusGrpName() {
+	public $implIJavaAtomType$ getOptionalDfltClusGrpName() {
 		return( getSecUserRec().getOptionalDfltClusGrpName() );
 	}
 
 	@Override
-	public String getOptionalDfltTentGrpName() {
+	public $implIJavaAtomType$ getOptionalDfltTentGrpName() {
 		return( getSecUserRec().getOptionalDfltTentGrpName() );
 	}
 
 	@Override
-	public String getRequiredEMailAddress() {
+	public $implIJavaAtomType$ getRequiredEMailAddress() {
 		return( getSecUserRec().getRequiredEMailAddress() );
 	}
 

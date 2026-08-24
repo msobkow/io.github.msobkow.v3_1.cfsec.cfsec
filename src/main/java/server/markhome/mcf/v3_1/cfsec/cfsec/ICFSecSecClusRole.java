@@ -75,18 +75,18 @@ public interface ICFSecSecClusRole
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredSecClusRoleId);
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredSecClusRoleId);
 	public List<ICFSecSecClusRoleMemb> getOptionalChildrenMembByGrp();
 
-	public ICFLibKeyHash256 getRequiredSecClusRoleId();
-	public void setRequiredSecClusRoleId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredSecClusRoleId();
+	public void setRequiredSecClusRoleId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecCluster getRequiredOwnerCluster();
 
-	public void setRequiredOwnerCluster(ICFLibKeyHash256 argClusterId);
+	public void setRequiredOwnerCluster($implIJavaAtomType$ argClusterId);
 
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
 
@@ -96,7 +96,7 @@ public interface ICFSecSecClusRole
 
 	public ICFSecSecSysGrp getRequiredContainerSysRole();
 
-	public void setRequiredContainerSysRole(String argName);
+	public void setRequiredContainerSysRole($implIJavaAtomType$ argName);
 
 	public void setRequiredContainerSysRole(ICFSecSecSysGrp argObj);
 
@@ -104,10 +104,10 @@ public interface ICFSecSecClusRole
 
 	public void setRequiredContainerSysRole(ICFSecPubSecSysGrp argObj);
 
-	public ICFLibKeyHash256 getRequiredClusterId();
-	public void setRequiredClusterId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredClusterId();
+	public void setRequiredClusterId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

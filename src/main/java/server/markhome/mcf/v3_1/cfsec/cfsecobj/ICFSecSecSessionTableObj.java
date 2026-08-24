@@ -101,7 +101,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	The SecSession-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSessionObj readSecSession( ICFLibKeyHash256 pkey );
+	ICFSecSecSessionObj readSecSession( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a SecSession-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	The SecSession-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFSecSecSessionObj readSecSession( ICFLibKeyHash256 pkey,
+	ICFSecSecSessionObj readSecSession( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFSecSecSessionObj readCachedSecSession( ICFLibKeyHash256 pkey );
+	ICFSecSecSessionObj readCachedSecSession( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeSecSession( ICFSecSecSessionObj obj );
 
-	void deepDisposeSecSession( ICFLibKeyHash256 pkey );
+	void deepDisposeSecSession( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFSecSecSessionObj lockSecSession( ICFLibKeyHash256 pkey );
+	ICFSecSecSessionObj lockSecSession( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the SecSession-derived instances in the database.
@@ -149,7 +149,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of ICFSecSecSessionObj instance, sorted by their primary keys, which
 	 *		may include an empty set.
 	 */
-	List<ICFSecSecSessionObj> pageAllSecSession(ICFLibKeyHash256 priorSecSessionId );
+	List<ICFSecSecSessionObj> pageAllSecSession($implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Get the CFSecSecSessionObj instance for the primary key attributes.
@@ -159,7 +159,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	CFSecSecSessionObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSessionObj readSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId );
+	ICFSecSecSessionObj readSecSessionByIdIdx( $implIJavaAtomType$ SecSessionId );
 
 	/**
 	 *	Get the CFSecSecSessionObj instance for the primary key attributes.
@@ -169,7 +169,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	CFSecSecSessionObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSessionObj readSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId,
+	ICFSecSecSessionObj readSecSessionByIdIdx( $implIJavaAtomType$ SecSessionId,
 		boolean forceRead );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecUserIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId );
+	List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Get the map of CFSecSecSessionObj instances sorted by their primary keys for the duplicate SecUserIdx key.
@@ -190,7 +190,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecUserIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId,
+	List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId,
 		boolean forceRead );
 
 	/**
@@ -203,8 +203,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	CFSecSecSessionObj cached instance for the unique StartIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSessionObj readSecSessionByStartIdx(ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+	ICFSecSecSessionObj readSecSessionByStartIdx($implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
 	/**
 	 *	Get the CFSecSecSessionObj instance for the unique StartIdx key.
@@ -216,8 +216,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	CFSecSecSessionObj refreshed instance for the unique StartIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecSessionObj readSecSessionByStartIdx(ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start,
+	ICFSecSecSessionObj readSecSessionByStartIdx($implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start,
 		boolean forceRead );
 
 	/**
@@ -230,8 +230,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate FinishIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+	List<ICFSecSecSessionObj> readSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
 	/**
 	 *	Get the map of CFSecSecSessionObj instances sorted by their primary keys for the duplicate FinishIdx key.
@@ -243,8 +243,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate FinishIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish,
+	List<ICFSecSecSessionObj> readSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish,
 		boolean forceRead );
 
 	/**
@@ -255,7 +255,7 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecProxyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId );
+	List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId );
 
 	/**
 	 *	Get the map of CFSecSecSessionObj instances sorted by their primary keys for the duplicate SecProxyIdx key.
@@ -265,32 +265,32 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	List of CFSecSecSessionObj cached instances sorted by their primary keys for the duplicate SecProxyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId,
+	List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId,
 		boolean forceRead );
 
-	ICFSecSecSessionObj readCachedSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId );
+	ICFSecSecSessionObj readCachedSecSessionByIdIdx( $implIJavaAtomType$ SecSessionId );
 
-	List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId );
+	List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId );
 
-	ICFSecSecSessionObj readCachedSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+	ICFSecSecSessionObj readCachedSecSessionByStartIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
-	List<ICFSecSecSessionObj> readCachedSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+	List<ICFSecSecSessionObj> readCachedSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
-	List<ICFSecSecSessionObj> readCachedSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId );
+	List<ICFSecSecSessionObj> readCachedSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId );
 
-	void deepDisposeSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId );
+	void deepDisposeSecSessionByIdIdx( $implIJavaAtomType$ SecSessionId );
 
-	void deepDisposeSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId );
+	void deepDisposeSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId );
 
-	void deepDisposeSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+	void deepDisposeSecSessionByStartIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
-	void deepDisposeSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+	void deepDisposeSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
-	void deepDisposeSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId );
+	void deepDisposeSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId );
 
 	/**
 	 *	Read a page of data as a List of SecSession-derived instances sorted by their primary keys,
@@ -301,8 +301,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	A List of SecSession-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> pageSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId,
-		ICFLibKeyHash256 priorSecSessionId );
+	List<ICFSecSecSessionObj> pageSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Read a page of data as a List of SecSession-derived instances sorted by their primary keys,
@@ -315,9 +315,9 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	A List of SecSession-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> pageSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish,
-		ICFLibKeyHash256 priorSecSessionId );
+	List<ICFSecSecSessionObj> pageSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish,
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Read a page of data as a List of SecSession-derived instances sorted by their primary keys,
@@ -328,8 +328,8 @@ public interface ICFSecSecSessionTableObj
 	 *	@return	A List of SecSession-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecSecSessionObj> pageSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId,
-		ICFLibKeyHash256 priorSecSessionId );
+	List<ICFSecSecSessionObj> pageSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId,
+		$implIJavaOptAtomType$ priorSecSessionId );
 
 	/**
 	 *	Internal use only.
@@ -346,14 +346,14 @@ public interface ICFSecSecSessionTableObj
 	 *
 	 *	@param	SecSessionId	The SecSession key attribute of the instance generating the id.
 	 */
-	void deleteSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId );
+	void deleteSecSessionByIdIdx( $implIJavaAtomType$ SecSessionId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
 	 */
-	void deleteSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId );
+	void deleteSecSessionBySecUserIdx( $implIJavaAtomType$ SecUserId );
 
 	/**
 	 *	Internal use only.
@@ -362,8 +362,8 @@ public interface ICFSecSecSessionTableObj
 	 *
 	 *	@param	Start	The SecSession key attribute of the instance generating the id.
 	 */
-	void deleteSecSessionByStartIdx(ICFLibKeyHash256 SecUserId,
-		LocalDateTime Start );
+	void deleteSecSessionByStartIdx($implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Start );
 
 	/**
 	 *	Internal use only.
@@ -372,13 +372,13 @@ public interface ICFSecSecSessionTableObj
 	 *
 	 *	@param	Finish	The SecSession key attribute of the instance generating the id.
 	 */
-	void deleteSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
-		LocalDateTime Finish );
+	void deleteSecSessionByFinishIdx( $implIJavaAtomType$ SecUserId,
+		$implIJavaAtomType$ Finish );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SecProxyId	The SecSession key attribute of the instance generating the id.
 	 */
-	void deleteSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId );
+	void deleteSecSessionBySecProxyIdx( $implIJavaAtomType$ SecProxyId );
 }
