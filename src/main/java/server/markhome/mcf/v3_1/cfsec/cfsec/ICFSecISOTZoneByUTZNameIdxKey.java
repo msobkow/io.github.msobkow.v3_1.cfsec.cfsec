@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecISOTZoneByUTZNameIdxKey
 {
-	public $implIJavaAtomType$ getRequiredTZName();
-	public void setRequiredTZName( $implIJavaAtomType$ value );
+	public String getRequiredTZName();
+	public void setRequiredTZName( String value );
 	@Override
 	public boolean equals( Object obj );
 

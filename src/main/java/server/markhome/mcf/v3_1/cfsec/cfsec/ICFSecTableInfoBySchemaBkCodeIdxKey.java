@@ -47,10 +47,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecTableInfoBySchemaBkCodeIdxKey
 {
-	public $implIJavaAtomType$ getRequiredSchemaName();
-	public void setRequiredSchemaName( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredBackingClassCode();
-	public void setRequiredBackingClassCode( $implIJavaAtomType$ value );
+	public String getRequiredSchemaName();
+	public void setRequiredSchemaName( String value );
+	public int getRequiredBackingClassCode();
+	public void setRequiredBackingClassCode( int value );
 	@Override
 	public boolean equals( Object obj );
 

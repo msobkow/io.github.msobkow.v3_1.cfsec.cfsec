@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecUserPWHistoryByReplacedStampIdxKey
 {
-	public $implIJavaAtomType$ getRequiredPWReplacedStamp();
-	public void setRequiredPWReplacedStamp( $implIJavaAtomType$ value );
+	public LocalDateTime getRequiredPWReplacedStamp();
+	public void setRequiredPWReplacedStamp( LocalDateTime value );
 	@Override
 	public boolean equals( Object obj );
 

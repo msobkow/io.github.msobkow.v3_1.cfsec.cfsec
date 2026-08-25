@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffClusterByUDomNameIdxKey
 	implements ICFSecClusterByUDomNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredFullDomName;
+	protected String requiredFullDomName;
 	public CFSecBuffClusterByUDomNameIdxKey() {
 		requiredFullDomName = ICFSecPubCluster.FULLDOMNAME_INIT_VALUE;
 	}
 
 	@Override
-	public $implIJavaAtomType$ getRequiredFullDomName() {
+	public String getRequiredFullDomName() {
 		return(requiredFullDomName);
 	}
 
-	public void setRequiredFullDomName( $implIJavaAtomType$ value ) {
+	public void setRequiredFullDomName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredFullDomName",

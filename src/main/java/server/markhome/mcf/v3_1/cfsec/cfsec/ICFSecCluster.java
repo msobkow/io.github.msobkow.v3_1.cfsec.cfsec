@@ -74,15 +74,15 @@ public interface ICFSecCluster
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public $implCommaIJavaOptAtomType empty empty )$ getPKey();
-	public void setPKey($implCommaIJavaOptAtomType empty empty )$ requiredId);
-	public List<ICFSecTenant> getOptionalComponentsTenant();
+	public $implIJavaOptAtomType$ getPKey();
+	public void setPKey($implIJavaOptAtomType$ requiredId);
+	public List<ICFSecTenant> get$OptionalOrRequired$ComponentsTenant();
 
-	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
+	public List<ICFSecSecClusGrp> get$OptionalOrRequired$ComponentsSecGroup();
 
-	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
+	public List<ICFSecSecClusRole> get$OptionalOrRequired$ComponentsSecRole();
 
-	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
+	public List<ICFSecSysCluster> get$OptionalOrRequired$ComponentsSysCluster();
 
 	public $implIJavaAtomType$ getRequiredId();
 	public void setRequiredId( $implIJavaAtomType$ value );

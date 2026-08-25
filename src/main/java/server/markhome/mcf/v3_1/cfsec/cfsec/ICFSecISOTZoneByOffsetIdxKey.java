@@ -47,10 +47,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecISOTZoneByOffsetIdxKey
 {
-	public $implIJavaAtomType$ getRequiredTZHourOffset();
-	public void setRequiredTZHourOffset( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredTZMinOffset();
-	public void setRequiredTZMinOffset( $implIJavaAtomType$ value );
+	public short getRequiredTZHourOffset();
+	public void setRequiredTZHourOffset( short value );
+	public short getRequiredTZMinOffset();
+	public void setRequiredTZMinOffset( short value );
 	@Override
 	public boolean equals( Object obj );
 

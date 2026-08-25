@@ -90,7 +90,7 @@ public interface ICFSecClusterTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteClusterByIdIdx( ICFSecAuthorization Authorization,
-		$implCommaIJavaOptAtomType empty empty )$ argKey );
+		$implIJavaOptAtomType$ argKey );
 	/**
 	 *	Delete the Cluster instances identified by the key UDomNameIdx.
 	 *
@@ -99,7 +99,7 @@ public interface ICFSecClusterTable
 	 *	@param	FullDomName	The Cluster key attribute of the instance generating the id.
 	 */
 	void deleteClusterByUDomNameIdx( ICFSecAuthorization Authorization,
-		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argFullDomName );
+		$implIJavaAtomType$ argFullDomName );
 
 	/**
 	 *	Delete the Cluster instances identified by the key UDomNameIdx.
@@ -118,7 +118,7 @@ public interface ICFSecClusterTable
 	 *	@param	Description	The Cluster key attribute of the instance generating the id.
 	 */
 	void deleteClusterByUDescrIdx( ICFSecAuthorization Authorization,
-		$implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argDescription );
+		$implIJavaAtomType$ argDescription );
 
 	/**
 	 *	Delete the Cluster instances identified by the key UDescrIdx.
@@ -142,7 +142,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerived( ICFSecAuthorization Authorization,
-		$implCommaIJavaOptAtomType empty empty )$ PKey );
+		$implIJavaOptAtomType$ PKey );
 
 	/**
 	 *	Lock the derived Cluster record instance by primary key.
@@ -155,7 +155,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster lockDerived( ICFSecAuthorization Authorization,
-		$implCommaIJavaOptAtomType empty empty )$ PKey );
+		$implIJavaOptAtomType$ PKey );
 
 	/**
 	 *	Read all Cluster instances.
@@ -218,7 +218,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRec( ICFSecAuthorization Authorization,
-		$implCommaIJavaOptAtomType empty empty )$ PKey );
+		$implIJavaOptAtomType$ PKey );
 
 	/**
 	 *	Lock the specific Cluster record instance identified by the primary key.
@@ -233,7 +233,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster lockRec( ICFSecAuthorization Authorization,
-		$implCommaIJavaOptAtomType empty empty )$ PKey );
+		$implIJavaOptAtomType$ PKey );
 
 	/**
 	 *	Read all the specific Cluster record instances.

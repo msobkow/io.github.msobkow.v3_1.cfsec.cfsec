@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 public class CFSecBuffISOCcyByCcyNmIdxKey
 	implements ICFSecISOCcyByCcyNmIdxKey, Comparable<Object>, Serializable
 {
-	protected $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredName;
+	protected String requiredName;
 	public CFSecBuffISOCcyByCcyNmIdxKey() {
 		requiredName = ICFSecPubISOCcy.NAME_INIT_VALUE;
 	}
 
 	@Override
-	public $implIJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( $implIJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",

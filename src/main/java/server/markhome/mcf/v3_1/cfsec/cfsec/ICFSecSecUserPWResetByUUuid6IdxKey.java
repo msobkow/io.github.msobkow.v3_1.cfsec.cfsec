@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecprotobj.*;
  */
 public interface ICFSecSecUserPWResetByUUuid6IdxKey
 {
-	public $implIJavaAtomType$ getRequiredPasswordResetUuid6();
-	public void setRequiredPasswordResetUuid6( $implIJavaAtomType$ value );
+	public ICFLibUuid6 getRequiredPasswordResetUuid6();
+	public void setRequiredPasswordResetUuid6( ICFLibUuid6 value );
 	@Override
 	public boolean equals( Object obj );
 

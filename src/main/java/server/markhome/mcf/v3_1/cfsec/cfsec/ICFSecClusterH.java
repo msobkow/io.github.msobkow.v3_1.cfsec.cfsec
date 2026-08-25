@@ -71,8 +71,8 @@ public interface ICFSecClusterH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredId();
-	public void setRequiredId( $implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredId );
+	public $implIJavaAtomType$ getRequiredId();
+	public void setRequiredId( $implIJavaAtomType$ requiredId );
 
 	public $implIJavaAtomType$ getRequiredFullDomName();
 	public void setRequiredFullDomName( $implIJavaAtomType$ value );
