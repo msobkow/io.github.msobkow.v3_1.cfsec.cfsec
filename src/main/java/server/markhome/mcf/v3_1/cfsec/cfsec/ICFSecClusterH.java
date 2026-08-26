@@ -71,13 +71,13 @@ public interface ICFSecClusterH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public $implIJavaAtomType$ getRequiredId();
-	public void setRequiredId( $implIJavaAtomType$ requiredId );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public $implIJavaAtomType$ getRequiredFullDomName();
-	public void setRequiredFullDomName( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredDescription();
-	public void setRequiredDescription( $implIJavaAtomType$ value );
+	public String getRequiredFullDomName();
+	public void setRequiredFullDomName( String value );
+	public String getRequiredDescription();
+	public void setRequiredDescription( String value );
 	@Override
 	public boolean equals( Object obj );
 

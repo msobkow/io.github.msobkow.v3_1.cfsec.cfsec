@@ -74,25 +74,25 @@ public interface ICFSecCluster
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public $implIJavaOptAtomType$ getPKey();
-	public void setPKey($implIJavaOptAtomType$ requiredId);
-	public List<ICFSecTenant> get$OptionalOrRequired$ComponentsTenant();
+	public $implCommaIJavaOptAtomType$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType$ requiredId);
+	public List<ICFSecTenant> getOptionalComponentsTenant();
 
-	public List<ICFSecSecClusGrp> get$OptionalOrRequired$ComponentsSecGroup();
+	public List<ICFSecSecClusGrp> getOptionalComponentsSecGroup();
 
-	public List<ICFSecSecClusRole> get$OptionalOrRequired$ComponentsSecRole();
+	public List<ICFSecSecClusRole> getOptionalComponentsSecRole();
 
-	public List<ICFSecSysCluster> get$OptionalOrRequired$ComponentsSysCluster();
+	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
 
-	public $implIJavaAtomType$ getRequiredId();
-	public void setRequiredId( $implIJavaAtomType$ value );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public $implIJavaAtomType$ getRequiredFullDomName();
-	public void setRequiredFullDomName( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredDescription();
-	public void setRequiredDescription( $implIJavaAtomType$ value );
+	public String getRequiredFullDomName();
+	public void setRequiredFullDomName( String value );
+	public String getRequiredDescription();
+	public void setRequiredDescription( String value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
