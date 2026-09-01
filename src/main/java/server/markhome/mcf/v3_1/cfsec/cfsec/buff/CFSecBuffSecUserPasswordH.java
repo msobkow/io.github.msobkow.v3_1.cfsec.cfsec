@@ -506,7 +506,7 @@ public class CFSecBuffSecUserPasswordH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredPWSetStamp=" + "\"" + getRequiredPWSetStamp().toString() + "\""
 			+ " RequiredPasswordHash=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredPasswordHash() ) + "\"";

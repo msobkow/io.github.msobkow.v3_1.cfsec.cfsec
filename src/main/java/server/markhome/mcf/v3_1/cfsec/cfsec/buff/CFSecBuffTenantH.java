@@ -629,7 +629,7 @@ public class CFSecBuffTenantH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredClusterId=" + "\"" + getRequiredClusterId().toString() + "\""
 			+ " RequiredTenantName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredTenantName() ) + "\"";

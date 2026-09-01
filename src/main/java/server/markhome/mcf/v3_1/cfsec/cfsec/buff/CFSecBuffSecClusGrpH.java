@@ -666,7 +666,7 @@ public class CFSecBuffSecClusGrpH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredClusterId=" + "\"" + getRequiredClusterId().toString() + "\""
 			+ " RequiredName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredName() ) + "\"";

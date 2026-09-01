@@ -782,7 +782,7 @@ public class CFSecBuffSecUserEMConfH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredConfirmEMailAddr=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredConfirmEMailAddr() ) + "\""
 			+ " RequiredEMailSentStamp=" + "\"" + getRequiredEMailSentStamp().toString() + "\""

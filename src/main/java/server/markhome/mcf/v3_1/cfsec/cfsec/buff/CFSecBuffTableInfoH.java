@@ -1079,7 +1079,7 @@ public class CFSecBuffTableInfoH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredSchemaName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredSchemaName() ) + "\""
 			+ " RequiredTableName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredTableName() ) + "\""

@@ -665,7 +665,7 @@ public class CFSecBuffSecUserPWResetH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredSentToEMailAddr=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredSentToEMailAddr() ) + "\""
 			+ " RequiredPasswordResetUuid6=" + "\"" + getRequiredPasswordResetUuid6().toString() + "\""

@@ -474,7 +474,7 @@ public class CFSecBuffSecClusRoleMembH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\"";
         return( ret );
     }

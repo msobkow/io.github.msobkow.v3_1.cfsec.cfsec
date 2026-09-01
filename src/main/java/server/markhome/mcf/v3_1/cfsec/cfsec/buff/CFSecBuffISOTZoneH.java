@@ -858,7 +858,7 @@ public class CFSecBuffISOTZoneH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredIso8601=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredIso8601() ) + "\""
 			+ " RequiredTZName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredTZName() ) + "\""

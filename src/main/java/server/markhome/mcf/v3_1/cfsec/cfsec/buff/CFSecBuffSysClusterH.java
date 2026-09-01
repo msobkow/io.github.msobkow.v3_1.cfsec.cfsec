@@ -416,7 +416,7 @@ public class CFSecBuffSysClusterH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredClusterId=" + "\"" + getRequiredClusterId().toString() + "\"";
         return( ret );
